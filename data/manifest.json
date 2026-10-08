@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T17:36:55.826051+00:00",
+  "generated_at": "2026-10-08T17:39:25.529653+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-9dea84eb4c272d01582c7f33.csv",
+      "rows": 31,
+      "bytes": 8093,
+      "sha256": "9dea84eb4c272d01582c7f33239e32df4c63939b09f31751835b0c1800a0cab1",
+      "min_id": 50009028,
+      "max_id": 50009058,
+      "min_time": 1791480984,
+      "max_time": 1791481140
+    },
     {
       "path": "data/posts-inc-e8fa92b6efe5baf3e06be380.csv",
       "rows": 134,
@@ -552,13 +562,13 @@
       "sha256": "e009006ebd798a8622aad6732184ccd7995fbb64affdc3d3b8c804a69ab6d42a"
     },
     {
-      "path": "data/posts-inc-9ad65066eb92c12b7cbdaa32.csv",
-      "rows": 4547,
-      "bytes": 1644918,
-      "sha256": "9ad65066eb92c12b7cbdaa322cce957725925e5c5f1f8db869a5afe4580dbf2b",
-      "min_id": 49009028,
+      "path": "data/posts-inc-4a3339212a76f147b899acc4.csv",
+      "rows": 4516,
+      "bytes": 1636169,
+      "sha256": "4a3339212a76f147b899acc479556975ce2541d15b0f85380b44bc35ad761b50",
+      "min_id": 49009059,
       "max_id": 49013574,
-      "min_time": 1784736641,
+      "min_time": 1784736777,
       "max_time": 1784755091
     }
   ],
@@ -584,12 +594,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 346370931,
+  "total_csv_bytes": 346370275,
   "daily_update": {
-    "last_scanned_id": 50009027,
-    "previous_scanned_id": 50008893,
+    "last_scanned_id": 50009058,
+    "previous_scanned_id": 50009027,
     "unavailable_ids": [],
-    "new_rows": 134,
+    "new_rows": 31,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
