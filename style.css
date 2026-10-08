@@ -103,3 +103,8 @@ footer{padding:30px 18px 40px;font-size:12px;color:var(--mut);text-align:center}
 .pts p{margin:0 0 8px;font:inherit}.pts p:last-child{margin:0}.pts a{color:var(--ac)}.pts code{font-size:13px}.pts.sm{margin:6px 0 10px}.pts.sm>div{font-size:13px}
 .lenses .pts{margin:-6px 0 18px}.prose .pts p{font-family:Inter,sans-serif;font-weight:400;font-size:15px;line-height:1.5}
 .clock .pts>div,.dark .pts>div{color:var(--ink)}
+.ptsstick{justify-content:center;gap:14px}.ptsstick .kicker{margin:0}
+.story{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.arrow2{color:var(--ac);font-size:26px;line-height:1;transition:transform .2s}.stitle{font-weight:700;font-size:18px}.smeta{color:var(--mut);font-size:14px;margin-top:4px}.smeta b{color:var(--ac);font:800 28px Fraunces,serif}
+.ill{font:600 10px Inter;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);border:1px solid var(--bd);border-radius:99px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.caption.big{font-size:clamp(19px,5vw,24px);min-height:130px}.src{font-size:12px;color:var(--mut);margin:0}.src a{color:var(--mut)}

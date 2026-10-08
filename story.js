@@ -32,6 +32,7 @@
     countUp($('bigcount'), total);
     getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => { const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0); $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB'; }).catch(() => { $('mb').textContent = 'a few MB'; });
     hall(S.top_posts || []);
+    ptsStep(S);
     if (!C) { $('intro').textContent = 'The concentration data has not been published yet.'; observe(); return; }
     const P = C.posts, E = C.entities, T = C.totals;
     $('intro').innerHTML = `Attention online is never spread evenly. On Hacker News, the top <b>1%</b> of stories hold <b>${pct(P.top_share_points['0.01'])}</b> of all points, and <b>${pct(P.zero_comment_share, 0)}</b> of stories get no comment at all. This page measures that pile-up for authors, domains, words, the clock and the calendar.`;
@@ -45,6 +46,24 @@
     calLede(C.cyclic, T);
     types(C.type, T);
     observe();
+  }
+  function ptsStep(S) {
+    const sec = $('s_pts'); sec.style.height = (+sec.dataset.tall) + 'vh';
+    const cm = (S.type_counts || {}).comment, tot = (S.totals && S.totals.posts) || S.total_rows || 0;
+    const steps = [
+      'Someone posts a story. Readers vote it up, and its <b>points</b> are the score Hacker News shows next to it.',
+      'HN ranks a story by dividing its points by a power of the time since it was submitted. Points have to keep arriving to hold a spot.',
+      'Comments have no score in HN&rsquo;s data' + (cm && tot ? ', and they make up <b>' + pct(cm / tot, 0) + '</b> of the items here' : '') + '. So every points number below is <b>story points</b>.'
+    ];
+    $('src_pts').innerHTML = 'Sources: <a href="https://news.ycombinator.com/newsfaq.html" target="_blank" rel="noopener">HN FAQ</a>, <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">HN API docs</a>. The card above is an illustration, not a real post.';
+    let last = -1;
+    function upd() {
+      const r = sec.getBoundingClientRect(), p = clamp(-r.top / (r.height - innerHeight), 0, 1), e = 1 - Math.pow(1 - p, 2);
+      $('pts_n').textContent = Math.round(1 + 149 * e); { const hh = Math.round(p * 10); $('pts_t').textContent = hh + (hh === 1 ? ' hour' : ' hours'); }
+      $('pts_card').firstElementChild.style.transform = 'translateY(' + (-4 * Math.sin(p * 40)) + 'px)';
+      const k = p < 0.34 ? 0 : p < 0.68 ? 1 : 2; if (k !== last) { last = k; $('cap_pts').innerHTML = steps[k]; }
+    }
+    upd(); addEventListener('scroll', upd, { passive: true });
   }
   function countUp(node, to) { const t0 = performance.now(); (function f(t) { const p = Math.min(1, (t - t0) / 1600); node.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(t0); }
 
