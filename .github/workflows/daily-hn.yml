@@ -2,6 +2,9 @@ name: Daily Hacker News update and Pages
 on:
   schedule:
     - cron: '23 2 * * *'  # 09:23 Asia/Bangkok daily
+  push:
+    branches: [main]
+    paths: ['hypotheses/**']
   workflow_dispatch:
 permissions:
   contents: read

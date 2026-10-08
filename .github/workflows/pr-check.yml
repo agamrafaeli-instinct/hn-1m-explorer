@@ -1,0 +1,24 @@
+name: Hypothesis PR check
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: Hypothesis PR check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Cards only
+        run: |
+          base=origin/${{ github.base_ref }}
+          bad=$(git diff --name-only $base...HEAD | grep -Ev '^hypotheses/h[0-9]{3}-[a-z0-9-]+\.json$' || true)
+          if [ -n "$bad" ]; then echo "Hypothesis PRs may only add files under hypotheses/hNNN-name.json. Found:"; echo "$bad"; exit 1; fi
+      - name: Validate and evaluate cards
+        run: node tests/hypotheses.test.js
