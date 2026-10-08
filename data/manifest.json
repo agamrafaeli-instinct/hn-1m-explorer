@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T18:05:39.275567+00:00",
+  "generated_at": "2026-10-08T18:09:37.740025+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-1a49e920a6df9c8f245669bb.csv",
+      "rows": 60,
+      "bytes": 20003,
+      "sha256": "1a49e920a6df9c8f245669bb601035a30c32cef56609f20e4221b168ebbf3dc3",
+      "min_id": 50009526,
+      "max_id": 50009585,
+      "min_time": 1791482737,
+      "max_time": 1791482928
+    },
     {
       "path": "data/posts-inc-fdab286fc7492bc7dc52226e.csv",
       "rows": 65,
@@ -612,13 +622,13 @@
       "sha256": "e009006ebd798a8622aad6732184ccd7995fbb64affdc3d3b8c804a69ab6d42a"
     },
     {
-      "path": "data/posts-inc-ee279f87769b25152babf722.csv",
-      "rows": 4049,
-      "bytes": 1475001,
-      "sha256": "ee279f87769b25152babf7227921aac767ac730909fc6bb0b2ada28e91b1e4db",
-      "min_id": 49009526,
+      "path": "data/posts-inc-d21979d5b1944c2f1d877b5b.csv",
+      "rows": 3989,
+      "bytes": 1449812,
+      "sha256": "d21979d5b1944c2f1d877b5be7eb62dcce6cd59b52382c2878cee68c668110d4",
+      "min_id": 49009586,
       "max_id": 49013574,
-      "min_time": 1784738204,
+      "min_time": 1784738450,
       "max_time": 1784755091
     }
   ],
@@ -644,12 +654,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 346363340,
+  "total_csv_bytes": 346358154,
   "daily_update": {
-    "last_scanned_id": 50009525,
-    "previous_scanned_id": 50009460,
+    "last_scanned_id": 50009585,
+    "previous_scanned_id": 50009525,
     "unavailable_ids": [],
-    "new_rows": 65,
+    "new_rows": 60,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
