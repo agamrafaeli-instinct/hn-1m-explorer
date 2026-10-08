@@ -1,16 +1,14 @@
-name: Watch HN stories at 350+ points
+name: Daily HN 350+ points digest
 on:
   schedule:
-    - cron: '17 */3 * * *'
+    - cron: '31 1 * * *'  # 08:31 Asia/Bangkok
   workflow_dispatch:
     inputs:
-      seed:
-        description: 'Record current qualifying stories without opening issues'
-        type: boolean
-        default: false
+      note:
+        description: 'Optional note'
+        required: false
 permissions:
   contents: write
-  issues: write
 concurrency:
   group: watch-350
   cancel-in-progress: false
@@ -24,10 +22,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest tests.test_watch_points
-      - name: Find new 350+ point stories and open issues
+      - name: Find new 350+ point stories and write digest
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SEED: ${{ inputs.seed }}
+          TZ: UTC
         run: python scripts/watch_points.py
       - name: Save state
         run: |
