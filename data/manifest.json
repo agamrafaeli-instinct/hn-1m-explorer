@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T15:25:13.782040+00:00",
+  "generated_at": "2026-10-08T17:10:12.916162+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-49b55666216fb1750607df05.csv",
+      "rows": 1934,
+      "bytes": 658100,
+      "sha256": "49b55666216fb1750607df05883bad0eaca6935aca55418c51888fee01a9addd",
+      "min_id": 50006647,
+      "max_id": 50008580,
+      "min_time": 1791471613,
+      "max_time": 1791479362
+    },
     {
       "path": "data/posts-00001.csv",
       "rows": 25411,
@@ -502,14 +512,14 @@
       "sha256": "e009006ebd798a8622aad6732184ccd7995fbb64affdc3d3b8c804a69ab6d42a"
     },
     {
-      "path": "data/posts-00042.csv",
-      "rows": 6928,
-      "bytes": 2479261,
-      "min_id": 49006647,
+      "path": "data/posts-inc-4c82d37851fee7a93e4968f1.csv",
+      "rows": 4994,
+      "bytes": 1816730,
+      "sha256": "4c82d37851fee7a93e4968f13c0b1743f6437ec4ebf20a57b8e48e3f1559d2c0",
+      "min_id": 49008581,
       "max_id": 49013574,
-      "min_time": 1784727603,
-      "max_time": 1784755091,
-      "sha256": "174c016e12ba4c1ba637ebba035c78cf390ff309fb6323dda860b185dde5b363"
+      "min_time": 1784734872,
+      "max_time": 1784755091
     }
   ],
   "summary_path": "data/summary.json",
@@ -530,7 +540,20 @@
       "pollopt"
     ],
     "retrieved_at_utc": "2026-10-08T15:00:37Z to 2026-10-08T15:09:10Z",
-    "completeness_limitations": "Snapshot: score, descendants and dead/deleted flags are as of fetch time; very recent items may later change. Items are by ID, so 'posts' includes comments (about 84% comments). Credential-shaped strings (4 found: API keys etc.) were replaced with [REDACTED-SECRET] in text fields before publishing (scripts/redact_secrets.py); all else is verbatim."
+    "completeness_limitations": "Snapshot: score, descendants and dead/deleted flags are as of fetch time; very recent items may later change. Items are by ID, so 'posts' includes comments (about 84% comments). Credential-shaped strings (4 found: API keys etc.) were replaced with [REDACTED-SECRET] in text fields before publishing (scripts/redact_secrets.py); all else is verbatim.",
+    "daily_update_api": "https://hacker-news.firebaseio.com/v0",
+    "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 346388977
+  "total_csv_bytes": 346384546,
+  "daily_update": {
+    "last_scanned_id": 50008580,
+    "previous_scanned_id": 50006646,
+    "unavailable_ids": [],
+    "new_rows": 1934,
+    "retention_rows": 1000000,
+    "mode": "daily additions since last successful scan; catch-up included",
+    "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
+    "redaction_policy": "credential-shaped strings in text/title/url replaced using scripts/redact_secrets.py",
+    "redacted_strings_this_run": 0
+  }
 }
