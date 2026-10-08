@@ -140,7 +140,7 @@
   <div id="app" hidden>
     <div id="filters">
       <input id="q" type="search" placeholder="Search titles (words, space = AND)" autocomplete="off">
-      <div class="row"><input id="by" type="search" placeholder="Author"><input id="domain" type="search" placeholder="Domain, e.g. github.com"></div>
+      <div class="row"><input id="by" type="search" placeholder="Author"><input id="domain" type="search" placeholder="Domain"></div>
       <div class="row"><label>From<input id="from" type="date"></label><label>To<input id="to" type="date"></label></div>
       <div class="row"><label>Type<select id="type"><option value="">All</option></select></label><label>Min score<input id="minscore" type="number" min="0" value="0"></label></div>
       <div class="row"><button id="reset" type="button">Reset</button><span id="count"></span></div>
@@ -170,7 +170,7 @@
   <p class="lede">Guess something about Hacker News, say in advance what the data must show, and the site checks it.</p>
   <ol>
     <li>Fork the repo.</li>
-    <li>Copy a card in <code>hypotheses/</code> to <code>hypotheses/hNNN-your-name.json</code>. Use the next free number.</li>
+    <li>Copy a card in <code>hypotheses/</code> to <code>hypotheses/hNNN-your-name.json</code>, using the next free number.</li>
     <li>Fill it in. Write the verdict thresholds before you look at the result, and include a rule that refutes you.</li>
     <li>Run <code>node tests/hypotheses.test.js</code> to see your verdict.</li>
     <li>Open a pull request with only that file.</li>

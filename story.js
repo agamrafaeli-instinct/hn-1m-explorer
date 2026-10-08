@@ -183,7 +183,7 @@
     $('lede_type').innerHTML = `Each type's share of posts (orange), points (black) and comments (grey). <b>${esc(top[0])}</b> makes up ${pct(top[1].posts / T.posts, 0)} of the items and ${pct(top[1].points / T.points, 0)} of the points.`;
   }
   function hall(posts) {
-    $('hall').innerHTML = posts.slice(0, 10).map(p => { const hn = 'https://news.ycombinator.com/item?id=' + p.id, link = p.url || hn; return `<li><a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title || '(untitled)')}</a><div class="m">${fmt(p.score || 0)} points · ${fmt(p.descendants || 0)} comments · by ${esc(p.by)}${p.time ? ' · ' + dlabel(p.time) : ''} · <a href="${hn}" target="_blank" rel="noopener">discuss</a></div></li>`; }).join('');
+    $('hall').innerHTML = posts.slice(0, 10).map(p => { const hn = 'https://news.ycombinator.com/item?id=' + p.id, link = (p.url || hn).replace(/\/{2,}$/, '/'); return `<li><a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title || '(untitled)')}</a><div class="m">${fmt(p.score || 0)} points · ${fmt(p.descendants || 0)} comments · by ${esc(p.by)}${p.time ? ' · ' + dlabel(p.time) : ''} · <a href="${hn}" target="_blank" rel="noopener">discuss</a></div></li>`; }).join('');
   }
   function observe() {
     const io = new IntersectionObserver(es => es.forEach(e => {

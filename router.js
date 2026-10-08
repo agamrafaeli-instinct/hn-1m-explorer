@@ -8,7 +8,7 @@
     geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers' }
   };
   const views = ['home', 'aud', 'story', 'hyp', 'explore', 'submit', 'how'];
-  const tabOf = { home: 'home', aud: 'home', story: 'home', hyp: 'home', explore: 'explore', submit: 'submit', how: 'how' };
+  const tabOf = { home: 'home', aud: 'home', story: '', hyp: 'home', explore: 'explore', submit: 'submit', how: 'how' };
   function deeper(list, key) {
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;
