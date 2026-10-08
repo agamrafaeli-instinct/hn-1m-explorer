@@ -2,45 +2,90 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HN Explorer - last 1M posts</title>
+<title>One million posts on Hacker News</title>
+<meta name="description" content="A scrollable look at the last 1,000,000 Hacker News posts, with a full explorer.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head><body>
-<header><h1>HN Explorer</h1><div id="status">Loading...</div><div id="bar"><i id="barfill"></i></div></header>
-<div id="banner" hidden>SAMPLE DATA (synthetic). Real HN data is still being prepared.</div>
-<main>
-<section id="filters">
-  <input id="q" type="search" placeholder="Search titles (words, space = AND)" autocomplete="off">
-  <div class="row">
-    <input id="by" type="search" placeholder="Author">
-    <input id="domain" type="search" placeholder="Domain (e.g. github.com)">
-  </div>
-  <div class="row">
-    <label>From<input id="from" type="date"></label>
-    <label>To<input id="to" type="date"></label>
-  </div>
-  <div class="row">
-    <label>Type<select id="type"><option value="">All</option></select></label>
-    <label>Min score<input id="minscore" type="number" min="0" value="0"></label>
-  </div>
-  <button id="reset" type="button">Reset</button>
-  <div id="count"></div>
+<div id="banner" hidden>SAMPLE DATA (synthetic). The real numbers are still being prepared.</div>
+<div id="progress"><i></i></div>
+
+<section class="hero">
+  <p class="kicker">Hacker News, in numbers</p>
+  <h1><span id="bigcount">1,000,000</span><br>posts.</h1>
+  <p class="dek" id="dek">Every story, comment and job in the latest million items, from <b id="d0">...</b> to <b id="d1">...</b>. Scroll.</p>
+  <div class="arrow">↓</div>
 </section>
-<section id="charts">
-  <div class="card"><h2>Posts per month</h2><div class="cv"><canvas id="c_month"></canvas></div></div>
-  <div class="card"><h2>Score distribution</h2><div class="cv"><canvas id="c_score"></canvas></div></div>
-  <div class="card"><h2>Top domains</h2><div class="cv tall"><canvas id="c_dom"></canvas></div></div>
-  <div class="card"><h2>Hour of day (UTC)</h2><div class="cv"><canvas id="c_hour"></canvas></div></div>
-  <div class="card"><h2>Top authors</h2><div class="cv tall"><canvas id="c_auth"></canvas></div></div>
+
+<section class="prose"><p id="intro"></p></section>
+
+<section class="scrolly" id="s_posts" data-tall="320">
+  <div class="sticky">
+    <h2>The pulse</h2>
+    <p class="sub">Posts per month</p>
+    <div class="chart"><svg id="svg_posts"></svg></div>
+    <p class="caption" id="cap_posts"></p>
+  </div>
 </section>
-<section id="results">
-  <div class="rh"><h2>Posts</h2>
-    <select id="sort"><option value="score">Top score</option><option value="comments">Most comments</option><option value="new">Newest</option><option value="old">Oldest</option></select></div>
-  <ol id="list"></ol>
-  <div class="pager"><button id="prev">Prev</button><span id="page"></span><button id="next">Next</button></div>
+
+<section class="scrolly dark" id="s_score" data-tall="320">
+  <div class="sticky">
+    <h2>What earns attention</h2>
+    <p class="sub">Average score per post, by month</p>
+    <div class="chart"><svg id="svg_score"></svg></div>
+    <p class="caption" id="cap_score"></p>
+  </div>
 </section>
-</main>
-<footer>Data: Hacker News via CSV chunks in <code>data/</code>. <a id="dl" href="data/manifest.json">manifest</a></footer>
+
+<section class="bars" id="s_dom">
+  <h2>Where the links come from</h2>
+  <p class="lede" id="lede_dom"></p>
+  <div class="barlist" id="bars_dom"></div>
+</section>
+
+<section class="bars alt" id="s_auth">
+  <h2>The regulars</h2>
+  <p class="lede" id="lede_auth"></p>
+  <div class="barlist" id="bars_auth"></div>
+</section>
+
+<section class="hall" id="s_hall">
+  <h2>Hall of fame</h2>
+  <p class="lede">The highest-scoring posts in the dataset.</p>
+  <ol id="hall"></ol>
+</section>
+
+<section class="explore" id="explore">
+  <h2>Dig in yourself</h2>
+  <p class="lede">Search and filter every post. The full data is about <span id="mb">...</span> of CSV, so it only loads when you ask.</p>
+  <button id="loadbtn" class="cta">Load all posts</button>
+  <div id="status"></div><div id="bar"><i id="barfill"></i></div>
+  <div id="app" hidden>
+    <div id="filters">
+      <input id="q" type="search" placeholder="Search titles (words, space = AND)" autocomplete="off">
+      <div class="row"><input id="by" type="search" placeholder="Author"><input id="domain" type="search" placeholder="Domain, e.g. github.com"></div>
+      <div class="row"><label>From<input id="from" type="date"></label><label>To<input id="to" type="date"></label></div>
+      <div class="row"><label>Type<select id="type"><option value="">All</option></select></label><label>Min score<input id="minscore" type="number" min="0" value="0"></label></div>
+      <div class="row"><button id="reset" type="button">Reset</button><span id="count"></span></div>
+    </div>
+    <div id="charts">
+      <div class="card"><h3>Posts per month</h3><div class="cv"><canvas id="c_month"></canvas></div></div>
+      <div class="card"><h3>Score distribution</h3><div class="cv"><canvas id="c_score"></canvas></div></div>
+      <div class="card"><h3>Top domains</h3><div class="cv tall"><canvas id="c_dom"></canvas></div></div>
+      <div class="card"><h3>Hour of day (UTC)</h3><div class="cv"><canvas id="c_hour"></canvas></div></div>
+      <div class="card"><h3>Top authors</h3><div class="cv tall"><canvas id="c_auth"></canvas></div></div>
+    </div>
+    <div id="results">
+      <div class="rh"><h3>Posts</h3><select id="sort"><option value="score">Top score</option><option value="comments">Most comments</option><option value="new">Newest</option><option value="old">Oldest</option></select></div>
+      <ol id="list"></ol>
+      <div class="pager"><button id="prev">Prev</button><span id="page"></span><button id="next">Next</button></div>
+    </div>
+  </div>
+</section>
+<footer>Data: Hacker News (public API / dataset). CSV chunks in <a href="data/manifest.json">data/</a>. Built by an AI agent for Agam.</footer>
 <script src="vendor/papaparse.min.js"></script>
 <script src="vendor/chart.umd.js"></script>
 <script src="app.js"></script>
+<script src="story.js"></script>
 </body></html>

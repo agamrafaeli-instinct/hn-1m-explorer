@@ -82,7 +82,7 @@ function mkChart(id, cfg) {
   cfg.options = Object.assign({ responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { display: false } } }, cfg.options || {});
   charts[id] = new Chart($(id), cfg);
 }
-function top(keyArr, n) {
+function topN(keyArr, n) {
   const c = new Map(); for (const i of idx) { const k = keyArr[i]; if (k) c.set(k, (c.get(k) || 0) + 1); }
   return [...c].sort((a, b) => b[1] - a[1]).slice(0, n);
 }
@@ -97,7 +97,7 @@ function drawCharts() {
   mkChart('c_month', { type: 'line', data: { labels: ml, datasets: [{ data: ml.map(k => month.get(k)), borderColor: AC, backgroundColor: AC + '55', fill: true, pointRadius: 0, tension: .2 }] }, options: { scales: { x: { ticks: { maxTicksLimit: 6 } } } } });
   mkChart('c_score', { type: 'bar', data: { labels: ['0', '1-9', '10-99', '100-999', '1k-9k', '10k+', '', ''].slice(0, 6), datasets: [{ data: [sb[0], sb[1], sb[2], sb[3], sb[4], sb[5] + sb[6] + sb[7]], backgroundColor: AC }] } });
   mkChart('c_hour', { type: 'bar', data: { labels: hours.map((_, h) => h), datasets: [{ data: hours, backgroundColor: AC }] }, options: { scales: { x: { ticks: { maxTicksLimit: 12 } } } } });
-  const td = top(D.domain, 12), ta = top(D.by, 12);
+  const td = topN(D.domain, 12), ta = topN(D.by, 12);
   const hb = { indexAxis: 'y' };
   mkChart('c_dom', { type: 'bar', data: { labels: td.map(x => x[0]), datasets: [{ data: td.map(x => x[1]), backgroundColor: AC }] }, options: hb });
   mkChart('c_auth', { type: 'bar', data: { labels: ta.map(x => x[0]), datasets: [{ data: ta.map(x => x[1]), backgroundColor: AC }] }, options: hb });
@@ -124,4 +124,4 @@ $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('minscore').value = 0; page = 0; refresh(); };
-load().catch(e => { $('status').textContent = 'Error: ' + e.message; });
+$('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load().catch(e => { $('status').textContent = 'Error: ' + e.message; }); };
