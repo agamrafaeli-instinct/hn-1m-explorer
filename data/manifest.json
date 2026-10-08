@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T18:01:00.148501+00:00",
+  "generated_at": "2026-10-08T18:05:39.275567+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-fdab286fc7492bc7dc52226e.csv",
+      "rows": 65,
+      "bytes": 19513,
+      "sha256": "fdab286fc7492bc7dc52226e80e498fc1b953e8a115cceefbba666054b0c37e8",
+      "min_id": 50009461,
+      "max_id": 50009525,
+      "min_time": 1791482440,
+      "max_time": 1791482721
+    },
     {
       "path": "data/posts-inc-3cc3a7791dd4c1e168fe537e.csv",
       "rows": 279,
@@ -602,13 +612,13 @@
       "sha256": "e009006ebd798a8622aad6732184ccd7995fbb64affdc3d3b8c804a69ab6d42a"
     },
     {
-      "path": "data/posts-inc-1d3e02f993419ac2b7940722.csv",
-      "rows": 4114,
-      "bytes": 1498384,
-      "sha256": "1d3e02f993419ac2b79407227aae5b913813fc0311fb9312516a6e1c4e43791d",
-      "min_id": 49009461,
+      "path": "data/posts-inc-ee279f87769b25152babf722.csv",
+      "rows": 4049,
+      "bytes": 1475001,
+      "sha256": "ee279f87769b25152babf7227921aac767ac730909fc6bb0b2ada28e91b1e4db",
+      "min_id": 49009526,
       "max_id": 49013574,
-      "min_time": 1784737975,
+      "min_time": 1784738204,
       "max_time": 1784755091
     }
   ],
@@ -634,12 +644,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 346367210,
+  "total_csv_bytes": 346363340,
   "daily_update": {
-    "last_scanned_id": 50009460,
-    "previous_scanned_id": 50009181,
+    "last_scanned_id": 50009525,
+    "previous_scanned_id": 50009460,
     "unavailable_ids": [],
-    "new_rows": 279,
+    "new_rows": 65,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
