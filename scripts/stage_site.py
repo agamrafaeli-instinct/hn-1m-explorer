@@ -2,7 +2,7 @@
 """Stage public assets by a conservative allowlist, never publish tooling or history."""
 import argparse, pathlib, shutil
 SUFFIXES={'.html','.js','.mjs','.css','.json','.svg','.png','.jpg','.jpeg','.gif','.webp','.ico','.avif','.woff','.woff2','.ttf','.otf','.mp4','.webm','.ogg','.mp3','.wav','.pdf','.txt','.xml','.webmanifest'}
-DIRECTORIES={'data','vendor','sample','assets','images','fonts','media','css','js'}
+DIRECTORIES={'data','vendor','sample','assets','images','fonts','media','css','js','hypotheses'}
 MAX_BYTES=900_000_000
 
 def stage(root,destination):
@@ -28,6 +28,10 @@ def stage(root,destination):
     for p in selected:
         if p.is_dir(): shutil.copytree(p,destination/p.name)
         else: shutil.copy2(p,destination/p.name)
+    hd=destination/'hypotheses'
+    if hd.is_dir():  # index.json is generated, so cards never conflict on it
+        import json
+        (hd/'index.json').write_text(json.dumps(sorted(f.stem for f in hd.glob('*.json') if f.name!='index.json')))
     print('Published bytes:',size,'; assets:',', '.join(sorted(names)))
     return size
 
