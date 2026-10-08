@@ -4,7 +4,7 @@
   "title": "Discovered themes: discussion premium",
   "author": "agam-instinct",
   "audience": "deep-tech investors",
-  "hypothesis": "The discovered physical/bio themes draw more discussion per story in the later five weeks.",
+  "hypothesis": "The discovered physical/bio themes draw more discussion per story in the later five weeks. The six themes: data centers and grid, GPU and chip hardware, neural biology, aerospace, solar energy, physical robotics.",
   "expect": "At least 1.3x strong, at least 1.1x weak; at or below 0.9x refuted; between inconclusive.",
   "check": {
     "source": "data/vcs_deeper.json",

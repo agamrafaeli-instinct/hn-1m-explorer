@@ -4,7 +4,7 @@
   "title": "Discovered themes: premium survives hits",
   "author": "agam-instinct",
   "audience": "deep-tech investors",
-  "hypothesis": "The discovered-theme basket keeps a points premium after removing its top-scoring 1% of later stories.",
+  "hypothesis": "The discovered-theme basket keeps a points premium after removing its top-scoring 1% of later stories. The six themes: data centers and grid, GPU and chip hardware, neural biology, aerospace, solar energy, physical robotics.",
   "expect": "At least 1.3x strong, at least 1.1x weak; at or below 0.9x refuted; between inconclusive.",
   "check": {
     "source": "data/vcs_deeper.json",

@@ -5,10 +5,12 @@
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
   const sv = (tag, at, txt) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e; };
   const fmtN = (v, k) => k && k.display_pct ? (v * 100).toFixed(2) + '%' : v >= 100 ? Math.round(v).toLocaleString() : v.toFixed(v >= 10 ? 1 : 2);
-  const fmt = v => v == null ? 'n/a' : (v >= 10 ? v.toFixed(1) : v.toFixed(2));
+  let TH = [];
+  const fmt = v => v == null ? 'n/a' : (v >= 10 ? v.toFixed(1) : TH.some(t => Math.abs(v - t) < 0.0051 && v.toFixed(2) === t.toFixed(2)) ? v.toFixed(3) : v.toFixed(2));
   const LABEL = { supported: 'Supported', refuted: 'Refuted', inconclusive: 'Inconclusive' };
 
   function gauge(card, r) {
+    TH = (card.verdicts || []).filter(x => x.when).map(x => x.when.value);
     const th = card.verdicts.filter(x => x.when).map(x => x.when.value), unit = card.check.unit || '';
     const max = Math.max(2, r.value * 1.15, Math.max.apply(null, th) * 1.2), W = 320, X = v => 12 + (v / max) * (W - 24);
     const s = sv('svg', { viewBox: '0 0 ' + W + ' 74', role: 'img', 'aria-label': 'Measured ' + fmt(r.value) + unit + ' against the verdict thresholds' });
@@ -36,11 +38,12 @@
         const h = Math.max(1, (v / max) * H), cls = r.ia.includes(i) ? 'b-a' : r.ib.includes(i) ? 'b-b' : 'b-x';
         s.appendChild(sv('rect', { x: 4 + i * bw + bw * 0.12, y: H - h, width: bw * 0.76, height: h, rx: 2, class: cls }));
       }
-      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % Math.ceil(n / 5) === 0) s.appendChild(sv('text', { x: 4 + i * bw + bw / 2, y: H + 12, 'text-anchor': 'middle', class: 'g-lab' }, (lab[i] || String(i)).slice(-5)));
+      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % Math.ceil(n / 5) === 0) { const raw = String(lab[i] || i), tx = /^\d{4}-\d{2}/.test(raw) ? raw.slice(2) : raw.length > 8 ? raw.slice(0, 7) + '.' : raw, cx = 4 + i * bw + bw / 2, an = cx < 22 ? 'start' : cx > W - 22 ? 'end' : 'middle'; s.appendChild(sv('text', { x: an === 'start' ? 2 : an === 'end' ? W - 2 : cx, y: H + 12, 'text-anchor': an, class: 'g-lab' }, tx)); }
     });
     return s;
   }
   function render(card, r) {
+    TH = (card.verdicts || []).filter(x => x.when).map(x => x.when.value);
     const a = el('article', 'hyp ' + r.verdict);
     const top = el('div', 'hyp-top'); top.appendChild(el('span', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
     top.appendChild(el('span', 'hyp-badge', r.verdict === 'inconclusive' ? 'Inconclusive' : LABEL[r.verdict] + ' \u00b7 ' + r.confidence)); a.appendChild(top);
@@ -52,7 +55,7 @@
       k.group_a.label + ' ' + fmtN(r.mean_a, k) + ' vs ' + k.group_b.label + ' ' + fmtN(r.mean_b, k) + ' (' + (k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'avg')) + '), ratio ' + fmt(r.value) + (k.unit || '')));
     a.appendChild(meas);
     a.appendChild(gauge(card, r)); a.appendChild(bars(card, r));
-    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(k.group_a.label)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(k.group_b.label)); a.appendChild(lg);
+    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(r.split ? (k.legend_a || 'Matching stories') : k.group_a.label)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(r.split ? (k.legend_b || 'Everything else') : k.group_b.label)); a.appendChild(lg);
     if (card.caveats && card.caveats.length) {
       const d = el('details', 'pts sm'); d.appendChild(el('summary', '', 'Caveats'));
       const box = el('div'); card.caveats.forEach(t => box.appendChild(el('p', '', t))); d.appendChild(box); a.appendChild(d);

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>One million posts on Hacker News</title>
 <meta name="description" content="A scrollable look at the last 1,000,000 Hacker News posts, with a full explorer.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,20 +15,19 @@
 <div class="view" id="v_home">
 <section class="home">
   <p class="kicker">Hacker News, one million posts</p>
-  <h1>What do you want to see?</h1>
+  <h1>What do you<br>want to see?</h1>
   <div class="pick">
-    <a class="big" href="#/a/engineers"><b>Engineers</b><span>What the data says about people who build</span></a>
-    <a class="big" href="#/a/vcs"><b>Deep-tech VCs</b><span>Where attention and money signals pile up</span></a>
-    <a class="big" href="#/a/geeks"><b>Curious geeks</b><span>The odd, fun patterns in the data</span></a>
-    <a class="big" href="#/hypotheses"><b>Generic first AI hypotheses</b><span>All the tested guesses, one scroll</span></a>
+    <a class="big" href="#/a/engineers"><b>Engineers</b><span>What the data says about people who build</span><em data-aud="engineers"></em></a>
+    <a class="big" href="#/a/vcs"><b>Deep-tech VCs</b><span>Where attention and money signals pile up</span><em data-aud="deep-tech investors"></em></a>
+    <a class="big" href="#/a/geeks"><b>Curious geeks</b><span>The odd, fun patterns in the data</span><em data-aud="curious readers"></em></a>
+    <a class="big" href="#/hypotheses"><b>Generic first AI hypotheses</b><span>All the tested guesses, one scroll</span><em data-aud="*"></em></a>
   </div>
   <p class="more"><a href="#/story">Or read the full story: where does the attention live? &rarr;</a></p>
 </section>
 </div>
 <div class="view" id="v_aud" hidden>
   <section class="aud">
-    <a class="back" id="aud_back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a>
-    <p class="kicker" id="aud_kicker"></p>
+    <div class="audbar"><a class="back" id="aud_back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a><p class="kicker" id="aud_kicker"></p></div>
     <div id="aud_card"></div>
     <p class="more" id="aud_note"></p>
     <div id="aud_deeper"></div>
@@ -123,7 +122,7 @@
 </div>
 <div class="view" id="v_hyp" hidden>
 <section class="hypo" id="s_hyp">
-  <p class="kicker">The nature of software engineers</p>
+  <p class="kicker">All audiences</p>
   <h2>Hypotheses, tested</h2>
   <p class="lede">Each card states a guess, what the data should show if it is true, and the check. Wrong guesses stay on the page.</p>
   <p class="hyp-tally" id="hyp_tally"></p>

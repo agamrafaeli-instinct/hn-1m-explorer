@@ -4,7 +4,7 @@
   "title": "Discovered themes: domain breadth",
   "author": "agam-instinct",
   "audience": "deep-tech investors",
-  "hypothesis": "At least half of later discovered-theme points come from outside the five highest-point source domains.",
+  "hypothesis": "At least half of later discovered-theme points come from outside the five highest-point source domains. The six themes: data centers and grid, GPU and chip hardware, neural biology, aerospace, solar energy, physical robotics.",
   "expect": "Outside/inside five-domain points: at least 1.5x strong; at least 1x weak; at or below 0.667x refuted; between inconclusive.",
   "check": {
     "source": "data/vcs_deeper.json",

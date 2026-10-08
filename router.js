@@ -4,11 +4,11 @@
   const $ = id => document.getElementById(id);
   const AUD = {
     engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers', clean: ['h012', 'h014', 'h026'], note: 'Read this first: these cards were explored before their thresholds were fixed, so they are not blind pre-registrations. H012, H014 and H026 are the cleanest tests. H016 and H026 are refuted, and those stay on the page.' },
-    vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors', note: 'How to read these: the history cards (H115-H119) use archive snapshot points and shares, matched on title and text. H118 (solar matches) is refuted, but that is not proof that solar adoption fell. Company leads are discovery only and unverified.' },
-    geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers' }
+    vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors', note: 'How to read these: the history cards (H115-H119) use archive snapshot points and shares, matched on title and text. H118 (solar matches) is refuted, but that is not proof that solar adoption fell.' },
+    geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Refuted cards stay on the page.' }
   };
   const views = ['home', 'aud', 'story', 'hyp', 'explore', 'submit', 'how'];
-  const tabOf = { home: 'home', aud: 'home', story: '', hyp: 'home', explore: 'explore', submit: 'submit', how: 'how' };
+  const tabOf = { home: 'home', aud: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
   function deeper(list, key) {
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;
@@ -16,13 +16,13 @@
     if (AUD[key].note) { const n = document.createElement('p'); n.className = 'caveat-note'; n.textContent = AUD[key].note; box.appendChild(n); }
     list.forEach(x => { const l = document.createElement('a'); l.href = '#/c/' + x.name.split('-')[0] + '/' + key; l.className = 'deep';
       const t = document.createElement('b'); t.textContent = x.card.title; const v = document.createElement('span'); v.textContent = x.r.verdict === 'inconclusive' ? 'Inconclusive' : (x.r.verdict[0].toUpperCase() + x.r.verdict.slice(1) + ' \u00b7 ' + x.r.confidence);
-      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } l.append(t, v); box.appendChild(l); });
+      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } v.className = 'vd ' + x.r.verdict; l.append(t, v); box.appendChild(l); });
   }
   async function single(id, key) {
     const a = AUD[key] || AUD.engineers; $('aud_kicker').textContent = a.name; $('aud_note').textContent = ''; $('aud_deeper').replaceChildren(); $('aud_others').replaceChildren();
     $('aud_back').href = '#/a/' + (AUD[key] ? key : 'engineers');
     $('aud_card').textContent = 'Loading...';
-    try { const x = (await HypCards.all()).find(c => c.card && c.name.startsWith(id + '-')); if (!x) throw new Error('not found'); $('aud_card').replaceChildren(HypCards.render(x.card, x.r)); }
+    try { const x = (await HypCards.all()).find(c => c.card && c.name.startsWith(id + '-')); if (!x) throw new Error('not found'); $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r))); }
     catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
   async function audience(key) {
@@ -34,11 +34,27 @@
       const list = await HypCards.all(), ok = list.filter(x => x.card);
       const mine = ok.filter(x => x.card.audience === a.tag), own = mine.find(x => x.name.startsWith(a.fallback)) || mine[0], pick = own || ok.find(x => x.name.startsWith(a.fallback));
       if (!pick) throw new Error('no card yet');
-      $('aud_card').replaceChildren(HypCards.render(pick.card, pick.r));
+      $('aud_card').replaceChildren(compact(HypCards.render(pick.card, pick.r)));
       deeper(mine.filter(x => x !== pick), key);
       if (!own) $('aud_note').textContent = 'A card written for this audience is coming. This is the closest tested hypothesis for now.';
     } catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
+  function compact(card) {
+    const keep = card.querySelectorAll('.hyp-ex, details.pts, .src'); if (!keep.length) return card;
+    const d = document.createElement('details'); d.className = 'more-d'; const s = document.createElement('summary'); s.textContent = 'What we tested, caveats, source'; d.appendChild(s);
+    keep.forEach(e => d.appendChild(e)); card.appendChild(d); card.classList.add('compact'); return card;
+  }
+  async function counts() {
+    try {
+      const list = (await HypCards.all()).filter(x => x.card), tag = {};
+      document.querySelectorAll('.pick em').forEach(e => {
+        const t = e.dataset.aud, rows = t === '*' ? list : list.filter(x => x.card.audience === t);
+        const sup = rows.filter(x => x.r.verdict === 'supported').length, ref = rows.filter(x => x.r.verdict === 'refuted').length;
+        e.textContent = rows.length + ' tested \u00b7 ' + sup + ' supported \u00b7 ' + ref + ' refuted';
+      });
+    } catch (e) { }
+  }
+  setTimeout(counts, 300);
   let cur;
   function route() {
     const p = (location.hash || '#/').replace(/^#\/?/, '').split('/');
