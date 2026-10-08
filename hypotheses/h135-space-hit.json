@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "h135",
+  "title": "Space has a higher hit rate",
+  "author": "curious-geeks-round2",
+  "audience": "curious readers",
+  "hypothesis": "Titles matching space reach ten snapshot points at least 1.25x as often as other stories.",
+  "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+  "check": {
+    "source": "data/curious_round2.json",
+    "path": "series.space",
+    "label_field": "label",
+    "field": "hit10",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "per_label": "share of known-score stories reaching ten points",
+    "group_a": {
+      "label": "Matching titles",
+      "field": "hit10",
+      "per": "score_stories",
+      "indices": "all"
+    },
+    "group_b": {
+      "label": "Other titles",
+      "field": "rest_hit10",
+      "per": "rest_score_stories",
+      "indices": "all"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.25
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "weak"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+    "Title proxy only; the exact regex is \\b(space|cosmic|galax\\w*|astronom\\w*|asteroids?|comets?|planets?|telescope|universe|nasa|spacex|lunar|moon|mars)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+    "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+    "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+    "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+    "906 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+  ]
+}

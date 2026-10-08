@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "id": "h140",
+  "title": "Climate is unusually discussion-heavy",
+  "author": "curious-geeks-round2",
+  "audience": "curious readers",
+  "hypothesis": "Titles matching climate average at least 1.5x the comments per point of other stories.",
+  "expect": "Support at ratio 1.5x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+  "check": {
+    "source": "data/curious_round2.json",
+    "path": "series.climate",
+    "label_field": "label",
+    "field": "paired_comments",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "per_label": "comments per snapshot point",
+    "group_a": {
+      "label": "Matching titles",
+      "field": "paired_comments",
+      "per": "paired_points",
+      "indices": "all"
+    },
+    "group_b": {
+      "label": "Other titles",
+      "field": "rest_paired_comments",
+      "per": "rest_paired_points",
+      "indices": "all"
+    },
+    "display_pct": false
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "weak"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+    "Title proxy only; the exact regex is \\b(climate|global warming|carbon|emissions?|decarbon\\w*|greenhouse|renewables?)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+    "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+    "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+    "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+    "179 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+  ]
+}

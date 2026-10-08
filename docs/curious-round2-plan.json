@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "scope": "15 exploratory, prospectively thresholded tests on the current manifest snapshot; not independently preregistered and not a causal or significance claim.",
+  "population": "Live stories only, complete Monday-start UTC weeks within the manifest time bounds. Read only manifest-listed chunks. Null score/comment fields are not zeroes. All title matches use case-insensitive regular expressions.",
+  "estimator": "Equal-weight mean of per-week rates, except weekend cards compare equal-weight daily shares by UTC weekday. Growth compares last 3 complete weeks with first 3. Trimmed score drops ceil(1%) of known-score stories separately in each week and side.",
+  "rule": "Supported (weak descriptive evidence) at or above support; refuted (weak descriptive evidence) at or below refute; otherwise inconclusive. No thresholds will be retuned after aggregation.",
+  "tests": [
+    {
+      "id": "h135",
+      "key": "space",
+      "title": "Space has a higher hit rate",
+      "pattern": "\\b(space|cosmic|galax\\w*|astronom\\w*|asteroids?|comets?|planets?|telescope|universe|nasa|spacex|lunar|moon|mars)\\b",
+      "metric": "hit",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h136",
+      "key": "animals",
+      "title": "Animals win beyond the biggest hits",
+      "pattern": "\\b(animals?|birds?|cats?|dogs?|whales?|octopus|octopuses|spiders?|insects?|bees|ants|dolphins?|elephants?|wildlife)\\b",
+      "metric": "trim",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h137",
+      "key": "food",
+      "title": "Food stories take over weekends",
+      "pattern": "\\b(food|cooking|recipes?|bread|coffee|tea|chocolate|cheese|ferment\\w*|beer|wine|restaurants?)\\b",
+      "metric": "weekend",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h138",
+      "key": "music",
+      "title": "Music starts more conversations",
+      "pattern": "\\b(music|musical|musicians?|songs?|piano|guitars?|synthesizers?|synthesiser|midi|orchestra|melody|vinyl)\\b",
+      "metric": "comments",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h139",
+      "key": "health",
+      "title": "Health draws talk relative to votes",
+      "pattern": "\\b(health|medical|medicine|cancer|diabetes|sleep|insomnia|vaccines?|dementia|alzheim\\w*|obesity|nutrition|exercise)\\b",
+      "metric": "discussion",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h140",
+      "key": "climate",
+      "title": "Climate is unusually discussion-heavy",
+      "pattern": "\\b(climate|global warming|carbon|emissions?|decarbon\\w*|greenhouse|renewables?)\\b",
+      "metric": "discussion",
+      "support": 1.5,
+      "refute": 1.0
+    },
+    {
+      "id": "h141",
+      "key": "privacy",
+      "title": "Privacy produces more talk per vote",
+      "pattern": "\\b(privacy|surveillance|tracking|tracked|facial recognition|biometric\\w*|wiretap\\w*)\\b",
+      "metric": "discussion",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h142",
+      "key": "education",
+      "title": "Learning stories clear ten points more often",
+      "pattern": "\\b(education|schools?|teaching|teachers?|students?|classroom|university|universities|college|curriculum|textbooks?|learning)\\b",
+      "metric": "hit",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h143",
+      "key": "games",
+      "title": "Games gain weekend shelf space",
+      "pattern": "\\b(games?|gaming|videogames?|chess|sudoku|tetris|nintendo|playstation|xbox|minecraft|doom)\\b",
+      "metric": "weekend",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h144",
+      "key": "books",
+      "title": "Books beat the average after trimming",
+      "pattern": "\\b(books?|novels?|literature|literary|poetry|poems?|libraries|library|reading|readers?|authors?)\\b",
+      "metric": "trim",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h145",
+      "key": "art",
+      "title": "Visual art earns a points premium",
+      "pattern": "\\b(art|artists?|painting|paintings|sculpture|photography|photographs?|museums?|illustration|typography|fonts?)\\b",
+      "metric": "points",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h146",
+      "key": "maps",
+      "title": "Maps and geography find more hits",
+      "pattern": "\\b(maps?|mapping|cartograph\\w*|geography|geographic|openstreetmap|gis|latitude|longitude)\\b",
+      "metric": "hit",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h147",
+      "key": "languages",
+      "title": "Human languages are gaining share",
+      "pattern": "\\b(linguist\\w*|etymolog\\w*|dialects?|bilingual|multilingual|translation|translate|phonetic\\w*|alphabets?|unicode)\\b",
+      "metric": "growth",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h148",
+      "key": "diy",
+      "title": "Hands-on making gets a weekend boost",
+      "pattern": "\\b(diy|homemade|woodworking|solder\\w*|3d print\\w*|3d-print\\w*|raspberry pi|arduino|makers?|tinkering|knitting|crochet)\\b",
+      "metric": "weekend",
+      "support": 1.25,
+      "refute": 1.0
+    },
+    {
+      "id": "h149",
+      "key": "questions",
+      "title": "Question headlines provoke more comments",
+      "pattern": "\\?",
+      "metric": "comments",
+      "support": 1.25,
+      "refute": 1.0
+    }
+  ],
+  "protocol_sequence": "Definitions and thresholds saved before running scripts/curious_round2.py. Existing project summaries and earlier Curious geeks cards had already been inspected; this is not blind preregistration. No tests were removed or thresholds changed after results."
+}

@@ -5,7 +5,7 @@
   const AUD = {
     engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers', clean: ['h012', 'h014', 'h026'], note: 'Read this first: these cards were explored before their thresholds were fixed, so they are not blind pre-registrations. H012, H014 and H026 are the cleanest tests. H016 and H026 are refuted, and those stay on the page.' },
     vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors', note: 'How to read these: the history cards (H115-H119) use archive snapshot points and shares, matched on title and text. H118 (solar matches) is refuted, but that is not proof that solar adoption fell.' },
-    geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Refuted cards stay on the page.' }
+    geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
   const views = ['home', 'aud', 'story', 'hyp', 'explore', 'submit', 'how'];
   const tabOf = { home: 'home', aud: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
