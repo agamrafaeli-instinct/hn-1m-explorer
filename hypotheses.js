@@ -52,6 +52,22 @@
     a.appendChild(el('p', 'src', 'Check: ' + k.source + ' \u203a ' + k.path + '.' + k.field + (card.author ? ' \u00b7 by ' + card.author : '')));
     return a;
   }
+  const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
+  let allP;
+  function all() {
+    return allP || (allP = (async () => {
+      const names = await get('hypotheses/index.json'), cache = {}, out = [];
+      for (const n of names) {
+        try {
+          const card = await get('hypotheses/' + n + '.json'), src = card.check.source;
+          if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
+          const sum = cache[src] || (cache[src] = await get(src)); out.push({ name: n, card, r: HypEval.evaluate(card, sum) });
+        } catch (e) { out.push({ name: n, error: e.message }); }
+      }
+      return out;
+    })());
+  }
+  window.HypCards = { all, render };
   async function init() {
     const host = document.getElementById('hyp_list'); if (!host) return;
     const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
