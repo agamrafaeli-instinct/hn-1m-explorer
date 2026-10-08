@@ -96,3 +96,4 @@ footer{padding:30px 18px 40px;font-size:12px;color:var(--mut);text-align:center}
 .barlist:not(.idx) .tr{display:flex;align-items:center}.barlist:not(.idx) .vl{position:static;transform:none;color:var(--ink);margin-left:6px;font-weight:600}.barlist:not(.idx) .fl{flex:none}
 #lens .br{display:grid}#lens .tr{display:flex;align-items:center}
 #lens .vl{position:static;transform:none;color:var(--ink);margin-left:6px;font-weight:600}#lens .fl{flex:none}
+.fine{font-size:14px;color:var(--mut)}.loadrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.loadrow select{width:auto;flex:1;min-width:200px}

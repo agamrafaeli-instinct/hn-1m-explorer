@@ -22,8 +22,8 @@
 
 <section class="scrolly" id="s_lz" data-tall="340">
   <div class="sticky">
-    <h2>Almost all the attention sits in a sliver of posts</h2>
-    <p class="sub">Share of all points held by the top X% of posts</p>
+    <h2>Almost all the attention sits in a sliver of stories</h2>
+    <p class="sub">Share of all points held by the top X% of stories</p>
     <div class="chart"><svg id="svg_lz"></svg></div>
     <p class="caption" id="cap_lz"></p>
   </div>
@@ -57,7 +57,7 @@
   <h2>The clock: when attention is awake</h2>
   <p class="lede" id="lede_clock"></p>
   <div class="clockbox"><svg id="svg_clock" viewBox="0 0 400 400"></svg></div>
-  <p class="legend"><i class="sw a"></i> share of points <i class="sw b"></i> share of posts</p>
+  <p class="legend"><i class="sw a"></i> share of points <i class="sw b"></i> share of items</p>
   <h3 class="h3">Hour by weekday (points, UTC)</h3>
   <div id="heat"></div>
 </section>
@@ -65,14 +65,14 @@
 <section class="bars" id="s_cal">
   <h2>Days and months</h2>
   <p class="lede" id="lede_cal"></p>
-  <h3 class="h3">Weekday: points per post vs the average</h3>
+  <h3 class="h3">Weekday: points per item vs the average</h3>
   <div class="barlist idx" id="idx_wd"></div>
-  <h3 class="h3">Month: points per post vs the average</h3>
+  <h3 class="h3">Month: points per item vs the average</h3>
   <div class="barlist idx" id="idx_mo"></div>
 </section>
 
 <section class="bars alt" id="s_type">
-  <h2>Posts, points, comments</h2>
+  <h2>Items, points, comments</h2>
   <p class="lede" id="lede_type"></p>
   <div class="barlist" id="bars_type"></div>
 </section>
@@ -85,8 +85,8 @@
 
 <section class="explore" id="explore">
   <h2>Dig in yourself</h2>
-  <p class="lede">Search and filter every post. The full data is about <span id="mb">...</span> of CSV, so it only loads when you ask.</p>
-  <button id="loadbtn" class="cta">Load all posts</button>
+  <p class="lede">Search and filter every post. The full CSV is about <span id="mb">...</span>, so pick how much to load (newest first).</p>
+  <div class="loadrow"><select id="loadn"></select><button id="loadbtn" class="cta">Load</button></div>
   <div id="status"></div><div id="bar"><i id="barfill"></i></div>
   <div id="app" hidden>
     <div id="filters">

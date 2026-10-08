@@ -28,14 +28,14 @@
     const C = S.concentration;
     const total = (S.totals && (S.totals.posts || S.totals.rows)) || (C && C.totals.posts) || 0;
     const tr = S.time_range || {};
-    $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>`;
+    $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>${C && C.posts.scored_posts ? `<br><br><span class="fine">${pct(((S.type_counts || {}).comment || (total - C.posts.scored_posts)) / total, 0)} of items are comments, which carry no points, so point and comment lenses use the ${fmt(C.posts.scored_posts)} scored stories. Snapshot: ${S.generated_at ? S.generated_at.slice(0, 10) : 'recent'}; the newest stories have not collected their final scores yet.</span>` : ''}`;
     countUp($('bigcount'), total);
     getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => { const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0); $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB'; }).catch(() => { $('mb').textContent = 'a few MB'; });
     hall(S.top_posts || []);
     if (!C) { $('intro').textContent = 'The concentration data has not been published yet.'; observe(); return; }
     const P = C.posts, E = C.entities, T = C.totals;
-    $('intro').innerHTML = `Attention online is never spread evenly. On Hacker News, the top <b>1%</b> of posts hold <b>${pct(P.top_share_points['0.01'])}</b> of all points, and <b>${pct(P.zero_score_share)}</b> of posts never get past zero. This page measures that pile-up for authors, domains, words, the clock and the calendar.`;
-    lorenzScrolly('s_lz', 'svg_lz', P.lorenz_points, 'cap_lz', 'posts', 'points');
+    $('intro').innerHTML = `Attention online is never spread evenly. On Hacker News, the top <b>1%</b> of stories hold <b>${pct(P.top_share_points['0.01'])}</b> of all points, and <b>${pct(P.zero_comment_share, 0)}</b> of stories get no comment at all. This page measures that pile-up for authors, domains, words, the clock and the calendar.`;
+    lorenzScrolly('s_lz', 'svg_lz', P.lorenz_points, 'cap_lz', 'stories', 'points');
     lenses(C);
     ent('bars_auth', 'lede_auth', E.author, 'author', 'authors', T);
     ent('bars_dom', 'lede_dom', E.domain, 'domain', 'domains', T);
@@ -69,7 +69,7 @@
       const defs = el('defs', {}, svg), cl = el('clipPath', { id: 'cp_' + svgId }, defs), cr = el('rect', { x: 0, y: 0, width: 0, height: H }, cl);
       el('path', { class: 'area', d: d + `L${pts[pts.length - 1][0]} ${Y(0)}L${pts[0][0]} ${Y(0)}Z`, style: 'fill:#ff6600;opacity:.18', 'clip-path': `url(#cp_${svgId})` }, svg);
       el('path', { class: 'ln', d, 'clip-path': `url(#cp_${svgId})` }, svg);
-      const mk = marks.map(m => { const g = el('g', { style: 'opacity:0;transition:opacity .4s' }, svg); const y = at(L, m); el('circle', { cx: X(m), cy: Y(y), r: 5, fill: '#ff6600', stroke: '#fff', 'stroke-width': 2 }, g); const t = el('text', { x: X(m) + 8, y: Y(y) + 4, 'font-size': 12, 'font-weight': 700, fill: '#ff6600' }, g); t.textContent = fpct(m) + ' hold ' + pct(y, 0); return { m, g }; });
+      const mk = marks.map(m => { const g = el('g', { style: 'opacity:0;transition:opacity .4s' }, svg); const y = at(L, m); el('circle', { cx: X(m), cy: Y(y), r: 5, fill: '#ff6600', stroke: '#fff', 'stroke-width': 2 }, g); const left = X(m) > W - 120; const t = el('text', { x: X(m) + (left ? -9 : 9), y: Y(y) + (left ? 16 : 4), 'text-anchor': left ? 'end' : 'start', 'font-size': 12, 'font-weight': 700, fill: '#ff6600' }, g); t.textContent = fpct(m) + ' hold ' + pct(y, 0); return { m, g }; });
       const dot = el('circle', { class: 'dot', r: 6 }, svg);
       G = { X, Y, cr, mk, dot, Lm, iw };
       update();
@@ -80,7 +80,7 @@
       const lx = lx0 * (1 - u), x = Math.pow(10, lx), y = at(L, x);
       G.cr.setAttribute('width', G.X(x) + 1); G.dot.setAttribute('cx', G.X(x)); G.dot.setAttribute('cy', G.Y(y));
       G.mk.forEach(o => o.g.style.opacity = x >= o.m * 0.999 ? 1 : 0);
-      cap.innerHTML = p < 0.05 ? 'Scroll. Posts are ranked from most to least ' + what + '.' : `The top <b>${fpct(x)}</b> of ${noun} hold <b>${pct(y, y > .99 ? 1 : 0)}</b> of all ${what}.`;
+      cap.innerHTML = p < 0.05 ? 'Scroll. Stories are ranked from most to least ' + what + '.' : `The top <b>${fpct(x)}</b> of ${noun} hold <b>${pct(y, y > .99 ? 1 : 0)}</b> of all ${what}.`;
     }
     build(); let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 150); });
     addEventListener('scroll', update, { passive: true });
@@ -103,7 +103,7 @@
       cards.push({ name, big: pct(y1, 0), line: `of all points sit with the top <b>1%</b> of ${pl}. The top 10% hold ${pct(y10, 0)}.`, sub: `${fmt(e.count)} ${pl} · gini ${e.gini_points.toFixed(2)}`, L: e.lorenz_points });
     });
     const P = C.posts;
-    cards.push({ name: 'Single posts', big: pct(P.top_share_points['0.01'], 0), line: `of points sit with the top <b>1%</b> of posts. Comments (dark line) are ${pct(P.top_share_comments['0.01'], 0)}.`, sub: `${pct(P.zero_score_share, 0)} of posts have zero points`, L: P.lorenz_points, L2: P.lorenz_comments });
+    cards.push({ name: 'Single stories', big: pct(P.top_share_points['0.01'], 0), line: `of points sit with the top <b>1%</b> of stories. Comments (dark line) are ${pct(P.top_share_comments['0.01'], 0)}.`, sub: `${pct(P.zero_comment_share, 0)} of stories have no comments`, L: P.lorenz_points, L2: P.lorenz_comments });
     $('mgrid').innerHTML = cards.map(c => `<div class="mc"><h3>${c.name}</h3><div class="big">${c.big}</div><div class="sm">${c.line}</div><svg viewBox="0 0 300 150" preserveAspectRatio="none">${mini(c.L, c.L2, 300, 150)}</svg><div class="sm" style="margin-top:6px">${c.sub}</div></div>`).join('');
     $('lede_lens').innerHTML = `Rank everything in a lens from heaviest to lightest, then ask how much of the total the top slice holds. The curve hugging the top-left means the weight is concentrated. <b>Gini</b> is the single-number version (0 = equal, 1 = one entity holds everything).`;
     document.querySelectorAll('.mc .lz,.mc .lz2').forEach(p => { p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = 'stroke-dashoffset 1.6s ease'; });
@@ -136,7 +136,7 @@
     el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 10 }, svg).textContent = 'center of gravity (UTC)';
     svg._anim = () => { const t0 = performance.now(); (function f(t) { const p = clamp((t - t0) / 1400, 0, 1), e = 1 - Math.pow(1 - p, 3); H.forEach((h, i) => { A[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.points / tp) / mx, .012)); B[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.posts / tq) / mx * 0.999, .06)); }); needle.setAttribute('opacity', e); if (p < 1) requestAnimationFrame(f); })(t0); };
     const top3 = H.map((h, i) => [h.points / tp, i]).sort((a, b) => b[0] - a[0]).slice(0, 3), sh = top3.reduce((a, b) => a + b[0], 0), eff = H.map((h, i) => [h.points / h.posts, i]).sort((a, b) => b[0] - a[0])[0];
-    $('lede_clock').innerHTML = `The attention-weighted center of the day is <b>${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')} UTC</b>. Three hours (<b>${top3.map(x => String(x[1]).padStart(2, '0') + ':00').join(', ')}</b>) carry <b>${pct(sh, 0)}</b> of all points, against 12.5% if the day were flat. Posts submitted around <b>${String(eff[1]).padStart(2, '0')}:00</b> earn the most points each.`;
+    $('lede_clock').innerHTML = `The attention-weighted center of the day is <b>${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')} UTC</b>. Three hours (<b>${top3.map(x => String(x[1]).padStart(2, '0') + ':00').join(', ')}</b>) carry <b>${pct(sh, 0)}</b> of all points, against 12.5% if the day were flat. Items submitted around <b>${String(eff[1]).padStart(2, '0')}:00</b> earn the most points each on average.`;
   }
   function heat(hw) {
     if (!hw) return; const box = $('heat'), mx = Math.max(...hw.flat()); let s = '<span></span>' + Array.from({ length: 24 }, (_, h) => `<span class="l" style="justify-content:center">${h % 6 === 0 ? h : ''}</span>`).join('');
@@ -144,7 +144,8 @@
     box.innerHTML = s;
   }
   // ---- Index bars: points per post vs the overall average
-  function idx(id, arr, names, T) {
+  function idx(id, arr0, names0, T) {
+    const keep = arr0.map((a, i) => i).filter(i => arr0[i].posts > 0), arr = keep.map(i => arr0[i]), names = keep.map(i => names0[i]);
     const avg = T.points / T.posts, vals = arr.map(a => a.posts ? (a.points / a.posts) / avg : 1), mx = Math.max(1.05, ...vals.map(v => Math.abs(v - 1) + 1)) , span = Math.max(...vals.map(v => Math.abs(v - 1)), 0.05) * 1.15;
     $(id).innerHTML = arr.map((a, i) => { const d = vals[i] - 1, w = 50 * Math.abs(d) / span; return `<div class="br"><div class="nm">${names[i]}</div><div class="tr"><div class="fl" data-l="${d >= 0 ? 50 : 50 - w}" data-w="${w}" style="background:${d >= 0 ? '#ff6600' : '#8a7f73'};left:50%"></div><span class="vl">${vals[i].toFixed(2)}x</span></div></div>`; }).join('');
     $(id).dataset.idx = 1;
@@ -152,7 +153,7 @@
   function calLede(cy, T) {
     const avg = T.points / T.posts, wd = cy.weekday.map((a, i) => [(a.points / a.posts) / avg, i]).sort((a, b) => b[0] - a[0]), mo = cy.month.map((a, i) => [a.posts ? (a.points / a.posts) / avg : 0, i]).filter(x => x[0]).sort((a, b) => b[0] - a[0]);
     const wk = cy.weekday.reduce((a, b) => a + b.posts, 0), we = cy.weekday[5].posts + cy.weekday[6].posts;
-    $('lede_cal').innerHTML = `A post's score depends on when it lands. <b>${WD[wd[0][1]]}</b> posts score ${wd[0][0].toFixed(2)}x the average, <b>${WD[wd[wd.length - 1][1]]}</b> only ${wd[wd.length - 1][0].toFixed(2)}x. Weekends hold ${pct(we / wk, 0)} of posts. The best month is <b>${MN[mo[0][1]]}</b> (${mo[0][0].toFixed(2)}x); the weakest is <b>${MN[mo[mo.length - 1][1]]}</b> (${mo[mo.length - 1][0].toFixed(2)}x).`;
+    $('lede_cal').innerHTML = `How much an item earns depends on when it lands. <b>${WD[wd[0][1]]}</b> items earn ${wd[0][0].toFixed(2)}x the average points, <b>${WD[wd[wd.length - 1][1]]}</b> only ${wd[wd.length - 1][0].toFixed(2)}x. Weekends hold ${pct(we / wk, 0)} of items. The best month is <b>${MN[mo[0][1]]}</b> (${mo[0][0].toFixed(2)}x); the weakest is <b>${MN[mo[mo.length - 1][1]]}</b> (${mo[mo.length - 1][0].toFixed(2)}x).`;
   }
   function types(ty, T) {
     const rows = Object.entries(ty).sort((a, b) => b[1].posts - a[1].posts), box = $('bars_type');

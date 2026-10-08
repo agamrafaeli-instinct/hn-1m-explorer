@@ -5,7 +5,7 @@ const ALIAS = {
   id: ['id', 'item_id'], time: ['time', 'timestamp', 'created_at', 'date', 'time_iso', 'time_unix'],
   by: ['by', 'author', 'user', 'username'], title: ['title', 'text_title'],
   url: ['url', 'link'], score: ['score', 'points'], comments: ['descendants', 'comments', 'num_comments'],
-  type: ['type', 'kind'], domain: ['domain', 'host']
+  type: ['type', 'kind'], domain: ['domain', 'host'], text: ['text']
 };
 const $ = id => document.getElementById(id);
 const D = { n: 0, id: [], time: [], score: [], comments: [], by: [], title: [], url: [], domain: [], type: [] };
@@ -23,7 +23,8 @@ function addRows(rows, m) {
     if (r.length < 2) continue;
     const g = k => m[k] >= 0 ? r[m[k]] : '';
     D.id.push(num(g('id'))); D.time.push(toSec(g('time'))); D.score.push(num(g('score'))); D.comments.push(num(g('comments')));
-    D.by.push(g('by') || ''); D.title.push(g('title') || ''); const u = g('url') || ''; D.url.push(u);
+    let ti = g('title'); if (!ti) { const tx = g('text'); ti = tx ? '[' + (g('type') || 'item') + '] ' + tx.replace(/<[^>]*>/g, ' ').replace(/&[#\w]+;/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 140) : ''; }
+    D.by.push(g('by') || ''); D.title.push(ti); const u = g('url') || ''; D.url.push(u);
     D.domain.push(g('domain') || host(u)); D.type.push(g('type') || ''); D.n++;
   }
 }
@@ -36,11 +37,12 @@ function parseChunk(text, state) {
     } });
   });
 }
-async function load() {
+async function load(nChunks) {
   let base = 'data/', sample = false, r0 = await fetch('data/manifest.json', { cache: 'no-cache' });
   if (!r0.ok) { base = 'sample/'; sample = true; r0 = await fetch('sample/manifest.json'); document.body.classList.add('sample'); $('banner').hidden = false; }
   const mf = await r0.json();
-  const files = (mf.chunks || mf.files || []).map(f => typeof f === 'string' ? { path: f } : f);
+  let files = (mf.chunks || mf.files || []).map(f => typeof f === 'string' ? { path: f } : f);
+  if (nChunks && nChunks < files.length) files = files.slice(0, nChunks);
   const total = files.reduce((a, f) => a + (f.rows || 0), 0);
   let k = 0;
   for (const f of files) {
@@ -142,4 +144,14 @@ $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('minscore').value = 0; page = 0; refresh(); };
-$('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load().catch(e => { $('status').textContent = 'Error: ' + e.message; }); };
+$('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Error: ' + e.message; }); };
+
+(async () => {
+  try {
+    let r = await fetch('data/manifest.json'), base = 'data/'; if (!r.ok) r = await fetch('sample/manifest.json');
+    const mf = await r.json(), ch = mf.chunks || mf.files || [], sel = $('loadn'); let rows = 0, by = 0; const opts = [];
+    const marks = new Set([Math.min(3, ch.length), Math.min(10, ch.length), ch.length]);
+    ch.forEach((c, i) => { rows += c.rows || 0; by += c.bytes || 0; if (marks.has(i + 1)) opts.push([i + 1, rows, by]); });
+    sel.innerHTML = opts.map(([n, r2, b], i) => `<option value="${n}"${i === 0 ? ' selected' : ''}>${i === opts.length - 1 ? 'Everything' : 'Newest ' + n + ' files'}: ${r2 ? r2.toLocaleString() + ' items' : n + ' files'}${b ? ', ~' + Math.round(b / 1048576) + ' MB download' : ''}</option>`).join('');
+  } catch (e) { }
+})();

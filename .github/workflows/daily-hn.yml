@@ -1,0 +1,67 @@
+name: Daily Hacker News update and Pages
+on:
+  # Schedule paused pending owner go-ahead. Enable: 23 2 * * * (UTC).
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - 'DATA_SCHEMA.md'
+      - 'tests/**'
+permissions:
+  contents: read
+concurrency:
+  group: hn-daily-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test data pipeline
+        run: python -m unittest discover -s tests -v
+      - name: Add new items and retain latest million
+        if: github.event_name != 'push'
+        run: python scripts/update_daily.py
+      - name: Commit dataset atomically
+        if: github.event_name != 'push'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update rolling HN dataset'
+            # Fail rather than overwrite concurrent human changes. Next run catches up.
+            git push origin HEAD:main
+          fi
+      - name: Stage only published site files
+        run: |
+          mkdir -p _site
+          cp index.html app.js story.js style.css .nojekyll _site/
+          cp -r data vendor _site/
+          if [ -d sample ]; then cp -r sample _site/; fi
+          python -c "from pathlib import Path; n=sum(p.stat().st_size for p in Path('_site').rglob('*') if p.is_file()); print('Published bytes:',n); assert n < 900_000_000, 'Pages safety limit exceeded'"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

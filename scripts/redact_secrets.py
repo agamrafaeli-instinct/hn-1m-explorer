@@ -9,12 +9,22 @@ R=re.compile('|'.join(PATS)); n=0
 def fix(s):
     global n
     out,k=R.subn('[REDACTED-SECRET]',s); n+=k; return out
-src,dst=sys.argv[1],sys.argv[2]; os.makedirs(dst,exist_ok=True)
-for f in sorted(glob.glob(src+'/*.jsonl')):
-    with open(f) as i, open(os.path.join(dst,os.path.basename(f)),'w') as o:
-        for l in i:
-            d=json.loads(l)
-            for k in('text','title','url'):
-                if isinstance(d.get(k),str): d[k]=fix(d[k])
-            o.write(json.dumps(d,separators=(',',':'),ensure_ascii=False)+'\n')
-print('redacted',n)
+def redact_item(raw):
+    """Return a redacted copy using exactly the initial-export patterns."""
+    result=dict(raw)
+    for key in ('text','title','url'):
+        if isinstance(result.get(key),str): result[key]=fix(result[key])
+    return result
+
+def main():
+    src,dst=sys.argv[1],sys.argv[2]; os.makedirs(dst,exist_ok=True)
+    for f in sorted(glob.glob(src+'/*.jsonl')):
+        with open(f) as i, open(os.path.join(dst,os.path.basename(f)),'w') as o:
+            for l in i:
+                d=json.loads(l)
+                for k in('text','title','url'):
+                    if isinstance(d.get(k),str): d[k]=fix(d[k])
+                o.write(json.dumps(d,separators=(',',':'),ensure_ascii=False)+'\n')
+    print('redacted',n)
+
+if __name__ == "__main__": main()
