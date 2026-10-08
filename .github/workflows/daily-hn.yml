@@ -1,6 +1,7 @@
 name: Daily Hacker News update and Pages
 on:
-  # Schedule paused pending owner go-ahead. Enable: 23 2 * * * (UTC).
+  schedule:
+    - cron: '23 2 * * *'  # 09:23 Asia/Bangkok daily
   workflow_dispatch:
 permissions:
   contents: read
