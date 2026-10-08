@@ -96,6 +96,10 @@
       <div class="row"><label>Type<select id="type"><option value="">All</option></select></label><label>Min score<input id="minscore" type="number" min="0" value="0"></label></div>
       <div class="row"><button id="reset" type="button">Reset</button><span id="count"></span></div>
     </div>
+    <div class="card" id="lens"><h3>Center of gravity (for the current filter)</h3>
+      <div class="row"><label>Lens<select id="lens_k"><option value="by">Author</option><option value="domain">Domain</option><option value="word">Title word</option><option value="hour">Hour (UTC)</option><option value="weekday">Weekday</option><option value="month">Month</option><option value="type">Type</option></select></label>
+      <label>Weight<select id="lens_m"><option value="points">Points</option><option value="comments">Comments</option><option value="posts">Posts</option></select></label></div>
+      <div id="lens_out"></div></div>
     <div id="charts">
       <div class="card"><h3>Posts per month</h3><div class="cv"><canvas id="c_month"></canvas></div></div>
       <div class="card"><h3>Score distribution</h3><div class="cv"><canvas id="c_score"></canvas></div></div>

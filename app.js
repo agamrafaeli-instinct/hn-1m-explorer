@@ -117,7 +117,25 @@ function drawList() {
   }).join('');
   $('page').textContent = `${page + 1} / ${pages}`; $('prev').disabled = page === 0; $('next').disabled = page >= pages - 1;
 }
-function refresh() { idx = filter(); $('count').textContent = `${idx.length.toLocaleString()} matching`; drawCharts(); drawList(); }
+const STOPW = new Set('a an the of to in on for and or with is are was how why what my your you we it this that at by from as be do not can new'.split().concat(['i']));
+function lensCalc() {
+  const k = $('lens_k').value, m = $('lens_m').value, g = new Map(), WDN = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], MNN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let tot = 0;
+  for (const i of idx) {
+    const w = m === 'posts' ? 1 : m === 'points' ? D.score[i] : D.comments[i]; let keys;
+    if (k === 'word') keys = new Set((D.title[i].toLowerCase().match(/[a-z][a-z']+/g) || []).filter(x => x.length > 2 && !STOPW.has(x)));
+    else if (k === 'hour' || k === 'weekday' || k === 'month') { const d = new Date(D.time[i] * 1000); keys = [k === 'hour' ? String(d.getUTCHours()).padStart(2, '0') + ':00' : k === 'weekday' ? WDN[(d.getUTCDay() + 6) % 7] : MNN[d.getUTCMonth()]]; }
+    else keys = [D[k === 'by' ? 'by' : k][i]];
+    tot += w; for (const x of keys) if (x) g.set(x, (g.get(x) || 0) + w);
+  }
+  const arr = [...g].sort((a, b) => b[1] - a[1]), n = arr.length, share = f => { const c = Math.max(1, Math.ceil(n * f)); let s = 0; for (let i = 0; i < c; i++) s += arr[i][1]; return tot ? s / tot : 0; };
+  const mx = arr.length ? arr[0][1] : 1, P = v => (100 * v).toFixed(v >= .1 ? 0 : 1) + '%';
+  const cal = ['hour', 'weekday', 'month'].includes(k), rows = cal ? arr.slice().sort((a, b) => a[0] < b[0] ? -1 : 1) : arr.slice(0, 15);
+  $('lens_out').innerHTML = (n ? `<p class="m" style="font-size:14px;color:inherit">${n.toLocaleString()} distinct. Top 1% hold <b>${P(share(.01))}</b> of ${m}, top 10% hold <b>${P(share(.1))}</b>, the single heaviest holds <b>${P(tot ? mx / tot : 0)}</b>.</p>` : '<p class="m">No matches.</p>') +
+    rows.map(r => `<div class="br" style="margin:4px 0"><div class="nm" title="${esc(r[0])}">${esc(r[0])}</div><div class="tr"><div class="fl" style="width:${(70 * r[1] / mx).toFixed(1)}%"></div><span class="vl">${r[1].toLocaleString()} · ${P(tot ? r[1] / tot : 0)}</span></div></div>`).join('');
+}
+['lens_k', 'lens_m'].forEach(id => $(id).addEventListener('input', () => lensCalc()));
+function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('sort').onchange = () => { page = 0; drawList(); };
