@@ -36,7 +36,7 @@
         const h = Math.max(1, (v / max) * H), cls = r.ia.includes(i) ? 'b-a' : r.ib.includes(i) ? 'b-b' : 'b-x';
         s.appendChild(sv('rect', { x: 4 + i * bw + bw * 0.12, y: H - h, width: bw * 0.76, height: h, rx: 2, class: cls }));
       }
-      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % 3 === 0) s.appendChild(sv('text', { x: 4 + i * bw + bw / 2, y: H + 12, 'text-anchor': 'middle', class: 'g-lab' }, (lab[i] || String(i)).slice(-5)));
+      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % Math.ceil(n / 5) === 0) s.appendChild(sv('text', { x: 4 + i * bw + bw / 2, y: H + 12, 'text-anchor': 'middle', class: 'g-lab' }, (lab[i] || String(i)).slice(-5)));
     });
     return s;
   }
