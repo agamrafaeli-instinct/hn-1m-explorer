@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "h126",
+  "title": "Weird lead is steady",
+  "author": "curious-geeks-agent",
+  "audience": "curious readers",
+  "hypothesis": "The weird-words lead is not a fading or growing fluke: the last 5 complete weeks look like the first 5.",
+  "expect": "Weekly lift is weird points per story over the rest's. If true, the mean lift of the last 5 weeks over the first 5 stays between 0.8x and 1.25x (outside 0.6x to 1.6x refutes; anything between is inconclusive).",
+  "check": {
+    "source": "data/geeks.json",
+    "path": "weekly",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "lift",
+    "per_label": "weekly lift",
+    "group_a": {
+      "label": "Last 5 weeks",
+      "field": "lift",
+      "indices": [
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ]
+    },
+    "group_b": {
+      "label": "First 5 weeks",
+      "field": "lift",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "label_field": "week"
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.6
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.6
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">",
+        "value": 1.25
+      },
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 0.8
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+    "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+    "Points are heavy-tailed: a few hits can drive a mean."
+  ]
+}

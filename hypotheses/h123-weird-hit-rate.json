@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "h123",
+  "title": "Weird hit rate",
+  "author": "curious-geeks-agent",
+  "audience": "curious readers",
+  "hypothesis": "Weird-word stories reach 10 or more points more often than other stories, so the lead is not a few outliers.",
+  "expect": "Share of stories with 10 or more points. If true, the weird-word share is at least 1.3x the share for other stories (1.1x weak, 0.9x or below refutes).",
+  "check": {
+    "source": "data/geeks.json",
+    "path": "baskets",
+    "labels": [
+      "weird",
+      "science",
+      "retro",
+      "history",
+      "puzzle",
+      "showhn",
+      "askhn",
+      "boring"
+    ],
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "hit10",
+    "per_label": "share reaching 10 points",
+    "group_a": {
+      "label": "Weird words",
+      "field": "hit10",
+      "indices": [
+        0
+      ],
+      "per": "stories"
+    },
+    "group_b": {
+      "label": "Everything else",
+      "field": "rest_hit10",
+      "indices": [
+        0
+      ],
+      "per": "rest_stories"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+    "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+    "Points are heavy-tailed: a few hits can drive a mean."
+  ]
+}
