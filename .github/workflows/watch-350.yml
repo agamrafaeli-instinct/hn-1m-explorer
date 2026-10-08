@@ -1,0 +1,40 @@
+name: Watch HN stories at 350+ points
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: 'Record current qualifying stories without opening issues'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: watch-350
+  cancel-in-progress: false
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_watch_points
+      - name: Find new 350+ point stories and open issues
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SEED: ${{ inputs.seed }}
+        run: python scripts/watch_points.py
+      - name: Save state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add alerts/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update 350-point alerts'
+            for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
+          fi
