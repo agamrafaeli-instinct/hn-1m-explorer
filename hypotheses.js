@@ -35,7 +35,7 @@
   function render(card, r) {
     const a = el('article', 'hyp ' + r.verdict);
     const top = el('div', 'hyp-top'); top.appendChild(el('span', 'hyp-id', card.id));
-    top.appendChild(el('span', 'hyp-badge', LABEL[r.verdict] + ' \u00b7 ' + r.confidence)); a.appendChild(top);
+    top.appendChild(el('span', 'hyp-badge', r.verdict === 'inconclusive' ? 'Inconclusive' : LABEL[r.verdict] + ' \u00b7 ' + r.confidence)); a.appendChild(top);
     a.appendChild(el('h3', '', card.title));
     a.appendChild(el('p', 'hyp-q', card.hypothesis));
     const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'If true: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); a.appendChild(ex);
