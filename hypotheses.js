@@ -55,7 +55,7 @@
       k.group_a.label + ' ' + fmtN(r.mean_a, k) + ' vs ' + k.group_b.label + ' ' + fmtN(r.mean_b, k) + ' (' + (k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'avg')) + '), ratio ' + fmt(r.value) + (k.unit || '')));
     a.appendChild(meas);
     a.appendChild(gauge(card, r)); a.appendChild(bars(card, r));
-    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(r.split ? (k.legend_a || 'Matching stories') : k.group_a.label)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(r.split ? (k.legend_b || 'Everything else') : k.group_b.label)); a.appendChild(lg);
+    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode((r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''))) ? (k.legend_a || 'Matching stories') : k.group_a.label)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode((r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''))) ? (k.legend_b || 'Everything else') : k.group_b.label)); a.appendChild(lg);
     if (card.caveats && card.caveats.length) {
       const d = el('details', 'pts sm'); d.appendChild(el('summary', '', 'Caveats'));
       const box = el('div'); card.caveats.forEach(t => box.appendChild(el('p', '', t))); d.appendChild(box); a.appendChild(d);
