@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "id": "h006",
+  "title": "Quiet days pay the same",
+  "author": "agam",
+  "hypothesis": "Weekends have fewer posts but the same appetite: a weekend day earns at least 90% of the points a weekday does.",
+  "expect": "If true, average points per day on Sat-Sun should be at least 0.9x the Mon-Fri average (below 0.8x refutes it).",
+  "check": {
+    "source": "data/summary.json",
+    "path": "concentration.cyclic.weekday",
+    "field": "points",
+    "normalize": "per_weekday_occurrence",
+    "labels": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "group_a": {
+      "label": "Weekend",
+      "indices": [
+        5,
+        6
+      ]
+    },
+    "group_b": {
+      "label": "Weekdays",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x"
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 0.9
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.8
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Points are summed over items that have a score (stories), so this is points per day, not per post.",
+    "Weekdays are UTC. 11-week window."
+  ]
+}
