@@ -30,7 +30,7 @@ One JSON file per hypothesis in `hypotheses/`, plus its file name (no `.json`) l
 - Write the verdict thresholds before looking at the result, in the same PR.
 - Include a refuting rule. A card that cannot fail is rejected.
 - Text is shown as plain text. Links and markup are not rendered.
-- To add a card: add the JSON file, open a PR (the published `index.json` is generated from the file names at deploy time, so do not edit it). Merge to master publishes it.
+- To add a card: add the JSON file, open a PR (the published `index.json` is generated from the file names at deploy time, so do not edit it). It publishes on the next deploy run after merge.
 - New stats or data sources need a code change to `hyp-eval.js` (separate PR).
 
 ## Check locally
