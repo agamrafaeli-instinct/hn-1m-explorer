@@ -1,0 +1,536 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-08T15:25:13.782040+00:00",
+  "total_rows": 1000000,
+  "columns": [
+    {
+      "name": "id",
+      "type": "integer",
+      "nullable": false,
+      "description": "HN item ID"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "nullable": true,
+      "description": "HN item type"
+    },
+    {
+      "name": "by",
+      "type": "string",
+      "nullable": true,
+      "description": "Author handle"
+    },
+    {
+      "name": "time",
+      "type": "integer",
+      "nullable": true,
+      "description": "Unix timestamp in UTC seconds"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "nullable": true,
+      "description": "Title as returned by source"
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "nullable": true,
+      "description": "External URL"
+    },
+    {
+      "name": "domain",
+      "type": "string",
+      "nullable": true,
+      "description": "Lowercase URL hostname, leading www. removed"
+    },
+    {
+      "name": "score",
+      "type": "integer",
+      "nullable": true,
+      "description": "Score at collection time"
+    },
+    {
+      "name": "descendants",
+      "type": "integer",
+      "nullable": true,
+      "description": "Comment count at collection time"
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "nullable": true,
+      "description": "Full source HTML text, untrusted; render as text, not HTML"
+    },
+    {
+      "name": "dead",
+      "type": "boolean",
+      "nullable": false,
+      "description": "1 if dead, otherwise 0"
+    },
+    {
+      "name": "deleted",
+      "type": "boolean",
+      "nullable": false,
+      "description": "1 if deleted, otherwise 0"
+    }
+  ],
+  "order": "time DESC, id DESC; missing time last",
+  "chunk_target_bytes": 8388608,
+  "csv": {
+    "encoding": "UTF-8",
+    "delimiter": ",",
+    "quote": "\"",
+    "line_ending": "CRLF",
+    "header": true,
+    "null": "",
+    "boolean_values": [
+      0,
+      1
+    ]
+  },
+  "chunks": [
+    {
+      "path": "data/posts-00001.csv",
+      "rows": 25411,
+      "bytes": 8388435,
+      "min_id": 49981236,
+      "max_id": 50006646,
+      "min_time": 1791306283,
+      "max_time": 1791471606,
+      "sha256": "f5fb70fe592169a4dab70ce8815d6d5a37410d807da18b9ec5233937a5db5df1"
+    },
+    {
+      "path": "data/posts-00002.csv",
+      "rows": 24196,
+      "bytes": 8388525,
+      "min_id": 49957040,
+      "max_id": 49981235,
+      "min_time": 1791142351,
+      "max_time": 1791306275,
+      "sha256": "91cd0d3c0cb3a070d5662f50da13561aa3448a7e2adc79ffb7e19becdc2f5f09"
+    },
+    {
+      "path": "data/posts-00003.csv",
+      "rows": 23564,
+      "bytes": 8388311,
+      "min_id": 49933476,
+      "max_id": 49957039,
+      "min_time": 1790948861,
+      "max_time": 1791142351,
+      "sha256": "a77a746960bc0e5231a549eed96f7ab2873d11f1e80a7611b343eacbe6afae88"
+    },
+    {
+      "path": "data/posts-00004.csv",
+      "rows": 23320,
+      "bytes": 8388043,
+      "min_id": 49910156,
+      "max_id": 49933475,
+      "min_time": 1790781658,
+      "max_time": 1790948837,
+      "sha256": "80f5332acb7aace8fbad36d0b2f15953164bcb5c52763923365c6b7960b803ce"
+    },
+    {
+      "path": "data/posts-00005.csv",
+      "rows": 25009,
+      "bytes": 8387632,
+      "min_id": 49885147,
+      "max_id": 49910155,
+      "min_time": 1790633352,
+      "max_time": 1790781655,
+      "sha256": "e7878ba388bba7b2c808637ad53573cdcd4b8cb583c52a890d6c259841c9ef17"
+    },
+    {
+      "path": "data/posts-00006.csv",
+      "rows": 23791,
+      "bytes": 8388457,
+      "min_id": 49861356,
+      "max_id": 49885146,
+      "min_time": 1790463241,
+      "max_time": 1790633344,
+      "sha256": "0a45592e96aa4ac6c5efe95756424784a36e2e929518804eeeb6a9cf0cf6a458"
+    },
+    {
+      "path": "data/posts-00007.csv",
+      "rows": 23852,
+      "bytes": 8388125,
+      "min_id": 49837504,
+      "max_id": 49861355,
+      "min_time": 1790288309,
+      "max_time": 1790463236,
+      "sha256": "484d1dfa265df383dda4f694e1debd8e917b2c562decb94b0bb15099be6769f0"
+    },
+    {
+      "path": "data/posts-00008.csv",
+      "rows": 24287,
+      "bytes": 8388346,
+      "min_id": 49813217,
+      "max_id": 49837503,
+      "min_time": 1790152592,
+      "max_time": 1790288300,
+      "sha256": "25b99d2303c9fbab5b8c285c037e241b97737ca78d6f353ba4f4c96713e4b2d6"
+    },
+    {
+      "path": "data/posts-00009.csv",
+      "rows": 24217,
+      "bytes": 8388501,
+      "min_id": 49789000,
+      "max_id": 49813216,
+      "min_time": 1790006495,
+      "max_time": 1790152579,
+      "sha256": "7a63983c7dec8b228e5bc376501124cccb684194f761dd48df235d2a22aff6f4"
+    },
+    {
+      "path": "data/posts-00010.csv",
+      "rows": 24380,
+      "bytes": 8388568,
+      "min_id": 49764620,
+      "max_id": 49788999,
+      "min_time": 1789807640,
+      "max_time": 1790006495,
+      "sha256": "737aa1dfd23eaa4c5396bc58d7c9fd04a77e1d7b9e093ac93a53047ae27db0ae"
+    },
+    {
+      "path": "data/posts-00011.csv",
+      "rows": 24608,
+      "bytes": 8387962,
+      "min_id": 49740012,
+      "max_id": 49764619,
+      "min_time": 1789649559,
+      "max_time": 1789807638,
+      "sha256": "0f6a4a95ab994b3d97803e0a2fe81bf880d00191613d00661e34e6ff5cbef13a"
+    },
+    {
+      "path": "data/posts-00012.csv",
+      "rows": 24222,
+      "bytes": 8388375,
+      "min_id": 49715790,
+      "max_id": 49740011,
+      "min_time": 1789493212,
+      "max_time": 1789649557,
+      "sha256": "2ae46f06fb872c062439c1eb8e11a1a68ed2af2d27e0e0f2ab824db73170201c"
+    },
+    {
+      "path": "data/posts-00013.csv",
+      "rows": 24848,
+      "bytes": 8388207,
+      "min_id": 49690942,
+      "max_id": 49715789,
+      "min_time": 1789351097,
+      "max_time": 1789493212,
+      "sha256": "0b499d0a6d12a5df0c054595101d46ef8762fb95f3c1e0f6ba7bce4a7fc287b5"
+    },
+    {
+      "path": "data/posts-00014.csv",
+      "rows": 23313,
+      "bytes": 8385017,
+      "min_id": 49667629,
+      "max_id": 49690941,
+      "min_time": 1789175924,
+      "max_time": 1789351096,
+      "sha256": "273cec54361781ce8e9abb00bedf8094537dc6f745dba493c7aef4da18ccd9cd"
+    },
+    {
+      "path": "data/posts-00015.csv",
+      "rows": 24403,
+      "bytes": 8388375,
+      "min_id": 49643226,
+      "max_id": 49667628,
+      "min_time": 1789046178,
+      "max_time": 1789175916,
+      "sha256": "af89e2a79484b23339fb987900cea658a51f80f8f3aa0ff59a1429ffbcdd5224"
+    },
+    {
+      "path": "data/posts-00016.csv",
+      "rows": 24587,
+      "bytes": 8388608,
+      "min_id": 49618639,
+      "max_id": 49643225,
+      "min_time": 1788910240,
+      "max_time": 1789046177,
+      "sha256": "faabee583fa92cc59e263b54ea6afaf9403b974731055a2814db3b51cb22162b"
+    },
+    {
+      "path": "data/posts-00017.csv",
+      "rows": 24306,
+      "bytes": 8388070,
+      "min_id": 49594333,
+      "max_id": 49618638,
+      "min_time": 1788760054,
+      "max_time": 1788910232,
+      "sha256": "57d4c55d96254d6683fa869c4f7e43efb139ca920509a953ca70dfa602c00d17"
+    },
+    {
+      "path": "data/posts-00018.csv",
+      "rows": 23945,
+      "bytes": 8388431,
+      "min_id": 49570388,
+      "max_id": 49594332,
+      "min_time": 1788556976,
+      "max_time": 1788760051,
+      "sha256": "939583809a2b83ebeb99894a2c5399cc2777ca4ed7b72091bc388f753ca9336e"
+    },
+    {
+      "path": "data/posts-00019.csv",
+      "rows": 25374,
+      "bytes": 8388592,
+      "min_id": 49545014,
+      "max_id": 49570387,
+      "min_time": 1788399960,
+      "max_time": 1788556974,
+      "sha256": "690c86bc61f78088a419fb18b2ed8906584145c76fc447c4b73c5d3773eac13b"
+    },
+    {
+      "path": "data/posts-00020.csv",
+      "rows": 22925,
+      "bytes": 8388560,
+      "min_id": 49522089,
+      "max_id": 49545013,
+      "min_time": 1788271006,
+      "max_time": 1788399955,
+      "sha256": "830d9fdf6a734b71a2f43bd5889653d409446ac305583554d358e8ab2a4cb106"
+    },
+    {
+      "path": "data/posts-00021.csv",
+      "rows": 24503,
+      "bytes": 8386166,
+      "min_id": 49497586,
+      "max_id": 49522088,
+      "min_time": 1788087575,
+      "max_time": 1788270998,
+      "sha256": "6258527cf7924329fabc7892cdcac8235abfce0eec53fb229d8d1b42a18ced3f"
+    },
+    {
+      "path": "data/posts-00022.csv",
+      "rows": 24788,
+      "bytes": 8388558,
+      "min_id": 49472798,
+      "max_id": 49497585,
+      "min_time": 1787875372,
+      "max_time": 1788087565,
+      "sha256": "f6a5807df03b94d4fae83628e51cf4a45d7f5b71c7790dc0b675b70fa4407d94"
+    },
+    {
+      "path": "data/posts-00023.csv",
+      "rows": 25029,
+      "bytes": 8388035,
+      "min_id": 49447769,
+      "max_id": 49472797,
+      "min_time": 1787747129,
+      "max_time": 1787875369,
+      "sha256": "e45ec1af18218d53b4495875481598a8e2711a7244a2e80496814d07d65a0a09"
+    },
+    {
+      "path": "data/posts-00024.csv",
+      "rows": 25100,
+      "bytes": 8385181,
+      "min_id": 49422669,
+      "max_id": 49447768,
+      "min_time": 1787590725,
+      "max_time": 1787747125,
+      "sha256": "f75a39674ab7ef09d880bfe6ec958045b0a6855591b0ad8f2913feb75186227e"
+    },
+    {
+      "path": "data/posts-00025.csv",
+      "rows": 24190,
+      "bytes": 8387695,
+      "min_id": 49398479,
+      "max_id": 49422668,
+      "min_time": 1787396676,
+      "max_time": 1787590723,
+      "sha256": "6bfbeb9cebd830708b6f57a4db3e30c45ede5cb185f07fd1542fbfc25a8b1325"
+    },
+    {
+      "path": "data/posts-00026.csv",
+      "rows": 23599,
+      "bytes": 8387345,
+      "min_id": 49374880,
+      "max_id": 49398478,
+      "min_time": 1787235332,
+      "max_time": 1787396668,
+      "sha256": "3fc1fab1cbc6aa8f0f07787a544de4504a5c619df8f8dd45468c35ed425d02b3"
+    },
+    {
+      "path": "data/posts-00027.csv",
+      "rows": 23950,
+      "bytes": 8388418,
+      "min_id": 49350930,
+      "max_id": 49374879,
+      "min_time": 1787079884,
+      "max_time": 1787235329,
+      "sha256": "368df69c5fe87ceac89a8260a38f3e490ef9fc4e84417ae5c44111f3e3fda863"
+    },
+    {
+      "path": "data/posts-00028.csv",
+      "rows": 24250,
+      "bytes": 8388278,
+      "min_id": 49326680,
+      "max_id": 49350929,
+      "min_time": 1786942458,
+      "max_time": 1787079882,
+      "sha256": "976b4fc499715a8ea69860a142c6f0b10759a0bceff5a287bcb3be95f7bc0971"
+    },
+    {
+      "path": "data/posts-00029.csv",
+      "rows": 24421,
+      "bytes": 8388487,
+      "min_id": 49302259,
+      "max_id": 49326679,
+      "min_time": 1786730019,
+      "max_time": 1786942448,
+      "sha256": "998d39331d1fff9f1f70a76be5e4e47a8b8452890fdb88960cff442bd2640cb7"
+    },
+    {
+      "path": "data/posts-00030.csv",
+      "rows": 24866,
+      "bytes": 8388342,
+      "min_id": 49277393,
+      "max_id": 49302258,
+      "min_time": 1786562784,
+      "max_time": 1786730016,
+      "sha256": "1837e3d34ea56198fb6ad09de40d5a7053fd1bcf0f88d80ce4cb1d6d4cac8da0"
+    },
+    {
+      "path": "data/posts-00031.csv",
+      "rows": 24925,
+      "bytes": 8388509,
+      "min_id": 49252468,
+      "max_id": 49277392,
+      "min_time": 1786413698,
+      "max_time": 1786562774,
+      "sha256": "79f8176734fb62a93a093d61c54bf6e20b0fcde48a282647ba292ee2734308f0"
+    },
+    {
+      "path": "data/posts-00032.csv",
+      "rows": 23183,
+      "bytes": 8388476,
+      "min_id": 49229285,
+      "max_id": 49252467,
+      "min_time": 1786261072,
+      "max_time": 1786413698,
+      "sha256": "1f39eafeb58ca86162d33f53392bf9afdb4029d37caec1b29ba85246bd3dc340"
+    },
+    {
+      "path": "data/posts-00033.csv",
+      "rows": 24190,
+      "bytes": 8388346,
+      "min_id": 49205095,
+      "max_id": 49229284,
+      "min_time": 1786067860,
+      "max_time": 1786261072,
+      "sha256": "e075c702460de9b96b6d3c93c552498702eff9cae8fb794964d24f9fd74fb3f9"
+    },
+    {
+      "path": "data/posts-00034.csv",
+      "rows": 24434,
+      "bytes": 8388575,
+      "min_id": 49180661,
+      "max_id": 49205094,
+      "min_time": 1785924142,
+      "max_time": 1786067848,
+      "sha256": "f4b8f1716fc9932724ccb9e9758f674c14150cc69d80989cf55b11b36b3acede"
+    },
+    {
+      "path": "data/posts-00035.csv",
+      "rows": 22898,
+      "bytes": 8388459,
+      "min_id": 49157763,
+      "max_id": 49180660,
+      "min_time": 1785773715,
+      "max_time": 1785924141,
+      "sha256": "c29a714bbb2305375e6e6d080bed13e2c47cda2bc5048a1d008a6ff364dff96a"
+    },
+    {
+      "path": "data/posts-00036.csv",
+      "rows": 23679,
+      "bytes": 8388599,
+      "min_id": 49134084,
+      "max_id": 49157762,
+      "min_time": 1785589403,
+      "max_time": 1785773710,
+      "sha256": "f1168312070d1acf559a5973e5641314ed56f6ef04fe897402a17691bd5f4cfe"
+    },
+    {
+      "path": "data/posts-00037.csv",
+      "rows": 23945,
+      "bytes": 8387721,
+      "min_id": 49110139,
+      "max_id": 49134083,
+      "min_time": 1785419943,
+      "max_time": 1785589385,
+      "sha256": "b095048f5a600fdcc9de9e8a08162f8f384ec7ff758eef3594cb24d5d114e0cc"
+    },
+    {
+      "path": "data/posts-00038.csv",
+      "rows": 24125,
+      "bytes": 8388336,
+      "min_id": 49086014,
+      "max_id": 49110138,
+      "min_time": 1785254889,
+      "max_time": 1785419940,
+      "sha256": "907f1e75fae99fbe4efc576394d756b8932719389e5400279993d15383ad1fdc"
+    },
+    {
+      "path": "data/posts-00039.csv",
+      "rows": 24140,
+      "bytes": 8388374,
+      "min_id": 49061874,
+      "max_id": 49086013,
+      "min_time": 1785096034,
+      "max_time": 1785254881,
+      "sha256": "a08ac8b80b54352593d37444023f020d611640d2b0d198e004143809e23e71c1"
+    },
+    {
+      "path": "data/posts-00040.csv",
+      "rows": 24181,
+      "bytes": 8386147,
+      "min_id": 49037693,
+      "max_id": 49061873,
+      "min_time": 1784909310,
+      "max_time": 1785096025,
+      "sha256": "1a945f2c35fe0acb9ec34dc3e372e0ff9ac5b23664da6a4cd05ef52152bbb86f"
+    },
+    {
+      "path": "data/posts-00041.csv",
+      "rows": 24118,
+      "bytes": 8388529,
+      "min_id": 49013575,
+      "max_id": 49037692,
+      "min_time": 1784755104,
+      "max_time": 1784909308,
+      "sha256": "e009006ebd798a8622aad6732184ccd7995fbb64affdc3d3b8c804a69ab6d42a"
+    },
+    {
+      "path": "data/posts-00042.csv",
+      "rows": 6928,
+      "bytes": 2479261,
+      "min_id": 49006647,
+      "max_id": 49013574,
+      "min_time": 1784727603,
+      "max_time": 1784755091,
+      "sha256": "174c016e12ba4c1ba637ebba035c78cf390ff309fb6323dda860b185dde5b363"
+    }
+  ],
+  "summary_path": "data/summary.json",
+  "source": {
+    "name": "Hacker News official Firebase API",
+    "api": "https://hacker-news.firebaseio.com/v0/item/{id}.json",
+    "maxitem_at_cutoff": 50006646,
+    "id_range": [
+      49006647,
+      50006646
+    ],
+    "selection": "The newest 1,000,000 item IDs (stories, comments, jobs, polls, pollopts) by consecutive ID ending at maxitem; every id fetched, none missing/null/errored",
+    "item_types_included": [
+      "story",
+      "comment",
+      "job",
+      "poll",
+      "pollopt"
+    ],
+    "retrieved_at_utc": "2026-10-08T15:00:37Z to 2026-10-08T15:09:10Z",
+    "completeness_limitations": "Snapshot: score, descendants and dead/deleted flags are as of fetch time; very recent items may later change. Items are by ID, so 'posts' includes comments (about 84% comments). Credential-shaped strings (4 found: API keys etc.) were replaced with [REDACTED-SECRET] in text fields before publishing (scripts/redact_secrets.py); all else is verbatim."
+  },
+  "total_csv_bytes": 346388977
+}
