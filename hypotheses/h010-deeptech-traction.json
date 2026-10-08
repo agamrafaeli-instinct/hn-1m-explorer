@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "h010",
+  "title": "Deep tech punches above its weight",
+  "author": "agam",
+  "audience": "deep-tech investors",
+  "hypothesis": "Deep-tech topics (quantum, fusion, photonics, chips, batteries, gene editing) earn clearly more HN attention per story than the rest.",
+  "expect": "If true, deep-tech stories should average at least 1.3x the points per story of all other stories, week by week on average (1.1x counts as weak, below 0.9x refutes it).",
+  "check": {
+    "source": "data/summary.json",
+    "path": "terms.weekly",
+    "label_field": "week",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "deeptech_points",
+    "per_label": "points per story",
+    "group_a": {
+      "label": "Deep tech",
+      "field": "deeptech_points",
+      "per": "deeptech_stories",
+      "indices": "all"
+    },
+    "group_b": {
+      "label": "Everything else",
+      "field": "deeptech_rest_points",
+      "per": "deeptech_rest_stories",
+      "indices": "all"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "This tests traction on HN, not lead time over the mainstream. Ten weeks cannot show who was early.",
+    "Points are skewed: one hit story can move a week. Weekly means are shown, not medians.",
+    "Topic list is title keywords chosen in advance (scripts/terms.py); other deep-tech stories are missed."
+  ]
+}
