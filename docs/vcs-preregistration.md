@@ -1,0 +1,15 @@
+# SUPERSEDED BY DATA-LED DISCOVERY PLAN
+Original basket analysis retained for provenance only. Not the final card selection.
+
+# VC deeper tests frozen before new computations
+At 01:24 Bangkok, October 9, 2026. Existing H010 0.94x known. This is a prospective extension of a known headline, not an independent blind replication.
+Snapshot cards h100-h109, complete Monday UTC weeks only, live non-deleted stories, same exclusions as H010.
+100 Quantum earns premium; 101 Energy physics earns premium; 102 Chips earns premium; 103 Batteries earn premium; 104 Bio earns premium; 105 Robotics earns premium; 106 Space earns premium. Each: mean weekly points/story sector vs all non-sector stories: >=1.3 strong support, >=1.1 weak, <=0.9 refuted, otherwise inconclusive. Sector overlap allowed; no sum-as-unique interpretation.
+107 Expanded deep-tech draws more discussion: weekly descendants/story basket vs rest. Same 1.3/1.1/0.9 thresholds. Actual story descendants, not global comment keyword counts.
+108 Attention premium survives removing hit stories: drop top 1% (ceil, global across snapshot) of deep-tech stories by points then recompute weekly points/story vs unchanged non-basket. Same thresholds. No claim about mainstream timing.
+109 Deep-tech points are spread across domains: per-week points outside globally top 5 deep-tech domains / points inside those 5; >=1.5 strong support, >=1 weak support (at least 50% outside), <=2/3 refuted (at least 60% inside), otherwise inconclusive. Blank domains separately listed and excluded from ranked domains, remain in outside aggregate.
+Sectors: quantum/qubit; fusion/fission/reactor/tokamak/superconduct; chip/semiconductor/RISC-V/lithography/FPGA/ASIC/neuromorphic/photonics; battery/batteries/solid-state/perovskite; CRISPR/gene editing/synthetic biology/mRNA/biotech; robot/robots/robotics/lidar; space/rocket/SpaceX/satellite. Regex whole-word with case-insensitive stem alternatives as documented in script. Expanded basket union.
+Predefined history cards h110-h118 when new data arrive: each sector's last six complete months vs first six complete months share of all story mentions. >=1.5 strong growth, >=1.1 weak growth, <=0.9 refuted. Freeze matching to provider definitions; if sector absent don't fabricate. Partial months excluded. Full-history normalized traction, not adoption.
+119 Early attention vs later HN volume only: exploratory lag output, not causal/mainstream evidence. Do not force a ratio into evaluator if undefined or coverage insufficient; report blocked rather than manufacture a card.
+
+Proxy amendment after first exploratory run: plain space admitted computing and storage stories; plain chip admitted non-electronics. h102/h106 and basket h107-h109 are therefore exploratory proxy revisions, NOT blind preregistration. Thresholds unchanged. Chips now computer chip(s), microchip(s), chipset(s), semiconductor, RISC-V, lithography, FPGA, ASIC, neuromorphic, photonics. Aerospace now aerospace, spaceflight, spacecraft, SpaceX, rocket(s), satellite(s), orbit, orbital, NASA, lunar, astronaut(s), telescope(s).

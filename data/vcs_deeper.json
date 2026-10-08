@@ -1,0 +1,1134 @@
+{
+  "weekly": [
+    {
+      "week": "2026-07-27",
+      "total_stories": 7241,
+      "datacenters_rest_points": 132165,
+      "datacenters_rest_comments": 68057,
+      "datacenters_rest_stories": 7165,
+      "gpu_rest_points": 132044,
+      "gpu_rest_comments": 68174,
+      "gpu_rest_stories": 7149,
+      "neurobio_rest_points": 132931,
+      "neurobio_rest_comments": 68492,
+      "neurobio_rest_stories": 7235,
+      "aerospace_rest_points": 132493,
+      "aerospace_rest_comments": 68345,
+      "aerospace_rest_stories": 7185,
+      "solar_rest_points": 132459,
+      "solar_rest_comments": 67999,
+      "solar_rest_stories": 7225,
+      "robotics_rest_points": 132074,
+      "robotics_rest_comments": 67869,
+      "robotics_rest_stories": 7200,
+      "union_rest_points": 129419,
+      "union_rest_comments": 66474,
+      "union_rest_stories": 6965,
+      "robotics_points": 890,
+      "robotics_comments": 626,
+      "robotics_stories": 41,
+      "union_points": 3545,
+      "union_comments": 2021,
+      "union_stories": 276,
+      "trimmed_points": 3545,
+      "trimmed_comments": 2021,
+      "trimmed_stories": 276,
+      "inside5_points": 427,
+      "inside5_comments": 311,
+      "inside5_stories": 22,
+      "aerospace_points": 471,
+      "aerospace_comments": 150,
+      "aerospace_stories": 56,
+      "outside5_points": 3118,
+      "outside5_comments": 1710,
+      "outside5_stories": 254,
+      "neurobio_points": 33,
+      "neurobio_comments": 3,
+      "neurobio_stories": 6,
+      "gpu_points": 920,
+      "gpu_comments": 321,
+      "gpu_stories": 92,
+      "datacenters_points": 799,
+      "datacenters_comments": 438,
+      "datacenters_stories": 76,
+      "solar_points": 505,
+      "solar_comments": 496,
+      "solar_stories": 16
+    },
+    {
+      "week": "2026-08-03",
+      "total_stories": 6944,
+      "datacenters_rest_points": 127224,
+      "datacenters_rest_comments": 70338,
+      "datacenters_rest_stories": 6854,
+      "gpu_rest_points": 127801,
+      "gpu_rest_comments": 71552,
+      "gpu_rest_stories": 6900,
+      "neurobio_rest_points": 128621,
+      "neurobio_rest_comments": 71740,
+      "neurobio_rest_stories": 6941,
+      "aerospace_rest_points": 127002,
+      "aerospace_rest_comments": 71261,
+      "aerospace_rest_stories": 6859,
+      "solar_rest_points": 127781,
+      "solar_rest_comments": 70957,
+      "solar_rest_stories": 6927,
+      "robotics_rest_points": 128502,
+      "robotics_rest_comments": 71633,
+      "robotics_rest_stories": 6913,
+      "union_rest_points": 123771,
+      "union_rest_comments": 68776,
+      "union_rest_stories": 6678,
+      "aerospace_points": 1634,
+      "aerospace_comments": 480,
+      "aerospace_stories": 85,
+      "union_points": 4865,
+      "union_comments": 2965,
+      "union_stories": 266,
+      "trimmed_points": 4865,
+      "trimmed_comments": 2965,
+      "trimmed_stories": 266,
+      "outside5_points": 3912,
+      "outside5_comments": 2712,
+      "outside5_stories": 245,
+      "gpu_points": 835,
+      "gpu_comments": 189,
+      "gpu_stories": 44,
+      "datacenters_points": 1412,
+      "datacenters_comments": 1403,
+      "datacenters_stories": 90,
+      "inside5_points": 953,
+      "inside5_comments": 253,
+      "inside5_stories": 21,
+      "solar_points": 855,
+      "solar_comments": 784,
+      "solar_stories": 17,
+      "neurobio_points": 15,
+      "neurobio_comments": 1,
+      "neurobio_stories": 3,
+      "robotics_points": 134,
+      "robotics_comments": 108,
+      "robotics_stories": 31
+    },
+    {
+      "week": "2026-08-10",
+      "total_stories": 7068,
+      "datacenters_rest_points": 129315,
+      "datacenters_rest_comments": 69677,
+      "datacenters_rest_stories": 7017,
+      "gpu_rest_points": 126925,
+      "gpu_rest_comments": 68474,
+      "gpu_rest_stories": 6976,
+      "neurobio_rest_points": 129913,
+      "neurobio_rest_comments": 70030,
+      "neurobio_rest_stories": 7057,
+      "aerospace_rest_points": 129335,
+      "aerospace_rest_comments": 69618,
+      "aerospace_rest_stories": 7017,
+      "solar_rest_points": 129963,
+      "solar_rest_comments": 70038,
+      "solar_rest_stories": 7061,
+      "robotics_rest_points": 129385,
+      "robotics_rest_comments": 69845,
+      "robotics_rest_stories": 7040,
+      "union_rest_points": 124901,
+      "union_rest_comments": 67450,
+      "union_rest_stories": 6833,
+      "gpu_points": 3077,
+      "gpu_comments": 1579,
+      "gpu_stories": 92,
+      "union_points": 5101,
+      "union_comments": 2603,
+      "union_stories": 235,
+      "trimmed_points": 5101,
+      "trimmed_comments": 2603,
+      "trimmed_stories": 235,
+      "outside5_points": 5009,
+      "outside5_comments": 2591,
+      "outside5_stories": 219,
+      "robotics_points": 617,
+      "robotics_comments": 208,
+      "robotics_stories": 28,
+      "inside5_points": 92,
+      "inside5_comments": 12,
+      "inside5_stories": 16,
+      "datacenters_points": 687,
+      "datacenters_comments": 376,
+      "datacenters_stories": 51,
+      "aerospace_points": 667,
+      "aerospace_comments": 435,
+      "aerospace_stories": 51,
+      "neurobio_points": 89,
+      "neurobio_comments": 23,
+      "neurobio_stories": 11,
+      "solar_points": 39,
+      "solar_comments": 15,
+      "solar_stories": 7
+    },
+    {
+      "week": "2026-08-17",
+      "total_stories": 7026,
+      "datacenters_rest_points": 131544,
+      "datacenters_rest_comments": 68134,
+      "datacenters_rest_stories": 6982,
+      "gpu_rest_points": 130442,
+      "gpu_rest_comments": 68338,
+      "gpu_rest_stories": 6952,
+      "neurobio_rest_points": 131919,
+      "neurobio_rest_comments": 68658,
+      "neurobio_rest_stories": 7014,
+      "aerospace_rest_points": 131673,
+      "aerospace_rest_comments": 68673,
+      "aerospace_rest_stories": 6965,
+      "solar_rest_points": 132060,
+      "solar_rest_comments": 68758,
+      "solar_rest_stories": 7009,
+      "robotics_rest_points": 131942,
+      "robotics_rest_comments": 68627,
+      "robotics_rest_stories": 6971,
+      "union_rest_points": 128761,
+      "union_rest_comments": 67333,
+      "union_rest_stories": 6766,
+      "gpu_points": 1729,
+      "gpu_comments": 436,
+      "gpu_stories": 74,
+      "union_points": 3410,
+      "union_comments": 1441,
+      "union_stories": 260,
+      "trimmed_points": 3410,
+      "trimmed_comments": 1441,
+      "trimmed_stories": 260,
+      "inside5_points": 78,
+      "inside5_comments": 11,
+      "inside5_stories": 18,
+      "robotics_points": 229,
+      "robotics_comments": 147,
+      "robotics_stories": 55,
+      "outside5_points": 3332,
+      "outside5_comments": 1430,
+      "outside5_stories": 242,
+      "datacenters_points": 627,
+      "datacenters_comments": 640,
+      "datacenters_stories": 44,
+      "neurobio_points": 252,
+      "neurobio_comments": 116,
+      "neurobio_stories": 12,
+      "aerospace_points": 498,
+      "aerospace_comments": 101,
+      "aerospace_stories": 61,
+      "solar_points": 111,
+      "solar_comments": 16,
+      "solar_stories": 17
+    },
+    {
+      "week": "2026-08-24",
+      "total_stories": 7150,
+      "datacenters_rest_points": 140905,
+      "datacenters_rest_comments": 73184,
+      "datacenters_rest_stories": 7070,
+      "gpu_rest_points": 138164,
+      "gpu_rest_comments": 72560,
+      "gpu_rest_stories": 7028,
+      "neurobio_rest_points": 142072,
+      "neurobio_rest_comments": 74275,
+      "neurobio_rest_stories": 7140,
+      "aerospace_rest_points": 140698,
+      "aerospace_rest_comments": 73576,
+      "aerospace_rest_stories": 7101,
+      "solar_rest_points": 142028,
+      "solar_rest_comments": 74210,
+      "solar_rest_stories": 7138,
+      "robotics_rest_points": 141880,
+      "robotics_rest_comments": 74189,
+      "robotics_rest_stories": 7096,
+      "union_rest_points": 135141,
+      "union_rest_comments": 70611,
+      "union_rest_stories": 6833,
+      "neurobio_points": 57,
+      "neurobio_comments": 6,
+      "neurobio_stories": 10,
+      "union_points": 6988,
+      "union_comments": 3670,
+      "union_stories": 317,
+      "trimmed_points": 6988,
+      "trimmed_comments": 3670,
+      "trimmed_stories": 317,
+      "outside5_points": 6738,
+      "outside5_comments": 3613,
+      "outside5_stories": 288,
+      "gpu_points": 3965,
+      "gpu_comments": 1721,
+      "gpu_stories": 122,
+      "inside5_points": 250,
+      "inside5_comments": 57,
+      "inside5_stories": 29,
+      "datacenters_points": 1224,
+      "datacenters_comments": 1097,
+      "datacenters_stories": 80,
+      "robotics_points": 249,
+      "robotics_comments": 92,
+      "robotics_stories": 54,
+      "aerospace_points": 1431,
+      "aerospace_comments": 705,
+      "aerospace_stories": 49,
+      "solar_points": 101,
+      "solar_comments": 71,
+      "solar_stories": 12
+    },
+    {
+      "week": "2026-08-31",
+      "total_stories": 7260,
+      "datacenters_rest_points": 133475,
+      "datacenters_rest_comments": 70521,
+      "datacenters_rest_stories": 7211,
+      "gpu_rest_points": 132798,
+      "gpu_rest_comments": 70500,
+      "gpu_rest_stories": 7178,
+      "neurobio_rest_points": 133908,
+      "neurobio_rest_comments": 70977,
+      "neurobio_rest_stories": 7256,
+      "aerospace_rest_points": 131955,
+      "aerospace_rest_comments": 70077,
+      "aerospace_rest_stories": 7210,
+      "solar_rest_points": 133726,
+      "solar_rest_comments": 70861,
+      "solar_rest_stories": 7243,
+      "robotics_rest_points": 133121,
+      "robotics_rest_comments": 70519,
+      "robotics_rest_stories": 7223,
+      "union_rest_points": 129364,
+      "union_rest_comments": 68564,
+      "union_rest_stories": 7026,
+      "robotics_points": 812,
+      "robotics_comments": 460,
+      "robotics_stories": 37,
+      "union_points": 4569,
+      "union_comments": 2415,
+      "union_stories": 234,
+      "trimmed_points": 3200,
+      "trimmed_comments": 1775,
+      "trimmed_stories": 232,
+      "outside5_points": 3720,
+      "outside5_comments": 1963,
+      "outside5_stories": 209,
+      "gpu_points": 1135,
+      "gpu_comments": 479,
+      "gpu_stories": 82,
+      "inside5_points": 849,
+      "inside5_comments": 452,
+      "inside5_stories": 25,
+      "aerospace_points": 1978,
+      "aerospace_comments": 902,
+      "aerospace_stories": 50,
+      "datacenters_points": 458,
+      "datacenters_comments": 458,
+      "datacenters_stories": 49,
+      "solar_points": 207,
+      "solar_comments": 118,
+      "solar_stories": 17,
+      "neurobio_points": 25,
+      "neurobio_comments": 2,
+      "neurobio_stories": 4
+    },
+    {
+      "week": "2026-09-07",
+      "total_stories": 6974,
+      "datacenters_rest_points": 136179,
+      "datacenters_rest_comments": 78493,
+      "datacenters_rest_stories": 6939,
+      "gpu_rest_points": 135598,
+      "gpu_rest_comments": 78159,
+      "gpu_rest_stories": 6910,
+      "neurobio_rest_points": 137210,
+      "neurobio_rest_comments": 79284,
+      "neurobio_rest_stories": 6971,
+      "aerospace_rest_points": 136468,
+      "aerospace_rest_comments": 79133,
+      "aerospace_rest_stories": 6940,
+      "solar_rest_points": 136615,
+      "solar_rest_comments": 78813,
+      "solar_rest_stories": 6956,
+      "robotics_rest_points": 136753,
+      "robotics_rest_comments": 79096,
+      "robotics_rest_stories": 6940,
+      "union_rest_points": 132740,
+      "union_rest_comments": 76558,
+      "union_rest_stories": 6787,
+      "datacenters_points": 1038,
+      "datacenters_comments": 791,
+      "datacenters_stories": 35,
+      "union_points": 4477,
+      "union_comments": 2726,
+      "union_stories": 187,
+      "trimmed_points": 3382,
+      "trimmed_comments": 1922,
+      "trimmed_stories": 185,
+      "outside5_points": 3569,
+      "outside5_comments": 2188,
+      "outside5_stories": 160,
+      "robotics_points": 464,
+      "robotics_comments": 188,
+      "robotics_stories": 34,
+      "aerospace_points": 749,
+      "aerospace_comments": 151,
+      "aerospace_stories": 34,
+      "gpu_points": 1619,
+      "gpu_comments": 1125,
+      "gpu_stories": 64,
+      "inside5_points": 908,
+      "inside5_comments": 538,
+      "inside5_stories": 27,
+      "solar_points": 602,
+      "solar_comments": 471,
+      "solar_stories": 18,
+      "neurobio_points": 7,
+      "neurobio_comments": 0,
+      "neurobio_stories": 3
+    },
+    {
+      "week": "2026-09-14",
+      "total_stories": 6953,
+      "datacenters_rest_points": 134020,
+      "datacenters_rest_comments": 72523,
+      "datacenters_rest_stories": 6903,
+      "gpu_rest_points": 132406,
+      "gpu_rest_comments": 71933,
+      "gpu_rest_stories": 6878,
+      "neurobio_rest_points": 134782,
+      "neurobio_rest_comments": 73099,
+      "neurobio_rest_stories": 6947,
+      "aerospace_rest_points": 134339,
+      "aerospace_rest_comments": 72960,
+      "aerospace_rest_stories": 6911,
+      "solar_rest_points": 134718,
+      "solar_rest_comments": 73019,
+      "solar_rest_stories": 6948,
+      "robotics_rest_points": 134472,
+      "robotics_rest_comments": 72919,
+      "robotics_rest_stories": 6910,
+      "union_rest_points": 130748,
+      "union_rest_comments": 70943,
+      "union_rest_stories": 6733,
+      "datacenters_points": 778,
+      "datacenters_comments": 579,
+      "datacenters_stories": 50,
+      "union_points": 4050,
+      "union_comments": 2159,
+      "union_stories": 220,
+      "trimmed_points": 2464,
+      "trimmed_comments": 1428,
+      "trimmed_stories": 218,
+      "outside5_points": 2947,
+      "outside5_comments": 1732,
+      "outside5_stories": 197,
+      "gpu_points": 2392,
+      "gpu_comments": 1169,
+      "gpu_stories": 75,
+      "aerospace_points": 459,
+      "aerospace_comments": 142,
+      "aerospace_stories": 42,
+      "inside5_points": 1103,
+      "inside5_comments": 427,
+      "inside5_stories": 23,
+      "robotics_points": 326,
+      "robotics_comments": 183,
+      "robotics_stories": 43,
+      "solar_points": 80,
+      "solar_comments": 83,
+      "solar_stories": 5,
+      "neurobio_points": 16,
+      "neurobio_comments": 3,
+      "neurobio_stories": 6
+    },
+    {
+      "week": "2026-09-21",
+      "total_stories": 6733,
+      "datacenters_rest_points": 123120,
+      "datacenters_rest_comments": 70951,
+      "datacenters_rest_stories": 6688,
+      "gpu_rest_points": 124381,
+      "gpu_rest_comments": 72329,
+      "gpu_rest_stories": 6674,
+      "neurobio_rest_points": 124817,
+      "neurobio_rest_comments": 72456,
+      "neurobio_rest_stories": 6729,
+      "aerospace_rest_points": 123733,
+      "aerospace_rest_comments": 71619,
+      "aerospace_rest_stories": 6683,
+      "solar_rest_points": 124439,
+      "solar_rest_comments": 71708,
+      "solar_rest_stories": 6726,
+      "robotics_rest_points": 124552,
+      "robotics_rest_comments": 72395,
+      "robotics_rest_stories": 6699,
+      "union_rest_points": 120992,
+      "union_rest_comments": 69279,
+      "union_rest_stories": 6540,
+      "robotics_points": 271,
+      "robotics_comments": 61,
+      "robotics_stories": 34,
+      "union_points": 3831,
+      "union_comments": 3177,
+      "union_stories": 193,
+      "trimmed_points": 2467,
+      "trimmed_comments": 1968,
+      "trimmed_stories": 191,
+      "outside5_points": 3241,
+      "outside5_comments": 2725,
+      "outside5_stories": 173,
+      "aerospace_points": 1090,
+      "aerospace_comments": 837,
+      "aerospace_stories": 50,
+      "gpu_points": 442,
+      "gpu_comments": 127,
+      "gpu_stories": 59,
+      "datacenters_points": 1703,
+      "datacenters_comments": 1505,
+      "datacenters_stories": 45,
+      "inside5_points": 590,
+      "inside5_comments": 452,
+      "inside5_stories": 20,
+      "solar_points": 384,
+      "solar_comments": 748,
+      "solar_stories": 7,
+      "neurobio_points": 6,
+      "neurobio_comments": 0,
+      "neurobio_stories": 4
+    },
+    {
+      "week": "2026-09-28",
+      "total_stories": 7222,
+      "datacenters_rest_points": 120598,
+      "datacenters_rest_comments": 69423,
+      "datacenters_rest_stories": 7170,
+      "gpu_rest_points": 119397,
+      "gpu_rest_comments": 70081,
+      "gpu_rest_stories": 7131,
+      "neurobio_rest_points": 122587,
+      "neurobio_rest_comments": 71495,
+      "neurobio_rest_stories": 7217,
+      "aerospace_rest_points": 120143,
+      "aerospace_rest_comments": 70071,
+      "aerospace_rest_stories": 7159,
+      "solar_rest_points": 122569,
+      "solar_rest_comments": 71491,
+      "solar_rest_stories": 7216,
+      "robotics_rest_points": 122233,
+      "robotics_rest_comments": 71321,
+      "robotics_rest_stories": 7181,
+      "union_rest_points": 114525,
+      "union_rest_comments": 66396,
+      "union_rest_stories": 6967,
+      "aerospace_points": 2459,
+      "aerospace_comments": 1427,
+      "aerospace_stories": 63,
+      "union_points": 8077,
+      "union_comments": 5102,
+      "union_stories": 255,
+      "trimmed_points": 5961,
+      "trimmed_comments": 3822,
+      "trimmed_stories": 252,
+      "outside5_points": 5769,
+      "outside5_comments": 3807,
+      "outside5_stories": 234,
+      "gpu_points": 3205,
+      "gpu_comments": 1417,
+      "gpu_stories": 91,
+      "datacenters_points": 2004,
+      "datacenters_comments": 2075,
+      "datacenters_stories": 52,
+      "robotics_points": 369,
+      "robotics_comments": 177,
+      "robotics_stories": 41,
+      "inside5_points": 2308,
+      "inside5_comments": 1295,
+      "inside5_stories": 21,
+      "solar_points": 33,
+      "solar_comments": 7,
+      "solar_stories": 6,
+      "neurobio_points": 15,
+      "neurobio_comments": 3,
+      "neurobio_stories": 5
+    }
+  ],
+  "provenance": {
+    "manifest_sha256": "07d82852963906965e8e9109060a1a8da228af2176040122bf48f7bd06b61226",
+    "source_provenance": {
+      "name": "Hacker News official Firebase API",
+      "api": "https://hacker-news.firebaseio.com/v0/item/{id}.json",
+      "maxitem_at_cutoff": 50006646,
+      "id_range": [
+        49006647,
+        50006646
+      ],
+      "selection": "The newest 1,000,000 item IDs (stories, comments, jobs, polls, pollopts) by consecutive ID ending at maxitem; every id fetched, none missing/null/errored",
+      "item_types_included": [
+        "story",
+        "comment",
+        "job",
+        "poll",
+        "pollopt"
+      ],
+      "retrieved_at_utc": "2026-10-08T15:00:37Z to 2026-10-08T15:09:10Z",
+      "completeness_limitations": "Snapshot: score, descendants and dead/deleted flags are as of fetch time; very recent items may later change. Items are by ID, so 'posts' includes comments (about 84% comments). Credential-shaped strings (4 found: API keys etc.) were replaced with [REDACTED-SECRET] in text fields before publishing (scripts/redact_secrets.py); all else is verbatim.",
+      "daily_update_api": "https://hacker-news.firebaseio.com/v0",
+      "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
+    },
+    "method": "Human-assisted discovery from earlier-half TF-IDF NMF topics; frozen regex applied to later half.",
+    "discovery_weeks": [
+      "2026-07-27",
+      "2026-08-03",
+      "2026-08-10",
+      "2026-08-17",
+      "2026-08-24"
+    ],
+    "test_weeks": [
+      "2026-08-31",
+      "2026-09-07",
+      "2026-09-14",
+      "2026-09-21",
+      "2026-09-28"
+    ],
+    "definitions": {
+      "datacenters": [
+        "Data centers and grid",
+        "\\b(?:data cent(?:er|re)s?|power grid|power plants?|nuclear|small modular reactors?)\\b",
+        null
+      ],
+      "gpu": [
+        "GPU and chip hardware",
+        "\\b(?:gpus?|nvidia|computer chips?|microchips?|chipsets?|chip architectures|chip design|semiconductors?|blackwell|risc-v|cuda)\\b",
+        null
+      ],
+      "neurobio": [
+        "Neural biology",
+        "\\b(?:organoids?|brain cells?|brain activity|brain surgery|brain scans?|neurons?|neuroscience|eeg|neural implants?)\\b",
+        null
+      ],
+      "aerospace": [
+        "Aerospace",
+        "\\b(?:aerospace|spaceflight|spacecraft|spacex|rockets?|satellites?|orbit|orbital|nasa|lunar|astronauts?|telescopes?)\\b",
+        null
+      ],
+      "solar": [
+        "Solar energy",
+        "\\bsolar\\b",
+        "\\b(?:eclipse|solar system|solar cycle|solar realms|solar wind|solar storms?|solar flares?|solar sail)\\b"
+      ],
+      "robotics": [
+        "Physical robotics",
+        "\\b(?:robots?|robotics|humanoids?|autonomous driving|self-driving|boston dynamics)\\b",
+        "\\b(?:ads|installs|captcha|robots\\.txt|crawler|crawl|search engine|bot traffic)\\b"
+      ]
+    },
+    "counts": {
+      "datacenters": {
+        "discovery": 341,
+        "test": 231
+      },
+      "gpu": {
+        "discovery": 424,
+        "test": 371
+      },
+      "neurobio": {
+        "discovery": 42,
+        "test": 22
+      },
+      "aerospace": {
+        "discovery": 302,
+        "test": 239
+      },
+      "solar": {
+        "discovery": 69,
+        "test": 53
+      },
+      "robotics": {
+        "discovery": 209,
+        "test": 189
+      }
+    },
+    "later_top_domains": [
+      {
+        "domain": "github.com",
+        "points": 1502,
+        "stories": 87
+      },
+      {
+        "domain": "colo.to",
+        "points": 1091,
+        "stories": 1
+      },
+      {
+        "domain": "space.com",
+        "points": 1074,
+        "stories": 7
+      },
+      {
+        "domain": "bbc.com",
+        "points": 1068,
+        "stories": 10
+      },
+      {
+        "domain": "developer.nvidia.com",
+        "points": 1023,
+        "stories": 11
+      },
+      {
+        "domain": "apnews.com",
+        "points": 932,
+        "stories": 6
+      },
+      {
+        "domain": "science.org",
+        "points": 690,
+        "stories": 5
+      },
+      {
+        "domain": "isaraerospace.com",
+        "points": 667,
+        "stories": 2
+      },
+      {
+        "domain": "economist.com",
+        "points": 665,
+        "stories": 8
+      },
+      {
+        "domain": "bend-lang.com",
+        "points": 616,
+        "stories": 1
+      },
+      {
+        "domain": "nytimes.com",
+        "points": 614,
+        "stories": 25
+      },
+      {
+        "domain": "cnbc.com",
+        "points": 593,
+        "stories": 12
+      },
+      {
+        "domain": "1011now.com",
+        "points": 530,
+        "stories": 2
+      },
+      {
+        "domain": "phoronix.com",
+        "points": 511,
+        "stories": 7
+      },
+      {
+        "domain": "capitalbnews.org",
+        "points": 511,
+        "stories": 1
+      },
+      {
+        "domain": "codyho.dev",
+        "points": 422,
+        "stories": 1
+      },
+      {
+        "domain": "ft.com",
+        "points": 417,
+        "stories": 19
+      },
+      {
+        "domain": "gpuworld.org",
+        "points": 414,
+        "stories": 2
+      },
+      {
+        "domain": "bsky.app",
+        "points": 409,
+        "stories": 1
+      },
+      {
+        "domain": "space.bl2.net",
+        "points": 407,
+        "stories": 1
+      },
+      {
+        "domain": "kqed.org",
+        "points": 397,
+        "stories": 3
+      },
+      {
+        "domain": "spinoff.nasa.gov",
+        "points": 378,
+        "stories": 1
+      },
+      {
+        "domain": "pv-magazine.com",
+        "points": 354,
+        "stories": 2
+      },
+      {
+        "domain": "aviationweek.com",
+        "points": 341,
+        "stories": 3
+      },
+      {
+        "domain": "arstechnica.com",
+        "points": 340,
+        "stories": 40
+      }
+    ],
+    "top_hit_removal": {
+      "stories": 11,
+      "points": 7530,
+      "basket_points": 25004
+    },
+    "discovery_examples": {
+      "datacenters": [
+        {
+          "id": 49191624,
+          "title": "Nashville uses eminent domain to block data center near zoo",
+          "domain": "costar.com",
+          "points": 322,
+          "url": "https://www.costar.com/article/970809918/nashville-council-approves-eminent-domain-action-to-halt-data-center-project"
+        },
+        {
+          "id": 49349147,
+          "title": "Field measurements of neighborhood-scale air temperature impacts of data centers",
+          "domain": "asmedigitalcollection.asme.org",
+          "points": 313,
+          "url": "https://asmedigitalcollection.asme.org/sustainablebuildings/article/7/2/024501/1233035/Data-Center-Waste-Heat-as-an-Emerging-Urban"
+        },
+        {
+          "id": 49478103,
+          "title": "EPA says power for data centers can sidestep pollution laws",
+          "domain": "epa.gov",
+          "points": 260,
+          "url": "https://www.epa.gov/newsreleases/epa-issues-permitting-guidance-further-president-trumps-agenda-promoting-data-centers"
+        },
+        {
+          "id": 49220350,
+          "title": "New Amazon Data Center Is Set to Have the Most Polluting Power Plant in the U.S.",
+          "domain": "nytimes.com",
+          "points": 246,
+          "url": "https://www.nytimes.com/2026/08/08/climate/amazon-data-center-texas-pollution.html"
+        },
+        {
+          "id": 49320856,
+          "title": "St Lucie Nuclear Reactor Unit 1 manually shutdown, 3 control rods drop into core",
+          "domain": "wptv.com",
+          "points": 196,
+          "url": "https://www.wptv.com/news/treasure-coast/region-st-lucie-county/saint-lucie-nuclear-power-plant-unit-1-manually-shut-down-after-3-control-rods-drop-into-reactor-core"
+        },
+        {
+          "id": 49120120,
+          "title": "Danube's record low levels force shutdown of Hungary's only nuclear plant",
+          "domain": "bbc.com",
+          "points": 194,
+          "url": "https://www.bbc.com/news/articles/cn0nqv05g0do"
+        },
+        {
+          "id": 49249971,
+          "title": "Amazon backs power plant that may become top source of US climate pollution",
+          "domain": "arstechnica.com",
+          "points": 191,
+          "url": "https://arstechnica.com/tech-policy/2026/08/amazon-funds-biggest-gas-power-plant-in-us-despite-climate-pledge/"
+        },
+        {
+          "id": 49446748,
+          "title": "U.S. gov't moves to suppress pushback on data centers",
+          "domain": "tomshardware.com",
+          "points": 178,
+          "url": "https://www.tomshardware.com/tech-industry/data-centers/u-s-govt-moves-to-suppress-pushback-on-data-centers-by-removing-requirements-for-public-input-on-pollution-epa-change-would-allow-air-pollution-permits-without-publicizing-them"
+        }
+      ],
+      "gpu": [
+        {
+          "id": 49458161,
+          "title": "Nvidia agrees to acquire Hugging Face for $13B",
+          "domain": "businessinsider.com",
+          "points": 1988,
+          "url": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8"
+        },
+        {
+          "id": 49321717,
+          "title": "A third world engineer responds to \u201cRISC-V: They should have known better\u201d",
+          "domain": "rvembedded.com",
+          "points": 625,
+          "url": "https://rvembedded.com/blog_post/12/"
+        },
+        {
+          "id": 49434378,
+          "title": "OpenAI Jalape\u00f1o: Better than Nvidia Blackwell",
+          "domain": "newsletter.semianalysis.com",
+          "points": 584,
+          "url": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia"
+        },
+        {
+          "id": 49360545,
+          "title": "Geolocating a random island using geometry and CUDA programming",
+          "domain": "yassa9.github.io",
+          "points": 529,
+          "url": "https://yassa9.github.io/osint/gralhix-004/"
+        },
+        {
+          "id": 49298035,
+          "title": "RISC-V: They Should Have Known Better",
+          "domain": "dmitry.gr",
+          "points": 397,
+          "url": "https://dmitry.gr/?r=06.%20Thoughts&proj=12.%20RV"
+        },
+        {
+          "id": 49255710,
+          "title": "Nvidia's Risky Business",
+          "domain": "stratechery.com",
+          "points": 356,
+          "url": "https://stratechery.com/2026/nvidias-risky-business/"
+        },
+        {
+          "id": 49425252,
+          "title": "RISC-V is now officially supported by CPython",
+          "domain": "blog.python.org",
+          "points": 306,
+          "url": "https://blog.python.org/2026/08/riscv-now-officially-supported/"
+        },
+        {
+          "id": 49263340,
+          "title": "Nvidia Nemotron 3.5 Lightning and NeMo Switchyard",
+          "domain": "blogs.nvidia.com",
+          "points": 262,
+          "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/"
+        }
+      ],
+      "neurobio": [
+        {
+          "id": 49380303,
+          "title": "Early-life stress leaves a 'scar' inside brain cells in mice",
+          "domain": "medicine.washu.edu",
+          "points": 157,
+          "url": "https://medicine.washu.edu/news/how-early-life-stress-leaves-a-scar-inside-brain-cells/"
+        },
+        {
+          "id": 49310248,
+          "title": "Brain turns listening inward during REM sleep, EEG recordings suggest",
+          "domain": "medicalxpress.com",
+          "points": 53,
+          "url": "https://medicalxpress.com/news/2026-07-brain-rem-eeg.html"
+        },
+        {
+          "id": 49412176,
+          "title": "Decoding silent reading from non-invasive EEG",
+          "domain": "arxiv.org",
+          "points": 52,
+          "url": "https://arxiv.org/abs/2608.20186"
+        },
+        {
+          "id": 49465057,
+          "title": "First patient to undergo live AI-assisted brain surgery has tumor removed",
+          "domain": "bbc.com",
+          "points": 19,
+          "url": "https://www.bbc.com/news/articles/cjwg5n7y68xo"
+        },
+        {
+          "id": 49366519,
+          "title": "Human brain organoids record the passage of time over multiple years",
+          "domain": "nature.com",
+          "points": 18,
+          "url": "https://www.nature.com/articles/s41586-026-10877-x"
+        },
+        {
+          "id": 49083799,
+          "title": "Why haven't organoids solved all of drug discovery?",
+          "domain": "owlposting.com",
+          "points": 18,
+          "url": "https://www.owlposting.com/p/why-havent-organoids-solved-all-of"
+        },
+        {
+          "id": 49231434,
+          "title": "Brain scans reveal widespread changes in patients following COVID-19 infection",
+          "domain": "psypost.org",
+          "points": 10,
+          "url": "https://www.psypost.org/brain-scans-reveal-widespread-structural-and-functional-changes-in-patients-foll/"
+        },
+        {
+          "id": 49448719,
+          "title": "Ann Druyan's EEG Was Recorded for the Voyager Golden Record",
+          "domain": "scienceblog.com",
+          "points": 9,
+          "url": "https://scienceblog.com/t-ann-druyan-heartbeat-voyager-golden-record-carl-sagan/"
+        }
+      ],
+      "aerospace": [
+        {
+          "id": 49486172,
+          "title": "Our decision on Cursor following its acquisition by SpaceX",
+          "domain": "openai.com",
+          "points": 852,
+          "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/"
+        },
+        {
+          "id": 49209918,
+          "title": "Stowaway \u2013 Take the window seat on any plane or satellite overhead",
+          "domain": "stowaway.live",
+          "points": 441,
+          "url": "https://stowaway.live/"
+        },
+        {
+          "id": 49218179,
+          "title": "NASA figured out how to keep its Voyager 2 probe running for another year",
+          "domain": "space.com",
+          "points": 382,
+          "url": "https://www.space.com/space-exploration/voyager/nasa-figured-out-how-to-keep-its-48-year-old-voyager-2-probe-running-for-yet-another-year"
+        },
+        {
+          "id": 49490870,
+          "title": "Nancy Grace Roman Space Telescope",
+          "domain": "science.nasa.gov",
+          "points": 295,
+          "url": "https://science.nasa.gov/mission/roman-space-telescope/"
+        },
+        {
+          "id": 49076900,
+          "title": "Astronauts describe persistent 'observer' sensation after 6 month missions",
+          "domain": "spacedaily.com",
+          "points": 183,
+          "url": "https://spacedaily.com/sd-v-astronauts-returning-from-six-month-missions-describe-a-persistent-observer-sensation-the-feeling-of-watching-their-own-lives-from-a-half-step-outside-the-frame-weeks-after-theyr/"
+        },
+        {
+          "id": 49220313,
+          "title": "Europe's free satellite service just made it easier to track wildfires",
+          "domain": "arstechnica.com",
+          "points": 170,
+          "url": "https://arstechnica.com/gadgets/2026/08/europes-free-satellite-service-just-made-it-easier-to-track-wildfires/"
+        },
+        {
+          "id": 49201342,
+          "title": "xAI, SpaceX, and the Race for AI Buildout",
+          "domain": "illegal.solutions",
+          "points": 149,
+          "url": "https://illegal.solutions/posts/xai_pollution"
+        },
+        {
+          "id": 49286270,
+          "title": "Heart aerospace completes first flight of largest electric aircraft",
+          "domain": "heartaerospace.com",
+          "points": 148,
+          "url": "https://www.heartaerospace.com/newsroom/heart-aerospace-completes-first-flight-of-world-s-largest-electric-aircraft"
+        }
+      ],
+      "solar": [
+        {
+          "id": 49155359,
+          "title": "Wind and solar overtake fossil fuels in Germany for the first time",
+          "domain": "intellinews.com",
+          "points": 380,
+          "url": "https://www.intellinews.com/wind-and-solar-overtake-fossil-fuels-in-germany-for-the-first-time-ever-458379/"
+        },
+        {
+          "id": 49069132,
+          "title": "Should you wash your solar panels?",
+          "domain": "incoherency.co.uk",
+          "points": 247,
+          "url": "https://incoherency.co.uk/blog/stories/should-you-wash-your-solar-panels.html"
+        },
+        {
+          "id": 49168886,
+          "title": "Germany Records Historic 12B KWh Solar Feed-In in July 2026",
+          "domain": "solarquarter.com",
+          "points": 141,
+          "url": "https://solarquarter.com/2026/08/03/germany-records-historic-12-billion-kwh-solar-feed-in-in-july-2026/"
+        },
+        {
+          "id": 49156071,
+          "title": "Utah produced more power from solar than any other source in May, a new first",
+          "domain": "sltrib.com",
+          "points": 118,
+          "url": "https://www.sltrib.com/news/environment/2026/08/03/utah-sets-solar-power-record/"
+        },
+        {
+          "id": 49140633,
+          "title": "Plug-in solar is coming. Plug-in batteries should follow",
+          "domain": "regen.co.uk",
+          "points": 101,
+          "url": "https://www.regen.co.uk/insights/plug-in-solar-is-coming-plug-in-batteries-should-follow"
+        },
+        {
+          "id": 49234393,
+          "title": "Plug-In Solar Panels Starting to Sprout in U.S. Backyards",
+          "domain": "nytimes.com",
+          "points": 93,
+          "url": "https://www.nytimes.com/2026/07/31/business/energy-environment/plug-in-balcony-solar.html"
+        },
+        {
+          "id": 49093119,
+          "title": "FCC bans foreign-produced solar inverters, grid lockout begins today",
+          "domain": "pv-magazine-usa.com",
+          "points": 65,
+          "url": "https://pv-magazine-usa.com/2026/07/28/fcc-bans-foreign-produced-solar-inverters-grid-lockout-begins-today/"
+        },
+        {
+          "id": 49233394,
+          "title": "Production Imminent: 40 Solar-Charging Aptera EVs Coming Soon",
+          "domain": "frequal.com",
+          "points": 49,
+          "url": "https://frequal.com/aptera/ProductionImminent.html"
+        }
+      ],
+      "robotics": [
+        {
+          "id": 49111237,
+          "title": "Gemini Robotics 2 brings whole body intelligence to robots",
+          "domain": "deepmind.google",
+          "points": 620,
+          "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+        },
+        {
+          "id": 49246804,
+          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+          "domain": "cactuscompute.com",
+          "points": 537,
+          "url": "https://cactuscompute.com/needle"
+        },
+        {
+          "id": 49093232,
+          "title": "Transformer Transformer: A Unified Model for Motion-Conditioned Robot Co-Design",
+          "domain": "transformer-transformer.github.io",
+          "points": 73,
+          "url": "https://transformer-transformer.github.io/"
+        },
+        {
+          "id": 49399642,
+          "title": "Chinese robot runs 100M sprint quicker than Usain Bolt's world record",
+          "domain": "theguardian.com",
+          "points": 66,
+          "url": "https://www.theguardian.com/sport/2026/aug/22/chinese-robot-runs-100m-sprint-quicker-usain-bolt-world-record"
+        },
+        {
+          "id": 49104371,
+          "title": "FCC: Ban on Foreign-Made Robots Includes Robot Vacuums",
+          "domain": "pcmag.com",
+          "points": 50,
+          "url": "https://www.pcmag.com/news/fcc-ban-on-foreign-made-robots-includes-robot-vacuums"
+        },
+        {
+          "id": 49466715,
+          "title": "Launch HN: Salem Robotics (YC S26) \u2013 Software for industrial inspection robots",
+          "domain": "",
+          "points": 49,
+          "url": ""
+        },
+        {
+          "id": 49174369,
+          "title": "Waymo CEO explains why Tesla\u2019s camera-only self-driving falls short",
+          "domain": "electrek.co",
+          "points": 43,
+          "url": "https://electrek.co/2026/08/04/waymo-co-ceo-camera-only-self-driving-tesla/"
+        },
+        {
+          "id": 49092538,
+          "title": "Trump administration bans new Chinese humanoid robots",
+          "domain": "bbc.com",
+          "points": 25,
+          "url": "https://www.bbc.com/news/articles/cp9e2ex3ekyo"
+        }
+      ]
+    },
+    "source": "data/manifest.json current snapshot; scripts/vcs_discover.py prepares eligible rows"
+  }
+}

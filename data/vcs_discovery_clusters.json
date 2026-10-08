@@ -1,0 +1,3042 @@
+[
+  {
+    "cluster": 0,
+    "terms": [
+      "building",
+      "building predicting",
+      "predicting",
+      "factory",
+      "scratch",
+      "building scalable",
+      "blue",
+      "house"
+    ],
+    "examples": [
+      "I've been building an agent to maintain my apps",
+      "Wk. 5 of Building an MMO",
+      "What If We Never Built Another New Building?",
+      "Building as gardening"
+    ]
+  },
+  {
+    "cluster": 1,
+    "terms": [
+      "used",
+      "viruses",
+      "war",
+      "escape",
+      "hack",
+      "aws",
+      "play",
+      "create"
+    ],
+    "examples": [
+      "4Chan Chuds Used AI to Clothe Her. She Fought Back (2024)",
+      "Back to the Future: Hypertext the Way It Used to Be",
+      "Why Fortran Is Still Used (2021)",
+      "Simdutf can now be used without Libc++ or Libc++ABI"
+    ]
+  },
+  {
+    "cluster": 2,
+    "terms": [
+      "design",
+      "chip",
+      "viruses",
+      "engineer",
+      "chip design",
+      "service",
+      "tesla",
+      "animation"
+    ],
+    "examples": [
+      "Agentic Design",
+      "How well do agents use your design system?",
+      "What is Software Design? (1992)",
+      "How I Design with AI"
+    ]
+  },
+  {
+    "cluster": 3,
+    "terms": [
+      "harness",
+      "deepseek harness",
+      "evolution",
+      "plugin",
+      "deepseek",
+      "multi-agent",
+      "surface",
+      "multiplayer"
+    ],
+    "examples": [
+      "How does your agent harness call you",
+      "Show HN: E3d-pilot \u2013 a repo-improving agent harness, SHA-gated merges",
+      "TrueForge \u2013 The open-source agent harness",
+      "Why Pi Is My Goat Agent Harness"
+    ]
+  },
+  {
+    "cluster": 4,
+    "terms": [
+      "engine",
+      "unreal",
+      "vram",
+      "inference engine",
+      "posts",
+      "storage",
+      "chess",
+      "ide"
+    ],
+    "examples": [
+      "Releasing an open source-sound engine for Strudel",
+      "Shortlist, a childcare search engine I built as a non-engineer",
+      "cl0q \u2013 Free and Open Source Search Engine",
+      "Rio-vt and librio: Rio's terminal engine, now embeddable"
+    ]
+  },
+  {
+    "cluster": 5,
+    "terms": [
+      "programming",
+      "languages",
+      "programming languages",
+      "simd",
+      "react",
+      "functional",
+      "compiled",
+      "intel"
+    ],
+    "examples": [
+      "The Programming Tourist",
+      "Ask HN: Should we rename programming into herding?",
+      "Agentic Proof-Oriented Programming",
+      "Fuse Programming Language"
+    ]
+  },
+  {
+    "cluster": 6,
+    "terms": [
+      "security",
+      "security scanner",
+      "scanner",
+      "update",
+      "bugs",
+      "vulnerability",
+      "security incident",
+      "signal"
+    ],
+    "examples": [
+      "OpenAI, Anthropic AI agents implicated in new security breaches",
+      "Attestable: From Verifiability to Model-Weight Security",
+      "Z.ai Security",
+      "Security Through Obscurity"
+    ]
+  },
+  {
+    "cluster": 7,
+    "terms": [
+      "internet",
+      "internet written",
+      "offline",
+      "radio",
+      "written",
+      "archive",
+      "offensive",
+      "thing"
+    ],
+    "examples": [
+      "The Closure of the Internet",
+      "My Son's Internet",
+      "What Was the Internet?",
+      "The Closure of the Internet"
+    ]
+  },
+  {
+    "cluster": 8,
+    "terms": [
+      "apple",
+      "apple silicon",
+      "iphone",
+      "siri",
+      "program",
+      "pay",
+      "watch",
+      "store"
+    ],
+    "examples": [
+      "AppleWorks on the Apple II",
+      "Ask HN: Can Apple Ever Be Disrputed?",
+      "AppleWorks on the Apple II",
+      "Apple Apps Are Rubbish"
+    ]
+  },
+  {
+    "cluster": 9,
+    "terms": [
+      "china",
+      "race",
+      "america",
+      "joins",
+      "revolution",
+      "robots",
+      "europe",
+      "blue"
+    ],
+    "examples": [
+      "A glimpse from China of AI's future",
+      "A.I. is everywhere in China. See for yourself",
+      "The Future, Made in China",
+      "Is This All About China?"
+    ]
+  },
+  {
+    "cluster": 10,
+    "terms": [
+      "face",
+      "hugging face",
+      "hugging",
+      "hack",
+      "incident",
+      "face incident",
+      "attack",
+      "face hack"
+    ],
+    "examples": [
+      "Hugging Face Has a Deepfake Nudes Problem",
+      "Hugging Face: DeepSeek-V4-Pro-0813",
+      "OpenAI's Hack of Hugging Face",
+      "The Hugging Face attack surprised me"
+    ]
+  },
+  {
+    "cluster": 11,
+    "terms": [
+      "social",
+      "media",
+      "social media",
+      "ban",
+      "media ban",
+      "media addiction",
+      "addiction",
+      "france"
+    ],
+    "examples": [
+      "Stackoversroll \u2013 A social media for code. Designed for you and your angents",
+      "Ask AI buttons like social media links for webpages",
+      "Ask HN: What will it take you to shift to a new social media platform?",
+      "Toxicity and Antisocial Behavior over User Lifetimes on Social Media (2024)"
+    ]
+  },
+  {
+    "cluster": 12,
+    "terms": [
+      "computer",
+      "quantum",
+      "computer science",
+      "quantum computer",
+      "computer history",
+      "computers",
+      "portable",
+      "player"
+    ],
+    "examples": [
+      "My Anti AI Computer",
+      "Tactical Computer System (1988) [pdf]",
+      "The Computer Chronicles \u2013 AI (1984) [video]",
+      "ICT 1301 \u2013 A 1960's Computer (2022)"
+    ]
+  },
+  {
+    "cluster": 13,
+    "terms": [
+      "writing",
+      "reading",
+      "compiler",
+      "spot",
+      "isn",
+      "bottleneck",
+      "hand",
+      "process"
+    ],
+    "examples": [
+      "I RL-finetuned an LLM to unslop my writing",
+      "Writing, Briefly (2005)",
+      "Who's Writing Open Source Code?",
+      "LLM Writing and Me"
+    ]
+  },
+  {
+    "cluster": 14,
+    "terms": [
+      "tech",
+      "big tech",
+      "americans",
+      "debt",
+      "tech debt",
+      "tech companies",
+      "industry",
+      "workers"
+    ],
+    "examples": [
+      "Why Is Everyone in Tech So Sad?",
+      "Boring Tech May Become Irrelevant Tech",
+      "Tech, agentic coding, and whatever else I'm building",
+      "Americans see EU Tech [video]"
+    ]
+  },
+  {
+    "cluster": 15,
+    "terms": [
+      "better",
+      "worse",
+      "sleep",
+      "study",
+      "makes",
+      "risc-v",
+      "batteries",
+      "got better"
+    ],
+    "examples": [
+      "Why some people mow a lawn better than others",
+      "Better to Beg Forgiveness",
+      "Sleek for a Better Future",
+      "Am I better because of AI?"
+    ]
+  },
+  {
+    "cluster": 16,
+    "terms": [
+      "server",
+      "store",
+      "scratch",
+      "http",
+      "persistent",
+      "tries",
+      "lightweight",
+      "remote"
+    ],
+    "examples": [
+      "Vectorise.me \u2013 image-to-SVG API with an MCP server for AI agents",
+      "SiFive's First Server Platform",
+      "What Is a Syslog Server?",
+      "Show HN: MCP Server for Appointment Booking"
+    ]
+  },
+  {
+    "cluster": 17,
+    "terms": [
+      "news",
+      "hacker",
+      "hacker news",
+      "reader",
+      "daily",
+      "aggregator",
+      "stories",
+      "tui"
+    ],
+    "examples": [
+      "Ask HN: Move AI news from Hacker News to somewhere else?",
+      "Hacker News, GitHub and AI",
+      "Hacker News MCP",
+      "Parody Hacker News (2013)"
+    ]
+  },
+  {
+    "cluster": 18,
+    "terms": [
+      "review",
+      "book review",
+      "peer",
+      "comments",
+      "plans",
+      "servethehome",
+      "repo",
+      "site"
+    ],
+    "examples": [
+      "Review: Mageia 10",
+      "Review Collect",
+      "Quoted $1M for AI code review. Built it for free",
+      "Review of Marcus Hutter's Job-Less Utopia"
+    ]
+  },
+  {
+    "cluster": 19,
+    "terms": [
+      "research",
+      "stock",
+      "stock research",
+      "conduct",
+      "streamlit",
+      "research assistant",
+      "assistant streamlit",
+      "assistant"
+    ],
+    "examples": [
+      "Silico: a platform for AI research",
+      "Taboo \"equilibrium\": Less confused frames for research on AI bargaining",
+      "AI agents can't yet do open-ended AI research",
+      "You and Your Research (1986)"
+    ]
+  },
+  {
+    "cluster": 20,
+    "terms": [
+      "cloud",
+      "persistent",
+      "gpu",
+      "storage",
+      "account",
+      "builder",
+      "session",
+      "environment"
+    ],
+    "examples": [
+      "Show HN: Carolina Cloud Nextflow",
+      "How to run cloud coding agents overnight",
+      "Remote-Timer-as-a-Service: Microarchitectural Leakage in the Cloud",
+      "Floci \u2013 Local Cloud Emulators"
+    ]
+  },
+  {
+    "cluster": 21,
+    "terms": [
+      "alternative",
+      "based",
+      "node",
+      "key",
+      "demo",
+      "created",
+      "stripe",
+      "discord"
+    ],
+    "examples": [
+      "What's the best open source Wispr alternative?",
+      "Alternative Versioning",
+      "OpenConnector, an open source alternative to Pipedream/Composio",
+      "Would anyone use a GummySearch alternative that searched ALL forums?"
+    ]
+  },
+  {
+    "cluster": 22,
+    "terms": [
+      "stop",
+      "ordinary",
+      "students",
+      "shock",
+      "early",
+      "love",
+      "automation",
+      "talking"
+    ],
+    "examples": [
+      "How to Stop Procrastinating",
+      "Stop Making TUIs",
+      "Stop Making TUIs",
+      "AFS II: Please Stop Invocating KISS and DRY"
+    ]
+  },
+  {
+    "cluster": 23,
+    "terms": [
+      "end",
+      "mathematics",
+      "dead end",
+      "reading",
+      "computation",
+      "react",
+      "typescript",
+      "required"
+    ],
+    "examples": [
+      "The End of Software",
+      "The End of an Athlon",
+      "The End of an Athlon",
+      "The Google Cafeteria at the End of the World"
+    ]
+  },
+  {
+    "cluster": 24,
+    "terms": [
+      "tokens",
+      "month",
+      "pay",
+      "save",
+      "second",
+      "sessions",
+      "later",
+      "cut"
+    ],
+    "examples": [
+      "I abused PostHog's wizard to get free Claude tokens",
+      "A pocketable AI agent \u2013 Tokens free to use now",
+      "Are we becoming dependent on tokens?",
+      "AI Mania: From Tulips to Tokens"
+    ]
+  },
+  {
+    "cluster": 25,
+    "terms": [
+      "text",
+      "watermarking",
+      "text watermarking",
+      "watermarks",
+      "anymore",
+      "ai-generated",
+      "watermark",
+      "speech"
+    ],
+    "examples": [
+      "Text Like It's 2005",
+      "Text Is My Gimmick",
+      "Harpoon for Sublime Text 4",
+      "LLMs don't just mimic human text"
+    ]
+  },
+  {
+    "cluster": 26,
+    "terms": [
+      "know",
+      "kids",
+      "doing",
+      "means",
+      "didn",
+      "programmer",
+      "cookies",
+      "large"
+    ],
+    "examples": [
+      "You know your MRR. Not what you keep.",
+      "Everything I Know (1975)",
+      "FedEx 2026 Holiday Surcharges: What Shippers Need to Know",
+      "All You Need to Know about JEPA"
+    ]
+  },
+  {
+    "cluster": 27,
+    "terms": [
+      "mac",
+      "studio",
+      "menu",
+      "bar",
+      "menu bar",
+      "mini",
+      "iphone",
+      "mac mini"
+    ],
+    "examples": [
+      "Show HN: Lucky Dangle \u2013 a lucky charm for your Mac",
+      "Run local agentic AI on the Mac using MLX [video]",
+      "Egpu for Mac",
+      "ZoomIt for Mac"
+    ]
+  },
+  {
+    "cluster": 28,
+    "terms": [
+      "age",
+      "verification",
+      "age verification",
+      "pricing",
+      "electricity",
+      "mathematics",
+      "mathematics age",
+      "golden age"
+    ],
+    "examples": [
+      "The Age of Disinvention",
+      "The Age of Disinvention",
+      "The New Age of the Privateer: The Cyberteer",
+      "Why Our Memory Slips After Age 50"
+    ]
+  },
+  {
+    "cluster": 29,
+    "terms": [
+      "skills",
+      "engineers",
+      "smart",
+      "workflows",
+      "rules",
+      "servers",
+      "management",
+      "repositories"
+    ],
+    "examples": [
+      "Skills over MCP",
+      "All Agent Skills",
+      "Show HN: Lensa \u2013 Open-source MCP connectors and skills for ChatGPT",
+      "Skills vs. MCP: when to use which"
+    ]
+  },
+  {
+    "cluster": 30,
+    "terms": [
+      "codex",
+      "opencode",
+      "usage",
+      "sessions",
+      "hermes",
+      "working",
+      "reset",
+      "sends"
+    ],
+    "examples": [
+      "Show HN: Gitleaks for Codex and Claude Code",
+      "Codex as a Platform",
+      "Codex Codex as a platform: build on the open agent harness",
+      "Show HN: Codex Memory Trim \u2013 prune and dedupe Codex CLI's global memory"
+    ]
+  },
+  {
+    "cluster": 31,
+    "terms": [
+      "inference",
+      "kimi",
+      "speed",
+      "costs",
+      "card",
+      "inference engine",
+      "benchmarking",
+      "gpu"
+    ],
+    "examples": [
+      "Unconscious Inference",
+      "16GB EGPU for AI Inference, $699",
+      "Inference, Inferred",
+      "Show HN: I built a lite LPU that can do inference on Karpathy's MicroGPT"
+    ]
+  },
+  {
+    "cluster": 32,
+    "terms": [
+      "framework",
+      "laptop",
+      "foundation",
+      "framework laptop",
+      "house",
+      "react",
+      "breach",
+      "white"
+    ],
+    "examples": [
+      "The new Framework 12 [video]",
+      "Show HN: JustAPI:a Python web framework where the framework itself is Rust",
+      "How HN: Naeos \u2013 an open-source engineering framework for AI coding agentsS",
+      "RL Framework for Finetuning Openweight Models"
+    ]
+  },
+  {
+    "cluster": 33,
+    "terms": [
+      "write",
+      "blog",
+      "markdown",
+      "hand",
+      "financial",
+      "agi",
+      "breaks",
+      "newsletter"
+    ],
+    "examples": [
+      "Show HN: Plainspeak, make AI agents write like a human",
+      "How to Not Write Parsers",
+      "How to write production-quality code with AI",
+      "Just Let Agents Write Code"
+    ]
+  },
+  {
+    "cluster": 34,
+    "terms": [
+      "history",
+      "computer history",
+      "economics",
+      "revolution",
+      "zsh",
+      "tracking",
+      "oral",
+      "bug"
+    ],
+    "examples": [
+      "Volcanoes that made history",
+      "The History of Swinth",
+      "History of Flagellation (1926)",
+      "TeXShop History"
+    ]
+  },
+  {
+    "cluster": 35,
+    "terms": [
+      "database",
+      "graph",
+      "sqlite",
+      "sql",
+      "ship",
+      "vulnerability",
+      "playground",
+      "vector"
+    ],
+    "examples": [
+      "The Database Is Not the Data Model",
+      "The Dinosaur Database",
+      "Steeping through data and brewing a database",
+      "Open Pinball Database"
+    ]
+  },
+  {
+    "cluster": 36,
+    "terms": [
+      "website",
+      "changes",
+      "check",
+      "fucking",
+      "hours",
+      "webmcp",
+      "automate",
+      "lets"
+    ],
+    "examples": [
+      "Warez Your Website",
+      "Not a Website",
+      "Making Of: My Website",
+      "The Future of the Website"
+    ]
+  },
+  {
+    "cluster": 37,
+    "terms": [
+      "job",
+      "interview",
+      "application",
+      "doing",
+      "protocol",
+      "took",
+      "math",
+      "board"
+    ],
+    "examples": [
+      "It's OK to not be passionate about your job",
+      "When Will AI Take My Job?",
+      "Tell HN: In 2021, there were 4.5 jobs per job seeker vs. 2.5 job seekers/job now",
+      "Go from job search to job offer"
+    ]
+  },
+  {
+    "cluster": 38,
+    "terms": [
+      "editor",
+      "markdown",
+      "markdown editor",
+      "visual",
+      "preview",
+      "photo",
+      "text editor",
+      "opencode"
+    ],
+    "examples": [
+      "A new way to use Tidewave: from your terminal or editor",
+      "Quanta.Ai.Code.Editor",
+      "Druk: Terminal Code Editor",
+      "Ask HN: Claude Code in Video Editor"
+    ]
+  },
+  {
+    "cluster": 39,
+    "terms": [
+      "development",
+      "say",
+      "update",
+      "environment",
+      "development environment",
+      "driven",
+      "ai-assisted",
+      "today"
+    ],
+    "examples": [
+      "Claim-Driven Development in Hale",
+      "Agentic Development Fallacies",
+      "An Agentic Development Platform",
+      "WorkOS from Agentic Software Development"
+    ]
+  },
+  {
+    "cluster": 40,
+    "terms": [
+      "running",
+      "kimi",
+      "natively",
+      "production",
+      "application",
+      "doom",
+      "wasi",
+      "factory"
+    ],
+    "examples": [
+      "Running Ultrix 4.5 (2019)",
+      "Axera AX8850 LLM running ggufs",
+      "Agentic Coding: Running the Nightshift",
+      "Running Linux on Baochip-1x"
+    ]
+  },
+  {
+    "cluster": 41,
+    "terms": [
+      "learning",
+      "deep",
+      "deep learning",
+      "reinforcement learning",
+      "reinforcement",
+      "continual learning",
+      "continual",
+      "machine learning"
+    ],
+    "examples": [
+      "Code Is Not the Outcome, Learning Is",
+      "Learning Sed or Using Claude?",
+      "Learning 10000 pictures (1973) [pdf]",
+      "Ask HN: How do you use AI for learning?"
+    ]
+  },
+  {
+    "cluster": 42,
+    "terms": [
+      "test",
+      "consciousness",
+      "containers",
+      "generation",
+      "management",
+      "idea",
+      "protocol",
+      "mathematics"
+    ],
+    "examples": [
+      "WhistlinDiesel Cybertruck Durability Test #3 [video]",
+      "Test",
+      "Sally\u2013Anne Test",
+      "AI and the iPod Test"
+    ]
+  },
+  {
+    "cluster": 43,
+    "terms": [
+      "desktop",
+      "unsloth",
+      "unsloth desktop",
+      "workspace",
+      "share",
+      "assistant",
+      "local-first",
+      "environment"
+    ],
+    "examples": [
+      "Show HN: Nakso \u2013 Your Desktop Sketchpad",
+      "Show HN: Agenteam \u2013 Agents that live on your desktop",
+      "ESPHome Desktop App",
+      "Achieved Full Desktop in GeForce Now"
+    ]
+  },
+  {
+    "cluster": 44,
+    "terms": [
+      "fast",
+      "std",
+      "std hive",
+      "fast std",
+      "hive",
+      "mode",
+      "risk",
+      "slow"
+    ],
+    "examples": [
+      "How fast can you name that tune?",
+      "Coding too fast to collaborate",
+      "Angus Barbieri's Fast",
+      "AI revenues are growing fast, but not fast enough"
+    ]
+  },
+  {
+    "cluster": 45,
+    "terms": [
+      "macos",
+      "screen",
+      "dictation",
+      "native macos",
+      "dock",
+      "offline",
+      "menu",
+      "bar"
+    ],
+    "examples": [
+      "Vorssaint \u2013 PowerToys for macOS",
+      "What the Model \u2013 Local LLM Inventory for macOS",
+      "Run full-blown macOS on iPadOS 16",
+      "Show HN: macOS PortKiller"
+    ]
+  },
+  {
+    "cluster": 46,
+    "terms": [
+      "released",
+      "emacs",
+      "assets",
+      "haiku",
+      "fixes",
+      "firefox",
+      "omarchy",
+      "august"
+    ],
+    "examples": [
+      "Linux 7.2 Released",
+      "Show HN: Formae 0.88.0 Released",
+      "OpenBGPD 9.2 Released",
+      "Noctule 3.0 Released"
+    ]
+  },
+  {
+    "cluster": 47,
+    "terms": [
+      "map",
+      "interactive map",
+      "global",
+      "train",
+      "release",
+      "country",
+      "scientists",
+      "atlas"
+    ],
+    "examples": [
+      "Show HN: CheapFoodMap \u2013 A map of good meals under $10",
+      "The Pentagram Map",
+      "Show HN: Every MUNI, BART and Caltrain in SF on a Live Map",
+      "The world sunshine map \u2013 3,833 flyable destinations"
+    ]
+  },
+  {
+    "cluster": 48,
+    "terms": [
+      "control",
+      "plane",
+      "control plane",
+      "phone",
+      "version",
+      "room",
+      "control panel",
+      "panel"
+    ],
+    "examples": [
+      "A new model for Source Control",
+      "The A.I.s Are Already Out of Control",
+      "Show HN: Phone-harness \u2013 let your agent control your phone",
+      "Fetch \u2013 control your Claude Code agents from the Mac notch"
+    ]
+  },
+  {
+    "cluster": 49,
+    "terms": [
+      "systems",
+      "water",
+      "distributed",
+      "problems",
+      "distributed systems",
+      "production",
+      "multi-agent",
+      "multi-agent systems"
+    ],
+    "examples": [
+      "Hypermedia Systems",
+      "GitHub \u2013 rajnandan1/ken: Thompson-mode systems discipline for AI agents",
+      "If you're not using AI to attack your own systems, your adversaries will",
+      "The Encyclopedia of Database Systems"
+    ]
+  },
+  {
+    "cluster": 50,
+    "terms": [
+      "brain",
+      "cells",
+      "moment",
+      "brain activity",
+      "activity",
+      "scientists",
+      "split",
+      "organoids"
+    ],
+    "examples": [
+      "BYOKs for an LLM with a Brain",
+      "Show HN: Edgi \u2013 Letterboxd or Strava for your brain",
+      "Gauguin, Descartes, Bayes: A Diurnal Golem's Brain",
+      "Vasovagal: Markdown-Based 2nd Brain"
+    ]
+  },
+  {
+    "cluster": 51,
+    "terms": [
+      "context",
+      "protocol",
+      "token",
+      "layer",
+      "persistent",
+      "context protocol",
+      "share",
+      "window"
+    ],
+    "examples": [
+      "Inadvertent Context Leakage in Language Models",
+      "Context Engineering Is a Data Problem",
+      "Context Engineering Is a Data Problem",
+      "Show HN: NexusMem \u2013 Local context memory engine for AI coding agents"
+    ]
+  },
+  {
+    "cluster": 52,
+    "terms": [
+      "read",
+      "mathematics",
+      "humans",
+      "books read",
+      "watch",
+      "didn",
+      "study",
+      "storage"
+    ],
+    "examples": [
+      "Do You Still Need to Read AI Code?",
+      "Maintaining Security-Critical Project Where I Don't Read the Code",
+      "Software 2.0: A Security-Critical Project Where I Don't Read the Code",
+      "I'll Never Get Y'all to Read the Bible, Will I?"
+    ]
+  },
+  {
+    "cluster": 53,
+    "terms": [
+      "cli",
+      "manage",
+      "aws",
+      "emails",
+      "telegram",
+      "ide",
+      "gemini",
+      "grok"
+    ],
+    "examples": [
+      "Everything at the CLI",
+      "How to Use the Moshcode CLI",
+      "Bitbucket CLI",
+      "Find jobs with Claude Code CLI"
+    ]
+  },
+  {
+    "cluster": 54,
+    "terms": [
+      "getting",
+      "house",
+      "lost",
+      "started",
+      "isn",
+      "access",
+      "keeps",
+      "reading"
+    ],
+    "examples": [
+      "Getting a Haircut",
+      "Is the World Getting Uglier?",
+      "Getting Real",
+      "Getting Off the Modernization Treadmill"
+    ]
+  },
+  {
+    "cluster": 55,
+    "terms": [
+      "books",
+      "amazon",
+      "reading",
+      "rare",
+      "train",
+      "rare books",
+      "physical",
+      "buying"
+    ],
+    "examples": [
+      "Twenty Three Years of Books",
+      "Why Books Don't Work: Constructivism over Transmissionism (2021)",
+      "Why books don\u02bct work (2019)",
+      "Integrates with Zoho Books"
+    ]
+  },
+  {
+    "cluster": 56,
+    "terms": [
+      "faster",
+      "week",
+      "growing",
+      "growing faster",
+      "lean",
+      "computing",
+      "point",
+      "react"
+    ],
+    "examples": [
+      "SparklingTree: 30-40% faster specdec than DSpark by combining DDTree and DSpark",
+      "WarpSpeed rewrites Pandas to run 38.4x faster on PDS-H",
+      "Programing language faster than Python for ML (Jaithon 3.1)",
+      "How much faster could racehorses get?"
+    ]
+  },
+  {
+    "cluster": 57,
+    "terms": [
+      "old",
+      "reddit",
+      "look",
+      "engineer",
+      "old reddit",
+      "man",
+      "today",
+      "reddit com"
+    ],
+    "examples": [
+      "Ask HN: How to Relicense an Old Project",
+      "How old is Ann?",
+      "Do Your Emojis Make You Look Old?",
+      "Do Your Emojis Make You Look Old?"
+    ]
+  },
+  {
+    "cluster": 58,
+    "terms": [
+      "architecture",
+      "applications",
+      "persistent",
+      "neural",
+      "myths",
+      "genetic",
+      "executable",
+      "information"
+    ],
+    "examples": [
+      "Googie Architecture",
+      "LLM Speedrun: Architecture",
+      "Googie Architecture (2012)",
+      "Resurrecting the SuperH Architecture (2015)"
+    ]
+  },
+  {
+    "cluster": 59,
+    "terms": [
+      "art",
+      "pixel",
+      "pixel art",
+      "generative",
+      "bit",
+      "lost",
+      "ascii",
+      "ascii art"
+    ],
+    "examples": [
+      "Typewriter Art [video]",
+      "Celebrity Art",
+      "The Art of the Bromakase",
+      "Giordano Bruno's Art of Memory"
+    ]
+  },
+  {
+    "cluster": 60,
+    "terms": [
+      "did",
+      "needs",
+      "money",
+      "bubble",
+      "hack",
+      "man",
+      "productivity",
+      "kids"
+    ],
+    "examples": [
+      "Did delian asparouhov and nadia divorce?",
+      "Intelligence is becoming a commodity the way horsepower did",
+      "What did the Romans ever do for Christianity?",
+      "'We Did Our Best': Metaphors of Parenting and AI"
+    ]
+  },
+  {
+    "cluster": 61,
+    "terms": [
+      "library",
+      "lightweight",
+      "component",
+      "standard",
+      "cross-platform",
+      "standard library",
+      "graphics",
+      "sandbox"
+    ],
+    "examples": [
+      "Show HN: Flynt.js \u2013 2.2kb, zero-build, CSP-safe reactivity library for MPAs",
+      "The Library of Ashurbanipal (2025)",
+      "Ryg_rans Is Not a Library",
+      "Bonsai: Janestreet's UI Library"
+    ]
+  },
+  {
+    "cluster": 62,
+    "terms": [
+      "nvidia",
+      "gpu",
+      "chips",
+      "chip",
+      "wall",
+      "financing",
+      "street",
+      "wall street"
+    ],
+    "examples": [
+      "Nvidia Will Back OpenAI Project with as Much as $105B",
+      "OpenAI's 700W Jalape\u00f1o ASIC outpaces 1,400W Nvidia flagship GPU",
+      "Nemotron-3.5-lightning-30B-a3B Model by Nvidia for use on 1 GPU",
+      "How We Made the Nvidia Jetson Thor Flashable from a Mac or Windows PC"
+    ]
+  },
+  {
+    "cluster": 63,
+    "terms": [
+      "doesn",
+      "exist",
+      "crown",
+      "understand",
+      "mark",
+      "makes",
+      "zuckerberg",
+      "win"
+    ],
+    "examples": [
+      "When the Future Doesn't Need Us",
+      "Why the Future Doesn't Need Us (2000)",
+      "When the Future Doesn't Need Us",
+      "Show HN: CookWing, an AI chef that doesn't hallucinate quantities"
+    ]
+  },
+  {
+    "cluster": 64,
+    "terms": [
+      "silicon",
+      "valley",
+      "silicon valley",
+      "apple silicon",
+      "dream",
+      "talking",
+      "hates",
+      "losing"
+    ],
+    "examples": [
+      "Silicon Valley Is Not Ambitious Enough",
+      "To Silicon Valley, anything could be a 'psyop'",
+      "A Backlash Against Anthropic Is Brewing in Silicon Valley",
+      "Why Is Everyone in Silicon Valley Talking Like That?"
+    ]
+  },
+  {
+    "cluster": 65,
+    "terms": [
+      "machine",
+      "machine learning",
+      "mark",
+      "opus",
+      "vending machine",
+      "vending",
+      "emacs",
+      "influence"
+    ],
+    "examples": [
+      "Cox\u2013Zucker Machine",
+      "The AI Distraction Machine",
+      "You need a machine that never sleeps",
+      "Show HN: TDILEARNED \u2013 a rabbit-hole machine"
+    ]
+  },
+  {
+    "cluster": 66,
+    "terms": [
+      "think",
+      "strings",
+      "act",
+      "bubble",
+      "young",
+      "demand",
+      "quality",
+      "supply"
+    ],
+    "examples": [
+      "When Your Video Call Freezes, the Problem Is Not What You Think",
+      "Ask HN: What do you think about Northstar-browser?",
+      "Show HN: LLMs think in hierarchies. Their interpretability tools should too",
+      "What do you think of HAM?"
+    ]
+  },
+  {
+    "cluster": 67,
+    "terms": [
+      "state",
+      "current",
+      "machines",
+      "july",
+      "css",
+      "state machines",
+      "projects",
+      "vaccine"
+    ],
+    "examples": [
+      "State of SaaSpocalypse",
+      "The State of Agentic Memory",
+      "Tupoi: An attention-free LLM with strictly O(1) memory and 6 KB state",
+      "The State of Google"
+    ]
+  },
+  {
+    "cluster": 68,
+    "terms": [
+      "power",
+      "centers",
+      "plant",
+      "grid",
+      "nuclear",
+      "humanity",
+      "power grid",
+      "power plant"
+    ],
+    "examples": [
+      "2027 AI Power Shortfall of 15 GW",
+      "Why Airplanes Use 400 Hz Power",
+      "Most Power Sought for US Data Centers Will Never Materialize",
+      "Agentic Programming and the Lust for Power(?)"
+    ]
+  },
+  {
+    "cluster": 69,
+    "terms": [
+      "law",
+      "scaling",
+      "change",
+      "musk",
+      "elon",
+      "elon musk",
+      "thoughts",
+      "scaling law"
+    ],
+    "examples": [
+      "Amdahl's Law: The Speedup You Cannot Exceed",
+      "Verner's Law (Linguistics)",
+      "The Law of Jante (2015)",
+      "Moore's Law for Everything (2021)"
+    ]
+  },
+  {
+    "cluster": 70,
+    "terms": [
+      "git",
+      "remote",
+      "repo",
+      "worktrees",
+      "git worktrees",
+      "commit",
+      "tui",
+      "links"
+    ],
+    "examples": [
+      "Git Permalinks",
+      "git git git git git",
+      "Git Clay",
+      "Git Clay"
+    ]
+  },
+  {
+    "cluster": 71,
+    "terms": [
+      "file",
+      "html",
+      "html file",
+      "transfer",
+      "single",
+      "file transfer",
+      "format",
+      "city"
+    ],
+    "examples": [
+      "File over App (2023)",
+      "Fileon \u2013 Find any local file with natural-language search on Mac",
+      "Test File",
+      "Free, private file tools that work in the browser"
+    ]
+  },
+  {
+    "cluster": 72,
+    "terms": [
+      "cursor",
+      "origin",
+      "shared",
+      "start",
+      "icons",
+      "router",
+      "codex cursor",
+      "launches"
+    ],
+    "examples": [
+      "Cancelling Cursor",
+      "OpenAI Dumps Cursor",
+      "Cursor Origin is now live",
+      "Cursor Origin"
+    ]
+  },
+  {
+    "cluster": 73,
+    "terms": [
+      "guide",
+      "developer",
+      "practical",
+      "complete",
+      "field",
+      "field guide",
+      "practical guide",
+      "style"
+    ],
+    "examples": [
+      "What's in a Name: A Guide to the Many Flavours of TeX",
+      "LinkedIn-maxxing: An early-stage GTM guide",
+      "A Fetishist's Guide to the Monochrom (Part 1) (2012)",
+      "Pessimist's Guide to the Next 10 Years (2010)"
+    ]
+  },
+  {
+    "cluster": 74,
+    "terms": [
+      "dead",
+      "long",
+      "isn",
+      "saas",
+      "health",
+      "dead end",
+      "ide",
+      "death"
+    ],
+    "examples": [
+      "Ask HN: Why so many [dead] replies?",
+      "The Butcher, Now Dead",
+      "Software Engineering is dead (again)",
+      "Jackie the bald eagle dead at 14"
+    ]
+  },
+  {
+    "cluster": 75,
+    "terms": [
+      "works",
+      "watermarking",
+      "watermarking works",
+      "probably",
+      "text watermarking",
+      "offline",
+      "tasks",
+      "actually"
+    ],
+    "examples": [
+      "Nicotine: It Works",
+      "How Dactyl Works",
+      "DuplicateHandle Works on Sockets, Mostly",
+      "See how an H100 works in 3D with threejs"
+    ]
+  },
+  {
+    "cluster": 76,
+    "terms": [
+      "testing",
+      "hacked",
+      "visual",
+      "deterministic",
+      "automation",
+      "intel",
+      "simulation",
+      "lab"
+    ],
+    "examples": [
+      "Show HN: Open tool for testing your AI Agents (No LLM)",
+      "Show HN: Argus, open-source AI agents for testing web apps",
+      "Testing Models",
+      "X testing shadowban test tool"
+    ]
+  },
+  {
+    "cluster": 77,
+    "terms": [
+      "startup",
+      "jobs",
+      "buy",
+      "start",
+      "minutes",
+      "talks",
+      "economy",
+      "school"
+    ],
+    "examples": [
+      "Roast My Startup",
+      "Startup Game",
+      "Startup Anti-Patterns",
+      "Vallley \u2013 Live Startup Jobs"
+    ]
+  },
+  {
+    "cluster": 78,
+    "terms": [
+      "cloudflare",
+      "workers",
+      "blog",
+      "introducing",
+      "kitesurf",
+      "launches",
+      "cloudflare workers",
+      "wallet"
+    ],
+    "examples": [
+      "Cloudflare Ambassadors",
+      "Why and How Cloudflare Built Pingora",
+      "Cloudflare OS: an open platform for agents, apps, and work",
+      "Cloudflare OS"
+    ]
+  },
+  {
+    "cluster": 79,
+    "terms": [
+      "great",
+      "emacs",
+      "oil",
+      "mystery",
+      "story",
+      "makes",
+      "coming",
+      "war"
+    ],
+    "examples": [
+      "How to Do Great Work (2023)",
+      "Make US INDs Great Again",
+      "Our Great Mutator",
+      "The Great Divergence in Software Engineering"
+    ]
+  },
+  {
+    "cluster": 80,
+    "terms": [
+      "slop",
+      "linkedin",
+      "button",
+      "ai-generated",
+      "slop button",
+      "backlash",
+      "youtube",
+      "adds"
+    ],
+    "examples": [
+      "BI Slop",
+      "Meghan O'Gieblyn: Against Slop",
+      "Are we becoming too paranoid about AI slop?",
+      "AI Slop Is Real"
+    ]
+  },
+  {
+    "cluster": 81,
+    "terms": [
+      "simple",
+      "task",
+      "decide",
+      "fix",
+      "algorithm",
+      "management",
+      "scientists",
+      "solution"
+    ],
+    "examples": [
+      "Swarm-forge: A simple tool for coordinating several AI agents",
+      "Simple Sudoku Solvers",
+      "k/simple",
+      "Keeping FairScan simple isn't simple"
+    ]
+  },
+  {
+    "cluster": 82,
+    "terms": [
+      "digital",
+      "services",
+      "simulator",
+      "sovereignty",
+      "global",
+      "persistent",
+      "products",
+      "europe"
+    ],
+    "examples": [
+      "Digital Sewer Socialism",
+      "Digital Sundial",
+      "Interzone Digital",
+      "The Digital Asylum"
+    ]
+  },
+  {
+    "cluster": 83,
+    "terms": [
+      "network",
+      "social network",
+      "neural",
+      "professional",
+      "social",
+      "neural network",
+      "technology",
+      "developers"
+    ],
+    "examples": [
+      "Multilayer Network Backboning",
+      "Show HN: Terminal Ad Network",
+      "Show HN: Bean Network Tester \u2013 open-source bad network simulator",
+      "Show HN: A 34 MB search engine that can't make a network call"
+    ]
+  },
+  {
+    "cluster": 84,
+    "terms": [
+      "chinese",
+      "american",
+      "robot",
+      "robots",
+      "centers",
+      "humanoid",
+      "record",
+      "education"
+    ],
+    "examples": [
+      "American AI May Not Survive Chinese Open-Source",
+      "American AI May Not Survive Chinese Open-Source",
+      "Chinese AI Models Overtake American Rivals in Popularity",
+      "What agentic harness do you use with Chinese models?"
+    ]
+  },
+  {
+    "cluster": 85,
+    "terms": [
+      "business",
+      "check",
+      "humans",
+      "start",
+      "layer",
+      "operating",
+      "month",
+      "generation"
+    ],
+    "examples": [
+      "The Business Is the Business",
+      "Open Source is not a business model (2016)",
+      "Model your business once \u2013 for humans and AI alike",
+      "Show HN: Open-source tool to check if ChatGPT recommends your business"
+    ]
+  },
+  {
+    "cluster": 86,
+    "terms": [
+      "meta",
+      "glasses",
+      "settlement",
+      "ads",
+      "safety",
+      "pay",
+      "trial",
+      "states"
+    ],
+    "examples": [
+      "Meta's self-inflicted resignation-wave",
+      "The Meta Chalkboard",
+      "Meta: 7k",
+      "What is the future of the meta game genre?"
+    ]
+  },
+  {
+    "cluster": 87,
+    "terms": [
+      "center",
+      "amazon",
+      "water",
+      "city",
+      "meeting",
+      "fight",
+      "backlash",
+      "town"
+    ],
+    "examples": [
+      "How to **** ** a Data Center [video]",
+      "Amur Tiger Center",
+      "The Guile of the Data Center",
+      "OpenLiving - A data center you can live in [video]"
+    ]
+  },
+  {
+    "cluster": 88,
+    "terms": [
+      "microsoft",
+      "copilot",
+      "word",
+      "win",
+      "microsoft copilot",
+      "chips",
+      "edge",
+      "plan"
+    ],
+    "examples": [
+      "Xenix, from Microsoft, in Adverts",
+      "Microsoft Redesigns the Windows Webpage",
+      "It's Been 10 Years. Has Microsoft Built What You Voted For?",
+      "Microsoft Retreats in China"
+    ]
+  },
+  {
+    "cluster": 89,
+    "terms": [
+      "deepseek",
+      "flash",
+      "deepseek flash",
+      "gemini",
+      "pro",
+      "price",
+      "deepseek harness",
+      "deepseek pro"
+    ],
+    "examples": [
+      "DeepSeek V4 Flash on ARC-AGI",
+      "DeepSeek V4 Flash 0731",
+      "DeepSeek-V4-Flash-Vision-Exp Is Now Live on the DeepSeek API Platform",
+      "Show HN: DeepSeek V4 Flash 0731 with MoonViT Vision (NVFP4)"
+    ]
+  },
+  {
+    "cluster": 90,
+    "terms": [
+      "cost",
+      "device",
+      "debt",
+      "token",
+      "money",
+      "happens",
+      "cognitive",
+      "task"
+    ],
+    "examples": [
+      "Find out what your coding agents cost you",
+      "The cost to retire comfortably around the world",
+      "The cost of caring about software",
+      "Greenfield and the Cost of Amnesia"
+    ]
+  },
+  {
+    "cluster": 91,
+    "terms": [
+      "team",
+      "core",
+      "dev",
+      "interviewing",
+      "deepmind",
+      "joins",
+      "plan",
+      "marketing"
+    ],
+    "examples": [
+      "I run AI coding agents as a team with AI DevKit",
+      "Show HN: AgentsKit \u2013 A full software team and growth team in one command",
+      "Ask HN: How are you leveraging AI/LLMs as software dev TEAM",
+      "The Nixpkgs core team has unfortunately decided to disband"
+    ]
+  },
+  {
+    "cluster": 92,
+    "terms": [
+      "manager",
+      "task",
+      "package",
+      "package manager",
+      "task manager",
+      "local-first",
+      "session",
+      "password"
+    ],
+    "examples": [
+      "Show HN: The AI Reputation Manager",
+      "I Don't Have a Manager Readme",
+      "Show HN: RC Setlist \u2013 Setlist manager and lyric prompter for Ableton Live 12",
+      "Show HN: Wallfacer \u2013 A terminal session manager for Claude Code, and more"
+    ]
+  },
+  {
+    "cluster": 93,
+    "terms": [
+      "theory",
+      "optimization",
+      "quantum",
+      "programmers",
+      "set",
+      "information",
+      "year-old",
+      "evolution"
+    ],
+    "examples": [
+      "Without a Theory of Intelligence",
+      "Arthur Eddington's Theory of Everything (2015)",
+      "Politeness Theory",
+      "Self-Determination Theory"
+    ]
+  },
+  {
+    "cluster": 94,
+    "terms": [
+      "science",
+      "computer science",
+      "issue",
+      "fiction",
+      "weekly",
+      "science fiction",
+      "computers",
+      "technology"
+    ],
+    "examples": [
+      "Pathological Science",
+      "The baffling science of SSRIs: how do they work?",
+      "Sasquatch science",
+      "Science at LLM Speed"
+    ]
+  },
+  {
+    "cluster": 95,
+    "terms": [
+      "prompt",
+      "opus",
+      "injection",
+      "prompt injection",
+      "policy",
+      "visual",
+      "caching",
+      "object"
+    ],
+    "examples": [
+      "Sometimes the Best Prompt Is /New",
+      "How to Prompt Any LLM?",
+      "Video to Prompt",
+      "Just Show Me the Prompt"
+    ]
+  },
+  {
+    "cluster": 96,
+    "terms": [
+      "files",
+      "markdown",
+      "workspace",
+      "binary",
+      "attention",
+      "sqlite",
+      "html",
+      "cat"
+    ],
+    "examples": [
+      "EmoSend transfers files without receiving them",
+      "The Albanian Files",
+      "Hister \u2013 Search engine for local files and visited webpages",
+      "Show HN: Krate, AI-made apps as permissioned files for Mac, Windows, and Linux"
+    ]
+  },
+  {
+    "cluster": 97,
+    "terms": [
+      "tell",
+      "working",
+      "update",
+      "site",
+      "race",
+      "analytics",
+      "partners",
+      "pick"
+    ],
+    "examples": [
+      "What We Tell AI",
+      "Show HN: Can you tell Wodehouse from a model imitating Wodehouse?",
+      "Ask HN: Should AI's tell you they're AI?",
+      "Tell HN: On the Boardwalk"
+    ]
+  },
+  {
+    "cluster": 98,
+    "terms": [
+      "got",
+      "worse",
+      "tired",
+      "got tired",
+      "compiler",
+      "react",
+      "wanted",
+      "got better"
+    ],
+    "examples": [
+      "We got content-defined chunking from 555 MB/s to 21 GB/s",
+      "Detexify Got Vibed",
+      "Rust 1.98 got a P-critical miscompilation",
+      "Show HN: My first app got 97% on MacSources"
+    ]
+  },
+  {
+    "cluster": 99,
+    "terms": [
+      "going",
+      "management",
+      "isn",
+      "global",
+      "america",
+      "policy",
+      "rogue",
+      "products"
+    ],
+    "examples": [
+      "Going live now \u2013 mosh coding at 1:45am",
+      "We are not going anywhere",
+      "What's going on here, with this human?",
+      "Where are AI Agents going?"
+    ]
+  },
+  {
+    "cluster": 100,
+    "terms": [
+      "turn",
+      "screen",
+      "visual",
+      "videos",
+      "production",
+      "scientists",
+      "photos",
+      "document"
+    ],
+    "examples": [
+      "Turn Claude Code into a 24/7 Agent",
+      "Google's Dreambeans, weirdest-named AI tool, will turn your life to a cartoon",
+      "Turn off Claude Code's Memory [video]",
+      "Turn Your Screen into Agents"
+    ]
+  },
+  {
+    "cluster": 101,
+    "terms": [
+      "infrastructure",
+      "securing",
+      "government",
+      "operating",
+      "production",
+      "critical",
+      "trading",
+      "critical infrastructure"
+    ],
+    "examples": [
+      "Terra Silica \u2013 AI Infrastructure Across Pax Silica and Waico",
+      "AI and Infrastructure Engineering",
+      "Diskless Infrastructure",
+      "Infrastructure: Not Another Buzzword"
+    ]
+  },
+  {
+    "cluster": 102,
+    "terms": [
+      "hard",
+      "mode",
+      "problems",
+      "transformer",
+      "enterprise",
+      "stops",
+      "break",
+      "soft"
+    ],
+    "examples": [
+      "Code is the hard part",
+      "Vetted AI code is hard to justify",
+      "Crystallization of Hard Spheres",
+      "Vetted AI code is hard to justify"
+    ]
+  },
+  {
+    "cluster": 103,
+    "terms": [
+      "days",
+      "lost",
+      "second",
+      "attack",
+      "rogue",
+      "prs",
+      "left",
+      "certificates"
+    ],
+    "examples": [
+      "Show HN: LongRuay \u2013 Live Like a Millionaire for 30 Days",
+      "MakeMKV has been down for two days",
+      "Ask HN: How do you keep up with HN these days?",
+      "The VC Days: So many miracles"
+    ]
+  },
+  {
+    "cluster": 104,
+    "terms": [
+      "book",
+      "information",
+      "book review",
+      "wrote",
+      "industry",
+      "publishing",
+      "chaos",
+      "rare"
+    ],
+    "examples": [
+      "Yudkowsky and Soares' Book Is Lacking (2025)",
+      "Seneca: On Anger, Book I",
+      "Book: A Girl Who Was Plugged In",
+      "Software Engineering Humble Book Bundle"
+    ]
+  },
+  {
+    "cluster": 105,
+    "terms": [
+      "product",
+      "needs",
+      "launch",
+      "launches",
+      "selling",
+      "makes",
+      "discovery",
+      "engineers"
+    ],
+    "examples": [
+      "Product.now",
+      "What is a product?",
+      "Product, Aristra, Is Craaaazy",
+      "The Singular Viable Product"
+    ]
+  },
+  {
+    "cluster": 106,
+    "terms": [
+      "image",
+      "generator",
+      "generation",
+      "image generation",
+      "earth",
+      "qwen",
+      "protocol",
+      "production"
+    ],
+    "examples": [
+      "An image can overflow",
+      "Imging \u2013 Local Image Tools",
+      "A quine in Piet \u2013 a GIF image that prints itself [video]",
+      "Kompresly \u2013 a free image compresor app"
+    ]
+  },
+  {
+    "cluster": 107,
+    "terms": [
+      "market",
+      "stock",
+      "stock market",
+      "share",
+      "bond",
+      "global",
+      "bond market",
+      "economy"
+    ],
+    "examples": [
+      "Everyone Is Still Undersizing the AI Market \u2013 Eric Vishria [video]",
+      "The Market for Lemons",
+      "RWAs, Unwrapped: We put a name to 83% of the tokenized RWA market on Ethereum",
+      "Market All the Apps"
+    ]
+  },
+  {
+    "cluster": 108,
+    "terms": [
+      "knowledge",
+      "graph",
+      "management",
+      "knowledge graph",
+      "base",
+      "compiler",
+      "knowledge base",
+      "local-first"
+    ],
+    "examples": [
+      "AI and Chauffeur Knowledge",
+      "The Devouring of All Knowledge",
+      "Knowledge Compressor",
+      "Show HN: Game to see if you're over-/under-confident in your own knowledge"
+    ]
+  },
+  {
+    "cluster": 109,
+    "terms": [
+      "inside",
+      "look",
+      "risk",
+      "hidden",
+      "sandbox",
+      "consciousness",
+      "fix",
+      "labs"
+    ],
+    "examples": [
+      "MAI-Cyber-1-Flash inside MDASH",
+      "Show HN: terminal-code \u2013 VS Code inside the terminal",
+      "Inside UTF-8",
+      "Terminal-code: VS Code inside the terminal"
+    ]
+  },
+  {
+    "cluster": 110,
+    "terms": [
+      "era",
+      "engineers",
+      "entering",
+      "enshittification",
+      "zero",
+      "hollywood",
+      "lessons",
+      "enterprise"
+    ],
+    "examples": [
+      "The turbulent AI era is here",
+      "Code maintainability plummets in the AI coding era",
+      "The Flatness Era",
+      "The turbulent AI era is here"
+    ]
+  },
+  {
+    "cluster": 111,
+    "terms": [
+      "modern",
+      "written",
+      "scratch",
+      "runtime",
+      "css",
+      "javascript",
+      "internet written",
+      "protocol"
+    ],
+    "examples": [
+      "The Dystopia of Modern Singlehood",
+      "Assert(): A Modern How To",
+      "Principia Mathematica is modern and insightful",
+      "Modern-Apps: Ecosystem of open source apps written using modern technologies"
+    ]
+  },
+  {
+    "cluster": 112,
+    "terms": [
+      "email",
+      "verification",
+      "email verification",
+      "fix",
+      "easy",
+      "hosting",
+      "domain",
+      "provider"
+    ],
+    "examples": [
+      "Sunsetting New.email",
+      "Show HN: Tanchi \u2013 Open-source AI prospecting agent that only automates email",
+      "AI and Constitutions (From My Email)",
+      "My Email Hygiene"
+    ]
+  },
+  {
+    "cluster": 113,
+    "terms": [
+      "company",
+      "working",
+      "left",
+      "hacked",
+      "employees",
+      "primitives",
+      "surveillance",
+      "needs"
+    ],
+    "examples": [
+      "Ask HN: Why is every company encorporating AI everywhere?",
+      "Every software company will become a dev tools company",
+      "Wrapper Company vs. Recursion Company",
+      "Apple Just Became a $5T Company"
+    ]
+  },
+  {
+    "cluster": 114,
+    "terms": [
+      "thinking",
+      "critical",
+      "machines",
+      "program",
+      "thinking machines",
+      "tests",
+      "doing",
+      "losing"
+    ],
+    "examples": [
+      "Are We Thinking Correctly About AI Intelligence?",
+      "Artificial Intelligence Is Artificial Thinking",
+      "How to Keep Thinking",
+      "How to Keep Thinking"
+    ]
+  },
+  {
+    "cluster": 115,
+    "terms": [
+      "want",
+      "say",
+      "choose",
+      "bugs",
+      "manifesto",
+      "hear",
+      "generator",
+      "factory"
+    ],
+    "examples": [
+      "I want extern \"fil-C\"",
+      "I Just Want to Search",
+      "I want extern \"fil-C\"",
+      "I don't want Google poking around but I do want NotebookLM \u2013 what can I do?"
+    ]
+  },
+  {
+    "cluster": 116,
+    "terms": [
+      "com",
+      "ssh",
+      "amazon",
+      "launches",
+      "money",
+      "reddit",
+      "site",
+      "reddit com"
+    ],
+    "examples": [
+      "Show HN: Heartbeats.dorianmarie.com",
+      "Show HN: Telnet Hackerlinks.com",
+      "Chatgpt.com is down \u2013 all signups and logins are down as of",
+      "Bonsaikitten.com"
+    ]
+  },
+  {
+    "cluster": 117,
+    "terms": [
+      "native",
+      "react",
+      "tiny",
+      "native macos",
+      "port",
+      "replacement",
+      "react native",
+      "compiler"
+    ],
+    "examples": [
+      "NVIDIA-labs OO Agents: Native Python Object-Oriented Agents",
+      "Ghosthub: All your multiplexers in one native terminal",
+      "Nanocoder: A local coding agent, now with a native VS Code sidebar",
+      "Ateegnas, An AI native Data Annotation tool."
+    ]
+  },
+  {
+    "cluster": 118,
+    "terms": [
+      "space",
+      "nasa",
+      "telescope",
+      "space telescope",
+      "earth",
+      "mission",
+      "possible",
+      "station"
+    ],
+    "examples": [
+      "CIE 1931 XYZ colour space (2024)",
+      "Space Sunshade",
+      "No Space Like J-Space",
+      "Should A.I. Move to Space? (Google's Project Suncatcher)"
+    ]
+  },
+  {
+    "cluster": 119,
+    "terms": [
+      "frontier",
+      "pacing",
+      "reasoning",
+      "labs",
+      "cybersecurity",
+      "efficiency",
+      "gpt-5",
+      "economics"
+    ],
+    "examples": [
+      "NanoGPT Speedrun Frontier",
+      "World Models Are AI's Next Frontier",
+      "The Jagged GTM Frontier",
+      "The frontier of GPQA-Dumb models"
+    ]
+  },
+  {
+    "cluster": 120,
+    "terms": [
+      "things",
+      "pay",
+      "buy",
+      "hacking",
+      "bad",
+      "come",
+      "won",
+      "shape"
+    ],
+    "examples": [
+      "New things in Python 3.15 [video]",
+      "Things I would have done differently (consulting)",
+      "Ask HN: How Are Things in the US?",
+      "We Like Things"
+    ]
+  },
+  {
+    "cluster": 121,
+    "terms": [
+      "says",
+      "ceo",
+      "hacked",
+      "ceo says",
+      "record",
+      "bubble",
+      "court",
+      "says hacked"
+    ],
+    "examples": [
+      "The One That Says IT All",
+      "NIH Directors Decide, Except When HHS Says No",
+      "Sorry, the Data Says Communist",
+      "Show HN: NMEMORY \u2013 a memory for coding agents that says when it doesn't know"
+    ]
+  },
+  {
+    "cluster": 122,
+    "terms": [
+      "interactive",
+      "interactive map",
+      "protocol",
+      "tour",
+      "reasoning",
+      "demo",
+      "introduction",
+      "tui"
+    ],
+    "examples": [
+      "Show HN: Runthru \u2013 open-source Interactive Demos",
+      "Show HN: Eigshow Interactive Web App",
+      "Eigen stuffs interactive web app",
+      "The Interactive Way to Go"
+    ]
+  },
+  {
+    "cluster": 123,
+    "terms": [
+      "big",
+      "big tech",
+      "win",
+      "spending",
+      "hidden",
+      "deal",
+      "race",
+      "thing"
+    ],
+    "examples": [
+      "AI's Next Big Leap Is into the Real World",
+      "How Big Are Factorials?",
+      "No Immunity for Big Oil",
+      "Big Food vs. the People"
+    ]
+  },
+  {
+    "cluster": 124,
+    "terms": [
+      "self-hosted",
+      "service",
+      "workspace",
+      "servers",
+      "management",
+      "teams",
+      "gateway",
+      "durable"
+    ],
+    "examples": [
+      "Show HN: Newsroom Self-hosted, AI-ranked meta-aggregator for HN Subreddits etc.",
+      "How HN: Qisutu \u2013 an open-source, self-hosted ticketing and service desk",
+      "Show HN: SplatIt. Self-hosted game servers for Splatoon on Wii U",
+      "How I Made Self-Hosted Servers Recoverable from Hangs"
+    ]
+  },
+  {
+    "cluster": 125,
+    "terms": [
+      "runs",
+      "gpu",
+      "locally",
+      "robot",
+      "phone",
+      "tok",
+      "runs locally",
+      "compiler"
+    ],
+    "examples": [
+      "Fortran Runs Through Jupyterlite",
+      "Show HN: I built a terminal pager that runs in Colab",
+      "AI runs here. Not out there",
+      "MouseHunt \u2013 cat-vs-mouse RTS that runs in the browser"
+    ]
+  },
+  {
+    "cluster": 126,
+    "terms": [
+      "extension",
+      "chrome",
+      "chrome extension",
+      "tab",
+      "play",
+      "applications",
+      "page",
+      "update"
+    ],
+    "examples": [
+      "Viaduct \u2013 Tool to Convert a Google Chrome Extension into a Safari Web Extension",
+      "Show HN: Bananarr \u2013 Technology Profiler \u2013 Chrome Extension",
+      "GoFullPage Chrome Extension Deleted from Chrome Webstore",
+      "API Testing Chrome Extension"
+    ]
+  },
+  {
+    "cluster": 127,
+    "terms": [
+      "spacex",
+      "moon",
+      "report",
+      "rocket",
+      "spacex rocket",
+      "images",
+      "hit",
+      "collision"
+    ],
+    "examples": [
+      "Out-of-control SpaceX rocket believed to have smashed into the Moon",
+      "SpaceX rocket hit the moon: Before and after pics (KASA)",
+      "NASA images show crater carved by a SpaceX rocket that slammed into the moon",
+      "Drifting SpaceX rocket heading for collision with Moon"
+    ]
+  },
+  {
+    "cluster": 128,
+    "terms": [
+      "public",
+      "america",
+      "beta",
+      "government",
+      "trust",
+      "health",
+      "fix",
+      "safety"
+    ],
+    "examples": [
+      "My\u0160koda Public API",
+      "Borges Labyrinth in Venice reopens to the public",
+      "Let's fix indecipherable public data with Al",
+      "Show HN: Public Web Change Intelligence"
+    ]
+  },
+  {
+    "cluster": 129,
+    "terms": [
+      "skill",
+      "risk",
+      "reviewing",
+      "workflow",
+      "technical",
+      "english",
+      "planning",
+      "core"
+    ],
+    "examples": [
+      "Show HN: Implement-spec \u2013 a harness-agnostic spec-to-verified-PR agent skill",
+      "Ask HN: Is there a marketable \"skill\" to using AI?",
+      "Unlazy: Anti-laziness skill for AI agents",
+      "Show HN: An interactive UI for the grill-me skill"
+    ]
+  },
+  {
+    "cluster": 130,
+    "terms": [
+      "support",
+      "gets",
+      "adding",
+      "adds",
+      "customer",
+      "clients",
+      "feature",
+      "scientists"
+    ],
+    "examples": [
+      "X262: X264 with MPEG-2 Support",
+      "NoWreck v0.9.0 \u2013 Rust and Go Language Support",
+      "Linux 7.3 to support Logitech HID++ 2.0 reprogrammable button support",
+      "Is it on Linux yet? \u2013 Tracking Linux support for handmade software"
+    ]
+  },
+  {
+    "cluster": 131,
+    "terms": [
+      "loop",
+      "discovery",
+      "feedback",
+      "automation",
+      "evidence",
+      "hot",
+      "grid",
+      "humans"
+    ],
+    "examples": [
+      "Temporal at Loop",
+      "Guantlet Loop",
+      "AI Loop Engineering in 2026: How to Build a Gauntlet Loop",
+      "The Agent Loop Has Always Been There"
+    ]
+  },
+  {
+    "cluster": 132,
+    "terms": [
+      "hardware",
+      "standard",
+      "phone",
+      "developer",
+      "july",
+      "case",
+      "physical",
+      "care"
+    ],
+    "examples": [
+      "Show HN: Spore \u2013 run local models on your own hardware, use them from anywhere",
+      "Local LLM Hardware Calc",
+      "Good Linux Hardware",
+      "Autoresearch for Hardware"
+    ]
+  },
+  {
+    "cluster": 133,
+    "terms": [
+      "client",
+      "http",
+      "local-first",
+      "ssh",
+      "spotify",
+      "buy",
+      "kubernetes",
+      "irc"
+    ],
+    "examples": [
+      "Ask HN: What BOYK AI client are you using?",
+      "Show HN: Hackerznews \u2013 Yet Another HN Client",
+      "Show HN: Otaku \u2013 A Roleplay Terminal Client",
+      "Ask HN: Should a coding client import another client's rules by default?"
+    ]
+  },
+  {
+    "cluster": 134,
+    "terms": [
+      "wrong",
+      "doing",
+      "went",
+      "gets",
+      "shape",
+      "developers",
+      "scored",
+      "american"
+    ],
+    "examples": [
+      "The Wrong Memory",
+      "Humanists Have Done Nothing Wrong",
+      "ZFS Scrubs with no ECC (what could possibly go wrong?) (2025)",
+      "Something Is Wrong on the Internet"
+    ]
+  },
+  {
+    "cluster": 135,
+    "terms": [
+      "users",
+      "billion",
+      "developers",
+      "shared",
+      "hit",
+      "makes",
+      "projects",
+      "gemini"
+    ],
+    "examples": [
+      "Show HN: I built a tool to find your first users before they find you",
+      "Importing Users into FusionAuth over Time",
+      "Ask HN: How to engage users in an open source project and when to stop?",
+      "Ubuntu to soon have more WSL users than native Linux users"
+    ]
+  },
+  {
+    "cluster": 136,
+    "terms": [
+      "help",
+      "study",
+      "needs",
+      "ads",
+      "docs",
+      "workers",
+      "chip",
+      "change"
+    ],
+    "examples": [
+      "Ask HN: Do you need Google ads help?",
+      "How I Use AI to Help Me Write",
+      "Does whispering to agents in docs help?",
+      "Does whispering to agents in docs help?"
+    ]
+  },
+  {
+    "cluster": 137,
+    "terms": [
+      "autonomous",
+      "attack",
+      "parallel",
+      "driving",
+      "opus",
+      "blog",
+      "months",
+      "lessons"
+    ],
+    "examples": [
+      "Show HN: Making Autonomous Work Reviewable",
+      "Show HN: Claw-coder- the first autonomous local first coding agent",
+      "Autonomous Agentic Engineering Tools",
+      "Strix: Autonomous Security Platform"
+    ]
+  },
+  {
+    "cluster": 138,
+    "terms": [
+      "ios",
+      "android",
+      "tracker",
+      "offline",
+      "phone",
+      "daily",
+      "local-first",
+      "tracking"
+    ],
+    "examples": [
+      "Etherpad: A multi-touch synthesizer for iOS and Android",
+      "New Website, Instapaper 10 for iOS, and AI Voices for Android",
+      "Dactyl \u2013 Build real iOS apps just by describing them",
+      "Flickr iOS App Reverted"
+    ]
+  },
+  {
+    "cluster": 139,
+    "terms": [
+      "benchmark",
+      "math",
+      "notes",
+      "problems",
+      "daily",
+      "reasoning",
+      "rails",
+      "puzzle"
+    ],
+    "examples": [
+      "Show HN: Trunchbull, run real models against any benchmark in your browser",
+      "ExploitGym AI benchmark source code",
+      "SciCode-Verified: How Benchmark Defects Underestimated LLM Scientific-Coding",
+      "CladBench \u2013 an open benchmark for AI on UK building regulations"
+    ]
+  },
+  {
+    "cluster": 140,
+    "terms": [
+      "day",
+      "earth",
+      "week",
+      "zero",
+      "ship",
+      "html",
+      "day week",
+      "happy"
+    ],
+    "examples": [
+      "Log4j2 0-Day",
+      "GitHub has another tough day",
+      "One Video per Day",
+      "Roma Holocaust Memorial Day"
+    ]
+  },
+  {
+    "cluster": 141,
+    "terms": [
+      "small",
+      "teams",
+      "experiment",
+      "study",
+      "businesses",
+      "safety",
+      "store",
+      "weather"
+    ],
+    "examples": [
+      "Small Models Can Introspect, Too (2025)",
+      "How Small Can a Video Game Be?",
+      "Small Models Can Introspect, Too (2025)",
+      "Show HN: Sched \u2013 On-call rotations for small teams that don't need PagerDuty"
+    ]
+  },
+  {
+    "cluster": 142,
+    "terms": [
+      "training",
+      "amazon",
+      "scientists",
+      "stack",
+      "effect",
+      "replicate",
+      "neural",
+      "jobs"
+    ],
+    "examples": [
+      "Show HN: RecipeBook \u2013 Self-serve platform for video training data, $3/HR",
+      "Baking a Model: A Metaphor for LLM Training",
+      "How to make a model biased with few training samples?",
+      "The Problem with Child-Led Potty Training"
+    ]
+  },
+  {
+    "cluster": 143,
+    "terms": [
+      "flock",
+      "cameras",
+      "surveillance",
+      "flock cameras",
+      "police",
+      "camera",
+      "ceo",
+      "case"
+    ],
+    "examples": [
+      "Flock cameras are getting mobbed",
+      "Americans are cheering for vigilantes who take down Flock cameras",
+      "Flock cameras violate highway safety standards",
+      "A Cop's Case for Flock"
+    ]
+  },
+  {
+    "cluster": 144,
+    "terms": [
+      "performance",
+      "qwen3",
+      "analysis",
+      "price",
+      "performance price",
+      "price analysis",
+      "max",
+      "gpu"
+    ],
+    "examples": [
+      "Qwen3.8 2.4T A95B: Intelligence, Performance and Price Analysis",
+      "Performance Excuses Debunked",
+      "25x Performance, Three Optimizations (2025)",
+      "Performance, GCs and Rust"
+    ]
+  },
+  {
+    "cluster": 145,
+    "terms": [
+      "right",
+      "task",
+      "thing",
+      "gets",
+      "repair",
+      "router",
+      "doing",
+      "bubble"
+    ],
+    "examples": [
+      "You're Absolutely Right",
+      "Alex Karp was right, you don't own your data",
+      "Why are we (almost all) right\u2011handed?",
+      "Tool search: Finding the right tool at the right time"
+    ]
+  },
+  {
+    "cluster": 146,
+    "terms": [
+      "postgres",
+      "scale",
+      "monitoring",
+      "clickhouse",
+      "sqlite",
+      "wal",
+      "matters",
+      "isn"
+    ],
+    "examples": [
+      "Making Postgres queues scale",
+      "Postgres Sharding",
+      "The Dangers of Postgres Subtransactions",
+      "Does anyone run Postgres without PgBouncer?"
+    ]
+  },
+  {
+    "cluster": 147,
+    "terms": [
+      "private",
+      "notes",
+      "credit",
+      "equity",
+      "private credit",
+      "private equity",
+      "service",
+      "servers"
+    ],
+    "examples": [
+      "Notes on Private Trackers",
+      "Golink: A private shortlink service for tailnets",
+      "Private Credit Backstop, How Private Equity Socializes Risk Through Insurers [pdf]",
+      "Mojang is enforcing \"inappropriate\" MOTDs even on private whitelisted servers"
+    ]
+  },
+  {
+    "cluster": 148,
+    "terms": [
+      "chat",
+      "interface",
+      "emacs",
+      "working",
+      "chat interface",
+      "export",
+      "humans",
+      "tui"
+    ],
+    "examples": [
+      "Show HN: AgentCouch \u2013 let your agents chat with other agents",
+      "Show HN: Llmcanvas.chat Tree-based LLM chat on an infinite canvas",
+      "Show HN: Agent-shell \u2013 vendor-neutral chat with AI agents in Emacs",
+      "Building a connectionless chat app using BLE advertisements"
+    ]
+  },
+  {
+    "cluster": 149,
+    "terms": [
+      "learn",
+      "developers",
+      "needs",
+      "love",
+      "community",
+      "didn",
+      "lua",
+      "scratch"
+    ],
+    "examples": [
+      "TokenTown \u2013> Learn how LLM's work in a SimCity-like world",
+      "And Realists Learn to Shoot",
+      "Ask HN: How do you learn with LLMs?",
+      "Ask HN: How are you using AI to learn?"
+    ]
+  },
+  {
+    "cluster": 150,
+    "terms": [
+      "voice",
+      "assistant",
+      "months",
+      "mode",
+      "operation",
+      "realtime",
+      "grok",
+      "dictation"
+    ],
+    "examples": [
+      "Show HN: How I built Remembered checkout for Voice",
+      "Agent Voice, communicate with your coding agent all from Voice, on the fly",
+      "Best AI voice cloning in 2026: how to clone your voice",
+      "Ask HN: Is there a duplex voice mode in Claude Code?"
+    ]
+  },
+  {
+    "cluster": 151,
+    "terms": [
+      "home",
+      "page",
+      "assistant",
+      "lab",
+      "home assistant",
+      "thing",
+      "smart",
+      "box"
+    ],
+    "examples": [
+      "AI at Home Part 2: Multi-GPU Drifting",
+      "Making LEDs at Home [video]",
+      "Making Weapons-Grade Plutonium at home [video]",
+      "Making LEDs at Home [video]"
+    ]
+  },
+  {
+    "cluster": 152,
+    "terms": [
+      "kernel",
+      "bug",
+      "gpu",
+      "optimization",
+      "update",
+      "lean",
+      "attention",
+      "cuda"
+    ],
+    "examples": [
+      "Why is it all in the kernel?",
+      "Windows Kernel Substring Search",
+      "How to get a matmul kernel into the top percentile (worklog)",
+      "Hazard Pointers for the Kernel"
+    ]
+  },
+  {
+    "cluster": 153,
+    "terms": [
+      "music",
+      "speed",
+      "play",
+      "player",
+      "generation",
+      "music player",
+      "streaming",
+      "programmers"
+    ],
+    "examples": [
+      "Elevator Music [video]",
+      "Music to confuse AI might be the next new genre",
+      "Music Speed Changer Web App",
+      "Music Speed Changer Web App"
+    ]
+  },
+  {
+    "cluster": 154,
+    "terms": [
+      "personal",
+      "vibe",
+      "policy",
+      "finance",
+      "reading",
+      "personal finance",
+      "agi",
+      "story"
+    ],
+    "examples": [
+      "Show HN: TAMX \u2013 Personal Tamagotchi",
+      "PWA: Personal Web Apps",
+      "Show HN: Vertex, your personal archiver and annotator",
+      "PWAs: Personal Web Apps"
+    ]
+  },
+  {
+    "cluster": 155,
+    "terms": [
+      "trump",
+      "administration",
+      "trump administration",
+      "access",
+      "america",
+      "war",
+      "iran",
+      "money"
+    ],
+    "examples": [
+      "Trump's Gift to the Money Launderers",
+      "Words Are Disappearing in the New Trump administration (2025)",
+      "Trump Media's new paid data service goes live, faster access to Trump's posts",
+      "The Trump administration's March to the Spoils System"
+    ]
+  },
+  {
+    "cluster": 156,
+    "terms": [
+      "list",
+      "words",
+      "reading",
+      "curated",
+      "problems",
+      "banned",
+      "saas",
+      "products"
+    ],
+    "examples": [
+      "The Importance of a Problem List",
+      "Aspirational Clownmaxxing and Joey's cadillac todo list",
+      "TIME100 List of the Most Influential People in AI",
+      "The List That Forgets"
+    ]
+  },
+  {
+    "cluster": 157,
+    "terms": [
+      "talk",
+      "coming",
+      "machines",
+      "leopold",
+      "phone",
+      "area",
+      "ship",
+      "cheap"
+    ],
+    "examples": [
+      "Talk to ELIZA",
+      "Do Not Talk About LLMs",
+      "Show HN: Parley \u2013 your coding agent can talk to a teammate's agent",
+      "Show HN: Caspian \u2013 Talk to Human Tool for AI Agents"
+    ]
+  },
+  {
+    "cluster": 158,
+    "terms": [
+      "solar",
+      "eclipse",
+      "europe",
+      "solar eclipse",
+      "august",
+      "energy",
+      "total",
+      "total solar"
+    ],
+    "examples": [
+      "The Rockefeller of Solar",
+      "How and when to see the solar eclipse",
+      "Solar Eclipse ESA Livestream",
+      "Europe readies for solar eclipse dip in power generation"
+    ]
+  },
+  {
+    "cluster": 159,
+    "terms": [
+      "companies",
+      "tech companies",
+      "buy",
+      "images",
+      "tests",
+      "tax",
+      "hacked",
+      "house"
+    ],
+    "examples": [
+      "More than 18000 questionable images found in antibody catalogues of 15 companies",
+      "What makes companies dodge taxes?",
+      "Companies need to stop kidding themselves about AI",
+      "Ask HN: Trust Between Agent's Companies"
+    ]
+  }
+]
