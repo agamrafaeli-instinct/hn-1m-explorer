@@ -30,7 +30,7 @@
     const tr = S.time_range || {};
     $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>`;
     if (C && C.posts.scored_posts) $('foot_note').innerHTML = `${pct(((S.type_counts || {}).comment || (total - C.posts.scored_posts)) / total, 0)} of items are comments, which carry no points, so point and comment lenses use the ${fmt(C.posts.scored_posts)} scored stories. Snapshot: ${S.generated_at ? S.generated_at.slice(0, 10) : 'recent'}; the newest stories may not have collected their final scores yet. All times are UTC.`;
-    countUp($('bigcount'), total);
+    $('bigcount').textContent = fmt(total);
     getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => { const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0); $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB'; }).catch(() => { $('mb').textContent = 'a few MB'; });
     hall(S.top_posts || []);
     ptsStep(S);
@@ -153,7 +153,7 @@
     const needle = el('line', { x1: cx, y1: cyy, x2: cx + (rmax + 6) * Math.sin(0), y2: cyy, stroke: '#ffd9bf', 'stroke-width': 2, 'stroke-dasharray': '3 3', opacity: 0 }, svg);
     const ta = ang - Math.PI / 2; needle.setAttribute('x2', cx + (rmax + 6) * Math.cos(ta)); needle.setAttribute('y2', cyy + (rmax + 6) * Math.sin(ta));
     el('text', { x: cx, y: cyy - 4, 'text-anchor': 'middle', fill: '#f4ece2', 'font-size': 20, 'font-weight': 800, 'font-family': 'Fraunces,serif' }, svg).textContent = String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
-    el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 10 }, svg).textContent = 'center of gravity (UTC)';
+    el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 10 }, svg).textContent = 'UTC';
     svg._anim = () => { const t0 = performance.now(); (function f(t) { const p = clamp((t - t0) / 800, 0, 1), e = 1 - Math.pow(1 - p, 3); H.forEach((h, i) => { A[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.points / tp) / mx, .012)); B[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.posts / tq) / mx * 0.999, .06)); }); needle.setAttribute('opacity', e); if (p < 1) requestAnimationFrame(f); })(t0); };
     const top3 = H.map((h, i) => [h.points / tp, i]).sort((a, b) => b[0] - a[0]).slice(0, 3), sh = top3.reduce((a, b) => a + b[0], 0), eff = H.map((h, i) => [h.points / h.posts, i]).sort((a, b) => b[0] - a[0])[0];
     $('lede_clock').innerHTML = `The attention-weighted center of the day is <b>${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')} UTC</b>. Three hours (<b>${top3.map(x => String(x[1]).padStart(2, '0') + ':00').join(', ')}</b>) carry <b>${pct(sh, 0)}</b> of all points, against 12.5% if the day were flat. Items submitted around <b>${String(eff[1]).padStart(2, '0')}:00</b> earn the most points each on average.`;

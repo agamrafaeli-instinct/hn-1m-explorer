@@ -152,6 +152,6 @@ $('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled
     const mf = await r.json(), ch = mf.chunks || mf.files || [], sel = $('loadn'); let rows = 0, by = 0; const opts = [];
     const marks = new Set([Math.min(3, ch.length), Math.min(10, ch.length), ch.length]);
     ch.forEach((c, i) => { rows += c.rows || 0; by += c.bytes || 0; if (marks.has(i + 1)) opts.push([i + 1, rows, by]); });
-    sel.innerHTML = opts.map(([n, r2, b], i) => `<option value="${n}"${i === 0 ? ' selected' : ''}>${i === opts.length - 1 ? 'Everything' : 'Newest ' + n + ' files'}: ${r2 ? r2.toLocaleString() + ' items' : n + ' files'}${b ? ', ~' + Math.round(b / 1048576) + ' MB download' : ''}</option>`).join('');
+    sel.innerHTML = opts.map(([n, r2, b], i) => `<option value="${n}"${i === 0 ? ' selected' : ''}>${i === opts.length - 1 ? 'Everything' : 'Newest ' + n + ' files'}: ${r2 ? r2.toLocaleString() + ' items' : n + ' files'}${b ? ', ~' + Math.round(b / 1048576) + ' MB' : ''}</option>`).join('');
   } catch (e) { }
 })();
