@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Redact credential-shaped strings from raw HN JSONL before publishing (GitHub push protection)."""
 import re,sys,json,glob,os
-PATS=[r'sk-(?:proj|svcacct|admin|ant|or)-[A-Za-z0-9_-]{20,}', r'sk-[A-Za-z0-9]{32,}', r'\b(?:AKIA|ASIA|AGPA|AIDA|AROA)[0-9A-Z]{16}\b',
+PATS=[r'\bkey-[0-9a-f]{32}\b', r'sk-(?:proj|svcacct|admin|ant|or)-[A-Za-z0-9_-]{20,}', r'sk-[A-Za-z0-9]{32,}', r'\b(?:AKIA|ASIA|AGPA|AIDA|AROA)[0-9A-Z]{16}\b',
  r'\bgh[pousr]_[A-Za-z0-9]{30,}', r'github_pat_[A-Za-z0-9_]{40,}', r'\bxox[abprs]-[A-Za-z0-9-]{10,}', r'\bAIza[0-9A-Za-z_-]{35}',
  r'\b[sr]k_(?:live|test)_[0-9A-Za-z]{20,}', r'\bhf_[A-Za-z0-9]{30,}', r'\bglpat-[A-Za-z0-9_-]{20}', r'\bnpm_[A-Za-z0-9]{36}', r'\bSG\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}',
  r'-----BEGIN [A-Z ]*PRIVATE KEY-----[\s\S]*?(?:-----END [A-Z ]*PRIVATE KEY-----|$)', r'\bpplx-[A-Za-z0-9]{40,}', r'\bgsk_[A-Za-z0-9]{40,}', r'\bdsk-[A-Za-z0-9]{30,}']
