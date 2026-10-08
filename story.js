@@ -28,7 +28,8 @@
     const C = S.concentration;
     const total = (S.totals && (S.totals.posts || S.totals.rows)) || (C && C.totals.posts) || 0;
     const tr = S.time_range || {};
-    $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>${C && C.posts.scored_posts ? `<br><br><span class="fine">${pct(((S.type_counts || {}).comment || (total - C.posts.scored_posts)) / total, 0)} of items are comments, which carry no points, so point and comment lenses use the ${fmt(C.posts.scored_posts)} scored stories. Snapshot: ${S.generated_at ? S.generated_at.slice(0, 10) : 'recent'}; the newest stories have not collected their final scores yet.</span>` : ''}`;
+    $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>`;
+    if (C && C.posts.scored_posts) $('foot_note').innerHTML = `${pct(((S.type_counts || {}).comment || (total - C.posts.scored_posts)) / total, 0)} of items are comments, which carry no points, so point and comment lenses use the ${fmt(C.posts.scored_posts)} scored stories. Snapshot: ${S.generated_at ? S.generated_at.slice(0, 10) : 'recent'}; the newest stories may not have collected their final scores yet. All times are UTC.`;
     countUp($('bigcount'), total);
     getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => { const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0); $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB'; }).catch(() => { $('mb').textContent = 'a few MB'; });
     hall(S.top_posts || []);
@@ -75,14 +76,14 @@
     let G, W, H;
     function build() {
       const r = svg.getBoundingClientRect(); W = r.width; H = r.height; if (!W) return; svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = '';
-      const Lm = 40, B = 30, T = 14, R = 10, iw = W - Lm - R, ih = H - B - T;
+      const Lm = 40, B = 46, T = 14, R = 14, iw = W - Lm - R, ih = H - B - T;
       const X = x => Lm + iw * (Math.log10(x) - lx0) / (0 - lx0), Y = y => T + ih * (1 - y);
       const ax = el('g', { class: 'ax' }, svg);
       for (let k = 0; k <= 4; k++) { const y = Y(k / 4); el('line', { x1: Lm, x2: W - R, y1: y, y2: y }, ax); el('text', { x: Lm - 6, y: y + 4, 'text-anchor': 'end' }, ax).textContent = (k * 25) + '%'; }
-      for (let e = Math.ceil(lx0); e <= 0; e++) { const x = X(Math.pow(10, e)); el('line', { x1: x, x2: x, y1: T, y2: T + ih }, ax); el('text', { x, y: H - 10, 'text-anchor': 'middle' }, ax).textContent = fpct(Math.pow(10, e)); }
-      el('text', { x: Lm + iw / 2, y: H - 0, 'text-anchor': 'middle' }, ax).textContent = 'top share of ' + noun + ' (log scale)';
+      const stepE = W < 520 ? 2 : 1; for (let e = 0; e >= lx0; e -= stepE) { const x = X(Math.pow(10, e)); el('line', { x1: x, x2: x, y1: T, y2: T + ih }, ax); el('text', { x, y: H - 10, 'text-anchor': 'middle' }, ax).textContent = fpct(Math.pow(10, e)); }
+      el('text', { x: Lm + iw / 2, y: H - 2, 'text-anchor': 'middle' }, ax).textContent = 'top share of ' + noun + ' (log scale)';
       const eq = el('path', { d: `M${X(x0)} ${Y(x0)}L${X(1)} ${Y(1)}`, fill: 'none', stroke: '#8a7f73', 'stroke-dasharray': '4 4', opacity: .6 }, svg);
-      const eqT = el('text', { x: X(Math.min(1, x0 * 300)) + 6, y: Y(Math.min(1, x0 * 300)) + 16, fill: '#8a7f73', 'font-size': 11 }, svg); eqT.textContent = 'if everyone were equal';
+      const eqT = el('text', { x: X(0.6), y: Y(0.5) + 16, fill: '#8a7f73', 'font-size': 11, 'text-anchor': 'end' }, svg); eqT.textContent = 'equal split';
       const pts = L.map(p => [X(p[0]), Y(p[1])]);
       const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('');
       const defs = el('defs', {}, svg), cl = el('clipPath', { id: 'cp_' + svgId }, defs), cr = el('rect', { x: 0, y: 0, width: 0, height: H }, cl);
@@ -95,11 +96,11 @@
     }
     function update() {
       if (!G) return; const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
-      const p = clamp(-r.top / span, 0, 1), u = clamp(p / 0.85, 0, 1);
-      const lx = lx0 * (1 - u), x = Math.pow(10, lx), y = at(L, x);
-      G.cr.setAttribute('width', G.X(x) + 1); G.dot.setAttribute('cx', G.X(x)); G.dot.setAttribute('cy', G.Y(y));
+      const p = clamp(-r.top / span, 0, 1), u = clamp(p / 0.66, 0, 1), back = clamp((p - 0.72) / 0.22, 0, 1);
+      const x = Math.pow(10, back > 0 ? -2 * back : lx0 * (1 - u)), y = at(L, x);
+      G.cr.setAttribute('width', back > 0 ? W : G.X(x) + 1); G.dot.setAttribute('cx', G.X(x)); G.dot.setAttribute('cy', G.Y(y));
       G.mk.forEach(o => o.g.style.opacity = x >= o.m * 0.999 ? 1 : 0);
-      cap.innerHTML = p < 0.05 ? 'Scroll. Stories are ranked from most to least ' + what + '.' : `The top <b>${fpct(x)}</b> of ${noun} hold <b>${pct(y, y > .99 ? 1 : 0)}</b> of all ${what}.`;
+      cap.innerHTML = back >= 1 ? `The top <b>1%</b> of ${noun} hold <b>${pct(at(L, 0.01), 0)}</b> of all ${what}. The top 10% hold <b>${pct(at(L, 0.1), 0)}</b>.` : p < 0.05 ? 'Scroll. Stories are ranked from most to least ' + what + '.' : `The top <b>${fpct(x)}</b> of ${noun} hold <b>${pct(y, y > .99 ? 1 : 0)}</b> of all ${what}.`;
     }
     build(); let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 150); });
     addEventListener('scroll', update, { passive: true });
@@ -107,7 +108,7 @@
 
   // ---- Small multiples
   function mini(L, L2, W, H) {
-    const lx0 = Math.log10(Math.pow(10, Math.floor(Math.log10(L[0][0])))), X = x => 6 + (W - 12) * (Math.log10(x) - lx0) / (0 - lx0), Y = y => 6 + (H - 18) * (1 - y);
+    const lx0 = Math.log10(Math.pow(10, Math.floor(Math.log10(L[0][0])))), X = x => 14 + (W - 28) * (Math.log10(x) - lx0) / (0 - lx0), Y = y => 6 + (H - 18) * (1 - y);
     const path = L => L.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
     let s = `<path class="eq" d="M${X(Math.pow(10, lx0))} ${Y(Math.pow(10, lx0))}L${X(1)} ${Y(1)}"/>`;
     s += `<path class="lz" pathLength="1" d="${path(L)}"/>`;
@@ -125,7 +126,7 @@
     cards.push({ name: 'Single stories', big: pct(P.top_share_points['0.01'], 0), line: `of points sit with the top <b>1%</b> of stories. Comments (dark line) are ${pct(P.top_share_comments['0.01'], 0)}.`, sub: `${pct(P.zero_comment_share, 0)} of stories have no comments`, L: P.lorenz_points, L2: P.lorenz_comments });
     $('mgrid').innerHTML = cards.map(c => `<div class="mc"><h3>${c.name}</h3><div class="big">${c.big}</div><div class="sm">${c.line}</div><svg viewBox="0 0 300 150" preserveAspectRatio="none">${mini(c.L, c.L2, 300, 150)}</svg><div class="sm" style="margin-top:6px">${c.sub}</div></div>`).join('');
     $('lede_lens').innerHTML = `Rank everything in a lens from heaviest to lightest, then ask how much of the total the top slice holds. The curve hugging the top-left means the weight is concentrated. <b>Gini</b> is the single-number version (0 = equal, 1 = one entity holds everything).`;
-    document.querySelectorAll('.mc .lz,.mc .lz2').forEach(p => { p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = 'stroke-dashoffset 1.6s ease'; });
+    document.querySelectorAll('.mc .lz,.mc .lz2').forEach(p => { p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = 'stroke-dashoffset .9s ease'; });
   }
 
   // ---- Entity bars with share of total points
@@ -153,7 +154,7 @@
     const ta = ang - Math.PI / 2; needle.setAttribute('x2', cx + (rmax + 6) * Math.cos(ta)); needle.setAttribute('y2', cyy + (rmax + 6) * Math.sin(ta));
     el('text', { x: cx, y: cyy - 4, 'text-anchor': 'middle', fill: '#f4ece2', 'font-size': 20, 'font-weight': 800, 'font-family': 'Fraunces,serif' }, svg).textContent = String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
     el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 10 }, svg).textContent = 'center of gravity (UTC)';
-    svg._anim = () => { const t0 = performance.now(); (function f(t) { const p = clamp((t - t0) / 1400, 0, 1), e = 1 - Math.pow(1 - p, 3); H.forEach((h, i) => { A[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.points / tp) / mx, .012)); B[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.posts / tq) / mx * 0.999, .06)); }); needle.setAttribute('opacity', e); if (p < 1) requestAnimationFrame(f); })(t0); };
+    svg._anim = () => { const t0 = performance.now(); (function f(t) { const p = clamp((t - t0) / 800, 0, 1), e = 1 - Math.pow(1 - p, 3); H.forEach((h, i) => { A[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.points / tp) / mx, .012)); B[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.posts / tq) / mx * 0.999, .06)); }); needle.setAttribute('opacity', e); if (p < 1) requestAnimationFrame(f); })(t0); };
     const top3 = H.map((h, i) => [h.points / tp, i]).sort((a, b) => b[0] - a[0]).slice(0, 3), sh = top3.reduce((a, b) => a + b[0], 0), eff = H.map((h, i) => [h.points / h.posts, i]).sort((a, b) => b[0] - a[0])[0];
     $('lede_clock').innerHTML = `The attention-weighted center of the day is <b>${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')} UTC</b>. Three hours (<b>${top3.map(x => String(x[1]).padStart(2, '0') + ':00').join(', ')}</b>) carry <b>${pct(sh, 0)}</b> of all points, against 12.5% if the day were flat. Items submitted around <b>${String(eff[1]).padStart(2, '0')}:00</b> earn the most points each on average.`;
   }
@@ -161,12 +162,13 @@
     if (!hw) return; const box = $('heat'), mx = Math.max(...hw.flat()); let s = '<span></span>' + Array.from({ length: 24 }, (_, h) => `<span class="l" style="justify-content:center">${h % 6 === 0 ? h : ''}</span>`).join('');
     hw.forEach((row, d) => { s += `<span class="l">${WD[d]}</span>` + row.map((v, h) => `<i class="c" data-o="${(0.08 + 0.92 * Math.sqrt(v / mx)).toFixed(2)}" title="${WD[d]} ${h}:00 UTC · ${fmt(v)} points"></i>`).join(''); });
     box.innerHTML = s;
+    box.insertAdjacentHTML('afterend', '<div class="hlegend"><span>fewer points</span><i></i><span>more points</span></div><p class="src" style="color:#a99d8f">All times UTC.</p>');
   }
   // ---- Index bars: points per post vs the overall average
   function idx(id, arr0, names0, T) {
     const keep = arr0.map((a, i) => i).filter(i => arr0[i].posts > 0), arr = keep.map(i => arr0[i]), names = keep.map(i => names0[i]);
     const avg = T.points / T.posts, vals = arr.map(a => a.posts ? (a.points / a.posts) / avg : 1), mx = Math.max(1.05, ...vals.map(v => Math.abs(v - 1) + 1)) , span = Math.max(...vals.map(v => Math.abs(v - 1)), 0.05) * 1.15;
-    $(id).innerHTML = arr.map((a, i) => { const d = vals[i] - 1, w = 50 * Math.abs(d) / span; return `<div class="br"><div class="nm">${names[i]}</div><div class="tr"><div class="fl" data-l="${d >= 0 ? 50 : 50 - w}" data-w="${w}" style="background:${d >= 0 ? '#ff6600' : '#8a7f73'};left:50%"></div><span class="vl">${vals[i].toFixed(2)}x</span></div></div>`; }).join('');
+    $(id).innerHTML = arr.map((a, i) => { const d0 = vals[i] - 1, d = Math.abs(d0) < 0.005 ? 0 : d0, w = d === 0 ? 0.6 : 50 * Math.abs(d) / span; return `<div class="br"><div class="nm">${names[i]}</div><div class="tr"><div class="fl" data-l="${d >= 0 ? 50 : 50 - w}" data-w="${w}" style="background:${d === 0 ? '#8a7f73' : d > 0 ? '#ff6600' : '#8a7f73'};left:50%"></div><span class="vl">${vals[i].toFixed(2)}x</span></div></div>`; }).join('');
     $(id).dataset.idx = 1;
   }
   function calLede(cy, T) {
@@ -176,7 +178,7 @@
   }
   function types(ty, T) {
     const rows = Object.entries(ty).sort((a, b) => b[1].posts - a[1].posts), box = $('bars_type');
-    box.innerHTML = rows.map(([k, v]) => `<div class="br"><div class="nm">${esc(k)}</div><div style="display:flex;flex-direction:column;gap:3px">${[['posts', v.posts / T.posts, '#ff6600'], ['points', v.points / T.points, '#1b1814'], ['comments', v.comments / T.comments, '#8a7f73']].map(([n, s, c]) => `<div class="tr" style="height:16px"><div class="fl" data-w="${(70 * s).toFixed(1)}" style="background:${c}"></div><span class="vl" style="font-size:11px">${n} ${pct(s)}</span></div>`).join('')}</div></div>`).join('');
+    box.innerHTML = rows.map(([k, v]) => `<div class="br"><div class="nm">${esc(k)}</div><div style="display:flex;flex-direction:column;gap:3px">${[['posts', v.posts / T.posts, '#ff6600'], ['points', v.points / T.points, '#1b1814'], ['comments', v.comments / T.comments, '#8a7f73']].map(([n, s, c]) => `<div class="tr" style="height:16px"><div class="fl" data-w="${(52 * s).toFixed(1)}" style="background:${c}"></div><span class="vl" style="font-size:11px">${n} ${pct(s)}</span></div>`).join('')}</div></div>`).join('');
     const top = rows[0];
     $('lede_type').innerHTML = `Each type's share of posts (orange), points (black) and comments (grey). <b>${esc(top[0])}</b> makes up ${pct(top[1].posts / T.posts, 0)} of the items and ${pct(top[1].points / T.points, 0)} of the points.`;
   }
@@ -186,13 +188,13 @@
   function observe() {
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return; const t = e.target;
-      if (t.classList.contains('barlist')) t.querySelectorAll('.fl').forEach((f, i) => setTimeout(() => { if (f.dataset.l != null) f.style.left = f.dataset.l + '%'; f.style.width = f.dataset.w + '%'; }, i * 60));
-      if (t.id === 'hall') t.querySelectorAll('li').forEach((li, i) => setTimeout(() => li.classList.add('in'), i * 90));
-      if (t.id === 'mgrid') t.querySelectorAll('.lz,.lz2').forEach((p, i) => setTimeout(() => p.style.strokeDashoffset = 0, i * 120));
+      if (t.classList.contains('barlist')) t.querySelectorAll('.fl').forEach((f, i) => setTimeout(() => { if (f.dataset.l != null) f.style.left = f.dataset.l + '%'; f.style.width = f.dataset.w + '%'; }, i * 25));
+      if (t.id === 'hall') t.querySelectorAll('li').forEach((li, i) => setTimeout(() => li.classList.add('in'), i * 40));
+      if (t.id === 'mgrid') t.querySelectorAll('.lz,.lz2').forEach((p, i) => setTimeout(() => p.style.strokeDashoffset = 0, i * 60));
       if (t.id === 'svg_clock' && t._anim) t._anim();
-      if (t.id === 'heat') t.querySelectorAll('.c').forEach((c, i) => setTimeout(() => c.style.opacity = c.dataset.o, (i % 24) * 18 + Math.floor(i / 24) * 40));
+      if (t.id === 'heat') t.querySelectorAll('.c').forEach((c, i) => setTimeout(() => c.style.opacity = c.dataset.o, (i % 24) * 6 + Math.floor(i / 24) * 12));
       io.unobserve(t);
-    }), { threshold: 0.2 });
+    }), { threshold: 0.01, rootMargin: '0px 0px 20% 0px' });
     document.querySelectorAll('.barlist,#hall,#mgrid,#svg_clock,#heat').forEach(x => io.observe(x));
   }
   addEventListener('scroll', () => { const h = document.documentElement; $('progress').firstElementChild.style.width = (100 * scrollY / (h.scrollHeight - innerHeight)) + '%'; }, { passive: true });
