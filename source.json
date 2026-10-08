@@ -1,0 +1,19 @@
+{
+ "name": "Hacker News official Firebase API",
+ "api": "https://hacker-news.firebaseio.com/v0/item/{id}.json",
+ "maxitem_at_cutoff": 50006646,
+ "id_range": [
+  49006647,
+  50006646
+ ],
+ "selection": "The newest 1,000,000 item IDs (stories, comments, jobs, polls, pollopts) by consecutive ID ending at maxitem; every id fetched, none missing/null/errored",
+ "item_types_included": [
+  "story",
+  "comment",
+  "job",
+  "poll",
+  "pollopt"
+ ],
+ "retrieved_at_utc": "2026-10-08T15:00:37Z to 2026-10-08T15:09:10Z",
+ "completeness_limitations": "Snapshot: score, descendants and dead/deleted flags are as of fetch time; very recent items may later change. Items are by ID, so 'posts' includes comments (about 84% comments). Credential-shaped strings (4 found: API keys etc.) were replaced with [REDACTED-SECRET] in text fields before publishing (scripts/redact_secrets.py); all else is verbatim."
+}
