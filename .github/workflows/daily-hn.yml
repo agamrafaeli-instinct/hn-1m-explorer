@@ -35,12 +35,7 @@ jobs:
             git push origin HEAD:main
           fi
       - name: Stage only published site files
-        run: |
-          mkdir -p _site
-          cp index.html app.js story.js style.css .nojekyll _site/
-          cp -r data vendor _site/
-          if [ -d sample ]; then cp -r sample _site/; fi
-          python -c "from pathlib import Path; n=sum(p.stat().st_size for p in Path('_site').rglob('*') if p.is_file()); print('Published bytes:',n); assert n < 900_000_000, 'Pages safety limit exceeded'"
+        run: python scripts/stage_site.py --output _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
