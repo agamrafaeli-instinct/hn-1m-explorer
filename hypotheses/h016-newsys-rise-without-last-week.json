@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "h016",
+  "title": "The rise is not one spike",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "The Rust/Zig rise holds when you drop the latest week, which looks like a spike.",
+  "expect": "If true, the share of Rust/Zig stories in the 4 weeks before the latest should still be at least 1.1x the first 4 weeks (1.3x is strong, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/summary.json",
+    "path": "terms.weekly",
+    "label_field": "week",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "newsys_stories",
+    "per_label": "share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "4 weeks before the latest",
+      "indices": [
+        -5,
+        -4,
+        -3,
+        -2
+      ],
+      "per": "stories"
+    },
+    "group_b": {
+      "label": "First 4 weeks",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "per": "stories"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Dropping one week is a robustness check, not a new dataset.",
+    "Same title-match limits as h009."
+  ]
+}

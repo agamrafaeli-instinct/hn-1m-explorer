@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "h014",
+  "title": "Rust stories start more debate than Python stories",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "When a Rust story hits HN it draws more comment mentions of Rust than a Python story draws of Python.",
+  "expect": "If true, Rust comment mentions per Rust story should be at least 1.1x Python comment mentions per Python story over all 42 months (0.9x or lower refutes it, in between is a tie).",
+  "check": {
+    "source": "data/terms_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "rust_comments",
+    "per_label": "comments per story",
+    "group_a": {
+      "label": "Rust",
+      "indices": "all",
+      "field": "rust_comments",
+      "per": "rust_stories"
+    },
+    "group_b": {
+      "label": "Python",
+      "indices": "all",
+      "field": "python_comments",
+      "per": "python_stories"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Comment mentions per story is a rough debate proxy, not comment count per story.",
+    "Rust comments can mention Rust while talking about other things.",
+    "Counts only, no points."
+  ]
+}

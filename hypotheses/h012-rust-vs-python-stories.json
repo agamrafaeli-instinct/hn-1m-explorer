@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "h012",
+  "title": "Rust is closing in on Python",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Over 3.5 years Rust stories grew faster than Python stories, which is a steadier test of a rise than Rust alone.",
+  "expect": "If true, the monthly ratio of Rust-mentioning stories to Python-mentioning stories should be at least 1.15x higher in the latest 6 months than in the first 6 (1.05x counts as weak, 0.95x or lower refutes it).",
+  "check": {
+    "source": "data/terms_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "rust_stories",
+    "per_label": "ratio",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "rust_stories",
+      "per": "python_stories"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "rust_stories",
+      "per": "python_stories"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.15
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.05
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Mentions in text, not usage: a story can mention Rust without being about it.",
+    "Python is a control for overall HN volume, which jumped in 2026; it is itself popular, so the ratio is about Rust relative to it.",
+    "Complete months Jan 2023 to Jun 2026 from the term history."
+  ]
+}

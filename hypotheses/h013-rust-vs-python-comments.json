@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "h013",
+  "title": "Engineers talk about Rust more over time",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Rust is not only showing up in titles: comments mentioning Rust grew faster than comments mentioning Python.",
+  "expect": "If true, the monthly ratio of Rust-mentioning comments to Python-mentioning comments should be at least 1.2x higher in the latest 6 months than the first 6 (1.05x is weak, 0.95x or lower refutes it).",
+  "check": {
+    "source": "data/terms_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "rust_comments",
+    "per_label": "ratio",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "rust_comments",
+      "per": "python_comments"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "rust_comments",
+      "per": "python_comments"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.2
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.05
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Comment text matching is crude: Python can mean the snake, Rust can mean corrosion.",
+    "The latest months may have fewer comments collected, which the ratio partly cancels but cannot fully fix.",
+    "Complete months Jan 2023 to Jun 2026."
+  ]
+}

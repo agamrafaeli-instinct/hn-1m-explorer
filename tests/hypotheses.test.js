@@ -15,7 +15,8 @@ for (const n of names) {
     if (!/^data\/[\w.-]+\.json$/.test(c.check.source)) throw new Error('bad source');
     if (!c.verdicts.some(v => v.verdict === 'refuted')) throw new Error('card has no refuting rule');
     if (!c.verdicts[c.verdicts.length - 1].else) throw new Error('last rule must be else');
-    const r = E.evaluate(c, sum);
+    const data = c.check.source === 'data/summary.json' ? sum : JSON.parse(fs.readFileSync(path.join(root, c.check.source)));
+    const r = E.evaluate(c, data);
     console.log('ok', c.id, r.value.toFixed(3), r.verdict, r.confidence);
   } catch (e) { bad++; console.log('FAIL', n, e.message); }
 }

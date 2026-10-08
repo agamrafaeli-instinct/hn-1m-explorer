@@ -1,0 +1,299 @@
+{
+ "note": "Monthly counts of stories/comments whose text mentions the term; complete months Jan 2023 to Jun 2026. Source: data/history/terms_daily.csv",
+ "monthly": [
+  {
+   "month": "2023-01",
+   "rust_stories": 248,
+   "python_stories": 291,
+   "rust_comments": 3034,
+   "python_comments": 3905
+  },
+  {
+   "month": "2023-02",
+   "rust_stories": 230,
+   "python_stories": 230,
+   "rust_comments": 3018,
+   "python_comments": 3077
+  },
+  {
+   "month": "2023-03",
+   "rust_stories": 269,
+   "python_stories": 285,
+   "rust_comments": 2529,
+   "python_comments": 3761
+  },
+  {
+   "month": "2023-04",
+   "rust_stories": 235,
+   "python_stories": 241,
+   "rust_comments": 2205,
+   "python_comments": 2567
+  },
+  {
+   "month": "2023-05",
+   "rust_stories": 183,
+   "python_stories": 241,
+   "rust_comments": 2485,
+   "python_comments": 2909
+  },
+  {
+   "month": "2023-06",
+   "rust_stories": 203,
+   "python_stories": 237,
+   "rust_comments": 2320,
+   "python_comments": 3129
+  },
+  {
+   "month": "2023-07",
+   "rust_stories": 210,
+   "python_stories": 246,
+   "rust_comments": 2122,
+   "python_comments": 3789
+  },
+  {
+   "month": "2023-08",
+   "rust_stories": 214,
+   "python_stories": 293,
+   "rust_comments": 2418,
+   "python_comments": 3973
+  },
+  {
+   "month": "2023-09",
+   "rust_stories": 224,
+   "python_stories": 248,
+   "rust_comments": 2528,
+   "python_comments": 2780
+  },
+  {
+   "month": "2023-10",
+   "rust_stories": 188,
+   "python_stories": 223,
+   "rust_comments": 1955,
+   "python_comments": 2893
+  },
+  {
+   "month": "2023-11",
+   "rust_stories": 176,
+   "python_stories": 276,
+   "rust_comments": 2580,
+   "python_comments": 2865
+  },
+  {
+   "month": "2023-12",
+   "rust_stories": 203,
+   "python_stories": 205,
+   "rust_comments": 1793,
+   "python_comments": 2772
+  },
+  {
+   "month": "2024-01",
+   "rust_stories": 235,
+   "python_stories": 249,
+   "rust_comments": 2183,
+   "python_comments": 2767
+  },
+  {
+   "month": "2024-02",
+   "rust_stories": 243,
+   "python_stories": 256,
+   "rust_comments": 2416,
+   "python_comments": 2942
+  },
+  {
+   "month": "2024-03",
+   "rust_stories": 194,
+   "python_stories": 251,
+   "rust_comments": 2335,
+   "python_comments": 2609
+  },
+  {
+   "month": "2024-04",
+   "rust_stories": 197,
+   "python_stories": 229,
+   "rust_comments": 1857,
+   "python_comments": 2594
+  },
+  {
+   "month": "2024-05",
+   "rust_stories": 188,
+   "python_stories": 230,
+   "rust_comments": 1760,
+   "python_comments": 2291
+  },
+  {
+   "month": "2024-06",
+   "rust_stories": 187,
+   "python_stories": 236,
+   "rust_comments": 1578,
+   "python_comments": 2508
+  },
+  {
+   "month": "2024-07",
+   "rust_stories": 204,
+   "python_stories": 245,
+   "rust_comments": 1863,
+   "python_comments": 2728
+  },
+  {
+   "month": "2024-08",
+   "rust_stories": 206,
+   "python_stories": 281,
+   "rust_comments": 2209,
+   "python_comments": 2721
+  },
+  {
+   "month": "2024-09",
+   "rust_stories": 222,
+   "python_stories": 254,
+   "rust_comments": 2177,
+   "python_comments": 2858
+  },
+  {
+   "month": "2024-10",
+   "rust_stories": 212,
+   "python_stories": 250,
+   "rust_comments": 2873,
+   "python_comments": 2755
+  },
+  {
+   "month": "2024-11",
+   "rust_stories": 199,
+   "python_stories": 226,
+   "rust_comments": 2030,
+   "python_comments": 2541
+  },
+  {
+   "month": "2024-12",
+   "rust_stories": 240,
+   "python_stories": 202,
+   "rust_comments": 2089,
+   "python_comments": 2501
+  },
+  {
+   "month": "2025-01",
+   "rust_stories": 234,
+   "python_stories": 249,
+   "rust_comments": 1725,
+   "python_comments": 2435
+  },
+  {
+   "month": "2025-02",
+   "rust_stories": 240,
+   "python_stories": 214,
+   "rust_comments": 3434,
+   "python_comments": 2372
+  },
+  {
+   "month": "2025-03",
+   "rust_stories": 220,
+   "python_stories": 256,
+   "rust_comments": 2585,
+   "python_comments": 2379
+  },
+  {
+   "month": "2025-04",
+   "rust_stories": 250,
+   "python_stories": 249,
+   "rust_comments": 1995,
+   "python_comments": 2541
+  },
+  {
+   "month": "2025-05",
+   "rust_stories": 252,
+   "python_stories": 292,
+   "rust_comments": 2550,
+   "python_comments": 2600
+  },
+  {
+   "month": "2025-06",
+   "rust_stories": 233,
+   "python_stories": 270,
+   "rust_comments": 1983,
+   "python_comments": 2187
+  },
+  {
+   "month": "2025-07",
+   "rust_stories": 229,
+   "python_stories": 305,
+   "rust_comments": 2409,
+   "python_comments": 2987
+  },
+  {
+   "month": "2025-08",
+   "rust_stories": 209,
+   "python_stories": 325,
+   "rust_comments": 2163,
+   "python_comments": 2884
+  },
+  {
+   "month": "2025-09",
+   "rust_stories": 284,
+   "python_stories": 260,
+   "rust_comments": 2383,
+   "python_comments": 2584
+  },
+  {
+   "month": "2025-10",
+   "rust_stories": 299,
+   "python_stories": 347,
+   "rust_comments": 2690,
+   "python_comments": 3168
+  },
+  {
+   "month": "2025-11",
+   "rust_stories": 329,
+   "python_stories": 313,
+   "rust_comments": 3668,
+   "python_comments": 2840
+  },
+  {
+   "month": "2025-12",
+   "rust_stories": 367,
+   "python_stories": 411,
+   "rust_comments": 3614,
+   "python_comments": 3309
+  },
+  {
+   "month": "2026-01",
+   "rust_stories": 448,
+   "python_stories": 517,
+   "rust_comments": 2741,
+   "python_comments": 2508
+  },
+  {
+   "month": "2026-02",
+   "rust_stories": 563,
+   "python_stories": 653,
+   "rust_comments": 2352,
+   "python_comments": 2386
+  },
+  {
+   "month": "2026-03",
+   "rust_stories": 522,
+   "python_stories": 563,
+   "rust_comments": 2154,
+   "python_comments": 2922
+  },
+  {
+   "month": "2026-04",
+   "rust_stories": 386,
+   "python_stories": 283,
+   "rust_comments": 1780,
+   "python_comments": 1772
+  },
+  {
+   "month": "2026-05",
+   "rust_stories": 356,
+   "python_stories": 259,
+   "rust_comments": 3264,
+   "python_comments": 2563
+  },
+  {
+   "month": "2026-06",
+   "rust_stories": 332,
+   "python_stories": 238,
+   "rust_comments": 2003,
+   "python_comments": 1970
+  }
+ ]
+}
