@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "h004",
+  "title": "Friday slump",
+  "author": "agam",
+  "hypothesis": "Friday is when the work week winds down: it is quieter than the middle of the week.",
+  "expect": "If true, average items on Fridays should be at most 0.85x the Tue-Thu average (0.95x counts as weak).",
+  "check": {
+    "source": "data/summary.json",
+    "path": "concentration.cyclic.weekday",
+    "field": "posts",
+    "normalize": "per_weekday_occurrence",
+    "labels": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "group_a": {
+      "label": "Friday",
+      "indices": [
+        4
+      ]
+    },
+    "group_b": {
+      "label": "Tue-Thu",
+      "indices": [
+        1,
+        2,
+        3
+      ]
+    },
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x"
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.85
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Weekdays are UTC. Friday evening in the Americas is already Saturday UTC, which cuts Friday and lifts Saturday.",
+    "11-week window."
+  ]
+}
