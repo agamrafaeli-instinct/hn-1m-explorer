@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HN Explorer - last 1M posts</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><h1>HN Explorer</h1><div id="status">Loading...</div><div id="bar"><i id="barfill"></i></div></header>
+<div id="banner" hidden>SAMPLE DATA (synthetic). Real HN data is still being prepared.</div>
+<main>
+<section id="filters">
+  <input id="q" type="search" placeholder="Search titles (words, space = AND)" autocomplete="off">
+  <div class="row">
+    <input id="by" type="search" placeholder="Author">
+    <input id="domain" type="search" placeholder="Domain (e.g. github.com)">
+  </div>
+  <div class="row">
+    <label>From<input id="from" type="date"></label>
+    <label>To<input id="to" type="date"></label>
+  </div>
+  <div class="row">
+    <label>Type<select id="type"><option value="">All</option></select></label>
+    <label>Min score<input id="minscore" type="number" min="0" value="0"></label>
+  </div>
+  <button id="reset" type="button">Reset</button>
+  <div id="count"></div>
+</section>
+<section id="charts">
+  <div class="card"><h2>Posts per month</h2><div class="cv"><canvas id="c_month"></canvas></div></div>
+  <div class="card"><h2>Score distribution</h2><div class="cv"><canvas id="c_score"></canvas></div></div>
+  <div class="card"><h2>Top domains</h2><div class="cv tall"><canvas id="c_dom"></canvas></div></div>
+  <div class="card"><h2>Hour of day (UTC)</h2><div class="cv"><canvas id="c_hour"></canvas></div></div>
+  <div class="card"><h2>Top authors</h2><div class="cv tall"><canvas id="c_auth"></canvas></div></div>
+</section>
+<section id="results">
+  <div class="rh"><h2>Posts</h2>
+    <select id="sort"><option value="score">Top score</option><option value="comments">Most comments</option><option value="new">Newest</option><option value="old">Oldest</option></select></div>
+  <ol id="list"></ol>
+  <div class="pager"><button id="prev">Prev</button><span id="page"></span><button id="next">Next</button></div>
+</section>
+</main>
+<footer>Data: Hacker News via CSV chunks in <code>data/</code>. <a id="dl" href="data/manifest.json">manifest</a></footer>
+<script src="vendor/papaparse.min.js"></script>
+<script src="vendor/chart.umd.js"></script>
+<script src="app.js"></script>
+</body></html>
