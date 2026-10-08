@@ -1,0 +1,28 @@
+HN digest 2026-10-08 (UTC): 27 new stories at 350+ points
+- 2039 pts, 238 comments: Margaret Hamilton has died
+- 2022 pts, 1209 comments: Mistral Large 4
+- 1310 pts, 1484 comments: Sharing AI progress in mathematics
+- 1009 pts, 473 comments: Claude Haiku 5.5
+- 735 pts, 431 comments: GPT‑6 and Intelligent UI for everyone
+- 647 pts, 151 comments: Show HN: Bigwords.page – Turn any screen into a sign. The URL is the app
+- 591 pts, 561 comments: JetBrains reports revenue growth, net financial loss for 2025
+- 577 pts, 426 comments: Visa, Mastercard, major banks facing new litigation over 'anticompetitive' fees
+- 575 pts, 212 comments: Nobel Prize in Physics 2026: Francis Halzen
+- 558 pts, 378 comments: Shipping JPEG XL in Chrome
+- 555 pts, 339 comments: Tell HN: GitHub refuses to remove cracked copies of my software after a month
+- 555 pts, 421 comments: ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons
+- 550 pts, 174 comments: Beam: Reflection's 501B open-weight model
+- 547 pts, 554 comments: “Math 2.0” will need to value mathematical progress more holistically
+- 522 pts, 5 comments: Mistral Large 4: "Le Chonk"
+- 498 pts, 126 comments: Tell HN: I've been paying for a rural Tanzanian's education for 10 years
+- 490 pts, 340 comments: Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates
+- 461 pts, 102 comments: Polars 2.0
+- 433 pts, 74 comments: Animated ASCII Art for Web Pages
+- 427 pts, 46 comments: EmbeddingGemma 2: An open, lightweight multimodal embedding model
+- 412 pts, 617 comments: Trump administration is suspending Microsoft from a green card program
+- 398 pts, 64 comments: A font recreated from photographs of classic Commodore 64 keycaps
+- 389 pts, 286 comments: Meta’s Muse is an adorable privacy and security dumpster fire
+- 387 pts, 227 comments: Decisions API is in public beta
+- 362 pts, 306 comments: AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)
+- 359 pts, 375 comments: Meta and Microsoft take steps to reduce employee usage of Claude AI
+- 357 pts, 247 comments: Example.com just launched the biggest redesign in decades
