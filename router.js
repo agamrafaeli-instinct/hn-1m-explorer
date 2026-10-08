@@ -3,9 +3,9 @@
 (function () {
   const $ = id => document.getElementById(id);
   const AUD = {
-    engineers: { name: 'Engineers', fallback: 'h001' },
-    vcs: { name: 'Deep-tech VCs', fallback: 'h006' },
-    geeks: { name: 'Curious geeks', fallback: 'h002' }
+    engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers' },
+    vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors' },
+    geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers' }
   };
   const views = ['home', 'aud', 'story', 'hyp', 'explore', 'submit', 'how'];
   const tabOf = { home: 'home', aud: 'home', story: 'home', hyp: 'home', explore: 'explore', submit: 'submit', how: 'how' };
@@ -15,7 +15,7 @@
     $('aud_others').replaceChildren(...Object.keys(AUD).filter(k => k !== key).map(k => { const l = document.createElement('a'); l.href = '#/a/' + k; l.textContent = AUD[k].name + ' \u2192'; return l; }));
     try {
       const list = await HypCards.all(), ok = list.filter(x => x.card);
-      const own = ok.find(x => x.card.audience === key), pick = own || ok.find(x => x.card.id && x.name.startsWith(a.fallback));
+      const own = ok.find(x => x.card.audience === a.tag), pick = own || ok.find(x => x.card.id && x.name.startsWith(a.fallback));
       if (!pick) throw new Error('no card yet');
       $('aud_card').replaceChildren(HypCards.render(pick.card, pick.r));
       if (!own) $('aud_note').textContent = 'A card written for this audience is coming. This is the closest tested hypothesis for now.';
