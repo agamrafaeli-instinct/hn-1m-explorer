@@ -36,3 +36,12 @@ One JSON file per hypothesis in `hypotheses/`, plus its file name (no `.json`) l
 ## Check locally
 
     node tests/hypotheses.test.js
+
+## Time series and basket cards (v1.1)
+
+- `audience` (optional): who the card is for, e.g. `engineers`. Shown on the card.
+- `check.path: "terms.weekly"` rows are complete Monday-start UTC weeks with per-basket story and point counts (`scripts/terms.py`; a new basket is a code change). `check.label_field` names the row field used as the axis label (`week`).
+- A group may carry its own `field` and `per` (divide by that field), so a card can compare `deeptech_points / deeptech_stories` against `deeptech_rest_points / deeptech_rest_stories`.
+- `indices` may be negative (-1 is the latest row) or `"all"`, so cards keep working as the window rolls.
+- `check.per_label` is the unit text on the card, e.g. `share of stories`.
+- `check.display_pct` (optional): show the two group means as percentages (for shares).

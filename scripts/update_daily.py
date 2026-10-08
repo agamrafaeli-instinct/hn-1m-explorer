@@ -4,6 +4,7 @@ import argparse, concurrent.futures, csv, datetime as dt, hashlib, io, json, os
 import pathlib, shutil, sqlite3, tempfile, time, urllib.request
 from prepare_data import NAMES, COLUMNS, normalize, encode
 from concentration import compute as concentration
+from terms import compute as terms
 import redact_secrets
 API = 'https://hacker-news.firebaseio.com/v0'
 DBCOLS = 'id,type,author,time,title,url,domain,score,comments,text,dead,deleted'
@@ -36,7 +37,7 @@ def summaries(db, stamp):
         'top_domains':[dict(zip(['domain','posts'],r)) for r in db.execute("SELECT domain,count(*) FROM items WHERE domain IS NOT NULL AND domain<>'' GROUP BY domain ORDER BY count(*) DESC,domain LIMIT 100")],
         'top_authors':[dict(zip(['by','posts'],r)) for r in db.execute("SELECT author,count(*) FROM items WHERE author IS NOT NULL AND author<>'' GROUP BY author ORDER BY count(*) DESC,author LIMIT 100")],
         'top_posts':[{k:v for k,v in zip(NAMES,r) if k!='text'} for r in db.execute('SELECT '+DBCOLS+' FROM items ORDER BY score DESC,time DESC,id DESC LIMIT 100')],
-        'concentration': concentration(db)}
+        'concentration': concentration(db), 'terms': terms(db)}
 
 
 def update(root, workers=32, limit=1000000, getter=fetch, max_new=250000):

@@ -4,6 +4,7 @@
   const NS = 'http://www.w3.org/2000/svg';
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
   const sv = (tag, at, txt) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e; };
+  const fmtN = (v, k) => k && k.display_pct ? (v * 100).toFixed(2) + '%' : v >= 100 ? Math.round(v).toLocaleString() : v.toFixed(v >= 10 ? 1 : 2);
   const fmt = v => v == null ? 'n/a' : (v >= 10 ? v.toFixed(1) : v.toFixed(2));
   const LABEL = { supported: 'Supported', refuted: 'Refuted', inconclusive: 'Inconclusive' };
 
@@ -23,25 +24,32 @@
     return s;
   }
   function bars(card, r) {
-    const c = card.check, n = r.series.length, max = Math.max.apply(null, r.series) || 1, W = 320, H = 110, bw = (W - 8) / n;
-    const s = sv('svg', { viewBox: '0 0 ' + W + ' ' + (H + 16), role: 'img', 'aria-label': 'Values by ' + c.field });
+    const n = r.series.length, W = 320, H = 110, bw = (W - 8) / n, lab = r.labels || [];
+    const max = Math.max.apply(null, r.series.concat(r.split ? r.series_b : [])) || 1;
+    const s = sv('svg', { viewBox: '0 0 ' + W + ' ' + (H + 16), role: 'img', 'aria-label': 'Values by row' });
     r.series.forEach((v, i) => {
-      const h = Math.max(1, (v / max) * H), cls = c.group_a.indices.includes(i) ? 'b-a' : c.group_b.indices.includes(i) ? 'b-b' : 'b-x';
-      s.appendChild(sv('rect', { x: 4 + i * bw + bw * 0.12, y: H - h, width: bw * 0.76, height: h, rx: 2, class: cls }));
-      if (n <= 12 || i % 3 === 0) s.appendChild(sv('text', { x: 4 + i * bw + bw / 2, y: H + 12, 'text-anchor': 'middle', class: 'g-lab' }, (c.labels && c.labels[i]) || String(i)));
+      if (r.split) {
+        [[v, 'b-a', 0], [r.series_b[i], 'b-b', 1]].forEach(([x, cls, k]) => {
+          const h = Math.max(1, (x / max) * H); s.appendChild(sv('rect', { x: 4 + i * bw + bw * 0.08 + k * bw * 0.42, y: H - h, width: bw * 0.4, height: h, rx: 2, class: cls }));
+        });
+      } else {
+        const h = Math.max(1, (v / max) * H), cls = r.ia.includes(i) ? 'b-a' : r.ib.includes(i) ? 'b-b' : 'b-x';
+        s.appendChild(sv('rect', { x: 4 + i * bw + bw * 0.12, y: H - h, width: bw * 0.76, height: h, rx: 2, class: cls }));
+      }
+      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % 3 === 0) s.appendChild(sv('text', { x: 4 + i * bw + bw / 2, y: H + 12, 'text-anchor': 'middle', class: 'g-lab' }, (lab[i] || String(i)).slice(-5)));
     });
     return s;
   }
   function render(card, r) {
     const a = el('article', 'hyp ' + r.verdict);
-    const top = el('div', 'hyp-top'); top.appendChild(el('span', 'hyp-id', card.id));
+    const top = el('div', 'hyp-top'); top.appendChild(el('span', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
     top.appendChild(el('span', 'hyp-badge', r.verdict === 'inconclusive' ? 'Inconclusive' : LABEL[r.verdict] + ' \u00b7 ' + r.confidence)); a.appendChild(top);
     a.appendChild(el('h3', '', card.title));
     a.appendChild(el('p', 'hyp-q', card.hypothesis));
     const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'If true: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); a.appendChild(ex);
     const k = card.check;
     const meas = el('p', 'hyp-m'); meas.appendChild(el('b', '', 'Measured: ')); meas.appendChild(document.createTextNode(
-      k.group_a.label + ' ' + Math.round(r.mean_a).toLocaleString() + ' vs ' + k.group_b.label + ' ' + Math.round(r.mean_b).toLocaleString() + ' (per ' + (k.path.endsWith('hour') ? 'hour' : 'day') + '), ratio ' + fmt(r.value) + (k.unit || '')));
+      k.group_a.label + ' ' + fmtN(r.mean_a, k) + ' vs ' + k.group_b.label + ' ' + fmtN(r.mean_b, k) + ' (' + (k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'avg')) + '), ratio ' + fmt(r.value) + (k.unit || '')));
     a.appendChild(meas);
     a.appendChild(gauge(card, r)); a.appendChild(bars(card, r));
     const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(k.group_a.label)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(k.group_b.label)); a.appendChild(lg);

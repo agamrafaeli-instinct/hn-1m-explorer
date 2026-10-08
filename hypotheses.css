@@ -20,3 +20,4 @@
 .hyp .b-a{fill:var(--ac)}.hyp .b-b{fill:var(--ink)}.hyp .b-x{fill:var(--bd)}
 .hyp-lg{font-size:12px;color:var(--mut);margin:4px 0 0}.hyp-lg .sw.a{background:var(--ac)}.hyp-lg .sw.b{background:var(--ink)}.hyp-lg .sw:first-child{margin-left:0}
 .hyp .pts.sm{margin:10px 0 6px}
+.hyp-badge{white-space:nowrap;flex:none}.hyp-id{min-width:0}

@@ -12,20 +12,35 @@
     }
     return d;
   }
+  // indices: list of row numbers; negative counts from the end (-1 = latest); "all" = every row.
+  function resolve(ix, n) {
+    if (ix === 'all') return Array.from({ length: n }, (_, i) => i);
+    return ix.map(i => (i < 0 ? n + i : i)).filter(i => i >= 0 && i < n);
+  }
   function evaluate(card, summary) {
     const c = card.check, rows = dig(summary, c.path);
     if (!Array.isArray(rows)) throw new Error('path not found: ' + c.path);
-    let vals = rows.map(r => +r[c.field] || 0);
-    if (c.normalize === 'per_weekday_occurrence') { const d = weekdayDays(summary.time_range); vals = vals.map((v, i) => d[i] ? v / d[i] : 0); }
-    const mean = ix => ix.reduce((s, i) => s + vals[i], 0) / ix.length;
-    const a = mean(c.group_a.indices), b = mean(c.group_b.indices);
+    const wd = c.normalize === 'per_weekday_occurrence' ? weekdayDays(summary.time_range) : null;
+    // A group may name its own field (and a "per" field to divide by); otherwise it uses check.field.
+    const series = g => rows.map((r, i) => {
+      let v = +r[g.field || c.field] || 0;
+      if (g.per) v = (+r[g.per]) ? v / +r[g.per] : 0;
+      if (wd) v = wd[i] ? v / wd[i] : 0;
+      return v;
+    });
+    const sa = series(c.group_a), sb = series(c.group_b), ia = resolve(c.group_a.indices, rows.length), ib = resolve(c.group_b.indices, rows.length);
+    if (!ia.length || !ib.length) throw new Error('group has no rows');
+    const mean = (v, ix) => ix.reduce((s, i) => s + v[i], 0) / ix.length;
+    const a = mean(sa, ia), b = mean(sb, ib);
     if (c.stat !== 'mean_ratio_a_over_b') throw new Error('unknown stat: ' + c.stat);
     const value = b ? a / b : null;
     let out = { verdict: 'inconclusive', confidence: 'inconclusive', rule: null };
     if (value != null) for (const r of card.verdicts) {
       if (r.else || OPS[r.when.op](value, r.when.value)) { out = { verdict: r.verdict, confidence: r.confidence, rule: r }; break; }
     }
-    return { value, mean_a: a, mean_b: b, series: vals, verdict: out.verdict, confidence: out.confidence, rule: out.rule };
+    const labels = c.label_field ? rows.map(r => String(r[c.label_field])) : c.labels;
+    return { value, mean_a: a, mean_b: b, series: sa, series_b: sb, split: (c.group_a.field || c.field) !== (c.group_b.field || c.field),
+      ia, ib, labels, verdict: out.verdict, confidence: out.confidence, rule: out.rule };
   }
   const api = { evaluate, weekdayDays };
   if (typeof module !== 'undefined') module.exports = api; else root.HypEval = api;
