@@ -1,19 +1,19 @@
 {
   "schema": 1,
-  "id": "h013",
-  "title": "Engineers talk about Rust more over time",
+  "id": "h017",
+  "title": "Next.js, Svelte, Vue, htmx and Tailwind are rising together",
   "author": "engineers-deeper-agent",
   "audience": "engineers",
-  "hypothesis": "Rust is not only showing up in titles: comments mentioning Rust grew faster than comments mentioning Python.",
-  "expect": "If true, the monthly ratio of Rust-mentioning comments to Python-mentioning comments should be at least 1.2x higher in the latest 6 months than the first 6 (1.05x is weak, 0.95x or lower refutes it).",
+  "hypothesis": "The newer front-end stack is taking a growing share of stories.",
+  "expect": "If true, the share of stories mentioning Next.js, Svelte, Vue, htmx or Tailwind should be at least 1.3x higher in the latest 6 months than the first 6 (1.1x is weak, 0.9x or lower refutes it).",
   "check": {
-    "source": "data/terms_history.json",
+    "source": "data/engineers_history.json",
     "path": "monthly",
     "label_field": "month",
     "stat": "mean_ratio_a_over_b",
     "unit": "x",
-    "field": "rust_comments",
-    "per_label": "ratio",
+    "field": "newfe_s",
+    "per_label": "share of stories",
     "group_a": {
       "label": "Latest 6 months",
       "indices": [
@@ -24,8 +24,8 @@
         -2,
         -1
       ],
-      "field": "rust_comments",
-      "per": "python_comments"
+      "field": "newfe_s",
+      "per": "s_total"
     },
     "group_b": {
       "label": "First 6 months",
@@ -37,15 +37,16 @@
         4,
         5
       ],
-      "field": "rust_comments",
-      "per": "python_comments"
-    }
+      "field": "newfe_s",
+      "per": "s_total"
+    },
+    "display_pct": true
   },
   "verdicts": [
     {
       "when": {
         "op": ">=",
-        "value": 1.2
+        "value": 1.3
       },
       "verdict": "supported",
       "confidence": "strong"
@@ -53,7 +54,7 @@
     {
       "when": {
         "op": ">=",
-        "value": 1.05
+        "value": 1.1
       },
       "verdict": "supported",
       "confidence": "weak"
@@ -61,7 +62,7 @@
     {
       "when": {
         "op": "<=",
-        "value": 0.95
+        "value": 0.9
       },
       "verdict": "refuted",
       "confidence": "strong"
@@ -73,8 +74,7 @@
     }
   ],
   "caveats": [
-    "Comment text matching is crude: Python can mean the snake, Rust can mean corrosion.",
-    "The latest months may have fewer comments collected, which the ratio partly cancels but cannot fully fix.",
-    "Complete months Jan 2023 to Jun 2026."
+    "Tailwind and Next.js drive most of the rise; Svelte and Vue are flat.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
   ]
 }

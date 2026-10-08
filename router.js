@@ -3,7 +3,7 @@
 (function () {
   const $ = id => document.getElementById(id);
   const AUD = {
-    engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers' },
+    engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers', clean: ['h012', 'h014', 'h026'], note: 'Read this first: these cards were explored before their thresholds were fixed, so they are not blind pre-registrations. H012, H014 and H026 are the cleanest tests. H016 and H026 are refuted, and those stay on the page.' },
     vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors' },
     geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers' }
   };
@@ -13,9 +13,10 @@
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;
     const h = document.createElement('h3'); h.textContent = 'Go deeper'; box.appendChild(h);
+    if (AUD[key].note) { const n = document.createElement('p'); n.className = 'caveat-note'; n.textContent = AUD[key].note; box.appendChild(n); }
     list.forEach(x => { const l = document.createElement('a'); l.href = '#/c/' + x.name.split('-')[0] + '/' + key; l.className = 'deep';
       const t = document.createElement('b'); t.textContent = x.card.title; const v = document.createElement('span'); v.textContent = x.r.verdict === 'inconclusive' ? 'Inconclusive' : (x.r.verdict[0].toUpperCase() + x.r.verdict.slice(1) + ' \u00b7 ' + x.r.confidence);
-      l.append(t, v); box.appendChild(l); });
+      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } l.append(t, v); box.appendChild(l); });
   }
   async function single(id, key) {
     const a = AUD[key] || AUD.engineers; $('aud_kicker').textContent = a.name; $('aud_note').textContent = ''; $('aud_deeper').replaceChildren(); $('aud_others').replaceChildren();

@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "h012",
+  "title": "TypeScript is replacing JavaScript in the conversation",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Engineers now talk about TypeScript more than plain JavaScript, and the gap keeps widening.",
+  "expect": "If true, the monthly ratio of TypeScript stories to JavaScript stories should be at least 1.5x higher in the latest 6 months than the first 6 (1.15x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "ts_s",
+    "per_label": "TypeScript per JavaScript story",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "ts_s",
+      "per": "js_s"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "ts_s",
+      "per": "js_s"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.15
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Many JavaScript stories never use the word, and TypeScript posts often say JavaScript too.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

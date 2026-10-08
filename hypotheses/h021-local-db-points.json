@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "h021",
+  "title": "SQLite and DuckDB stories punch above their weight",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Small embedded databases get more points per story than the average story.",
+  "expect": "If true, points per SQLite/DuckDB story should be at least 1.5x the overall average across all 42 months (1.1x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "localdb_p",
+    "per_label": "points per story",
+    "group_a": {
+      "label": "SQLite and DuckDB",
+      "indices": "all",
+      "field": "localdb_p",
+      "per": "localdb_s"
+    },
+    "group_b": {
+      "label": "All stories",
+      "indices": "all",
+      "field": "pts_total",
+      "per": "s_total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "A few viral stories can lift the average.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

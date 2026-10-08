@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "h019",
+  "title": "The old guard of languages fades",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Java, PHP, Ruby, Rails and plain JavaScript lose share of stories.",
+  "expect": "If true, the share of stories mentioning Java, PHP, Ruby, Rails or JavaScript should be at most 0.8x as high in the latest 6 months as the first 6 (0.95x is weak, 1.1x or higher refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "oldguard_s",
+    "per_label": "share of stories",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "oldguard_s",
+      "per": "s_total"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "oldguard_s",
+      "per": "s_total"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.8
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Java matches Java the island and the coffee less often, but ruby is also a gem name.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

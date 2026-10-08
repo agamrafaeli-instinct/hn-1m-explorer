@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "id": "h025",
+  "title": "LLM plumbing becomes an engineering topic",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "LLM, RAG and fine-tuning appear in more stories, more than AI in general.",
+  "expect": "If true, the share of stories mentioning LLM, RAG or fine-tuning should be at least 2x higher in the latest 6 months than the first 6 (1.2x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "llm_s",
+    "per_label": "share of stories",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "llm_s",
+      "per": "s_total"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "llm_s",
+      "per": "s_total"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 2.0
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.2
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "RAG matches unrelated words in some titles.",
+    "AI as a whole is rising too, so this is not a separate trend.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

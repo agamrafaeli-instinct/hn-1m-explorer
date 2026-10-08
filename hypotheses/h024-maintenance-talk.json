@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "h024",
+  "title": "More engineers talk about maintenance",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Code review and technical debt appear more often as AI writes more code.",
+  "expect": "If true, the share of stories mentioning code review or technical debt should be at least 1.5x higher in the latest 6 months than the first 6 (1.15x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "maint_s",
+    "per_label": "share of stories",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "maint_s",
+      "per": "s_total"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "maint_s",
+      "per": "s_total"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.15
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Small counts per month make this noisy.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

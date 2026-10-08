@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "h015",
+  "title": "Microservices and serverless hype is cooling",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Fewer stories mention microservices or serverless than at the start of the window.",
+  "expect": "If true, the share of stories with microservices or serverless should be at most 0.7x as high in the latest 6 months as the first 6 (0.9x counts as weak, 1.1x or higher refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "dist_s",
+    "per_label": "share of stories",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "dist_s",
+      "per": "s_total"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "dist_s",
+      "per": "s_total"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.7
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Total HN volume and AI share changed a lot, so every non-AI share looks lower.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "id": "h016",
+  "title": "React's grip is loosening",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "React is losing share of engineering conversation to newer front-end tools.",
+  "expect": "If true, the share of stories mentioning React should be at most 0.85x as high in the latest 6 months as the first 6 (0.95x is weak, 1.1x or higher refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "react_s",
+    "per_label": "share of stories",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "react_s",
+      "per": "s_total"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "react_s",
+      "per": "s_total"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.85
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "The word React also matches the verb, which adds noise.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

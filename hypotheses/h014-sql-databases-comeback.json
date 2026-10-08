@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "id": "h014",
+  "title": "Boring SQL databases are winning over NoSQL and MySQL",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Postgres, SQLite and DuckDB take a larger share of the database conversation than MongoDB and MySQL.",
+  "expect": "If true, the monthly ratio of Postgres/SQLite/DuckDB stories to MongoDB/MySQL stories should be at least 1.4x higher in the latest 6 months than the first 6 (1.1x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "sql_s",
+    "per_label": "SQL-trio per NoSQL-pair story",
+    "group_a": {
+      "label": "Latest 6 months",
+      "indices": [
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "field": "sql_s",
+      "per": "nosql_s"
+    },
+    "group_b": {
+      "label": "First 6 months",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "field": "sql_s",
+      "per": "nosql_s"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.4
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "MySQL is also the engine under many other products, so its decline in titles is not a decline in use.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}

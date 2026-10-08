@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "h020",
+  "title": "AI coding tools earn above-average points",
+  "author": "engineers-deeper-agent",
+  "audience": "engineers",
+  "hypothesis": "Stories about Cursor, Claude Code, MCP, Copilot and Devin get more points than the average story.",
+  "expect": "If true, points per story for these stories should be at least 1.2x the points per story overall across all 42 months (1.05x is weak, 0.8x or lower refutes it).",
+  "check": {
+    "source": "data/engineers_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "aicode_p",
+    "per_label": "points per story",
+    "group_a": {
+      "label": "AI coding tools",
+      "indices": "all",
+      "field": "aicode_p",
+      "per": "aicode_s"
+    },
+    "group_b": {
+      "label": "All stories",
+      "indices": "all",
+      "field": "pts_total",
+      "per": "s_total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.2
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.05
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.8
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Compared with all stories, not with other AI stories.",
+    "Points are archive snapshots, not final scores.",
+    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+  ]
+}
