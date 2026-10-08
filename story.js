@@ -2,135 +2,179 @@
 (function () {
   const $ = id => document.getElementById(id);
   const fmt = n => Math.round(n).toLocaleString('en-US');
-  const fmtS = n => n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e4 ? 0 : 1) + 'k' : String(Math.round(n));
-  const MN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const mlabel = m => { const [y, mo] = m.split('-'); return MN[+mo - 1] + ' ' + y; };
+  const fmtS = n => n >= 1e9 ? (n / 1e9).toFixed(1) + 'B' : n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e4 ? 0 : 1) + 'k' : String(Math.round(n));
+  const MN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], WD = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const dlabel = t => { const d = new Date(t * 1000); return MN[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear(); };
+  const pct = (x, d) => { const v = 100 * x; return (d != null ? v.toFixed(d) : v >= 10 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2)) + '%'; };
+  const fpct = f => { const v = f * 100; return (v >= 1 ? +v.toFixed(1) : +v.toPrecision(2)) + '%'; };
   const NS = 'http://www.w3.org/2000/svg';
   const el = (n, a, p) => { const e = document.createElementNS(NS, n); for (const k in a || {}) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   async function getJSON(p) { const r = await fetch(p, { cache: 'no-cache' }); if (!r.ok) throw 0; return r.json(); }
+
+  // y (cumulative share) at x (fraction of entities) by log-x interpolation on a lorenz [[x,y],...] list
+  function at(L, x) {
+    if (x <= L[0][0]) return L[0][1] * x / L[0][0];
+    for (let i = 1; i < L.length; i++) if (x <= L[i][0]) {
+      const a = L[i - 1], b = L[i], t = (Math.log(x) - Math.log(a[0])) / (Math.log(b[0]) - Math.log(a[0]) || 1); return a[1] + (b[1] - a[1]) * t;
+    }
+    return 1;
+  }
   async function init() {
     let S, sample = false;
     try { S = await getJSON('data/summary.json'); } catch (e) { S = await getJSON('sample/summary.json'); sample = true; }
     if (sample || S.sample) $('banner').hidden = false;
-    let mo = (S.monthly || []).filter(m => m.month).sort((a, b) => a.month < b.month ? -1 : 1);
-    if (mo.length > 6) { const prev = mo.slice(-4, -1).map(m => m.posts).sort((a, b) => a - b)[1]; if (mo[mo.length - 1].posts < 0.6 * prev) mo = mo.slice(0, -1); }
-    const total = (S.totals && (S.totals.posts || S.totals.rows || S.totals.total_rows)) || S.total_rows || mo.reduce((a, m) => a + m.posts, 0);
+    const C = S.concentration;
+    const total = (S.totals && (S.totals.posts || S.totals.rows)) || (C && C.totals.posts) || 0;
     const tr = S.time_range || {};
-    $('d0').textContent = tr.min ? dlabel(tr.min) : mlabel(mo[0].month);
-    $('d1').textContent = tr.max ? dlabel(tr.max) : mlabel(mo[mo.length - 1].month);
+    $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>`;
     countUp($('bigcount'), total);
-    document.getElementById('dek').innerHTML = `Every story, job and poll in the latest ${fmt(total)} items, from <b>${$('d0').textContent}</b> to <b>${$('d1').textContent}</b>. Scroll.`;
-    const types = S.type_counts || {};
-    const tt = Object.entries(types).sort((a, b) => b[1] - a[1]);
-    const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
-    $('intro').innerHTML = tt.length
-      ? `That is <b>${fmt(total)} items</b>, and <b>${pct(tt[0][1], total)}%</b> of them are ${esc(tt[0][0])}s. Here is how they stack up over time, who posts them, and what they link to.`
-      : `That is <b>${fmt(total)} items</b>. Here is how they stack up over time, who posts them, and what they link to.`;
-    scrolly('s_posts', 'svg_posts', mo, m => m.posts, 'cap_posts', (m, i, best) => `<b>${mlabel(m.month)}</b>: ${fmt(m.posts)} posts`, v => fmtS(v), 'posts');
-    const avg = mo.map(m => Object.assign({}, m, { avg: m.posts ? m.score_sum / m.posts : 0 }));
-    scrolly('s_score', 'svg_score', avg, m => m.avg, 'cap_score', m => `<b>${mlabel(m.month)}</b>: an average post scored ${m.avg.toFixed(1)}`, v => v.toFixed(0), 'avg');
-    bars('bars_dom', (S.top_domains || []).filter(d => d.domain).slice(0, 15).map(d => [d.domain, d.posts]), 'lede_dom', 'domain');
-    bars('bars_auth', (S.top_authors || []).slice(0, 15).map(d => [d.by, d.posts]), 'lede_auth', 'author');
+    getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => { const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0); $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB'; }).catch(() => { $('mb').textContent = 'a few MB'; });
     hall(S.top_posts || []);
-    $('mb').textContent = '...';
-    getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => {
-      const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0);
-      $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB';
-    }).catch(() => { $('mb').textContent = 'a few MB'; });
+    if (!C) { $('intro').textContent = 'The concentration data has not been published yet.'; observe(); return; }
+    const P = C.posts, E = C.entities, T = C.totals;
+    $('intro').innerHTML = `Attention online is never spread evenly. On Hacker News, the top <b>1%</b> of posts hold <b>${pct(P.top_share_points['0.01'])}</b> of all points, and <b>${pct(P.zero_score_share)}</b> of posts never get past zero. This page measures that pile-up for authors, domains, words, the clock and the calendar.`;
+    lorenzScrolly('s_lz', 'svg_lz', P.lorenz_points, 'cap_lz', 'posts', 'points');
+    lenses(C);
+    ent('bars_auth', 'lede_auth', E.author, 'author', 'authors', T);
+    ent('bars_dom', 'lede_dom', E.domain, 'domain', 'domains', T);
+    ent('bars_word', 'lede_word', E.word, 'word', 'words', T);
+    clock(C.cyclic, T); heat(C.cyclic.hourweek);
+    idx('idx_wd', C.cyclic.weekday, WD, T); idx('idx_mo', C.cyclic.month, MN, T);
+    calLede(C.cyclic, T);
+    types(C.type, T);
     observe();
   }
-  function countUp(node, to) {
-    const t0 = performance.now(), dur = 1600;
-    (function f(t) { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); node.textContent = fmt(to * e); if (p < 1) requestAnimationFrame(f); })(t0);
-  }
-  // Scroll-driven line chart: the line draws as you scroll the tall section.
-  function scrolly(secId, svgId, data, acc, capId, capFn, yfmt, key) {
-    const sec = $(secId), svg = $(svgId), cap = $(capId);
-    sec.style.height = (+sec.dataset.tall) + 'vh';
-    const vals = data.map(acc), n = vals.length, rawMax = Math.max(...vals) * 1.05 || 1;
-    const mag = Math.pow(10, Math.floor(Math.log10(rawMax))), nice = [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].find(k => k * mag >= rawMax) * mag, max = nice;
-    const bi = vals.indexOf(Math.max(...vals)), li = n - 1;
-    let W = 0, H = 0, g, path, areaP, dot, tip, tipT, tipR;
+  function countUp(node, to) { const t0 = performance.now(); (function f(t) { const p = Math.min(1, (t - t0) / 1600); node.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(t0); }
+
+  // ---- Scroll-drawn Lorenz curve on a log x axis
+  function lorenzScrolly(secId, svgId, L, capId, noun, what) {
+    const sec = $(secId), svg = $(svgId), cap = $(capId); sec.style.height = (+sec.dataset.tall) + 'vh';
+    const x0 = Math.pow(10, Math.floor(Math.log10(L[0][0]))), lx0 = Math.log10(x0);
+    const marks = [0.001, 0.01, 0.1].filter(m => m > L[0][0] * 0.999);
+    let G, W, H;
     function build() {
-      const r = svg.getBoundingClientRect(); W = r.width; H = r.height; if (!W) return;
-      svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = '';
-      const L = 38, B = 22, T = 14, R = 8, iw = W - L - R, ih = H - B - T;
-      const X = i => L + iw * (n > 1 ? i / (n - 1) : 0), Y = v => T + ih * (1 - v / max);
-      const defs = el('defs', {}, svg), lg = el('linearGradient', { id: 'g1_' + svgId, x1: 0, x2: 0, y1: 0, y2: 1 }, defs);
-      el('stop', { offset: 0, 'stop-color': '#ff6600' }, lg); el('stop', { offset: 1, 'stop-color': '#ff6600', 'stop-opacity': 0 }, lg);
+      const r = svg.getBoundingClientRect(); W = r.width; H = r.height; if (!W) return; svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = '';
+      const Lm = 40, B = 30, T = 14, R = 10, iw = W - Lm - R, ih = H - B - T;
+      const X = x => Lm + iw * (Math.log10(x) - lx0) / (0 - lx0), Y = y => T + ih * (1 - y);
       const ax = el('g', { class: 'ax' }, svg);
-      for (let k = 0; k <= 4; k++) { const v = max * k / 4 / 1.0, y = Y(v); el('line', { x1: L, x2: W - R, y1: y, y2: y }, ax); const t = el('text', { x: L - 6, y: y + 4, 'text-anchor': 'end' }, ax); t.textContent = yfmt(v); }
-      const yrs = []; data.forEach((m, i) => { if (m.month.endsWith('-01') || i === 0) yrs.push([i, m.month.slice(0, 4)]); });
-      const step = Math.ceil(yrs.length / (W < 500 ? 4 : 9));
-      yrs.forEach(([i, y], k) => { if (i === 0 && yrs.length > 1 && yrs[1][0] < 8) return; if (k % step === 0) { const t = el('text', { x: X(i), y: H - 4, 'text-anchor': 'middle' }, ax); t.textContent = y; } });
-      const pts = vals.map((v, i) => [X(i), Y(v)]);
+      for (let k = 0; k <= 4; k++) { const y = Y(k / 4); el('line', { x1: Lm, x2: W - R, y1: y, y2: y }, ax); el('text', { x: Lm - 6, y: y + 4, 'text-anchor': 'end' }, ax).textContent = (k * 25) + '%'; }
+      for (let e = Math.ceil(lx0); e <= 0; e++) { const x = X(Math.pow(10, e)); el('line', { x1: x, x2: x, y1: T, y2: T + ih }, ax); el('text', { x, y: H - 10, 'text-anchor': 'middle' }, ax).textContent = fpct(Math.pow(10, e)); }
+      el('text', { x: Lm + iw / 2, y: H - 0, 'text-anchor': 'middle' }, ax).textContent = 'top share of ' + noun + ' (log scale)';
+      const eq = el('path', { d: `M${X(x0)} ${Y(x0)}L${X(1)} ${Y(1)}`, fill: 'none', stroke: '#8a7f73', 'stroke-dasharray': '4 4', opacity: .6 }, svg);
+      const eqT = el('text', { x: X(Math.min(1, x0 * 300)) + 6, y: Y(Math.min(1, x0 * 300)) + 16, fill: '#8a7f73', 'font-size': 11 }, svg); eqT.textContent = 'if everyone were equal';
+      const pts = L.map(p => [X(p[0]), Y(p[1])]);
       const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('');
-      areaP = el('path', { class: 'area', d: d + `L${pts[n - 1][0]} ${Y(0)}L${pts[0][0]} ${Y(0)}Z`, fill: `url(#g1_${svgId})`, style: 'fill:url(#g1_' + svgId + ')' }, svg);
-      path = el('path', { class: 'ln', d }, svg);
-      path.len = path.getTotalLength(); path.setAttribute('stroke-dasharray', path.len);
-      const clip = el('clipPath', { id: 'cp_' + svgId }, defs); clip.rect = el('rect', { x: 0, y: 0, width: 0, height: H }, clip);
-      areaP.setAttribute('clip-path', `url(#cp_${svgId})`);
-      dot = el('circle', { class: 'dot', r: 6 }, svg);
-      tip = el('g', { class: 'tip' }, svg); tipR = el('rect', { rx: 5, height: 22 }, tip); tipT = el('text', { y: 15, x: 8 }, tip);
-      g = { pts, L, R, iw, T, ih, clip };
-      update(true);
+      const defs = el('defs', {}, svg), cl = el('clipPath', { id: 'cp_' + svgId }, defs), cr = el('rect', { x: 0, y: 0, width: 0, height: H }, cl);
+      el('path', { class: 'area', d: d + `L${pts[pts.length - 1][0]} ${Y(0)}L${pts[0][0]} ${Y(0)}Z`, style: 'fill:#ff6600;opacity:.18', 'clip-path': `url(#cp_${svgId})` }, svg);
+      el('path', { class: 'ln', d, 'clip-path': `url(#cp_${svgId})` }, svg);
+      const mk = marks.map(m => { const g = el('g', { style: 'opacity:0;transition:opacity .4s' }, svg); const y = at(L, m); el('circle', { cx: X(m), cy: Y(y), r: 5, fill: '#ff6600', stroke: '#fff', 'stroke-width': 2 }, g); const t = el('text', { x: X(m) + 8, y: Y(y) + 4, 'font-size': 12, 'font-weight': 700, fill: '#ff6600' }, g); t.textContent = fpct(m) + ' hold ' + pct(y, 0); return { m, g }; });
+      const dot = el('circle', { class: 'dot', r: 6 }, svg);
+      G = { X, Y, cr, mk, dot, Lm, iw };
+      update();
     }
-    let last = -1;
-    function update(force) {
-      if (!g) return;
-      const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
-      const p = Math.max(0, Math.min(1, -r.top / span)), pe = Math.min(1, p / 0.85);
-      const f = pe * (n - 1), i = Math.round(f);
-      path.setAttribute('stroke-dashoffset', path.len * (1 - pe));
-      g.clip.rect.setAttribute('width', g.L + g.iw * pe + 1);
-      const pi = g.pts[Math.min(n - 1, i)], x0 = g.pts[Math.floor(f)], x1 = g.pts[Math.min(n - 1, Math.ceil(f))];
-      const fr = f - Math.floor(f), px = x0[0] + (x1[0] - x0[0]) * fr, py = x0[1] + (x1[1] - x0[1]) * fr;
-      dot.setAttribute('cx', px); dot.setAttribute('cy', py);
-      const txt = capFn(data[Math.min(n - 1, i)], i).replace(/<[^>]+>/g, '');
-      tipT.textContent = txt; const w = txt.length * 6.6 + 16; tipR.setAttribute('width', w);
-      let tx = Math.min(Math.max(px - w / 2, 0), W - w), ty = Math.max(py - 36, 0);
-      tip.setAttribute('transform', `translate(${tx},${ty})`);
-      if (i !== last || force) {
-        last = i;
-        let note = '';
-        if (p < 0.08) note = 'Scroll to draw the line.';
-        else if (p >= 0.97) note = key === 'posts'
-          ? `Busiest month: <b>${mlabel(data[bi].month)}</b> with ${fmt(vals[bi])} posts. Latest: ${fmt(vals[li])}.`
-          : `Best month for attention: <b>${mlabel(data[bi].month)}</b> at ${vals[bi].toFixed(1)} points per post.`;
-        else note = capFn(data[Math.min(n - 1, i)], i);
-        cap.innerHTML = note;
-      }
+    function update() {
+      if (!G) return; const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
+      const p = clamp(-r.top / span, 0, 1), u = clamp(p / 0.85, 0, 1);
+      const lx = lx0 * (1 - u), x = Math.pow(10, lx), y = at(L, x);
+      G.cr.setAttribute('width', G.X(x) + 1); G.dot.setAttribute('cx', G.X(x)); G.dot.setAttribute('cy', G.Y(y));
+      G.mk.forEach(o => o.g.style.opacity = x >= o.m * 0.999 ? 1 : 0);
+      cap.innerHTML = p < 0.05 ? 'Scroll. Posts are ranked from most to least ' + what + '.' : `The top <b>${fpct(x)}</b> of ${noun} hold <b>${pct(y, y > .99 ? 1 : 0)}</b> of all ${what}.`;
     }
-    build();
-    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 150); });
-    addEventListener('scroll', () => update(), { passive: true });
+    build(); let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 150); });
+    addEventListener('scroll', update, { passive: true });
   }
-  function bars(id, rows, ledeId, kind) {
-    const box = $(id); if (!rows.length) return;
-    const max = rows[0][1], tot = rows.reduce((a, r) => a + r[1], 0);
-    box.innerHTML = rows.map(r => `<div class="br"><div class="nm">${esc(r[0])}</div><div class="tr"><div class="fl" data-w="${(100 * r[1] / max).toFixed(1)}"></div><span class="vl">${fmt(r[1])}</span></div></div>`).join('');
-    $(ledeId).innerHTML = kind === 'domain'
-      ? `<b>${esc(rows[0][0])}</b> leads with ${fmt(rows[0][1])} posts. The top ${rows.length} sites account for ${fmt(tot)} links.`
-      : `<b>${esc(rows[0][0])}</b> has posted ${fmt(rows[0][1])} times. The ${rows.length} most active accounts posted ${fmt(tot)} items between them.`;
+
+  // ---- Small multiples
+  function mini(L, L2, W, H) {
+    const lx0 = Math.log10(Math.pow(10, Math.floor(Math.log10(L[0][0])))), X = x => 6 + (W - 12) * (Math.log10(x) - lx0) / (0 - lx0), Y = y => 6 + (H - 18) * (1 - y);
+    const path = L => L.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+    let s = `<path class="eq" d="M${X(Math.pow(10, lx0))} ${Y(Math.pow(10, lx0))}L${X(1)} ${Y(1)}"/>`;
+    s += `<path class="lz" pathLength="1" d="${path(L)}"/>`;
+    if (L2) s += `<path class="lz2" pathLength="1" d="${path(L2)}"/>`;
+    s += `<text x="6" y="${H - 2}">${fpct(Math.pow(10, lx0))}</text><text x="${W - 6}" y="${H - 2}" text-anchor="end">100%</text>`;
+    return s;
+  }
+  function lenses(C) {
+    const E = C.entities, cards = [];
+    [['author', 'Authors', 'authors'], ['domain', 'Domains', 'domains'], ['word', 'Title words', 'words']].forEach(([k, name, pl]) => {
+      const e = E[k], y1 = at(e.lorenz_points, 0.01), y10 = at(e.lorenz_points, 0.1);
+      cards.push({ name, big: pct(y1, 0), line: `of all points sit with the top <b>1%</b> of ${pl}. The top 10% hold ${pct(y10, 0)}.`, sub: `${fmt(e.count)} ${pl} · gini ${e.gini_points.toFixed(2)}`, L: e.lorenz_points });
+    });
+    const P = C.posts;
+    cards.push({ name: 'Single posts', big: pct(P.top_share_points['0.01'], 0), line: `of points sit with the top <b>1%</b> of posts. Comments (dark line) are ${pct(P.top_share_comments['0.01'], 0)}.`, sub: `${pct(P.zero_score_share, 0)} of posts have zero points`, L: P.lorenz_points, L2: P.lorenz_comments });
+    $('mgrid').innerHTML = cards.map(c => `<div class="mc"><h3>${c.name}</h3><div class="big">${c.big}</div><div class="sm">${c.line}</div><svg viewBox="0 0 300 150" preserveAspectRatio="none">${mini(c.L, c.L2, 300, 150)}</svg><div class="sm" style="margin-top:6px">${c.sub}</div></div>`).join('');
+    $('lede_lens').innerHTML = `Rank everything in a lens from heaviest to lightest, then ask how much of the total the top slice holds. The curve hugging the top-left means the weight is concentrated. <b>Gini</b> is the single-number version (0 = equal, 1 = one entity holds everything).`;
+    document.querySelectorAll('.mc .lz,.mc .lz2').forEach(p => { p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = 'stroke-dashoffset 1.6s ease'; });
+  }
+
+  // ---- Entity bars with share of total points
+  function ent(id, ledeId, e, kind, pl, T) {
+    const rows = e.top.filter(r => r.name).slice(0, 15), box = $(id); if (!rows.length) return;
+    const max = rows[0].points, top10 = e.top.slice(0, 10).reduce((a, r) => a + r.points, 0);
+    box.innerHTML = rows.map(r => `<div class="br"><div class="nm" title="${esc(r.name)}">${esc(r.name)}</div><div class="tr"><div class="fl" data-w="${(70 * r.points / max).toFixed(1)}"></div><span class="vl">${fmtS(r.points)} · ${pct(r.points / T.points)}</span></div></div>`).join('');
+    const r0 = rows[0];
+    $(ledeId).innerHTML = `<b>${esc(r0.name)}</b> alone holds <b>${pct(r0.points / T.points)}</b> of all points. The top 10 ${pl} hold <b>${pct(top10 / T.points)}</b>, out of ${fmt(e.count)}. Bars show points; labels show share of the whole.`;
+  }
+
+  // ---- Clock
+  function clock(cy, T) {
+    const H = cy.hour, tp = H.reduce((a, h) => a + h.points, 0), tq = H.reduce((a, h) => a + h.posts, 0), svg = $('svg_clock'); svg.innerHTML = '';
+    const cx = 200, cyy = 200, r0 = 50, rmax = 170, mx = Math.max(...H.map(h => h.points / tp), ...H.map(h => h.posts / tq));
+    const arc = (i, r1, r2, pad) => { const a0 = (i / 24) * 2 * Math.PI - Math.PI / 2 + pad, a1 = ((i + 1) / 24) * 2 * Math.PI - Math.PI / 2 - pad; const p = (r, a) => [cx + r * Math.cos(a), cyy + r * Math.sin(a)]; const A = p(r1, a0), B = p(r1, a1), C = p(r2, a1), D = p(r2, a0); return `M${A}L${D}A${r2} ${r2} 0 0 1 ${C}L${B}A${r1} ${r1} 0 0 0 ${A}Z`; };
+    for (let i = 0; i < 24; i++) { el('text', { x: cx + (rmax + 14) * Math.cos((i + .5) / 24 * 2 * Math.PI - Math.PI / 2), y: cyy + (rmax + 14) * Math.sin((i + .5) / 24 * 2 * Math.PI - Math.PI / 2) + 3, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 10 }, svg).textContent = i % 3 === 0 ? i : ''; }
+    el('circle', { cx, cy: cyy, r: r0 - 2, fill: 'none', stroke: '#3a322b' }, svg);
+    const A = [], B = [];
+    H.forEach((h, i) => { A.push(el('path', { fill: '#ff6600', opacity: .9 }, svg)); B.push(el('path', { fill: '#f4ece2', opacity: .95 }, svg)); });
+    // center of gravity: circular mean of points over the 24h clock
+    let sx = 0, sy = 0; H.forEach((h, i) => { const a = (i + .5) / 24 * 2 * Math.PI; sx += h.points * Math.cos(a); sy += h.points * Math.sin(a); });
+    let ang = Math.atan2(sy, sx); if (ang < 0) ang += 2 * Math.PI; const cog = ang / (2 * Math.PI) * 24, hh = Math.floor(cog), mm = Math.round((cog - hh) * 60);
+    const needle = el('line', { x1: cx, y1: cyy, x2: cx + (rmax + 6) * Math.sin(0), y2: cyy, stroke: '#ffd9bf', 'stroke-width': 2, 'stroke-dasharray': '3 3', opacity: 0 }, svg);
+    const ta = ang - Math.PI / 2; needle.setAttribute('x2', cx + (rmax + 6) * Math.cos(ta)); needle.setAttribute('y2', cyy + (rmax + 6) * Math.sin(ta));
+    el('text', { x: cx, y: cyy - 4, 'text-anchor': 'middle', fill: '#f4ece2', 'font-size': 20, 'font-weight': 800, 'font-family': 'Fraunces,serif' }, svg).textContent = String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
+    el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 10 }, svg).textContent = 'center of gravity (UTC)';
+    svg._anim = () => { const t0 = performance.now(); (function f(t) { const p = clamp((t - t0) / 1400, 0, 1), e = 1 - Math.pow(1 - p, 3); H.forEach((h, i) => { A[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.points / tp) / mx, .012)); B[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.posts / tq) / mx * 0.999, .06)); }); needle.setAttribute('opacity', e); if (p < 1) requestAnimationFrame(f); })(t0); };
+    const top3 = H.map((h, i) => [h.points / tp, i]).sort((a, b) => b[0] - a[0]).slice(0, 3), sh = top3.reduce((a, b) => a + b[0], 0), eff = H.map((h, i) => [h.points / h.posts, i]).sort((a, b) => b[0] - a[0])[0];
+    $('lede_clock').innerHTML = `The attention-weighted center of the day is <b>${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')} UTC</b>. Three hours (<b>${top3.map(x => String(x[1]).padStart(2, '0') + ':00').join(', ')}</b>) carry <b>${pct(sh, 0)}</b> of all points, against 12.5% if the day were flat. Posts submitted around <b>${String(eff[1]).padStart(2, '0')}:00</b> earn the most points each.`;
+  }
+  function heat(hw) {
+    if (!hw) return; const box = $('heat'), mx = Math.max(...hw.flat()); let s = '<span></span>' + Array.from({ length: 24 }, (_, h) => `<span class="l" style="justify-content:center">${h % 6 === 0 ? h : ''}</span>`).join('');
+    hw.forEach((row, d) => { s += `<span class="l">${WD[d]}</span>` + row.map((v, h) => `<i class="c" data-o="${(0.08 + 0.92 * Math.sqrt(v / mx)).toFixed(2)}" title="${WD[d]} ${h}:00 UTC · ${fmt(v)} points"></i>`).join(''); });
+    box.innerHTML = s;
+  }
+  // ---- Index bars: points per post vs the overall average
+  function idx(id, arr, names, T) {
+    const avg = T.points / T.posts, vals = arr.map(a => a.posts ? (a.points / a.posts) / avg : 1), mx = Math.max(1.05, ...vals.map(v => Math.abs(v - 1) + 1)) , span = Math.max(...vals.map(v => Math.abs(v - 1)), 0.05) * 1.15;
+    $(id).innerHTML = arr.map((a, i) => { const d = vals[i] - 1, w = 50 * Math.abs(d) / span; return `<div class="br"><div class="nm">${names[i]}</div><div class="tr"><div class="fl" data-l="${d >= 0 ? 50 : 50 - w}" data-w="${w}" style="background:${d >= 0 ? '#ff6600' : '#8a7f73'};left:50%"></div><span class="vl">${vals[i].toFixed(2)}x</span></div></div>`; }).join('');
+    $(id).dataset.idx = 1;
+  }
+  function calLede(cy, T) {
+    const avg = T.points / T.posts, wd = cy.weekday.map((a, i) => [(a.points / a.posts) / avg, i]).sort((a, b) => b[0] - a[0]), mo = cy.month.map((a, i) => [a.posts ? (a.points / a.posts) / avg : 0, i]).filter(x => x[0]).sort((a, b) => b[0] - a[0]);
+    const wk = cy.weekday.reduce((a, b) => a + b.posts, 0), we = cy.weekday[5].posts + cy.weekday[6].posts;
+    $('lede_cal').innerHTML = `A post's score depends on when it lands. <b>${WD[wd[0][1]]}</b> posts score ${wd[0][0].toFixed(2)}x the average, <b>${WD[wd[wd.length - 1][1]]}</b> only ${wd[wd.length - 1][0].toFixed(2)}x. Weekends hold ${pct(we / wk, 0)} of posts. The best month is <b>${MN[mo[0][1]]}</b> (${mo[0][0].toFixed(2)}x); the weakest is <b>${MN[mo[mo.length - 1][1]]}</b> (${mo[mo.length - 1][0].toFixed(2)}x).`;
+  }
+  function types(ty, T) {
+    const rows = Object.entries(ty).sort((a, b) => b[1].posts - a[1].posts), box = $('bars_type');
+    box.innerHTML = rows.map(([k, v]) => `<div class="br"><div class="nm">${esc(k)}</div><div style="display:flex;flex-direction:column;gap:3px">${[['posts', v.posts / T.posts, '#ff6600'], ['points', v.points / T.points, '#1b1814'], ['comments', v.comments / T.comments, '#8a7f73']].map(([n, s, c]) => `<div class="tr" style="height:16px"><div class="fl" data-w="${(70 * s).toFixed(1)}" style="background:${c}"></div><span class="vl" style="font-size:11px">${n} ${pct(s)}</span></div>`).join('')}</div></div>`).join('');
+    const top = rows[0];
+    $('lede_type').innerHTML = `Each type's share of posts (orange), points (black) and comments (grey). <b>${esc(top[0])}</b> makes up ${pct(top[1].posts / T.posts, 0)} of the items and ${pct(top[1].points / T.points, 0)} of the points.`;
   }
   function hall(posts) {
-    $('hall').innerHTML = posts.slice(0, 10).map(p => {
-      const hn = 'https://news.ycombinator.com/item?id=' + p.id, link = p.url || hn;
-      return `<li><a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title || '(untitled)')}</a><div class="m">${fmt(p.score || 0)} points · ${fmt(p.descendants || 0)} comments · by ${esc(p.by)}${p.time ? ' · ' + dlabel(p.time) : ''} · <a href="${hn}" target="_blank" rel="noopener">discuss</a></div></li>`;
-    }).join('');
+    $('hall').innerHTML = posts.slice(0, 10).map(p => { const hn = 'https://news.ycombinator.com/item?id=' + p.id, link = p.url || hn; return `<li><a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title || '(untitled)')}</a><div class="m">${fmt(p.score || 0)} points · ${fmt(p.descendants || 0)} comments · by ${esc(p.by)}${p.time ? ' · ' + dlabel(p.time) : ''} · <a href="${hn}" target="_blank" rel="noopener">discuss</a></div></li>`; }).join('');
   }
   function observe() {
     const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      if (e.target.classList.contains('barlist')) e.target.querySelectorAll('.fl').forEach((f, i) => setTimeout(() => f.style.width = f.dataset.w + '%', i * 70));
-      if (e.target.tagName === 'OL') e.target.querySelectorAll('li').forEach((li, i) => setTimeout(() => li.classList.add('in'), i * 90));
-      io.unobserve(e.target);
-    }), { threshold: 0.15 });
-    document.querySelectorAll('.barlist,#hall').forEach(x => io.observe(x));
+      if (!e.isIntersecting) return; const t = e.target;
+      if (t.classList.contains('barlist')) t.querySelectorAll('.fl').forEach((f, i) => setTimeout(() => { if (f.dataset.l != null) f.style.left = f.dataset.l + '%'; f.style.width = f.dataset.w + '%'; }, i * 60));
+      if (t.id === 'hall') t.querySelectorAll('li').forEach((li, i) => setTimeout(() => li.classList.add('in'), i * 90));
+      if (t.id === 'mgrid') t.querySelectorAll('.lz,.lz2').forEach((p, i) => setTimeout(() => p.style.strokeDashoffset = 0, i * 120));
+      if (t.id === 'svg_clock' && t._anim) t._anim();
+      if (t.id === 'heat') t.querySelectorAll('.c').forEach((c, i) => setTimeout(() => c.style.opacity = c.dataset.o, (i % 24) * 18 + Math.floor(i / 24) * 40));
+      io.unobserve(t);
+    }), { threshold: 0.2 });
+    document.querySelectorAll('.barlist,#hall,#mgrid,#svg_clock,#heat').forEach(x => io.observe(x));
   }
   addEventListener('scroll', () => { const h = document.documentElement; $('progress').firstElementChild.style.width = (100 * scrollY / (h.scrollHeight - innerHeight)) + '%'; }, { passive: true });
-  init().catch(e => { $('dek').textContent = 'Could not load data: ' + e; });
+  init().catch(e => { $('dek').textContent = 'Could not load data: ' + e; console.error(e); });
 })();
