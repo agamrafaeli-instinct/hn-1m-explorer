@@ -18,7 +18,7 @@
   <div class="arrow">↓</div>
 </section>
 
-<section class="prose"><p id="intro"></p></section>
+<section class="prose"><p id="intro"></p><details class="pts"><summary>What are points?</summary><div><p>Points are the score Hacker News shows next to a story. People vote stories up, and HN ranks a story by dividing its points by a power of the time since it was submitted (<a href="https://news.ycombinator.com/newsfaq.html" target="_blank" rel="noopener">HN FAQ</a>).</p><p>HN's <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">API docs</a> define <code>score</code> as a story's score (or a poll option's votes), and their comment example has no score field. So comments carry no points in this data, and every points number here is story points.</p><p>Each score was recorded when the item was fetched, so the newest stories may still be gaining points.</p></div></details></section>
 
 <section class="scrolly" id="s_lz" data-tall="340">
   <div class="sticky">
@@ -32,6 +32,7 @@
 <section class="lenses" id="s_lens">
   <h2>Same question, every lens</h2>
   <p class="lede" id="lede_lens"></p>
+  <details class="pts"><summary>What are points?</summary><div><p>Points are the score Hacker News shows next to a story. People vote stories up, and HN ranks a story by dividing its points by a power of the time since it was submitted (<a href="https://news.ycombinator.com/newsfaq.html" target="_blank" rel="noopener">HN FAQ</a>).</p><p>HN's <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">API docs</a> define <code>score</code> as a story's score (or a poll option's votes), and their comment example has no score field. So comments carry no points in this data, and every points number here is story points.</p><p>Each score was recorded when the item was fetched, so the newest stories may still be gaining points.</p></div></details>
   <div class="mgrid" id="mgrid"></div>
 </section>
 
@@ -99,7 +100,7 @@
     <div class="card" id="lens"><h3>Center of gravity (for the current filter)</h3>
       <div class="row"><label>Lens<select id="lens_k"><option value="by">Author</option><option value="domain">Domain</option><option value="word">Title word</option><option value="hour">Hour (UTC)</option><option value="weekday">Weekday</option><option value="month">Month</option><option value="type">Type</option></select></label>
       <label>Weight<select id="lens_m"><option value="points">Points</option><option value="comments">Comments</option><option value="posts">Posts</option></select></label></div>
-      <div id="lens_out"></div></div>
+      <details class="pts sm"><summary>What are points?</summary><div><p>Points are the score Hacker News shows next to a story. People vote stories up, and HN ranks a story by dividing its points by a power of the time since it was submitted (<a href="https://news.ycombinator.com/newsfaq.html" target="_blank" rel="noopener">HN FAQ</a>).</p><p>HN's <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">API docs</a> define <code>score</code> as a story's score (or a poll option's votes), and their comment example has no score field. So comments carry no points in this data, and every points number here is story points.</p><p>Each score was recorded when the item was fetched, so the newest stories may still be gaining points.</p></div></details><div id="lens_out"></div></div>
     <div id="charts">
       <div class="card"><h3>Posts per month</h3><div class="cv"><canvas id="c_month"></canvas></div></div>
       <div class="card"><h3>Score distribution</h3><div class="cv"><canvas id="c_score"></canvas></div></div>
