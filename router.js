@@ -39,16 +39,12 @@
       if (!own) $('aud_note').textContent = 'A card written for this audience is coming. This is the closest tested hypothesis for now.';
     } catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
-  function compact(card) {
-    const keep = card.querySelectorAll('.hyp-ex, details.pts, .src'); if (!keep.length) return card;
-    const d = document.createElement('details'); d.className = 'more-d'; const s = document.createElement('summary'); s.textContent = 'What we tested, caveats, source'; d.appendChild(s);
-    keep.forEach(e => d.appendChild(e)); card.appendChild(d); card.classList.add('compact'); return card;
-  }
+  const compact = c => HypCards.compact(c);
   async function counts() {
     try {
       const list = (await HypCards.all()).filter(x => x.card), tag = {};
       document.querySelectorAll('.pick em').forEach(e => {
-        const t = e.dataset.aud, rows = t === '*' ? list : list.filter(x => x.card.audience === t);
+        const t = e.dataset.aud, rows = t === '*' ? list.filter(x => !x.card.audience) : list.filter(x => x.card.audience === t);
         const sup = rows.filter(x => x.r.verdict === 'supported').length, ref = rows.filter(x => x.r.verdict === 'refuted').length;
         e.textContent = rows.length + ' tested \u00b7 ' + sup + ' supported \u00b7 ' + ref + ' refuted';
       });

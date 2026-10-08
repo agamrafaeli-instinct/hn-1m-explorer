@@ -19,7 +19,7 @@
     [...new Set(th)].sort((a, b) => a - b).forEach(t => {
       s.appendChild(sv('line', { x1: X(t), x2: X(t), y1: 26, y2: 46, class: 'g-tick' }));
       if (X(t) - lastX < 34) return; lastX = X(t);
-      s.appendChild(sv('text', { x: X(t), y: 62, 'text-anchor': 'middle', class: 'g-lab' }, fmt(t) + unit));
+      s.appendChild(sv('text', { x: X(t), y: 62, 'text-anchor': 'middle', class: 'g-lab' }, (t >= 10 ? t.toFixed(1) : t.toFixed(2)) + unit));
     });
     s.appendChild(sv('circle', { cx: X(r.value), cy: 36, r: 9, class: 'g-dot' }));
     s.appendChild(sv('text', { x: Math.min(Math.max(X(r.value), 28), W - 28), y: 18, 'text-anchor': 'middle', class: 'g-val' }, fmt(r.value) + unit));
@@ -38,7 +38,7 @@
         const h = Math.max(1, (v / max) * H), cls = r.ia.includes(i) ? 'b-a' : r.ib.includes(i) ? 'b-b' : 'b-x';
         s.appendChild(sv('rect', { x: 4 + i * bw + bw * 0.12, y: H - h, width: bw * 0.76, height: h, rx: 2, class: cls }));
       }
-      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % Math.ceil(n / 5) === 0) { const raw = String(lab[i] || i), tx = /^\d{4}-\d{2}/.test(raw) ? raw.slice(2) : raw.length > 8 ? raw.slice(0, 7) + '.' : raw, cx = 4 + i * bw + bw / 2, an = cx < 22 ? 'start' : cx > W - 22 ? 'end' : 'middle'; s.appendChild(sv('text', { x: an === 'start' ? 2 : an === 'end' ? W - 2 : cx, y: H + 12, 'text-anchor': an, class: 'g-lab' }, tx)); }
+      if (n <= 12 && !(n > 8 && i % 2) || n > 12 && i % Math.ceil(n / 5) === 0) { const raw = String(lab[i] || i), tx = /^\d{4}-\d{2}-\d{2}/.test(raw) ? raw.slice(5) : /^\d{4}-\d{2}/.test(raw) ? raw.slice(2) : raw.length > 8 ? raw.slice(0, 7) + '.' : raw, cx = 4 + i * bw + bw / 2, an = cx < 22 ? 'start' : cx > W - 22 ? 'end' : 'middle'; s.appendChild(sv('text', { x: an === 'start' ? 2 : an === 'end' ? W - 2 : cx, y: H + 12, 'text-anchor': an, class: 'g-lab' }, tx)); }
     });
     return s;
   }
@@ -78,7 +78,12 @@
       return out;
     })());
   }
-  window.HypCards = { all, render };
+  function compact(card) {
+    const keep = card.querySelectorAll('.hyp-ex, details.pts, .src'); if (!keep.length) return card;
+    const d = document.createElement('details'); d.className = 'more-d'; const s = document.createElement('summary'); s.textContent = 'What we tested, caveats, source'; d.appendChild(s);
+    keep.forEach(e => d.appendChild(e)); card.appendChild(d); card.classList.add('compact'); return card;
+  }
+  window.HypCards = { all, render, compact };
   async function init() {
     const host = document.getElementById('hyp_list'); if (!host) return;
     const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
@@ -88,7 +93,7 @@
         const card = await get('hypotheses/' + n + '.json'), src = card.check.source;
         if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
         const sum = cache[src] || (cache[src] = await get(src)), r = HypEval.evaluate(card, sum);
-        out.push(render(card, r));
+        if (!card.audience) out.push(compact(render(card, r)));
       } catch (e) { const b = el('article', 'hyp inconclusive'); b.appendChild(el('p', 'src', 'Card ' + n + ' could not run: ' + e.message)); out.push(b); }
     }
     host.replaceChildren(...out);
