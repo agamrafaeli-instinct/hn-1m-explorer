@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hypotheses.css">
 </head><body>
 <div id="banner" hidden>SAMPLE DATA (synthetic). The real numbers are still being prepared.</div>
 <div id="progress"><i></i></div>
@@ -94,6 +95,14 @@
   <ol id="hall"></ol>
 </section>
 
+<section class="hypo" id="s_hyp">
+  <p class="kicker">The nature of software engineers</p>
+  <h2>Hypotheses, tested</h2>
+  <p class="lede">Each card states a guess, what the data should show if it is true, and the check. Wrong guesses stay on the page.</p>
+  <p class="hyp-tally" id="hyp_tally"></p>
+  <div id="hyp_list"></div>
+</section>
+
 <section class="explore" id="explore">
   <h2>Dig in yourself</h2>
   <p class="lede">Search and filter every post. The full CSV is about <span id="mb">...</span>, so pick how much to load (newest first).</p>
@@ -129,5 +138,7 @@
 <script src="vendor/papaparse.min.js"></script>
 <script src="vendor/chart.umd.js"></script>
 <script src="app.js"></script>
+<script src="hyp-eval.js"></script>
+<script src="hypotheses.js"></script>
 <script src="story.js"></script>
 </body></html>

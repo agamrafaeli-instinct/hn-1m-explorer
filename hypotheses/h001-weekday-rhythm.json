@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "id": "h001",
+  "title": "Engineers work weekdays",
+  "author": "agam",
+  "hypothesis": "Hacker News runs on the work week: a weekday carries well over 30% more activity than a weekend day.",
+  "expect": "If true, average daily items on Mon-Fri should be at least 1.3x the average on Sat-Sun.",
+  "check": {
+    "source": "data/summary.json",
+    "path": "concentration.cyclic.weekday",
+    "field": "posts",
+    "normalize": "per_weekday_occurrence",
+    "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "group_a": { "label": "Weekdays", "indices": [0, 1, 2, 3, 4] },
+    "group_b": { "label": "Weekend", "indices": [5, 6] },
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x"
+  },
+  "verdicts": [
+    { "when": { "op": ">=", "value": 1.3 }, "verdict": "supported", "confidence": "strong" },
+    { "when": { "op": ">=", "value": 1.1 }, "verdict": "supported", "confidence": "weak" },
+    { "when": { "op": "<=", "value": 0.9 }, "verdict": "refuted", "confidence": "strong" },
+    { "else": true, "verdict": "inconclusive", "confidence": "inconclusive" }
+  ],
+  "caveats": [
+    "Weekdays are UTC. Someone posting Friday night in Asia counts as Friday.",
+    "Window is 11 weeks (Jul 22 - Oct 8 2026), so one holiday can move the result.",
+    "Counts all items, comments included."
+  ]
+}
