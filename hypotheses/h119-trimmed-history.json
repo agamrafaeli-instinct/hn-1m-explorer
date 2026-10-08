@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "id": "h119",
+  "author": "agam-instinct",
+  "audience": "deep-tech investors",
+  "title": "Data centers without monthly hits: long-run hit robustness",
+  "hypothesis": "Data centers without monthly hits retain a points-per-story premium after removing the top ten data-center stories each month.",
+  "expect": "Ratio at least 1.3x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+  "check": {
+    "source": "data/vcs_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "trimmed_points",
+    "per_label": "points per story",
+    "group_a": {
+      "label": "Trimmed data centers",
+      "field": "trimmed_points",
+      "per": "trimmed_stories",
+      "indices": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    "group_b": {
+      "label": "Other stories",
+      "field": "rest_points",
+      "per": "rest_stories",
+      "indices": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+    "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+    "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+    "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals.",
+    "Remove top ten per month as ranked by provider, subtract ten from story count. Not top 1%. Last six months only; no month has fewer than eleven matching stories."
+  ]
+}

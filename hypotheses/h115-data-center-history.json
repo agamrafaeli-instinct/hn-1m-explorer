@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "h115",
+  "author": "agam-instinct",
+  "audience": "deep-tech investors",
+  "title": "Data centers: long-run share growth",
+  "hypothesis": "Data centers have a higher share of archive stories in the latest six months than the first six.",
+  "expect": "Ratio at least 1.5x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+  "check": {
+    "source": "data/vcs_history.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "data_center_stories",
+    "per_label": "share of archive stories",
+    "group_a": {
+      "label": "Latest six months",
+      "field": "data_center_stories",
+      "per": "stories",
+      "indices": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    "group_b": {
+      "label": "First six months",
+      "field": "data_center_stories",
+      "per": "stories",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "caveats": [
+    "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+    "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+    "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+    "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals.",
+    "Matches data center or data centre, including plural forms according to provider."
+  ]
+}

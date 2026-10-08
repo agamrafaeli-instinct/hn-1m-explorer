@@ -1,0 +1,11 @@
+# Full-history tests frozen 2026-10-09 02:13 Bangkok
+Known: ten-week snapshot earlier analysis. Unknown: aggregate history results at threshold-setting time. Topics derive from earlier title discovery, not an investor-selected list. Provider columns are different proxies from snapshot themes; do not claim exact replication.
+Daily all-story denominators from terms70_daily; topic story counts from dt_daily. Aggregate UTC complete months with all dates present, skipping edge months. Final six vs first six complete-month mean topic share of all stories. All activity is in this archive, not necessarily all HN.
+h115 data_center long-run growth: >=1.5 strong support, >=1.1 weak, <=0.9 refutes, else inconclusive.
+h116 gpu long-run growth: same rules.
+h117 robotics share sustained: >=1.5 strong growth, >=0.8 weak persistence (no more than 20% fall), <=0.5 refutes, else inconclusive.
+h118 solar excluding eclipses grows: daily solar minus solar_eclipse counts; only if provided definition confirms solar_eclipse is strict subset. Same growth thresholds as h115. If not confirmed use solar total, change title honestly and don't call it eclipse-cleaned.
+h119 data-center premium survives monthly hits: monthly points minus top10_points / stories minus min(10,stories), vs rest-of-archive points/story. Last six complete months only. >=1.3 strong, >=1.1 weak, <=0.9 refutes, else inconclusive. Report that top10 contributions are provider monthly rank; zero remaining stories make analysis unsupported, not zero metric. Snapshot points may have capture-age bias; no mainstream or adoption claims.
+Company tables are submitted-title leads. No source page fetched, so no company-status, funding, product or meeting recommendation claim.
+
+Provider clarification before computations: title+text, case-insensitive word-boundaries, stories only; data_center includes data center/data centre; robotics robot(s)/robotics. Eclipse overlap is not verified strict subset. Therefore h118 uses ALL solar matches and includes astronomy caveat; no subtraction. Archive capture scores, not live final scores. Full date rows cover December 2022-July 2026, but edge coverage should still be excluded conservatively for endpoint tests.

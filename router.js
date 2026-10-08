@@ -4,7 +4,7 @@
   const $ = id => document.getElementById(id);
   const AUD = {
     engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers', clean: ['h012', 'h014', 'h026'], note: 'Read this first: these cards were explored before their thresholds were fixed, so they are not blind pre-registrations. H012, H014 and H026 are the cleanest tests. H016 and H026 are refuted, and those stay on the page.' },
-    vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors' },
+    vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors', note: 'How to read these: the history cards (H115-H119) use archive snapshot points and shares, matched on title and text. H118 (solar matches) is refuted, but that is not proof that solar adoption fell. Company leads are discovery only and unverified.' },
     geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers' }
   };
   const views = ['home', 'aud', 'story', 'hyp', 'explore', 'submit', 'how'];
