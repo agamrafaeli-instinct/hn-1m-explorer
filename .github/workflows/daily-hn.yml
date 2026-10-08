@@ -2,12 +2,6 @@ name: Daily Hacker News update and Pages
 on:
   # Schedule paused pending owner go-ahead. Enable: 23 2 * * * (UTC).
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'README.md'
-      - 'DATA_SCHEMA.md'
-      - 'tests/**'
 permissions:
   contents: read
 concurrency:
@@ -29,10 +23,8 @@ jobs:
       - name: Test data pipeline
         run: python -m unittest discover -s tests -v
       - name: Add new items and retain latest million
-        if: github.event_name != 'push'
         run: python scripts/update_daily.py
       - name: Commit dataset atomically
-        if: github.event_name != 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
