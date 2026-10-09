@@ -92,7 +92,7 @@ What they bring to HN: show me something odd, old or delightful that is not abou
 
 | Signal | Question | How measured | Weekly size and noise | Status |
 |---|---|---|---|---|
-| Topic baskets | What kinds of curiosity are up? | The 6 geeks baskets (weird, science, retro, history, puzzle, boring) and the 15 round 2 topics (space, animals, food, music, health, climate, privacy, education, games, books, art, maps, languages, diy, questions). | 17 to 480 stories each | Ship now (v1) |
+| Topic baskets | What kinds of curiosity are up? | The 6 geeks baskets (weird, science, retro, history, puzzle, boring) and the 15 round 2 topics (space, animals, food, music, health, climate, privacy, education, games, books, art, maps, languages, diy, questions). | 9 to 496 stories a week each | Ship now (v1) |
 | AI-free share | Is there anything on HN besides AI? | Share of live stories with no AI word (about 76% to 80%), and the top 5 non-AI stories. | Variation 5% | Ship now |
 | Old things | Are people digging up old pieces? | Share of titles ending in a year in brackets, for example "(2012)". HN uses this tag for older posts. | 1.7% to 2.8% (about 120 to 190 stories). Variation 15% | Ship now |
 | Variety of sources | Is the front of HN one-note? | Distinct domains per 100 linked stories (50.2 to 52.1) and share of linked stories from the top 10 domains (21.7% to 23.5%). | Very steady (variation 1% to 2%) | Ship now, as a slow-moving measure, flagged only on large moves |
