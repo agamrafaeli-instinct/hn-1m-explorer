@@ -19,8 +19,9 @@ Generated nightly from the issue labels. Newest change: 2026-10-09 UTC.
 - [#5](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/5) Add a visible points-level caution to H020, H021 and H119? yes/no
 - [#4](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/4) Go ahead with whole-archive versions of the remaining windowed cards? yes/no
 
-## Ready for agents (3)
+## Ready for agents (4)
 
+- [#21](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/21) Add a short "How the queue works" section to the README
 - [#20](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/20) Add a share image and title tags for link previews
 - [#19](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/19) Remove the small layout shift on #/hypotheses
 - [#18](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/18) Draft "why" lines for 5 audience lead cards (H009, H010, H011, H012, H014)
