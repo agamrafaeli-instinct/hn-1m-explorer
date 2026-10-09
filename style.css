@@ -168,3 +168,24 @@ article.hyp.skel{padding:20px;color:#8a7f70}
 #hyp_list .hyp:not(.skel){content-visibility:auto;contain-intrinsic-size:auto 460px}
 #v_aud:has(#aud_card>.skel) #aud_others,#v_aud:has(#aud_card>.skel) #aud_deeper,#v_aud:has(#aud_card>.skel) #aud_note{display:none}
 #s_hist{padding:8vh 20px 4vh;max-width:760px;margin:0 auto}.hchart{margin:18px 0}.hchart h3{font:800 20px Fraunces,Georgia,serif;margin:0 0 4px}.hchart svg{width:100%;display:block}.hchart .b-a{fill:var(--ac)}.hchart .g-lab{font:10px Inter;fill:#6b6157}.hchart .lede{font-size:14px;margin:4px 0 0}
+
+/* This week screens */
+.wk{max-width:760px;margin:0 auto;padding:4px 14px 20px}
+.wpills{display:flex;gap:6px;margin:4px 0 10px;overflow:hidden}.wpills a{flex:1;min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;border-radius:999px;border:1px solid var(--bd);background:var(--card);color:var(--ink);text-decoration:none;line-height:1.1;padding:0 6px}.wpills a.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.wtitle{font-size:clamp(34px,10vw,52px);margin:6px 0 4px}.wintro{margin:0 0 10px;color:#3b342d;font-size:15px}
+.wstep{display:flex;align-items:center;gap:8px;margin:6px 0 10px}.wbtn{flex:0 0 48px;height:48px;border-radius:12px;background:var(--card);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--ink);text-decoration:none;line-height:1}.wbtn.off{opacity:.3}
+.wmid{flex:1;text-align:center;display:flex;flex-direction:column;min-width:0}.wmid b{font:800 20px Fraunces,Georgia,serif}.wmid span{font-size:12px;color:var(--mut)}
+.wbf{font-size:13px;line-height:1.4;background:#fff3e6;border-left:4px solid var(--ac);padding:8px 10px;border-radius:8px;margin:0 0 10px}
+.wsec{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px;margin:0 0 12px;position:relative}
+.wsec h3{font:800 22px Fraunces,Georgia,serif;margin:0 0 6px}.wh{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:10px 0 4px;color:var(--mut)}.wh.rose{color:#b34700}.wh.fell{color:#1b1814}.wh.new{color:#0a6b4f}
+.wfl,.wsl,.wlist,.wfacts{list-style:none;margin:0;padding:0}
+.wf{display:flex;flex-direction:column;gap:1px;padding:7px 0;border-top:1px solid var(--bd)}.wf:first-child{border-top:0}.wf b{font-size:16px;overflow-wrap:anywhere}.wf span{font-size:13px;color:#3b342d}.wf i{font-style:normal;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.wn{font-size:12.5px;line-height:1.4;color:var(--mut);margin:8px 0 0}.wsh{font-size:14px;margin:8px 0 0}
+.wsl li{display:grid;grid-template-columns:1fr auto;gap:0 10px;padding:7px 0;border-top:1px solid var(--bd)}.wsl li:first-child{border-top:0}.wsl b{font-size:14px;font-weight:600}.wsl .wv{font:800 20px Fraunces,Georgia,serif;color:var(--ac)}.wsl em{grid-column:1/-1;font-style:normal;font-size:12px;color:var(--mut)}
+.wfacts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.wfacts li{display:flex;flex-direction:column;background:var(--bg);border-radius:10px;padding:8px 10px}.wfacts b{font:800 22px Fraunces,Georgia,serif;color:var(--ac)}.wfacts span{font-size:12px;line-height:1.3;color:#3b342d}
+.wb{display:grid;grid-template-columns:minmax(80px,32%) 1fr 44px;align-items:center;gap:8px;font-size:13px;padding:2px 0}.wl2{overflow-wrap:anywhere}.wt{height:12px;background:#efe6d8;border-radius:6px;overflow:hidden}.wt i{display:block;height:100%;background:var(--ac)}.est .wt i{background:repeating-linear-gradient(45deg,var(--ac) 0 6px,#ffb27a 6px 12px)}.wc{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.west{position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;background:#ffd9bf;color:#8a3a00;border-radius:999px;padding:1px 8px}
+.wlist li{display:flex;flex-direction:column;padding:8px 0;border-top:1px solid var(--bd)}.wlist li:first-child{border-top:0}.wl{color:var(--ink);font-weight:600;font-size:15px;line-height:1.3;text-decoration:none;overflow-wrap:anywhere;min-height:24px}.wm{font-size:12px;color:var(--mut);overflow-wrap:anywhere}
+.wfoot a{color:var(--ac);font-weight:700}.wsk{min-height:600px}
+.homeweek{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:8px 14px;margin:10px 0 0;border-radius:14px;background:var(--dk);color:#f4ece2;text-decoration:none}.homeweek b{font:800 17px Fraunces,Georgia,serif}.homeweek span{font-size:12px;color:#d6c9b8}.homeweek i{font-style:normal;color:var(--ac);font-weight:700;font-size:20px}
+.homeweek div{display:flex;flex-direction:column;min-width:0}

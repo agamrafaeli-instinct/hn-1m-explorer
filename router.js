@@ -7,8 +7,8 @@
     vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors', note: 'How to read these: the history cards (H115-H119) use archive snapshot points and shares, matched on title and text. H118 (solar matches) is refuted, but that is not proof that solar adoption fell.' },
     geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
-  const views = ['home', 'aud', 'story', 'hyp', 'explore', 'submit', 'how'];
-  const tabOf = { home: 'home', aud: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  const views = ['home', 'aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how'];
+  const tabOf = { home: 'home', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
   function deeper(list, key) {
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;
@@ -53,16 +53,31 @@
     } catch (e) { }
   }
   counts();
+  let weekLoad;
+  function loadWeek(a, wk) {
+    weekLoad = weekLoad || new Promise((ok, no) => { const s = document.createElement('script'); s.src = 'weekly.js'; s.onload = ok; s.onerror = () => no(new Error('weekly.js')); document.head.appendChild(s); });
+    weekLoad.then(() => window.WeekInit(a, wk)).catch(e => { $('w_body').textContent = 'Could not load this screen: ' + e.message; });
+  }
+  async function homeWeek() {
+    try {
+      const i = await (await fetch('data/weekly/index.json')).json(), w = i.weeks[i.weeks.length - 1], s = new Date(w.start_utc + 'T00:00:00Z'), e = new Date(s); e.setUTCDate(e.getUTCDate() + 6);
+      const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      $('homeweek_s').textContent = M[s.getUTCMonth()] + ' ' + s.getUTCDate() + ' to ' + M[e.getUTCMonth()] + ' ' + e.getUTCDate() + ' \u00b7 ' + w.week;
+      $('homeweek').href = '#/w/engineers/' + w.week;
+    } catch (x) { }
+  }
+  homeWeek();
   let cur;
   function route() {
     const p = (location.hash || '#/').replace(/^#\/?/, '').split('/');
     let v = 'home';
-    if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (['story', 'explore', 'submit', 'how'].includes(p[0])) v = p[0]; else if (p[0] === 'hypotheses') v = 'hyp';
+    if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (['story', 'explore', 'submit', 'how'].includes(p[0])) v = p[0]; else if (p[0] === 'hypotheses') v = 'hyp';
     views.forEach(n => $('v_' + n).hidden = n !== v);
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
     if (v === 'explore') { window.ExploreInit && window.ExploreInit(); window.ExploreVendor && window.ExploreVendor(); }
+    if (v === 'week') loadWeek(p[1], p[2]);
     if (v === 'aud') { if (p[0] === 'c') single(p[1], p[2]); else audience(p[1]); }
     if (cur !== v || v === 'aud') scrollTo({ top: 0, behavior: 'instant' });
     cur = v;

@@ -24,9 +24,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test snapshot script
-        run: python -m unittest tests.test_weekly_snapshot -v
+        run: python -m unittest tests.test_weekly_snapshot tests.test_weekly_compare -v
       - name: Save complete weeks that are not saved yet
         run: python scripts/weekly_snapshot.py
+      - name: Compare weeks (writes data/compare, never data/weekly)
+        run: python scripts/weekly_compare.py
       - name: Refuse to change any saved week
         run: |
           changed=$(git diff --name-only -- data/weekly | grep -v '^data/weekly/index.json$' || true)
@@ -36,7 +38,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/weekly
+          git add data/weekly data/compare
           if git diff --cached --quiet; then echo "pushed=no" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -m 'Save weekly snapshot'
           for i in 1 2 3; do
