@@ -25,7 +25,7 @@ Conclusion: 17 GB does not fit in the repo or on Pages. Full item files must liv
 
 1. The site stays live and the daily run stays unchanged until a slice proves itself. Every slice ships something readable and passes its checks before the next starts.
 2. Newest to oldest, one year at a time, so the data nearest today is complete first.
-3. Full item files are stored one per year (or month for busy years) as release assets. The repo holds only a manifest with row counts, id ranges and SHA-256 per file.
+3. Full item files (all items, comments too) are stored one per year (or month for busy years) as release assets. Release assets have no CORS header (measured), so the browser cannot read them; they are the download archive. Story-only files for the Explorer are covered in [ARCHITECTURE_ATLAS.md](ARCHITECTURE_ATLAS.md). The repo holds only a manifest with row counts, id ranges and SHA-256 per file.
 4. Pages publishes summaries: daily and monthly totals, yearly term counts. Item-level pages load a year on demand from the release asset, not from Pages.
 5. The rolling newest-window files (data/posts-*.csv) keep feeding the cards and weekly screens exactly as now. Nothing there changes until the cards are told to read by range.
 6. Each slice has a size and run-time budget: no Pages file over 50 MB, Pages total under 700 MB, any one job step under 60 minutes, any release file under 1.5 GiB.
@@ -43,7 +43,7 @@ Conclusion: 17 GB does not fit in the repo or on Pages. Full item files must liv
 | 4 | Fill the gap, Dec 2022 to Jul 2026 | Items for the 15 million missing items, one file per month | Per-month checks: row count, id range, no duplicates, hash | Run time; do it in batches of one month per run |
 | 5 | Backfill 2022, then 2021, then 2020 and so on to 2006 | One year per task. Each year adds its items and moves the "held from" date | Same per-year checks; deploy unaffected | 2006 to 2010 have odd records (dead, deleted, missing fields) |
 | 6 | Daily run appends to the archive | The retention cap goes away for the archive: items leaving the rolling window are appended to the current month file | Daily run adds under 5 minutes | A failed append must not delete rows from the window |
-| 7 | Read by range | Cards and weekly code take a date range; the explorer loads one year on demand | Budgets in data/budgets.json hold | Mobile load size |
+| 7 | Explorer over the full archive (see ARCHITECTURE_ATLAS.md) | 7a aggregates for all years, 7b one-year prototype with DuckDB-WASM, 7c full archive mode over story files, 7d host decision if needed | Budgets in data/budgets.json hold | Mobile load size and memory |
 | 8 | Reword to "since 2006" | Copy, README and titles claim the start date from the manifest | Search finds no wrong scope claim | None |
 
 Slices 3 and 4 can run in parallel with 2. Slices 5 and 6 must not delete anything from the rolling window. Rollback for each slice: remove its release assets and its manifest lines; the site is unaffected because Pages does not read them until slice 7.
