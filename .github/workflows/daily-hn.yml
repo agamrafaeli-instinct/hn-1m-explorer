@@ -26,7 +26,7 @@ jobs:
           python-version: '3.12'
       - name: Test data pipeline
         run: python -m unittest discover -s tests -v
-      - name: Add new items and retain latest million
+      - name: Add new items and keep the rolling window
         run: python scripts/update_daily.py
       - name: Refresh curious-geeks numbers
         run: python scripts/geeks.py

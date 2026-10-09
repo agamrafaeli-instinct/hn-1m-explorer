@@ -7,7 +7,7 @@ How to read the status column: **Ship now** = computable from the archive today.
 ## 1. The week and what is in the file
 
 - Monday 00:00 UTC to the next Monday 00:00 UTC, labelled by ISO week. Complete weeks only. Saved weeks are never overwritten.
-- The archive keeps only the newest 1,000,000 items (about 10 weeks), so each week must be saved or it is lost.
+- The main archive keeps only a rolling window of the newest items (about 10 weeks at the time of writing), so each week must be saved or it is lost.
 - One file per week. The site loads one week at a time.
 
 ## 2. What the archive can and cannot tell us
@@ -16,7 +16,7 @@ These limits shape every signal below.
 
 | Fact (measured) | Consequence |
 |---|---|
-| About 886k of the 1M items are comments, with full text. 114k are stories. 59 are `job` items. | Comment text is the richest source: mentions of tools, languages and companies, hiring posts. |
+| About 886k of the 1,000,000 items in the window then measured are comments, with full text. 114k are stories. 59 are `job` items. | Comment text is the richest source: mentions of tools, languages and companies, hiring posts. |
 | About 31% of story items are dead or deleted (10,460 story items vs 7,241 live in week 2026-W31). Dead and deleted items keep no title or text. The history files in `data/history/` divide by all items, dead ones included. | A term count is the same either way, but the denominator is not. Any comparison with the history must divide by `stories_all` and `comments_all`. The snapshot stores both denominators. |
 | Scores and comment counts are as first retrieved, never refreshed. 17.6k of 114k stories have a score of 1. | Points are an early reading. Use thresholds and ranks inside one week, not exact points. |
 | No parent, children, rank, or user-profile fields. | We cannot link a comment to its thread, say what was on the front page, or say who is new. |

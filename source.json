@@ -6,7 +6,7 @@
   49006647,
   50006646
  ],
- "selection": "The newest 1,000,000 item IDs (stories, comments, jobs, polls, pollopts) by consecutive ID ending at maxitem; every id fetched, none missing/null/errored",
+ "selection": "The newest item IDs, count in manifest total_rows (stories, comments, jobs, polls, pollopts) by consecutive ID ending at maxitem; every id fetched, none missing/null/errored",
  "item_types_included": [
   "story",
   "comment",

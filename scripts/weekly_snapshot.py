@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Save one snapshot per complete Monday-start UTC week to data/weekly/YYYY-Www.json.
 
-Why: only the newest 1,000,000 items are kept (about 10 weeks), so a week that is not saved is lost for good.
+Why: only a rolling window of the newest items is kept (about 10 weeks), so a week that is not saved is lost for good.
 Rules:
   * Only complete weeks that lie inside the archive window are saved (same rule as scripts/terms.py).
   * A saved week is never overwritten. The file is created exclusively; if it exists the week is skipped.

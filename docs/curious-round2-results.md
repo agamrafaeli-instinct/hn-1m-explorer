@@ -2,7 +2,7 @@
 
 15 exploratory title-proxy tests, definitions and thresholds saved before this aggregation. Earlier project summaries were already inspected, so this is not blind or independently preregistered. All 15 remain visible. Supported/refuted are descriptive threshold results, not significance or causal claims; all confidence labels are weak.
 
-Source: current manifest at https://github.com/agamrafaeli-instinct/hn-1m-explorer, generated 2026-10-08T19:15:06.911767+00:00. Read only the manifest-listed chunks, not a glob that could include stale retained files. Of 1,000,000 archive items, 70,571 live stories qualify in ten complete UTC weeks, July 27 through October 4, 2026. Null metric values are excluded from the relevant denominator. Scores/comments are snapshots, not current totals.
+Source: current manifest at https://github.com/agamrafaeli-instinct/hn-1m-explorer, generated 2026-10-08T19:15:06.911767+00:00. Read only the manifest-listed chunks, not a glob that could include stale retained files. Of the archive items in that window, 70,571 live stories qualify in ten complete UTC weeks, July 27 through October 4, 2026. Null metric values are excluded from the relevant denominator. Scores/comments are snapshots, not current totals.
 
 Weekly comparisons use equal-weight weekly rates. Weekend comparisons use equal-weight weekday story shares. Growth uses the first three versus last three complete weeks. The full series is graphed on each card.
 

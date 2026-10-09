@@ -2,8 +2,8 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>One million posts on Hacker News</title>
-<meta name="description" content="A scrollable look at the last 1,000,000 Hacker News posts, with a full explorer.">
+<title>Hacker News posts, explored</title>
+<meta name="description" content="A scrollable look at the newest Hacker News posts, with a full explorer.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
 
 <div class="view" id="v_home">
 <section class="home">
-  <p class="kicker">Hacker News, one million posts</p>
+  <p class="kicker">Hacker News, the newest posts</p>
   <h1>What do you<br>want to see?</h1>
   <div class="pick">
     <a class="big" href="#/a/engineers"><b>Engineers</b><span>What the data says about people who build</span><em data-aud="engineers"></em></a>
@@ -43,9 +43,9 @@
 </div>
 <div class="view" id="v_story" hidden>
 <section class="hero">
-  <p class="kicker">Hacker News, <span id="bigcount">1,000,000</span> posts</p>
+  <p class="kicker">Hacker News, <span id="bigcount">...</span> posts</p>
   <h1>Where does the <span class="ac">attention</span> live?</h1>
-  <p class="dek" id="dek">Every story, comment and job in the latest million items, from <b id="d0">...</b> to <b id="d1">...</b>. Scroll.</p>
+  <p class="dek" id="dek">Every story, comment and job in the newest items held here, from <b id="d0">...</b> to <b id="d1">...</b>. Scroll.</p>
   <div class="arrow">↓</div>
 </section>
 
@@ -197,7 +197,7 @@
   <h2>How it works</h2>
   <p class="lede">Everything here is computed in your browser from public Hacker News data.</p>
   <ul>
-    <li><b>Data.</b> The latest 1,000,000 HN items (stories, comments, jobs, polls), pulled from the public HN API. A daily job adds new items and keeps the latest million.</li>
+    <li><b>Data.</b> The newest HN items held here (stories, comments, jobs, polls), pulled from the public HN API, plus daily totals from December 2022. A daily job adds new items and keeps a rolling window. The exact count and dates are in data/manifest.json.</li>
     <li><b>Centers of gravity.</b> For each lens (author, domain, words, hour, weekday, month, score, comments, type) we measure how concentrated points are, for example what share the top 1% of stories hold.</li>
     <li><b>Hypotheses.</b> Each card states a guess and the number that would prove or refute it before looking. The verdict is computed from the data, never typed.</li>
     <li><b>Caveats.</b> About 89% of items are comments, which show no points, so point and comment lenses use stories only. The newest stories may not have final scores. Times are UTC.</li>

@@ -203,7 +203,7 @@
       const H = await HypCards.source('data/history/strips.json'), MN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       const mon = iso => { const p = iso.split('-'); return MN[+p[1] - 1] + ' ' + p[0]; };
       const tot = H.monthly.stories.reduce((a, b) => a + b, 0) + H.monthly.comments.reduce((a, b) => a + b, 0);
-      $('lede_hist').textContent = 'Daily counts from the archive in data/history/ (' + mon(H.months[0]) + ' to ' + mon(H.months[H.months.length - 1]) + ', about ' + fmtS(tot) + ' stories and comments). This archive is not necessarily all of Hacker News. The rest of this page covers only the newest 1,000,000 items.';
+      $('lede_hist').textContent = 'Daily counts from the archive in data/history/ (' + mon(H.months[0]) + ' to ' + mon(H.months[H.months.length - 1]) + ', about ' + fmtS(tot) + ' stories and comments). This archive is not necessarily all of Hacker News. The rest of this page covers only the newest items held in the rolling window (see data/manifest.json).';
       const box = $('hist_charts'); box.replaceChildren();
       [['stories', 'Stories per month'], ['comments', 'Comments per month'], ['points', 'Story points per month']].forEach(([k, t]) => {
         const v = H.monthly[k], pk = v.indexOf(Math.max.apply(null, v)), d = document.createElement('div'); d.className = 'hchart';

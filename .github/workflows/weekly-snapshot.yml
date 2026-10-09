@@ -1,5 +1,5 @@
 name: Weekly snapshot
-# Saves one file per complete UTC week to data/weekly/. Only the newest 1,000,000 items are kept, so an unsaved week is lost.
+# Saves one file per complete UTC week to data/weekly/. Only a rolling window of the newest items is kept, so an unsaved week is lost.
 # Runs Monday 05:17 UTC (12:17 Asia/Bangkok), after the daily data update at 02:23 UTC. A missed run is caught up next time
 # for any complete week still inside the archive. A saved week is never overwritten.
 on:

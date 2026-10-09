@@ -22,7 +22,7 @@ A short snapshot each week for each audience: what rose, what fell, what is new.
 What exists now: weekly term series for the newest 10 weeks (data/summary.json, terms.weekly), the daily 250+ point digest (alerts/), and monthly history from Dec 2022 (data/history/).
 
 What is missing:
-- Only the newest 1,000,000 items are kept, which is about 10 weeks. A weekly job must save each week's snapshot (for example data/weekly/YYYY-Www.json) or the history is lost. The 10 weeks already in summary.json can backfill the first snapshots.
+- Only a rolling window of the newest items is kept in the main archive, which is about 10 weeks. A weekly job must save each week's snapshot (for example data/weekly/YYYY-Www.json) or the history is lost. The 10 weeks already in summary.json can backfill the first snapshots.
 - A definition of "rose", "fell" and "new" per audience (which terms, domains and stories count, and what size of change is worth showing).
 - A screen on the site for the current week plus a way to step back through earlier weeks.
 

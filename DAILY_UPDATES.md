@@ -1,6 +1,6 @@
 # Daily Hacker News updates
 
-The schedule is paused pending owner go-ahead. The intended schedule is once a day at 02:23 UTC (09:23 in Bangkok); it can be run manually from the Actions tab. GitHub can delay scheduled runs. This is a rolling dataset, not an ever-growing archive: it keeps the newest 1,000,000 available HN items by creation time, including comments, stories, jobs, polls, deleted and dead items.
+The schedule is paused pending owner go-ahead. The intended schedule is once a day at 02:23 UTC (09:23 in Bangkok); it can be run manually from the Actions tab. GitHub can delay scheduled runs. This is a rolling dataset, not an ever-growing archive: it keeps a rolling window of the newest available HN items (the size is RETENTION_ROWS in scripts/update_daily.py) by creation time, including comments, stories, jobs, polls, deleted and dead items.
 
 Each successful run scans every ID after the last successful checkpoint through Firebase's current maxitem. That adds the latest day's items in normal daily operation and catches up automatically after missed runs. A run that would scan more than 250,000 new IDs stops for review; use the script's --max-new option for a larger catch-up. Network failures are retried, then fail the job without advancing the checkpoint. Null item IDs are listed in manifest.daily_update.unavailable_ids and retried on the next run, including when maxitem has not changed. The count may be below a million if that many records are not available.
 

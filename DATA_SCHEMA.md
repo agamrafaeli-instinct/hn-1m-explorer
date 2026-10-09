@@ -33,7 +33,7 @@ The manifest includes schema_version, generated_at (UTC), total_rows, column des
 
 `summary.json` contains total_rows, totals (posts, score_sum, comments_sum, dead, deleted, missing_time, missing_score, missing_comments), time_range {min,max}, type_counts, monthly [{month,posts,score_sum,comments_sum}], top_domains [{domain,posts}], top_authors [{by,posts}], and top_posts. Monthly values use UTC calendar months. The domain and author lists contain up to 100 entries; top_posts contains up to 100 rows ordered by score, then time, then id, without text. Scores and comments are summed only where known; missing values do not count as known zeroes.
 
-Summary values cover every input row. The manifest's source section must document which item types are included, cutoff and retrieval timestamps, source URLs, selection method, exact count, and completeness limitations. The layout itself cannot establish that the input is exactly the newest one million posts.
+Summary values cover every input row. The manifest's source section must document which item types are included, cutoff and retrieval timestamps, source URLs, selection method, exact count, and completeness limitations. The layout itself cannot establish that the input is exactly the newest posts it claims.
 
 ## Reproduce
 
@@ -41,7 +41,7 @@ Python 3 standard library only:
 
 ```sh
 python3 scripts/prepare_data.py raw.jsonl.gz \
-  --source-json source.json --expected-rows 1000000 --output prepared
+  --source-json source.json --expected-rows <total rows> --output prepared
 python3 -m unittest discover -s tests -v
 ```
 
