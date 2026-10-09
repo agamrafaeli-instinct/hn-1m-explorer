@@ -30,6 +30,12 @@ jobs:
         run: python scripts/update_daily.py
       - name: Refresh curious-geeks numbers
         run: python scripts/geeks.py
+      - name: Check the data before it is saved or published
+        run: |
+          set -o pipefail
+          python scripts/data_checks.py | tee data_checks.txt
+          { echo '### Data checks'; echo '```'; cat data_checks.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          rm data_checks.txt
       - name: Commit dataset atomically
         run: |
           git config user.name 'github-actions[bot]'
