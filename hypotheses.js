@@ -42,25 +42,41 @@
     });
     return s;
   }
+  const VERDICT = {
+    supported: ['Supported', 'The data backs the guess.'],
+    refuted: ['Refuted', 'The data points the other way. The guess was wrong, and it stays on the page.'],
+    inconclusive: ['Inconclusive', 'The result fell between our lines, so we cannot call it either way.']
+  };
+  const CONF = { strong: 'Strong: it cleared the higher bar we set.', weak: 'Weak: it cleared only the lower bar we set.' };
+  function step(a, kick, node) { const s = el('section', 'st'); s.appendChild(el('h4', '', kick)); (Array.isArray(node) ? node : [node]).forEach(n => s.appendChild(n)); a.appendChild(s); return s; }
   function render(card, r) {
     TH = (card.verdicts || []).filter(x => x.when).map(x => x.when.value);
-    const a = el('article', 'hyp ' + r.verdict);
-    const top = el('div', 'hyp-top'); top.appendChild(el('span', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
-    top.appendChild(el('span', 'hyp-badge', r.verdict === 'inconclusive' ? 'Inconclusive' : LABEL[r.verdict] + ' \u00b7 ' + r.confidence)); a.appendChild(top);
+    const k = card.check, split = r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''));
+    const la = split ? (k.legend_a || 'Matching stories') : k.group_a.label, lb = split ? (k.legend_b || 'Everything else') : k.group_b.label;
+    const per = k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'average');
+    const a = el('article', 'hyp narr ' + r.verdict);
+    a.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
+    // 1. the guess
     a.appendChild(el('h3', '', card.title));
-    a.appendChild(el('p', 'hyp-q', card.hypothesis));
-    const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'If true: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); a.appendChild(ex);
-    const k = card.check;
-    const meas = el('p', 'hyp-m'); meas.appendChild(el('b', '', 'Measured: ')); meas.appendChild(document.createTextNode(
-      k.group_a.label + ' ' + fmtN(r.mean_a, k) + ' vs ' + k.group_b.label + ' ' + fmtN(r.mean_b, k) + ' (' + (k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'avg')) + '), ratio ' + fmt(r.value) + (k.unit || '')));
-    a.appendChild(meas);
-    a.appendChild(gauge(card, r)); a.appendChild(bars(card, r));
-    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode((r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''))) ? (k.legend_a || 'Matching stories') : k.group_a.label)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode((r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''))) ? (k.legend_b || 'Everything else') : k.group_b.label)); a.appendChild(lg);
-    if (card.caveats && card.caveats.length) {
-      const d = el('details', 'pts sm'); d.appendChild(el('summary', '', 'Caveats'));
-      const box = el('div'); card.caveats.forEach(t => box.appendChild(el('p', '', t))); d.appendChild(box); a.appendChild(d);
-    }
-    a.appendChild(el('p', 'src', 'Check: ' + k.source + ' \u203a ' + k.path + '.' + k.field + (card.author ? ' \u00b7 by ' + card.author : '')));
+    step(a, 'The guess', el('p', 'hyp-q', card.hypothesis));
+    // 2. why it might be true (only when the card author wrote it)
+    if (card.why) step(a, 'Why it might be true', el('p', '', card.why));
+    // 3. what we checked
+    step(a, 'What we checked', el('p', '', 'We compared ' + la + ' with ' + lb + ' (' + per + ') in the data window.'));
+    // 4. what we saw
+    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(la)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(lb));
+    step(a, 'What we saw', [bars(card, r), lg, el('p', 'take', la + ' came out at ' + fmtN(r.mean_a, k) + ', ' + lb + ' at ' + fmtN(r.mean_b, k) + '. That is a ratio of ' + fmt(r.value) + (k.unit || 'x') + '.')]);
+    // 5. verdict in plain words
+    const V = VERDICT[r.verdict], vb = el('div', 'verdict');
+    vb.appendChild(el('b', '', V[0])); vb.appendChild(el('span', '', V[1] + (CONF[r.confidence] ? ' ' + CONF[r.confidence] : '')));
+    step(a, 'Verdict', vb);
+    // 6. folded: rules, gauge, caveats, source
+    const d = el('details', 'more-d'); d.appendChild(el('summary', '', 'Caveats, the rules we set, source'));
+    d.appendChild(gauge(card, r));
+    const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'Rules set in advance: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); d.appendChild(ex);
+    if (card.caveats && card.caveats.length) { const bx = el('div', 'cav'); bx.appendChild(el('b', '', 'Caveats')); card.caveats.forEach(t => bx.appendChild(el('p', '', t))); d.appendChild(bx); }
+    d.appendChild(el('p', 'src', 'Check: ' + k.source + ' \u203a ' + k.path + '.' + k.field + (card.author ? ' \u00b7 by ' + card.author : '')));
+    a.appendChild(d); a.classList.add('compact');
     return a;
   }
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
@@ -86,6 +102,7 @@
     return tallyP || (tallyP = get('hypotheses/tally.json').catch(async () => (await all()).map(x => x.error ? { name: x.name, error: x.error } : { name: x.name, audience: x.card.audience || null, title: x.card.title, verdict: x.r.verdict, confidence: x.r.confidence })));
   }
   function compact(card) {
+    if (card.querySelector('.more-d')) return card;
     const keep = card.querySelectorAll('.hyp-ex, details.pts, .src'); if (!keep.length) return card;
     const d = document.createElement('details'); d.className = 'more-d'; const s = document.createElement('summary'); s.textContent = 'What we tested, caveats, source'; d.appendChild(s);
     keep.forEach(e => d.appendChild(e)); card.appendChild(d); card.classList.add('compact'); return card;
