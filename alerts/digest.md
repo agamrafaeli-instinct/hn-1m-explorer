@@ -1,4 +1,4 @@
-HN digest 2026-10-09 (UTC): 34 new stories at 350+ points
+HN digest 2026-10-09 (UTC): 54 new stories at 250+ points
 - 2039 pts, 238 comments: Margaret Hamilton has died
 - 2022 pts, 1209 comments: Mistral Large 4
 - 1310 pts, 1484 comments: Sharing AI progress in mathematics
@@ -24,6 +24,7 @@ HN digest 2026-10-09 (UTC): 34 new stories at 350+ points
 - 412 pts, 617 comments: Trump administration is suspending Microsoft from a green card program
 - 398 pts, 64 comments: A font recreated from photographs of classic Commodore 64 keycaps
 - 396 pts, 250 comments: Man discovers his parents' coffee machine used 1TB of data in 10 days
+- 395 pts, 138 comments: Theranos.world
 - 389 pts, 286 comments: Meta’s Muse is an adorable privacy and security dumpster fire
 - 388 pts, 62 comments: I hired an illustrator to draw my house. Now it's my Home Assistant dashboard
 - 387 pts, 227 comments: Decisions API is in public beta
@@ -33,3 +34,22 @@ HN digest 2026-10-09 (UTC): 34 new stories at 350+ points
 - 357 pts, 247 comments: Example.com just launched the biggest redesign in decades
 - 355 pts, 181 comments: I gave Opus 5.5 one prompt and six hours to visualize Invisible Cities
 - 351 pts, 246 comments: OpenAI annualised revenues $20B less than previously signalled
+- 350 pts, 178 comments: Nature's capacity to 'bounce back' when species are lost is overestimated: study
+- 342 pts, 400 comments: OpenTPU – An open-source AI accelerator, developed by AI
+- 339 pts, 213 comments: Navier–Stokes Lost in Translation
+- 338 pts, 3 comments: OpenAI Withdraws 3 Math Papers
+- 335 pts, 92 comments: Yes, and
+- 321 pts, 147 comments: Anti-patterns in software blogging
+- 318 pts, 139 comments: Gleam doesn't compile to Erlang source anymore
+- 300 pts, 57 comments: Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai
+- 299 pts, 137 comments: Docker Agent
+- 298 pts, 232 comments: What's Earth's dominant species by mass?
+- 290 pts, 156 comments: Beauty in DVD Menus
+- 284 pts, 561 comments: OpenAI withdraws three mathematical results
+- 283 pts, 78 comments: Strands Decider 2B: a small, open-source, decision model
+- 279 pts, 113 comments: The Slow Formation of Durable Software
+- 273 pts, 160 comments: 'Jonathan' is the oldest land animal on Earth
+- 268 pts, 510 comments: Paramount Skydance has completed its $111B merger with Warner Bros. Discovery
+- 267 pts, 153 comments: ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)
+- 266 pts, 153 comments: Claude Code’s suggested message feature: I think the real customer is the model
+- 252 pts, 57 comments: Cleo (Mathematician)
