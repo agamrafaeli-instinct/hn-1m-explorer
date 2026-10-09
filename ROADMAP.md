@@ -9,6 +9,7 @@ People come back about once a week to see how current AI trends are changing the
 ## How we track work
 
 - How to write issues and board text: [docs/ISSUES_STYLE.md](docs/ISSUES_STYLE.md).
+- How work moves: [docs/FLYWHEEL.md](docs/FLYWHEEL.md).
 - Board fields: **Status** (Grooming, Dev, QA, Done) and **Horizon** (Now, Next, Later). Start and Target dates feed the timeline.
 - Each epic below becomes one GitHub issue labelled `epic`, broken into task issues when the owner picks which epic goes first.
 - Order of the three epics: not set yet.
