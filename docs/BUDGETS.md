@@ -33,3 +33,7 @@ node scripts/perf.mjs --only home,card
 node scripts/perf.mjs --write-budgets      # re-measure and rewrite data/budgets.json
 ```
 Exit code is 1 if a screen is over budget, never loaded or overflows sideways. Needs Node 22 and Google Chrome. The script is not part of the published site.
+
+## In the deploy workflow
+
+The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --tolerance 1.25` after the site is staged and before it is uploaded. The script serves the staged folder on localhost with gzip, like Pages. A screen over its size or request budget, or over its time budget plus 25%, or with sideways overflow, stops the deploy. The last good site stays live. The extra 25% on time is for CI machine speed. The result table is in the run summary.
