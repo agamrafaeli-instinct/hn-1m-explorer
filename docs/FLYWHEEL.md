@@ -14,7 +14,7 @@ The standing cycle that keeps work moving. Epics feed tasks, tasks feed developm
 | Needs decision | A yes or no is needed from the owner. See below. |
 
 ## Rules
-1. **Dev picks Ready tasks.** Take the highest Ready task by epic order. Do not start anything that is not Ready.
+1. **Ready means go.** A task marked Ready needs no further approval. Start it in the same loop it was groomed in, in epic order, and respect the Depends on line. Do not start anything that is not Ready. Only items in Needs decision wait for the owner.
 2. **Keep at least 5 Ready tasks.** Groom the next epic whenever fewer than 5 Ready tasks remain, so dev is never empty.
 3. **Every epic gets tasks.** An epic in Defined with no tasks is groomed in order: move it to Grooming, write tasks with acceptance criteria, move each finished task to Ready.
 4. **Keep at least 5 Defined epics.** When fewer than 5 remain, define new epics from the vision in ROADMAP.md, from QA findings and from recurring data questions. Each gets a title in the form `[Epic] - <Snazzy Code Name> - What it is in up to seven words` (see ISSUES_STYLE.md), a goal paragraph and a "done when" line. No duplicates of an open or closed epic.
