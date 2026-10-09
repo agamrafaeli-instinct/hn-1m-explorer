@@ -1,0 +1,58 @@
+name: Run alerts
+# Opens one GitHub issue labelled bug when a scheduled workflow fails or is missed.
+# One problem = one issue: while an issue for that workflow is open, later failures add a comment.
+on:
+  workflow_run:
+    workflows: ['Daily Hacker News update and Pages', 'Daily HN 250+ points digest', 'Weekly snapshot']
+    types: [completed]
+  schedule:
+    - cron: '41 8 * * *'  # missed-run check
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+  actions: read
+env:
+  GH_TOKEN: ${{ github.token }}
+  REPO: ${{ github.repository }}
+concurrency:
+  group: run-alerts
+  cancel-in-progress: false
+jobs:
+  failed:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or update the issue
+        env:
+          WF: ${{ github.event.workflow_run.name }}
+          URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          gh label create bug -R "$REPO" --color d73a4a --description "Something is broken" 2>/dev/null || true
+          title="Scheduled run failed: $WF"
+          n=$(gh issue list -R "$REPO" --label bug --state open -L 100 --json number,title --jq "[.[]|select(.title==\"$title\")][0].number // empty")
+          if [ -n "$n" ]; then
+            gh issue comment "$n" -R "$REPO" --body "Failed again: $URL"
+          else
+            gh issue create -R "$REPO" --label bug --title "$title" --body "The run failed: $URL"$'\n\n'"The last good site stays live. The next scheduled run catches up. This issue stays open until someone closes it."
+          fi
+  missed:
+    if: github.event_name != 'workflow_run'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check recent successful runs
+        run: |
+          gh label create bug -R "$REPO" --color d73a4a --description "Something is broken" 2>/dev/null || true
+          check() {  # file, max age in hours, label
+            last=$(gh run list -R "$REPO" -w "$1" -s success -L 1 --json createdAt --jq '.[0].createdAt // empty')
+            age=999999
+            [ -n "$last" ] && age=$(( ( $(date +%s) - $(date -d "$last" +%s) ) / 3600 ))
+            if [ "$age" -le "$2" ]; then echo "$3: ok, last success ${age} h ago"; return; fi
+            title="Scheduled run missed: $3"
+            n=$(gh issue list -R "$REPO" --label bug --state open -L 100 --json number,title --jq "[.[]|select(.title==\"$title\")][0].number // empty")
+            if [ -n "$n" ]; then gh issue comment "$n" -R "$REPO" --body "Still missed. Last success: ${last:-none} (${age} h ago)."
+            else gh issue create -R "$REPO" --label bug --title "$title" --body "No successful run in the last $2 hours. Last success: ${last:-none}."; fi
+          }
+          check daily-hn.yml 30 "Daily Hacker News update and Pages"
+          check watch-350.yml 30 "Daily HN 250+ points digest"
+          check weekly-snapshot.yml 196 "Weekly snapshot"
