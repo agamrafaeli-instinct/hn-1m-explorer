@@ -1,5 +1,5 @@
 name: Decision (yes/no)
-description: A small question that needs Agam's answer
+description: A small question that needs an owner decision
 labels: [needs-agam]
 body:
   - type: input

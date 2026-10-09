@@ -202,7 +202,7 @@ def v2_blocks(stories, m, authors, counts):
     out['vcs'] = {
         'themes': grp(m, 'theme', L.THEMES, ('stories',)), 'ai_infra': {'stories': m.get('infra.stories', 0), 'comments': m.get('infra.comments', 0)},
         'sources': {'press': agg([x for x in live if x[3] in PRESS_SET]), 'primary': agg([x for x in live if x[3] in PRIMARY_SET]), 'linked_stories': len(linked)},
-        'watchlist': {'note': 'Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles.',
+        'watchlist': {'note': 'Starter list from scripts/weekly_lists.py, to be replaced by an owner-chosen list. Mentions in story titles.',
                       'mentions': {n: sum(1 for x in live if x[4] and rx.search(x[4])) for n, rx in _WATCH}},
         'deal_words': _deal_block(live)}
     ai_free = [x for x in live if not x[7]]

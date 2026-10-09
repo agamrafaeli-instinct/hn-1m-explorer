@@ -1,6 +1,6 @@
 # Weekly "state of HN" snapshot: spec v2
 
-Status: draft for Agam to approve. Task #33, part of epic #32. Replaces v1, which tracked word baskets only.
+Decision (2026-10-09): scope B for all three audiences. Task #33, part of epic #32. Replaces v1, which tracked word baskets only.
 Every number below was measured on the 10 saved weeks (Jul 27 to Oct 4 2026) from the archive in this repo, unless it says it came from `data/history/`.
 How to read the status column: **Ship now** = computable from the archive today. **Ship with caveat** = computable, but the method is a proxy and the screen must say so. **Needs new data** = the archive cannot answer it. **Skip** = we would not publish it.
 
@@ -76,7 +76,7 @@ What they bring to HN: which hard-tech areas are getting attention, which compan
 | Signal | Question | How measured | Weekly size and noise | Status |
 |---|---|---|---|---|
 | Deep-tech themes | Which areas are rising? | Split the existing deeptech word list (`scripts/terms.py`) into themes: quantum; fusion and fission; chips (semiconductor, risc-v, lithography, fpga, asic); batteries and solid-state; bio (crispr, mrna, gene editing, synthetic biology); photonics and lidar. Plus the history baskets data center, gpu, robotics, solar. | The whole basket is 49 to 73 stories a week, so each theme is about 5 to 20. | Ship with caveat: themes below 8 stories a week show only as "present" or "absent", never rose or fell |
-| Company watchlist | Which companies keep coming up? | A fixed list of names Agam picks. Mentions in story titles, whole word, case rules for common words (Meta, Apple, Amazon, Intel). | OpenAI 58 to 130 a week, Google 61 to 97, Apple 52 to 91, Anthropic 44 to 103, Nvidia 11 to 79, Meta 20 to 83. Small names (Rocket Lab, Anduril, TSMC, Mistral) sit near 0 to 8. | Ship now for the list, but small names can only show appear or not |
+| Company watchlist | Which companies keep coming up? | A fixed list of names chosen by the project owner. Mentions in story titles, whole word, case rules for common words (Meta, Apple, Amazon, Intel). | OpenAI 58 to 130 a week, Google 61 to 97, Apple 52 to 91, Anthropic 44 to 103, Nvidia 11 to 79, Meta 20 to 83. Small names (Rocket Lab, Anduril, TSMC, Mistral) sit near 0 to 8. | Ship now for the list, but small names can only show appear or not |
 | Auto-found names | Which new names appear? | Capitalised words in titles. A test on 2026-W40 returned "RSS", "Tiny", "Dots", "Won", "Car" next to "Elon Musk" and "Sonnet". | Too noisy | Skip. A reviewed list is the safe path |
 | Deal words | Where is money moving? | Titles with raises, series A to E, seed round, funding, acquires, acquisition, IPO, valuation, bankrupt, layoffs, shuts down. | 42 to 78 titles a week (variation 15%) | Ship with caveat: this is HN talking about deals, not a deal database |
 | Press vs primary source | Is the talk about news or about the work? | Share of stories from press domains (techcrunch, bloomberg, reuters, wsj, ft, nytimes, economist and similar) vs primary domains (arxiv, nature, science.org, github, company blogs). The two lists are a code change to edit. | Press 8.2% to 10.2%, primary 11.7% to 13.2% | Ship with caveat: list choice is a judgment call |
@@ -139,11 +139,11 @@ One rule for counts, one for shares, one for new names.
 Everything in v1 (totals, baskets, top stories and domains, every domain with 3 or more stories; the only v1 change is that `job` items are counted apart from `other`), plus:
 - `shared`: `volume` (live and all stories and comments, distinct authors), `ai.terms` (core union and 10 baseline terms, four counts each: story_live, story_all, comment_live, comment_all), `discussion` (stories with 100+ comments or points, debated top 10, most commented top 10).
 - `engineers`: `languages` (9), `tools` (10), `ai_coding` (6), `show_hn`, `ask_hn`, `hiring` (estimated posts, 7 skills, job items).
-- `vcs`: `themes` (10), `ai_infra`, `sources` (press and primary), `watchlist` (27 starter names, replace with Agam's), `deal_words` (9 groups plus top 5 titles).
+- `vcs`: `themes` (10), `ai_infra`, `sources` (press and primary), `watchlist` (27 starter names, owner list to replace it), `deal_words` (9 groups plus top 5 titles).
 - `geeks`: `ai_free`, `old_year_tag`, `variety`, `reading` (youtube, wikipedia), `debated_non_ai`.
 - `methods`: list version. The word lists are in `scripts/weekly_lists.py`. A new list version means a new code change and test.
 Size: about 53 KB a week.
-The per-audience scope Agam picks later decides what each screen shows. All the signals above are stored for every week now, so any pick works on all 10 backfilled weeks.
+The per-audience scope decides what each screen shows. All the signals above are stored for every week now, so any pick works on all 10 backfilled weeks.
 
 **Backfill:** the 10 files are rebuilt as v2 on Oct 9 (kind "backfill"). `--backfill --replace-backfill` replaces only backfill files with an older schema, never a file saved by the weekly job. Week 2026-W31 can only be rebuilt until about Oct 12.
 

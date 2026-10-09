@@ -37,7 +37,7 @@ DEAL_WORDS = {'raises': T(['raises', 'raised']), 'series': T(phrases=['series a'
               'funding': T(['funding', 'funded']), 'acquisition': T(['acquires', 'acquired', 'acquisition']), 'ipo': T(['ipo']),
               'valuation': T(['valuation']), 'bankrupt': T(['bankrupt', 'bankruptcy']), 'layoffs': T(['layoffs'], ['laid off']),
               'shutdown': T(phrases=['shuts down', 'shutting down', 'shut down'])}
-# Starter watchlist for deep-tech VCs. Agam is to replace it with his own names. Matched in titles.
+# Starter watchlist for deep-tech VCs. The owner is to replace it with their own names. Matched in titles.
 # Names that are also common words are matched only when capitalised (see CASE_SENSITIVE).
 WATCHLIST = ['OpenAI', 'Anthropic', 'Nvidia', 'Google', 'Meta', 'Microsoft', 'Apple', 'Amazon', 'Tesla', 'SpaceX', 'xAI', 'DeepSeek',
              'Mistral', 'Intel', 'AMD', 'TSMC', 'Cloudflare', 'Stripe', 'Palantir', 'Figma', 'Vercel', 'Supabase', 'Hugging Face',

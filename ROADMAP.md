@@ -1,6 +1,6 @@
 # Roadmap
 
-Last updated: 2026-10-09. Board: https://github.com/users/agamrafaeli-instinct/projects/1 (private for now).
+Last updated: 2026-10-09. Board: https://github.com/users/agamrafaeli-instinct/projects/1 (public).
 
 ## Vision
 
@@ -8,10 +8,11 @@ People come back about once a week to see how current AI trends are changing the
 
 ## How we track work
 
+- How to write issues and board text: [docs/ISSUES_STYLE.md](docs/ISSUES_STYLE.md).
 - Board fields: **Status** (Grooming, Dev, QA, Done) and **Horizon** (Now, Next, Later). Start and Target dates feed the timeline.
-- Each epic below becomes one GitHub issue labelled `epic`, broken into task issues when Agam picks which epic goes first.
+- Each epic below becomes one GitHub issue labelled `epic`, broken into task issues when the owner picks which epic goes first.
 - Order of the three epics: not set yet.
-- Rules that apply to all of them: sourced claims only (HN FAQ and API docs, or the repo's own data), simple words, a phone-first layout checked at 390px, no new top-level site file without adding it to scripts/stage_site.py, and Agam reviews anything that reads as a finding before it goes live.
+- Rules that apply to all of them: sourced claims only (HN FAQ and API docs, or the repo's own data), simple words, a phone-first layout checked at 390px, no new top-level site file without adding it to scripts/stage_site.py, and the owner reviews anything that reads as a finding before it goes live.
 
 ## Epic A: Weekly "state of HN" per audience
 
@@ -48,7 +49,7 @@ What exists now: the narrative card layout (guess, check, what we saw, verdict) 
 
 What is missing:
 - A weekly pick of the two or three most interesting changes, taken from Epic A snapshots and Epic B flips (so it depends on at least one of them).
-- A draft step: an agent drafts each finding from the data only, and Agam reviews before it is published.
+- A draft step: an agent drafts each finding from the data only, and the owner reviews before it is published.
 - A page for the latest findings and an archive.
 
 Done when: every week there are two or three published findings, each traceable to numbers in the repo.
@@ -57,4 +58,4 @@ Done when: every week there are two or three published findings, each traceable 
 
 - Epic C needs input from A or B, so it cannot ship first on its own.
 - Epics A and B both need a weekly saved record. They can share one weekly job.
-- Order is Agam's decision.
+- Order is an owner decision.

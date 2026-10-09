@@ -13,3 +13,5 @@ A check runs on the PR. It fails if the card is malformed, has no refuting rule,
 After a merge to `main`, the card is published as a finding on the next deploy. The verdict is computed from the data, not typed by anyone. Failed hypotheses are shown too; that is the point.
 
 Do not edit `hypotheses/index.json` (generated). New stats or data sources need a code change to `hyp-eval.js`, in a separate PR.
+
+Issues and board text follow [docs/ISSUES_STYLE.md](docs/ISSUES_STYLE.md).
