@@ -1,0 +1,92 @@
+{
+ "settings": {
+  "rtt_ms": 150,
+  "down_kbps": 1638,
+  "cpu_slowdown": 4,
+  "viewport": "390x844@2x",
+  "cache": "cold",
+  "runs": 3,
+  "site": "https://agamrafaeli-instinct.github.io/hn-1m-explorer/",
+  "date": "2026-10-09",
+  "rule": "measured median + 15 percent, time rounded up to 50 ms"
+ },
+ "screens": {
+  "home": {
+   "ms": 1000,
+   "kb": 101,
+   "reqs": 14,
+   "measured": {
+    "ms": 857,
+    "reqs": 12,
+    "kb": 87,
+    "overflow": 0
+   }
+  },
+  "audience": {
+   "ms": 2150,
+   "kb": 227,
+   "reqs": 20,
+   "measured": {
+    "ms": 1858,
+    "reqs": 17,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "card": {
+   "ms": 1950,
+   "kb": 227,
+   "reqs": 20,
+   "measured": {
+    "ms": 1688,
+    "reqs": 17,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "week_engineers": {
+   "ms": 1850,
+   "kb": 227,
+   "reqs": 23,
+   "measured": {
+    "ms": 1566,
+    "reqs": 20,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "week_vcs": {
+   "ms": 1900,
+   "kb": 227,
+   "reqs": 23,
+   "measured": {
+    "ms": 1617,
+    "reqs": 20,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "week_geeks": {
+   "ms": 1800,
+   "kb": 227,
+   "reqs": 23,
+   "measured": {
+    "ms": 1553,
+    "reqs": 20,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "explorer": {
+   "ms": 350,
+   "kb": 43,
+   "reqs": 11,
+   "measured": {
+    "ms": 287,
+    "reqs": 9,
+    "kb": 37,
+    "overflow": 0
+   }
+  }
+ }
+}
