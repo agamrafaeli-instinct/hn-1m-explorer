@@ -147,7 +147,7 @@
    "needs-agam",
    "feature"
   ],
-  "seed": false
+  "seed": true
  },
  {
   "key": "offline",
@@ -157,7 +157,7 @@
    "needs-agam",
    "feature"
   ],
-  "seed": false
+  "seed": true
  },
  {
   "key": "rename-watch",
@@ -167,7 +167,7 @@
    "needs-agam",
    "feature"
   ],
-  "seed": false
+  "seed": true
  },
  {
   "key": "refresh-geeks2",
@@ -177,7 +177,7 @@
    "needs-agam",
    "hypothesis"
   ],
-  "seed": false
+  "seed": true
  },
  {
   "key": "verdict-badge",
@@ -187,7 +187,7 @@
    "needs-agam",
    "feature"
   ],
-  "seed": false
+  "seed": true
  },
  {
   "key": "topic-digest",
@@ -197,7 +197,7 @@
    "needs-agam",
    "feature"
   ],
-  "seed": false
+  "seed": true
  },
  {
   "key": "why-lines-draft",
@@ -238,5 +238,85 @@
    "feature"
   ],
   "seed": true
+ },
+ {
+  "key": "sample-size",
+  "title": "Show how many stories each card counted? yes/no",
+  "body": "A small line under \"What we checked\", for example \"12,431 stories in the window\". Yes: add. No: skip.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": true
+ },
+ {
+  "key": "challenge-link",
+  "title": "Add a \"Challenge this card\" link that opens a prefilled issue? yes/no",
+  "body": "Lets a reader say why a card might be wrong. Yes: add. No: skip.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": true
+ },
+ {
+  "key": "swipe-next",
+  "title": "Add swipe or a Next button to move to the next card on audience screens? yes/no",
+  "body": "Yes: add. No: keep tapping back and choosing.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": true
+ },
+ {
+  "key": "fresh-date",
+  "title": "Show \"data as of\" date on the Home page? yes/no",
+  "body": "Yes: add one line under the title. No: skip.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": true
+ },
+ {
+  "key": "feed",
+  "title": "Add an RSS feed of new cards? yes/no",
+  "body": "Yes: add feed.xml (new top-level file, allowlisted). No: skip.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": false
+ },
+ {
+  "key": "big-text",
+  "title": "Add a text size toggle? yes/no",
+  "body": "Yes: A/A+ switch on the bottom bar menu. No: skip.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": false
+ },
+ {
+  "key": "explorer-default",
+  "title": "Make the Explorer default to the newest 3 files so it loads faster? yes/no",
+  "body": "Yes: default to 3 files, with a clear \"load more\". No: keep the current default (about 19 MB).",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": false
+ },
+ {
+  "key": "card-order",
+  "title": "Sort Go deeper by newest card first instead of by id? yes/no",
+  "body": "Yes: newest first. No: keep id order.",
+  "labels": [
+   "needs-agam",
+   "feature"
+  ],
+  "seed": false
  }
 ]

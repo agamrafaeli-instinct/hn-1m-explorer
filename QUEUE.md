@@ -4,20 +4,20 @@ Generated nightly from the issue labels. Newest change: 2026-10-09 UTC.
 
 ## Needs Agam (14)
 
+- [#30](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/30) Add swipe or a Next button to move to the next card on audience screens? yes/no
+- [#29](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/29) Add a "Challenge this card" link that opens a prefilled issue? yes/no
+- [#28](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/28) Show how many stories each card counted? yes/no
+- [#27](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/27) Add a topic watch to the digest (for example "quantum" or "Rust")? yes/no
+- [#26](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/26) Add a verdict filter (supported, refuted, inconclusive) on the audience screens? yes/no
+- [#25](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/25) Refresh the round-2 geeks cards (H135-H149) daily like the others? yes/no
+- [#24](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/24) Rename the digest workflow file from watch-350 to watch-points? yes/no
+- [#23](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/23) Make the site work offline for cards you opened? yes/no
+- [#22](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/22) Add a dark mode? yes/no
 - [#17](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/17) Put a "Submit a hypothesis" link on the Home page? yes/no
 - [#16](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/16) Ask the data agent for hour-of-day totals over the whole archive? yes/no
 - [#15](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/15) Show "what changed since yesterday" on the Home page? yes/no
 - [#14](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/14) Add saved searches to the Explorer? yes/no
-- [#13](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/13) Add a Share button on each card? yes/no
-- [#12](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/12) Draft a "Why it might be true" line for each card, for your review? yes/no
-- [#11](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/11) Add 5 more Curious geeks hypotheses? yes/no
-- [#10](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/10) Add 5 more Deep-tech VC hypotheses? yes/no
-- [#9](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/9) Add 5 more Engineers hypotheses? yes/no
-- [#8](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/8) Show the daily digest on a page of the site? yes/no
-- [#7](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/7) Add a weekly top-10 summary on top of the daily 250+ digest? yes/no
 - [#6](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/6) Do you want draft tweets for the best supported findings, for your review only? yes/no
-- [#5](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/5) Add a visible points-level caution to H020, H021 and H119? yes/no
-- [#4](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/4) Go ahead with whole-archive versions of the remaining windowed cards? yes/no
 
 ## Ready for agents (4)
 
@@ -30,8 +30,8 @@ Generated nightly from the issue labels. Newest change: 2026-10-09 UTC.
 
 - nothing
 
-## In review (0)
+## In review (1)
 
-- nothing
+- [#13](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/13) Add a Share button on each card? yes/no
 
-Done or closed: 1
+Done or closed: 9
