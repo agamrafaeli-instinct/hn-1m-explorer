@@ -60,7 +60,7 @@
   }
   async function homeWeek() {
     try {
-      const i = await (await fetch('data/weekly/index.json')).json(), w = i.weeks[i.weeks.length - 1], s = new Date(w.start_utc + 'T00:00:00Z'), e = new Date(s); e.setUTCDate(e.getUTCDate() + 6);
+      const jc = window.__jc || (window.__jc = {}), i = await (jc['data/weekly/index.json'] || (jc['data/weekly/index.json'] = fetch('data/weekly/index.json').then(r => r.json()))), w = i.weeks[i.weeks.length - 1], s = new Date(w.start_utc + 'T00:00:00Z'), e = new Date(s); e.setUTCDate(e.getUTCDate() + 6);
       const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       $('homeweek_s').textContent = M[s.getUTCMonth()] + ' ' + s.getUTCDate() + ' to ' + M[e.getUTCMonth()] + ' ' + e.getUTCDate() + ' \u00b7 ' + w.week;
       $('homeweek').href = '#/w/engineers/' + w.week;

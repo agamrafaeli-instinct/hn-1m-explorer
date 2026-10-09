@@ -9,20 +9,21 @@
   const SPEC = 'https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/docs/WEEKLY_SPEC.md';
   const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const root = () => document.getElementById('w_body');
-  const cache = {};
-  function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+    function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   const n = x => Number(x).toLocaleString('en-US');
+  const pl = (k, w) => n(k) + ' ' + w + (k === 1 ? '' : 's');
   const pct = x => (x * 100).toFixed(1) + '%';
   function range(start, endEx) {
     const s = new Date(start + 'T00:00:00Z'), e = new Date(endEx + 'T00:00:00Z'); e.setUTCDate(e.getUTCDate() - 1);
     const f = d => MON[d.getUTCMonth()] + ' ' + d.getUTCDate();
     return f(s) + ' to ' + f(e);
   }
-  function getJSON(u) { return cache[u] || (cache[u] = fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); })); }
+  const jc = window.__jc || (window.__jc = {});
+  function getJSON(u) { return jc[u] || (jc[u] = fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); })); }
   const hnLink = it => { const a = el('a', 'wl', it.title || '(no title)'); a.href = 'https://news.ycombinator.com/item?id=' + encodeURIComponent(it.id); a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; };
   function storyList(items) {
     const ul = el('ul', 'wlist');
-    items.forEach(it => { const li = el('li'); li.append(hnLink(it)); const m = [it.domain, n(it.points) + ' points', n(it.comments) + ' comments'].filter(Boolean).join(' \u00b7 '); li.append(el('span', 'wm', m)); ul.appendChild(li); });
+    items.forEach(it => { const li = el('li'); li.append(hnLink(it)); const m = [it.domain, pl(it.points, 'point'), pl(it.comments, 'comment')].filter(Boolean).join(' \u00b7 '); li.append(el('span', 'wm', m)); ul.appendChild(li); });
     return ul;
   }
   function section(title, cls) { const s = el('section', 'wsec ' + (cls || '')); s.appendChild(el('h3', null, title)); return s; }
@@ -61,20 +62,22 @@
   }
   function bar(rows, unit, est) {
     const max = Math.max(1, ...rows.map(r => r.value)), box = el('div', 'wbars' + (est ? ' est' : ''));
-    rows.forEach(r => { const row = el('div', 'wb'); row.appendChild(el('span', 'wl2', r.label)); const t = el('span', 'wt'); const i = el('i'); i.style.width = Math.max(2, r.value / max * 100) + '%'; t.appendChild(i); row.append(t, el('span', 'wc', n(r.value))); box.appendChild(row); });
+    rows.forEach(r => { const row = el('div', 'wb'); row.appendChild(el('span', 'wl2', r.label)); const t = el('span', 'wt'); const i = el('i'); i.style.width = r.present_only ? (r.value ? '8%' : '0%') : Math.max(2, r.value / max * 100) + '%'; t.appendChild(i); row.append(t, el('span', 'wc', r.present_only ? (r.value ? 'seen' : 'none') : n(r.value))); box.appendChild(row); });
     return box;
   }
   function extra(c, a) {
     const d = c.audiences[a], frag = document.createDocumentFragment();
     const f = section('This week in numbers'); const ul = el('ul', 'wfacts');
     d.facts.forEach(x => { const li = el('li'); li.append(el('b', null, n(x.value)), el('span', null, x.label)); ul.appendChild(li); }); f.appendChild(ul); frag.appendChild(f);
-    d.bars.forEach(b => { if (!b.rows.length) return; const s = section(b.title); if (b.estimated) s.appendChild(el('span', 'west', 'Estimate')); s.appendChild(bar(b.rows, b.unit, b.estimated)); if (b.note) s.appendChild(el('p', 'wn', b.note)); frag.appendChild(s); });
+    d.bars.forEach(b0 => { let b = b0; if (!b.rows.length) return; const s = section(b.title);
+      if (b.rows.every(r => !r.value)) { if (b.estimated) s.appendChild(el('span', 'west', 'Estimate')); s.appendChild(el('p', 'wn', /hiring/i.test(b.title) ? 'No monthly hiring thread this week.' : 'None this week.')); frag.appendChild(s); return; }
+      if (b.rows.some(r => r.present_only)) b = Object.assign({}, b, { note: (b.note ? b.note + ' ' : '') + 'Under 8 stories a week is too small to count, so these show only seen or none.' }); if (b.estimated) s.appendChild(el('span', 'west', 'Estimate')); s.appendChild(bar(b.rows, b.unit, b.estimated)); if (b.note) s.appendChild(el('p', 'wn', b.note)); frag.appendChild(s); });
     d.lists.forEach(l => { if (!l.items.length) return; const s = section(l.title); s.appendChild(storyList(l.items)); if (l.note) s.appendChild(el('p', 'wn', l.note)); frag.appendChild(s); });
     return frag;
   }
   function stepper(idx, i, a) {
     const w = idx[i], bar = el('div', 'wstep');
-    const mk = (j, lab, arrow) => { const x = j >= 0 && j < idx.length ? el('a', 'wbtn', arrow) : el('span', 'wbtn off', arrow); if (x.tagName === 'A') x.href = '#/w/' + a + '/' + idx[j].week; x.setAttribute('aria-label', lab); return x; };
+    const mk = (j, lab, arrow) => { const x = j >= 0 && j < idx.length ? el('a', 'wbtn', arrow) : el('span', 'wbtn off', arrow); if (x.tagName !== 'A') { x.setAttribute('role', 'link'); x.setAttribute('aria-disabled', 'true'); } if (x.tagName === 'A') x.href = '#/w/' + a + '/' + idx[j].week; x.setAttribute('aria-label', lab); return x; };
     const mid = el('div', 'wmid'); mid.append(el('b', null, range(w.start_utc, w.end_exclusive_utc || w.start_utc)), el('span', null, w.week + (w.kind === 'backfill' ? ' \u00b7 rebuilt from the archive' : ' \u00b7 saved live')));
     bar.append(mk(i - 1, 'Previous week', '\u2039'), mid, mk(i + 1, 'Next week', '\u203a'));
     return bar;
@@ -101,7 +104,7 @@
       if (c.kind === 'backfill') frag.appendChild(el('p', 'wbf', 'This week was rebuilt from the archive after it ended, with the same method and fields as a live save. The newest stories may have had more time to collect points.'));
       frag.append(changes(c, a), shares(c, a), extra(c, a));
       const top = section('Top stories of the week'); top.appendChild(storyList(c.top_stories)); frag.appendChild(top);
-      const foot = el('p', 'wn wfoot', 'Hacker News talking, not a measure of what is true. Counts use stories only. Dead and deleted stories keep no title, so shares divide by all stories. '); const l = el('a', null, 'How it is computed'); l.href = SPEC; l.target = '_blank'; l.rel = 'noopener noreferrer'; foot.appendChild(l);
+      const foot = el('p', 'wn wfoot', 'Hacker News talking, not a measure of what is true. Counts use stories only. Dead and deleted stories keep no title, so title-based shares divide by live stories. The dead or deleted share divides by all stories. '); const l = el('a', null, 'How it is computed'); l.href = SPEC; l.target = '_blank'; l.rel = 'noopener noreferrer'; foot.appendChild(l);
       frag.appendChild(foot);
       b.replaceChildren(frag);
       document.getElementById('w_back').href = '#/';

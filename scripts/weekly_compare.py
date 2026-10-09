@@ -89,9 +89,10 @@ def shares(w):
     out = {}
     if live:
         out[('engineers', 'ai_share')] = ('AI in story titles and text', g(w, 'shared', 'ai', 'terms', 'core', 'story_live') / live)
+        # Titles are needed to tell these stories apart, and dead or deleted stories keep no title: live base.
+        out[('engineers', 'show_hn')] = ('Show HN share of stories', g(w, 'engineers', 'show_hn', 'stories') / live)
+        out[('geeks', 'ai_free')] = ('Stories with no AI term', g(w, 'geeks', 'ai_free', 'stories') / live)
     if allst:
-        out[('engineers', 'show_hn')] = ('Show HN share of stories', g(w, 'engineers', 'show_hn', 'stories') / allst)
-        out[('geeks', 'ai_free')] = ('Stories with no AI term', g(w, 'geeks', 'ai_free', 'stories') / allst)
         out[('shared', 'dead')] = ('Stories dead or deleted', 1 - live / allst)
     linked = g(w, 'geeks', 'variety', 'linked_stories')
     if linked:
@@ -110,9 +111,16 @@ def stories(rows, n):
     return [story(r) for r in (rows or [])[:n]]
 
 
-def bars(d, key='stories', n=None):
+def bars(d, key='stories', n=None, small_below=None):
+    """small_below: counts under this limit are shown as present or absent only (WEEKLY_SPEC.md), never as a number."""
     rows = sorted(((k, (v.get(key, 0) if isinstance(v, dict) else v)) for k, v in (d or {}).items()), key=lambda r: -r[1])
-    return [{'label': nice(k), 'value': v} for k, v in (rows[:n] if n else rows)]
+    out = []
+    for k, v in (rows[:n] if n else rows):
+        if small_below is not None and v < small_below:
+            out.append({'label': nice(k), 'value': 1 if v else 0, 'present_only': True})
+        else:
+            out.append({'label': nice(k), 'value': v})
+    return out
 
 
 def extras(w):
@@ -126,7 +134,7 @@ def extras(w):
             {'label': 'Show HN stories that link to GitHub', 'value': g(w, 'engineers', 'show_hn', 'github')}],
         'bars': [{'title': 'AI coding terms in story titles and text', 'unit': 'stories', 'rows': bars(g(w, 'engineers', 'ai_coding', default={}))},
                  {'title': 'Skills in monthly hiring comments', 'unit': 'comments', 'estimated': True,
-                  'note': 'Estimate. ' + str(g(w, 'engineers', 'hiring', 'estimated_posts')) + ' comments looked like job posts (first line with 2 or more "|" fields). Not linked to a hiring thread, so a count is not a count of companies.',
+                  'note': 'Estimate. ' + str(g(w, 'engineers', 'hiring', 'estimated_posts')) + (' comment looked like a job post' if g(w, 'engineers', 'hiring', 'estimated_posts') == 1 else ' comments looked like job posts')+ ' (first line with 2 or more "|" fields). Not linked to a hiring thread, so a count is not a count of companies.',
                   'rows': bars(g(w, 'engineers', 'hiring', 'skills', default={}), key='')}],
         'lists': [{'title': 'Top Show HN', 'items': stories(g(w, 'engineers', 'show_hn', 'top', default=[]), 3)},
                   {'title': 'Most commented Ask HN', 'items': stories(g(w, 'engineers', 'ask_hn', 'top_by_comments', default=[]), 3)}]}
@@ -134,7 +142,7 @@ def extras(w):
         'facts': [{'label': 'Linked stories from press sites', 'value': g(w, 'vcs', 'sources', 'press', 'stories')},
                   {'label': 'Linked stories from primary sources', 'value': g(w, 'vcs', 'sources', 'primary', 'stories')},
                   {'label': 'Stories with deal words in the title', 'value': g(w, 'vcs', 'deal_words', 'stories')}],
-        'bars': [{'title': 'Deep tech themes', 'unit': 'stories', 'rows': bars(g(w, 'vcs', 'themes', default={}))},
+        'bars': [{'title': 'Deep tech themes', 'unit': 'stories', 'rows': bars(g(w, 'vcs', 'themes', default={}), small_below=8)},
                  {'title': 'Deal words in titles', 'unit': 'stories', 'rows': bars(g(w, 'vcs', 'deal_words', 'by_word', default={}), key='')},
                  {'title': 'Names in story titles', 'unit': 'stories', 'rows': bars(g(w, 'vcs', 'watchlist', 'mentions', default={}), key='', n=8),
                   'note': 'Starter list of ' + str(len(g(w, 'vcs', 'watchlist', 'mentions', default={}))) + ' names. A name in a title does not mean the company raised money, owns anything or is hiring.'}],

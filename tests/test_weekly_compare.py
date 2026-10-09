@@ -97,5 +97,18 @@ class Whole(unittest.TestCase):
             self.assertLessEqual(len(c['new_domains']), 5)
 
 
+class ShareBases(unittest.TestCase):
+    def test_title_based_shares_use_live_stories(self):
+        sh = wc.shares(week('2026-W01', '2026-01-01'))  # live 1000, all 1400
+        self.assertAlmostEqual(sh[('geeks', 'ai_free')][1], 0.7)  # 700 / 1000, not 700 / 1400
+        self.assertAlmostEqual(sh[('engineers', 'show_hn')][1], 0.1)
+        self.assertAlmostEqual(sh[('shared', 'dead')][1], 1 - 1000 / 1400)  # this one uses all stories
+
+    def test_small_counts_show_present_or_absent_only(self):
+        rows = wc.bars({'a': {'stories': 40}, 'b': {'stories': 3}, 'c': {'stories': 0}}, small_below=8)
+        self.assertEqual([r['value'] for r in rows], [40, 1, 0])
+        self.assertEqual([bool(r.get('present_only')) for r in rows], [False, True, True])
+
+
 if __name__ == '__main__':
     unittest.main()
