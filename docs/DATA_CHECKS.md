@@ -4,7 +4,7 @@
 
 | Check | Limit | Measured 2026-10-09 | Why |
 |---|---|---|---|
-| total_rows | exactly 1,000,000 and equal to the manifest | 1,000,000 | The archive keeps the newest 1,000,000 items. |
+| total_rows | rows counted in the files equal the manifest total_rows | 1,000,000 (equals manifest) | The manifest is the source of the total; no fixed number is hard coded. |
 | chunk_row_counts | every chunk file has the row count in the manifest | 0 differ | Catches a cut or doubled file. |
 | chunk_sha256 | every chunk matches the manifest hash | 0 differ | Catches a changed or damaged file. |
 | duplicate_ids | 0 | 0 | An ID is one item. |

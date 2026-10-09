@@ -40,7 +40,11 @@ def summaries(db, stamp):
         'concentration': concentration(db), 'terms': terms(db)}
 
 
-def update(root, workers=32, limit=1000000, getter=fetch, max_new=250000):
+# Rolling window size kept in data/posts-*.csv. One setting; the archive plan (docs/BACKFILL_PLAN.md) lifts the cap later.
+RETENTION_ROWS = 1000000
+
+
+def update(root, workers=32, limit=RETENTION_ROWS, getter=fetch, max_new=250000):
     redaction_start=redact_secrets.n
     root=pathlib.Path(root).resolve(); data=root/'data'
     manifest=json.loads((data/'manifest.json').read_text())
@@ -147,7 +151,7 @@ def update(root, workers=32, limit=1000000, getter=fetch, max_new=250000):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__); p.add_argument('--root',default='.'); p.add_argument('--workers',type=int,default=32)
-    p.add_argument('--retention-rows',type=int,default=1000000); p.add_argument('--max-new',type=int,default=250000)
+    p.add_argument('--retention-rows',type=int,default=RETENTION_ROWS); p.add_argument('--max-new',type=int,default=250000)
     a=p.parse_args()
     if not 1<=a.workers<=64 or a.retention_rows<1: p.error('Invalid worker count or retention')
     update(a.root,a.workers,a.retention_rows,max_new=a.max_new)

@@ -6,7 +6,6 @@ import csv, hashlib, json, pathlib, statistics, sys
 
 csv.field_size_limit(10 ** 9)
 ROOT = pathlib.Path(sys.argv[sys.argv.index('--root') + 1]) if '--root' in sys.argv else pathlib.Path(__file__).resolve().parent.parent
-EXPECTED_ROWS = 1_000_000
 TYPES = {'story', 'comment', 'job', 'poll', 'pollopt'}
 LIMITS = {
     'dead_share_stories': (0.20, 0.45),     # measured 0.31 over the last 10 weeks (docs/WEEKLY_SPEC.md)
@@ -51,7 +50,7 @@ def scan(root):
 def evaluate(s):
     out = []
     def add(name, value, ok, limit): out.append((name, value, ok, limit))
-    add('total_rows', s['rows'], s['rows'] == EXPECTED_ROWS == s['m']['total_rows'], f'= {EXPECTED_ROWS}')
+    add('total_rows', s['rows'], s['rows'] == s['m']['total_rows'], f"= manifest total_rows ({s['m']['total_rows']})")
     add('chunk_row_counts', sum(1 for a, b in s['chunk_rows'].values() if a != b), all(a == b for a, b in s['chunk_rows'].values()), '0 chunks differ from manifest')
     add('chunk_sha256', len(s['hash_bad']), not s['hash_bad'], '0 chunks differ from manifest')
     add('duplicate_ids', s['dups'], s['dups'] == 0, '0')

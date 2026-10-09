@@ -25,7 +25,6 @@ def good_rows():
     return r
 
 def run(rows, **kw):
-    dc.EXPECTED_ROWS = len(rows)
     tmp = build(rows, **kw)
     try: return {n: ok for n, v, ok, l in dc.evaluate(dc.scan(tmp))}
     finally: shutil.rmtree(tmp)
@@ -50,8 +49,9 @@ class Checks(unittest.TestCase):
         self.assertFalse(run(good_rows(), expected_rows=5)['chunk_row_counts'])
 
     def test_wrong_total_fails(self):
-        rows = good_rows(); dc.EXPECTED_ROWS = len(rows) + 1
-        tmp = build(rows)
+        rows = good_rows(); tmp = build(rows)
+        m = json.loads((tmp / 'data/manifest.json').read_text()); m['total_rows'] = len(rows) + 1
+        (tmp / 'data/manifest.json').write_text(json.dumps(m))
         try: res = {n: ok for n, v, ok, l in dc.evaluate(dc.scan(tmp))}
         finally: shutil.rmtree(tmp)
         self.assertFalse(res['total_rows'])
@@ -71,7 +71,6 @@ class Checks(unittest.TestCase):
 
     def test_live_archive_passes(self):
         if not (ROOT / 'data/manifest.json').exists(): self.skipTest('no data')
-        dc.EXPECTED_ROWS = 1_000_000
         res = {n: ok for n, v, ok, l in dc.evaluate(dc.scan(ROOT))}
         self.assertTrue(all(res.values()), res)
 
