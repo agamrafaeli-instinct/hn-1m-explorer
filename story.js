@@ -198,6 +198,22 @@
     document.querySelectorAll('.barlist,#hall,#mgrid,#svg_clock,#heat').forEach(x => io.observe(x));
   }
   addEventListener('scroll', () => { const h = document.documentElement; $('progress').firstElementChild.style.width = (100 * scrollY / (h.scrollHeight - innerHeight)) + '%'; }, { passive: true });
-  let started; window.StoryInit = () => { if (started) return; started = true; init().catch(e => { $('dek').textContent = 'Could not load data: ' + e; console.error(e); }); };
+  async function hist() {
+    try {
+      const H = await HypCards.source('data/history/strips.json'), MN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const mon = iso => { const p = iso.split('-'); return MN[+p[1] - 1] + ' ' + p[0]; };
+      const tot = H.monthly.stories.reduce((a, b) => a + b, 0) + H.monthly.comments.reduce((a, b) => a + b, 0);
+      $('lede_hist').textContent = 'Daily counts from the archive in data/history/ (' + mon(H.months[0]) + ' to ' + mon(H.months[H.months.length - 1]) + ', about ' + fmtS(tot) + ' stories and comments). This archive is not necessarily all of Hacker News. The rest of this page covers only the newest 1,000,000 items.';
+      const box = $('hist_charts'); box.replaceChildren();
+      [['stories', 'Stories per month'], ['comments', 'Comments per month'], ['points', 'Story points per month']].forEach(([k, t]) => {
+        const v = H.monthly[k], pk = v.indexOf(Math.max.apply(null, v)), d = document.createElement('div'); d.className = 'hchart';
+        const h3 = document.createElement('h3'); h3.textContent = t; const cap = document.createElement('p'); cap.className = 'lede';
+        cap.textContent = mon(H.months[0]) + ': ' + fmt(v[0]) + '. ' + mon(H.months[v.length - 1]) + ': ' + fmt(v[v.length - 1]) + '. Peak: ' + mon(H.months[pk]) + ', ' + fmt(v[pk]) + '.';
+        d.append(h3, HypCards.strip(v, H.months), cap);
+        if (k === 'points') { const n = document.createElement('p'); n.className = 'lede'; n.style.fontWeight = '700'; n.textContent = 'Read with care: points per story are about 2 until Nov 2023, about 12 to 16 from Dec 2023 to Dec 2025, and about 2 again from Jan 2026. This file cannot tell us whether that is a real change or a change in how scores were recorded, so do not compare points across those periods.'; d.appendChild(n); } box.appendChild(d);
+      });
+    } catch (e) { $('lede_hist').textContent = 'The long view could not load.'; }
+  }
+  let started; window.StoryInit = () => { if (started) return; started = true; hist(); init().catch(e => { $('dek').textContent = 'Could not load data: ' + e; console.error(e); }); };
   if (!/^#\/(c|a|hypotheses)(\/|$)/.test(location.hash) && location.hash !== '' && location.hash !== '#/') window.StoryInit();
 })();

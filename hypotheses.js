@@ -42,6 +42,7 @@
     });
     return s;
   }
+  function strip(series, labels) { return bars(null, { series, labels, ia: series.map((_, i) => i), ib: [], split: false }); }
   const VERDICT = {
     supported: ['Supported', 'The data backs the guess.'],
     refuted: ['Refuted', 'The data points the other way. The guess was wrong, and it stays on the page.'],
@@ -62,10 +63,19 @@
     // 2. why it might be true (only when the card author wrote it)
     if (card.why) step(a, 'Why it might be true', el('p', '', card.why));
     // 3. what we checked
-    step(a, 'What we checked', el('p', '', 'We compared ' + la + ' with ' + lb + ' (' + per + ') in the data window.'));
+    step(a, 'What we checked', el('p', '', 'We compared ' + la + ' with ' + lb + ' (' + per + ')' + (r.win ? '. Data window: ' + r.win + '.' : ' in the data window.')));
     // 4. what we saw
     const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(la)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(lb));
     step(a, 'What we saw', [bars(card, r), lg, el('p', 'take', la + ' came out at ' + fmtN(r.mean_a, k) + ', ' + lb + ' at ' + fmtN(r.mean_b, k) + '. That is a ratio of ' + fmt(r.value) + (k.unit || 'x') + '.')]);
+    if (r.hist) {
+      const h = r.hist, lg2 = el('p', 'hyp-lg'); lg2.appendChild(el('span', 'sw a')); lg2.appendChild(document.createTextNode(la)); lg2.appendChild(el('span', 'sw b')); lg2.appendChild(document.createTextNode(lb));
+      const same = h.verdict === r.verdict, hv = VERDICT[h.verdict][0].toLowerCase();
+      step(a, 'Across the whole archive', [bars(card, h), lg2, el('p', 'take', h.win + ': ' + la + ' ' + fmtN(h.mean_a, k) + ', ' + lb + ' ' + fmtN(h.mean_b, k) + ', ratio ' + fmt(h.value) + (k.unit || 'x') + '.'),
+        (k.field === 'points' ? el('p', 'hnote diff', 'Caution: archive points per story shift level in Dec 2023 and Jan 2026 (about 2, then 12 to 16, then about 2), cause unknown. Treat this check as rough.') : document.createTextNode('')), el('p', 'hnote' + (same ? '' : ' diff'), same ? 'The same rules give the same call over the full archive.' : 'Different call: the same rules over the full archive would read ' + hv + ', not ' + VERDICT[r.verdict][0].toLowerCase() + '. The verdict below stays based on the newest window.')]);
+    }
+    if (r.strip) {
+      step(a, 'Across the whole archive', [strip(r.strip.series, r.strip.labels), el('p', 'take', r.strip.name + ': share of stories matching "rust" each month, ' + r.strip.win + '. Zig and the other words in this card are not in the archive\'s term list, so this is not the same measure as the chart above.')]);
+    }
     // 5. verdict in plain words
     const V = VERDICT[r.verdict], vb = el('div', 'verdict');
     vb.appendChild(el('b', '', V[0])); vb.appendChild(el('span', '', V[1] + (CONF[r.confidence] ? ' ' + CONF[r.confidence] : '')));
@@ -88,12 +98,39 @@
       return Promise.all(names.map(n => get('hypotheses/' + n + '.json').then(card => ({ name: n, card }), e => ({ name: n, error: e.message }))));
     }));
   }
+  const MN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dstr = d => MN[d.getUTCMonth()] + ' ' + d.getUTCDate() + ' ' + d.getUTCFullYear();
+  const mon = iso => { const p = String(iso).split('-'); return MN[+p[1] - 1] + ' ' + p[0]; };
+  function winText(card, data) {
+    try {
+      const p = card.check.path, rows = p.split('.').reduce((o, k) => o[k], data), l0 = rows[0] || {};
+      const sec = x => new Date(x * 1000);
+      if (data.window && data.window.start_utc) return 'newest items, ' + dstr(new Date(data.window.start_utc)) + ' to ' + dstr(new Date(Date.parse(data.window.end_exclusive_utc) - 1));
+      if (l0.month || (l0.label === undefined && /monthly/.test(p))) return 'full archive, ' + mon(rows[0].month) + ' to ' + mon(rows[rows.length - 1].month);
+      const wk = r => r.week || r.label; const f = wk(rows[0]), l = wk(rows[rows.length - 1]);
+      if (/^\d{4}-\d{2}-\d{2}$/.test(f || '') && /^\d{4}-\d{2}-\d{2}$/.test(l || '')) return 'newest items, ' + dstr(new Date(f)) + ' to ' + dstr(new Date(Date.parse(l) + 6 * 864e5)) + ' (' + rows.length + ' weeks)';
+      const tr = data.time_range || data.window; if (tr && tr.min) return 'newest ' + (data.total_rows ? data.total_rows.toLocaleString() + ' ' : '') + 'items, ' + dstr(sec(tr.min)) + ' to ' + dstr(sec(tr.max));
+    } catch (e) { }
+    return '';
+  }
   async function evalOne(b) {
     if (b.error) return b;
     try {
       const src = b.card.check.source;
       if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
-      return { name: b.name, card: b.card, r: HypEval.evaluate(b.card, await source(src)) };
+      const data = await source(src), r = HypEval.evaluate(b.card, data);
+      r.win = winText(b.card, data);
+      try {
+        if (b.card.check.path === 'concentration.cyclic.weekday') {
+          const H = await source('data/history/strips.json'), w = H.weekday;
+          const syn = { time_range: H.time_range, concentration: { cyclic: { weekday: [0, 1, 2, 3, 4, 5, 6].map(i => ({ posts: w.posts[i], points: w.points[i], comments: w.comments[i] })) } } };
+          r.hist = HypEval.evaluate(b.card, syn); r.hist.win = 'Full archive, ' + mon(H.first) + ' to ' + mon(H.last);
+        } else if (b.card.id === 'h009') {
+          const H = await source('data/history/strips.json');
+          r.strip = { labels: H.months, series: H.term_share.rust, name: 'Rust alone', win: 'Full archive, ' + mon(H.first) + ' to ' + mon(H.last) };
+        }
+      } catch (e) { }
+      return { name: b.name, card: b.card, r };
     } catch (e) { return { name: b.name, error: e.message }; }
   }
   async function one(id) { const b = (await bundle()).find(x => x.name.startsWith(id + '-')); if (!b) throw new Error('not found'); const x = await evalOne(b); if (x.error) throw new Error(x.error); return x; }
@@ -107,7 +144,7 @@
     const d = document.createElement('details'); d.className = 'more-d'; const s = document.createElement('summary'); s.textContent = 'What we tested, caveats, source'; d.appendChild(s);
     keep.forEach(e => d.appendChild(e)); card.appendChild(d); card.classList.add('compact'); return card;
   }
-  window.HypCards = { all, one, tally, bundle, render, compact, initList };
+  window.HypCards = { all, one, tally, bundle, render, compact, initList, strip, source };
   let listed;
   async function initList() {
     if (listed) return; listed = true;

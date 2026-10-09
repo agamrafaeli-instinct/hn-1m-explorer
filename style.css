@@ -167,3 +167,4 @@ article.hyp.skel{padding:20px;color:#8a7f70}
 @media (prefers-reduced-motion:reduce){.skel{animation:none}}
 #hyp_list .hyp:not(.skel){content-visibility:auto;contain-intrinsic-size:auto 460px}
 #v_aud:has(#aud_card>.skel) #aud_others,#v_aud:has(#aud_card>.skel) #aud_deeper,#v_aud:has(#aud_card>.skel) #aud_note{display:none}
+#s_hist{padding:8vh 20px 4vh;max-width:760px;margin:0 auto}.hchart{margin:18px 0}.hchart h3{font:800 20px Fraunces,Georgia,serif;margin:0 0 4px}.hchart svg{width:100%;display:block}.hchart .b-a{fill:var(--ac)}.hchart .g-lab{font:10px Inter;fill:#6b6157}.hchart .lede{font-size:14px;margin:4px 0 0}
