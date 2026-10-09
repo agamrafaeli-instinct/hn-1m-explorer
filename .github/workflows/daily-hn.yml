@@ -42,6 +42,18 @@ jobs:
           fi
       - name: Stage only published site files
         run: python scripts/stage_site.py --output _site
+      - name: Log today's verdicts
+        run: |
+          python scripts/verdict_log.py --tally _site/hypotheses/tally.json
+          mkdir -p _site/data/verdicts
+          cp data/verdicts/log.csv _site/data/verdicts/log.csv
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/verdicts/log.csv
+          if ! git diff --cached --quiet; then
+            git commit -m 'Log card verdicts'
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
