@@ -5,11 +5,11 @@ New = created within WINDOW_HOURS. State: alerts/seen.json. Output: GitHub issue
 alerts/alerts.json (newest first) and alerts/digest.md (last ~24h, plain text).
 """
 import json, os, time, urllib.parse, urllib.request, pathlib
-THRESHOLD = int(os.environ.get('THRESHOLD', 350)); WINDOW_HOURS = int(os.environ.get('WINDOW_HOURS', 72))
+THRESHOLD = int(os.environ.get('THRESHOLD', 250)); WINDOW_HOURS = int(os.environ.get('WINDOW_HOURS', 72))
 ROOT = pathlib.Path(__file__).resolve().parent.parent; SEEN = ROOT / 'alerts/seen.json'; ALERTS = ROOT / 'alerts/alerts.json'
 
 def fetch(now):
-    q = urllib.parse.urlencode({'tags': 'story', 'hitsPerPage': 100,
+    q = urllib.parse.urlencode({'tags': 'story', 'hitsPerPage': 1000,
         'numericFilters': f'points>={THRESHOLD},created_at_i>{int(now - WINDOW_HOURS * 3600)}'})
     with urllib.request.urlopen('https://hn.algolia.com/api/v1/search_by_date?' + q, timeout=30) as r:
         return json.load(r)['hits']
