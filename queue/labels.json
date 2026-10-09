@@ -1,0 +1,10 @@
+[
+ {"name":"needs-agam","color":"d93f0b","description":"Decision or review waiting for Agam (small yes/no first)"},
+ {"name":"ready","color":"0e8a16","description":"Agents can take this now"},
+ {"name":"in-progress","color":"fbca04","description":"An agent is working on it"},
+ {"name":"review","color":"5319e7","description":"Done, waiting for a check"},
+ {"name":"done","color":"1d76db","description":"Finished"},
+ {"name":"hypothesis","color":"ff6600","description":"A card or card idea"},
+ {"name":"feature","color":"c5def5","description":"Site feature or explorer change"},
+ {"name":"data","color":"bfdadc","description":"Data, series or archive work"}
+]

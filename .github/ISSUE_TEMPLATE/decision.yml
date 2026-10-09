@@ -1,0 +1,11 @@
+name: Decision (yes/no)
+description: A small question that needs Agam's answer
+labels: [needs-agam]
+body:
+  - type: input
+    id: q
+    attributes: {label: The question, description: "Write it so yes or no answers it."}
+    validations: {required: true}
+  - type: textarea
+    id: default
+    attributes: {label: What happens on yes, and on no}

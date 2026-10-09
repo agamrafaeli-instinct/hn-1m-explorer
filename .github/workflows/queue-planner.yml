@@ -1,0 +1,33 @@
+name: Queue planner
+on:
+  schedule:
+    - cron: '47 18 * * *'  # 01:47 Asia/Bangkok, after the digest
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: queue-planner
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refill the queue and write QUEUE.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/queue_planner.py
+      - name: Save QUEUE.md
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add QUEUE.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update QUEUE.md'
+            for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
+          fi

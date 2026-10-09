@@ -1,0 +1,17 @@
+name: Hypothesis submission
+description: Propose a guess about Hacker News that the data can test
+labels: [hypothesis, ready]
+body:
+  - type: textarea
+    id: guess
+    attributes: {label: The guess, description: One or two plain sentences.}
+    validations: {required: true}
+  - type: textarea
+    id: check
+    attributes: {label: What would show it is true or wrong, description: Which numbers, which period, what ratio counts as support or refutation.}
+    validations: {required: true}
+  - type: dropdown
+    id: audience
+    attributes: {label: Audience, options: [Engineers, Deep-tech VCs, Curious geeks, Everyone]}
+  - type: markdown
+    attributes: {value: "To add the card yourself, open a pull request with one file `hypotheses/hNNN-name.json`. See CONTRIBUTING.md."}

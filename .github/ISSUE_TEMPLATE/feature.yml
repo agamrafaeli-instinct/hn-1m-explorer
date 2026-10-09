@@ -1,0 +1,11 @@
+name: Feature or fix
+description: Something to add or change on the site
+labels: [feature, ready]
+body:
+  - type: textarea
+    id: what
+    attributes: {label: What should change, description: Say what a phone user would see.}
+    validations: {required: true}
+  - type: textarea
+    id: why
+    attributes: {label: Why}
