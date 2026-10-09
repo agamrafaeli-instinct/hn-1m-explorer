@@ -20,8 +20,8 @@
   }
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
-    const a = AUD[key] || AUD.engineers; $('aud_kicker').textContent = a.name; $('aud_note').textContent = ''; $('aud_deeper').replaceChildren(); $('aud_others').replaceChildren();
-    $('aud_back').href = '#/a/' + (AUD[key] ? key : 'engineers');
+    const a = AUD[key] || (key === 'all' ? { name: 'All audiences' } : AUD.engineers); $('aud_kicker').textContent = a.name; $('aud_note').textContent = ''; $('aud_deeper').replaceChildren(); $('aud_others').replaceChildren();
+    $('aud_back').href = key === 'all' ? '#/hypotheses' : '#/a/' + (AUD[key] ? key : 'engineers');
     skel();
     try { const x = await HypCards.one(id); $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r))); }
     catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }

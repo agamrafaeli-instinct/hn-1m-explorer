@@ -56,7 +56,17 @@
     const la = split ? (k.legend_a || 'Matching stories') : k.group_a.label, lb = split ? (k.legend_b || 'Everything else') : k.group_b.label;
     const per = k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'average');
     const a = el('article', 'hyp narr ' + r.verdict);
-    a.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
+    const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
+    const key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
+    const sh = el('button', 'share-btn', 'Share'); sh.type = 'button'; sh.dataset.url = location.origin + location.pathname + '#/c/' + card.id + '/' + key;
+    sh.setAttribute('aria-label', 'Share this card');
+    sh.addEventListener('click', async () => {
+      const url = sh.dataset.url;
+      try { if (navigator.share) { await navigator.share({ title: card.title, text: card.title + ' (Hacker News, tested)', url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+      try { await navigator.clipboard.writeText(url); } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e2) { } t.remove(); }
+      sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share'; }, 2000);
+    });
+    top.appendChild(sh); a.appendChild(top);
     // 1. the guess
     a.appendChild(el('h3', '', card.title));
     step(a, 'The guess', el('p', 'hyp-q', card.hypothesis));
