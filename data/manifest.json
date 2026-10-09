@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-09T07:44:53.750235+00:00",
+  "generated_at": "2026-10-09T08:19:44.412525+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-f67a45345a062866aeb6eabb.csv",
+      "rows": 224,
+      "bytes": 76716,
+      "sha256": "f67a45345a062866aeb6eabb009408e886a1d0c55082bb0f641a09540a4c98f8",
+      "min_id": 50017357,
+      "max_id": 50017580,
+      "min_time": 1791531876,
+      "max_time": 1791533943
+    },
     {
       "path": "data/posts-inc-a63e4c78bf514c7bbb29680b.csv",
       "rows": 301,
@@ -802,13 +812,13 @@
       "sha256": "1a945f2c35fe0acb9ec34dc3e372e0ff9ac5b23664da6a4cd05ef52152bbb86f"
     },
     {
-      "path": "data/posts-inc-4f0211df42296cfdfbee411e.csv",
-      "rows": 20336,
-      "bytes": 7111751,
-      "sha256": "4f0211df42296cfdfbee411ec15221faaa79294648b6afc08c4f9748afc07574",
-      "min_id": 49017357,
+      "path": "data/posts-inc-4a6e3c9844859293b9695651.csv",
+      "rows": 20112,
+      "bytes": 7036717,
+      "sha256": "4a6e3c9844859293b9695651fa36331b0b9144b4ff2c3d993f6adc724d41bc30",
+      "min_id": 49017581,
       "max_id": 49037692,
-      "min_time": 1784785374,
+      "min_time": 1784787764,
       "max_time": 1784909308
     }
   ],
@@ -834,16 +844,16 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 346225294,
+  "total_csv_bytes": 346226976,
   "daily_update": {
-    "last_scanned_id": 50017356,
-    "previous_scanned_id": 50017055,
+    "last_scanned_id": 50017580,
+    "previous_scanned_id": 50017356,
     "unavailable_ids": [],
-    "new_rows": 301,
+    "new_rows": 224,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
     "redaction_policy": "credential-shaped strings in text/title/url replaced using scripts/redact_secrets.py",
-    "redacted_strings_this_run": 0
+    "redacted_strings_this_run": 1
   }
 }
