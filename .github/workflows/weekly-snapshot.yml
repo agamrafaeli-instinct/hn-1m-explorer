@@ -1,0 +1,51 @@
+name: Weekly snapshot
+# Saves one file per complete UTC week to data/weekly/. Only the newest 1,000,000 items are kept, so an unsaved week is lost.
+# Runs Monday 05:17 UTC (12:17 Asia/Bangkok), after the daily data update at 02:23 UTC. A missed run is caught up next time
+# for any complete week still inside the archive. A saved week is never overwritten.
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: hn-daily-pages
+  cancel-in-progress: false
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test snapshot script
+        run: python -m unittest tests.test_weekly_snapshot -v
+      - name: Save complete weeks that are not saved yet
+        run: python scripts/weekly_snapshot.py
+      - name: Refuse to change any saved week
+        run: |
+          changed=$(git diff --name-only -- data/weekly | grep -v '^data/weekly/index.json$' || true)
+          if [ -n "$changed" ]; then echo "Saved week changed: $changed"; exit 1; fi
+      - name: Commit new weeks
+        id: commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/weekly
+          if git diff --cached --quiet; then echo "pushed=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -m 'Save weekly snapshot'
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && break
+            sleep 10
+          done
+          echo "pushed=yes" >> "$GITHUB_OUTPUT"
+      - name: Publish the site (Pages source is GitHub Actions)
+        if: steps.commit.outputs.pushed == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run daily-hn.yml --repo "$GITHUB_REPOSITORY"
