@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-09T13:13:01.218892+00:00",
+  "generated_at": "2026-10-09T13:21:09.148071+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-d2dc37dd6154c680cd272373.csv",
+      "rows": 128,
+      "bytes": 39466,
+      "sha256": "d2dc37dd6154c680cd272373577fb6fea0678425a7657dbc950f6691acdf536d",
+      "min_id": 50020012,
+      "max_id": 50020139,
+      "min_time": 1791551563,
+      "max_time": 1791552049
+    },
     {
       "path": "data/posts-inc-750c7f68f81efe020c2d064a.csv",
       "rows": 851,
@@ -832,13 +842,13 @@
       "sha256": "1a945f2c35fe0acb9ec34dc3e372e0ff9ac5b23664da6a4cd05ef52152bbb86f"
     },
     {
-      "path": "data/posts-inc-a2cfcce2d85855967df78bca.csv",
-      "rows": 17681,
-      "bytes": 6255732,
-      "sha256": "a2cfcce2d85855967df78bca5ac5774395377172b015f0dacac14cdc63481955",
-      "min_id": 49020012,
+      "path": "data/posts-inc-86911e2e6b1b57d300724269.csv",
+      "rows": 17553,
+      "bytes": 6208904,
+      "sha256": "86911e2e6b1b57d3007242690ed625ccb048aaf30feb2262e27e962009e87b70",
+      "min_id": 49020140,
       "max_id": 49037692,
-      "min_time": 1784806983,
+      "min_time": 1784807716,
       "max_time": 1784909308
     }
   ],
@@ -864,12 +874,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 346208708,
+  "total_csv_bytes": 346201346,
   "daily_update": {
-    "last_scanned_id": 50020011,
-    "previous_scanned_id": 50019160,
+    "last_scanned_id": 50020139,
+    "previous_scanned_id": 50020011,
     "unavailable_ids": [],
-    "new_rows": 851,
+    "new_rows": 128,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
