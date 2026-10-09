@@ -32,6 +32,11 @@ def stage(root,destination):
     if hd.is_dir():  # index.json is generated, so cards never conflict on it
         import json
         (hd/'index.json').write_text(json.dumps(sorted(f.stem for f in hd.glob('*.json') if f.name!='index.json')))
+        import subprocess
+        try: subprocess.run(['node',str(root/'scripts/build_hyp_bundle.js'),str(destination)],check=True,timeout=120)
+        except Exception as e:
+            print('bundle step skipped:',e)
+            for f in ('bundle.json','tally.json'): (hd/f).unlink(missing_ok=True)
     print('Published bytes:',size,'; assets:',', '.join(sorted(names)))
     return size
 

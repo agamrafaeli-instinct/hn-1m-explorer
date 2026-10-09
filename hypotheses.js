@@ -64,42 +64,52 @@
     return a;
   }
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
-  let allP;
-  function all() {
-    return allP || (allP = (async () => {
-      const names = await get('hypotheses/index.json'), cache = {}, out = [];
-      for (const n of names) {
-        try {
-          const card = await get('hypotheses/' + n + '.json'), src = card.check.source;
-          if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
-          const sum = cache[src] || (cache[src] = await get(src)); out.push({ name: n, card, r: HypEval.evaluate(card, sum) });
-        } catch (e) { out.push({ name: n, error: e.message }); }
-      }
-      return out;
-    })());
+  let bundleP, tallyP, allP; const srcC = {};
+  const source = s => srcC[s] || (srcC[s] = get(s));
+  function bundle() {
+    return bundleP || (bundleP = get('hypotheses/bundle.json').then(b => b.cards).catch(async () => {
+      const names = await get('hypotheses/index.json');
+      return Promise.all(names.map(n => get('hypotheses/' + n + '.json').then(card => ({ name: n, card }), e => ({ name: n, error: e.message }))));
+    }));
+  }
+  async function evalOne(b) {
+    if (b.error) return b;
+    try {
+      const src = b.card.check.source;
+      if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
+      return { name: b.name, card: b.card, r: HypEval.evaluate(b.card, await source(src)) };
+    } catch (e) { return { name: b.name, error: e.message }; }
+  }
+  async function one(id) { const b = (await bundle()).find(x => x.name.startsWith(id + '-')); if (!b) throw new Error('not found'); const x = await evalOne(b); if (x.error) throw new Error(x.error); return x; }
+  function all() { return allP || (allP = bundle().then(l => Promise.all(l.map(evalOne)))); }
+  function tally() {
+    return tallyP || (tallyP = get('hypotheses/tally.json').catch(async () => (await all()).map(x => x.error ? { name: x.name, error: x.error } : { name: x.name, audience: x.card.audience || null, title: x.card.title, verdict: x.r.verdict, confidence: x.r.confidence })));
   }
   function compact(card) {
     const keep = card.querySelectorAll('.hyp-ex, details.pts, .src'); if (!keep.length) return card;
     const d = document.createElement('details'); d.className = 'more-d'; const s = document.createElement('summary'); s.textContent = 'What we tested, caveats, source'; d.appendChild(s);
     keep.forEach(e => d.appendChild(e)); card.appendChild(d); card.classList.add('compact'); return card;
   }
-  window.HypCards = { all, render, compact };
-  async function init() {
+  window.HypCards = { all, one, tally, bundle, render, compact, initList };
+  let listed;
+  async function initList() {
+    if (listed) return; listed = true;
     const host = document.getElementById('hyp_list'); if (!host) return;
-    const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
-    const names = await get('hypotheses/index.json'), cache = {}, out = [];
-    for (const n of names) {
-      try {
-        const card = await get('hypotheses/' + n + '.json'), src = card.check.source;
-        if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
-        const sum = cache[src] || (cache[src] = await get(src)), r = HypEval.evaluate(card, sum);
-        if (!card.audience) out.push(compact(render(card, r)));
-      } catch (e) { const b = el('article', 'hyp inconclusive'); b.appendChild(el('p', 'src', 'Card ' + n + ' could not run: ' + e.message)); out.push(b); }
-    }
-    host.replaceChildren(...out);
-    const c = { supported: 0, refuted: 0, inconclusive: 0 };
-    host.querySelectorAll('.hyp').forEach(x => { for (const k in c) if (x.classList.contains(k)) c[k]++; });
-    const t = document.getElementById('hyp_tally'); if (t) t.textContent = c.supported + ' supported, ' + c.refuted + ' refuted, ' + c.inconclusive + ' inconclusive';
+    try {
+      const bl = (await bundle()).filter(b => b.error || !b.card.audience);
+      const slots = bl.map(b => { const a = el('article', 'hyp skel'); a.appendChild(el('p', 'src', 'Loading ' + b.name.split('-')[0].toUpperCase() + '...')); return a; });
+      host.replaceChildren(...slots);
+      const fill = async (slot, b) => {
+        const x = await evalOne(b);
+        let n;
+        if (x.error) { n = el('article', 'hyp inconclusive'); n.appendChild(el('p', 'src', 'Card ' + b.name + ' could not run: ' + x.error)); } else n = compact(render(x.card, x.r));
+        slot.replaceWith(n);
+      };
+      const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); fill(e.target, bl[slots.indexOf(e.target)]); } }), { rootMargin: '700px 0px' }) : null;
+      slots.forEach((s, i) => io ? io.observe(s) : fill(s, bl[i]));
+      const t = await tally(), c = { supported: 0, refuted: 0, inconclusive: 0 };
+      t.filter(x => !x.error && !x.audience).forEach(x => { c[x.verdict]++; });
+      const tl = document.getElementById('hyp_tally'); if (tl) tl.textContent = c.supported + ' supported, ' + c.refuted + ' refuted, ' + c.inconclusive + ' inconclusive';
+    } catch (e) { host.textContent = 'Could not load hypotheses: ' + e.message; }
   }
-  init().catch(e => { const h = document.getElementById('hyp_list'); if (h) h.textContent = 'Could not load hypotheses: ' + e.message; });
 })();

@@ -115,7 +115,7 @@ footer{padding:30px 18px 40px;font-size:12px;color:var(--mut);text-align:center}
 .loadrow select{flex:1 1 100%;min-width:0;width:100%;font-size:14px;text-overflow:ellipsis}
 
 body{padding-bottom:58px}.view[hidden]{display:none}
-#tabs{position:fixed;left:0;right:0;bottom:0;height:58px;z-index:30;display:flex;background:rgba(251,246,238,.96);backdrop-filter:blur(8px);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom)}
+#tabs{position:fixed;left:0;right:0;bottom:0;height:58px;z-index:30;display:flex;background:rgba(251,246,238,.96);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom)}
 #tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:11px;font-weight:600;color:var(--mut);text-decoration:none;min-height:44px}
 #tabs a i{font-style:normal;font-size:18px;line-height:20px}#tabs a.on{color:var(--ac)}
 .home{max-width:760px;margin:0 auto;padding:7vh 18px 4vh;min-height:calc(100svh - 58px);display:flex;flex-direction:column;justify-content:center}
@@ -160,3 +160,10 @@ html{-webkit-tap-highlight-color:transparent}a,button,summary,select{touch-actio
 .doc{padding:3vh 18px 3vh}.doc h2{font-size:clamp(30px,8.5vw,44px)}.doc li{margin:6px 0}
 #aud_deeper h3{font-size:22px;margin:16px 0 6px}
 @media (max-height:700px){.big em{display:none}}
+
+.skel{min-height:480px;border-radius:16px;background:linear-gradient(90deg,#efe6d8 25%,#f7f0e4 50%,#efe6d8 75%);background-size:200% 100%;animation:sk 1.2s linear infinite}
+article.hyp.skel{padding:20px;color:#8a7f70}
+@keyframes sk{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.skel{animation:none}}
+#hyp_list .hyp:not(.skel){content-visibility:auto;contain-intrinsic-size:auto 460px}
+#v_aud:has(#aud_card>.skel) #aud_others,#v_aud:has(#aud_card>.skel) #aud_deeper,#v_aud:has(#aud_card>.skel) #aud_note{display:none}

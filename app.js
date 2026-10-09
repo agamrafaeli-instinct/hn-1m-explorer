@@ -37,7 +37,11 @@ function parseChunk(text, state) {
     } });
   });
 }
+const vend = {};
+function vendor(src) { return vend[src] || (vend[src] = new Promise((ok, no) => { const e = document.createElement('script'); e.src = src; e.onload = ok; e.onerror = no; document.head.appendChild(e); })); }
+window.ExploreVendor = () => Promise.all([vendor('vendor/papaparse.min.js'), vendor('vendor/chart.umd.js')]);
 async function load(nChunks) {
+  await window.ExploreVendor();
   let base = 'data/', sample = false, r0 = await fetch('data/manifest.json', { cache: 'no-cache' });
   if (!r0.ok) { base = 'sample/'; sample = true; r0 = await fetch('sample/manifest.json'); document.body.classList.add('sample'); $('banner').hidden = false; }
   const mf = await r0.json();
@@ -146,7 +150,7 @@ $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetT
 $('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('minscore').value = 0; page = 0; refresh(); };
 $('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Error: ' + e.message; }); };
 
-(async () => {
+window.ExploreInit = (() => { let d; return () => d || (d = (async () => {
   try {
     let r = await fetch('data/manifest.json'), base = 'data/'; if (!r.ok) r = await fetch('sample/manifest.json');
     const mf = await r.json(), ch = mf.chunks || mf.files || [], sel = $('loadn'); let rows = 0, by = 0; const opts = [];
@@ -155,4 +159,4 @@ $('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled
     ch.forEach((c, i) => { rows += c.rows || 0; by += c.bytes || 0; if (marks.has(i + 1)) opts.push([i + 1, rows, by]); });
     sel.innerHTML = opts.map(([n, r2, b], i) => `<option value="${n}"${n === (best || opts[0][0]) ? ' selected' : ''}>${i === opts.length - 1 ? 'Everything' : 'Newest ' + n + ' files'}: ${r2 ? r2.toLocaleString() + ' items' : n + ' files'}${b ? ', ~' + (b < 1048576 ? Math.max(1, Math.round(b / 1024)) + ' KB' : Math.round(b / 1048576) + ' MB') : ''}</option>`).join('');
   } catch (e) { }
-})();
+})()); })();

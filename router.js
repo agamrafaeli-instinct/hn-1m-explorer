@@ -15,42 +15,44 @@
     const h = document.createElement('h3'); h.textContent = 'Go deeper'; box.appendChild(h);
     if (AUD[key].note) { const n = document.createElement('p'); n.className = 'caveat-note'; n.textContent = AUD[key].note; box.appendChild(n); }
     list.forEach(x => { const l = document.createElement('a'); l.href = '#/c/' + x.name.split('-')[0] + '/' + key; l.className = 'deep';
-      const t = document.createElement('b'); t.textContent = x.card.title; const v = document.createElement('span'); v.textContent = x.r.verdict === 'inconclusive' ? 'Inconclusive' : (x.r.verdict[0].toUpperCase() + x.r.verdict.slice(1) + ' \u00b7 ' + x.r.confidence);
-      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } v.className = 'vd ' + x.r.verdict; l.append(t, v); box.appendChild(l); });
+      const t = document.createElement('b'); t.textContent = x.title; const v = document.createElement('span'); v.textContent = x.verdict === 'inconclusive' ? 'Inconclusive' : (x.verdict[0].toUpperCase() + x.verdict.slice(1) + ' \u00b7 ' + x.confidence);
+      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } v.className = 'vd ' + x.verdict; l.append(t, v); box.appendChild(l); });
   }
+  function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
     const a = AUD[key] || AUD.engineers; $('aud_kicker').textContent = a.name; $('aud_note').textContent = ''; $('aud_deeper').replaceChildren(); $('aud_others').replaceChildren();
     $('aud_back').href = '#/a/' + (AUD[key] ? key : 'engineers');
-    $('aud_card').textContent = 'Loading...';
-    try { const x = (await HypCards.all()).find(c => c.card && c.name.startsWith(id + '-')); if (!x) throw new Error('not found'); $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r))); }
+    skel();
+    try { const x = await HypCards.one(id); $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r))); }
     catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
   async function audience(key) {
     $('aud_back').href = '#/';
     const a = AUD[key]; $('aud_kicker').textContent = a.name;
-    $('aud_card').textContent = 'Loading...'; $('aud_note').textContent = '';
+    skel(); $('aud_note').textContent = '';
     $('aud_others').replaceChildren(...Object.keys(AUD).filter(k => k !== key).map(k => { const l = document.createElement('a'); l.href = '#/a/' + k; l.textContent = AUD[k].name + ' \u2192'; return l; }));
     try {
-      const list = await HypCards.all(), ok = list.filter(x => x.card);
-      const mine = ok.filter(x => x.card.audience === a.tag), own = mine.find(x => x.name.startsWith(a.fallback)) || mine[0], pick = own || ok.find(x => x.name.startsWith(a.fallback));
+      const ok = (await HypCards.tally()).filter(x => !x.error);
+      const mine = ok.filter(x => x.audience === a.tag), own = mine.find(x => x.name.startsWith(a.fallback)) || mine[0], pick = own || ok.find(x => x.name.startsWith(a.fallback));
       if (!pick) throw new Error('no card yet');
-      $('aud_card').replaceChildren(compact(HypCards.render(pick.card, pick.r)));
-      deeper(mine.filter(x => x !== pick), key);
+      const x = await HypCards.one(pick.name.split('-')[0]);
+      $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r)));
+      deeper(mine.filter(y => y !== pick), key);
       if (!own) $('aud_note').textContent = 'A card written for this audience is coming. This is the closest tested hypothesis for now.';
     } catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
   const compact = c => HypCards.compact(c);
   async function counts() {
     try {
-      const list = (await HypCards.all()).filter(x => x.card), tag = {};
+      const list = (await HypCards.tally()).filter(x => !x.error);
       document.querySelectorAll('.pick em').forEach(e => {
-        const t = e.dataset.aud, rows = t === '*' ? list.filter(x => !x.card.audience) : list.filter(x => x.card.audience === t);
-        const sup = rows.filter(x => x.r.verdict === 'supported').length, ref = rows.filter(x => x.r.verdict === 'refuted').length;
+        const t = e.dataset.aud, rows = t === '*' ? list.filter(x => !x.audience) : list.filter(x => x.audience === t);
+        const sup = rows.filter(x => x.verdict === 'supported').length, ref = rows.filter(x => x.verdict === 'refuted').length;
         e.textContent = rows.length + ' tested \u00b7 ' + sup + ' supported \u00b7 ' + ref + ' refuted';
       });
     } catch (e) { }
   }
-  setTimeout(counts, 300);
+  counts();
   let cur;
   function route() {
     const p = (location.hash || '#/').replace(/^#\/?/, '').split('/');
@@ -58,6 +60,9 @@
     if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (['story', 'explore', 'submit', 'how'].includes(p[0])) v = p[0]; else if (p[0] === 'hypotheses') v = 'hyp';
     views.forEach(n => $('v_' + n).hidden = n !== v);
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
+    if (v === 'hyp') HypCards.initList();
+    if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
+    if (v === 'explore') { window.ExploreInit && window.ExploreInit(); window.ExploreVendor && window.ExploreVendor(); }
     if (v === 'aud') { if (p[0] === 'c') single(p[1], p[2]); else audience(p[1]); }
     if (cur !== v || v === 'aud') scrollTo({ top: 0, behavior: 'instant' });
     cur = v;

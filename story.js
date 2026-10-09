@@ -198,5 +198,6 @@
     document.querySelectorAll('.barlist,#hall,#mgrid,#svg_clock,#heat').forEach(x => io.observe(x));
   }
   addEventListener('scroll', () => { const h = document.documentElement; $('progress').firstElementChild.style.width = (100 * scrollY / (h.scrollHeight - innerHeight)) + '%'; }, { passive: true });
-  init().catch(e => { $('dek').textContent = 'Could not load data: ' + e; console.error(e); });
+  let started; window.StoryInit = () => { if (started) return; started = true; init().catch(e => { $('dek').textContent = 'Could not load data: ' + e; console.error(e); }); };
+  if (!/^#\/(c|a|hypotheses)(\/|$)/.test(location.hash) && location.hash !== '' && location.hash !== '#/') window.StoryInit();
 })();
