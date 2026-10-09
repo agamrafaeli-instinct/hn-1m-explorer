@@ -1,0 +1,509 @@
+{
+  "schema": 1,
+  "cards": [
+    {
+      "id": "h001",
+      "path": "data/full_history/h001.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h002",
+      "path": "data/full_history/h002.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h003",
+      "path": "data/full_history/h003.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h004",
+      "path": "data/full_history/h004.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h005",
+      "path": "data/full_history/h005.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h006",
+      "path": "data/full_history/h006.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h007",
+      "path": "data/full_history/h007.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h008",
+      "path": "data/full_history/h008.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h009",
+      "path": "data/full_history/h009.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h010",
+      "path": "data/full_history/h010.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h011",
+      "path": "data/full_history/h011.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h100",
+      "path": "data/full_history/h100.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h101",
+      "path": "data/full_history/h101.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h102",
+      "path": "data/full_history/h102.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h103",
+      "path": "data/full_history/h103.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h104",
+      "path": "data/full_history/h104.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h105",
+      "path": "data/full_history/h105.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h106",
+      "path": "data/full_history/h106.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h107",
+      "path": "data/full_history/h107.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h108",
+      "path": "data/full_history/h108.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h109",
+      "path": "data/full_history/h109.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h110",
+      "path": "data/full_history/h110.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h111",
+      "path": "data/full_history/h111.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h112",
+      "path": "data/full_history/h112.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h113",
+      "path": "data/full_history/h113.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h114",
+      "path": "data/full_history/h114.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h120",
+      "path": "data/full_history/h120.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h121",
+      "path": "data/full_history/h121.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h122",
+      "path": "data/full_history/h122.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h123",
+      "path": "data/full_history/h123.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h124",
+      "path": "data/full_history/h124.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h125",
+      "path": "data/full_history/h125.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h126",
+      "path": "data/full_history/h126.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h127",
+      "path": "data/full_history/h127.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h128",
+      "path": "data/full_history/h128.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h129",
+      "path": "data/full_history/h129.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h130",
+      "path": "data/full_history/h130.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h131",
+      "path": "data/full_history/h131.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h132",
+      "path": "data/full_history/h132.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h133",
+      "path": "data/full_history/h133.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h134",
+      "path": "data/full_history/h134.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h135",
+      "path": "data/full_history/h135.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h136",
+      "path": "data/full_history/h136.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h137",
+      "path": "data/full_history/h137.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h138",
+      "path": "data/full_history/h138.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h139",
+      "path": "data/full_history/h139.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h140",
+      "path": "data/full_history/h140.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h141",
+      "path": "data/full_history/h141.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h142",
+      "path": "data/full_history/h142.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h143",
+      "path": "data/full_history/h143.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h144",
+      "path": "data/full_history/h144.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h145",
+      "path": "data/full_history/h145.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h146",
+      "path": "data/full_history/h146.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    },
+    {
+      "id": "h147",
+      "path": "data/full_history/h147.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h148",
+      "path": "data/full_history/h148.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": false,
+        "warning": "Title counts are archive occurrences, not adoption. Archive completeness not independently established."
+      }
+    },
+    {
+      "id": "h149",
+      "path": "data/full_history/h149.json",
+      "rows": 241,
+      "quality": {
+        "engagement_snapshot_unvalidated": true,
+        "warning": "Scores and descendants are stale in deterministic live cross-checks. Do not treat these as final engagement or compare regimes causally."
+      }
+    }
+  ]
+}

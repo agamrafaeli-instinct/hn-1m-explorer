@@ -1,0 +1,6074 @@
+[
+  {
+    "schema": 1,
+    "id": "h001",
+    "title": "Engineers work weekdays",
+    "author": "agam",
+    "hypothesis": "Hacker News runs on the work week: a weekday carries well over 30% more activity than a weekend day.",
+    "expect": "If true, average daily items on Mon-Fri should be at least 1.3x the average on Sat-Sun.",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.weekday",
+      "field": "posts",
+      "normalize": "per_weekday_occurrence",
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "group_a": {
+        "label": "Weekdays",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "group_b": {
+        "label": "Weekend",
+        "indices": [
+          5,
+          6
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Weekdays are UTC. Someone posting Friday night in Asia counts as Friday.",
+      "Window is 11 weeks (Jul 22 - Oct 8 2026), so one holiday can move the result.",
+      "Counts all items, comments included."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h002",
+    "title": "HN never sleeps",
+    "author": "agam",
+    "hypothesis": "Software engineers are night owls: the quiet hours (00-05 UTC) are about as busy as the peak hours (13-18 UTC).",
+    "expect": "If true, average hourly items at 00-05 UTC should be within 10% of 13-18 UTC (ratio between 0.9 and 1.1).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.hour",
+      "field": "posts",
+      "labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "group_a": {
+        "label": "00-05 UTC",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "group_b": {
+        "label": "13-18 UTC",
+        "indices": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.9
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.75
+        },
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      },
+      {
+        "else": true,
+        "verdict": "refuted",
+        "confidence": "strong"
+      }
+    ],
+    "caveats": [
+      "HN is global. 00-05 UTC is daytime in Asia and evening in the Americas, so this tests the crowd, not one person.",
+      "Counts all items, comments included."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h003",
+    "title": "Monday rush",
+    "author": "agam",
+    "hypothesis": "Everyone comes back to the keyboard on Monday: it is the busiest day of the week.",
+    "expect": "If true, average items on Mondays should be at least 1.15x the average of the other six days (1.10x counts as weak).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.weekday",
+      "field": "posts",
+      "normalize": "per_weekday_occurrence",
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "group_a": {
+        "label": "Monday",
+        "indices": [
+          0
+        ]
+      },
+      "group_b": {
+        "label": "Other days",
+        "indices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.15
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Weekdays are UTC.",
+      "11-week window: about 11 Mondays, so one odd Monday matters.",
+      "Comparing against the other six days includes the quiet weekend, which flatters Monday."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h004",
+    "title": "Friday slump",
+    "author": "agam",
+    "hypothesis": "Friday is when the work week winds down: it is quieter than the middle of the week.",
+    "expect": "If true, average items on Fridays should be at most 0.85x the Tue-Thu average (0.95x counts as weak).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.weekday",
+      "field": "posts",
+      "normalize": "per_weekday_occurrence",
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "group_a": {
+        "label": "Friday",
+        "indices": [
+          4
+        ]
+      },
+      "group_b": {
+        "label": "Tue-Thu",
+        "indices": [
+          1,
+          2,
+          3
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.85
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Weekdays are UTC. Friday evening in the Americas is already Saturday UTC, which cuts Friday and lifts Saturday.",
+      "11-week window."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h005",
+    "title": "Early birds",
+    "author": "agam",
+    "hypothesis": "The HN crowd is made of morning people: early hours (06-09 UTC) are at least as busy as the evening (18-21 UTC).",
+    "expect": "If true, average hourly items at 06-09 UTC should be at least 1.1x the 18-21 UTC average.",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.hour",
+      "field": "posts",
+      "labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "group_a": {
+        "label": "06-09 UTC",
+        "indices": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "group_b": {
+        "label": "18-21 UTC",
+        "indices": [
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "HN is global, so UTC hours mix time zones. This tests the crowd, not individuals.",
+      "Counts all items, comments included."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h006",
+    "title": "Quiet days pay the same",
+    "author": "agam",
+    "hypothesis": "Weekends have fewer posts but the same appetite: a weekend day earns at least 90% of the points a weekday does.",
+    "expect": "If true, average points per day on Sat-Sun should be at least 0.9x the Mon-Fri average (below 0.8x refutes it).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.weekday",
+      "field": "points",
+      "normalize": "per_weekday_occurrence",
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "group_a": {
+        "label": "Weekend",
+        "indices": [
+          5,
+          6
+        ]
+      },
+      "group_b": {
+        "label": "Weekdays",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.9
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.8
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Points are summed over items that have a score (stories), so this is points per day, not per post.",
+      "Weekdays are UTC. 11-week window."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h007",
+    "title": "Saturday is for side projects",
+    "author": "agam",
+    "hypothesis": "Saturday is the day people ship and share personal projects: it is busier than Sunday.",
+    "expect": "If true, average items on Saturdays should be at least 1.1x Sundays (below 0.9x refutes it).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.weekday",
+      "field": "posts",
+      "normalize": "per_weekday_occurrence",
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "group_a": {
+        "label": "Saturday",
+        "indices": [
+          5
+        ]
+      },
+      "group_b": {
+        "label": "Sunday",
+        "indices": [
+          6
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Weekdays are UTC. Late Friday in the Americas lands on Saturday UTC.",
+      "Counts all items, not only Show HN. A Show HN check would need a title-based summary.",
+      "11-week window."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h008",
+    "title": "The midweek peak",
+    "author": "agam",
+    "hypothesis": "Activity builds to a midweek peak: Tuesday to Thursday beat Monday and Friday.",
+    "expect": "If true, average items Tue-Thu should be at least 1.05x the Mon and Fri average (1.15x counts as strong, below 0.97x refutes it).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "concentration.cyclic.weekday",
+      "field": "posts",
+      "normalize": "per_weekday_occurrence",
+      "labels": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "group_a": {
+        "label": "Tue-Thu",
+        "indices": [
+          1,
+          2,
+          3
+        ]
+      },
+      "group_b": {
+        "label": "Mon and Fri",
+        "indices": [
+          0,
+          4
+        ]
+      },
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.15
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.05
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.97
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Weekdays are UTC.",
+      "The gap is small, so 11 weeks is thin evidence."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h009",
+    "title": "The new systems languages rise",
+    "author": "agam",
+    "audience": "engineers",
+    "hypothesis": "Rust and Zig are gaining ground on HN: their share of story titles keeps climbing.",
+    "expect": "If true, the share of stories with Rust, Zig, rustc or cargo in the title should be at least 1.3x higher in the latest 4 full weeks than in the first 4 (1.1x counts as weak, below 0.9x refutes it).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "terms.weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "newsys_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 4 weeks",
+        "indices": [
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "First 4 weeks",
+        "indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "per": "stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Title matching only: a story about Rust that never says Rust is missed, and cargo can mean freight.",
+      "Only complete Monday-start UTC weeks in the window are used; the window is about 10 weeks, so this is a short trend.",
+      "Stories only, not comments."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h010",
+    "title": "Deep tech punches above its weight",
+    "author": "agam",
+    "audience": "deep-tech investors",
+    "hypothesis": "Deep-tech topics (quantum, fusion, photonics, chips, batteries, gene editing) earn clearly more HN attention per story than the rest.",
+    "expect": "If true, deep-tech stories should average at least 1.3x the points per story of all other stories, week by week on average (1.1x counts as weak, below 0.9x refutes it).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "terms.weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "deeptech_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Deep tech",
+        "field": "deeptech_points",
+        "per": "deeptech_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "deeptech_rest_points",
+        "per": "deeptech_rest_stories",
+        "indices": "all"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "This tests traction on HN, not lead time over the mainstream. Ten weeks cannot show who was early.",
+      "Points are skewed: one hit story can move a week. Weekly means are shown, not medians.",
+      "Topic list is title keywords chosen in advance (scripts/terms.py); other deep-tech stories are missed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h011",
+    "title": "Weird goes big",
+    "author": "agam",
+    "audience": "curious readers",
+    "hypothesis": "Strange, old and mysterious stories travel further than the average story.",
+    "expect": "If true, stories with words like weird, mystery, ancient, abandoned or forgotten in the title should average at least 1.3x the points per story of all other stories (1.1x counts as weak, below 0.9x refutes it).",
+    "check": {
+      "source": "data/summary.json",
+      "path": "terms.weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "weird_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Weird words",
+        "field": "weird_points",
+        "per": "weird_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "weird_rest_points",
+        "per": "weird_rest_stories",
+        "indices": "all"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Word list was fixed in advance (scripts/terms.py) and is a rough stand-in for weird.",
+      "Points are skewed: one hit story can move a week.",
+      "Stories only, about 10 complete weeks."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h012",
+    "title": "TypeScript is replacing JavaScript in the conversation",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Engineers now talk about TypeScript more than plain JavaScript, and the gap keeps widening.",
+    "expect": "If true, the monthly ratio of TypeScript stories to JavaScript stories should be at least 1.5x higher in the latest 6 months than the first 6 (1.15x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "ts_s",
+      "per_label": "TypeScript per JavaScript story",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "ts_s",
+        "per": "js_s"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "ts_s",
+        "per": "js_s"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.15
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Many JavaScript stories never use the word, and TypeScript posts often say JavaScript too.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h013",
+    "title": "Engineers moved from chatbots to agents",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Hacker News talk shifted from ChatGPT and GPT toward agents.",
+    "expect": "If true, the monthly ratio of agent(s) stories to ChatGPT/GPT stories should be at least 3x higher in the latest 6 months than the first 6 (1.5x is weak, 1x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "agents_s",
+      "per_label": "agent stories per chatbot story",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "agents_s",
+        "per": "chatbot_s"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "agents_s",
+        "per": "chatbot_s"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Agent is a noisy word (secret agent, user agent).",
+      "From a near-zero start, a big ratio is easy to get; the card checks direction, not size.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h014",
+    "title": "Boring SQL databases are winning over NoSQL and MySQL",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Postgres, SQLite and DuckDB take a larger share of the database conversation than MongoDB and MySQL.",
+    "expect": "If true, the monthly ratio of Postgres/SQLite/DuckDB stories to MongoDB/MySQL stories should be at least 1.4x higher in the latest 6 months than the first 6 (1.1x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "sql_s",
+      "per_label": "SQL-trio per NoSQL-pair story",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "sql_s",
+        "per": "nosql_s"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "sql_s",
+        "per": "nosql_s"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.4
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "MySQL is also the engine under many other products, so its decline in titles is not a decline in use.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h015",
+    "title": "Microservices and serverless hype is cooling",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Fewer stories mention microservices or serverless than at the start of the window.",
+    "expect": "If true, the share of stories with microservices or serverless should be at most 0.7x as high in the latest 6 months as the first 6 (0.9x counts as weak, 1.1x or higher refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "dist_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "dist_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "dist_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.7
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Total HN volume and AI share changed a lot, so every non-AI share looks lower.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h016",
+    "title": "React's grip is loosening",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "React is losing share of engineering conversation to newer front-end tools.",
+    "expect": "If true, the share of stories mentioning React should be at most 0.85x as high in the latest 6 months as the first 6 (0.95x is weak, 1.1x or higher refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "react_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "react_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "react_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.85
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "The word React also matches the verb, which adds noise.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h017",
+    "title": "Next.js, Svelte, Vue, htmx and Tailwind are rising together",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "The newer front-end stack is taking a growing share of stories.",
+    "expect": "If true, the share of stories mentioning Next.js, Svelte, Vue, htmx or Tailwind should be at least 1.3x higher in the latest 6 months than the first 6 (1.1x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "newfe_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "newfe_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "newfe_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Tailwind and Next.js drive most of the rise; Svelte and Vue are flat.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h018",
+    "title": "Container and cloud infrastructure keeps its share",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Docker, Kubernetes and Terraform hold or grow their share of stories.",
+    "expect": "If true, the share of stories mentioning Docker, Kubernetes or Terraform should be at least 1.1x higher in the latest 6 months than the first 6 (0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "infra_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "infra_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "infra_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.0
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Docker has risen, Terraform has fallen; the basket averages them.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h019",
+    "title": "The old guard of languages fades",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Java, PHP, Ruby, Rails and plain JavaScript lose share of stories.",
+    "expect": "If true, the share of stories mentioning Java, PHP, Ruby, Rails or JavaScript should be at most 0.8x as high in the latest 6 months as the first 6 (0.95x is weak, 1.1x or higher refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "oldguard_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "oldguard_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "oldguard_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Java matches Java the island and the coffee less often, but ruby is also a gem name.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h020",
+    "title": "AI coding tools earn above-average points",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Stories about Cursor, Claude Code, MCP, Copilot and Devin get more points than the average story.",
+    "expect": "If true, points per story for these stories should be at least 1.2x the points per story overall across all 42 months (1.05x is weak, 0.8x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "aicode_p",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "AI coding tools",
+        "indices": "all",
+        "field": "aicode_p",
+        "per": "aicode_s"
+      },
+      "group_b": {
+        "label": "All stories",
+        "indices": "all",
+        "field": "pts_total",
+        "per": "s_total"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.2
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.05
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.8
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Compared with all stories, not with other AI stories.",
+      "Points are archive snapshots, not final scores.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h021",
+    "title": "SQLite and DuckDB stories punch above their weight",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Small embedded databases get more points per story than the average story.",
+    "expect": "If true, points per SQLite/DuckDB story should be at least 1.5x the overall average across all 42 months (1.1x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "localdb_p",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "SQLite and DuckDB",
+        "indices": "all",
+        "field": "localdb_p",
+        "per": "localdb_s"
+      },
+      "group_b": {
+        "label": "All stories",
+        "indices": "all",
+        "field": "pts_total",
+        "per": "s_total"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "A few viral stories can lift the average.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h022",
+    "title": "Engineers are returning to their tools",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Git, Linux, Neovim, Nix and VS Code appear in a growing share of stories.",
+    "expect": "If true, the share of stories mentioning Git, Linux, Neovim, Nix or VS Code should be at least 1.2x higher in the latest 6 months than the first 6 (1.05x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "tinker_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "tinker_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "tinker_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.2
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.05
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Git and Linux match many unrelated stories.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h023",
+    "title": "Systems languages (Rust, Zig, C++) gain share",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Rust, Zig and C++ together grow as a share of stories.",
+    "expect": "If true, the share of stories mentioning Rust, Zig or C++ should be at least 1.3x higher in the latest 6 months than the first 6 (1.1x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "syslang_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "syslang_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "syslang_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Rust is one of three languages here on purpose; see h009 for the Rust and Zig title test.",
+      "C++ matching is crude.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h024",
+    "title": "More engineers talk about maintenance",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Code review and technical debt appear more often as AI writes more code.",
+    "expect": "If true, the share of stories mentioning code review or technical debt should be at least 1.5x higher in the latest 6 months than the first 6 (1.15x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "maint_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "maint_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "maint_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.15
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Small counts per month make this noisy.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h025",
+    "title": "LLM plumbing becomes an engineering topic",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "LLM, RAG and fine-tuning appear in more stories, more than AI in general.",
+    "expect": "If true, the share of stories mentioning LLM, RAG or fine-tuning should be at least 2x higher in the latest 6 months than the first 6 (1.2x is weak, 0.9x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "llm_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "llm_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "llm_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 2.0
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.2
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "RAG matches unrelated words in some titles.",
+      "AI as a whole is rising too, so this is not a separate trend.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h026",
+    "title": "Rust's rise shows up in comments, not only titles",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Rust mentions in comments rise too, so the title trend reflects what engineers argue about.",
+    "expect": "If true, the share of comments mentioning Rust should be at least 1.3x higher in the latest 6 months than the first 6 (1.1x is weak, 1.0x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "rust_c",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "rust_c",
+        "per": "c_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "rust_c",
+        "per": "c_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Rust title share rose about 1.5x; this tests whether comments agree.",
+      "2026 comment collection may be partial.",
+      "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h027",
+    "title": "Go is gaining on Python",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Go stories grow faster than Python stories.",
+    "expect": "If true, the monthly ratio of Go stories to Python stories should be at least 1.3x higher in the latest 6 months than the first 6 (1.1x is weak, 0.95x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "go_s",
+      "per_label": "Go per Python story",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "go_s",
+        "per": "python_s"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "go_s",
+        "per": "python_s"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Go matches only golang or capitalized Go; Python is a steady control.",
+      "Text matches in stories, word boundaries, case-insensitive. Complete months Jan 2023 to Jun 2026. Thresholds were fixed before this card was run, but the author had seen rough term ratios earlier."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h028",
+    "title": "Kubernetes is cooling off",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Kubernetes appears in a shrinking share of stories.",
+    "expect": "If true, the share of stories mentioning Kubernetes should be at most 0.7x as high in the latest 6 months as the first 6 (0.9x is weak, 1.05x or higher refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "kubernetes_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "kubernetes_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "kubernetes_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.7
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.05
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Total volume changed, so shares move for every topic.",
+      "Text matches in stories, word boundaries, case-insensitive. Complete months Jan 2023 to Jun 2026. Thresholds were fixed before this card was run, but the author had seen rough term ratios earlier."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h029",
+    "title": "Vue is rising",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Vue grows as a share of stories.",
+    "expect": "If true, the share of stories mentioning Vue should be at least 1.3x higher in the latest 6 months than the first 6 (1.1x is weak, 0.95x or lower refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "vue_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "vue_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "vue_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Small monthly counts, noisy.",
+      "Text matches in stories, word boundaries, case-insensitive. Complete months Jan 2023 to Jun 2026. Thresholds were fixed before this card was run, but the author had seen rough term ratios earlier."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h030",
+    "title": "Java is dying on HN",
+    "author": "engineers-deeper-agent",
+    "audience": "engineers",
+    "hypothesis": "Java mentions collapse as a share of stories.",
+    "expect": "If true, the share of stories mentioning Java should be at most 0.6x as high in the latest 6 months as the first 6 (0.85x is weak, 1.0x or higher refutes it).",
+    "check": {
+      "source": "data/engineers_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "java_s",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Latest 6 months",
+        "indices": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        "field": "java_s",
+        "per": "s_total"
+      },
+      "group_b": {
+        "label": "First 6 months",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "field": "java_s",
+        "per": "s_total"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.6
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.85
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Titles under-count Java; many Java stories say JVM or Spring.",
+      "Text matches in stories, word boundaries, case-insensitive. Complete months Jan 2023 to Jun 2026. Thresholds were fixed before this card was run, but the author had seen rough term ratios earlier."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h100",
+    "title": "Data centers and grid: attention persists",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Data centers and grid retains at least 80% of its earlier share of HN stories in the later five weeks.",
+    "expect": "Later/earlier mean weekly story share: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "datacenters_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Data centers and grid",
+        "field": "datacenters_stories",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "total_stories"
+      },
+      "group_b": {
+        "label": "Earlier share",
+        "field": "datacenters_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "total_stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h101",
+    "title": "Data centers and grid: points premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Data centers and grid stories earn more points per story than other stories in the later five weeks.",
+    "expect": "Mean later weekly points/story ratio: at least 1.3x strongly supports, at least 1.1x weakly supports, at or below 0.9x refutes; between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "datacenters_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Data centers and grid",
+        "field": "datacenters_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "datacenters_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "datacenters_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "datacenters_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h102",
+    "title": "GPU and chip hardware: attention persists",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "GPU and chip hardware retains at least 80% of its earlier share of HN stories in the later five weeks.",
+    "expect": "Later/earlier mean weekly story share: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "gpu_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "GPU and chip hardware",
+        "field": "gpu_stories",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "total_stories"
+      },
+      "group_b": {
+        "label": "Earlier share",
+        "field": "gpu_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "total_stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h103",
+    "title": "GPU and chip hardware: points premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "GPU and chip hardware stories earn more points per story than other stories in the later five weeks.",
+    "expect": "Mean later weekly points/story ratio: at least 1.3x strongly supports, at least 1.1x weakly supports, at or below 0.9x refutes; between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "gpu_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "GPU and chip hardware",
+        "field": "gpu_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "gpu_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "gpu_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "gpu_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h104",
+    "title": "Neural biology: attention persists",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Neural biology retains at least 80% of its earlier share of HN stories in the later five weeks.",
+    "expect": "Later/earlier mean weekly story share: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "neurobio_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Neural biology",
+        "field": "neurobio_stories",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "total_stories"
+      },
+      "group_b": {
+        "label": "Earlier share",
+        "field": "neurobio_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "total_stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h105",
+    "title": "Neural biology: points premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Neural biology stories earn more points per story than other stories in the later five weeks.",
+    "expect": "Mean later weekly points/story ratio: at least 1.3x strongly supports, at least 1.1x weakly supports, at or below 0.9x refutes; between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "neurobio_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Neural biology",
+        "field": "neurobio_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "neurobio_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "neurobio_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "neurobio_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h106",
+    "title": "Aerospace: attention persists",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Aerospace retains at least 80% of its earlier share of HN stories in the later five weeks.",
+    "expect": "Later/earlier mean weekly story share: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "aerospace_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Aerospace",
+        "field": "aerospace_stories",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "total_stories"
+      },
+      "group_b": {
+        "label": "Earlier share",
+        "field": "aerospace_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "total_stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h107",
+    "title": "Aerospace: points premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Aerospace stories earn more points per story than other stories in the later five weeks.",
+    "expect": "Mean later weekly points/story ratio: at least 1.3x strongly supports, at least 1.1x weakly supports, at or below 0.9x refutes; between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "aerospace_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Aerospace",
+        "field": "aerospace_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "aerospace_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "aerospace_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "aerospace_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h108",
+    "title": "Solar energy: attention persists",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Solar energy retains at least 80% of its earlier share of HN stories in the later five weeks.",
+    "expect": "Later/earlier mean weekly story share: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "solar_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Solar energy",
+        "field": "solar_stories",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "total_stories"
+      },
+      "group_b": {
+        "label": "Earlier share",
+        "field": "solar_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "total_stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h109",
+    "title": "Solar energy: points premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Solar energy stories earn more points per story than other stories in the later five weeks.",
+    "expect": "Mean later weekly points/story ratio: at least 1.3x strongly supports, at least 1.1x weakly supports, at or below 0.9x refutes; between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "solar_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Solar energy",
+        "field": "solar_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "solar_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "solar_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "solar_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h110",
+    "title": "Physical robotics: attention persists",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Physical robotics retains at least 80% of its earlier share of HN stories in the later five weeks.",
+    "expect": "Later/earlier mean weekly story share: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "robotics_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Physical robotics",
+        "field": "robotics_stories",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "total_stories"
+      },
+      "group_b": {
+        "label": "Earlier share",
+        "field": "robotics_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "total_stories"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h111",
+    "title": "Physical robotics: points premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "Physical robotics stories earn more points per story than other stories in the later five weeks.",
+    "expect": "Mean later weekly points/story ratio: at least 1.3x strongly supports, at least 1.1x weakly supports, at or below 0.9x refutes; between is inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "robotics_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Physical robotics",
+        "field": "robotics_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "robotics_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "robotics_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "robotics_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h112",
+    "title": "Discovered themes: discussion premium",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "The discovered physical/bio themes draw more discussion per story in the later five weeks. The six themes: data centers and grid, GPU and chip hardware, neural biology, aerospace, solar energy, physical robotics.",
+    "expect": "At least 1.3x strong, at least 1.1x weak; at or below 0.9x refuted; between inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "union_comments",
+      "per_label": "comments per story",
+      "group_a": {
+        "label": "Discovered themes",
+        "field": "union_comments",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "union_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "union_rest_comments",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "union_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h113",
+    "title": "Discovered themes: premium survives hits",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "The discovered-theme basket keeps a points premium after removing its top-scoring 1% of later stories. The six themes: data centers and grid, GPU and chip hardware, neural biology, aerospace, solar energy, physical robotics.",
+    "expect": "At least 1.3x strong, at least 1.1x weak; at or below 0.9x refuted; between inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "trimmed_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Discovered themes",
+        "field": "trimmed_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "trimmed_stories"
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "union_rest_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "per": "union_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero.",
+      "Top 1% removed globally within later basket, ceil rounding, ranked points then ID; other stories unchanged."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h114",
+    "title": "Discovered themes: domain breadth",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "hypothesis": "At least half of later discovered-theme points come from outside the five highest-point source domains. The six themes: data centers and grid, GPU and chip hardware, neural biology, aerospace, solar energy, physical robotics.",
+    "expect": "Outside/inside five-domain points: at least 1.5x strong; at least 1x weak; at or below 0.667x refuted; between inconclusive.",
+    "check": {
+      "source": "data/vcs_deeper.json",
+      "path": "weekly",
+      "label_field": "week",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "outside5_points",
+      "per_label": "points per week",
+      "group_a": {
+        "label": "Discovered themes",
+        "field": "outside5_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "group_b": {
+        "label": "Leading five domains",
+        "field": "inside5_points",
+        "indices": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.6666666666666666
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Data-led human-assisted topic discovery in first five weeks; tests run on the next five. Topic selection was exploratory. Definitions frozen before later-window computations in docs/vcs-discovery-plan.md.",
+      "HN attention is not technical validation, adoption, revenues, readership, investment return or an early-company recommendation.",
+      "Small samples, noisy title matching, overlapping topics and duplicate submissions. Means are hit-sensitive; confidence labels are declared thresholds, not statistical intervals.",
+      "Current snapshot scores/comments; complete UTC weeks; dead/deleted excluded, missing scores/comments treated as zero.",
+      "Leading five domains chosen using the later window itself; descriptive, not held-out validation of which hosts will lead. Blank hosts count outside. Domains are sources, not necessarily companies to meet."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h115",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "title": "Data centers: long-run share growth",
+    "hypothesis": "Data centers have a higher share of archive stories in the latest six months than the first six.",
+    "expect": "Ratio at least 1.5x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "data_center_stories",
+      "per_label": "share of archive stories",
+      "group_a": {
+        "label": "Latest six months",
+        "field": "data_center_stories",
+        "per": "stories",
+        "indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      },
+      "group_b": {
+        "label": "First six months",
+        "field": "data_center_stories",
+        "per": "stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+      "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+      "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+      "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals.",
+      "Matches data center or data centre, including plural forms according to provider."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h116",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "title": "GPU: long-run share growth",
+    "hypothesis": "GPU have a higher share of archive stories in the latest six months than the first six.",
+    "expect": "Ratio at least 1.5x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "gpu_stories",
+      "per_label": "share of archive stories",
+      "group_a": {
+        "label": "Latest six months",
+        "field": "gpu_stories",
+        "per": "stories",
+        "indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      },
+      "group_b": {
+        "label": "First six months",
+        "field": "gpu_stories",
+        "per": "stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+      "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+      "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+      "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h117",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "title": "Robotics: long-run persistence",
+    "hypothesis": "Robotics retain at least 80% of their earlier archive-story share.",
+    "expect": "Ratio at least 1.5x strongly supports, at least 0.8x weakly supports; at or below 0.5x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "robotics_stories",
+      "per_label": "share of archive stories",
+      "group_a": {
+        "label": "Latest six months",
+        "field": "robotics_stories",
+        "per": "stories",
+        "indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      },
+      "group_b": {
+        "label": "First six months",
+        "field": "robotics_stories",
+        "per": "stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.5
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+      "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+      "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+      "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals.",
+      "robot(s) and robotics include nonphysical bots; this is a broad robotics-word proxy, not physical-robot adoption."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h118",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "title": "Solar matches: long-run share growth",
+    "hypothesis": "Solar matches have a higher share of archive stories in the latest six months than the first six.",
+    "expect": "Ratio at least 1.5x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "solar_stories",
+      "per_label": "share of archive stories",
+      "group_a": {
+        "label": "Latest six months",
+        "field": "solar_stories",
+        "per": "stories",
+        "indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      },
+      "group_b": {
+        "label": "First six months",
+        "field": "solar_stories",
+        "per": "stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+      "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+      "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+      "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals.",
+      "Solar includes astronomy/eclipses and other contexts. solar_eclipse overlap cannot safely be subtracted from separate marginal counts. This is not a clean solar-energy test."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h119",
+    "author": "agam-instinct",
+    "audience": "deep-tech investors",
+    "title": "Data centers without monthly hits: long-run hit robustness",
+    "hypothesis": "Data centers without monthly hits retain a points-per-story premium after removing the top ten data-center stories each month.",
+    "expect": "Ratio at least 1.3x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+    "check": {
+      "source": "data/vcs_history.json",
+      "path": "monthly",
+      "label_field": "month",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "trimmed_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Trimmed data centers",
+        "field": "trimmed_points",
+        "per": "trimmed_stories",
+        "indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      },
+      "group_b": {
+        "label": "Other stories",
+        "field": "rest_points",
+        "per": "rest_stories",
+        "indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ]
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Full-history archive, Jan 2023-Jun 2026 after conservative endpoint exclusion. First/last six complete-month mean share; denominators from same archive, not independently verified all-HN coverage.",
+      "Provider matches case-insensitive whole words in title PLUS text; these are not the same title-only topic proxies used in h100-h114.",
+      "Points are archive capture snapshots, not current final scores. Collection-age bias and missing/partial retrieval may affect levels. No adoption, readership, technical validity, mainstream lead or investment-return inference.",
+      "Thresholds fixed in docs/vcs-history-plan.md before inspecting these aggregate results. Strong/weak are rule labels, not statistical confidence intervals.",
+      "Remove top ten per month as ranked by provider, subtract ten from story count. Not top 1%. Last six months only; no month has fewer than eleven matching stories."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h120",
+    "title": "Weird words, pooled points",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Titles with weird, strange, mysterious, ancient, abandoned or forgotten earn more points per story than other stories.",
+    "expect": "If true, stories with weird words in the title should average at least 1.3x the points per story of all other stories (1.1x counts as weak, 0.9x or below refutes it).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "This kind",
+        "field": "points",
+        "indices": [
+          0
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          0
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h121",
+    "title": "Weird without its top 1 percent",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "The weird-words lead survives when the top 1 percent of stories by score are dropped from both sides.",
+    "expect": "Drop the top 1 percent of stories by score inside each side. If true, weird-word stories still average at least 1.3x the points per story of the rest (1.1x weak, 0.9x or below refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "t_points",
+      "per_label": "points per story (top 1 percent dropped)",
+      "group_a": {
+        "label": "Weird words, trimmed",
+        "field": "t_points",
+        "indices": [
+          0
+        ],
+        "per": "t_stories"
+      },
+      "group_b": {
+        "label": "Everything else, trimmed",
+        "field": "t_rest_points",
+        "indices": [
+          0
+        ],
+        "per": "t_rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h122",
+    "title": "Weird without its top domain",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "The weird-words lead is not one website. Drop the single domain that earned the most weird-word points and it should hold.",
+    "expect": "Remove stories from the one domain with the most weird-word points. If true, the rest of the weird-word stories still average at least 1.3x the points per story of all other stories (1.1x weak, 0.9x or below refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "nd_points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Weird words, minus top domain",
+        "field": "nd_points",
+        "indices": [
+          0
+        ],
+        "per": "nd_stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          0
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h123",
+    "title": "Weird hit rate",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Weird-word stories reach 10 or more points more often than other stories, so the lead is not a few outliers.",
+    "expect": "Share of stories with 10 or more points. If true, the weird-word share is at least 1.3x the share for other stories (1.1x weak, 0.9x or below refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "hit10",
+      "per_label": "share reaching 10 points",
+      "group_a": {
+        "label": "Weird words",
+        "field": "hit10",
+        "indices": [
+          0
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_hit10",
+        "indices": [
+          0
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h124",
+    "title": "Weird gets talked about",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Weird-word stories draw more comments per story than other stories.",
+    "expect": "If true, weird-word stories average at least 1.3x the comments per story of the rest (1.1x weak, 0.9x or below refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "comments",
+      "per_label": "comments per story",
+      "group_a": {
+        "label": "Weird words",
+        "field": "comments",
+        "indices": [
+          0
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_comments",
+        "indices": [
+          0
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h125",
+    "title": "Weird gets votes, not arguments",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Weird stories earn their lead through upvotes more than through discussion: fewer comments per point than other stories.",
+    "expect": "Comments per point for weird-word stories divided by the same for the rest. If true, it is 0.85x or lower (0.95x or lower counts as weak; 1.05x or above refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "comments",
+      "per_label": "comments per point",
+      "group_a": {
+        "label": "Weird words",
+        "field": "comments",
+        "indices": [
+          0
+        ],
+        "per": "points"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_comments",
+        "indices": [
+          0
+        ],
+        "per": "rest_points"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.85
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.95
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.05
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h126",
+    "title": "Weird lead is steady",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "The weird-words lead is not a fading or growing fluke: the last 5 complete weeks look like the first 5.",
+    "expect": "Weekly lift is weird points per story over the rest's. If true, the mean lift of the last 5 weeks over the first 5 stays between 0.8x and 1.25x (outside 0.6x to 1.6x refutes; anything between is inconclusive).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "weekly",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "lift",
+      "per_label": "weekly lift",
+      "group_a": {
+        "label": "Last 5 weeks",
+        "field": "lift",
+        "indices": [
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      },
+      "group_b": {
+        "label": "First 5 weeks",
+        "field": "lift",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "label_field": "week"
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.6
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.6
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">",
+          "value": 1.25
+        },
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 0.8
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h127",
+    "title": "Weird wins the weekend",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Weird-word stories do better on weekends: weekend points per weird story over weekday points per weird story.",
+    "expect": "Points per weird-word story. If true, Saturday and Sunday average at least 1.3x the Monday to Friday figure (1.1x weak, 0.9x or below refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "weekday",
+      "label_field": "day",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "weird_points",
+      "per_label": "points per weird story",
+      "group_a": {
+        "label": "Sat and Sun",
+        "field": "weird_points",
+        "indices": [
+          5,
+          6
+        ],
+        "per": "weird_stories"
+      },
+      "group_b": {
+        "label": "Mon to Fri",
+        "field": "weird_points",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "weird_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean.",
+      "Days are UTC. Seven rows, so the weekend mean rests on two days of about 10 each."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h128",
+    "title": "Weird gets posted on weekends",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Weird-word stories make up a bigger share of submissions on weekends.",
+    "expect": "Weird-word stories as a share of all stories. If true, the weekend share is at least 1.3x the weekday share (1.1x weak, 0.9x or below refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "weekday",
+      "label_field": "day",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "weird_stories",
+      "per_label": "share of stories",
+      "group_a": {
+        "label": "Sat and Sun",
+        "field": "weird_stories",
+        "indices": [
+          5,
+          6
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Mon to Fri",
+        "field": "weird_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "per": "stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean.",
+      "Days are UTC. Seven rows, so the weekend mean rests on two days of about 10 each."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h129",
+    "title": "Science oddities",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Stories with plain science words (physics, fossils, spiders, comets, brains, primes) earn more points per story than other stories.",
+    "expect": "If true, stories with science words in the title should average at least 1.3x the points per story of all other stories (1.1x counts as weak, 0.9x or below refutes it).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "This kind",
+        "field": "points",
+        "indices": [
+          1
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          1
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h130",
+    "title": "Retro computing",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Stories about retro and vintage computing (Amiga, Commodore, floppy, 8-bit, mainframe) earn more points per story than other stories.",
+    "expect": "If true, retro computing stories should average at least 1.3x the points per story of all other stories (1.1x counts as weak, 0.9x or below refutes it).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "This kind",
+        "field": "points",
+        "indices": [
+          2
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          2
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h131",
+    "title": "History stories",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Stories with history words (history, century, medieval, empire, museum, a year in the 1000s or 1900s) earn more points per story than other stories.",
+    "expect": "If true, history stories should average at least 1.3x the points per story of all other stories (1.1x counts as weak, 0.9x or below refutes it).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "This kind",
+        "field": "points",
+        "indices": [
+          3
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          3
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h132",
+    "title": "Puzzles",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Puzzle and game-of-skill stories (puzzle, riddle, chess, sudoku, crossword, Rubik, maze) earn more points per story than other stories.",
+    "expect": "If true, puzzle stories should average at least 1.3x the points per story of all other stories (1.1x counts as weak, 0.9x or below refutes it).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "This kind",
+        "field": "points",
+        "indices": [
+          4
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          4
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h133",
+    "title": "Show and tell",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Show HN posts earn more points per story than other stories.",
+    "expect": "If true, Show HN stories should average at least 1.3x the points per story of all other stories (1.1x counts as weak, 0.9x or below refutes it).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "This kind",
+        "field": "points",
+        "indices": [
+          5
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          5
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.3
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.1
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h134",
+    "title": "Boring words sink",
+    "author": "curious-geeks-agent",
+    "audience": "curious readers",
+    "hypothesis": "Titles with business-software words (enterprise, compliance, SaaS, B2B, pricing, CRM) earn fewer points per story: the control for the odd-and-fun claims.",
+    "expect": "If true, stories with these words average 0.75x or less the points per story of the rest (0.9x or less weak; 1.0x or above refutes).",
+    "check": {
+      "source": "data/geeks.json",
+      "path": "baskets",
+      "labels": [
+        "weird",
+        "science",
+        "retro",
+        "history",
+        "puzzle",
+        "showhn",
+        "askhn",
+        "boring"
+      ],
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "field": "points",
+      "per_label": "points per story",
+      "group_a": {
+        "label": "Boring words",
+        "field": "points",
+        "indices": [
+          7
+        ],
+        "per": "stories"
+      },
+      "group_b": {
+        "label": "Everything else",
+        "field": "rest_points",
+        "indices": [
+          7
+        ],
+        "per": "rest_stories"
+      }
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.75
+        },
+        "verdict": "supported",
+        "confidence": "strong"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 0.9
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "strong"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Fixed word list (scripts/geeks.py), a rough stand-in for the topic; matches titles only.",
+      "Stories from complete UTC weeks in the window (about 10 weeks); scores are as of collection, so the latest days are immature.",
+      "Points are heavy-tailed: a few hits can drive a mean."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h135",
+    "title": "Space has a higher hit rate",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching space reach ten snapshot points at least 1.25x as often as other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.space",
+      "label_field": "label",
+      "field": "hit10",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of known-score stories reaching ten points",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "hit10",
+        "per": "score_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_hit10",
+        "per": "rest_score_stories",
+        "indices": "all"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(space|cosmic|galax\\w*|astronom\\w*|asteroids?|comets?|planets?|telescope|universe|nasa|spacex|lunar|moon|mars)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "906 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h136",
+    "title": "Animals win beyond the biggest hits",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching animals earn at least 1.25x the points per story of other stories after removing the top 1% separately each week.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.animals",
+      "label_field": "label",
+      "field": "trimmed_points",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "points per story after dropping the top 1%",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "trimmed_points",
+        "per": "trimmed_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_trimmed_points",
+        "per": "rest_trimmed_stories",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(animals?|birds?|cats?|dogs?|whales?|octopus|octopuses|spiders?|insects?|bees|ants|dolphins?|elephants?|wildlife)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "Drop ceil(1%) of known-score stories separately in each week and side, not 1% of all items. This is a robustness probe, not a correction for selection bias.",
+      "305 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h137",
+    "title": "Food stories take over weekends",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching food take at least 1.25x as much of the story mix on UTC weekends as on weekdays.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight UTC weekday rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "weekday.food",
+      "label_field": "label",
+      "field": "stories",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of eligible stories",
+      "group_a": {
+        "label": "Sat / Sun",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          5,
+          6
+        ]
+      },
+      "group_b": {
+        "label": "Mon - Fri",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(food|cooking|recipes?|bread|coffee|tea|chocolate|cheese|ferment\\w*|beer|wine|restaurants?)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "Complete weeks make weekday exposure equal. UTC weekends do not match every reader's local weekend.",
+      "261 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h138",
+    "title": "Music starts more conversations",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching music average at least 1.25x the comments per story of other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.music",
+      "label_field": "label",
+      "field": "comments",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "comments per known-comment story",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "comments",
+        "per": "comment_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_comments",
+        "per": "rest_comment_stories",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(music|musical|musicians?|songs?|piano|guitars?|synthesizers?|synthesiser|midi|orchestra|melody|vinyl)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "379 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h139",
+    "title": "Health draws talk relative to votes",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching health average at least 1.25x the comments per point of other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.health",
+      "label_field": "label",
+      "field": "paired_comments",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "comments per snapshot point",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "paired_comments",
+        "per": "paired_points",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_paired_comments",
+        "per": "rest_paired_points",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(health|medical|medicine|cancer|diabetes|sleep|insomnia|vaccines?|dementia|alzheim\\w*|obesity|nutrition|exercise)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "554 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h140",
+    "title": "Climate is unusually discussion-heavy",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching climate average at least 1.5x the comments per point of other stories.",
+    "expect": "Support at ratio 1.5x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.climate",
+      "label_field": "label",
+      "field": "paired_comments",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "comments per snapshot point",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "paired_comments",
+        "per": "paired_points",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_paired_comments",
+        "per": "rest_paired_points",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.5
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(climate|global warming|carbon|emissions?|decarbon\\w*|greenhouse|renewables?)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "179 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h141",
+    "title": "Privacy produces more talk per vote",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching privacy average at least 1.25x the comments per point of other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.privacy",
+      "label_field": "label",
+      "field": "paired_comments",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "comments per snapshot point",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "paired_comments",
+        "per": "paired_points",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_paired_comments",
+        "per": "rest_paired_points",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(privacy|surveillance|tracking|tracked|facial recognition|biometric\\w*|wiretap\\w*)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "528 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h142",
+    "title": "Learning stories clear ten points more often",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching education reach ten snapshot points at least 1.25x as often as other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.education",
+      "label_field": "label",
+      "field": "hit10",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of known-score stories reaching ten points",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "hit10",
+        "per": "score_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_hit10",
+        "per": "rest_score_stories",
+        "indices": "all"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(education|schools?|teaching|teachers?|students?|classroom|university|universities|college|curriculum|textbooks?|learning)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "895 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h143",
+    "title": "Games gain weekend shelf space",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching games take at least 1.25x as much of the story mix on UTC weekends as on weekdays.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight UTC weekday rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "weekday.games",
+      "label_field": "label",
+      "field": "stories",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of eligible stories",
+      "group_a": {
+        "label": "Sat / Sun",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          5,
+          6
+        ]
+      },
+      "group_b": {
+        "label": "Mon - Fri",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(games?|gaming|videogames?|chess|sudoku|tetris|nintendo|playstation|xbox|minecraft|doom)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "Complete weeks make weekday exposure equal. UTC weekends do not match every reader's local weekend.",
+      "1247 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h144",
+    "title": "Books beat the average after trimming",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching books earn at least 1.25x the points per story of other stories after removing the top 1% separately each week.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.books",
+      "label_field": "label",
+      "field": "trimmed_points",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "points per story after dropping the top 1%",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "trimmed_points",
+        "per": "trimmed_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_trimmed_points",
+        "per": "rest_trimmed_stories",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(books?|novels?|literature|literary|poetry|poems?|libraries|library|reading|readers?|authors?)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "Drop ceil(1%) of known-score stories separately in each week and side, not 1% of all items. This is a robustness probe, not a correction for selection bias.",
+      "1039 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h145",
+    "title": "Visual art earns a points premium",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching art average at least 1.25x the points per story of other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.art",
+      "label_field": "label",
+      "field": "points",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "points per known-score story",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "points",
+        "per": "score_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_points",
+        "per": "rest_score_stories",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(art|artists?|painting|paintings|sculpture|photography|photographs?|museums?|illustration|typography|fonts?)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "395 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h146",
+    "title": "Maps and geography find more hits",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching maps reach ten snapshot points at least 1.25x as often as other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.maps",
+      "label_field": "label",
+      "field": "hit10",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of known-score stories reaching ten points",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "hit10",
+        "per": "score_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_hit10",
+        "per": "rest_score_stories",
+        "indices": "all"
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(maps?|mapping|cartograph\\w*|geography|geographic|openstreetmap|gis|latitude|longitude)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "466 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h147",
+    "title": "Human languages are gaining share",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching the linguistics, translation or Unicode word list take at least 1.25x as much of the story mix in the final three complete weeks as in the first three.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.languages",
+      "label_field": "label",
+      "field": "stories",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of eligible stories",
+      "group_a": {
+        "label": "Final three weeks",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          -3,
+          -2,
+          -1
+        ]
+      },
+      "group_b": {
+        "label": "First three weeks",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          0,
+          1,
+          2
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(linguist\\w*|etymolog\\w*|dialects?|bilingual|multilingual|translation|translate|phonetic\\w*|alphabets?|unicode)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "Three early and three late weeks only; short-term fluctuation is not a durable adoption trend. All ten weeks are graphed for context.",
+      "151 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h148",
+    "title": "Hands-on making gets a weekend boost",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles matching diy take at least 1.25x as much of the story mix on UTC weekends as on weekdays.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight UTC weekday rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "weekday.diy",
+      "label_field": "label",
+      "field": "stories",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "share of eligible stories",
+      "group_a": {
+        "label": "Sat / Sun",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          5,
+          6
+        ]
+      },
+      "group_b": {
+        "label": "Mon - Fri",
+        "field": "stories",
+        "per": "total_stories",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "display_pct": true
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\b(diy|homemade|woodworking|solder\\w*|3d print\\w*|3d-print\\w*|raspberry pi|arduino|makers?|tinkering|knitting|crochet)\\b. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "Complete weeks make weekday exposure equal. UTC weekends do not match every reader's local weekend.",
+      "254 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  },
+  {
+    "schema": 1,
+    "id": "h149",
+    "title": "Question headlines provoke more comments",
+    "author": "curious-geeks-round2",
+    "audience": "curious readers",
+    "hypothesis": "Titles containing a question mark average at least 1.25x the comments per story of other stories.",
+    "expect": "Support at ratio 1.25x or above; refute at 1.0x or below; between those thresholds is inconclusive. Compare equal-weight complete-week rates, not pooled totals.",
+    "check": {
+      "source": "data/curious_round2.json",
+      "path": "series.questions",
+      "label_field": "label",
+      "field": "comments",
+      "stat": "mean_ratio_a_over_b",
+      "unit": "x",
+      "per_label": "comments per known-comment story",
+      "group_a": {
+        "label": "Matching titles",
+        "field": "comments",
+        "per": "comment_stories",
+        "indices": "all"
+      },
+      "group_b": {
+        "label": "Other titles",
+        "field": "rest_comments",
+        "per": "rest_comment_stories",
+        "indices": "all"
+      },
+      "display_pct": false
+    },
+    "verdicts": [
+      {
+        "when": {
+          "op": ">=",
+          "value": 1.25
+        },
+        "verdict": "supported",
+        "confidence": "weak"
+      },
+      {
+        "when": {
+          "op": "<=",
+          "value": 1.0
+        },
+        "verdict": "refuted",
+        "confidence": "weak"
+      },
+      {
+        "else": true,
+        "verdict": "inconclusive",
+        "confidence": "inconclusive"
+      }
+    ],
+    "caveats": [
+      "Definitions and thresholds saved before this aggregation, but earlier project summaries were already inspected. Exploratory, not blind or independently preregistered, and not a statistical significance test.",
+      "Title proxy only; the exact regex is \\?. Matches can overlap themes and can be ambiguous (for example, software libraries are also books matches).",
+      "70,571 eligible live stories in 10 complete UTC weeks, July 27 through October 4, 2026. No comments, jobs, dead or deleted items. Only manifest-listed chunks are read.",
+      "Scores and comment counts are snapshots, with unequal age and collection timing; current updates do not refresh older scores. Associations do not establish what causes attention.",
+      "Missing scores/comments are excluded from their denominators; comments-per-point uses only stories with both fields. Each plotted row is a rate; the verdict averages rates equally.",
+      "4601 matching stories across the window. Small weekly groups can have unstable rates. These 15 checks have no multiplicity correction; supported means only the descriptive threshold was crossed."
+    ]
+  }
+]
