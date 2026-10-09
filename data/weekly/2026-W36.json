@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2521,17 +2521,548 @@
   ]
  },
  "end_exclusive_utc": "2026-09-07",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 274,
+    "stories": 48
+   },
+   "ai_agents": {
+    "comments": 61,
+    "stories": 43
+   },
+   "claude_code": {
+    "comments": 302,
+    "stories": 75
+   },
+   "copilot": {
+    "comments": 66,
+    "stories": 10
+   },
+   "cursor": {
+    "comments": 108,
+    "stories": 23
+   },
+   "mcp": {
+    "comments": 282,
+    "stories": 80
+   }
+  },
+  "ask_hn": {
+   "stories": 155,
+   "top_by_comments": [
+    {
+     "comments": 705,
+     "domain": "",
+     "id": 49551096,
+     "points": 404,
+     "title": "Ask HN: Why were OpenAI, Claude, and Grok simultaneously down?"
+    },
+    {
+     "comments": 561,
+     "domain": "",
+     "id": 49522896,
+     "points": 114,
+     "title": "Ask HN: Who wants to be hired? (September 2026)"
+    },
+    {
+     "comments": 393,
+     "domain": "",
+     "id": 49522897,
+     "points": 254,
+     "title": "Ask HN: Who is hiring? (September 2026)"
+    },
+    {
+     "comments": 299,
+     "domain": "",
+     "id": 49589914,
+     "points": 320,
+     "title": "Ask HN: How do you manage skills files?"
+    },
+    {
+     "comments": 201,
+     "domain": "",
+     "id": 49548600,
+     "points": 198,
+     "title": "Ask HN: Who is using MCP in production?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 207,
+   "job_items": 11,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 121,
+    "backend": 42,
+    "onsite": 63,
+    "python": 51,
+    "remote": 117,
+    "rust": 11,
+    "typescript": 53
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 299,
+    "stories": 24
+   },
+   "java": {
+    "comments": 208,
+    "stories": 13
+   },
+   "javascript": {
+    "comments": 321,
+    "stories": 18
+   },
+   "kotlin": {
+    "comments": 29,
+    "stories": 1
+   },
+   "python": {
+    "comments": 664,
+    "stories": 63
+   },
+   "rust": {
+    "comments": 410,
+    "stories": 98
+   },
+   "swift": {
+    "comments": 66,
+    "stories": 15
+   },
+   "typescript": {
+    "comments": 301,
+    "stories": 13
+   },
+   "zig": {
+    "comments": 38,
+    "stories": 3
+   }
+  },
+  "show_hn": {
+   "github": 270,
+   "hit10": 61,
+   "stories": 835,
+   "top": [
+    {
+     "comments": 134,
+     "domain": "opentrailpaper.com",
+     "id": 49567437,
+     "points": 424,
+     "title": "Show HN: Open-Source eInk Bike Computer"
+    },
+    {
+     "comments": 118,
+     "domain": "github.com",
+     "id": 49524447,
+     "points": 240,
+     "title": "Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s"
+    },
+    {
+     "comments": 45,
+     "domain": "github.com",
+     "id": 49562219,
+     "points": 225,
+     "title": "Show HN: TERMy \u2013 A fast terminal assistant that does not use LLMs"
+    },
+    {
+     "comments": 84,
+     "domain": "masteranza.github.io",
+     "id": 49528895,
+     "points": 185,
+     "title": "Show HN: Weedout \u2013 Safari extension that hides YouTube AI-labeled videos"
+    },
+    {
+     "comments": 46,
+     "domain": "hnmatchmaker.com",
+     "id": 49528057,
+     "points": 125,
+     "title": "Show HN: HN Match Maker \u2013 Matching \"Who Wants to Be Hired?\" With \"Who's Hiring?\""
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 311,
+    "stories": 15
+   },
+   "git": {
+    "comments": 437,
+    "stories": 39
+   },
+   "kubernetes": {
+    "comments": 164,
+    "stories": 11
+   },
+   "linux": {
+    "comments": 889,
+    "stories": 85
+   },
+   "neovim": {
+    "comments": 11,
+    "stories": 8
+   },
+   "postgres": {
+    "comments": 280,
+    "stories": 32
+   },
+   "react": {
+    "comments": 394,
+    "stories": 20
+   },
+   "sqlite": {
+    "comments": 86,
+    "stories": 11
+   },
+   "vscode": {
+    "comments": 76,
+    "stories": 9
+   },
+   "wasm": {
+    "comments": 77,
+    "stories": 13
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5689,
+   "top": [
+    {
+     "comments": 547,
+     "domain": "neil.fraser.name",
+     "id": 49550772,
+     "points": 2230,
+     "title": ".name Termination"
+    },
+    {
+     "comments": 293,
+     "domain": "beige.party",
+     "id": 49586171,
+     "points": 1355,
+     "title": "QBittorrent breaks out of sandbox to commit crimes"
+    },
+    {
+     "comments": 266,
+     "domain": "github.com",
+     "id": 49548395,
+     "points": 1163,
+     "title": "Audacity 4.0"
+    },
+    {
+     "comments": 537,
+     "domain": "newsonaut.com",
+     "id": 49527748,
+     "points": 994,
+     "title": "Hang on to Your Firefox"
+    },
+    {
+     "comments": 410,
+     "domain": "github.com",
+     "id": 49588988,
+     "points": 930,
+     "title": "Nitter and XCancel resume service after legal advice"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 394,
+    "domain": "pbs.org",
+    "id": 49576124,
+    "points": 340,
+    "title": "Global warming will exceed 1.5-degree limit, UN says"
+   },
+   {
+    "comments": 358,
+    "domain": "lisep.org",
+    "id": 49530989,
+    "points": 310,
+    "title": "True Rate of Unemployment"
+   },
+   {
+    "comments": 339,
+    "domain": "bob.ibm.com",
+    "id": 49563851,
+    "points": 338,
+    "title": "IBM Bob"
+   },
+   {
+    "comments": 330,
+    "domain": "cbsnews.com",
+    "id": 49524428,
+    "points": 304,
+    "title": "Whistleblower warns Postal Service mail ballot system has catastrophic problems"
+   },
+   {
+    "comments": 328,
+    "domain": "bbc.com",
+    "id": 49573455,
+    "points": 197,
+    "title": "Why are European countries moving their gold out of North America?"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 140
+  },
+  "reading": {
+   "wikipedia": 88,
+   "youtube": 199
+  },
+  "variety": {
+   "distinct_domains": 3602,
+   "linked_stories": 6952,
+   "top10_domain_stories": 1544
+  }
+ },
  "items": {
   "comment": 77716,
   "dead": 8059,
   "deleted": 2920,
-  "other": 15,
+  "job": 11,
+  "other": 4,
   "story": 10380,
   "total": 88111
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 6002,
+     "comment_live": 6002,
+     "story_all": 1039,
+     "story_live": 1039
+    },
+    "chatgpt": {
+     "comment_all": 499,
+     "comment_live": 499,
+     "story_all": 66,
+     "story_live": 66
+    },
+    "claude": {
+     "comment_all": 1554,
+     "comment_live": 1554,
+     "story_all": 198,
+     "story_live": 198
+    },
+    "copilot": {
+     "comment_all": 66,
+     "comment_live": 66,
+     "story_all": 10,
+     "story_live": 10
+    },
+    "core": {
+     "comment_all": 11208,
+     "comment_live": 11208,
+     "story_all": 1571,
+     "story_live": 1571
+    },
+    "gpt": {
+     "comment_all": 413,
+     "comment_live": 413,
+     "story_all": 70,
+     "story_live": 70
+    },
+    "llm": {
+     "comment_all": 3028,
+     "comment_live": 3028,
+     "story_all": 172,
+     "story_live": 172
+    },
+    "openai": {
+     "comment_all": 1112,
+     "comment_live": 1112,
+     "story_all": 135,
+     "story_live": 135
+    },
+    "python": {
+     "comment_all": 664,
+     "comment_live": 664,
+     "story_all": 63,
+     "story_live": 63
+    },
+    "remote": {
+     "comment_all": 804,
+     "comment_live": 804,
+     "story_all": 33,
+     "story_live": 33
+    },
+    "rust": {
+     "comment_all": 410,
+     "comment_live": 410,
+     "story_all": 98,
+     "story_live": 98
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1056,
+     "domain": "danluu.com",
+     "id": 49526069,
+     "points": 879,
+     "title": "How accurate have Ed Zitron's AI skeptic predictions been?"
+    },
+    {
+     "comments": 705,
+     "domain": "",
+     "id": 49551096,
+     "points": 404,
+     "title": "Ask HN: Why were OpenAI, Claude, and Grok simultaneously down?"
+    },
+    {
+     "comments": 594,
+     "domain": "macrumors.com",
+     "id": 49508982,
+     "points": 501,
+     "title": "Apple caught off guard by AI demand for Mac Mini and Mac Studio"
+    },
+    {
+     "comments": 561,
+     "domain": "",
+     "id": 49522896,
+     "points": 114,
+     "title": "Ask HN: Who wants to be hired? (September 2026)"
+    },
+    {
+     "comments": 394,
+     "domain": "pbs.org",
+     "id": 49576124,
+     "points": 340,
+     "title": "Global warming will exceed 1.5-degree limit, UN says"
+    },
+    {
+     "comments": 393,
+     "domain": "",
+     "id": 49522897,
+     "points": 254,
+     "title": "Ask HN: Who is hiring? (September 2026)"
+    },
+    {
+     "comments": 358,
+     "domain": "lisep.org",
+     "id": 49530989,
+     "points": 310,
+     "title": "True Rate of Unemployment"
+    },
+    {
+     "comments": 339,
+     "domain": "bob.ibm.com",
+     "id": 49563851,
+     "points": 338,
+     "title": "IBM Bob"
+    },
+    {
+     "comments": 330,
+     "domain": "cbsnews.com",
+     "id": 49524428,
+     "points": 304,
+     "title": "Whistleblower warns Postal Service mail ballot system has catastrophic problems"
+    },
+    {
+     "comments": 328,
+     "domain": "bbc.com",
+     "id": 49573455,
+     "points": 197,
+     "title": "Why are European countries moving their gold out of North America?"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 2081,
+     "domain": "openai.com",
+     "id": 49554643,
+     "points": 2279,
+     "title": "GPT-6 Astra"
+    },
+    {
+     "comments": 1603,
+     "domain": "collusion.wiki",
+     "id": 49563355,
+     "points": 2301,
+     "title": "Discovery of a new OpenAI agent message board"
+    },
+    {
+     "comments": 1395,
+     "domain": "anthropic.com",
+     "id": 49525378,
+     "points": 1419,
+     "title": "Claude Fable 5.1 and Claude Mythos 5.1"
+    },
+    {
+     "comments": 1056,
+     "domain": "danluu.com",
+     "id": 49526069,
+     "points": 879,
+     "title": "How accurate have Ed Zitron's AI skeptic predictions been?"
+    },
+    {
+     "comments": 705,
+     "domain": "",
+     "id": 49551096,
+     "points": 404,
+     "title": "Ask HN: Why were OpenAI, Claude, and Grok simultaneously down?"
+    },
+    {
+     "comments": 669,
+     "domain": "blog.google",
+     "id": 49537553,
+     "points": 1160,
+     "title": "Gemini 3.8 Flash and 3.8 Flash Cyber"
+    },
+    {
+     "comments": 621,
+     "domain": "webiterate.dev",
+     "id": 49514878,
+     "points": 761,
+     "title": "Google Has Removed MV2 Extensions from the Chrome Web Store, Including UBO"
+    },
+    {
+     "comments": 594,
+     "domain": "macrumors.com",
+     "id": 49508982,
+     "points": 501,
+     "title": "Apple caught off guard by AI demand for Mac Mini and Mac Studio"
+    },
+    {
+     "comments": 570,
+     "domain": "fastpotify.rocks",
+     "id": 49517448,
+     "points": 855,
+     "title": "Fastpotify"
+    },
+    {
+     "comments": 564,
+     "domain": "keepitfree.ai",
+     "id": 49586898,
+     "points": 644,
+     "title": "A/I shuts down"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 190,
+   "stories_100_points": 301
+  },
+  "volume": {
+   "comments_all": 77716,
+   "comments_dead_or_deleted": 7320,
+   "comments_live": 70396,
+   "distinct_authors": 22646,
+   "stories_all": 10380,
+   "stories_live": 7260
+  }
+ },
  "start_utc": "2026-08-31",
  "stories": {
   "comments": 70979,
@@ -2689,5 +3220,142 @@
    "title": "AnkiDroid: Google Play no longer allowing Open Collective donation link"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 682,
+   "stories": 95
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 11,
+    "bankrupt": 2,
+    "funding": 14,
+    "ipo": 8,
+    "layoffs": 5,
+    "raises": 5,
+    "series": 1,
+    "shutdown": 11,
+    "valuation": 3
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 58,
+   "top": [
+    {
+     "comments": 564,
+     "domain": "keepitfree.ai",
+     "id": 49586898,
+     "points": 644,
+     "title": "A/I shuts down"
+    },
+    {
+     "comments": 265,
+     "domain": "mullvad.net",
+     "id": 49568579,
+     "points": 484,
+     "title": "Shutting down our public encrypted DNS"
+    },
+    {
+     "comments": 81,
+     "domain": "heise.de",
+     "id": 49511917,
+     "points": 167,
+     "title": "Konrad Zuse Museum shutting down due to lack of funding"
+    },
+    {
+     "comments": 28,
+     "domain": "twitter.com",
+     "id": 49567357,
+     "points": 76,
+     "title": "Georgi Gerganov on llama.cpp/ggml future after Nvidia acquisition of HuggingFace"
+    },
+    {
+     "comments": 4,
+     "domain": "",
+     "id": 49557813,
+     "points": 43,
+     "title": "Tell HN: NVIDIA's Acquisition of HuggingFace was for $HuggingFace"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6952,
+   "press": {
+    "comments": 5138,
+    "hit10": 119,
+    "points": 9277,
+    "stories": 626
+   },
+   "primary": {
+    "comments": 8404,
+    "hit10": 78,
+    "points": 16419,
+    "stories": 876
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 17
+   },
+   "bio": {
+    "stories": 3
+   },
+   "chips": {
+    "stories": 19
+   },
+   "data_center": {
+    "stories": 18
+   },
+   "fusion_fission": {
+    "stories": 8
+   },
+   "gpu": {
+    "stories": 29
+   },
+   "photonics_lidar": {
+    "stories": 2
+   },
+   "quantum": {
+    "stories": 25
+   },
+   "robotics": {
+    "stories": 31
+   },
+   "solar": {
+    "stories": 17
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 15,
+    "Amazon": 22,
+    "Anduril": 0,
+    "Anthropic": 45,
+    "Apple": 91,
+    "Cerebras": 4,
+    "Cloudflare": 13,
+    "DeepSeek": 11,
+    "Figma": 5,
+    "Google": 88,
+    "Hugging Face": 39,
+    "Intel": 9,
+    "Meta": 23,
+    "Microsoft": 27,
+    "Mistral": 1,
+    "Nvidia": 46,
+    "OpenAI": 114,
+    "Palantir": 4,
+    "Perplexity": 7,
+    "Rocket Lab": 0,
+    "SpaceX": 9,
+    "Stripe": 4,
+    "Supabase": 3,
+    "TSMC": 0,
+    "Tesla": 19,
+    "Vercel": 5,
+    "xAI": 3
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W36"
 }

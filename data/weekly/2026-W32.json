@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2427,17 +2427,548 @@
   ]
  },
  "end_exclusive_utc": "2026-08-10",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 347,
+    "stories": 54
+   },
+   "ai_agents": {
+    "comments": 92,
+    "stories": 37
+   },
+   "claude_code": {
+    "comments": 330,
+    "stories": 98
+   },
+   "copilot": {
+    "comments": 80,
+    "stories": 11
+   },
+   "cursor": {
+    "comments": 108,
+    "stories": 25
+   },
+   "mcp": {
+    "comments": 283,
+    "stories": 89
+   }
+  },
+  "ask_hn": {
+   "stories": 126,
+   "top_by_comments": [
+    {
+     "comments": 1201,
+     "domain": "",
+     "id": 49233423,
+     "points": 325,
+     "title": "Ask HN: What are you working on? (August 2026)"
+    },
+    {
+     "comments": 562,
+     "domain": "",
+     "id": 49156682,
+     "points": 160,
+     "title": "Ask HN: Who wants to be hired? (August 2026)"
+    },
+    {
+     "comments": 377,
+     "domain": "",
+     "id": 49156683,
+     "points": 237,
+     "title": "Ask HN: Who is hiring? (August 2026)"
+    },
+    {
+     "comments": 94,
+     "domain": "",
+     "id": 49155492,
+     "points": 42,
+     "title": "Ask HN: What are the viable alternatives to DuckDuckGo?"
+    },
+    {
+     "comments": 73,
+     "domain": "",
+     "id": 49213660,
+     "points": 219,
+     "title": "Ask HN: In your experience, what are sound conventions for e-ink UI development?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 187,
+   "job_items": 3,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 112,
+    "backend": 41,
+    "onsite": 68,
+    "python": 52,
+    "remote": 90,
+    "rust": 14,
+    "typescript": 54
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 318,
+    "stories": 16
+   },
+   "java": {
+    "comments": 280,
+    "stories": 9
+   },
+   "javascript": {
+    "comments": 330,
+    "stories": 17
+   },
+   "kotlin": {
+    "comments": 43,
+    "stories": 1
+   },
+   "python": {
+    "comments": 636,
+    "stories": 53
+   },
+   "rust": {
+    "comments": 417,
+    "stories": 66
+   },
+   "swift": {
+    "comments": 102,
+    "stories": 9
+   },
+   "typescript": {
+    "comments": 357,
+    "stories": 24
+   },
+   "zig": {
+    "comments": 41,
+    "stories": 6
+   }
+  },
+  "show_hn": {
+   "github": 304,
+   "hit10": 78,
+   "stories": 887,
+   "top": [
+    {
+     "comments": 99,
+     "domain": "toneyalexander.github.io",
+     "id": 49170165,
+     "points": 627,
+     "title": "Show HN: Simple algorithm and color space to generate diverse skin tones"
+    },
+    {
+     "comments": 81,
+     "domain": "sf.isopolis.city",
+     "id": 49149966,
+     "points": 350,
+     "title": "Show HN: Isopolis \u2013 Isometric pixel map of SF"
+    },
+    {
+     "comments": 305,
+     "domain": "photosynthesis.camera",
+     "id": 49226623,
+     "points": 329,
+     "title": "Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo"
+    },
+    {
+     "comments": 141,
+     "domain": "github.com",
+     "id": 49158333,
+     "points": 312,
+     "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone"
+    },
+    {
+     "comments": 245,
+     "domain": "electronicmaterialsoffice.com",
+     "id": 49197137,
+     "points": 306,
+     "title": "Show HN: I spent 2 years designing a mechanical Magic Keyboard"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 294,
+    "stories": 9
+   },
+   "git": {
+    "comments": 260,
+    "stories": 32
+   },
+   "kubernetes": {
+    "comments": 164,
+    "stories": 13
+   },
+   "linux": {
+    "comments": 825,
+    "stories": 64
+   },
+   "neovim": {
+    "comments": 14,
+    "stories": 2
+   },
+   "postgres": {
+    "comments": 371,
+    "stories": 25
+   },
+   "react": {
+    "comments": 451,
+    "stories": 22
+   },
+   "sqlite": {
+    "comments": 78,
+    "stories": 13
+   },
+   "vscode": {
+    "comments": 77,
+    "stories": 11
+   },
+   "wasm": {
+    "comments": 65,
+    "stories": 16
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5424,
+   "top": [
+    {
+     "comments": 741,
+     "domain": "gruhn.me",
+     "id": 49151933,
+     "points": 1849,
+     "title": "Don't be a meat proxy"
+    },
+    {
+     "comments": 95,
+     "domain": "writings.stephenwolfram.com",
+     "id": 49173165,
+     "points": 1645,
+     "title": "In Memory of My Wife, Elise Cawley, with Thanks for 36 Wonderful Years"
+    },
+    {
+     "comments": 169,
+     "domain": "mayerowitz.io",
+     "id": 49195231,
+     "points": 1188,
+     "title": "Mario Meets Pareto"
+    },
+    {
+     "comments": 612,
+     "domain": "qwen.ai",
+     "id": 49150470,
+     "points": 1124,
+     "title": "Qwen3.8-Max: A New Bar for Coding and Cowork"
+    },
+    {
+     "comments": 1325,
+     "domain": "noemamag.com",
+     "id": 49209539,
+     "points": 1110,
+     "title": "What happens if an entire class of workers loses faith in their careers"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 1325,
+    "domain": "noemamag.com",
+    "id": 49209539,
+    "points": 1110,
+    "title": "What happens if an entire class of workers loses faith in their careers"
+   },
+   {
+    "comments": 1201,
+    "domain": "",
+    "id": 49233423,
+    "points": 325,
+    "title": "Ask HN: What are you working on? (August 2026)"
+   },
+   {
+    "comments": 942,
+    "domain": "openai.com",
+    "id": 49157930,
+    "points": 632,
+    "title": "Ten advances in mathematics and theoretical computer science"
+   },
+   {
+    "comments": 771,
+    "domain": "birchtree.me",
+    "id": 49167448,
+    "points": 720,
+    "title": "Xbox goes down. You can't play games you own on disc"
+   },
+   {
+    "comments": 743,
+    "domain": "waymo.com",
+    "id": 49172836,
+    "points": 332,
+    "title": "Waymo in Dallas"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 162
+  },
+  "reading": {
+   "wikipedia": 101,
+   "youtube": 217
+  },
+  "variety": {
+   "distinct_domains": 3412,
+   "linked_stories": 6690,
+   "top10_domain_stories": 1533
+  }
+ },
  "items": {
   "comment": 77973,
   "dead": 7439,
   "deleted": 2833,
-  "other": 7,
+  "job": 3,
+  "other": 4,
   "story": 9964,
   "total": 87944
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 6642,
+     "comment_live": 6642,
+     "story_all": 1069,
+     "story_live": 1069
+    },
+    "chatgpt": {
+     "comment_all": 365,
+     "comment_live": 365,
+     "story_all": 42,
+     "story_live": 42
+    },
+    "claude": {
+     "comment_all": 1389,
+     "comment_live": 1389,
+     "story_all": 187,
+     "story_live": 187
+    },
+    "copilot": {
+     "comment_all": 80,
+     "comment_live": 80,
+     "story_all": 11,
+     "story_live": 11
+    },
+    "core": {
+     "comment_all": 11490,
+     "comment_live": 11490,
+     "story_all": 1520,
+     "story_live": 1520
+    },
+    "gpt": {
+     "comment_all": 277,
+     "comment_live": 277,
+     "story_all": 28,
+     "story_live": 28
+    },
+    "llm": {
+     "comment_all": 3638,
+     "comment_live": 3638,
+     "story_all": 190,
+     "story_live": 190
+    },
+    "openai": {
+     "comment_all": 857,
+     "comment_live": 857,
+     "story_all": 114,
+     "story_live": 114
+    },
+    "python": {
+     "comment_all": 636,
+     "comment_live": 636,
+     "story_all": 53,
+     "story_live": 53
+    },
+    "remote": {
+     "comment_all": 814,
+     "comment_live": 814,
+     "story_all": 19,
+     "story_live": 19
+    },
+    "rust": {
+     "comment_all": 417,
+     "comment_live": 417,
+     "story_all": 66,
+     "story_live": 66
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1325,
+     "domain": "noemamag.com",
+     "id": 49209539,
+     "points": 1110,
+     "title": "What happens if an entire class of workers loses faith in their careers"
+    },
+    {
+     "comments": 1201,
+     "domain": "",
+     "id": 49233423,
+     "points": 325,
+     "title": "Ask HN: What are you working on? (August 2026)"
+    },
+    {
+     "comments": 942,
+     "domain": "openai.com",
+     "id": 49157930,
+     "points": 632,
+     "title": "Ten advances in mathematics and theoretical computer science"
+    },
+    {
+     "comments": 933,
+     "domain": "blog.google",
+     "id": 49184755,
+     "points": 867,
+     "title": "Changes at Google DeepMind: Demis Hassabis from CEO to Chair, Jeff Dean departs"
+    },
+    {
+     "comments": 771,
+     "domain": "birchtree.me",
+     "id": 49167448,
+     "points": 720,
+     "title": "Xbox goes down. You can't play games you own on disc"
+    },
+    {
+     "comments": 743,
+     "domain": "waymo.com",
+     "id": 49172836,
+     "points": 332,
+     "title": "Waymo in Dallas"
+    },
+    {
+     "comments": 724,
+     "domain": "cnbc.com",
+     "id": 49166860,
+     "points": 380,
+     "title": "U.S. used 'virtually all' of its long-range precision missiles during Iran war"
+    },
+    {
+     "comments": 562,
+     "domain": "",
+     "id": 49156682,
+     "points": 160,
+     "title": "Ask HN: Who wants to be hired? (August 2026)"
+    },
+    {
+     "comments": 534,
+     "domain": "bloomberg.com",
+     "id": 49220339,
+     "points": 322,
+     "title": "US Military's cyber command unit grapples with cluster of deaths by suicide"
+    },
+    {
+     "comments": 530,
+     "domain": "runarcn.no",
+     "id": 49188022,
+     "points": 483,
+     "title": "I'm switching my phone from Android to Linux"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1325,
+     "domain": "noemamag.com",
+     "id": 49209539,
+     "points": 1110,
+     "title": "What happens if an entire class of workers loses faith in their careers"
+    },
+    {
+     "comments": 1201,
+     "domain": "",
+     "id": 49233423,
+     "points": 325,
+     "title": "Ask HN: What are you working on? (August 2026)"
+    },
+    {
+     "comments": 942,
+     "domain": "openai.com",
+     "id": 49157930,
+     "points": 632,
+     "title": "Ten advances in mathematics and theoretical computer science"
+    },
+    {
+     "comments": 933,
+     "domain": "blog.google",
+     "id": 49184755,
+     "points": 867,
+     "title": "Changes at Google DeepMind: Demis Hassabis from CEO to Chair, Jeff Dean departs"
+    },
+    {
+     "comments": 887,
+     "domain": "bbc.com",
+     "id": 49208314,
+     "points": 910,
+     "title": "US strikes $1.2B deal to pay German firm to halt offshore wind projects"
+    },
+    {
+     "comments": 771,
+     "domain": "birchtree.me",
+     "id": 49167448,
+     "points": 720,
+     "title": "Xbox goes down. You can't play games you own on disc"
+    },
+    {
+     "comments": 743,
+     "domain": "waymo.com",
+     "id": 49172836,
+     "points": 332,
+     "title": "Waymo in Dallas"
+    },
+    {
+     "comments": 741,
+     "domain": "gruhn.me",
+     "id": 49151933,
+     "points": 1849,
+     "title": "Don't be a meat proxy"
+    },
+    {
+     "comments": 724,
+     "domain": "cnbc.com",
+     "id": 49166860,
+     "points": 380,
+     "title": "U.S. used 'virtually all' of its long-range precision missiles during Iran war"
+    },
+    {
+     "comments": 722,
+     "domain": "theregister.com",
+     "id": 49201970,
+     "points": 949,
+     "title": "AMD acquires Taalas to boost inference performance by etching models in silicon"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 195,
+   "stories_100_points": 290
+  },
+  "volume": {
+   "comments_all": 77973,
+   "comments_dead_or_deleted": 6808,
+   "comments_live": 71165,
+   "distinct_authors": 22209,
+   "stories_all": 9964,
+   "stories_live": 6944
+  }
+ },
  "start_utc": "2026-08-03",
  "stories": {
   "comments": 71741,
@@ -2595,5 +3126,142 @@
    "title": "US strikes $1.2B deal to pay German firm to halt offshore wind projects"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 780,
+   "stories": 83
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 15,
+    "bankrupt": 3,
+    "funding": 9,
+    "ipo": 7,
+    "layoffs": 4,
+    "raises": 10,
+    "series": 3,
+    "shutdown": 4,
+    "valuation": 1
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 51,
+   "top": [
+    {
+     "comments": 722,
+     "domain": "theregister.com",
+     "id": 49201970,
+     "points": 949,
+     "title": "AMD acquires Taalas to boost inference performance by etching models in silicon"
+    },
+    {
+     "comments": 74,
+     "domain": "blog.hartwork.org",
+     "id": 49176606,
+     "points": 320,
+     "title": "libexpat now funded by the City of Munich for up to 6 months"
+    },
+    {
+     "comments": 198,
+     "domain": "sec.gov",
+     "id": 49174407,
+     "points": 261,
+     "title": "Oxide Computer raises $445M (SEC Form D)"
+    },
+    {
+     "comments": 106,
+     "domain": "modelrepublic.org",
+     "id": 49150561,
+     "points": 214,
+     "title": "OpenAI's super PAC is funding AI-generated news site attacking industry critics"
+    },
+    {
+     "comments": 118,
+     "domain": "live.euronext.com",
+     "id": 49166182,
+     "points": 118,
+     "title": "Bending Spoons makes first post-IPO acquisition with $1.3B Airtable deal"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6690,
+   "press": {
+    "comments": 8378,
+    "hit10": 150,
+    "points": 13224,
+    "stories": 709
+   },
+   "primary": {
+    "comments": 5832,
+    "hit10": 90,
+    "points": 11848,
+    "stories": 845
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 7
+   },
+   "bio": {
+    "stories": 2
+   },
+   "chips": {
+    "stories": 9
+   },
+   "data_center": {
+    "stories": 38
+   },
+   "fusion_fission": {
+    "stories": 13
+   },
+   "gpu": {
+    "stories": 21
+   },
+   "photonics_lidar": {
+    "stories": 1
+   },
+   "quantum": {
+    "stories": 32
+   },
+   "robotics": {
+    "stories": 24
+   },
+   "solar": {
+    "stories": 27
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 9,
+    "Amazon": 28,
+    "Anduril": 0,
+    "Anthropic": 46,
+    "Apple": 61,
+    "Cerebras": 1,
+    "Cloudflare": 46,
+    "DeepSeek": 29,
+    "Figma": 0,
+    "Google": 96,
+    "Hugging Face": 15,
+    "Intel": 9,
+    "Meta": 35,
+    "Microsoft": 32,
+    "Mistral": 1,
+    "Nvidia": 11,
+    "OpenAI": 100,
+    "Palantir": 9,
+    "Perplexity": 2,
+    "Rocket Lab": 0,
+    "SpaceX": 49,
+    "Stripe": 3,
+    "Supabase": 1,
+    "TSMC": 0,
+    "Tesla": 10,
+    "Vercel": 1,
+    "xAI": 3
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W32"
 }

@@ -71,4 +71,55 @@ class WeeklySnapshotTest(unittest.TestCase):
     def test_basket_names_match_repo_definitions(self):
         b = ws.load_baskets(ROOT); self.assertTrue({'newsys', 'deeptech', 'weird', 'showhn', 'askhn', 'space', 'questions'} <= set(b))
 
+
+
+
+def fixture2():
+    r = [row(0, 'story', MON - DAY, 'before', 'a.com', 1, 0), row(1, 'story', MON + 100, 'Show HN: Claude Code plugin for Rust', 'github.com', 12, 3),
+         row(2, 'story', MON + 200, 'Quantum chip raises Series A', 'techcrunch.com', 5, 150),
+         row(3, 'story', MON + 300, 'Old thing (2012)', 'example.com', 2, 0),
+         row(4, 'story', MON + 400, 'Dead AI story', 'x.com', 9, 0, dead=1),
+         row(5, 'comment', MON + 500, '', '', '', ''), row(6, 'comment', MON + 600, '', '', '', '', dead=1),
+         row(7, 'story', MON + 8 * DAY, 'Next week', 'a.com', 1, 0),
+         row(8, 'story', MON + 13 * DAY + 86000, 'Last item', 'a.com', 1, 0), row(9, 'story', MON + 14 * DAY + 5, 'Partial', 'a.com', 1, 0)]
+    # comments carry their text in the "text" column
+    byid = {x['id']: x for x in r}
+    byid[5]['text'] = 'I use Rust and python every day, AI is fine'; byid[6]['text'] = 'dead comment about ChatGPT'
+    r.append(row(10, 'comment', MON + 700, '', '', '', '')); r[-1]['text'] = 'Acme | Backend Engineer | Remote | Python and ML<p>details'
+    byid[1]['text'] = 'A plugin'
+    return make_root(r)
+
+class V2Test(unittest.TestCase):
+    def test_v2_blocks(self):
+        s = ws.build(fixture2())['2026-W31']
+        self.assertEqual(s['schema_version'], 2); self.assertEqual(s['methods']['list_version'], '1')
+        vol = s['shared']['volume']; self.assertEqual((vol['stories_live'], vol['stories_all']), (3, 4)); self.assertEqual((vol['comments_live'], vol['comments_all']), (2, 3))
+        ai = s['shared']['ai']['terms']
+        self.assertEqual((ai['ai']['story_live'], ai['ai']['story_all']), (0, 1))   # the dead story counts only on the "all" basis
+        self.assertEqual((ai['ai']['comment_live'], ai['ai']['comment_all']), (1, 1)); self.assertEqual((ai['chatgpt']['comment_live'], ai['chatgpt']['comment_all']), (0, 1))
+        e = s['engineers']
+        self.assertEqual(e['languages']['rust'], {'stories': 1, 'comments': 1}); self.assertEqual(e['ai_coding']['claude_code']['stories'], 1)
+        self.assertEqual((e['show_hn']['stories'], e['show_hn']['hit10'], e['show_hn']['github']), (1, 1, 1))
+        self.assertEqual(e['hiring']['estimated_posts'], 1); self.assertEqual(e['hiring']['skills']['python'], 1); self.assertEqual(e['hiring']['skills']['remote'], 1)
+        v = s['vcs']; self.assertEqual(v['themes']['quantum']['stories'], 1); self.assertEqual(v['deal_words']['by_word']['raises'], 1); self.assertEqual(v['deal_words']['by_word']['series'], 1)
+        self.assertEqual(v['sources']['press']['stories'], 1)
+        g = s['geeks']; self.assertEqual(g['old_year_tag']['stories'], 1); self.assertEqual(g['ai_free']['stories'], 2)  # the Claude Code story is AI
+        self.assertEqual(s['shared']['discussion']['stories_100_comments'], 1)
+
+    def test_matcher_whole_words_and_phrases(self):
+        m = ws.Matcher({'rust': ws.L.T(['rust']), 'cpp': ws.L.T(phrases=['c++']), 'cc': ws.L.T(phrases=['claude code'])})
+        h = lambda t: m.hits(*ws.words(t))
+        self.assertEqual(h('Rust-lang and C++ rock'), {'rust', 'cpp'}); self.assertEqual(h('trust the crusty'), set()); self.assertEqual(h('Claude Code is here'), {'cc'})
+        self.assertEqual(h('rust_belt'), set())  # underscore joins words, same as a regex \b
+
+    def test_replace_only_older_backfill(self):
+        root = fixture2(); d = root / 'data/weekly'; d.mkdir(parents=True)
+        (d / '2026-W31.json').write_text(json.dumps({'kind': 'backfill', 'schema_version': 1, 'week': '2026-W31', 'start_utc': 'x', 'saved_at': 'x'}))
+        (d / '2026-W32.json').write_text(json.dumps({'kind': 'weekly', 'schema_version': 1, 'week': '2026-W32', 'start_utc': 'x', 'saved_at': 'x'}))
+        saved, skipped = ws.save(root, ws.build(root, backfill=True), replace_backfill=True)
+        self.assertEqual((saved, skipped), (['2026-W31'], ['2026-W32']))
+        self.assertEqual(json.loads((d / '2026-W31.json').read_text())['schema_version'], 2); self.assertEqual(json.loads((d / '2026-W32.json').read_text())['kind'], 'weekly')
+        saved, skipped = ws.save(root, ws.build(root, backfill=True), replace_backfill=True)  # same schema now: nothing replaced
+        self.assertEqual(saved, [])
+
 if __name__ == '__main__': unittest.main()

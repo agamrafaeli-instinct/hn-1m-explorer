@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2562,17 +2562,547 @@
   ]
  },
  "end_exclusive_utc": "2026-08-17",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 278,
+    "stories": 73
+   },
+   "ai_agents": {
+    "comments": 74,
+    "stories": 42
+   },
+   "claude_code": {
+    "comments": 335,
+    "stories": 80
+   },
+   "copilot": {
+    "comments": 61,
+    "stories": 10
+   },
+   "cursor": {
+    "comments": 150,
+    "stories": 28
+   },
+   "mcp": {
+    "comments": 131,
+    "stories": 81
+   }
+  },
+  "ask_hn": {
+   "stories": 120,
+   "top_by_comments": [
+    {
+     "comments": 148,
+     "domain": "",
+     "id": 49308059,
+     "points": 93,
+     "title": "Ask HN: How do you keep up with HN these days?"
+    },
+    {
+     "comments": 126,
+     "domain": "",
+     "id": 49318906,
+     "points": 117,
+     "title": "Ask HN: Do you know of any company that went back to hand-written code?"
+    },
+    {
+     "comments": 90,
+     "domain": "",
+     "id": 49313346,
+     "points": 52,
+     "title": "Ask HN: I've quit six systems for tracking my illness. What works?"
+    },
+    {
+     "comments": 41,
+     "domain": "",
+     "id": 49290713,
+     "points": 14,
+     "title": "Ask HN: How much money do you spend monthly on subscriptions for AI models?"
+    },
+    {
+     "comments": 31,
+     "domain": "",
+     "id": 49286427,
+     "points": 10,
+     "title": "Ask HN: What browser do you use?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 59,
+   "job_items": 6,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 33,
+    "backend": 7,
+    "onsite": 9,
+    "python": 11,
+    "remote": 17,
+    "rust": 0,
+    "typescript": 15
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 268,
+    "stories": 17
+   },
+   "java": {
+    "comments": 227,
+    "stories": 18
+   },
+   "javascript": {
+    "comments": 214,
+    "stories": 18
+   },
+   "kotlin": {
+    "comments": 27,
+    "stories": 3
+   },
+   "python": {
+    "comments": 464,
+    "stories": 64
+   },
+   "rust": {
+    "comments": 484,
+    "stories": 68
+   },
+   "swift": {
+    "comments": 108,
+    "stories": 15
+   },
+   "typescript": {
+    "comments": 127,
+    "stories": 20
+   },
+   "zig": {
+    "comments": 69,
+    "stories": 5
+   }
+  },
+  "show_hn": {
+   "github": 321,
+   "hit10": 81,
+   "stories": 897,
+   "top": [
+    {
+     "comments": 185,
+     "domain": "cactuscompute.com",
+     "id": 49246804,
+     "points": 537,
+     "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots"
+    },
+    {
+     "comments": 46,
+     "domain": "woxi.ad-si.com",
+     "id": 49270040,
+     "points": 314,
+     "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation"
+    },
+    {
+     "comments": 122,
+     "domain": "everycube.alen.is",
+     "id": 49251179,
+     "points": 295,
+     "title": "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states"
+    },
+    {
+     "comments": 103,
+     "domain": "baselashraf81.github.io",
+     "id": 49246366,
+     "points": 243,
+     "title": "Show HN: Eigendrum - Draw any shape and hear what it sounds like as a drum"
+    },
+    {
+     "comments": 89,
+     "domain": "whodunnitai.com",
+     "id": 49238851,
+     "points": 215,
+     "title": "Show HN: Voice driven murder mystery, Interview AI suspects with your voice"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 197,
+    "stories": 12
+   },
+   "git": {
+    "comments": 200,
+    "stories": 27
+   },
+   "kubernetes": {
+    "comments": 93,
+    "stories": 18
+   },
+   "linux": {
+    "comments": 650,
+    "stories": 80
+   },
+   "neovim": {
+    "comments": 8,
+    "stories": 5
+   },
+   "postgres": {
+    "comments": 143,
+    "stories": 29
+   },
+   "react": {
+    "comments": 202,
+    "stories": 23
+   },
+   "sqlite": {
+    "comments": 155,
+    "stories": 18
+   },
+   "vscode": {
+    "comments": 55,
+    "stories": 9
+   },
+   "wasm": {
+    "comments": 71,
+    "stories": 9
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5500,
+   "top": [
+    {
+     "comments": 718,
+     "domain": "pcworld.com",
+     "id": 49303202,
+     "points": 1765,
+     "title": "Firefox is now the last major browser that still supports uBlock Origin"
+    },
+    {
+     "comments": 793,
+     "domain": "huggingface.co",
+     "id": 49299605,
+     "points": 1438,
+     "title": "Qwen 3.8 27B"
+    },
+    {
+     "comments": 239,
+     "domain": "tailscale.com",
+     "id": 49272832,
+     "points": 1223,
+     "title": "Tracking down the 16-year-old WAL-reset SQLite bug"
+    },
+    {
+     "comments": 638,
+     "domain": "research.meta.ai",
+     "id": 49241679,
+     "points": 1209,
+     "title": "Muse Glimmer: 30B-parameter model optimized for always-on local agent workflows"
+    },
+    {
+     "comments": 584,
+     "domain": "z.ai",
+     "id": 49294997,
+     "points": 1171,
+     "title": "GLM-5.3: Frontier coding with emergent cyber capabilities"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 922,
+    "domain": "digitalescapetools.com",
+    "id": 49270726,
+    "points": 730,
+    "title": "uBlock Origin is giving up the fight to keep ads off Facebook"
+   },
+   {
+    "comments": 761,
+    "domain": "effort.news",
+    "id": 49251411,
+    "points": 672,
+    "title": "The UK's war on anonymity has come to America"
+   },
+   {
+    "comments": 606,
+    "domain": "bbc.com",
+    "id": 49245023,
+    "points": 408,
+    "title": "Mars Bar from 1991 found \u2013 and it's 20g bigger than today's"
+   },
+   {
+    "comments": 551,
+    "domain": "wsj.com",
+    "id": 49260250,
+    "points": 194,
+    "title": "U of Michigan drops first-semester grades to \u2018curb mental health crisis\u2019"
+   },
+   {
+    "comments": 546,
+    "domain": "linuxstans.com",
+    "id": 49249150,
+    "points": 345,
+    "title": "Illinois just passed a law that puts Linux on the hook for age verification"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 139
+  },
+  "reading": {
+   "wikipedia": 92,
+   "youtube": 209
+  },
+  "variety": {
+   "distinct_domains": 3424,
+   "linked_stories": 6810,
+   "top10_domain_stories": 1559
+  }
+ },
  "items": {
   "comment": 77288,
   "dead": 7603,
   "deleted": 2859,
-  "other": 6,
+  "job": 6,
   "story": 10174,
   "total": 87468
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 5547,
+     "comment_live": 5547,
+     "story_all": 1093,
+     "story_live": 1093
+    },
+    "chatgpt": {
+     "comment_all": 366,
+     "comment_live": 366,
+     "story_all": 49,
+     "story_live": 49
+    },
+    "claude": {
+     "comment_all": 1628,
+     "comment_live": 1628,
+     "story_all": 209,
+     "story_live": 209
+    },
+    "copilot": {
+     "comment_all": 61,
+     "comment_live": 61,
+     "story_all": 10,
+     "story_live": 10
+    },
+    "core": {
+     "comment_all": 10632,
+     "comment_live": 10632,
+     "story_all": 1568,
+     "story_live": 1568
+    },
+    "gpt": {
+     "comment_all": 286,
+     "comment_live": 286,
+     "story_all": 27,
+     "story_live": 27
+    },
+    "llm": {
+     "comment_all": 3283,
+     "comment_live": 3283,
+     "story_all": 188,
+     "story_live": 188
+    },
+    "openai": {
+     "comment_all": 597,
+     "comment_live": 597,
+     "story_all": 76,
+     "story_live": 76
+    },
+    "python": {
+     "comment_all": 464,
+     "comment_live": 464,
+     "story_all": 64,
+     "story_live": 64
+    },
+    "remote": {
+     "comment_all": 276,
+     "comment_live": 276,
+     "story_all": 15,
+     "story_live": 15
+    },
+    "rust": {
+     "comment_all": 484,
+     "comment_live": 484,
+     "story_all": 68,
+     "story_live": 68
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 993,
+     "domain": "thewalrus.ca",
+     "id": 49250836,
+     "points": 938,
+     "title": "As AI eats the web, the internet\u2019s collective memory is disappearing"
+    },
+    {
+     "comments": 922,
+     "domain": "digitalescapetools.com",
+     "id": 49270726,
+     "points": 730,
+     "title": "uBlock Origin is giving up the fight to keep ads off Facebook"
+    },
+    {
+     "comments": 761,
+     "domain": "effort.news",
+     "id": 49251411,
+     "points": 672,
+     "title": "The UK's war on anonymity has come to America"
+    },
+    {
+     "comments": 606,
+     "domain": "bbc.com",
+     "id": 49245023,
+     "points": 408,
+     "title": "Mars Bar from 1991 found \u2013 and it's 20g bigger than today's"
+    },
+    {
+     "comments": 551,
+     "domain": "wsj.com",
+     "id": 49260250,
+     "points": 194,
+     "title": "U of Michigan drops first-semester grades to \u2018curb mental health crisis\u2019"
+    },
+    {
+     "comments": 546,
+     "domain": "linuxstans.com",
+     "id": 49249150,
+     "points": 345,
+     "title": "Illinois just passed a law that puts Linux on the hook for age verification"
+    },
+    {
+     "comments": 542,
+     "domain": "developers.googleblog.com",
+     "id": 49261133,
+     "points": 444,
+     "title": "Go is an ideal language for AI-assisted software engineering"
+    },
+    {
+     "comments": 520,
+     "domain": "btp.police.uk",
+     "id": 49255496,
+     "points": 389,
+     "title": "London Underground begins scanning passengers' faces"
+    },
+    {
+     "comments": 471,
+     "domain": "tradersunion.com",
+     "id": 49284774,
+     "points": 418,
+     "title": "Deutsche Bank becomes first foreign yuan clearing bank in Europe"
+    },
+    {
+     "comments": 454,
+     "domain": "dmitry.gr",
+     "id": 49298035,
+     "points": 397,
+     "title": "RISC-V: They Should Have Known Better"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 993,
+     "domain": "thewalrus.ca",
+     "id": 49250836,
+     "points": 938,
+     "title": "As AI eats the web, the internet\u2019s collective memory is disappearing"
+    },
+    {
+     "comments": 937,
+     "domain": "blog.florianherrengt.com",
+     "id": 49271994,
+     "points": 1014,
+     "title": "AI is removing the middle class of software engineering?"
+    },
+    {
+     "comments": 922,
+     "domain": "digitalescapetools.com",
+     "id": 49270726,
+     "points": 730,
+     "title": "uBlock Origin is giving up the fight to keep ads off Facebook"
+    },
+    {
+     "comments": 874,
+     "domain": "mun-logadan.github.io",
+     "id": 49296740,
+     "points": 993,
+     "title": "Why does Opus 5 feel worse to work with?"
+    },
+    {
+     "comments": 793,
+     "domain": "huggingface.co",
+     "id": 49299605,
+     "points": 1438,
+     "title": "Qwen 3.8 27B"
+    },
+    {
+     "comments": 768,
+     "domain": "nicholascharriere.com",
+     "id": 49321298,
+     "points": 959,
+     "title": "Being ambitious and being a dad"
+    },
+    {
+     "comments": 761,
+     "domain": "effort.news",
+     "id": 49251411,
+     "points": 672,
+     "title": "The UK's war on anonymity has come to America"
+    },
+    {
+     "comments": 731,
+     "domain": "daringfireball.net",
+     "id": 49324087,
+     "points": 825,
+     "title": "Anthropic's \u2018watermark\u2019 text adulteration in Claude is a perversion of writing"
+    },
+    {
+     "comments": 718,
+     "domain": "pcworld.com",
+     "id": 49303202,
+     "points": 1765,
+     "title": "Firefox is now the last major browser that still supports uBlock Origin"
+    },
+    {
+     "comments": 638,
+     "domain": "research.meta.ai",
+     "id": 49241679,
+     "points": 1209,
+     "title": "Muse Glimmer: 30B-parameter model optimized for always-on local agent workflows"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 182,
+   "stories_100_points": 284
+  },
+  "volume": {
+   "comments_all": 77288,
+   "comments_dead_or_deleted": 6889,
+   "comments_live": 70399,
+   "distinct_authors": 21609,
+   "stories_all": 10174,
+   "stories_live": 7068
+  }
+ },
  "start_utc": "2026-08-10",
  "stories": {
   "comments": 70053,
@@ -2730,5 +3260,142 @@
    "title": "Gemini 3.7 Flash"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 696,
+   "stories": 108
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 9,
+    "bankrupt": 1,
+    "funding": 10,
+    "ipo": 14,
+    "layoffs": 3,
+    "raises": 16,
+    "series": 2,
+    "shutdown": 11,
+    "valuation": 10
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 67,
+   "top": [
+    {
+     "comments": 201,
+     "domain": "lovable.dev",
+     "id": 49274858,
+     "points": 167,
+     "title": "Lovable raises $400M Series C"
+    },
+    {
+     "comments": 17,
+     "domain": "propublica.org",
+     "id": 49300884,
+     "points": 71,
+     "title": "Taxpayers Funded a $533M Artillery Plant That Made Nothing"
+    },
+    {
+     "comments": 8,
+     "domain": "techdirt.com",
+     "id": 49289424,
+     "points": 64,
+     "title": "Flock (Again) Activates a Camera System a Town Had Voted to Shut Down"
+    },
+    {
+     "comments": 67,
+     "domain": "reuters.com",
+     "id": 49323620,
+     "points": 43,
+     "title": "Anthropic IPO valuation hinges on $190-200B 2028 revenue forecast"
+    },
+    {
+     "comments": 14,
+     "domain": "fortune.com",
+     "id": 49243628,
+     "points": 37,
+     "title": "AI's profits are 'being funded by investors rather than earned from customers"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6810,
+   "press": {
+    "comments": 8829,
+    "hit10": 163,
+    "points": 12333,
+    "stories": 673
+   },
+   "primary": {
+    "comments": 5699,
+    "hit10": 105,
+    "points": 12947,
+    "stories": 912
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 9
+   },
+   "bio": {
+    "stories": 0
+   },
+   "chips": {
+    "stories": 18
+   },
+   "data_center": {
+    "stories": 20
+   },
+   "fusion_fission": {
+    "stories": 5
+   },
+   "gpu": {
+    "stories": 28
+   },
+   "photonics_lidar": {
+    "stories": 3
+   },
+   "quantum": {
+    "stories": 17
+   },
+   "robotics": {
+    "stories": 26
+   },
+   "solar": {
+    "stories": 22
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 8,
+    "Amazon": 21,
+    "Anduril": 0,
+    "Anthropic": 48,
+    "Apple": 70,
+    "Cerebras": 3,
+    "Cloudflare": 23,
+    "DeepSeek": 47,
+    "Figma": 1,
+    "Google": 61,
+    "Hugging Face": 7,
+    "Intel": 12,
+    "Meta": 37,
+    "Microsoft": 20,
+    "Mistral": 8,
+    "Nvidia": 47,
+    "OpenAI": 68,
+    "Palantir": 5,
+    "Perplexity": 3,
+    "Rocket Lab": 2,
+    "SpaceX": 16,
+    "Stripe": 8,
+    "Supabase": 8,
+    "TSMC": 2,
+    "Tesla": 9,
+    "Vercel": 8,
+    "xAI": 1
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W33"
 }

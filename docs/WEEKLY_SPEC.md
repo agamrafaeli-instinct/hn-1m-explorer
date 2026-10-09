@@ -17,7 +17,7 @@ These limits shape every signal below.
 | Fact (measured) | Consequence |
 |---|---|
 | About 886k of the 1M items are comments, with full text. 114k are stories. 59 are `job` items. | Comment text is the richest source: mentions of tools, languages and companies, hiring posts. |
-| About 31% of story items are dead or deleted (10,460 story items vs 7,241 live in week 2026-W31). The history files in `data/history/` count them too. | Any comparison with the history must use the same basis. The snapshot stores both "live only" and "all items" for the baseline terms. |
+| About 31% of story items are dead or deleted (10,460 story items vs 7,241 live in week 2026-W31). Dead and deleted items keep no title or text. The history files in `data/history/` divide by all items, dead ones included. | A term count is the same either way, but the denominator is not. Any comparison with the history must divide by `stories_all` and `comments_all`. The snapshot stores both denominators. |
 | Scores and comment counts are as first retrieved, never refreshed. 17.6k of 114k stories have a score of 1. | Points are an early reading. Use thresholds and ranks inside one week, not exact points. |
 | No parent, children, rank, or user-profile fields. | We cannot link a comment to its thread, say what was on the front page, or say who is new. |
 | Text is HTML and untrusted. | Match on text, render as text only. |
@@ -39,7 +39,7 @@ These limits shape every signal below.
 - This week in the saved weeks: 20% to 24% of live stories and 13% to 17% of live comments carry a core AI word (variation 5% and 8% week to week).
 - Baseline: `data/history/` quarterly shares, all items counted. The word "ai" appears in 2.7% of stories in Q4 2022, 5.9% in Q2 2023, 10.3% in Q3 2025, 13.1% in Q1 2026 and 11.0% so far in Q3 2026. In comments it goes from 1.7% to 7.5%. "claude" goes from 0.0% to 2.2% of stories.
 - Check done: counting whole-word matches in our archive reproduces the history counts for ai, llm, openai, claude, rust, python, remote, chatgpt and gpt within about 1% to 3% on 4 overlap days (Jul 24, 27, 29, 30). It does not reproduce crypto, layoffs and vibe_coding (the history used broader patterns). Those three are not used.
-- Limit: the history has no union count, so the baseline comparison is per term. Both live-only and all-items numbers are stored, and the screen says which basis it shows.
+- Limit: the history has no union count, so the baseline comparison is per term. Both denominators are stored (live and all items), and the screen says which one it divides by.
 - Rose or fell: the AI share is compared with the average of the previous 4 saved weeks, and with the same term in the last full history quarter.
 
 ### 3.3 Discussion intensity. Ship with caveat
@@ -134,12 +134,18 @@ One rule for counts, one for shares, one for new names.
 | Sentiment | Tone of discussion | A tested method with a small hand-labelled sample. Not assumed |
 | Money amounts and company facts | Funding, valuation | Outside the archive. Not HN data |
 
-## 9. What the file stores (schema v2)
+## 9. What the file stores (schema v2, built)
 
-Everything in v1 (totals, baskets, top stories and domains, every domain with 3 or more stories) plus: `shared` (3.1 to 3.3, live and all-items bases), per-audience blocks (`engineers`, `vcs`, `geeks`) holding the signals above, a `methods` map with word lists and the list version, and `quality` flags. Expected size: 60 to 90 KB a week.
-Word lists live in one file in the repo so changing a list is a code change with a test, and every snapshot records which list version it used.
+Everything in v1 (totals, baskets, top stories and domains, every domain with 3 or more stories; the only v1 change is that `job` items are counted apart from `other`), plus:
+- `shared`: `volume` (live and all stories and comments, distinct authors), `ai.terms` (core union and 10 baseline terms, four counts each: story_live, story_all, comment_live, comment_all), `discussion` (stories with 100+ comments or points, debated top 10, most commented top 10).
+- `engineers`: `languages` (9), `tools` (10), `ai_coding` (6), `show_hn`, `ask_hn`, `hiring` (estimated posts, 7 skills, job items).
+- `vcs`: `themes` (10), `ai_infra`, `sources` (press and primary), `watchlist` (27 starter names, replace with Agam's), `deal_words` (9 groups plus top 5 titles).
+- `geeks`: `ai_free`, `old_year_tag`, `variety`, `reading` (youtube, wikipedia), `debated_non_ai`.
+- `methods`: list version. The word lists are in `scripts/weekly_lists.py`. A new list version means a new code change and test.
+Size: about 53 KB a week.
+The per-audience scope Agam picks later decides what each screen shows. All the signals above are stored for every week now, so any pick works on all 10 backfilled weeks.
 
-**Backfill and the 10-week limit:** the 10 files saved so far are v1 and are marked backfill. If v2 is approved, they are rebuilt as v2 from the archive. Week 2026-W31 can only be rebuilt until about Oct 12, when it starts to leave the 1M window. After that its v1 file would be the only record. A rebuild replaces backfill files only, never a file saved by the weekly job.
+**Backfill:** the 10 files are rebuilt as v2 on Oct 9 (kind "backfill"). `--backfill --replace-backfill` replaces only backfill files with an older schema, never a file saved by the weekly job. Week 2026-W31 can only be rebuilt until about Oct 12.
 
 ## 10. Not claimed
 

@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2495,17 +2495,548 @@
   ]
  },
  "end_exclusive_utc": "2026-08-03",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 218,
+    "stories": 60
+   },
+   "ai_agents": {
+    "comments": 51,
+    "stories": 48
+   },
+   "claude_code": {
+    "comments": 327,
+    "stories": 84
+   },
+   "copilot": {
+    "comments": 64,
+    "stories": 23
+   },
+   "cursor": {
+    "comments": 149,
+    "stories": 28
+   },
+   "mcp": {
+    "comments": 126,
+    "stories": 82
+   }
+  },
+  "ask_hn": {
+   "stories": 113,
+   "top_by_comments": [
+    {
+     "comments": 65,
+     "domain": "",
+     "id": 49135174,
+     "points": 36,
+     "title": "Ask HN: Any tips for a college freshman enrolled in computer science?"
+    },
+    {
+     "comments": 61,
+     "domain": "",
+     "id": 49095601,
+     "points": 51,
+     "title": "Ask HN: Anyone else tired of brands discontinuing your favorite everyday items?"
+    },
+    {
+     "comments": 59,
+     "domain": "",
+     "id": 49099021,
+     "points": 64,
+     "title": "Ask HN: My domain registrar rug-pulled me for $3000 [fixed]"
+    },
+    {
+     "comments": 56,
+     "domain": "",
+     "id": 49148884,
+     "points": 22,
+     "title": "Ask HN: What are you working on? (August 2026)"
+    },
+    {
+     "comments": 48,
+     "domain": "",
+     "id": 49084404,
+     "points": 44,
+     "title": "Ask HN: Crooked Timber showed showed me a virus captcha, What now?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 1,
+   "job_items": 11,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 0,
+    "backend": 0,
+    "onsite": 0,
+    "python": 0,
+    "remote": 0,
+    "rust": 0,
+    "typescript": 0
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 252,
+    "stories": 23
+   },
+   "java": {
+    "comments": 264,
+    "stories": 3
+   },
+   "javascript": {
+    "comments": 181,
+    "stories": 21
+   },
+   "kotlin": {
+    "comments": 29,
+    "stories": 2
+   },
+   "python": {
+    "comments": 331,
+    "stories": 67
+   },
+   "rust": {
+    "comments": 535,
+    "stories": 77
+   },
+   "swift": {
+    "comments": 68,
+    "stories": 22
+   },
+   "typescript": {
+    "comments": 91,
+    "stories": 25
+   },
+   "zig": {
+    "comments": 166,
+    "stories": 6
+   }
+  },
+  "show_hn": {
+   "github": 342,
+   "hit10": 97,
+   "stories": 930,
+   "top": [
+    {
+     "comments": 415,
+     "domain": "john.fun",
+     "id": 49124218,
+     "points": 1680,
+     "title": "Show HN: Elevators"
+    },
+    {
+     "comments": 342,
+     "domain": "github.com",
+     "id": 49098510,
+     "points": 919,
+     "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac"
+    },
+    {
+     "comments": 126,
+     "domain": "github.com",
+     "id": 49090607,
+     "points": 433,
+     "title": "Show HN: I was tired of opening 2 tabs for every HN link, so I made a userscript"
+    },
+    {
+     "comments": 115,
+     "domain": "github.com",
+     "id": 49140396,
+     "points": 338,
+     "title": "Show HN: I'm a 15 Year Old Wannabe Engineer, This Is a Cycloidal Gearbox I Built"
+    },
+    {
+     "comments": 258,
+     "domain": "cheapfoodmap.com",
+     "id": 49100043,
+     "points": 287,
+     "title": "Show HN: CheapFoodMap \u2013 A map of good meals under $10"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 68,
+    "stories": 18
+   },
+   "git": {
+    "comments": 271,
+    "stories": 38
+   },
+   "kubernetes": {
+    "comments": 59,
+    "stories": 9
+   },
+   "linux": {
+    "comments": 622,
+    "stories": 74
+   },
+   "neovim": {
+    "comments": 21,
+    "stories": 3
+   },
+   "postgres": {
+    "comments": 114,
+    "stories": 44
+   },
+   "react": {
+    "comments": 243,
+    "stories": 32
+   },
+   "sqlite": {
+    "comments": 121,
+    "stories": 14
+   },
+   "vscode": {
+    "comments": 64,
+    "stories": 11
+   },
+   "wasm": {
+    "comments": 36,
+    "stories": 14
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5608,
+   "top": [
+    {
+     "comments": 415,
+     "domain": "john.fun",
+     "id": 49124218,
+     "points": 1680,
+     "title": "Show HN: Elevators"
+    },
+    {
+     "comments": 544,
+     "domain": "huggingface.co",
+     "id": 49065752,
+     "points": 1382,
+     "title": "Kimi-K3 on HuggingFace"
+    },
+    {
+     "comments": 674,
+     "domain": "uefa.com",
+     "id": 49113929,
+     "points": 1235,
+     "title": "UEFA and its national associations will not participate in FIFA competitions"
+    },
+    {
+     "comments": 1749,
+     "domain": "anthropic.com",
+     "id": 49076057,
+     "points": 1180,
+     "title": "Our position on open-weights models"
+    },
+    {
+     "comments": 91,
+     "domain": "nikolays.github.io",
+     "id": 49063754,
+     "points": 930,
+     "title": "PGSimCity - How PostgreSQL Works"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 1749,
+    "domain": "anthropic.com",
+    "id": 49076057,
+    "points": 1180,
+    "title": "Our position on open-weights models"
+   },
+   {
+    "comments": 525,
+    "domain": "android-developers.googleblog.com",
+    "id": 49107950,
+    "points": 423,
+    "title": "Google will expand age checks on Android worldwide till the end of the year"
+   },
+   {
+    "comments": 502,
+    "domain": "nypost.com",
+    "id": 49076923,
+    "points": 443,
+    "title": "Netflix employee fired for sharing personal details in retreat trust exercise"
+   },
+   {
+    "comments": 489,
+    "domain": "itsmevox.substack.com",
+    "id": 49082857,
+    "points": 267,
+    "title": "I'm 38 and I Can't Support Myself Anymore"
+   },
+   {
+    "comments": 459,
+    "domain": "hughhowey.com",
+    "id": 49121980,
+    "points": 455,
+    "title": "The End of an Era"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 199
+  },
+  "reading": {
+   "wikipedia": 95,
+   "youtube": 213
+  },
+  "variety": {
+   "distinct_domains": 3503,
+   "linked_stories": 6982,
+   "top10_domain_stories": 1609
+  }
+ },
  "items": {
   "comment": 75550,
   "dead": 7385,
   "deleted": 2742,
-  "other": 18,
+  "job": 11,
+  "other": 7,
   "story": 10460,
   "total": 86028
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 5837,
+     "comment_live": 5837,
+     "story_all": 1137,
+     "story_live": 1137
+    },
+    "chatgpt": {
+     "comment_all": 300,
+     "comment_live": 300,
+     "story_all": 36,
+     "story_live": 36
+    },
+    "claude": {
+     "comment_all": 1294,
+     "comment_live": 1294,
+     "story_all": 214,
+     "story_live": 214
+    },
+    "copilot": {
+     "comment_all": 64,
+     "comment_live": 64,
+     "story_all": 23,
+     "story_live": 23
+    },
+    "core": {
+     "comment_all": 10368,
+     "comment_live": 10368,
+     "story_all": 1633,
+     "story_live": 1633
+    },
+    "gpt": {
+     "comment_all": 277,
+     "comment_live": 277,
+     "story_all": 35,
+     "story_live": 35
+    },
+    "llm": {
+     "comment_all": 2972,
+     "comment_live": 2972,
+     "story_all": 223,
+     "story_live": 223
+    },
+    "openai": {
+     "comment_all": 726,
+     "comment_live": 726,
+     "story_all": 105,
+     "story_live": 105
+    },
+    "python": {
+     "comment_all": 331,
+     "comment_live": 331,
+     "story_all": 67,
+     "story_live": 67
+    },
+    "remote": {
+     "comment_all": 227,
+     "comment_live": 227,
+     "story_all": 18,
+     "story_live": 18
+    },
+    "rust": {
+     "comment_all": 535,
+     "comment_live": 535,
+     "story_all": 77,
+     "story_live": 77
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1749,
+     "domain": "anthropic.com",
+     "id": 49076057,
+     "points": 1180,
+     "title": "Our position on open-weights models"
+    },
+    {
+     "comments": 609,
+     "domain": "blog.google",
+     "id": 49120097,
+     "points": 585,
+     "title": "Google fixed more Chrome bugs in June than over the past two years, thanks to AI"
+    },
+    {
+     "comments": 525,
+     "domain": "android-developers.googleblog.com",
+     "id": 49107950,
+     "points": 423,
+     "title": "Google will expand age checks on Android worldwide till the end of the year"
+    },
+    {
+     "comments": 502,
+     "domain": "nypost.com",
+     "id": 49076923,
+     "points": 443,
+     "title": "Netflix employee fired for sharing personal details in retreat trust exercise"
+    },
+    {
+     "comments": 489,
+     "domain": "itsmevox.substack.com",
+     "id": 49082857,
+     "points": 267,
+     "title": "I'm 38 and I Can't Support Myself Anymore"
+    },
+    {
+     "comments": 459,
+     "domain": "hughhowey.com",
+     "id": 49121980,
+     "points": 455,
+     "title": "The End of an Era"
+    },
+    {
+     "comments": 430,
+     "domain": "lwn.net",
+     "id": 49108685,
+     "points": 357,
+     "title": "GCC steering committee announces AI policy"
+    },
+    {
+     "comments": 404,
+     "domain": "nytimes.com",
+     "id": 49098198,
+     "points": 313,
+     "title": "A.I. companies are recruiting electricians and carpenters by the thousands"
+    },
+    {
+     "comments": 403,
+     "domain": "mitsloan.mit.edu",
+     "id": 49139102,
+     "points": 351,
+     "title": "AI financial advice is surprisingly good, especially if you ask right questions"
+    },
+    {
+     "comments": 392,
+     "domain": "apple.com",
+     "id": 49087306,
+     "points": 211,
+     "title": "The iPhone Upgrade Program is being replaced by Apple Upgrade"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1749,
+     "domain": "anthropic.com",
+     "id": 49076057,
+     "points": 1180,
+     "title": "Our position on open-weights models"
+    },
+    {
+     "comments": 674,
+     "domain": "uefa.com",
+     "id": 49113929,
+     "points": 1235,
+     "title": "UEFA and its national associations will not participate in FIFA competitions"
+    },
+    {
+     "comments": 609,
+     "domain": "blog.google",
+     "id": 49120097,
+     "points": 585,
+     "title": "Google fixed more Chrome bugs in June than over the past two years, thanks to AI"
+    },
+    {
+     "comments": 558,
+     "domain": "deepmind.google",
+     "id": 49111237,
+     "points": 620,
+     "title": "Gemini Robotics 2 brings whole body intelligence to robots"
+    },
+    {
+     "comments": 552,
+     "domain": "krebsonsecurity.com",
+     "id": 49112744,
+     "points": 818,
+     "title": "Read this before you buy that TV streaming stick"
+    },
+    {
+     "comments": 544,
+     "domain": "huggingface.co",
+     "id": 49065752,
+     "points": 1382,
+     "title": "Kimi-K3 on HuggingFace"
+    },
+    {
+     "comments": 525,
+     "domain": "android-developers.googleblog.com",
+     "id": 49107950,
+     "points": 423,
+     "title": "Google will expand age checks on Android worldwide till the end of the year"
+    },
+    {
+     "comments": 513,
+     "domain": "twitter.com",
+     "id": 49068738,
+     "points": 801,
+     "title": "AI companies are shredding rare books"
+    },
+    {
+     "comments": 502,
+     "domain": "nypost.com",
+     "id": 49076923,
+     "points": 443,
+     "title": "Netflix employee fired for sharing personal details in retreat trust exercise"
+    },
+    {
+     "comments": 489,
+     "domain": "itsmevox.substack.com",
+     "id": 49082857,
+     "points": 267,
+     "title": "I'm 38 and I Can't Support Myself Anymore"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 194,
+   "stories_100_points": 310
+  },
+  "volume": {
+   "comments_all": 75550,
+   "comments_dead_or_deleted": 6401,
+   "comments_live": 69149,
+   "distinct_authors": 21389,
+   "stories_all": 10460,
+   "stories_live": 7241
+  }
+ },
  "start_utc": "2026-07-27",
  "stories": {
   "comments": 68495,
@@ -2663,5 +3194,142 @@
    "title": "AI companies are shredding rare books"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 565,
+   "stories": 112
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 8,
+    "bankrupt": 1,
+    "funding": 2,
+    "ipo": 1,
+    "layoffs": 2,
+    "raises": 11,
+    "series": 1,
+    "shutdown": 7,
+    "valuation": 3
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 35,
+   "top": [
+    {
+     "comments": 45,
+     "domain": "engadget.com",
+     "id": 49098375,
+     "points": 98,
+     "title": "Google shuts down Nobel Prize winning AlphaFold"
+    },
+    {
+     "comments": 102,
+     "domain": "theverge.com",
+     "id": 49147209,
+     "points": 95,
+     "title": "Microsoft raises Xbox prices by up to 43%"
+    },
+    {
+     "comments": 81,
+     "domain": "videocardz.com",
+     "id": 49070820,
+     "points": 69,
+     "title": "Minecraft Java raises recommended memory to 16GB ahead of Vulkan transition"
+    },
+    {
+     "comments": 78,
+     "domain": "social.jorijn.com",
+     "id": 49112327,
+     "points": 48,
+     "title": "Toot.community is shutting down"
+    },
+    {
+     "comments": 1,
+     "domain": "en.ilsole24ore.com",
+     "id": 49070608,
+     "points": 13,
+     "title": "Batteries: Varta files for bankruptcy \u2013 Apple's departure takes its toll"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6982,
+   "press": {
+    "comments": 5650,
+    "hit10": 178,
+    "points": 9227,
+    "stories": 720
+   },
+   "primary": {
+    "comments": 9946,
+    "hit10": 127,
+    "points": 19746,
+    "stories": 891
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 11
+   },
+   "bio": {
+    "stories": 0
+   },
+   "chips": {
+    "stories": 13
+   },
+   "data_center": {
+    "stories": 34
+   },
+   "fusion_fission": {
+    "stories": 3
+   },
+   "gpu": {
+    "stories": 30
+   },
+   "photonics_lidar": {
+    "stories": 6
+   },
+   "quantum": {
+    "stories": 31
+   },
+   "robotics": {
+    "stories": 40
+   },
+   "solar": {
+    "stories": 17
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 19,
+    "Amazon": 25,
+    "Anduril": 1,
+    "Anthropic": 53,
+    "Apple": 64,
+    "Cerebras": 0,
+    "Cloudflare": 9,
+    "DeepSeek": 23,
+    "Figma": 3,
+    "Google": 97,
+    "Hugging Face": 26,
+    "Intel": 10,
+    "Meta": 20,
+    "Microsoft": 40,
+    "Mistral": 0,
+    "Nvidia": 47,
+    "OpenAI": 88,
+    "Palantir": 1,
+    "Perplexity": 3,
+    "Rocket Lab": 0,
+    "SpaceX": 18,
+    "Stripe": 13,
+    "Supabase": 6,
+    "TSMC": 1,
+    "Tesla": 11,
+    "Vercel": 2,
+    "xAI": 7
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W31"
 }

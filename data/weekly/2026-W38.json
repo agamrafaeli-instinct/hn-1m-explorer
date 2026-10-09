@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2463,17 +2463,547 @@
   ]
  },
  "end_exclusive_utc": "2026-09-21",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 250,
+    "stories": 47
+   },
+   "ai_agents": {
+    "comments": 86,
+    "stories": 56
+   },
+   "claude_code": {
+    "comments": 249,
+    "stories": 75
+   },
+   "copilot": {
+    "comments": 61,
+    "stories": 15
+   },
+   "cursor": {
+    "comments": 54,
+    "stories": 18
+   },
+   "mcp": {
+    "comments": 186,
+    "stories": 51
+   }
+  },
+  "ask_hn": {
+   "stories": 116,
+   "top_by_comments": [
+    {
+     "comments": 131,
+     "domain": "",
+     "id": 49742976,
+     "points": 124,
+     "title": "Ask HN: How to recover Google auth after phone stolen?"
+    },
+    {
+     "comments": 60,
+     "domain": "",
+     "id": 49729849,
+     "points": 29,
+     "title": "Ask HN: AI Panic, you buying it?"
+    },
+    {
+     "comments": 43,
+     "domain": "",
+     "id": 49768826,
+     "points": 48,
+     "title": "Ask HN: How do you interview devs in a post-AI world?"
+    },
+    {
+     "comments": 39,
+     "domain": "",
+     "id": 49696190,
+     "points": 16,
+     "title": "Ask HN: Are 80s high school hobby programmers overwhelmingly pro-AI?"
+    },
+    {
+     "comments": 30,
+     "domain": "",
+     "id": 49764727,
+     "points": 23,
+     "title": "Ask HN: Losing motivation to work in the IT field, need advice"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 12,
+   "job_items": 7,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 6,
+    "backend": 1,
+    "onsite": 1,
+    "python": 0,
+    "remote": 0,
+    "rust": 2,
+    "typescript": 0
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 268,
+    "stories": 15
+   },
+   "java": {
+    "comments": 325,
+    "stories": 10
+   },
+   "javascript": {
+    "comments": 127,
+    "stories": 18
+   },
+   "kotlin": {
+    "comments": 41,
+    "stories": 0
+   },
+   "python": {
+    "comments": 310,
+    "stories": 44
+   },
+   "rust": {
+    "comments": 547,
+    "stories": 75
+   },
+   "swift": {
+    "comments": 75,
+    "stories": 12
+   },
+   "typescript": {
+    "comments": 64,
+    "stories": 12
+   },
+   "zig": {
+    "comments": 114,
+    "stories": 6
+   }
+  },
+  "show_hn": {
+   "github": 278,
+   "hit10": 80,
+   "stories": 834,
+   "top": [
+    {
+     "comments": 267,
+     "domain": "github.com",
+     "id": 49711544,
+     "points": 2391,
+     "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations"
+    },
+    {
+     "comments": 205,
+     "domain": "inflightsimulator.com",
+     "id": 49693971,
+     "points": 446,
+     "title": "Show HN: I made a flight simulator, except you're just a passenger"
+    },
+    {
+     "comments": 167,
+     "domain": "withcapsule.app",
+     "id": 49712278,
+     "points": 380,
+     "title": "Show HN: Capsule \u2013 Single-file web apps that save their data into SQLite"
+    },
+    {
+     "comments": 140,
+     "domain": "mysetup.ai",
+     "id": 49740105,
+     "points": 251,
+     "title": "Show HN: Share your AI Setup, Learn from others"
+    },
+    {
+     "comments": 93,
+     "domain": "cactuscompute.com",
+     "id": 49748553,
+     "points": 236,
+     "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 87,
+    "stories": 17
+   },
+   "git": {
+    "comments": 183,
+    "stories": 47
+   },
+   "kubernetes": {
+    "comments": 43,
+    "stories": 15
+   },
+   "linux": {
+    "comments": 812,
+    "stories": 78
+   },
+   "neovim": {
+    "comments": 14,
+    "stories": 4
+   },
+   "postgres": {
+    "comments": 107,
+    "stories": 42
+   },
+   "react": {
+    "comments": 131,
+    "stories": 15
+   },
+   "sqlite": {
+    "comments": 49,
+    "stories": 11
+   },
+   "vscode": {
+    "comments": 50,
+    "stories": 9
+   },
+   "wasm": {
+    "comments": 53,
+    "stories": 22
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5314,
+   "top": [
+    {
+     "comments": 267,
+     "domain": "github.com",
+     "id": 49711544,
+     "points": 2391,
+     "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations"
+    },
+    {
+     "comments": 520,
+     "domain": "typesafe.ai",
+     "id": 49717558,
+     "points": 1989,
+     "title": "Introducing System One Models and Jev"
+    },
+    {
+     "comments": 319,
+     "domain": "laya.convaiinnovations.com",
+     "id": 49765348,
+     "points": 1363,
+     "title": "I built non-autoregressive decision models with RL a year ago"
+    },
+    {
+     "comments": 724,
+     "domain": "grapheneos.social",
+     "id": 49758736,
+     "points": 1180,
+     "title": "Android 17 is the first since 3.x to add new APIs without releasing to the AOSP"
+    },
+    {
+     "comments": 489,
+     "domain": "notnottalmud.substack.com",
+     "id": 49708431,
+     "points": 1160,
+     "title": "I can't stop thinking about Papua New Guinea"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 1055,
+    "domain": "xcancel.com",
+    "id": 49694296,
+    "points": 771,
+    "title": "XCancel service is suspended until further notice"
+   },
+   {
+    "comments": 905,
+    "domain": "bbc.com",
+    "id": 49724141,
+    "points": 693,
+    "title": "EU chief opens door for Canada to become 'associate member'"
+   },
+   {
+    "comments": 856,
+    "domain": "apple.com",
+    "id": 49701004,
+    "points": 718,
+    "title": "iOS 27, iPadOS 27, and macOS 27"
+   },
+   {
+    "comments": 701,
+    "domain": "mustafa-suleyman.ai",
+    "id": 49727580,
+    "points": 242,
+    "title": "A warning about 'model welfare'"
+   },
+   {
+    "comments": 689,
+    "domain": "openai.com",
+    "id": 49745940,
+    "points": 589,
+    "title": "Astra for Law"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 138
+  },
+  "reading": {
+   "wikipedia": 95,
+   "youtube": 222
+  },
+  "variety": {
+   "distinct_domains": 3432,
+   "linked_stories": 6691,
+   "top10_domain_stories": 1512
+  }
+ },
  "items": {
   "comment": 81139,
   "dead": 8146,
   "deleted": 2918,
-  "other": 7,
+  "job": 7,
   "story": 10223,
   "total": 91369
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 7267,
+     "comment_live": 7267,
+     "story_all": 1204,
+     "story_live": 1204
+    },
+    "chatgpt": {
+     "comment_all": 356,
+     "comment_live": 356,
+     "story_all": 48,
+     "story_live": 48
+    },
+    "claude": {
+     "comment_all": 1268,
+     "comment_live": 1268,
+     "story_all": 165,
+     "story_live": 165
+    },
+    "copilot": {
+     "comment_all": 61,
+     "comment_live": 61,
+     "story_all": 15,
+     "story_live": 15
+    },
+    "core": {
+     "comment_all": 12361,
+     "comment_live": 12361,
+     "story_all": 1639,
+     "story_live": 1639
+    },
+    "gpt": {
+     "comment_all": 244,
+     "comment_live": 244,
+     "story_all": 35,
+     "story_live": 35
+    },
+    "llm": {
+     "comment_all": 3747,
+     "comment_live": 3747,
+     "story_all": 185,
+     "story_live": 185
+    },
+    "openai": {
+     "comment_all": 826,
+     "comment_live": 826,
+     "story_all": 117,
+     "story_live": 117
+    },
+    "python": {
+     "comment_all": 310,
+     "comment_live": 310,
+     "story_all": 44,
+     "story_live": 44
+    },
+    "remote": {
+     "comment_all": 225,
+     "comment_live": 225,
+     "story_all": 15,
+     "story_live": 15
+    },
+    "rust": {
+     "comment_all": 547,
+     "comment_live": 547,
+     "story_all": 75,
+     "story_live": 75
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1055,
+     "domain": "xcancel.com",
+     "id": 49694296,
+     "points": 771,
+     "title": "XCancel service is suspended until further notice"
+    },
+    {
+     "comments": 905,
+     "domain": "bbc.com",
+     "id": 49724141,
+     "points": 693,
+     "title": "EU chief opens door for Canada to become 'associate member'"
+    },
+    {
+     "comments": 856,
+     "domain": "apple.com",
+     "id": 49701004,
+     "points": 718,
+     "title": "iOS 27, iPadOS 27, and macOS 27"
+    },
+    {
+     "comments": 701,
+     "domain": "mustafa-suleyman.ai",
+     "id": 49727580,
+     "points": 242,
+     "title": "A warning about 'model welfare'"
+    },
+    {
+     "comments": 689,
+     "domain": "openai.com",
+     "id": 49745940,
+     "points": 589,
+     "title": "Astra for Law"
+    },
+    {
+     "comments": 653,
+     "domain": "dank.systems",
+     "id": 49715927,
+     "points": 496,
+     "title": "Why I'm still bearish on LLMs after Navier-Stokes"
+    },
+    {
+     "comments": 618,
+     "domain": "andonlabs.com",
+     "id": 49700477,
+     "points": 497,
+     "title": "Pion, an agent designed to run any company autonomously"
+    },
+    {
+     "comments": 529,
+     "domain": "redblobgames.com",
+     "id": 49769944,
+     "points": 365,
+     "title": "English: A vs. An"
+    },
+    {
+     "comments": 502,
+     "domain": "forbrukerradet.no",
+     "id": 49710109,
+     "points": 459,
+     "title": "Let's make quality the norm again"
+    },
+    {
+     "comments": 456,
+     "domain": "newyorker.com",
+     "id": 49740260,
+     "points": 282,
+     "title": "The American Religion of Self-Storage Facilities"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1055,
+     "domain": "xcancel.com",
+     "id": 49694296,
+     "points": 771,
+     "title": "XCancel service is suspended until further notice"
+    },
+    {
+     "comments": 962,
+     "domain": "john.hartnup.uk",
+     "id": 49764791,
+     "points": 1902,
+     "title": "AI-generated posters don\u2019t have to be horrible"
+    },
+    {
+     "comments": 905,
+     "domain": "bbc.com",
+     "id": 49724141,
+     "points": 693,
+     "title": "EU chief opens door for Canada to become 'associate member'"
+    },
+    {
+     "comments": 856,
+     "domain": "apple.com",
+     "id": 49701004,
+     "points": 718,
+     "title": "iOS 27, iPadOS 27, and macOS 27"
+    },
+    {
+     "comments": 841,
+     "domain": "techcrunch.com",
+     "id": 49752056,
+     "points": 955,
+     "title": "Microsoft exec called AI scraping 'the largest theft of labor in human history'"
+    },
+    {
+     "comments": 819,
+     "domain": "hawksley.dev",
+     "id": 49753211,
+     "points": 853,
+     "title": "I don't like passkeys"
+    },
+    {
+     "comments": 724,
+     "domain": "grapheneos.social",
+     "id": 49758736,
+     "points": 1180,
+     "title": "Android 17 is the first since 3.x to add new APIs without releasing to the AOSP"
+    },
+    {
+     "comments": 701,
+     "domain": "mustafa-suleyman.ai",
+     "id": 49727580,
+     "points": 242,
+     "title": "A warning about 'model welfare'"
+    },
+    {
+     "comments": 689,
+     "domain": "openai.com",
+     "id": 49745940,
+     "points": 589,
+     "title": "Astra for Law"
+    },
+    {
+     "comments": 653,
+     "domain": "dank.systems",
+     "id": 49715927,
+     "points": 496,
+     "title": "Why I'm still bearish on LLMs after Navier-Stokes"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 210,
+   "stories_100_points": 317
+  },
+  "volume": {
+   "comments_all": 81139,
+   "comments_dead_or_deleted": 7315,
+   "comments_live": 73824,
+   "distinct_authors": 22469,
+   "stories_all": 10223,
+   "stories_live": 6953
+  }
+ },
  "start_utc": "2026-09-14",
  "stories": {
   "comments": 73102,
@@ -2631,5 +3161,142 @@
    "title": "I don't like passkeys"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 758,
+   "stories": 93
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 9,
+    "bankrupt": 3,
+    "funding": 7,
+    "ipo": 10,
+    "layoffs": 0,
+    "raises": 10,
+    "series": 2,
+    "shutdown": 10,
+    "valuation": 9
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 51,
+   "top": [
+    {
+     "comments": 115,
+     "domain": "koreajoongangdaily.com",
+     "id": 49759466,
+     "points": 339,
+     "title": "Korea raises data breach fines to 10% of revenue"
+    },
+    {
+     "comments": 126,
+     "domain": "bbc.com",
+     "id": 49734409,
+     "points": 121,
+     "title": "US interest rates raised for first time in three years"
+    },
+    {
+     "comments": 62,
+     "domain": "temporal.io",
+     "id": 49696335,
+     "points": 84,
+     "title": "Temporal raises $550M at a $12.55B valuation"
+    },
+    {
+     "comments": 2,
+     "domain": "wsj.com",
+     "id": 49731515,
+     "points": 25,
+     "title": "Fed Raises Rates for First Time in Three Years"
+    },
+    {
+     "comments": 10,
+     "domain": "bloomberg.com",
+     "id": 49730731,
+     "points": 21,
+     "title": "Fed Raises Rates as Warsh Bucks Trump to Contain Inflation"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6691,
+   "press": {
+    "comments": 9382,
+    "hit10": 149,
+    "points": 12543,
+    "stories": 632
+   },
+   "primary": {
+    "comments": 4288,
+    "hit10": 85,
+    "points": 12231,
+    "stories": 816
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 3
+   },
+   "bio": {
+    "stories": 2
+   },
+   "chips": {
+    "stories": 13
+   },
+   "data_center": {
+    "stories": 15
+   },
+   "fusion_fission": {
+    "stories": 10
+   },
+   "gpu": {
+    "stories": 36
+   },
+   "photonics_lidar": {
+    "stories": 2
+   },
+   "quantum": {
+    "stories": 21
+   },
+   "robotics": {
+    "stories": 38
+   },
+   "solar": {
+    "stories": 5
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 7,
+    "Amazon": 12,
+    "Anduril": 0,
+    "Anthropic": 87,
+    "Apple": 59,
+    "Cerebras": 2,
+    "Cloudflare": 9,
+    "DeepSeek": 18,
+    "Figma": 0,
+    "Google": 84,
+    "Hugging Face": 14,
+    "Intel": 11,
+    "Meta": 31,
+    "Microsoft": 39,
+    "Mistral": 5,
+    "Nvidia": 34,
+    "OpenAI": 103,
+    "Palantir": 7,
+    "Perplexity": 4,
+    "Rocket Lab": 1,
+    "SpaceX": 12,
+    "Stripe": 5,
+    "Supabase": 3,
+    "TSMC": 1,
+    "Tesla": 16,
+    "Vercel": 3,
+    "xAI": 0
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W38"
 }

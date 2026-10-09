@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2541,17 +2541,548 @@
   ]
  },
  "end_exclusive_utc": "2026-08-31",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 224,
+    "stories": 58
+   },
+   "ai_agents": {
+    "comments": 57,
+    "stories": 47
+   },
+   "claude_code": {
+    "comments": 226,
+    "stories": 74
+   },
+   "copilot": {
+    "comments": 69,
+    "stories": 9
+   },
+   "cursor": {
+    "comments": 227,
+    "stories": 31
+   },
+   "mcp": {
+    "comments": 125,
+    "stories": 66
+   }
+  },
+  "ask_hn": {
+   "stories": 133,
+   "top_by_comments": [
+    {
+     "comments": 128,
+     "domain": "",
+     "id": 49418675,
+     "points": 124,
+     "title": "Ask HN: Why do corporate failures always seem to punish the wrong people?"
+    },
+    {
+     "comments": 107,
+     "domain": "",
+     "id": 49417766,
+     "points": 80,
+     "title": "Ask HN: Those making $500/month on side projects in 2026 \u2013 Show and tell"
+    },
+    {
+     "comments": 91,
+     "domain": "",
+     "id": 49443820,
+     "points": 35,
+     "title": "Ask HN: What is one simple thing LLMs are insanely bad at?"
+    },
+    {
+     "comments": 47,
+     "domain": "",
+     "id": 49429899,
+     "points": 8,
+     "title": "Ask HN: Coding is a solved problem. What is left for experienced engineers?"
+    },
+    {
+     "comments": 25,
+     "domain": "",
+     "id": 49481969,
+     "points": 15,
+     "title": "Ask HN: AI writes better code than me. How to keep my identity?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 7,
+   "job_items": 8,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 1,
+    "backend": 0,
+    "onsite": 0,
+    "python": 0,
+    "remote": 0,
+    "rust": 0,
+    "typescript": 0
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 150,
+    "stories": 14
+   },
+   "java": {
+    "comments": 117,
+    "stories": 9
+   },
+   "javascript": {
+    "comments": 129,
+    "stories": 25
+   },
+   "kotlin": {
+    "comments": 3,
+    "stories": 2
+   },
+   "python": {
+    "comments": 370,
+    "stories": 55
+   },
+   "rust": {
+    "comments": 274,
+    "stories": 69
+   },
+   "swift": {
+    "comments": 52,
+    "stories": 3
+   },
+   "typescript": {
+    "comments": 30,
+    "stories": 14
+   },
+   "zig": {
+    "comments": 34,
+    "stories": 8
+   }
+  },
+  "show_hn": {
+   "github": 316,
+   "hit10": 78,
+   "stories": 919,
+   "top": [
+    {
+     "comments": 326,
+     "domain": "louisabraham.github.io",
+     "id": 49461817,
+     "points": 710,
+     "title": "Show HN: The load-bearing vocabulary of Claude"
+    },
+    {
+     "comments": 61,
+     "domain": "laser.consti.de",
+     "id": 49489376,
+     "points": 253,
+     "title": "Show HN: Laser Graffiti"
+    },
+    {
+     "comments": 48,
+     "domain": "ssx360.github.io",
+     "id": 49419351,
+     "points": 240,
+     "title": "Show HN: A techno machine in one HTML file, with verifiable renders"
+    },
+    {
+     "comments": 58,
+     "domain": "github.com",
+     "id": 49471965,
+     "points": 231,
+     "title": "Show HN: OpenTIE and OpenXWA, Modern Ports of Tie Fighter and X-Wing Alliance"
+    },
+    {
+     "comments": 30,
+     "domain": "wilsonharper.net",
+     "id": 49478426,
+     "points": 231,
+     "title": "Show HN: NFC Energy-Harvesting PCB Business Card with an MCU"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 128,
+    "stories": 13
+   },
+   "git": {
+    "comments": 235,
+    "stories": 31
+   },
+   "kubernetes": {
+    "comments": 49,
+    "stories": 17
+   },
+   "linux": {
+    "comments": 1070,
+    "stories": 82
+   },
+   "neovim": {
+    "comments": 23,
+    "stories": 7
+   },
+   "postgres": {
+    "comments": 62,
+    "stories": 30
+   },
+   "react": {
+    "comments": 101,
+    "stories": 18
+   },
+   "sqlite": {
+    "comments": 133,
+    "stories": 19
+   },
+   "vscode": {
+    "comments": 71,
+    "stories": 6
+   },
+   "wasm": {
+    "comments": 42,
+    "stories": 11
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5694,
+   "top": [
+    {
+     "comments": 925,
+     "domain": "businessinsider.com",
+     "id": 49458161,
+     "points": 1988,
+     "title": "Nvidia agrees to acquire Hugging Face for $13B"
+    },
+    {
+     "comments": 1033,
+     "domain": "lectronz.com",
+     "id": 49419237,
+     "points": 1647,
+     "title": "How Europe is killing makers and micro-entrepreneurs"
+    },
+    {
+     "comments": 249,
+     "domain": "theguardian.com",
+     "id": 49438052,
+     "points": 1602,
+     "title": "Dolly Parton has died"
+    },
+    {
+     "comments": 710,
+     "domain": "people.kernel.org",
+     "id": 49491791,
+     "points": 1390,
+     "title": "Creepy Crawlies"
+    },
+    {
+     "comments": 1307,
+     "domain": "apple.com",
+     "id": 49433292,
+     "points": 1312,
+     "title": "Apple introduces M6 and M5 Ultra"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 1455,
+    "domain": "wsj.com",
+    "id": 49452709,
+    "points": 840,
+    "title": "U.S. State Department pauses immigrant visa applications"
+   },
+   {
+    "comments": 1352,
+    "domain": "github.com",
+    "id": 49437283,
+    "points": 1214,
+    "title": "Nitter and XCancel receive cease and desist notices"
+   },
+   {
+    "comments": 829,
+    "domain": "daily.jstor.org",
+    "id": 49422800,
+    "points": 349,
+    "title": "Where did all the public bathrooms go?"
+   },
+   {
+    "comments": 770,
+    "domain": "inventati.org",
+    "id": 49477854,
+    "points": 711,
+    "title": "U.S. sanctions against the A/I Collective"
+   },
+   {
+    "comments": 592,
+    "domain": "spacex.com",
+    "id": 49436822,
+    "points": 287,
+    "title": "Starbase, LA"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 120
+  },
+  "reading": {
+   "wikipedia": 90,
+   "youtube": 209
+  },
+  "variety": {
+   "distinct_domains": 3548,
+   "linked_stories": 6880,
+   "top10_domain_stories": 1496
+  }
+ },
  "items": {
   "comment": 79870,
   "dead": 7738,
   "deleted": 2789,
-  "other": 17,
+  "job": 8,
+  "other": 9,
   "story": 10424,
   "total": 90311
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 5268,
+     "comment_live": 5268,
+     "story_all": 1031,
+     "story_live": 1031
+    },
+    "chatgpt": {
+     "comment_all": 271,
+     "comment_live": 271,
+     "story_all": 40,
+     "story_live": 40
+    },
+    "claude": {
+     "comment_all": 1218,
+     "comment_live": 1218,
+     "story_all": 155,
+     "story_live": 155
+    },
+    "copilot": {
+     "comment_all": 69,
+     "comment_live": 69,
+     "story_all": 9,
+     "story_live": 9
+    },
+    "core": {
+     "comment_all": 9372,
+     "comment_live": 9372,
+     "story_all": 1456,
+     "story_live": 1456
+    },
+    "gpt": {
+     "comment_all": 217,
+     "comment_live": 217,
+     "story_all": 22,
+     "story_live": 22
+    },
+    "llm": {
+     "comment_all": 2711,
+     "comment_live": 2711,
+     "story_all": 201,
+     "story_live": 201
+    },
+    "openai": {
+     "comment_all": 578,
+     "comment_live": 578,
+     "story_all": 74,
+     "story_live": 74
+    },
+    "python": {
+     "comment_all": 370,
+     "comment_live": 370,
+     "story_all": 55,
+     "story_live": 55
+    },
+    "remote": {
+     "comment_all": 222,
+     "comment_live": 222,
+     "story_all": 20,
+     "story_live": 20
+    },
+    "rust": {
+     "comment_all": 274,
+     "comment_live": 274,
+     "story_all": 69,
+     "story_live": 69
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1455,
+     "domain": "wsj.com",
+     "id": 49452709,
+     "points": 840,
+     "title": "U.S. State Department pauses immigrant visa applications"
+    },
+    {
+     "comments": 1352,
+     "domain": "github.com",
+     "id": 49437283,
+     "points": 1214,
+     "title": "Nitter and XCancel receive cease and desist notices"
+    },
+    {
+     "comments": 829,
+     "domain": "daily.jstor.org",
+     "id": 49422800,
+     "points": 349,
+     "title": "Where did all the public bathrooms go?"
+    },
+    {
+     "comments": 770,
+     "domain": "inventati.org",
+     "id": 49477854,
+     "points": 711,
+     "title": "U.S. sanctions against the A/I Collective"
+    },
+    {
+     "comments": 625,
+     "domain": "gatesnotes.com",
+     "id": 49447057,
+     "points": 360,
+     "title": "The turbulent AI era is here"
+    },
+    {
+     "comments": 592,
+     "domain": "spacex.com",
+     "id": 49436822,
+     "points": 287,
+     "title": "Starbase, LA"
+    },
+    {
+     "comments": 548,
+     "domain": "0xcc.io",
+     "id": 49499854,
+     "points": 536,
+     "title": "Omarchy: Any User Process Can Escalate to Root"
+    },
+    {
+     "comments": 546,
+     "domain": "reuters.com",
+     "id": 49448819,
+     "points": 543,
+     "title": "Meta reaches $17B settlement over social media harms to children"
+    },
+    {
+     "comments": 490,
+     "domain": "bbc.com",
+     "id": 49489057,
+     "points": 340,
+     "title": "Iceland votes on whether to restart talks on joining EU"
+    },
+    {
+     "comments": 465,
+     "domain": "openai.com",
+     "id": 49454314,
+     "points": 335,
+     "title": "The Hugging Face incident and the road ahead"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1455,
+     "domain": "wsj.com",
+     "id": 49452709,
+     "points": 840,
+     "title": "U.S. State Department pauses immigrant visa applications"
+    },
+    {
+     "comments": 1352,
+     "domain": "github.com",
+     "id": 49437283,
+     "points": 1214,
+     "title": "Nitter and XCancel receive cease and desist notices"
+    },
+    {
+     "comments": 1307,
+     "domain": "apple.com",
+     "id": 49433292,
+     "points": 1312,
+     "title": "Apple introduces M6 and M5 Ultra"
+    },
+    {
+     "comments": 1033,
+     "domain": "lectronz.com",
+     "id": 49419237,
+     "points": 1647,
+     "title": "How Europe is killing makers and micro-entrepreneurs"
+    },
+    {
+     "comments": 925,
+     "domain": "businessinsider.com",
+     "id": 49458161,
+     "points": 1988,
+     "title": "Nvidia agrees to acquire Hugging Face for $13B"
+    },
+    {
+     "comments": 829,
+     "domain": "daily.jstor.org",
+     "id": 49422800,
+     "points": 349,
+     "title": "Where did all the public bathrooms go?"
+    },
+    {
+     "comments": 770,
+     "domain": "inventati.org",
+     "id": 49477854,
+     "points": 711,
+     "title": "U.S. sanctions against the A/I Collective"
+    },
+    {
+     "comments": 736,
+     "domain": "twitter.com",
+     "id": 49420873,
+     "points": 1003,
+     "title": "Xiaomi: New CPU matches Apple cores single threaded, much faster multithreaded"
+    },
+    {
+     "comments": 716,
+     "domain": "github.com",
+     "id": 49458418,
+     "points": 1035,
+     "title": "CEO fired developers to make room for AI. Developers create open source AI CEO"
+    },
+    {
+     "comments": 710,
+     "domain": "people.kernel.org",
+     "id": 49491791,
+     "points": 1390,
+     "title": "Creepy Crawlies"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 185,
+   "stories_100_points": 324
+  },
+  "volume": {
+   "comments_all": 79870,
+   "comments_dead_or_deleted": 6787,
+   "comments_live": 73083,
+   "distinct_authors": 22058,
+   "stories_all": 10424,
+   "stories_live": 7150
+  }
+ },
  "start_utc": "2026-08-24",
  "stories": {
   "comments": 74281,
@@ -2709,5 +3240,142 @@
    "title": "GUIs should be fully keyboard-driven"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 1085,
+   "stories": 140
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 10,
+    "bankrupt": 0,
+    "funding": 12,
+    "ipo": 5,
+    "layoffs": 4,
+    "raises": 5,
+    "series": 2,
+    "shutdown": 9,
+    "valuation": 4
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 49,
+   "top": [
+    {
+     "comments": 316,
+     "domain": "ducklabs.com",
+     "id": 49448321,
+     "points": 1102,
+     "title": "AWS Acquires DuckLabs"
+    },
+    {
+     "comments": 544,
+     "domain": "openai.com",
+     "id": 49486172,
+     "points": 852,
+     "title": "Our decision on Cursor following its acquisition by SpaceX"
+    },
+    {
+     "comments": 167,
+     "domain": "mturk.com",
+     "id": 49457545,
+     "points": 534,
+     "title": "Mechanical Turk shutting down September 30"
+    },
+    {
+     "comments": 62,
+     "domain": "clerky.com",
+     "id": 49455956,
+     "points": 249,
+     "title": "Stripe acquires Clerky"
+    },
+    {
+     "comments": 51,
+     "domain": "theguardian.com",
+     "id": 49447600,
+     "points": 247,
+     "title": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6880,
+   "press": {
+    "comments": 10858,
+    "hit10": 144,
+    "points": 17260,
+    "stories": 630
+   },
+   "primary": {
+    "comments": 7433,
+    "hit10": 115,
+    "points": 14779,
+    "stories": 888
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 10
+   },
+   "bio": {
+    "stories": 3
+   },
+   "chips": {
+    "stories": 11
+   },
+   "data_center": {
+    "stories": 25
+   },
+   "fusion_fission": {
+    "stories": 2
+   },
+   "gpu": {
+    "stories": 35
+   },
+   "photonics_lidar": {
+    "stories": 6
+   },
+   "quantum": {
+    "stories": 24
+   },
+   "robotics": {
+    "stories": 54
+   },
+   "solar": {
+    "stories": 19
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 11,
+    "Amazon": 23,
+    "Anduril": 0,
+    "Anthropic": 54,
+    "Apple": 66,
+    "Cerebras": 3,
+    "Cloudflare": 16,
+    "DeepSeek": 12,
+    "Figma": 3,
+    "Google": 78,
+    "Hugging Face": 35,
+    "Intel": 15,
+    "Meta": 60,
+    "Microsoft": 19,
+    "Mistral": 1,
+    "Nvidia": 79,
+    "OpenAI": 58,
+    "Palantir": 2,
+    "Perplexity": 8,
+    "Rocket Lab": 0,
+    "SpaceX": 14,
+    "Stripe": 10,
+    "Supabase": 1,
+    "TSMC": 0,
+    "Tesla": 9,
+    "Vercel": 8,
+    "xAI": 1
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W35"
 }

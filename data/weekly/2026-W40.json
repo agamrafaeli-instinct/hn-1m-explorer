@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2415,17 +2415,547 @@
   ]
  },
  "end_exclusive_utc": "2026-10-05",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 320,
+    "stories": 63
+   },
+   "ai_agents": {
+    "comments": 89,
+    "stories": 71
+   },
+   "claude_code": {
+    "comments": 285,
+    "stories": 87
+   },
+   "copilot": {
+    "comments": 108,
+    "stories": 15
+   },
+   "cursor": {
+    "comments": 87,
+    "stories": 18
+   },
+   "mcp": {
+    "comments": 385,
+    "stories": 71
+   }
+  },
+  "ask_hn": {
+   "stories": 107,
+   "top_by_comments": [
+    {
+     "comments": 884,
+     "domain": "",
+     "id": 49893157,
+     "points": 469,
+     "title": "Ask HN: What are you reading?"
+    },
+    {
+     "comments": 613,
+     "domain": "",
+     "id": 49922568,
+     "points": 136,
+     "title": "Ask HN: Who wants to be hired? (October 2026)"
+    },
+    {
+     "comments": 355,
+     "domain": "",
+     "id": 49922569,
+     "points": 270,
+     "title": "Ask HN: Who is hiring? (October 2026)"
+    },
+    {
+     "comments": 47,
+     "domain": "",
+     "id": 49934037,
+     "points": 29,
+     "title": "Ask HN: Is anybody producing good code with coding agents?"
+    },
+    {
+     "comments": 32,
+     "domain": "",
+     "id": 49906563,
+     "points": 22,
+     "title": "Ask HN: What are you reading to your kids?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 169,
+   "job_items": 4,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 100,
+    "backend": 38,
+    "onsite": 57,
+    "python": 42,
+    "remote": 91,
+    "rust": 16,
+    "typescript": 52
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 373,
+    "stories": 25
+   },
+   "java": {
+    "comments": 178,
+    "stories": 7
+   },
+   "javascript": {
+    "comments": 297,
+    "stories": 19
+   },
+   "kotlin": {
+    "comments": 33,
+    "stories": 3
+   },
+   "python": {
+    "comments": 595,
+    "stories": 60
+   },
+   "rust": {
+    "comments": 549,
+    "stories": 114
+   },
+   "swift": {
+    "comments": 75,
+    "stories": 12
+   },
+   "typescript": {
+    "comments": 417,
+    "stories": 24
+   },
+   "zig": {
+    "comments": 72,
+    "stories": 8
+   }
+  },
+  "show_hn": {
+   "github": 305,
+   "hit10": 65,
+   "stories": 939,
+   "top": [
+    {
+     "comments": 112,
+     "domain": "space.bl2.net",
+     "id": 49898778,
+     "points": 407,
+     "title": "Show HN: Real-time Solar System with 526k asteroids and all tracked satellites"
+    },
+    {
+     "comments": 113,
+     "domain": "stillwet.art",
+     "id": 49928566,
+     "points": 391,
+     "title": "Show HN: Giving Opus 5.5 a simulated paint canvas"
+    },
+    {
+     "comments": 47,
+     "domain": "niklasroy.com",
+     "id": 49930439,
+     "points": 234,
+     "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash"
+    },
+    {
+     "comments": 97,
+     "domain": "hn.watch",
+     "id": 49879401,
+     "points": 225,
+     "title": "Show HN: HN.watch \u2013 Videos of all Hacker News posts"
+    },
+    {
+     "comments": 88,
+     "domain": "ledge.sh",
+     "id": 49902382,
+     "points": 204,
+     "title": "Show HN: Ledge.sh \u2013 Runnable Markdown Notes"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 288,
+    "stories": 14
+   },
+   "git": {
+    "comments": 404,
+    "stories": 40
+   },
+   "kubernetes": {
+    "comments": 146,
+    "stories": 8
+   },
+   "linux": {
+    "comments": 769,
+    "stories": 83
+   },
+   "neovim": {
+    "comments": 28,
+    "stories": 5
+   },
+   "postgres": {
+    "comments": 330,
+    "stories": 49
+   },
+   "react": {
+    "comments": 481,
+    "stories": 21
+   },
+   "sqlite": {
+    "comments": 81,
+    "stories": 7
+   },
+   "vscode": {
+    "comments": 70,
+    "stories": 6
+   },
+   "wasm": {
+    "comments": 64,
+    "stories": 21
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5510,
+   "top": [
+    {
+     "comments": 607,
+     "domain": "earendil.com",
+     "id": 49926069,
+     "points": 1687,
+     "title": "Pi 1.0"
+    },
+    {
+     "comments": 458,
+     "domain": "colo.to",
+     "id": 49872723,
+     "points": 1091,
+     "title": "Owed a billion dollars in Nvidia stock"
+    },
+    {
+     "comments": 949,
+     "domain": "twitter.com",
+     "id": 49879645,
+     "points": 944,
+     "title": "Updated Google Maps shows destruction of the city of Rafah"
+    },
+    {
+     "comments": 221,
+     "domain": "",
+     "id": 49949438,
+     "points": 943,
+     "title": "Tell HN: Bob Cringely has died"
+    },
+    {
+     "comments": 422,
+     "domain": "github.com",
+     "id": 49953495,
+     "points": 929,
+     "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 989,
+    "domain": "kqed.org",
+    "id": 49883539,
+    "points": 390,
+    "title": "California farmers are struggling to sell grapes as demand for wine drops"
+   },
+   {
+    "comments": 949,
+    "domain": "twitter.com",
+    "id": 49879645,
+    "points": 944,
+    "title": "Updated Google Maps shows destruction of the city of Rafah"
+   },
+   {
+    "comments": 884,
+    "domain": "",
+    "id": 49893157,
+    "points": 469,
+    "title": "Ask HN: What are you reading?"
+   },
+   {
+    "comments": 713,
+    "domain": "1011now.com",
+    "id": 49957068,
+    "points": 527,
+    "title": "Improper redaction reveals Google Data Center water and electricity usage"
+   },
+   {
+    "comments": 642,
+    "domain": "manuel.darcemont.fr",
+    "id": 49908394,
+    "points": 339,
+    "title": "The last time my family was replaced by technology"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 126
+  },
+  "reading": {
+   "wikipedia": 85,
+   "youtube": 238
+  },
+  "variety": {
+   "distinct_domains": 3642,
+   "linked_stories": 6987,
+   "top10_domain_stories": 1574
+  }
+ },
  "items": {
   "comment": 76758,
   "dead": 7358,
   "deleted": 2855,
-  "other": 4,
+  "job": 4,
   "story": 10419,
   "total": 87181
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 6685,
+     "comment_live": 6685,
+     "story_all": 1172,
+     "story_live": 1172
+    },
+    "chatgpt": {
+     "comment_all": 418,
+     "comment_live": 418,
+     "story_all": 64,
+     "story_live": 64
+    },
+    "claude": {
+     "comment_all": 1283,
+     "comment_live": 1283,
+     "story_all": 197,
+     "story_live": 197
+    },
+    "copilot": {
+     "comment_all": 108,
+     "comment_live": 108,
+     "story_all": 15,
+     "story_live": 15
+    },
+    "core": {
+     "comment_all": 11565,
+     "comment_live": 11565,
+     "story_all": 1712,
+     "story_live": 1712
+    },
+    "gpt": {
+     "comment_all": 362,
+     "comment_live": 362,
+     "story_all": 54,
+     "story_live": 54
+    },
+    "llm": {
+     "comment_all": 3049,
+     "comment_live": 3049,
+     "story_all": 175,
+     "story_live": 175
+    },
+    "openai": {
+     "comment_all": 1064,
+     "comment_live": 1064,
+     "story_all": 143,
+     "story_live": 143
+    },
+    "python": {
+     "comment_all": 595,
+     "comment_live": 595,
+     "story_all": 60,
+     "story_live": 60
+    },
+    "remote": {
+     "comment_all": 830,
+     "comment_live": 830,
+     "story_all": 21,
+     "story_live": 21
+    },
+    "rust": {
+     "comment_all": 549,
+     "comment_live": 549,
+     "story_all": 114,
+     "story_live": 114
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 989,
+     "domain": "kqed.org",
+     "id": 49883539,
+     "points": 390,
+     "title": "California farmers are struggling to sell grapes as demand for wine drops"
+    },
+    {
+     "comments": 949,
+     "domain": "twitter.com",
+     "id": 49879645,
+     "points": 944,
+     "title": "Updated Google Maps shows destruction of the city of Rafah"
+    },
+    {
+     "comments": 884,
+     "domain": "",
+     "id": 49893157,
+     "points": 469,
+     "title": "Ask HN: What are you reading?"
+    },
+    {
+     "comments": 845,
+     "domain": "fortune.com",
+     "id": 49946228,
+     "points": 423,
+     "title": "LeCun has \"zero concerns\" about AI wiping out humanity, recent \"rogue\" incidents"
+    },
+    {
+     "comments": 817,
+     "domain": "theatlantic.com",
+     "id": 49944227,
+     "points": 492,
+     "title": "I quit OpenAI because its culture is broken"
+    },
+    {
+     "comments": 713,
+     "domain": "1011now.com",
+     "id": 49957068,
+     "points": 527,
+     "title": "Improper redaction reveals Google Data Center water and electricity usage"
+    },
+    {
+     "comments": 642,
+     "domain": "manuel.darcemont.fr",
+     "id": 49908394,
+     "points": 339,
+     "title": "The last time my family was replaced by technology"
+    },
+    {
+     "comments": 613,
+     "domain": "",
+     "id": 49922568,
+     "points": 136,
+     "title": "Ask HN: Who wants to be hired? (October 2026)"
+    },
+    {
+     "comments": 499,
+     "domain": "twitter.com",
+     "id": 49906432,
+     "points": 468,
+     "title": "Singapore govt dating app uses Gale-Shapley stable marriage algorithm"
+    },
+    {
+     "comments": 465,
+     "domain": "nissan-global.com",
+     "id": 49872883,
+     "points": 170,
+     "title": "Nissan's third generation e-POWER powertrain"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1190,
+     "domain": "blog.google",
+     "id": 49913571,
+     "points": 1702,
+     "title": "Gemini 4 Argon"
+    },
+    {
+     "comments": 989,
+     "domain": "kqed.org",
+     "id": 49883539,
+     "points": 390,
+     "title": "California farmers are struggling to sell grapes as demand for wine drops"
+    },
+    {
+     "comments": 955,
+     "domain": "openai.com",
+     "id": 49896586,
+     "points": 1067,
+     "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price"
+    },
+    {
+     "comments": 949,
+     "domain": "twitter.com",
+     "id": 49879645,
+     "points": 944,
+     "title": "Updated Google Maps shows destruction of the city of Rafah"
+    },
+    {
+     "comments": 884,
+     "domain": "",
+     "id": 49893157,
+     "points": 469,
+     "title": "Ask HN: What are you reading?"
+    },
+    {
+     "comments": 845,
+     "domain": "fortune.com",
+     "id": 49946228,
+     "points": 423,
+     "title": "LeCun has \"zero concerns\" about AI wiping out humanity, recent \"rogue\" incidents"
+    },
+    {
+     "comments": 817,
+     "domain": "theatlantic.com",
+     "id": 49944227,
+     "points": 492,
+     "title": "I quit OpenAI because its culture is broken"
+    },
+    {
+     "comments": 744,
+     "domain": "america.gov",
+     "id": 49893509,
+     "points": 779,
+     "title": "America.gov"
+    },
+    {
+     "comments": 738,
+     "domain": "derekthompson.org",
+     "id": 49891295,
+     "points": 838,
+     "title": "Everybody\u2019s home. No one\u2019s coming over"
+    },
+    {
+     "comments": 713,
+     "domain": "1011now.com",
+     "id": 49957068,
+     "points": 527,
+     "title": "Improper redaction reveals Google Data Center water and electricity usage"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 196,
+   "stories_100_points": 292
+  },
+  "volume": {
+   "comments_all": 76758,
+   "comments_dead_or_deleted": 6560,
+   "comments_live": 70198,
+   "distinct_authors": 22456,
+   "stories_all": 10419,
+   "stories_live": 7222
+  }
+ },
  "start_utc": "2026-09-28",
  "stories": {
   "comments": 71498,
@@ -2583,5 +3113,142 @@
    "title": "Everybody\u2019s home. No one\u2019s coming over"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 872,
+   "stories": 111
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 11,
+    "bankrupt": 2,
+    "funding": 10,
+    "ipo": 20,
+    "layoffs": 5,
+    "raises": 13,
+    "series": 4,
+    "shutdown": 6,
+    "valuation": 5
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 69,
+   "top": [
+    {
+     "comments": 169,
+     "domain": "postalemployeenetwork.com",
+     "id": 49899090,
+     "points": 281,
+     "title": "U.S. postal inspectors shut down website selling counterfeit postage labels"
+    },
+    {
+     "comments": 150,
+     "domain": "reuters.com",
+     "id": 49886005,
+     "points": 144,
+     "title": "Anthropic's IPO prospectus shows AI vision, surging costs"
+    },
+    {
+     "comments": 33,
+     "domain": "daringfireball.net",
+     "id": 49914149,
+     "points": 70,
+     "title": "Anthropic's IPO Prospectus Is a Fucking Doozy"
+    },
+    {
+     "comments": 15,
+     "domain": "bloomberg.com",
+     "id": 49897336,
+     "points": 44,
+     "title": "OpenAI Targets $30B in New Funding at $1.4T Value"
+    },
+    {
+     "comments": 11,
+     "domain": "amcompute.com",
+     "id": 49924543,
+     "points": 37,
+     "title": "The GPU Black Market That Washington Can't Shut Down"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6987,
+   "press": {
+    "comments": 7610,
+    "hit10": 109,
+    "points": 10671,
+    "stories": 600
+   },
+   "primary": {
+    "comments": 7663,
+    "hit10": 73,
+    "points": 15082,
+    "stories": 901
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 13
+   },
+   "bio": {
+    "stories": 6
+   },
+   "chips": {
+    "stories": 6
+   },
+   "data_center": {
+    "stories": 21
+   },
+   "fusion_fission": {
+    "stories": 11
+   },
+   "gpu": {
+    "stories": 37
+   },
+   "photonics_lidar": {
+    "stories": 3
+   },
+   "quantum": {
+    "stories": 15
+   },
+   "robotics": {
+    "stories": 37
+   },
+   "solar": {
+    "stories": 11
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 26,
+    "Amazon": 18,
+    "Anduril": 0,
+    "Anthropic": 65,
+    "Apple": 52,
+    "Cerebras": 0,
+    "Cloudflare": 30,
+    "DeepSeek": 13,
+    "Figma": 4,
+    "Google": 82,
+    "Hugging Face": 10,
+    "Intel": 7,
+    "Meta": 53,
+    "Microsoft": 28,
+    "Mistral": 2,
+    "Nvidia": 51,
+    "OpenAI": 130,
+    "Palantir": 8,
+    "Perplexity": 2,
+    "Rocket Lab": 0,
+    "SpaceX": 11,
+    "Stripe": 5,
+    "Supabase": 7,
+    "TSMC": 2,
+    "Tesla": 7,
+    "Vercel": 3,
+    "xAI": 2
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W40"
 }

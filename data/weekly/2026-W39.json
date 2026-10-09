@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2477,17 +2477,547 @@
   ]
  },
  "end_exclusive_utc": "2026-09-28",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 287,
+    "stories": 69
+   },
+   "ai_agents": {
+    "comments": 106,
+    "stories": 69
+   },
+   "claude_code": {
+    "comments": 266,
+    "stories": 68
+   },
+   "copilot": {
+    "comments": 107,
+    "stories": 17
+   },
+   "cursor": {
+    "comments": 99,
+    "stories": 11
+   },
+   "mcp": {
+    "comments": 260,
+    "stories": 56
+   }
+  },
+  "ask_hn": {
+   "stories": 109,
+   "top_by_comments": [
+    {
+     "comments": 304,
+     "domain": "",
+     "id": 49848955,
+     "points": 298,
+     "title": "Ask HN: Who's still keeping a DOS machine up because the business depends on it?"
+    },
+    {
+     "comments": 88,
+     "domain": "",
+     "id": 49786609,
+     "points": 154,
+     "title": "Ask HN: Is it impossible to disable Siri on macOS 27?"
+    },
+    {
+     "comments": 51,
+     "domain": "",
+     "id": 49826029,
+     "points": 30,
+     "title": "Ask HN: I just talked to an AI-obsessed client, and I need a shower afterwards"
+    },
+    {
+     "comments": 49,
+     "domain": "",
+     "id": 49833212,
+     "points": 21,
+     "title": "Ask HN: Hypothesis: Cellular providers are deprioritizing voice calls?"
+    },
+    {
+     "comments": 41,
+     "domain": "",
+     "id": 49802417,
+     "points": 14,
+     "title": "Ask HN: Should we still learn coding?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 10,
+   "job_items": 2,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 1,
+    "backend": 0,
+    "onsite": 0,
+    "python": 0,
+    "remote": 0,
+    "rust": 0,
+    "typescript": 0
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 192,
+    "stories": 12
+   },
+   "java": {
+    "comments": 175,
+    "stories": 16
+   },
+   "javascript": {
+    "comments": 133,
+    "stories": 20
+   },
+   "kotlin": {
+    "comments": 15,
+    "stories": 6
+   },
+   "python": {
+    "comments": 257,
+    "stories": 52
+   },
+   "rust": {
+    "comments": 329,
+    "stories": 86
+   },
+   "swift": {
+    "comments": 39,
+    "stories": 15
+   },
+   "typescript": {
+    "comments": 86,
+    "stories": 22
+   },
+   "zig": {
+    "comments": 47,
+    "stories": 5
+   }
+  },
+  "show_hn": {
+   "github": 281,
+   "hit10": 62,
+   "stories": 874,
+   "top": [
+    {
+     "comments": 126,
+     "domain": "bastardica.mitpit.com",
+     "id": 49823738,
+     "points": 862,
+     "title": "Show HN: Make cursed fonts like Times New Bastard"
+    },
+    {
+     "comments": 143,
+     "domain": "github.com",
+     "id": 49833867,
+     "points": 424,
+     "title": "Show HN: Whiteboard (YC W26) \u2013 An open-source IDE for thoughtful software design"
+    },
+    {
+     "comments": 119,
+     "domain": "github.com",
+     "id": 49858513,
+     "points": 414,
+     "title": "Show HN: Reladraw \u2013 A diagram language where you decide where to place things"
+    },
+    {
+     "comments": 139,
+     "domain": "loficities.com",
+     "id": 49869574,
+     "points": 320,
+     "title": "Show HN: Lofi Cities \u2013 Pixel-art city nights with browser-generated lofi"
+    },
+    {
+     "comments": 124,
+     "domain": "jev-pokemon.vercel.app",
+     "id": 49845172,
+     "points": 282,
+     "title": "Show HN: Jev Plays Pok\u00e9mon Red"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 67,
+    "stories": 15
+   },
+   "git": {
+    "comments": 316,
+    "stories": 39
+   },
+   "kubernetes": {
+    "comments": 65,
+    "stories": 9
+   },
+   "linux": {
+    "comments": 989,
+    "stories": 85
+   },
+   "neovim": {
+    "comments": 95,
+    "stories": 2
+   },
+   "postgres": {
+    "comments": 57,
+    "stories": 29
+   },
+   "react": {
+    "comments": 123,
+    "stories": 17
+   },
+   "sqlite": {
+    "comments": 52,
+    "stories": 16
+   },
+   "vscode": {
+    "comments": 155,
+    "stories": 11
+   },
+   "wasm": {
+    "comments": 57,
+    "stories": 23
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5176,
+   "top": [
+    {
+     "comments": 1125,
+     "domain": "sancho.bearblog.dev",
+     "id": 49870367,
+     "points": 2015,
+     "title": "When did Google get so weird?"
+    },
+    {
+     "comments": 421,
+     "domain": "f-droid.org",
+     "id": 49831968,
+     "points": 1465,
+     "title": "F-Droid 2.0"
+    },
+    {
+     "comments": 483,
+     "domain": "mimo.xiaomi.com",
+     "id": 49792730,
+     "points": 1130,
+     "title": "MiMo v2.6"
+    },
+    {
+     "comments": 330,
+     "domain": "alicegg.tech",
+     "id": 49787726,
+     "points": 1090,
+     "title": "Attention is all you have"
+    },
+    {
+     "comments": 460,
+     "domain": "blog.colinbreck.com",
+     "id": 49794330,
+     "points": 1070,
+     "title": "I don't want to read what you didn't write"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 900,
+    "domain": "tomshardware.com",
+    "id": 49844663,
+    "points": 403,
+    "title": "ASML says it sold 'absolutely nothing' in Europe in 2026"
+   },
+   {
+    "comments": 870,
+    "domain": "blog.landeconomics.org",
+    "id": 49836419,
+    "points": 294,
+    "title": "California is chasing wealth that has feet"
+   },
+   {
+    "comments": 838,
+    "domain": "electrek.co",
+    "id": 49823568,
+    "points": 446,
+    "title": "Toyota is taking the Corolla electric"
+   },
+   {
+    "comments": 745,
+    "domain": "kqed.org",
+    "id": 49796379,
+    "points": 372,
+    "title": "What California is learning from solar panels built over irrigation canals"
+   },
+   {
+    "comments": 625,
+    "domain": "aljazeera.com",
+    "id": 49858810,
+    "points": 206,
+    "title": "Japan moves to tighten rules for foreigners"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 119
+  },
+  "reading": {
+   "wikipedia": 70,
+   "youtube": 184
+  },
+  "variety": {
+   "distinct_domains": 3378,
+   "linked_stories": 6498,
+   "top10_domain_stories": 1445
+  }
+ },
  "items": {
   "comment": 80627,
   "dead": 7402,
   "deleted": 2873,
-  "other": 2,
+  "job": 2,
   "story": 9979,
   "total": 90608
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 6888,
+     "comment_live": 6888,
+     "story_all": 1062,
+     "story_live": 1062
+    },
+    "chatgpt": {
+     "comment_all": 363,
+     "comment_live": 363,
+     "story_all": 40,
+     "story_live": 40
+    },
+    "claude": {
+     "comment_all": 1540,
+     "comment_live": 1540,
+     "story_all": 166,
+     "story_live": 166
+    },
+    "copilot": {
+     "comment_all": 107,
+     "comment_live": 107,
+     "story_all": 17,
+     "story_live": 17
+    },
+    "core": {
+     "comment_all": 12400,
+     "comment_live": 12400,
+     "story_all": 1557,
+     "story_live": 1557
+    },
+    "gpt": {
+     "comment_all": 394,
+     "comment_live": 394,
+     "story_all": 43,
+     "story_live": 43
+    },
+    "llm": {
+     "comment_all": 3217,
+     "comment_live": 3217,
+     "story_all": 196,
+     "story_live": 196
+    },
+    "openai": {
+     "comment_all": 1270,
+     "comment_live": 1270,
+     "story_all": 123,
+     "story_live": 123
+    },
+    "python": {
+     "comment_all": 257,
+     "comment_live": 257,
+     "story_all": 52,
+     "story_live": 52
+    },
+    "remote": {
+     "comment_all": 292,
+     "comment_live": 292,
+     "story_all": 27,
+     "story_live": 27
+    },
+    "rust": {
+     "comment_all": 329,
+     "comment_live": 329,
+     "story_all": 86,
+     "story_live": 86
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 900,
+     "domain": "cnbc.com",
+     "id": 49845977,
+     "points": 499,
+     "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk"
+    },
+    {
+     "comments": 900,
+     "domain": "tomshardware.com",
+     "id": 49844663,
+     "points": 403,
+     "title": "ASML says it sold 'absolutely nothing' in Europe in 2026"
+    },
+    {
+     "comments": 870,
+     "domain": "blog.landeconomics.org",
+     "id": 49836419,
+     "points": 294,
+     "title": "California is chasing wealth that has feet"
+    },
+    {
+     "comments": 838,
+     "domain": "electrek.co",
+     "id": 49823568,
+     "points": 446,
+     "title": "Toyota is taking the Corolla electric"
+    },
+    {
+     "comments": 805,
+     "domain": "anthropic.com",
+     "id": 49820134,
+     "points": 780,
+     "title": "Claude discovers a novel enzyme system with CRISPR-like repeats"
+    },
+    {
+     "comments": 745,
+     "domain": "kqed.org",
+     "id": 49796379,
+     "points": 372,
+     "title": "What California is learning from solar panels built over irrigation canals"
+    },
+    {
+     "comments": 625,
+     "domain": "aljazeera.com",
+     "id": 49858810,
+     "points": 206,
+     "title": "Japan moves to tighten rules for foreigners"
+    },
+    {
+     "comments": 554,
+     "domain": "alexn.org",
+     "id": 49799965,
+     "points": 388,
+     "title": "AI Has No Wisdom and Neither Will You"
+    },
+    {
+     "comments": 554,
+     "domain": "blog.google",
+     "id": 49830606,
+     "points": 233,
+     "title": "Google\u2019s Project Suncatcher to put ML infrastructure in space"
+    },
+    {
+     "comments": 545,
+     "domain": "lwn.net",
+     "id": 49825642,
+     "points": 408,
+     "title": "Ideas on modernizing the open-source desktop"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1134,
+     "domain": "anthropic.com",
+     "id": 49803892,
+     "points": 1806,
+     "title": "Claude Opus 5.5"
+    },
+    {
+     "comments": 1125,
+     "domain": "sancho.bearblog.dev",
+     "id": 49870367,
+     "points": 2015,
+     "title": "When did Google get so weird?"
+    },
+    {
+     "comments": 900,
+     "domain": "cnbc.com",
+     "id": 49845977,
+     "points": 499,
+     "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk"
+    },
+    {
+     "comments": 900,
+     "domain": "tomshardware.com",
+     "id": 49844663,
+     "points": 403,
+     "title": "ASML says it sold 'absolutely nothing' in Europe in 2026"
+    },
+    {
+     "comments": 870,
+     "domain": "blog.landeconomics.org",
+     "id": 49836419,
+     "points": 294,
+     "title": "California is chasing wealth that has feet"
+    },
+    {
+     "comments": 855,
+     "domain": "openai.com",
+     "id": 49805509,
+     "points": 1779,
+     "title": "GPT-6 Sol and Luna"
+    },
+    {
+     "comments": 838,
+     "domain": "electrek.co",
+     "id": 49823568,
+     "points": 446,
+     "title": "Toyota is taking the Corolla electric"
+    },
+    {
+     "comments": 818,
+     "domain": "apnews.com",
+     "id": 49819221,
+     "points": 908,
+     "title": "Italian parliament votes for return to nuclear energy"
+    },
+    {
+     "comments": 805,
+     "domain": "anthropic.com",
+     "id": 49820134,
+     "points": 780,
+     "title": "Claude discovers a novel enzyme system with CRISPR-like repeats"
+    },
+    {
+     "comments": 745,
+     "domain": "kqed.org",
+     "id": 49796379,
+     "points": 372,
+     "title": "What California is learning from solar panels built over irrigation canals"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 201,
+   "stories_100_points": 294
+  },
+  "volume": {
+   "comments_all": 80627,
+   "comments_dead_or_deleted": 6611,
+   "comments_live": 74016,
+   "distinct_authors": 21851,
+   "stories_all": 9979,
+   "stories_live": 6733
+  }
+ },
  "start_utc": "2026-09-21",
  "stories": {
   "comments": 72456,
@@ -2645,5 +3175,142 @@
    "title": "Italian parliament votes for return to nuclear energy"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 680,
+   "stories": 81
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 3,
+    "bankrupt": 4,
+    "funding": 9,
+    "ipo": 4,
+    "layoffs": 5,
+    "raises": 7,
+    "series": 1,
+    "shutdown": 6,
+    "valuation": 6
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 43,
+   "top": [
+    {
+     "comments": 54,
+     "domain": "verda.com",
+     "id": 49798597,
+     "points": 88,
+     "title": "Verda (Finland) raises $189M in Series B"
+    },
+    {
+     "comments": 11,
+     "domain": "bloomberg.com",
+     "id": 49796292,
+     "points": 24,
+     "title": "Smart Ring Maker Oura, Backers Seek $2.2B in US IPO"
+    },
+    {
+     "comments": 0,
+     "domain": "inc.com",
+     "id": 49858838,
+     "points": 10,
+     "title": "Amazon Is Recruiting Laid Off Workers in Boomerang Hire Trend"
+    },
+    {
+     "comments": 0,
+     "domain": "wsj.com",
+     "id": 49800084,
+     "points": 9,
+     "title": "The Tech Elite Is Funding an Alternative to College"
+    },
+    {
+     "comments": 8,
+     "domain": "variety.com",
+     "id": 49809432,
+     "points": 8,
+     "title": "CNN Mood 'Like a Funeral' as Paramount Acquires Warner Bros"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6498,
+   "press": {
+    "comments": 8054,
+    "hit10": 116,
+    "points": 9901,
+    "stories": 549
+   },
+   "primary": {
+    "comments": 6874,
+    "hit10": 72,
+    "points": 13727,
+    "stories": 890
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 8
+   },
+   "bio": {
+    "stories": 4
+   },
+   "chips": {
+    "stories": 8
+   },
+   "data_center": {
+    "stories": 16
+   },
+   "fusion_fission": {
+    "stories": 4
+   },
+   "gpu": {
+    "stories": 39
+   },
+   "photonics_lidar": {
+    "stories": 4
+   },
+   "quantum": {
+    "stories": 21
+   },
+   "robotics": {
+    "stories": 32
+   },
+   "solar": {
+    "stories": 9
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 17,
+    "Amazon": 26,
+    "Anduril": 0,
+    "Anthropic": 44,
+    "Apple": 68,
+    "Cerebras": 0,
+    "Cloudflare": 11,
+    "DeepSeek": 8,
+    "Figma": 3,
+    "Google": 67,
+    "Hugging Face": 8,
+    "Intel": 7,
+    "Meta": 83,
+    "Microsoft": 29,
+    "Mistral": 4,
+    "Nvidia": 19,
+    "OpenAI": 113,
+    "Palantir": 6,
+    "Perplexity": 2,
+    "Rocket Lab": 0,
+    "SpaceX": 9,
+    "Stripe": 3,
+    "Supabase": 1,
+    "TSMC": 0,
+    "Tesla": 11,
+    "Vercel": 1,
+    "xAI": 2
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W39"
 }

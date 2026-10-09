@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2459,17 +2459,548 @@
   ]
  },
  "end_exclusive_utc": "2026-08-24",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 235,
+    "stories": 57
+   },
+   "ai_agents": {
+    "comments": 50,
+    "stories": 41
+   },
+   "claude_code": {
+    "comments": 289,
+    "stories": 69
+   },
+   "copilot": {
+    "comments": 96,
+    "stories": 13
+   },
+   "cursor": {
+    "comments": 178,
+    "stories": 26
+   },
+   "mcp": {
+    "comments": 180,
+    "stories": 68
+   }
+  },
+  "ask_hn": {
+   "stories": 139,
+   "top_by_comments": [
+    {
+     "comments": 437,
+     "domain": "",
+     "id": 49331033,
+     "points": 649,
+     "title": "Ask HN: Alternatives to GitHub"
+    },
+    {
+     "comments": 262,
+     "domain": "",
+     "id": 49332495,
+     "points": 328,
+     "title": "Ask HN: GitHub employees what's going on? Why?"
+    },
+    {
+     "comments": 175,
+     "domain": "",
+     "id": 49340013,
+     "points": 297,
+     "title": "Ask HN: Does anyone else feel like nothing matters anymore?"
+    },
+    {
+     "comments": 56,
+     "domain": "",
+     "id": 49395700,
+     "points": 82,
+     "title": "Ask HN: Just saw a YC25 job posting front page that looks like a 7-day work week"
+    },
+    {
+     "comments": 49,
+     "domain": "",
+     "id": 49332387,
+     "points": 17,
+     "title": "Ask HN: Is this the worst time to be human?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 26,
+   "job_items": 4,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 7,
+    "backend": 1,
+    "onsite": 1,
+    "python": 0,
+    "remote": 2,
+    "rust": 0,
+    "typescript": 0
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 240,
+    "stories": 12
+   },
+   "java": {
+    "comments": 173,
+    "stories": 12
+   },
+   "javascript": {
+    "comments": 150,
+    "stories": 16
+   },
+   "kotlin": {
+    "comments": 10,
+    "stories": 1
+   },
+   "python": {
+    "comments": 325,
+    "stories": 50
+   },
+   "rust": {
+    "comments": 655,
+    "stories": 86
+   },
+   "swift": {
+    "comments": 60,
+    "stories": 16
+   },
+   "typescript": {
+    "comments": 64,
+    "stories": 27
+   },
+   "zig": {
+    "comments": 110,
+    "stories": 8
+   }
+  },
+  "show_hn": {
+   "github": 303,
+   "hit10": 60,
+   "stories": 844,
+   "top": [
+    {
+     "comments": 117,
+     "domain": "simedw.com",
+     "id": 49373456,
+     "points": 598,
+     "title": "Show HN: I trained a 125M model to autocomplete piano on-device"
+    },
+    {
+     "comments": 209,
+     "domain": "danielvaughn.dev",
+     "id": 49378768,
+     "points": 384,
+     "title": "Show HN: Huzzah \u2013 a novel approach to coding with AI"
+    },
+    {
+     "comments": 76,
+     "domain": "desktopcolors.com",
+     "id": 49327643,
+     "points": 166,
+     "title": "Show HN: Desktopcolors.com \u2013 A museum for solid background colors of classic OS"
+    },
+    {
+     "comments": 97,
+     "domain": "github.com",
+     "id": 49355607,
+     "points": 161,
+     "title": "Show HN: Automatically detect and patch walking-dead states in Sierra games"
+    },
+    {
+     "comments": 44,
+     "domain": "tarjan.itch.io",
+     "id": 49410814,
+     "points": 156,
+     "title": "Show HN: I wrote a BASIC interpreter that boots on UEFI machines"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 87,
+    "stories": 12
+   },
+   "git": {
+    "comments": 475,
+    "stories": 47
+   },
+   "kubernetes": {
+    "comments": 51,
+    "stories": 11
+   },
+   "linux": {
+    "comments": 820,
+    "stories": 95
+   },
+   "neovim": {
+    "comments": 39,
+    "stories": 3
+   },
+   "postgres": {
+    "comments": 198,
+    "stories": 33
+   },
+   "react": {
+    "comments": 123,
+    "stories": 23
+   },
+   "sqlite": {
+    "comments": 123,
+    "stories": 23
+   },
+   "vscode": {
+    "comments": 75,
+    "stories": 13
+   },
+   "wasm": {
+    "comments": 70,
+    "stories": 10
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5611,
+   "top": [
+    {
+     "comments": 404,
+     "domain": "blog.curiousquail.com",
+     "id": 49379550,
+     "points": 1704,
+     "title": "Aaron Swartz was prosecuted for scraping, while Meta does it without consequence"
+    },
+    {
+     "comments": 430,
+     "domain": "openlogi.org",
+     "id": 49355606,
+     "points": 1635,
+     "title": "OpenLogi"
+    },
+    {
+     "comments": 351,
+     "domain": "schlarp.com",
+     "id": 49413320,
+     "points": 1453,
+     "title": "Everything I own, owned"
+    },
+    {
+     "comments": 705,
+     "domain": "seths.blog",
+     "id": 49345263,
+     "points": 1415,
+     "title": "The Amazon tax"
+    },
+    {
+     "comments": 394,
+     "domain": "kagi.com",
+     "id": 49388154,
+     "points": 1275,
+     "title": "Kagi added a setting for removing paywalled links from search results"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 1697,
+    "domain": "bbc.com",
+    "id": 49397074,
+    "points": 726,
+    "title": "Canada will match US tariffs 'dollar for dollar' as trade talks break down"
+   },
+   {
+    "comments": 1383,
+    "domain": "nytimes.com",
+    "id": 49386895,
+    "points": 1107,
+    "title": "Felony charges for citizen deleting phone data at US Border"
+   },
+   {
+    "comments": 979,
+    "domain": "ysph.yale.edu",
+    "id": 49332981,
+    "points": 902,
+    "title": "Universal health coverage could save $1T and 114k lives a year: study"
+   },
+   {
+    "comments": 976,
+    "domain": "githubstatus.com",
+    "id": 49330597,
+    "points": 562,
+    "title": "Incident with Github.com [resolved]"
+   },
+   {
+    "comments": 755,
+    "domain": "github.blog",
+    "id": 49378957,
+    "points": 643,
+    "title": "The August 17 outage"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 143
+  },
+  "reading": {
+   "wikipedia": 91,
+   "youtube": 233
+  },
+  "variety": {
+   "distinct_domains": 3443,
+   "linked_stories": 6771,
+   "top10_domain_stories": 1508
+  }
+ },
  "items": {
   "comment": 78601,
   "dead": 7509,
   "deleted": 2829,
-  "other": 7,
+  "job": 4,
+  "other": 3,
   "story": 10117,
   "total": 88725
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 5908,
+     "comment_live": 5908,
+     "story_all": 1007,
+     "story_live": 1007
+    },
+    "chatgpt": {
+     "comment_all": 347,
+     "comment_live": 347,
+     "story_all": 48,
+     "story_live": 48
+    },
+    "claude": {
+     "comment_all": 1653,
+     "comment_live": 1653,
+     "story_all": 171,
+     "story_live": 171
+    },
+    "copilot": {
+     "comment_all": 96,
+     "comment_live": 96,
+     "story_all": 13,
+     "story_live": 13
+    },
+    "core": {
+     "comment_all": 10682,
+     "comment_live": 10682,
+     "story_all": 1415,
+     "story_live": 1415
+    },
+    "gpt": {
+     "comment_all": 259,
+     "comment_live": 259,
+     "story_all": 24,
+     "story_live": 24
+    },
+    "llm": {
+     "comment_all": 3019,
+     "comment_live": 3019,
+     "story_all": 177,
+     "story_live": 177
+    },
+    "openai": {
+     "comment_all": 638,
+     "comment_live": 638,
+     "story_all": 86,
+     "story_live": 86
+    },
+    "python": {
+     "comment_all": 325,
+     "comment_live": 325,
+     "story_all": 50,
+     "story_live": 50
+    },
+    "remote": {
+     "comment_all": 373,
+     "comment_live": 373,
+     "story_all": 24,
+     "story_live": 24
+    },
+    "rust": {
+     "comment_all": 655,
+     "comment_live": 655,
+     "story_all": 86,
+     "story_live": 86
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1697,
+     "domain": "bbc.com",
+     "id": 49397074,
+     "points": 726,
+     "title": "Canada will match US tariffs 'dollar for dollar' as trade talks break down"
+    },
+    {
+     "comments": 1383,
+     "domain": "nytimes.com",
+     "id": 49386895,
+     "points": 1107,
+     "title": "Felony charges for citizen deleting phone data at US Border"
+    },
+    {
+     "comments": 979,
+     "domain": "ysph.yale.edu",
+     "id": 49332981,
+     "points": 902,
+     "title": "Universal health coverage could save $1T and 114k lives a year: study"
+    },
+    {
+     "comments": 976,
+     "domain": "githubstatus.com",
+     "id": 49330597,
+     "points": 562,
+     "title": "Incident with Github.com [resolved]"
+    },
+    {
+     "comments": 914,
+     "domain": "annas-archive.gl",
+     "id": 49383026,
+     "points": 648,
+     "title": "AI companies destroy physical books \u2013 let's scan rare books before it's too late"
+    },
+    {
+     "comments": 755,
+     "domain": "github.blog",
+     "id": 49378957,
+     "points": 643,
+     "title": "The August 17 outage"
+    },
+    {
+     "comments": 682,
+     "domain": "twitter.com",
+     "id": 49412396,
+     "points": 609,
+     "title": "I were 17, I'd learn how to build LLMs from scratch"
+    },
+    {
+     "comments": 569,
+     "domain": "sockpuppet.org",
+     "id": 49384210,
+     "points": 437,
+     "title": "Stop Making TUIs"
+    },
+    {
+     "comments": 545,
+     "domain": "twitter.com",
+     "id": 49325789,
+     "points": 250,
+     "title": "On AI regulation and messaging"
+    },
+    {
+     "comments": 502,
+     "domain": "asmedigitalcollection.asme.org",
+     "id": 49349147,
+     "points": 313,
+     "title": "Field measurements of neighborhood-scale air temperature impacts of data centers"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1697,
+     "domain": "bbc.com",
+     "id": 49397074,
+     "points": 726,
+     "title": "Canada will match US tariffs 'dollar for dollar' as trade talks break down"
+    },
+    {
+     "comments": 1383,
+     "domain": "nytimes.com",
+     "id": 49386895,
+     "points": 1107,
+     "title": "Felony charges for citizen deleting phone data at US Border"
+    },
+    {
+     "comments": 979,
+     "domain": "ysph.yale.edu",
+     "id": 49332981,
+     "points": 902,
+     "title": "Universal health coverage could save $1T and 114k lives a year: study"
+    },
+    {
+     "comments": 976,
+     "domain": "githubstatus.com",
+     "id": 49330597,
+     "points": 562,
+     "title": "Incident with Github.com [resolved]"
+    },
+    {
+     "comments": 914,
+     "domain": "annas-archive.gl",
+     "id": 49383026,
+     "points": 648,
+     "title": "AI companies destroy physical books \u2013 let's scan rare books before it's too late"
+    },
+    {
+     "comments": 881,
+     "domain": "responsiblestatecraft.org",
+     "id": 49337392,
+     "points": 1071,
+     "title": "Israel creates fake think tank in likely attempt to dupe AI chatbots"
+    },
+    {
+     "comments": 755,
+     "domain": "github.blog",
+     "id": 49378957,
+     "points": 643,
+     "title": "The August 17 outage"
+    },
+    {
+     "comments": 705,
+     "domain": "seths.blog",
+     "id": 49345263,
+     "points": 1415,
+     "title": "The Amazon tax"
+    },
+    {
+     "comments": 701,
+     "domain": "ft.com",
+     "id": 49411102,
+     "points": 821,
+     "title": "Anthropic's best AI model struggles to attract users as cheaper tools thrive"
+    },
+    {
+     "comments": 692,
+     "domain": "rickmanelius.com",
+     "id": 49336573,
+     "points": 1119,
+     "title": "AI;DR (AI; Didn't Read)"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 189,
+   "stories_100_points": 271
+  },
+  "volume": {
+   "comments_all": 78601,
+   "comments_dead_or_deleted": 6783,
+   "comments_live": 71818,
+   "distinct_authors": 21861,
+   "stories_all": 10117,
+   "stories_live": 7026
+  }
+ },
  "start_utc": "2026-08-17",
  "stories": {
   "comments": 68774,
@@ -2627,5 +3158,142 @@
    "title": "AliExpress runs silent WebAudio fingerprinting that breaks Bluetooth multipoint"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 701,
+   "stories": 86
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 6,
+    "bankrupt": 2,
+    "funding": 8,
+    "ipo": 6,
+    "layoffs": 4,
+    "raises": 9,
+    "series": 2,
+    "shutdown": 9,
+    "valuation": 6
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 49,
+   "top": [
+    {
+     "comments": 422,
+     "domain": "theregister.com",
+     "id": 49343559,
+     "points": 616,
+     "title": "Google has acquired the data of failed US airline Spirit"
+    },
+    {
+     "comments": 271,
+     "domain": "wsj.com",
+     "id": 49368886,
+     "points": 450,
+     "title": "CIA funding helped keep NeXT afloat in the 80s"
+    },
+    {
+     "comments": 192,
+     "domain": "highereddive.com",
+     "id": 49325159,
+     "points": 284,
+     "title": "The federal keyword lists that canceled billions in research funding"
+    },
+    {
+     "comments": 27,
+     "domain": "stwipe.com",
+     "id": 49374738,
+     "points": 221,
+     "title": "Stwipe Acquires OpenWouter"
+    },
+    {
+     "comments": 38,
+     "domain": "axios.com",
+     "id": 49339599,
+     "points": 96,
+     "title": "Google wins bankruptcy auction for Spirit Airlines emails, chats, documents"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6771,
+   "press": {
+    "comments": 9585,
+    "hit10": 136,
+    "points": 12067,
+    "stories": 651
+   },
+   "primary": {
+    "comments": 3683,
+    "hit10": 78,
+    "points": 7909,
+    "stories": 836
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 8
+   },
+   "bio": {
+    "stories": 9
+   },
+   "chips": {
+    "stories": 10
+   },
+   "data_center": {
+    "stories": 18
+   },
+   "fusion_fission": {
+    "stories": 8
+   },
+   "gpu": {
+    "stories": 36
+   },
+   "photonics_lidar": {
+    "stories": 2
+   },
+   "quantum": {
+    "stories": 20
+   },
+   "robotics": {
+    "stories": 52
+   },
+   "solar": {
+    "stories": 19
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 10,
+    "Amazon": 33,
+    "Anduril": 0,
+    "Anthropic": 44,
+    "Apple": 68,
+    "Cerebras": 4,
+    "Cloudflare": 10,
+    "DeepSeek": 28,
+    "Figma": 2,
+    "Google": 62,
+    "Hugging Face": 11,
+    "Intel": 7,
+    "Meta": 44,
+    "Microsoft": 27,
+    "Mistral": 0,
+    "Nvidia": 28,
+    "OpenAI": 75,
+    "Palantir": 7,
+    "Perplexity": 2,
+    "Rocket Lab": 2,
+    "SpaceX": 14,
+    "Stripe": 18,
+    "Supabase": 6,
+    "TSMC": 2,
+    "Tesla": 12,
+    "Vercel": 3,
+    "xAI": 1
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W34"
 }

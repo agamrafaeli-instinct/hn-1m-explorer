@@ -1,9 +1,9 @@
 {
  "archive": {
-  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_generated_at": "2026-10-09T07:05:42.024761+00:00",
   "manifest_rows": 1000000,
-  "max_time": 1791528261,
-  "min_time": 1784780429,
+  "max_time": 1791529494,
+  "min_time": 1784782118,
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  },
  "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
@@ -2471,17 +2471,548 @@
   ]
  },
  "end_exclusive_utc": "2026-09-14",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 248,
+    "stories": 48
+   },
+   "ai_agents": {
+    "comments": 65,
+    "stories": 52
+   },
+   "claude_code": {
+    "comments": 217,
+    "stories": 60
+   },
+   "copilot": {
+    "comments": 62,
+    "stories": 10
+   },
+   "cursor": {
+    "comments": 67,
+    "stories": 20
+   },
+   "mcp": {
+    "comments": 129,
+    "stories": 77
+   }
+  },
+  "ask_hn": {
+   "stories": 155,
+   "top_by_comments": [
+    {
+     "comments": 1235,
+     "domain": "",
+     "id": 49686380,
+     "points": 381,
+     "title": "Ask HN: What are you working on? (September 2026)"
+    },
+    {
+     "comments": 403,
+     "domain": "",
+     "id": 49657850,
+     "points": 868,
+     "title": "Ask HN: Can we please limit the AI news flood?"
+    },
+    {
+     "comments": 109,
+     "domain": "",
+     "id": 49672966,
+     "points": 64,
+     "title": "Ask HN: What default model do you use and why?"
+    },
+    {
+     "comments": 94,
+     "domain": "",
+     "id": 49626431,
+     "points": 72,
+     "title": "Ask HN: Anyone still coding like 2021? Where do you work?"
+    },
+    {
+     "comments": 44,
+     "domain": "",
+     "id": 49598009,
+     "points": 34,
+     "title": "Ask HN: 3.5 inch diskette read errors, would a period correct drive do better?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 36,
+   "job_items": 2,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 18,
+    "backend": 3,
+    "onsite": 7,
+    "python": 12,
+    "remote": 17,
+    "rust": 1,
+    "typescript": 6
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 222,
+    "stories": 16
+   },
+   "java": {
+    "comments": 172,
+    "stories": 12
+   },
+   "javascript": {
+    "comments": 182,
+    "stories": 19
+   },
+   "kotlin": {
+    "comments": 66,
+    "stories": 1
+   },
+   "python": {
+    "comments": 389,
+    "stories": 39
+   },
+   "rust": {
+    "comments": 512,
+    "stories": 86
+   },
+   "swift": {
+    "comments": 92,
+    "stories": 8
+   },
+   "typescript": {
+    "comments": 110,
+    "stories": 24
+   },
+   "zig": {
+    "comments": 38,
+    "stories": 5
+   }
+  },
+  "show_hn": {
+   "github": 297,
+   "hit10": 70,
+   "stories": 888,
+   "top": [
+    {
+     "comments": 290,
+     "domain": "rivendell.dmitrybrant.com",
+     "id": 49637385,
+     "points": 633,
+     "title": "Show HN: What if the speed of light was 5 km/h?"
+    },
+    {
+     "comments": 216,
+     "domain": "vester.si",
+     "id": 49649789,
+     "points": 341,
+     "title": "Show HN: Bodily Oddities"
+    },
+    {
+     "comments": 115,
+     "domain": "copperhead.sh",
+     "id": 49610059,
+     "points": 250,
+     "title": "Show HN: Copperhead \u2013 Cursor for circuit boards"
+    },
+    {
+     "comments": 85,
+     "domain": "hcker.news",
+     "id": 49659647,
+     "points": 207,
+     "title": "Show HN: Hacker News, without AI"
+    },
+    {
+     "comments": 82,
+     "domain": "unslop.news",
+     "id": 49660783,
+     "points": 198,
+     "title": "Show HN: Hacker News, Without AI"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 109,
+    "stories": 18
+   },
+   "git": {
+    "comments": 237,
+    "stories": 33
+   },
+   "kubernetes": {
+    "comments": 59,
+    "stories": 12
+   },
+   "linux": {
+    "comments": 698,
+    "stories": 81
+   },
+   "neovim": {
+    "comments": 7,
+    "stories": 0
+   },
+   "postgres": {
+    "comments": 141,
+    "stories": 43
+   },
+   "react": {
+    "comments": 355,
+    "stories": 20
+   },
+   "sqlite": {
+    "comments": 56,
+    "stories": 14
+   },
+   "vscode": {
+    "comments": 58,
+    "stories": 16
+   },
+   "wasm": {
+    "comments": 98,
+    "stories": 13
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5362,
+   "top": [
+    {
+     "comments": 827,
+     "domain": "cims.nyu.edu",
+     "id": 49605915,
+     "points": 2054,
+     "title": "Navier-Stokes \u2013 Tristan Buckmaster [pdf]"
+    },
+    {
+     "comments": 2545,
+     "domain": "apple.com",
+     "id": 49630931,
+     "points": 1485,
+     "title": "iPhone Duo"
+    },
+    {
+     "comments": 1137,
+     "domain": "openai.com",
+     "id": 49613262,
+     "points": 1346,
+     "title": "On the Navier\u2013Stokes Millennium Prize Problem"
+    },
+    {
+     "comments": 957,
+     "domain": "shopify.engineering",
+     "id": 49643982,
+     "points": 1275,
+     "title": "Shopify is moving from React Native back to Swift and Kotlin"
+    },
+    {
+     "comments": 571,
+     "domain": "vals.ai",
+     "id": 49688695,
+     "points": 1218,
+     "title": "Fable 5.1 Solves the Cyphral Distich, a 370-year-old cipher"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 2545,
+    "domain": "apple.com",
+    "id": 49630931,
+    "points": 1485,
+    "title": "iPhone Duo"
+   },
+   {
+    "comments": 1235,
+    "domain": "",
+    "id": 49686380,
+    "points": 381,
+    "title": "Ask HN: What are you working on? (September 2026)"
+   },
+   {
+    "comments": 1049,
+    "domain": "darioamodei.com",
+    "id": 49672510,
+    "points": 750,
+    "title": "We must pace the frontier"
+   },
+   {
+    "comments": 1012,
+    "domain": "youtube.com",
+    "id": 49592375,
+    "points": 940,
+    "title": "216M Spy TVs \u2013 The LG Smart TV Problem [video]"
+   },
+   {
+    "comments": 861,
+    "domain": "spectrum.ieee.org",
+    "id": 49629886,
+    "points": 448,
+    "title": "Growing proof that autonomous cars save lives"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 137
+  },
+  "reading": {
+   "wikipedia": 89,
+   "youtube": 219
+  },
+  "variety": {
+   "distinct_domains": 3414,
+   "linked_stories": 6668,
+   "top10_domain_stories": 1567
+  }
+ },
  "items": {
   "comment": 87855,
   "dead": 7662,
   "deleted": 3207,
-  "other": 8,
+  "job": 2,
+  "other": 6,
   "story": 10001,
   "total": 97864
  },
  "kind": "backfill",
- "saved_at": "2026-10-09T07:04:23Z",
- "schema_version": 1,
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-09T07:44:09Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 8160,
+     "comment_live": 8160,
+     "story_all": 1111,
+     "story_live": 1111
+    },
+    "chatgpt": {
+     "comment_all": 472,
+     "comment_live": 472,
+     "story_all": 55,
+     "story_live": 55
+    },
+    "claude": {
+     "comment_all": 1251,
+     "comment_live": 1251,
+     "story_all": 175,
+     "story_live": 175
+    },
+    "copilot": {
+     "comment_all": 62,
+     "comment_live": 62,
+     "story_all": 10,
+     "story_live": 10
+    },
+    "core": {
+     "comment_all": 13973,
+     "comment_live": 13973,
+     "story_all": 1612,
+     "story_live": 1612
+    },
+    "gpt": {
+     "comment_all": 339,
+     "comment_live": 339,
+     "story_all": 71,
+     "story_live": 71
+    },
+    "llm": {
+     "comment_all": 3312,
+     "comment_live": 3312,
+     "story_all": 172,
+     "story_live": 172
+    },
+    "openai": {
+     "comment_all": 2147,
+     "comment_live": 2147,
+     "story_all": 149,
+     "story_live": 149
+    },
+    "python": {
+     "comment_all": 389,
+     "comment_live": 389,
+     "story_all": 39,
+     "story_live": 39
+    },
+    "remote": {
+     "comment_all": 399,
+     "comment_live": 399,
+     "story_all": 20,
+     "story_live": 20
+    },
+    "rust": {
+     "comment_all": 512,
+     "comment_live": 512,
+     "story_all": 86,
+     "story_live": 86
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 2545,
+     "domain": "apple.com",
+     "id": 49630931,
+     "points": 1485,
+     "title": "iPhone Duo"
+    },
+    {
+     "comments": 1235,
+     "domain": "",
+     "id": 49686380,
+     "points": 381,
+     "title": "Ask HN: What are you working on? (September 2026)"
+    },
+    {
+     "comments": 1049,
+     "domain": "darioamodei.com",
+     "id": 49672510,
+     "points": 750,
+     "title": "We must pace the frontier"
+    },
+    {
+     "comments": 1017,
+     "domain": "twitter.com",
+     "id": 49619227,
+     "points": 740,
+     "title": "I resigned from Anthropic today"
+    },
+    {
+     "comments": 1012,
+     "domain": "youtube.com",
+     "id": 49592375,
+     "points": 940,
+     "title": "216M Spy TVs \u2013 The LG Smart TV Problem [video]"
+    },
+    {
+     "comments": 861,
+     "domain": "spectrum.ieee.org",
+     "id": 49629886,
+     "points": 448,
+     "title": "Growing proof that autonomous cars save lives"
+    },
+    {
+     "comments": 742,
+     "domain": "ai.meta.com",
+     "id": 49615537,
+     "points": 666,
+     "title": "Muse \u2013 Meta\u2019s personal AI agent"
+    },
+    {
+     "comments": 711,
+     "domain": "bbc.com",
+     "id": 49658299,
+     "points": 394,
+     "title": "Houthis 'take control' of key island in global shipping route"
+    },
+    {
+     "comments": 697,
+     "domain": "yoshuabengio.org",
+     "id": 49678969,
+     "points": 660,
+     "title": "Why are AI agents lying, cheating and coordinating?"
+    },
+    {
+     "comments": 607,
+     "domain": "joelotter.com",
+     "id": 49671329,
+     "points": 606,
+     "title": "Fuck it, make it anyway"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 2545,
+     "domain": "apple.com",
+     "id": 49630931,
+     "points": 1485,
+     "title": "iPhone Duo"
+    },
+    {
+     "comments": 1235,
+     "domain": "",
+     "id": 49686380,
+     "points": 381,
+     "title": "Ask HN: What are you working on? (September 2026)"
+    },
+    {
+     "comments": 1215,
+     "domain": "mathandai.org",
+     "id": 49662371,
+     "points": 1242,
+     "title": "A misalignment of AI in mathematics"
+    },
+    {
+     "comments": 1137,
+     "domain": "openai.com",
+     "id": 49613262,
+     "points": 1346,
+     "title": "On the Navier\u2013Stokes Millennium Prize Problem"
+    },
+    {
+     "comments": 1049,
+     "domain": "darioamodei.com",
+     "id": 49672510,
+     "points": 750,
+     "title": "We must pace the frontier"
+    },
+    {
+     "comments": 1017,
+     "domain": "twitter.com",
+     "id": 49619227,
+     "points": 740,
+     "title": "I resigned from Anthropic today"
+    },
+    {
+     "comments": 1012,
+     "domain": "youtube.com",
+     "id": 49592375,
+     "points": 940,
+     "title": "216M Spy TVs \u2013 The LG Smart TV Problem [video]"
+    },
+    {
+     "comments": 957,
+     "domain": "shopify.engineering",
+     "id": 49643982,
+     "points": 1275,
+     "title": "Shopify is moving from React Native back to Swift and Kotlin"
+    },
+    {
+     "comments": 861,
+     "domain": "spectrum.ieee.org",
+     "id": 49629886,
+     "points": 448,
+     "title": "Growing proof that autonomous cars save lives"
+    },
+    {
+     "comments": 827,
+     "domain": "cims.nyu.edu",
+     "id": 49605915,
+     "points": 2054,
+     "title": "Navier-Stokes \u2013 Tristan Buckmaster [pdf]"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 206,
+   "stories_100_points": 303
+  },
+  "volume": {
+   "comments_all": 87855,
+   "comments_dead_or_deleted": 7406,
+   "comments_live": 80449,
+   "distinct_authors": 23145,
+   "stories_all": 10001,
+   "stories_live": 6974
+  }
+ },
  "start_utc": "2026-09-07",
  "stories": {
   "comments": 79284,
@@ -2639,5 +3170,142 @@
    "title": "Keep Our Servers Running"
   }
  ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 778,
+   "stories": 72
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 6,
+    "bankrupt": 5,
+    "funding": 10,
+    "ipo": 11,
+    "layoffs": 2,
+    "raises": 11,
+    "series": 3,
+    "shutdown": 5,
+    "valuation": 5
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 54,
+   "top": [
+    {
+     "comments": 444,
+     "domain": "tailwindcss.com",
+     "id": 49626190,
+     "points": 1149,
+     "title": "Shopify acquires Tailwind"
+    },
+    {
+     "comments": 603,
+     "domain": "mistral.ai",
+     "id": 49605767,
+     "points": 850,
+     "title": "Mistral raises \u20ac3B"
+    },
+    {
+     "comments": 14,
+     "domain": "reuters.com",
+     "id": 49671296,
+     "points": 43,
+     "title": "Crypto farm in Mexican mountains puts spotlight on cartel funding"
+    },
+    {
+     "comments": 6,
+     "domain": "qz.com",
+     "id": 49594296,
+     "points": 33,
+     "title": "OpenAI 2025 financials $38.5B loss ahead of IPO"
+    },
+    {
+     "comments": 12,
+     "domain": "cognition.com",
+     "id": 49613312,
+     "points": 24,
+     "title": "Cognition (Devin) raises $2B at $48B valuation"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6668,
+   "press": {
+    "comments": 7027,
+    "hit10": 131,
+    "points": 10763,
+    "stories": 601
+   },
+   "primary": {
+    "comments": 5778,
+    "hit10": 77,
+    "points": 10382,
+    "stories": 871
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 9
+   },
+   "bio": {
+    "stories": 1
+   },
+   "chips": {
+    "stories": 19
+   },
+   "data_center": {
+    "stories": 14
+   },
+   "fusion_fission": {
+    "stories": 5
+   },
+   "gpu": {
+    "stories": 31
+   },
+   "photonics_lidar": {
+    "stories": 2
+   },
+   "quantum": {
+    "stories": 25
+   },
+   "robotics": {
+    "stories": 32
+   },
+   "solar": {
+    "stories": 19
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 8,
+    "Amazon": 14,
+    "Anduril": 1,
+    "Anthropic": 103,
+    "Apple": 88,
+    "Cerebras": 1,
+    "Cloudflare": 17,
+    "DeepSeek": 34,
+    "Figma": 2,
+    "Google": 88,
+    "Hugging Face": 8,
+    "Intel": 16,
+    "Meta": 42,
+    "Microsoft": 31,
+    "Mistral": 3,
+    "Nvidia": 20,
+    "OpenAI": 121,
+    "Palantir": 4,
+    "Perplexity": 4,
+    "Rocket Lab": 0,
+    "SpaceX": 4,
+    "Stripe": 2,
+    "Supabase": 1,
+    "TSMC": 1,
+    "Tesla": 20,
+    "Vercel": 4,
+    "xAI": 1
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by Agam. Mentions in story titles."
+  }
+ },
  "week": "2026-W37"
 }
