@@ -1,0 +1,2667 @@
+{
+ "archive": {
+  "manifest_generated_at": "2026-10-09T06:45:07.567946+00:00",
+  "manifest_rows": 1000000,
+  "max_time": 1791528261,
+  "min_time": 1784780429,
+  "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
+ },
+ "backfill_note": "Built after the week ended from the archive CSVs, not saved at the time. Same method and fields as a weekly save. Scores and comment counts are as first retrieved, same as every week.",
+ "baskets": {
+  "animals": {
+   "audience": "geeks",
+   "comments": 224,
+   "hit10": 3,
+   "points": 461,
+   "stories": 26,
+   "top_domains": [
+    {
+     "domain": "cnx-software.com",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "youtube.com",
+     "points": 3,
+     "stories": 2
+    },
+    {
+     "domain": "consumerrights.wiki",
+     "points": 259,
+     "stories": 1
+    },
+    {
+     "domain": "science.org",
+     "points": 71,
+     "stories": 1
+    },
+    {
+     "domain": "hannahilea.com",
+     "points": 61,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 166,
+     "domain": "consumerrights.wiki",
+     "id": 49130756,
+     "points": 259,
+     "title": "BMW Spider-Man in-car advertising"
+    },
+    {
+     "comments": 32,
+     "domain": "science.org",
+     "id": 49116074,
+     "points": 71,
+     "title": "Saber-toothed cats became inbred\u2013and struggled to move\u2013before they went extinct"
+    },
+    {
+     "comments": 9,
+     "domain": "hannahilea.com",
+     "id": 49113523,
+     "points": 61,
+     "title": "Birduino: A card-triggered audio player for [learning] the birds"
+    }
+   ]
+  },
+  "art": {
+   "audience": "geeks",
+   "comments": 207,
+   "hit10": 9,
+   "points": 812,
+   "stories": 42,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 77,
+     "stories": 6
+    },
+    {
+     "domain": "aeon.co",
+     "points": 22,
+     "stories": 2
+    },
+    {
+     "domain": "youtube.com",
+     "points": 7,
+     "stories": 2
+    },
+    {
+     "domain": "nostarch.com",
+     "points": 237,
+     "stories": 1
+    },
+    {
+     "domain": "animationobsessive.substack.com",
+     "points": 133,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 115,
+     "domain": "nostarch.com",
+     "id": 49134599,
+     "points": 237,
+     "title": "The Art of 64-bit Assembly"
+    },
+    {
+     "comments": 15,
+     "domain": "animationobsessive.substack.com",
+     "id": 49073785,
+     "points": 133,
+     "title": "The Artist Who Colored Ghibli"
+    },
+    {
+     "comments": 18,
+     "domain": "glyphsapp.com",
+     "id": 49085065,
+     "points": 101,
+     "title": "Glyphs 4 \u2013 the leading Mac font editor"
+    }
+   ]
+  },
+  "askhn": {
+   "audience": "engineers",
+   "comments": 966,
+   "hit10": 17,
+   "points": 791,
+   "stories": 113,
+   "top_domains": [],
+   "top_stories": [
+    {
+     "comments": 59,
+     "domain": "",
+     "id": 49099021,
+     "points": 64,
+     "title": "Ask HN: My domain registrar rug-pulled me for $3000 [fixed]"
+    },
+    {
+     "comments": 61,
+     "domain": "",
+     "id": 49095601,
+     "points": 51,
+     "title": "Ask HN: Anyone else tired of brands discontinuing your favorite everyday items?"
+    },
+    {
+     "comments": 48,
+     "domain": "",
+     "id": 49084404,
+     "points": 44,
+     "title": "Ask HN: Crooked Timber showed showed me a virus captcha, What now?"
+    }
+   ]
+  },
+  "books": {
+   "audience": "geeks",
+   "comments": 1584,
+   "hit10": 22,
+   "points": 2882,
+   "stories": 118,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 445,
+     "stories": 17
+    },
+    {
+     "domain": "youtube.com",
+     "points": 10,
+     "stories": 4
+    },
+    {
+     "domain": "twitter.com",
+     "points": 806,
+     "stories": 3
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 20,
+     "stories": 3
+    },
+    {
+     "domain": "theatlantic.com",
+     "points": 11,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 513,
+     "domain": "twitter.com",
+     "id": 49068738,
+     "points": 801,
+     "title": "AI companies are shredding rare books"
+    },
+    {
+     "comments": 162,
+     "domain": "geospatialml.com",
+     "id": 49116721,
+     "points": 276,
+     "title": "I flagged two research papers for fake authors and both were accepted as orals"
+    },
+    {
+     "comments": 31,
+     "domain": "carlkolon.com",
+     "id": 49135457,
+     "points": 237,
+     "title": "Carl's Required Reading"
+    }
+   ]
+  },
+  "boring": {
+   "audience": "geeks",
+   "comments": 218,
+   "hit10": 6,
+   "points": 528,
+   "stories": 53,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 16,
+     "stories": 3
+    },
+    {
+     "domain": "youtube.com",
+     "points": 5,
+     "stories": 2
+    },
+    {
+     "domain": "medium.com",
+     "points": 4,
+     "stories": 2
+    },
+    {
+     "domain": "power2026.ai",
+     "points": 3,
+     "stories": 2
+    },
+    {
+     "domain": "eff.org",
+     "points": 167,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 92,
+     "domain": "eff.org",
+     "id": 49096885,
+     "points": 167,
+     "title": "San Francisco: Don't Fall for Industry Defense of Surveillance Pricing"
+    },
+    {
+     "comments": 83,
+     "domain": "spawn-queue.acm.org",
+     "id": 49081644,
+     "points": 160,
+     "title": "Google's Beyond Zero: Enterprise Security for the AI Era"
+    },
+    {
+     "comments": 8,
+     "domain": "theguardian.com",
+     "id": 49064392,
+     "points": 45,
+     "title": "New Jersey governor signs law banning surveillance pricing to protect shoppers"
+    }
+   ]
+  },
+  "climate": {
+   "audience": "geeks",
+   "comments": 24,
+   "hit10": 2,
+   "points": 89,
+   "stories": 15,
+   "top_domains": [
+    {
+     "domain": "bloomberg.com",
+     "points": 8,
+     "stories": 2
+    },
+    {
+     "domain": "cnbc.com",
+     "points": 34,
+     "stories": 1
+    },
+    {
+     "domain": "brethorsting.com",
+     "points": 10,
+     "stories": 1
+    },
+    {
+     "domain": "contrails.org",
+     "points": 9,
+     "stories": 1
+    },
+    {
+     "domain": "projects.propublica.org",
+     "points": 5,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 9,
+     "domain": "cnbc.com",
+     "id": 49065145,
+     "points": 34,
+     "title": "Sand battery: Finland's answer to a renewable energy headache"
+    },
+    {
+     "comments": 9,
+     "domain": "brethorsting.com",
+     "id": 49139826,
+     "points": 10,
+     "title": "The Greenhouse and the Lens: Two Modes of Agentic AI Work"
+    },
+    {
+     "comments": 1,
+     "domain": "contrails.org",
+     "id": 49083480,
+     "points": 9,
+     "title": "Contrail Avoidance for the Climate"
+    }
+   ]
+  },
+  "deeptech": {
+   "audience": "vcs",
+   "comments": 699,
+   "hit10": 9,
+   "points": 909,
+   "stories": 62,
+   "top_domains": [
+    {
+     "domain": "arstechnica.com",
+     "points": 22,
+     "stories": 4
+    },
+    {
+     "domain": "nextplatform.com",
+     "points": 16,
+     "stories": 4
+    },
+    {
+     "domain": "reuters.com",
+     "points": 124,
+     "stories": 3
+    },
+    {
+     "domain": "phys.org",
+     "points": 13,
+     "stories": 3
+    },
+    {
+     "domain": "zenodo.org",
+     "points": 11,
+     "stories": 3
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 314,
+     "domain": "construction-physics.com",
+     "id": 49109193,
+     "points": 233,
+     "title": "Why is everyone trying to build a solid-state battery?"
+    },
+    {
+     "comments": 118,
+     "domain": "reuters.com",
+     "id": 49110319,
+     "points": 110,
+     "title": "China begins producing advanced chipmaking deep-ultraviolet lithography machines"
+    },
+    {
+     "comments": 133,
+     "domain": "regen.co.uk",
+     "id": 49140633,
+     "points": 101,
+     "title": "Plug-in solar is coming. Plug-in batteries should follow"
+    }
+   ]
+  },
+  "diy": {
+   "audience": "geeks",
+   "comments": 34,
+   "hit10": 3,
+   "points": 118,
+   "stories": 20,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 7,
+     "stories": 2
+    },
+    {
+     "domain": "gavinmai.com",
+     "points": 40,
+     "stories": 1
+    },
+    {
+     "domain": "tomshardware.com",
+     "points": 23,
+     "stories": 1
+    },
+    {
+     "domain": "smolnero.com",
+     "points": 11,
+     "stories": 1
+    },
+    {
+     "domain": "brennan.day",
+     "points": 7,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 16,
+     "domain": "gavinmai.com",
+     "id": 49069791,
+     "points": 40,
+     "title": "DIY Home Solar System for under $5000 (2025)"
+    },
+    {
+     "comments": 4,
+     "domain": "tomshardware.com",
+     "id": 49063668,
+     "points": 23,
+     "title": "Open-source 3D-printed portable MRI machine built for under $70k"
+    },
+    {
+     "comments": 2,
+     "domain": "smolnero.com",
+     "id": 49084215,
+     "points": 11,
+     "title": "When Internal Memory Fails: A No-Solder Wii U Recovery"
+    }
+   ]
+  },
+  "education": {
+   "audience": "geeks",
+   "comments": 708,
+   "hit10": 17,
+   "points": 1067,
+   "stories": 84,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 17,
+     "stories": 4
+    },
+    {
+     "domain": "wsj.com",
+     "points": 31,
+     "stories": 3
+    },
+    {
+     "domain": "propublica.org",
+     "points": 17,
+     "stories": 3
+    },
+    {
+     "domain": "arxiv.org",
+     "points": 11,
+     "stories": 3
+    },
+    {
+     "domain": "forta.com",
+     "points": 6,
+     "stories": 3
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 173,
+     "domain": "learnvector.ai",
+     "id": 49092499,
+     "points": 269,
+     "title": "LearnVector \u2013 Andrew Ng's AI company building one\u2011to\u2011one learning experiences"
+    },
+    {
+     "comments": 89,
+     "domain": "techspot.com",
+     "id": 49074680,
+     "points": 106,
+     "title": "Professor's invisible prompt trap catches 32/35 students cheating with AI"
+    },
+    {
+     "comments": 33,
+     "domain": "futurism.com",
+     "id": 49077725,
+     "points": 77,
+     "title": "Teacher Arrested for Clapping in Support of Anti-Data Center Activists"
+    }
+   ]
+  },
+  "food": {
+   "audience": "geeks",
+   "comments": 272,
+   "hit10": 5,
+   "points": 483,
+   "stories": 34,
+   "top_domains": [
+    {
+     "domain": "cnbc.com",
+     "points": 10,
+     "stories": 2
+    },
+    {
+     "domain": "cnn.com",
+     "points": 8,
+     "stories": 2
+    },
+    {
+     "domain": "youtube.com",
+     "points": 8,
+     "stories": 2
+    },
+    {
+     "domain": "lighthousereports.com",
+     "points": 274,
+     "stories": 1
+    },
+    {
+     "domain": "buttondown.com",
+     "points": 53,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 183,
+     "domain": "lighthousereports.com",
+     "id": 49124858,
+     "points": 274,
+     "title": "Big Food vs. the People"
+    },
+    {
+     "comments": 55,
+     "domain": "buttondown.com",
+     "id": 49073017,
+     "points": 53,
+     "title": "The American Grilled Cheese Sandwich Essay (2024)"
+    },
+    {
+     "comments": 6,
+     "domain": "cookingforengineers.com",
+     "id": 49097289,
+     "points": 38,
+     "title": "Cooking for Engineers"
+    }
+   ]
+  },
+  "games": {
+   "audience": "geeks",
+   "comments": 987,
+   "hit10": 22,
+   "points": 1822,
+   "stories": 116,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 19,
+     "stories": 8
+    },
+    {
+     "domain": "github.com",
+     "points": 216,
+     "stories": 7
+    },
+    {
+     "domain": "blog.gingerbeardman.com",
+     "points": 47,
+     "stories": 2
+    },
+    {
+     "domain": "4rh1t3ct0r7.github.io",
+     "points": 19,
+     "stories": 2
+    },
+    {
+     "domain": "cnx-software.com",
+     "points": 6,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 183,
+     "domain": "digitalfoundry.net",
+     "id": 49099715,
+     "points": 442,
+     "title": "Keychron announces first open-source firmware for gaming mice"
+    },
+    {
+     "comments": 24,
+     "domain": "github.com",
+     "id": 49067352,
+     "points": 196,
+     "title": "Libsm64: Mario 64 as a library for use in external game engines"
+    },
+    {
+     "comments": 134,
+     "domain": "arstechnica.com",
+     "id": 49120230,
+     "points": 125,
+     "title": "Just because a game is on disc doesn't mean it will work in the future"
+    }
+   ]
+  },
+  "health": {
+   "audience": "geeks",
+   "comments": 1194,
+   "hit10": 5,
+   "points": 1561,
+   "stories": 47,
+   "top_domains": [
+    {
+     "domain": "erictopol.substack.com",
+     "points": 8,
+     "stories": 2
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 7,
+     "stories": 2
+    },
+    {
+     "domain": "bloomberg.com",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "lji.org",
+     "points": 662,
+     "stories": 1
+    },
+    {
+     "domain": "nypost.com",
+     "points": 443,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 295,
+     "domain": "lji.org",
+     "id": 49083314,
+     "points": 662,
+     "title": "New HIV vaccine shows unprecedented success in preclinical study"
+    },
+    {
+     "comments": 502,
+     "domain": "nypost.com",
+     "id": 49076923,
+     "points": 443,
+     "title": "Netflix employee fired for sharing personal details in retreat trust exercise"
+    },
+    {
+     "comments": 115,
+     "domain": "cam.ac.uk",
+     "id": 49110348,
+     "points": 122,
+     "title": "Why DNA damage from smoking and UV rays cause cancer in some but not others"
+    }
+   ]
+  },
+  "history": {
+   "audience": "geeks",
+   "comments": 719,
+   "hit10": 25,
+   "points": 1751,
+   "stories": 105,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 35,
+     "stories": 10
+    },
+    {
+     "domain": "github.com",
+     "points": 131,
+     "stories": 6
+    },
+    {
+     "domain": "en.wikipedia.org",
+     "points": 14,
+     "stories": 4
+    },
+    {
+     "domain": "archive.org",
+     "points": 68,
+     "stories": 3
+    },
+    {
+     "domain": "ft.com",
+     "points": 212,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 201,
+     "domain": "ft.com",
+     "id": 49143188,
+     "points": 203,
+     "title": "US Treasury undertakes historic intervention in yen market"
+    },
+    {
+     "comments": 34,
+     "domain": "nanochess.org",
+     "id": 49129008,
+     "points": 190,
+     "title": "Unearthing my 1996 windowed OS in machine code for Am29000 homebrew computer"
+    },
+    {
+     "comments": 49,
+     "domain": "98.js.org",
+     "id": 49108485,
+     "points": 117,
+     "title": "3D Pinball for Windows (1995)"
+    }
+   ]
+  },
+  "languages": {
+   "audience": "geeks",
+   "comments": 28,
+   "hit10": 1,
+   "points": 146,
+   "stories": 14,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 4,
+     "stories": 3
+    },
+    {
+     "domain": "resobscura.substack.com",
+     "points": 117,
+     "stories": 1
+    },
+    {
+     "domain": "animalcognition.org",
+     "points": 5,
+     "stories": 1
+    },
+    {
+     "domain": "amangoel.ai",
+     "points": 4,
+     "stories": 1
+    },
+    {
+     "domain": "arxiv.org",
+     "points": 3,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 25,
+     "domain": "resobscura.substack.com",
+     "id": 49129545,
+     "points": 117,
+     "title": "Why etymologies matter: How tracing words can illuminate history (2024)"
+    },
+    {
+     "comments": 0,
+     "domain": "animalcognition.org",
+     "id": 49084181,
+     "points": 5,
+     "title": "The Linguistic Genius of Prairie Dogs (2015)"
+    },
+    {
+     "comments": 0,
+     "domain": "amangoel.ai",
+     "id": 49105227,
+     "points": 4,
+     "title": "Before the theorem prover: verification is older than the alphabet"
+    }
+   ]
+  },
+  "maps": {
+   "audience": "geeks",
+   "comments": 357,
+   "hit10": 8,
+   "points": 588,
+   "stories": 45,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 10,
+     "stories": 5
+    },
+    {
+     "domain": "reuters.com",
+     "points": 15,
+     "stories": 2
+    },
+    {
+     "domain": "arxiv.org",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "cheapfoodmap.com",
+     "points": 287,
+     "stories": 1
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 52,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 258,
+     "domain": "cheapfoodmap.com",
+     "id": 49100043,
+     "points": 287,
+     "title": "Show HN: CheapFoodMap \u2013 A map of good meals under $10"
+    },
+    {
+     "comments": 30,
+     "domain": "theguardian.com",
+     "id": 49112671,
+     "points": 52,
+     "title": "US gov and OpenAI mislabel map of Africa at global conference"
+    },
+    {
+     "comments": 2,
+     "domain": "tidefield.dev",
+     "id": 49073665,
+     "points": 49,
+     "title": "Bytecode-to-Source Mapping"
+    }
+   ]
+  },
+  "music": {
+   "audience": "geeks",
+   "comments": 299,
+   "hit10": 8,
+   "points": 695,
+   "stories": 33,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 24,
+     "stories": 4
+    },
+    {
+     "domain": "medium.com",
+     "points": 5,
+     "stories": 3
+    },
+    {
+     "domain": "techcrunch.com",
+     "points": 47,
+     "stories": 2
+    },
+    {
+     "domain": "euronews.com",
+     "points": 342,
+     "stories": 1
+    },
+    {
+     "domain": "arxiv.org",
+     "points": 105,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 80,
+     "domain": "euronews.com",
+     "id": 49096290,
+     "points": 342,
+     "title": "French musician Kavinsky found dead"
+    },
+    {
+     "comments": 114,
+     "domain": "arxiv.org",
+     "id": 49085280,
+     "points": 105,
+     "title": "Harmony Explained: Progress Towards a Scientific Theory of Music (2012)"
+    },
+    {
+     "comments": 48,
+     "domain": "harpguitars.net",
+     "id": 49067690,
+     "points": 68,
+     "title": "The Birth of the American 12-string Guitar (2013)"
+    }
+   ]
+  },
+  "newsys": {
+   "audience": "engineers",
+   "comments": 892,
+   "hit10": 14,
+   "points": 1435,
+   "stories": 64,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 236,
+     "stories": 23
+    },
+    {
+     "domain": "tomekw.com",
+     "points": 25,
+     "stories": 2
+    },
+    {
+     "domain": "theregister.com",
+     "points": 22,
+     "stories": 2
+    },
+    {
+     "domain": "blogsystem5.substack.com",
+     "points": 7,
+     "stories": 2
+    },
+    {
+     "domain": "nnethercote.github.io",
+     "points": 6,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 384,
+     "domain": "lockwood.dev",
+     "id": 49067854,
+     "points": 496,
+     "title": "How is the Bun rewrite in Rust going?"
+    },
+    {
+     "comments": 268,
+     "domain": "mlugg.co.uk",
+     "id": 49085666,
+     "points": 274,
+     "title": "Zig's Incremental Compilation Internals"
+    },
+    {
+     "comments": 61,
+     "domain": "blog.rust-lang.org",
+     "id": 49143096,
+     "points": 110,
+     "title": "Rust All Hands 2026 Retrospective"
+    }
+   ]
+  },
+  "privacy": {
+   "audience": "geeks",
+   "comments": 305,
+   "hit10": 8,
+   "points": 717,
+   "stories": 45,
+   "top_domains": [
+    {
+     "domain": "eff.org",
+     "points": 191,
+     "stories": 4
+    },
+    {
+     "domain": "github.com",
+     "points": 25,
+     "stories": 4
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 53,
+     "stories": 2
+    },
+    {
+     "domain": "martinodersky.substack.com",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "youtube.com",
+     "points": 5,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 166,
+     "domain": "michaelgeist.ca",
+     "id": 49134694,
+     "points": 316,
+     "title": "A Surveillance Treaty in Disguise: Canada Signs UN Cybercrime Convention"
+    },
+    {
+     "comments": 92,
+     "domain": "eff.org",
+     "id": 49096885,
+     "points": 167,
+     "title": "San Francisco: Don't Fall for Industry Defense of Surveillance Pricing"
+    },
+    {
+     "comments": 8,
+     "domain": "theguardian.com",
+     "id": 49064392,
+     "points": 45,
+     "title": "New Jersey governor signs law banning surveillance pricing to protect shoppers"
+    }
+   ]
+  },
+  "puzzle": {
+   "audience": "geeks",
+   "comments": 44,
+   "hit10": 4,
+   "points": 215,
+   "stories": 24,
+   "top_domains": [
+    {
+     "domain": "chipsandcheese.com",
+     "points": 19,
+     "stories": 3
+    },
+    {
+     "domain": "youtube.com",
+     "points": 19,
+     "stories": 2
+    },
+    {
+     "domain": "leadedsolder.com",
+     "points": 87,
+     "stories": 1
+    },
+    {
+     "domain": "con-dog.github.io",
+     "points": 25,
+     "stories": 1
+    },
+    {
+     "domain": "doku.su",
+     "points": 9,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 11,
+     "domain": "leadedsolder.com",
+     "id": 49092746,
+     "points": 87,
+     "title": "The BBC Tetris Companion"
+    },
+    {
+     "comments": 9,
+     "domain": "con-dog.github.io",
+     "id": 49066083,
+     "points": 25,
+     "title": "Show HN: Watch 14-Byte AI \"brains\" attempt to solve a 2D maze (Its hard)"
+    },
+    {
+     "comments": 0,
+     "domain": "youtube.com",
+     "id": 49098562,
+     "points": 17,
+     "title": "Can Grafana Labs' web testing agents beat Wordle? [video]"
+    }
+   ]
+  },
+  "questions": {
+   "audience": "geeks",
+   "comments": 4405,
+   "hit10": 76,
+   "points": 6046,
+   "stories": 457,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 85,
+     "stories": 20
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 129,
+     "stories": 11
+    },
+    {
+     "domain": "arxiv.org",
+     "points": 151,
+     "stories": 10
+    },
+    {
+     "domain": "old.reddit.com",
+     "points": 22,
+     "stories": 6
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 91,
+     "stories": 5
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 384,
+     "domain": "lockwood.dev",
+     "id": 49067854,
+     "points": 496,
+     "title": "How is the Bun rewrite in Rust going?"
+    },
+    {
+     "comments": 209,
+     "domain": "elgan.com",
+     "id": 49137681,
+     "points": 284,
+     "title": "Google has abandoned Google News?"
+    },
+    {
+     "comments": 252,
+     "domain": "incoherency.co.uk",
+     "id": 49069132,
+     "points": 247,
+     "title": "Should you wash your solar panels?"
+    }
+   ]
+  },
+  "retro": {
+   "audience": "geeks",
+   "comments": 113,
+   "hit10": 10,
+   "points": 594,
+   "stories": 27,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 49,
+     "stories": 4
+    },
+    {
+     "domain": "github.com",
+     "points": 8,
+     "stories": 4
+    },
+    {
+     "domain": "amiga.lychesis.net",
+     "points": 171,
+     "stories": 1
+    },
+    {
+     "domain": "medium.com",
+     "points": 92,
+     "stories": 1
+    },
+    {
+     "domain": "blog.lon.tv",
+     "points": 73,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 25,
+     "domain": "amiga.lychesis.net",
+     "id": 49095511,
+     "points": 171,
+     "title": "Amiga Graphics Archive"
+    },
+    {
+     "comments": 13,
+     "domain": "medium.com",
+     "id": 49113256,
+     "points": 92,
+     "title": "STV: A full-motion video codec for the Atari ST"
+    },
+    {
+     "comments": 21,
+     "domain": "blog.lon.tv",
+     "id": 49147760,
+     "points": 73,
+     "title": "TinyNES Review \u2013 A Super Niche NES Console"
+    }
+   ]
+  },
+  "science": {
+   "audience": "geeks",
+   "comments": 586,
+   "hit10": 16,
+   "points": 1459,
+   "stories": 103,
+   "top_domains": [
+    {
+     "domain": "arxiv.org",
+     "points": 17,
+     "stories": 6
+    },
+    {
+     "domain": "youtube.com",
+     "points": 11,
+     "stories": 4
+    },
+    {
+     "domain": "en.wikipedia.org",
+     "points": 13,
+     "stories": 3
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 7,
+     "stories": 3
+    },
+    {
+     "domain": "github.com",
+     "points": 5,
+     "stories": 3
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 0,
+     "domain": "openai.com",
+     "id": 49132058,
+     "points": 464,
+     "title": "Ten advances in mathematics and theoretical computer science"
+    },
+    {
+     "comments": 166,
+     "domain": "consumerrights.wiki",
+     "id": 49130756,
+     "points": 259,
+     "title": "BMW Spider-Man in-car advertising"
+    },
+    {
+     "comments": 55,
+     "domain": "arsastronomica.com",
+     "id": 49079727,
+     "points": 109,
+     "title": "Ars Astronomica \u2013 English translations of rare Hebrew and Latin astronomy texts"
+    }
+   ]
+  },
+  "showhn": {
+   "audience": "engineers",
+   "comments": 3870,
+   "hit10": 97,
+   "points": 10575,
+   "stories": 930,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 4743,
+     "stories": 342
+    },
+    {
+     "domain": "chromewebstore.google.com",
+     "points": 24,
+     "stories": 10
+    },
+    {
+     "domain": "huggingface.co",
+     "points": 10,
+     "stories": 4
+    },
+    {
+     "domain": "apps.apple.com",
+     "points": 9,
+     "stories": 4
+    },
+    {
+     "domain": "wfy24.com",
+     "points": 15,
+     "stories": 3
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 415,
+     "domain": "john.fun",
+     "id": 49124218,
+     "points": 1680,
+     "title": "Show HN: Elevators"
+    },
+    {
+     "comments": 342,
+     "domain": "github.com",
+     "id": 49098510,
+     "points": 919,
+     "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac"
+    },
+    {
+     "comments": 126,
+     "domain": "github.com",
+     "id": 49090607,
+     "points": 433,
+     "title": "Show HN: I was tired of opening 2 tabs for every HN link, so I made a userscript"
+    }
+   ]
+  },
+  "space": {
+   "audience": "geeks",
+   "comments": 195,
+   "hit10": 13,
+   "points": 778,
+   "stories": 98,
+   "top_domains": [
+    {
+     "domain": "theguardian.com",
+     "points": 20,
+     "stories": 4
+    },
+    {
+     "domain": "phys.org",
+     "points": 25,
+     "stories": 3
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 24,
+     "stories": 3
+    },
+    {
+     "domain": "wsj.com",
+     "points": 15,
+     "stories": 3
+    },
+    {
+     "domain": "cnbc.com",
+     "points": 9,
+     "stories": 3
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 82,
+     "domain": "projectpluto.com",
+     "id": 49109616,
+     "points": 220,
+     "title": "Upper stage impacting the moon on 2026 August 5"
+    },
+    {
+     "comments": 55,
+     "domain": "arsastronomica.com",
+     "id": 49079727,
+     "points": 109,
+     "title": "Ars Astronomica \u2013 English translations of rare Hebrew and Latin astronomy texts"
+    },
+    {
+     "comments": 6,
+     "domain": "gamingonlinux.com",
+     "id": 49084898,
+     "points": 30,
+     "title": "GOG confirm they are working towards GOG Galaxy on Linux"
+    }
+   ]
+  },
+  "weird": {
+   "audience": "geeks",
+   "comments": 791,
+   "hit10": 14,
+   "points": 1249,
+   "stories": 53,
+   "top_domains": [
+    {
+     "domain": "nytimes.com",
+     "points": 79,
+     "stories": 4
+    },
+    {
+     "domain": "theatlantic.com",
+     "points": 18,
+     "stories": 3
+    },
+    {
+     "domain": "quantamagazine.org",
+     "points": 241,
+     "stories": 2
+    },
+    {
+     "domain": "iza.ac",
+     "points": 65,
+     "stories": 2
+    },
+    {
+     "domain": "nautil.us",
+     "points": 6,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 209,
+     "domain": "elgan.com",
+     "id": 49137681,
+     "points": 284,
+     "title": "Google has abandoned Google News?"
+    },
+    {
+     "comments": 287,
+     "domain": "defector.com",
+     "id": 49125168,
+     "points": 267,
+     "title": "Decades-old fish sauce at abandoned factory in Canada finally being removed"
+    },
+    {
+     "comments": 179,
+     "domain": "quantamagazine.org",
+     "id": 49111305,
+     "points": 236,
+     "title": "Physicists Solve a Muon Mystery. Now, Old Results Don't Add Up"
+    }
+   ]
+  }
+ },
+ "domains": {
+  "404media.co": [
+   19,
+   185
+  ],
+  "9to5mac.com": [
+   5,
+   47
+  ],
+  "abc.net.au": [
+   4,
+   234
+  ],
+  "admiralcloudberg.medium.com": [
+   6,
+   38
+  ],
+  "aeon.co": [
+   5,
+   75
+  ],
+  "agenmatic.ai": [
+   3,
+   10
+  ],
+  "aljazeera.com": [
+   3,
+   22
+  ],
+  "andonlabs.com": [
+   4,
+   14
+  ],
+  "anthropic.com": [
+   4,
+   1665
+  ],
+  "antirez.com": [
+   3,
+   51
+  ],
+  "apnews.com": [
+   22,
+   163
+  ],
+  "apple.com": [
+   4,
+   246
+  ],
+  "apps.apple.com": [
+   7,
+   13
+  ],
+  "archive.org": [
+   6,
+   75
+  ],
+  "arstechnica.com": [
+   57,
+   901
+  ],
+  "arxiv.org": [
+   96,
+   1567
+  ],
+  "asteriskmag.com": [
+   5,
+   72
+  ],
+  "astralcodexten.com": [
+   4,
+   15
+  ],
+  "aws.amazon.com": [
+   4,
+   13
+  ],
+  "axios.com": [
+   16,
+   101
+  ],
+  "bbc.co.uk": [
+   18,
+   213
+  ],
+  "bbc.com": [
+   33,
+   829
+  ],
+  "berthub.eu": [
+   3,
+   19
+  ],
+  "bestmillionstartups.com": [
+   3,
+   6
+  ],
+  "bkaradzic.github.io": [
+   3,
+   63
+  ],
+  "bleepingcomputer.com": [
+   15,
+   72
+  ],
+  "blog.cloudflare.com": [
+   7,
+   33
+  ],
+  "blog.coinkite.com": [
+   3,
+   20
+  ],
+  "blog.ericgoldman.org": [
+   3,
+   10
+  ],
+  "blog.exe.dev": [
+   4,
+   18
+  ],
+  "blog.gingerbeardman.com": [
+   3,
+   50
+  ],
+  "blog.google": [
+   9,
+   620
+  ],
+  "blog.greg.technology": [
+   3,
+   7
+  ],
+  "blog.jetbrains.com": [
+   9,
+   86
+  ],
+  "bloomberg.com": [
+   53,
+   641
+  ],
+  "boringsql.com": [
+   3,
+   54
+  ],
+  "borretti.me": [
+   3,
+   53
+  ],
+  "businessinsider.com": [
+   11,
+   130
+  ],
+  "cacm.acm.org": [
+   9,
+   357
+  ],
+  "capytoolkit.com": [
+   3,
+   6
+  ],
+  "cbc.ca": [
+   7,
+   31
+  ],
+  "cbsnews.com": [
+   5,
+   29
+  ],
+  "cell.com": [
+   5,
+   12
+  ],
+  "channelnewsasia.com": [
+   3,
+   18
+  ],
+  "chillphysicsenjoyer.substack.com": [
+   4,
+   6
+  ],
+  "chipsandcheese.com": [
+   6,
+   42
+  ],
+  "chosun.com": [
+   3,
+   30
+  ],
+  "chromewebstore.google.com": [
+   20,
+   40
+  ],
+  "claude.ai": [
+   3,
+   27
+  ],
+  "clickhouse.com": [
+   12,
+   59
+  ],
+  "cnbc.com": [
+   33,
+   238
+  ],
+  "cnn.com": [
+   17,
+   97
+  ],
+  "cnx-software.com": [
+   3,
+   9
+  ],
+  "codeberg.org": [
+   9,
+   30
+  ],
+  "collabora.com": [
+   3,
+   138
+  ],
+  "computerweekly.com": [
+   4,
+   9
+  ],
+  "comuniq.xyz": [
+   3,
+   8
+  ],
+  "construct.computer": [
+   4,
+   14
+  ],
+  "construction-physics.com": [
+   3,
+   240
+  ],
+  "coroot.com": [
+   3,
+   13
+  ],
+  "ctx.company": [
+   3,
+   5
+  ],
+  "cuescout.com": [
+   3,
+   7
+  ],
+  "cursor.com": [
+   5,
+   7
+  ],
+  "dailymail.com": [
+   8,
+   62
+  ],
+  "danielmangum.com": [
+   9,
+   139
+  ],
+  "dannykatch.substack.com": [
+   3,
+   18
+  ],
+  "daringfireball.net": [
+   4,
+   18
+  ],
+  "ddsboston.com": [
+   4,
+   8
+  ],
+  "deepmind.google": [
+   3,
+   625
+  ],
+  "designboom.com": [
+   3,
+   37
+  ],
+  "devblogs.microsoft.com": [
+   5,
+   18
+  ],
+  "dexerto.com": [
+   4,
+   20
+  ],
+  "dfarq.homeip.net": [
+   4,
+   15
+  ],
+  "digital-strategy.ec.europa.eu": [
+   4,
+   18
+  ],
+  "digitaldigging.org": [
+   5,
+   89
+  ],
+  "discuss.ai.google.dev": [
+   4,
+   40
+  ],
+  "discuss.rubyonrails.org": [
+   3,
+   12
+  ],
+  "dl.acm.org": [
+   5,
+   8
+  ],
+  "dmarcguard.io": [
+   4,
+   10
+  ],
+  "docs.cloud.google.com": [
+   3,
+   27
+  ],
+  "dowe.dev": [
+   3,
+   25
+  ],
+  "drewdevault.com": [
+   3,
+   60
+  ],
+  "drive.google.com": [
+   4,
+   12
+  ],
+  "dw.com": [
+   3,
+   21
+  ],
+  "dynomight.net": [
+   3,
+   140
+  ],
+  "earendil.com": [
+   3,
+   800
+  ],
+  "economist.com": [
+   22,
+   496
+  ],
+  "eff.org": [
+   9,
+   301
+  ],
+  "electrek.co": [
+   6,
+   36
+  ],
+  "en.andros.dev": [
+   5,
+   421
+  ],
+  "en.wikipedia.org": [
+   95,
+   1611
+  ],
+  "energy.gov": [
+   3,
+   13
+  ],
+  "engadget.com": [
+   9,
+   216
+  ],
+  "engineering.block.xyz": [
+   3,
+   31
+  ],
+  "euronews.com": [
+   13,
+   484
+  ],
+  "fastcompany.com": [
+   6,
+   25
+  ],
+  "federalregister.gov": [
+   4,
+   9
+  ],
+  "finance.yahoo.com": [
+   7,
+   29
+  ],
+  "forbes.com": [
+   4,
+   27
+  ],
+  "forta.com": [
+   3,
+   6
+  ],
+  "fortune.com": [
+   7,
+   222
+  ],
+  "france24.com": [
+   5,
+   44
+  ],
+  "freddiedeboer.substack.com": [
+   3,
+   18
+  ],
+  "ft.com": [
+   51,
+   1265
+  ],
+  "fzakaria.com": [
+   7,
+   131
+  ],
+  "gao.gov": [
+   4,
+   16
+  ],
+  "garymarcus.substack.com": [
+   3,
+   55
+  ],
+  "gilesthomas.com": [
+   5,
+   16
+  ],
+  "gist.github.com": [
+   7,
+   14
+  ],
+  "github.blog": [
+   18,
+   994
+  ],
+  "github.com": [
+   709,
+   11055
+  ],
+  "gizmodo.com": [
+   5,
+   170
+  ],
+  "gowers.wordpress.com": [
+   4,
+   11
+  ],
+  "grigio.org": [
+   4,
+   21
+  ],
+  "grist.org": [
+   3,
+   13
+  ],
+  "hackaday.com": [
+   3,
+   11
+  ],
+  "heise.de": [
+   5,
+   21
+  ],
+  "historytoday.com": [
+   3,
+   210
+  ],
+  "huggingface-anatomy-of-frontier-lab-model-intrusion.static.hf.space": [
+   3,
+   5
+  ],
+  "huggingface.co": [
+   24,
+   2067
+  ],
+  "idiallo.com": [
+   4,
+   13
+  ],
+  "ign.com": [
+   3,
+   26
+  ],
+  "independent.co.uk": [
+   3,
+   37
+  ],
+  "indiehackers.com": [
+   3,
+   10
+  ],
+  "industrycontents.com": [
+   4,
+   12
+  ],
+  "infisical.com": [
+   4,
+   5
+  ],
+  "insideainative.com": [
+   3,
+   6
+  ],
+  "ipvm.com": [
+   3,
+   16
+  ],
+  "johndcook.com": [
+   10,
+   39
+  ],
+  "jstools.space": [
+   3,
+   8
+  ],
+  "jwlabs.vercel.app": [
+   3,
+   45
+  ],
+  "kk.org": [
+   3,
+   9
+  ],
+  "kttnr.net": [
+   3,
+   78
+  ],
+  "lapcatsoftware.com": [
+   5,
+   94
+  ],
+  "latimes.com": [
+   3,
+   21
+  ],
+  "laurentiugabriel.github.io": [
+   5,
+   302
+  ],
+  "leaddev.com": [
+   3,
+   48
+  ],
+  "leetcopilot.dev": [
+   5,
+   8
+  ],
+  "lemire.me": [
+   4,
+   14
+  ],
+  "lesswrong.com": [
+   9,
+   245
+  ],
+  "link.springer.com": [
+   3,
+   15
+  ],
+  "linkedrecords.com": [
+   3,
+   7
+  ],
+  "lists.archlinux.org": [
+   4,
+   124
+  ],
+  "lwn.net": [
+   6,
+   537
+  ],
+  "macrumors.com": [
+   10,
+   290
+  ],
+  "marginalrevolution.com": [
+   4,
+   10
+  ],
+  "marginpoints.com": [
+   3,
+   5
+  ],
+  "marnetto.net": [
+   3,
+   5
+  ],
+  "martinfowler.com": [
+   4,
+   295
+  ],
+  "media.ccc.de": [
+   4,
+   148
+  ],
+  "medicalxpress.com": [
+   4,
+   18
+  ],
+  "medium.com": [
+   73,
+   379
+  ],
+  "metedata.substack.com": [
+   6,
+   14
+  ],
+  "moai.studio": [
+   3,
+   48
+  ],
+  "modal.com": [
+   3,
+   7
+  ],
+  "moneion.com": [
+   3,
+   4
+  ],
+  "money.x.com": [
+   3,
+   15
+  ],
+  "morningstar.com": [
+   3,
+   9
+  ],
+  "msn.com": [
+   3,
+   5
+  ],
+  "nanocollective.org": [
+   3,
+   6
+  ],
+  "nature.com": [
+   23,
+   158
+  ],
+  "nautil.us": [
+   6,
+   25
+  ],
+  "nbcnews.com": [
+   4,
+   16
+  ],
+  "netflixtechblog.com": [
+   3,
+   8
+  ],
+  "news.bloomberglaw.com": [
+   7,
+   28
+  ],
+  "newscientist.com": [
+   3,
+   171
+  ],
+  "newsletter.semianalysis.com": [
+   3,
+   15
+  ],
+  "newyorker.com": [
+   12,
+   165
+  ],
+  "nextplatform.com": [
+   8,
+   30
+  ],
+  "nist.gov": [
+   4,
+   150
+  ],
+  "noahpinion.blog": [
+   4,
+   15
+  ],
+  "nochan.net": [
+   3,
+   7
+  ],
+  "notebookcheck.net": [
+   3,
+   17
+  ],
+  "npr.org": [
+   14,
+   338
+  ],
+  "nymag.com": [
+   3,
+   13
+  ],
+  "nytimes.com": [
+   98,
+   1146
+  ],
+  "octanejs.dev": [
+   4,
+   11
+  ],
+  "okaneland.com": [
+   3,
+   6
+  ],
+  "old.reddit.com": [
+   24,
+   306
+  ],
+  "ones.com": [
+   4,
+   11
+  ],
+  "openai.com": [
+   14,
+   1201
+  ],
+  "oxide.computer": [
+   3,
+   31
+  ],
+  "pagedout.institute": [
+   3,
+   293
+  ],
+  "papers.ssrn.com": [
+   4,
+   46
+  ],
+  "passo.uno": [
+   3,
+   7
+  ],
+  "patreon.com": [
+   4,
+   7
+  ],
+  "paulgraham.com": [
+   3,
+   99
+  ],
+  "pbs.org": [
+   3,
+   92
+  ],
+  "pcgamer.com": [
+   6,
+   85
+  ],
+  "pewresearch.org": [
+   3,
+   32
+  ],
+  "phoronix.com": [
+   13,
+   150
+  ],
+  "phys.org": [
+   11,
+   77
+  ],
+  "pluralistic.net": [
+   5,
+   65
+  ],
+  "pmc.ncbi.nlm.nih.gov": [
+   3,
+   31
+  ],
+  "politico.com": [
+   8,
+   31
+  ],
+  "propublica.org": [
+   7,
+   50
+  ],
+  "publicdomainreview.org": [
+   4,
+   148
+  ],
+  "pudding.cool": [
+   4,
+   262
+  ],
+  "quantamagazine.org": [
+   8,
+   487
+  ],
+  "quesma.com": [
+   4,
+   16
+  ],
+  "queue.acm.org": [
+   3,
+   7
+  ],
+  "quuxplusone.github.io": [
+   4,
+   92
+  ],
+  "raw.githubusercontent.com": [
+   3,
+   5
+  ],
+  "raylinement.substack.com": [
+   3,
+   5
+  ],
+  "reddit.com": [
+   25,
+   113
+  ],
+  "researchgate.net": [
+   3,
+   7
+  ],
+  "restofworld.org": [
+   6,
+   31
+  ],
+  "retractionwatch.com": [
+   3,
+   79
+  ],
+  "reuters.com": [
+   67,
+   743
+  ],
+  "rfc-editor.org": [
+   4,
+   98
+  ],
+  "righto.com": [
+   3,
+   122
+  ],
+  "rnz.co.nz": [
+   3,
+   14
+  ],
+  "rte.ie": [
+   4,
+   23
+  ],
+  "runtimewire.com": [
+   13,
+   31
+  ],
+  "satyress.com": [
+   4,
+   17
+  ],
+  "schneier.com": [
+   3,
+   14
+  ],
+  "science.nasa.gov": [
+   5,
+   28
+  ],
+  "science.org": [
+   9,
+   1400
+  ],
+  "sciencealert.com": [
+   6,
+   28
+  ],
+  "sciencedaily.com": [
+   7,
+   69
+  ],
+  "scitechdaily.com": [
+   3,
+   7
+  ],
+  "scmp.com": [
+   4,
+   23
+  ],
+  "seangoedecke.com": [
+   4,
+   70
+  ],
+  "semafor.com": [
+   3,
+   13
+  ],
+  "servethehome.com": [
+   4,
+   11
+  ],
+  "sfstandard.com": [
+   3,
+   123
+  ],
+  "simonwillison.net": [
+   6,
+   432
+  ],
+  "softwaredoug.com": [
+   3,
+   42
+  ],
+  "speakinginswift.substack.com": [
+   3,
+   10
+  ],
+  "specled.com": [
+   3,
+   5
+  ],
+  "spectrum.ieee.org": [
+   15,
+   174
+  ],
+  "ssp.sh": [
+   4,
+   21
+  ],
+  "status.claude.com": [
+   4,
+   439
+  ],
+  "store.steampowered.com": [
+   4,
+   10
+  ],
+  "swissinfo.ch": [
+   3,
+   8
+  ],
+  "tanstack.com": [
+   3,
+   7
+  ],
+  "techcrunch.com": [
+   30,
+   198
+  ],
+  "techdirt.com": [
+   5,
+   411
+  ],
+  "technologyreview.com": [
+   15,
+   61
+  ],
+  "techpolicy.press": [
+   3,
+   10
+  ],
+  "techspot.com": [
+   3,
+   142
+  ],
+  "text.npr.org": [
+   4,
+   26
+  ],
+  "theatlantic.com": [
+   29,
+   155
+  ],
+  "theconversation.com": [
+   11,
+   41
+  ],
+  "theguardian.com": [
+   72,
+   662
+  ],
+  "thehill.com": [
+   3,
+   12
+  ],
+  "thenewstack.io": [
+   5,
+   14
+  ],
+  "theregister.com": [
+   40,
+   353
+  ],
+  "thetimes.com": [
+   3,
+   10
+  ],
+  "theverge.com": [
+   17,
+   222
+  ],
+  "thezvi.substack.com": [
+   8,
+   32
+  ],
+  "time.com": [
+   3,
+   13
+  ],
+  "tomshardware.com": [
+   23,
+   222
+  ],
+  "torrentfreak.com": [
+   4,
+   18
+  ],
+  "twitter.com": [
+   113,
+   2339
+  ],
+  "variety.com": [
+   4,
+   31
+  ],
+  "vercel.com": [
+   3,
+   5
+  ],
+  "victoriametrics.com": [
+   3,
+   379
+  ],
+  "vincentschmalbach.com": [
+   4,
+   13
+  ],
+  "washingtonpost.com": [
+   13,
+   95
+  ],
+  "web.archive.org": [
+   10,
+   64
+  ],
+  "webbynode.com": [
+   3,
+   6
+  ],
+  "wfy24.com": [
+   3,
+   15
+  ],
+  "wheresyoured.at": [
+   4,
+   83
+  ],
+  "wired.com": [
+   23,
+   184
+  ],
+  "worksinprogress.co": [
+   3,
+   56
+  ],
+  "wsj.com": [
+   73,
+   774
+  ],
+  "xcancel.com": [
+   7,
+   36
+  ],
+  "youtube.com": [
+   213,
+   867
+  ],
+  "zdnet.com": [
+   3,
+   10
+  ],
+  "zenodo.org": [
+   22,
+   58
+  ]
+ },
+ "end_exclusive_utc": "2026-08-03",
+ "items": {
+  "comment": 75550,
+  "dead": 7385,
+  "deleted": 2742,
+  "other": 18,
+  "story": 10460,
+  "total": 86028
+ },
+ "kind": "backfill",
+ "saved_at": "2026-10-09T07:04:23Z",
+ "schema_version": 1,
+ "start_utc": "2026-07-27",
+ "stories": {
+  "comments": 68495,
+  "hit10": 1279,
+  "points": 132964,
+  "stories": 7241
+ },
+ "stories_missing_score": 1,
+ "top_domains": [
+  {
+   "domain": "github.com",
+   "points": 11055,
+   "stories": 709
+  },
+  {
+   "domain": "youtube.com",
+   "points": 867,
+   "stories": 213
+  },
+  {
+   "domain": "twitter.com",
+   "points": 2339,
+   "stories": 113
+  },
+  {
+   "domain": "nytimes.com",
+   "points": 1146,
+   "stories": 98
+  },
+  {
+   "domain": "arxiv.org",
+   "points": 1567,
+   "stories": 96
+  },
+  {
+   "domain": "en.wikipedia.org",
+   "points": 1611,
+   "stories": 95
+  },
+  {
+   "domain": "wsj.com",
+   "points": 774,
+   "stories": 73
+  },
+  {
+   "domain": "medium.com",
+   "points": 379,
+   "stories": 73
+  },
+  {
+   "domain": "theguardian.com",
+   "points": 662,
+   "stories": 72
+  },
+  {
+   "domain": "reuters.com",
+   "points": 743,
+   "stories": 67
+  },
+  {
+   "domain": "arstechnica.com",
+   "points": 901,
+   "stories": 57
+  },
+  {
+   "domain": "bloomberg.com",
+   "points": 641,
+   "stories": 53
+  },
+  {
+   "domain": "ft.com",
+   "points": 1265,
+   "stories": 51
+  },
+  {
+   "domain": "theregister.com",
+   "points": 353,
+   "stories": 40
+  },
+  {
+   "domain": "bbc.com",
+   "points": 829,
+   "stories": 33
+  }
+ ],
+ "top_stories": [
+  {
+   "comments": 415,
+   "domain": "john.fun",
+   "id": 49124218,
+   "points": 1680,
+   "title": "Show HN: Elevators"
+  },
+  {
+   "comments": 544,
+   "domain": "huggingface.co",
+   "id": 49065752,
+   "points": 1382,
+   "title": "Kimi-K3 on HuggingFace"
+  },
+  {
+   "comments": 674,
+   "domain": "uefa.com",
+   "id": 49113929,
+   "points": 1235,
+   "title": "UEFA and its national associations will not participate in FIFA competitions"
+  },
+  {
+   "comments": 1749,
+   "domain": "anthropic.com",
+   "id": 49076057,
+   "points": 1180,
+   "title": "Our position on open-weights models"
+  },
+  {
+   "comments": 91,
+   "domain": "nikolays.github.io",
+   "id": 49063754,
+   "points": 930,
+   "title": "PGSimCity - How PostgreSQL Works"
+  },
+  {
+   "comments": 342,
+   "domain": "github.com",
+   "id": 49098510,
+   "points": 919,
+   "title": "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac"
+  },
+  {
+   "comments": 320,
+   "domain": "christianselig.com",
+   "id": 49102774,
+   "points": 849,
+   "title": "The coolest use for the Vision Pro"
+  },
+  {
+   "comments": 234,
+   "domain": "data.jma.go.jp",
+   "id": 49080664,
+   "points": 819,
+   "title": "7.1 Earthquake in Japan"
+  },
+  {
+   "comments": 552,
+   "domain": "krebsonsecurity.com",
+   "id": 49112744,
+   "points": 818,
+   "title": "Read this before you buy that TV streaming stick"
+  },
+  {
+   "comments": 513,
+   "domain": "twitter.com",
+   "id": 49068738,
+   "points": 801,
+   "title": "AI companies are shredding rare books"
+  }
+ ],
+ "week": "2026-W31"
+}

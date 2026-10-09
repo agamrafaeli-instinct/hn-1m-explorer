@@ -1,0 +1,75 @@
+{
+ "schema_version": 1,
+ "weeks": [
+  {
+   "week": "2026-W31",
+   "start_utc": "2026-07-27",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W31.json"
+  },
+  {
+   "week": "2026-W32",
+   "start_utc": "2026-08-03",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W32.json"
+  },
+  {
+   "week": "2026-W33",
+   "start_utc": "2026-08-10",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W33.json"
+  },
+  {
+   "week": "2026-W34",
+   "start_utc": "2026-08-17",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W34.json"
+  },
+  {
+   "week": "2026-W35",
+   "start_utc": "2026-08-24",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W35.json"
+  },
+  {
+   "week": "2026-W36",
+   "start_utc": "2026-08-31",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W36.json"
+  },
+  {
+   "week": "2026-W37",
+   "start_utc": "2026-09-07",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W37.json"
+  },
+  {
+   "week": "2026-W38",
+   "start_utc": "2026-09-14",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W38.json"
+  },
+  {
+   "week": "2026-W39",
+   "start_utc": "2026-09-21",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W39.json"
+  },
+  {
+   "week": "2026-W40",
+   "start_utc": "2026-09-28",
+   "kind": "backfill",
+   "saved_at": "2026-10-09T07:04:23Z",
+   "path": "2026-W40.json"
+  }
+ ]
+}
