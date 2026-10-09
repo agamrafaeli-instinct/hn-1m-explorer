@@ -1,4 +1,4 @@
-HN digest 2026-10-08 (UTC): 27 new stories at 350+ points
+HN digest 2026-10-09 (UTC): 34 new stories at 350+ points
 - 2039 pts, 238 comments: Margaret Hamilton has died
 - 2022 pts, 1209 comments: Mistral Large 4
 - 1310 pts, 1484 comments: Sharing AI progress in mathematics
@@ -13,16 +13,23 @@ HN digest 2026-10-08 (UTC): 27 new stories at 350+ points
 - 555 pts, 421 comments: ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons
 - 550 pts, 174 comments: Beam: Reflection's 501B open-weight model
 - 547 pts, 554 comments: “Math 2.0” will need to value mathematical progress more holistically
+- 531 pts, 120 comments: Whistle: Speech to Text in 16.9 MB
 - 522 pts, 5 comments: Mistral Large 4: "Le Chonk"
 - 498 pts, 126 comments: Tell HN: I've been paying for a rural Tanzanian's education for 10 years
 - 490 pts, 340 comments: Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates
 - 461 pts, 102 comments: Polars 2.0
 - 433 pts, 74 comments: Animated ASCII Art for Web Pages
 - 427 pts, 46 comments: EmbeddingGemma 2: An open, lightweight multimodal embedding model
+- 417 pts, 352 comments: Why isn't the industry freaking out about DeepSeek 4.1 Flash?
 - 412 pts, 617 comments: Trump administration is suspending Microsoft from a green card program
 - 398 pts, 64 comments: A font recreated from photographs of classic Commodore 64 keycaps
+- 396 pts, 250 comments: Man discovers his parents' coffee machine used 1TB of data in 10 days
 - 389 pts, 286 comments: Meta’s Muse is an adorable privacy and security dumpster fire
+- 388 pts, 62 comments: I hired an illustrator to draw my house. Now it's my Home Assistant dashboard
 - 387 pts, 227 comments: Decisions API is in public beta
+- 379 pts, 390 comments: The Mathocalypse
 - 362 pts, 306 comments: AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)
 - 359 pts, 375 comments: Meta and Microsoft take steps to reduce employee usage of Claude AI
 - 357 pts, 247 comments: Example.com just launched the biggest redesign in decades
+- 355 pts, 181 comments: I gave Opus 5.5 one prompt and six hours to visualize Invisible Cities
+- 351 pts, 246 comments: OpenAI annualised revenues $20B less than previously signalled

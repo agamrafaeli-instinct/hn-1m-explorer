@@ -1,5 +1,82 @@
 [
  {
+  "id": "50008427",
+  "title": "Whistle: Speech to Text in 16.9 MB",
+  "points": 531,
+  "comments": 120,
+  "author": "gmays",
+  "hn": "https://news.ycombinator.com/item?id=50008427",
+  "url": "https://cactuscompute.com/blog/whistle",
+  "created_at": "2026-10-08T16:59:39Z",
+  "reported_at": 1791510128
+ },
+ {
+  "id": "50008187",
+  "title": "OpenAI annualised revenues $20B less than previously signalled",
+  "points": 351,
+  "comments": 246,
+  "author": "mfiguiere",
+  "hn": "https://news.ycombinator.com/item?id=50008187",
+  "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
+  "created_at": "2026-10-08T16:45:58Z",
+  "reported_at": 1791510128
+ },
+ {
+  "id": "50004790",
+  "title": "I gave Opus 5.5 one prompt and six hours to visualize Invisible Cities",
+  "points": 355,
+  "comments": 181,
+  "author": "stared",
+  "hn": "https://news.ycombinator.com/item?id=50004790",
+  "url": "https://quesma.com/blog/invisible-cities-one-shot/",
+  "created_at": "2026-10-08T12:00:20Z",
+  "reported_at": 1791510128
+ },
+ {
+  "id": "50000488",
+  "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+  "points": 417,
+  "comments": 352,
+  "author": "jonotime",
+  "hn": "https://news.ycombinator.com/item?id=50000488",
+  "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+  "created_at": "2026-10-08T00:14:48Z",
+  "reported_at": 1791510128
+ },
+ {
+  "id": "49997718",
+  "title": "The Mathocalypse",
+  "points": 379,
+  "comments": 390,
+  "author": "6bitquant",
+  "hn": "https://news.ycombinator.com/item?id=49997718",
+  "url": "https://scottaaronson.blog/?p=10169",
+  "created_at": "2026-10-07T19:33:40Z",
+  "reported_at": 1791510128
+ },
+ {
+  "id": "49995495",
+  "title": "Man discovers his parents' coffee machine used 1TB of data in 10 days",
+  "points": 396,
+  "comments": 250,
+  "author": "ck2",
+  "hn": "https://news.ycombinator.com/item?id=49995495",
+  "url": "https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/",
+  "created_at": "2026-10-07T16:56:30Z",
+  "reported_at": 1791510128
+ },
+ {
+  "id": "49986882",
+  "title": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
+  "points": 388,
+  "comments": 62,
+  "author": "soheilpro",
+  "hn": "https://news.ycombinator.com/item?id=49986882",
+  "url": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
+  "created_at": "2026-10-07T01:41:03Z",
+  "reported_at": 1791510128
+ },
+ {
   "id": "50006832",
   "title": "Trump administration is suspending Microsoft from a green card program",
   "points": 412,
