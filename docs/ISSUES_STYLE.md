@@ -21,7 +21,7 @@ How to write issues and board text in this repo. Issues and the board are public
 
 ## Title
 - Start with a verb or a clear noun phrase, under 80 characters, no trailing period.
-- Epics: `Epic X: <outcome>`. Tasks: the step itself, for example `Compare week to previous week: rose, fell, new`.
+- Epics: `[Epic] - <Snazzy Code Name> - What the epic is in up to seven words`. The code name is one or two words and is unique among epics. Example: `[Epic] - Pulse - Weekly state of HN per audience`. Do not number or letter epics. Tasks: the step itself, for example `Compare week to previous week: rose, fell, new`.
 - QA tasks start with `QA:`. Specs start with `Spec:`.
 
 ## Body

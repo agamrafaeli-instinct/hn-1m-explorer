@@ -150,6 +150,6 @@ The per-audience scope decides what each screen shows. All the signals above are
 ## 10. Not claimed
 
 - Rose or fell is about how many stories or comments carry the words, not about interest, opinion or quality.
-- A flag points at something to look at. It is not a finding. Findings are Epic C.
+- A flag points at something to look at. It is not a finding. Findings belong to the Headliner epic.
 - Word matches include other meanings (for example "rust" the game, "cursor" the word).
 - The page never says a company raised money, owns something, or is hiring because of a match.

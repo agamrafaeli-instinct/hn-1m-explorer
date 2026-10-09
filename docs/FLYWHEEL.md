@@ -17,7 +17,7 @@ The standing cycle that keeps work moving. Epics feed tasks, tasks feed developm
 1. **Dev picks Ready tasks.** Take the highest Ready task by epic order. Do not start anything that is not Ready.
 2. **Keep at least 5 Ready tasks.** Groom the next epic whenever fewer than 5 Ready tasks remain, so dev is never empty.
 3. **Every epic gets tasks.** An epic in Defined with no tasks is groomed in order: move it to Grooming, write tasks with acceptance criteria, move each finished task to Ready.
-4. **Keep at least 5 Defined epics.** When fewer than 5 remain, define new epics from the vision in ROADMAP.md, from QA findings and from recurring data questions. Each gets a title, a goal paragraph and a "done when" line. No duplicates of an open or closed epic.
+4. **Keep at least 5 Defined epics.** When fewer than 5 remain, define new epics from the vision in ROADMAP.md, from QA findings and from recurring data questions. Each gets a title in the form `[Epic] - <Snazzy Code Name> - What it is in up to seven words` (see ISSUES_STYLE.md), a goal paragraph and a "done when" line. No duplicates of an open or closed epic.
 5. **Decisions never block other work.** Anything that needs the owner is written as one yes or no question, put on the board as Needs decision, and the work moves to the next Ready task. When the answer comes, record it as a `Decision (date):` line on the issue and move the issue on.
 6. **Nothing goes live without a check.** Every change goes through QA with 390px screenshots, the unit tests and a load check on throttled 4G and 4x CPU before it is Done.
 
