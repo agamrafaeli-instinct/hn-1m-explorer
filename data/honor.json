@@ -14,7 +14,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 776425.0,
+   "group_a_count": 776332.0,
    "id": "h001",
    "score": 0.6,
    "title": "Engineers work weekdays"
@@ -72,7 +72,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 155685.0,
+   "group_a_count": 155592.0,
    "id": "h004",
    "score": 0.6,
    "title": "Friday slump"
@@ -91,7 +91,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 123029.0,
+   "group_a_count": 122936.0,
    "id": "h005",
    "score": 0.6,
    "title": "Early birds"
@@ -110,7 +110,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 320028.0,
+   "group_a_count": 320055.0,
    "id": "h006",
    "score": 0.6,
    "title": "Quiet days pay the same"
@@ -129,7 +129,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 112142.0,
+   "group_a_count": 112235.0,
    "id": "h007",
    "score": 0.6,
    "title": "Saturday is for side projects"
@@ -212,202 +212,6 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 231.0,
-   "id": "h100",
-   "score": 1.0,
-   "title": "Data centers and grid: attention persists"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 231.0,
-   "id": "h101",
-   "score": 1.0,
-   "title": "Data centers and grid: points premium"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 371.0,
-   "id": "h102",
-   "score": 1.0,
-   "title": "GPU and chip hardware: attention persists"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 371.0,
-   "id": "h103",
-   "score": 1.0,
-   "title": "GPU and chip hardware: points premium"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": false,
-    "sharp": true
-   },
-   "failing": [
-    "relevant"
-   ],
-   "group_a_count": 22.0,
-   "id": "h104",
-   "score": 0.8,
-   "title": "Neural biology: attention persists"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": false,
-    "sharp": true
-   },
-   "failing": [
-    "relevant"
-   ],
-   "group_a_count": 22.0,
-   "id": "h105",
-   "score": 0.8,
-   "title": "Neural biology: points premium"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 239.0,
-   "id": "h106",
-   "score": 1.0,
-   "title": "Aerospace: attention persists"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 239.0,
-   "id": "h107",
-   "score": 1.0,
-   "title": "Aerospace: points premium"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 53.0,
-   "id": "h108",
-   "score": 1.0,
-   "title": "Solar energy: attention persists"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 53.0,
-   "id": "h109",
-   "score": 1.0,
-   "title": "Solar energy: points premium"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 189.0,
-   "id": "h110",
-   "score": 1.0,
-   "title": "Physical robotics: attention persists"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 189.0,
-   "id": "h111",
-   "score": 1.0,
-   "title": "Physical robotics: points premium"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
    "group_a_count": 15579.0,
    "id": "h112",
    "score": 1.0,
@@ -444,70 +248,6 @@
    "id": "h114",
    "score": 1.0,
    "title": "Discovered themes: domain breadth"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 895.0,
-   "id": "h115",
-   "score": 1.0,
-   "title": "Data centers: long-run share growth"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 1111.0,
-   "id": "h116",
-   "score": 1.0,
-   "title": "GPU: long-run share growth"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 959.0,
-   "id": "h117",
-   "score": 1.0,
-   "title": "Robotics: long-run persistence"
-  },
-  {
-   "audience": "deep-tech investors",
-   "criteria": {
-    "fresh": null,
-    "insightful": true,
-    "interesting": true,
-    "novel": true,
-    "relevant": true,
-    "sharp": true
-   },
-   "failing": [],
-   "group_a_count": 381.0,
-   "id": "h118",
-   "score": 1.0,
-   "title": "Solar matches: long-run share growth"
   },
   {
    "audience": "deep-tech investors",
@@ -1331,6 +1071,246 @@
    "id": "h318",
    "score": 0.8,
    "title": "Java is dying on HN"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": false,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "insightful"
+   ],
+   "group_a_count": 1653.0,
+   "id": "h319",
+   "score": 0.8,
+   "title": "Data centers and grid: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 70372.0,
+   "id": "h320",
+   "score": 0.8,
+   "title": "Data centers and grid: points premium, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 3278.0,
+   "id": "h321",
+   "score": 1.0,
+   "title": "GPU and chip hardware: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 320209.0,
+   "id": "h322",
+   "score": 0.8,
+   "title": "GPU and chip hardware: points premium, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1997.0,
+   "id": "h323",
+   "score": 1.0,
+   "title": "Neural biology: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 327904.0,
+   "id": "h324",
+   "score": 0.8,
+   "title": "Neural biology: points premium, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 2603.0,
+   "id": "h325",
+   "score": 1.0,
+   "title": "Aerospace: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 512139.0,
+   "id": "h326",
+   "score": 0.8,
+   "title": "Aerospace: points premium, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 193.0,
+   "id": "h327",
+   "score": 1.0,
+   "title": "Solar energy: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 42958.0,
+   "id": "h328",
+   "score": 0.8,
+   "title": "Solar energy: points premium, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1717.0,
+   "id": "h329",
+   "score": 1.0,
+   "title": "Physical robotics: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 202299.0,
+   "id": "h330",
+   "score": 0.8,
+   "title": "Physical robotics: points premium, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 11260.0,
+   "id": "h331",
+   "score": 1.0,
+   "title": "The six deep-tech themes together: share of stories, all-time base"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 1467371.0,
+   "id": "h332",
+   "score": 0.8,
+   "title": "The six deep-tech themes together: points premium, all-time base"
   }
  ],
  "schema": 1,
