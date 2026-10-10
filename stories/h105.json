@@ -1,0 +1,26 @@
+{
+ "schema": 1,
+ "id": "h105",
+ "for_verdict": "refuted",
+ "question": "Did neural biology keep an attention premium after it was spotted?",
+ "why": "Topics picked from past data often fade. This checks whether this one held.",
+ "opening": "In {window_a}, {n_a} neural biology stories averaged {a} points per story. {n_b} other stories averaged {b}.",
+ "takeaway": "No premium. It earned {ratio}x the points per story of other stories. The card refuted at {refute_at}x or lower.",
+ "boundary": "The topic was picked from the first five weeks, so this is exploratory, and the sample is small. HN attention is not technical validation or an investment signal.",
+ "explore": [
+  "h104",
+  "h111"
+ ],
+ "counts": {
+  "n_a": {
+   "field": "neurobio_stories",
+   "group": "a",
+   "op": "sum"
+  },
+  "n_b": {
+   "field": "neurobio_rest_stories",
+   "group": "b",
+   "op": "sum"
+  }
+ }
+}

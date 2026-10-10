@@ -2,7 +2,7 @@
 """Stage public assets by a conservative allowlist, never publish tooling or history."""
 import argparse, pathlib, shutil
 SUFFIXES={'.html','.js','.mjs','.css','.json','.svg','.png','.jpg','.jpeg','.gif','.webp','.ico','.avif','.woff','.woff2','.ttf','.otf','.mp4','.webm','.ogg','.mp3','.wav','.pdf','.txt','.xml','.webmanifest'}
-DIRECTORIES={'data','vendor','sample','assets','images','fonts','media','css','js','hypotheses'}
+DIRECTORIES={'data','vendor','sample','assets','images','fonts','media','css','js','hypotheses','stories'}
 MAX_BYTES=900_000_000
 
 def stage(root,destination):

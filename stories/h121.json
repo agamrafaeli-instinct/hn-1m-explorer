@@ -1,0 +1,25 @@
+{
+ "schema": 1,
+ "id": "h121",
+ "for_verdict": "supported",
+ "question": "Do weird stories still win when the biggest hits are removed?",
+ "why": "A few viral posts can fake a lead. Dropping the top 1 percent of stories by score tests that.",
+ "opening": "With the biggest hits removed on both sides, {n_a} weird-word stories averaged {a} points and {n_b} other stories averaged {b}.",
+ "takeaway": "The lead holds at {ratio}x. The card's bar for yes was {support_at}x.",
+ "boundary": "\"Weird\" is a fixed word list matched on titles, not a measure of weirdness. Scores are snapshots and the latest days are immature.",
+ "explore": [
+  "h126"
+ ],
+ "counts": {
+  "n_a": {
+   "field": "t_stories",
+   "group": "a",
+   "op": "sum"
+  },
+  "n_b": {
+   "field": "t_rest_stories",
+   "group": "b",
+   "op": "sum"
+  }
+ }
+}
