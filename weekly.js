@@ -107,6 +107,8 @@
       const foot = el('p', 'wn wfoot', 'Hacker News talking, not a measure of what is true. Counts use stories only. Dead and deleted stories keep no title, so title-based shares divide by live stories. The dead or deleted share divides by all stories. '); const l = el('a', null, 'How it is computed'); l.href = SPEC; l.target = '_blank'; l.rel = 'noopener noreferrer'; foot.appendChild(l);
       frag.appendChild(foot);
       b.replaceChildren(frag);
+      const rg = range(idx[i].start_utc, idx[i].end_exclusive_utc || idx[i].start_utc);
+      window.SetPageMeta && window.SetPageMeta(A[a].name + ': week ' + idx[i].week + ' (' + rg + ')', A[a].name + ' view of Hacker News for ' + rg + '. ' + A[a].intro);
       document.getElementById('w_back').href = '#/';
       scrollTo({ top: 0, behavior: 'instant' });
     } catch (e) { if (my === token) root().textContent = 'Could not load this week: ' + e.message; }

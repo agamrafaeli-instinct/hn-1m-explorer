@@ -61,7 +61,14 @@ const q1 = s => `(()=>{const e=document.querySelector(${JSON.stringify(s)});retu
 await check('home', '#/', q1('#homeweek_s'), async () => (await ev(q1('#homeweek')) ? '' : 'no latest-week link'));
 await check('audience', '#/a/engineers', q1('#aud_card article.hyp'));
 await check('card', '#/c/h009/engineers', q1('#aud_card article.hyp'), async () => ((await ev("document.querySelectorAll('#aud_card article.hyp').length")) === 1 ? '' : 'expected exactly one card'));
-for (const a of ['engineers', 'vcs', 'geeks']) await check('week_' + a, '#/w/' + a, q1('#w_body .wsec'));
+const AUDN = { engineers: 'Engineers', vcs: 'Deep-tech VCs', geeks: 'Curious geeks' };
+for (const a of ['engineers', 'vcs', 'geeks']) await check('week_' + a, '#/w/' + a, q1('#w_body .wsec'), async () => {
+  const t = await ev('document.title'), d = await ev("document.querySelector('meta[name=description]').content");
+  if (!t.startsWith(AUDN[a] + ': week ')) return 'page title is ' + t;
+  if (!/\d{4}-W\d{2}/.test(t)) return 'title has no week';
+  if (!d.includes(AUDN[a]) || d.length < 40) return 'description is ' + d;
+  return '';
+});
 await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
   const wk = () => ev("location.hash"), t1 = () => ev("document.querySelector('#w_body .wmid b')?.textContent||''");
   const h0 = await wk(), r0 = await t1();
