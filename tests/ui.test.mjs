@@ -93,11 +93,11 @@ await check('explorer', '#/explore', q1('#loadbtn'), async () => {
   if (!await wait("/\\d.*matching/.test(document.getElementById('count').textContent)", 60000)) return 'explorer never showed a match count';
   // The list loads in parts: wait until the count stops moving before reading the baseline.
   const cnt = () => ev("+document.getElementById('count').textContent.replace(/[^0-9]/g,'')");
-  let n0 = await cnt();
-  for (let i = 0; i < 40; i++) { await new Promise(r => setTimeout(r, 1000)); const x = await cnt(); if (x === n0) break; n0 = x; }
+  const settle = async () => { let n = await cnt(), same = 0; for (let i = 0; i < 90 && same < 3; i++) { await new Promise(r => setTimeout(r, 1000)); const x = await cnt(); if (x === n) same++; else { same = 0; n = x; } } return n; };
+  const n0 = await settle();
   await ev("(()=>{const e=document.getElementById('minscore');e.value='100';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}))})()");
   await wait(`+document.getElementById('count').textContent.replace(/[^0-9]/g,'')!==${n0}`, 10000);
-  const n1 = await ev("+document.getElementById('count').textContent.replace(/[^0-9]/g,'')");
+  const n1 = await settle();
   return n1 < n0 ? '' : `minimum score 100 did not reduce the count (${n0} to ${n1})`;
 });
 ws.close(); ch.kill(); server?.close();
