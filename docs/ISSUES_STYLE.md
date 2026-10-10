@@ -22,7 +22,7 @@ How to write issues and board text in this repo. Issues and the board are public
 ## Title
 - Start with a verb or a clear noun phrase, under 80 characters, no trailing period.
 - Epics: `[Epic] - <Snazzy Code Name> - What the epic is in up to seven words`. The code name is one or two words and is unique among epics. Example: `[Epic] - Pulse - Weekly state of HN per audience`. Do not number or letter epics. Tasks: the step itself, for example `Compare week to previous week: rose, fell, new`.
-- QA tasks start with `QA:`. A walkthrough for a batch of new abilities starts with `QA walkthrough:` and follows the format in FLYWHEEL.md (numbered steps, link, what to tap, what to see, 390px screenshot). Specs start with `Spec:`.
+- QA tasks start with `QA:`. A walkthrough for a batch of new abilities starts with `QA walkthrough:` and follows the format in FLYWHEEL.md (numbered steps, one link, one "You should see" line and a yes / no per step). Specs start with `Spec:`.
 
 ## Body
 Use these sections, in this order, and leave out any that do not apply:
