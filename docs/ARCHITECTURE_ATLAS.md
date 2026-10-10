@@ -88,3 +88,27 @@ Slice 1 in BACKFILL_PLAN.md assumed release assets as the store. Release assets 
 3. Share of stories in 2006 to 2022 (assumed about the same as now).
 4. Whether Pages range requests keep working for files near 50 MB (measured only on a 40 MB-class CSV).
 5. Terms and freshness of public bulk sources.
+
+## Slice 7b prototype measurements (2026-10-10, #122)
+
+Setup: one year of stories (2022, 299,563 live stories, columns id, time, by, title, url, domain, score, comments), sorted by time, Parquet with zstd level 19 and 10,000 rows per row group, built from the Hugging Face monthly files. DuckDB-WASM 1.33.1 (eh bundle) bundled with esbuild, served by a local static server that supports Range and gzip, desktop headless Chrome at 390px. The page was never published, so there is nothing to remove from the site.
+
+| Measure | Value |
+|---|---|
+| Engine wasm | 35.9 MB raw, 8.1 MB gzip |
+| Engine worker script | 0.77 MB raw, 0.19 MB gzip |
+| App script with the Arrow reader | 0.22 MB raw, 0.05 MB gzip |
+| Engine download total | about 8.4 MB gzip |
+| One year of stories | 16.5 MB (299,563 stories, about 55 bytes a story) |
+| Engine start | 2.2 to 2.5 s on a fast local link |
+| First query (count) | 0.75 to 0.95 s |
+| Title search, top 25 by score | 0.42 to 0.75 s |
+| Page JS heap | 2 to 3 MB; browser total below |
+| Chrome renderer and utility processes, peak | about 1.1 GB resident (headless desktop, includes the browser baseline, not a phone figure) |
+
+What the numbers do not show:
+- Slow 4G was not measured. Chrome's network throttle did not apply to the worker and wasm requests (total time stayed under 7 s). By arithmetic, 8.4 MB of engine at 1.6 Mbps (200 KB/s) is about 42 s, and the target of engine plus first query under 5 s on slow 4G is not met on a first visit. A repeat visit can use the browser cache.
+- DuckDB-WASM read the Parquet file as one full download (a HEAD, then one GET without a Range header, 16.5 MB) in all three setups tried: SQL on the URL, a registered URL, and a registered URL with direct reads on and ETag headers. Reading only the needed columns by range was not observed. A year costs a full file download until that is solved. At 200 KB/s, 16.5 MB is about 82 s.
+- GitHub Pages does answer Range requests: a request for bytes 1000-1999 of data/posts-00016.csv (8,388,608 bytes, the largest file on the site) on the live site returned status 206 with `content-range`, `accept-ranges: bytes` and `access-control-allow-origin: *`. No file near 50 MB is on Pages, so the 50 MB case is not tested.
+
+Reading: with the engine at 8.4 MB and a whole-year file download, Option C is too heavy for a first visit on a phone. Option B (year shards as plain files, loaded on demand) or a smaller per-year file with only the columns the page needs should be compared before 7c. Whether DuckDB-WASM can be made to use range reads is open.
