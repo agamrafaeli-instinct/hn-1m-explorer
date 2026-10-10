@@ -52,3 +52,34 @@ Slices 3 and 4 can run in parallel with 2. Slices 5 and 6 must not delete anythi
 
 1. Slice 1: store full item files as public release assets in this repo (not in the repo or on Pages). Yes or no.
 2. Slice 3 and 5: use a public bulk source as the base for pre-2023 data, if its terms allow it. Decided after slice 0 reports.
+
+## Slice 0 measurements (2026-10-10)
+
+Counts and bytes come from `stats.csv` of the Hugging Face dataset open-index/hacker-news (https://huggingface.co/datasets/open-index/hacker-news). Two months were downloaded and read to check them.
+
+| Year | Items | Parquet MB | Bytes per item |
+|---|---|---|---|
+| 2007 | 93,758 | 19 | 204 |
+| 2010 | 1,030,808 | 228 | 221 |
+| 2015 | 1,989,326 | 540 | 271 |
+| 2020 | 3,673,126 | 1,005 | 273 |
+| 2022 | 4,447,168 | 1,205 | 271 |
+| 2023 | 4,587,333 | 1,181 | 257 |
+| 2024 | 3,734,176 | 530 | 142 |
+| 2025 | 3,886,492 | 563 | 145 |
+
+- All years: 49,324,111 items, 12.42 GB as zstd Parquet (about 252 bytes an item). Items before 2022-12: 30,896,205. The gap Dec 2022 to Jul 2026: 15,484,788. Last month listed: 2026-08, last item id 49,395,220, file updated 2026-08-22. The dataset has not been updated since 2026-08-23, so the newest 7 weeks come from our own rolling window and the HN API.
+- Compact format: Parquet at 252 bytes an item against 346 bytes a row for our CSV, about 27% smaller. Whole archive about 12.4 GB, which fits as release assets (each file under 2 GiB, 1,000 per release) and not in the repo or on Pages.
+- Checked months: 2023-10 has 370,998 items with 8,693 deleted. 2024-10 has 309,419 items with text on all rows, but 0 deleted and about 140 bytes an item, half of 2023. 2024 and 2025 may be missing deleted items. Check before relying on counts for those years.
+- Browser access: the Hugging Face file URL answers with `access-control-allow-origin: *` and `accept-ranges: bytes`, so a browser can range-read Parquet. A 42.7 MB month downloaded in 2.6 s (16 MB/s).
+- API speed: the HN Firebase API took 0.15 s an item in sequence (about 7 a second) and 33 items a second with 25 parallel requests. The 15.5 million item gap would take about 5.4 days of fetching. All 50 million items would take about 17 days. Max item id today: 50,029,768.
+
+### Bulk source terms
+- Hugging Face open-index/hacker-news: license field `odc-by` (attribution). Its README says the data comes from the ClickHouse Playground, which mirrors the HN API, and that "The original content is subject to the rights of its respective authors." The README is not an HN or Y Combinator grant.
+- Y Combinator terms (https://www.ycombinator.com/legal/): "Except as expressly authorized by Y Combinator, you agree not to modify, copy, frame, scrape, rent, lease, loan, sell, distribute or create derivative works based on the Site". They also bar copying "for any commercial purposes". This project is non-commercial, but the terms do not name a public archive. Redistributing 50 million items as public release assets is therefore not cleared by the sources read. It matches the owner's approval on #114 only on the owner's side, not on Y Combinator's.
+- BigQuery bigquery-public-data.hacker_news.full (listing: https://console.cloud.google.com/marketplace/details/y-combinator/hacker-news): the listing page did not load without a Google login, so its terms and freshness were not read. A third-party copy states its snapshot ends on 2022-11-16.
+- Not measured: bytes per year for the 346-byte CSV format on older years, and the Explorer story-only file sizes. Those follow from the counts above and the story share (about 11 percent of items).
+
+### What this changes
+- Slice 1 (public release assets) has an open question: the source terms above do not clearly allow public redistribution of item text. The owner approved release assets on #114; a yes or no on whether to also publish only story titles, scores and ids (no comment text) for older years would reduce the risk.
+- Slice 4 (gap) can use the Hugging Face months for Dec 2022 to Jul 2026, then the API for Aug 2026 to today.
