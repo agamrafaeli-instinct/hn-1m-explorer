@@ -100,7 +100,7 @@
       if (my !== token) return;
       idx[i].end_exclusive_utc = c.end_exclusive_utc;
       const b = root(), frag = document.createDocumentFragment();
-      frag.append(pills(a, idx[i].week), el('h2', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), stepper(idx, i, a));
+      frag.append(pills(a, idx[i].week), el('h1', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), stepper(idx, i, a));
       if (c.kind === 'backfill') frag.appendChild(el('p', 'wbf', 'This week was rebuilt from the archive after it ended, with the same method and fields as a live save. The newest stories may have had more time to collect points.'));
       frag.append(changes(c, a), shares(c, a), extra(c, a));
       const top = section('Top stories of the week'); top.appendChild(storyList(c.top_stories)); frag.appendChild(top);

@@ -1,0 +1,290 @@
+{
+ "engineers@320": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "Show HN: Real-time Solar",
+   "Show HN: Giving Opus 5.5",
+   "Show HN: Glashütte Trash",
+   "Ask HN: What are you rea",
+   "Ask HN: Who wants to be ",
+   "Ask HN: Who is hiring? (",
+   "Gemini 4 Argon",
+   "Pi 1.0"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "vcs@320": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "U.S. postal inspectors s",
+   "Anthropic's IPO prospect",
+   "Anthropic's IPO Prospect",
+   "Gemini 4 Argon",
+   "Pi 1.0",
+   "Owed a billion dollars i",
+   "GPT 6.1 Sol: Near-Astra ",
+   "Updated Google Maps show"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "geeks@320": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "California farmers are s",
+   "Updated Google Maps show",
+   "Ask HN: What are you rea",
+   "Ask HN: What are you rea",
+   "Ask HN: Who wants to be ",
+   "Ask HN: Who is hiring? (",
+   "Gemini 4 Argon",
+   "Pi 1.0"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "engineers@390": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "Show HN: Real-time Solar",
+   "Show HN: Giving Opus 5.5",
+   "Show HN: Glashütte Trash",
+   "Ask HN: What are you rea",
+   "Ask HN: Who wants to be ",
+   "Ask HN: Who is hiring? (",
+   "Gemini 4 Argon",
+   "Pi 1.0"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "vcs@390": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "U.S. postal inspectors s",
+   "Anthropic's IPO prospect",
+   "Anthropic's IPO Prospect",
+   "Gemini 4 Argon",
+   "Pi 1.0",
+   "Owed a billion dollars i",
+   "GPT 6.1 Sol: Near-Astra ",
+   "Updated Google Maps show"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "geeks@390": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "California farmers are s",
+   "Updated Google Maps show",
+   "Ask HN: What are you rea",
+   "Ask HN: What are you rea",
+   "Ask HN: Who wants to be ",
+   "Ask HN: Who is hiring? (",
+   "Gemini 4 Argon",
+   "Pi 1.0"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "engineers@430": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "Show HN: Real-time Solar",
+   "Show HN: Giving Opus 5.5",
+   "Show HN: Glashütte Trash",
+   "Ask HN: What are you rea",
+   "Ask HN: Who wants to be ",
+   "Ask HN: Who is hiring? (",
+   "Gemini 4 Argon",
+   "Pi 1.0"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "vcs@430": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "U.S. postal inspectors s",
+   "Anthropic's IPO prospect",
+   "Anthropic's IPO Prospect",
+   "Gemini 4 Argon",
+   "Pi 1.0",
+   "Owed a billion dollars i",
+   "GPT 6.1 Sol: Near-Astra ",
+   "Updated Google Maps show"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3H3",
+  "animated": 0
+ },
+ "geeks@430": {
+  "contrast": [],
+  "small_targets": [
+   {
+    "el": "a",
+    "text": "How it is computed",
+    "w": 117,
+    "h": 15
+   }
+  ],
+  "no_name": [],
+  "overflow": null,
+  "focus": [
+   "Engineers",
+   "Deep-tech VCs",
+   "Curious geeks",
+   "Previous week",
+   "California farmers are s",
+   "Updated Google Maps show",
+   "Ask HN: What are you rea",
+   "Ask HN: What are you rea",
+   "Ask HN: Who wants to be ",
+   "Ask HN: Who is hiring? (",
+   "Gemini 4 Argon",
+   "Pi 1.0"
+  ],
+  "reduced_motion_css": false,
+  "lang": "en",
+  "h1": 3,
+  "headings": "H3H3H3H3H3H3H3",
+  "animated": 0
+ }
+}
