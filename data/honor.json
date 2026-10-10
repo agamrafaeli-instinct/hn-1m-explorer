@@ -820,6 +820,264 @@
    "id": "h353",
    "score": 0.8,
    "title": "Question headlines provoke more comments"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 732051.0,
+   "id": "h354",
+   "score": 0.8,
+   "title": "Weird words earn more points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 7220.0,
+   "id": "h355",
+   "score": 0.8,
+   "title": "Weird words reach ten points more often"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 312033.0,
+   "id": "h356",
+   "score": 0.8,
+   "title": "Weird gets talked about"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 312033.0,
+   "id": "h357",
+   "score": 1.0,
+   "title": "Weird gets votes, not arguments"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 8538.0,
+   "id": "h358",
+   "score": 1.0,
+   "title": "Weird gets posted on weekends"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 2597.0,
+   "id": "h359",
+   "score": 1.0,
+   "title": "Weird words are growing"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 1045228.0,
+   "id": "h360",
+   "score": 0.8,
+   "title": "Science words earn more points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 5475.0,
+   "id": "h361",
+   "score": 1.0,
+   "title": "Science words are growing"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 254749.0,
+   "id": "h362",
+   "score": 0.8,
+   "title": "Retro computing earns more points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1397.0,
+   "id": "h363",
+   "score": 1.0,
+   "title": "Retro computing is growing"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 1255921.0,
+   "id": "h364",
+   "score": 0.8,
+   "title": "History words earn more points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 191522.0,
+   "id": "h365",
+   "score": 0.8,
+   "title": "Puzzles earn more points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1166.0,
+   "id": "h366",
+   "score": 1.0,
+   "title": "Puzzles are growing"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 2611707.0,
+   "id": "h367",
+   "score": 0.8,
+   "title": "Show HN earns more points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 239349.0,
+   "id": "h368",
+   "score": 0.8,
+   "title": "Business-software words sink"
   }
  ],
  "schema": 1,
