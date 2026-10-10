@@ -9,6 +9,7 @@
   function state() {
     var q = (location.hash.split('?')[1] || ''), o = {};
     q.split('&').forEach(function (p) { var i = p.indexOf('='); if (i > 0) o[p.slice(0, i)] = decodeURIComponent(p.slice(i + 1)); });
+    var tp = location.hash.match(/^#\/t\/([^?\/]+)/); if (tp && D.byId[tp[1]]) o.topics = o.topics || tp[1];
     var ids = (o.topics || '').split(',').filter(function (x) { return D.byId[x]; });
     if (!ids.length) ids = defaults();
     return { topics: ids.slice(0, 6) };
@@ -22,12 +23,14 @@
   }
   function short(l) { return l.split(/, | and /)[0]; }
   function go(ids) { location.hash = '#/compare?topics=' + ids.join(','); }
+  function topicId() { var m = location.hash.match(/^#\/t\/([^?\/]+)/); return m && D.byId[m[1]] ? m[1] : null; }
   function smooth(s) { return s.map(function (_, i) { var a = s.slice(Math.max(0, i - 5), i + 1); return a.reduce(function (x, y) { return x + y; }, 0) / a.length * 100; }); }
   function draw() {
     var st = state(), root = document.getElementById('cmp'); root.replaceChildren();
     var tops = st.topics.map(function (id) { return D.byId[id]; });
     var home = /^#?\/?(\?.*)?$/.test(location.hash);
-    root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : 'Share of Hacker News story titles'));
+    var tid = topicId();
+    root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
     root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months.'));
     var box = el('div', 'cmp_box'), row = el('div', 'cmp_row'); root.appendChild(box); root.appendChild(row);
     var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 30, padR = 132, padT = 14, padB = 22;
@@ -57,7 +60,27 @@
       sel.onchange = function () { if (sel.value) go(st.topics.concat(sel.value)); };
       row.appendChild(sel);
     }
+    if (tid) { var t0 = D.byId[tid], b = el('button', 'cmp_chip cmp_det', 'Details'); b.onclick = function () { sheet(t0); }; row.insertBefore(b, row.firstChild);
+      var bd = el('span', 'cmp_badge', t0.pattern + (t0.ratio ? ' \u00b7 ' + (t0.ratio >= 10 ? t0.ratio.toFixed(0) : t0.ratio.toFixed(1)) + 'x the earlier share' : '')); root.insertBefore(bd, box); }
   }
+  function sheet(t) {
+    var d = document.createElement('dialog'); d.className = 'cmp_sheet';
+    var w = D.windows, f = function (x) { return pct(x.share * 100) + ' (' + x.n.toLocaleString('en-US') + ' of ' + x.total.toLocaleString('en-US') + ' stories)'; };
+    d.appendChild(el('h3', '', t.label));
+    [['Latest 12 months, ' + w.latest[0] + ' to ' + w.latest[1], f(t.latest)], ['All earlier stories, ' + w.prior[0] + ' to ' + w.prior[1], f(t.prior)], ['Peak year', t.peak.year + ' at ' + pct(t.peak.share * 100)], ['Pattern', t.pattern], ['Word list (matches story titles, case-insensitive)', t.matcher]].forEach(function (r) { d.appendChild(el('b', '', r[0])); d.appendChild(el('p', '', r[1])); });
+    var x = el('button', 'cmp_chip', 'Close'); x.onclick = function () { d.close(); d.remove(); }; d.appendChild(x); document.body.appendChild(d); d.showModal();
+  }
+  window.TopicsInit = function () {
+    loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
+    loading.then(function () {
+      var box = document.getElementById('topics_list'); box.replaceChildren();
+      D.topics.slice().sort(function (a, b) { return a.label < b.label ? -1 : 1; }).forEach(function (t) {
+        var a = el('a', 'tp_row'); a.href = '#/t/' + t.id; a.appendChild(el('b', '', t.label)); a.appendChild(el('span', 'tp_pat', t.pattern));
+        var s = t.series.slice(-120), mx = Math.max.apply(null, s) || 1, svg = S('svg', { viewBox: '0 0 80 20', width: 80, height: 20 });
+        svg.appendChild(S('path', { d: s.map(function (v, i) { return (i ? 'L' : 'M') + (i * 80 / 119).toFixed(1) + ' ' + (19 - 18 * v / mx).toFixed(1); }).join(''), fill: 'none', stroke: '#ff6600', 'stroke-width': 1.5 }));
+        a.appendChild(svg); box.appendChild(a); });
+    });
+  };
   window.CompareInit = function () {
     loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
     loading.then(draw).catch(function () { document.getElementById('cmp').textContent = 'The comparison data could not be loaded. Try again.'; loading = null; });
