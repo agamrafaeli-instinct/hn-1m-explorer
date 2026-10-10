@@ -44,6 +44,21 @@ TERMS = {
  'vcaero': ('aerospace', r'\b(spacex|nasa|rockets?|satellites?|starship|aerospace|orbital|boeing|airbus)\b'),
  'vcsol': ('solar energy', r'\b(solar (panels?|power|energy|farms?|cells?)|photovoltaics?|rooftop solar)\b'),
  'vcrob': ('physical robotics', r'\b(robots?|robotics?|humanoids?|boston dynamics)\b'),
+ 'cu_space': ('space and astronomy', r'\b(space|cosmic|galax\w*|astronom\w*|asteroids?|comets?|planets?|telescope|universe|nasa|spacex|lunar|moon|mars)\b'),
+ 'cu_animals': ('animals', r'\b(animals?|birds?|cats?|dogs?|whales?|octopus|octopuses|spiders?|insects?|bees|ants|dolphins?|elephants?|wildlife)\b'),
+ 'cu_food': ('food and drink', r'\b(food|cooking|recipes?|bread|coffee|tea|chocolate|cheese|ferment\w*|beer|wine|restaurants?)\b'),
+ 'cu_music': ('music', r'\b(music|musical|musicians?|songs?|piano|guitars?|synthesizers?|synthesiser|midi|orchestra|melody|vinyl)\b'),
+ 'cu_health': ('health and medicine', r'\b(health|medical|medicine|cancer|diabetes|sleep|insomnia|vaccines?|dementia|alzheim\w*|obesity|nutrition|exercise)\b'),
+ 'cu_climate': ('climate', r'\b(climate|global warming|carbon|emissions?|decarbon\w*|greenhouse|renewables?)\b'),
+ 'cu_privacy': ('privacy and surveillance', r'\b(privacy|surveillance|tracking|tracked|facial recognition|biometric\w*|wiretap\w*)\b'),
+ 'cu_education': ('education and learning', r'\b(education|schools?|teaching|teachers?|students?|classroom|university|universities|college|curriculum|textbooks?|learning)\b'),
+ 'cu_games': ('games', r'\b(games?|gaming|videogames?|chess|sudoku|tetris|nintendo|playstation|xbox|minecraft|doom)\b'),
+ 'cu_books': ('books and reading', r'\b(books?|novels?|literature|literary|poetry|poems?|libraries|library|reading|readers?|authors?)\b'),
+ 'cu_art': ('visual art', r'\b(art|artists?|painting|paintings|sculpture|photography|photographs?|museums?|illustration|typography|fonts?)\b'),
+ 'cu_maps': ('maps and geography', r'\b(maps?|mapping|cartograph\w*|geography|geographic|openstreetmap|gis|latitude|longitude)\b'),
+ 'cu_languages': ('human languages', r'\b(linguist\w*|etymolog\w*|dialects?|bilingual|multilingual|translation|translate|phonetic\w*|alphabets?|unicode)\b'),
+ 'cu_diy': ('hands-on making', r'\b(diy|homemade|woodworking|solder\w*|3d print\w*|3d-print\w*|raspberry pi|arduino|makers?|tinkering|knitting|crochet)\b'),
+ 'cu_questions': ('question headlines', r'\?'),
  'vcall': ('all six deep-tech themes', r'\b(data ?cent(er|re)s?|hyperscal\w*|(power|electric(al)?) grid|gpus?|nvidia|cuda|tpus?|semiconductors?|tsmc|asml|neuro\w*|brains?|neurons?|connectome|fmri|eeg|spacex|nasa|rockets?|satellites?|starship|aerospace|orbital|boeing|airbus|solar (panels?|power|energy|farms?|cells?)|photovoltaics?|rooftop solar|robots?|robotics?|humanoids?|boston dynamics)\b'),
 }
 def build_shares():
@@ -51,8 +66,9 @@ def build_shares():
     files = sorted(glob.glob(os.path.join(ROOT, 'data/archive/stories-*.parquet')))
     con = duckdb.connect()
     con.execute("create view s as select * from read_parquet(%s) where title is not null" % json.dumps(files))
+    ex = ', '.join("coalesce(sum(case when regexp_matches(lower(title), '%s') then coalesce(descendants, 0) end), 0) as %s_c, count(*) filter (where regexp_matches(lower(title), '%s') and score >= 10) as %s_h, count(*) filter (where regexp_matches(lower(title), '%s') and dayofweek(time at time zone 'UTC') in (0, 6)) as %s_we" % (rx.replace("'", "''"), k, rx.replace("'", "''"), k, rx.replace("'", "''"), k) for k, (l, rx) in TERMS.items() if k.startswith('cu_'))
     cols = ', '.join("count(*) filter (where regexp_matches(lower(title), '%s')) as %s_s, coalesce(sum(case when regexp_matches(lower(title), '%s') then score end), 0) as %s_p" % (rx.replace("'", "''"), k, rx.replace("'", "''"), k) for k, (_, rx) in TERMS.items())
-    q = "select strftime(time at time zone 'UTC', '%%Y-%%m') as month, count(*) as total, coalesce(sum(score), 0) as pts_total, %s from s group by 1 order by 1" % cols
+    q = "select strftime(time at time zone 'UTC', '%%Y-%%m') as month, count(*) as total, coalesce(sum(score), 0) as pts_total, coalesce(sum(coalesce(descendants, 0)), 0) as c_total, count(*) filter (where score >= 10) as h_total, count(*) filter (where dayofweek(time at time zone 'UTC') in (0, 6)) as we_total, %s, %s from s group by 1 order by 1" % (cols, ex)
     cur = con.execute(q); names = [d[0] for d in cur.description]
     rows = [dict(zip(names, r)) for r in cur.fetchall()]
     rows = rows[:-1] if rows and rows[-1]['month'] == con.execute("select strftime(max(time) at time zone 'UTC', '%Y-%m') from s").fetchone()[0] and _partial(con) else rows
