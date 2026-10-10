@@ -3,8 +3,8 @@
 (function () {
   const $ = id => document.getElementById(id);
   const AUD = {
-    engineers: { name: 'Engineers', fallback: 'h009', tag: 'engineers', clean: [], note: 'Read this first: the all-time cards (h300 onward) copy their thresholds from the older cards, so they are exploratory, not blind pre-registrations.' },
-    vcs: { name: 'Deep-tech VCs', fallback: 'h010', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
+    engineers: { name: 'Engineers', fallback: 'h300', tag: 'engineers', clean: [], note: 'Read this first: the all-time cards (h300 onward) copy their thresholds from the older cards, so they are exploratory, not blind pre-registrations.' },
+    vcs: { name: 'Deep-tech VCs', fallback: 'h319', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
     geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
   const views = ['home', 'aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson'];
