@@ -211,3 +211,5 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 .cmp_foot{flex:none;display:flex;gap:18px}.cmp_badge{margin:0;font-size:12px;color:#ff6600;font-weight:600}.cmp_det{border-color:#ff6600}
 #topics_list{flex:1;min-height:0;overflow-y:auto}.tp_row{display:flex;align-items:center;gap:8px;padding:9px 2px;border-bottom:1px solid #eadfcc;text-decoration:none;color:#1b1b1b}.tp_row b{flex:1;font-size:14px}.tp_pat{font-size:11px;color:#6f655a}
 .cmp_sheet{border:0;border-radius:14px;padding:16px;max-width:90vw;width:420px;background:#fffaf0}.cmp_sheet h3{margin:0 0 8px}.cmp_sheet b{display:block;font-size:12px;color:#6f655a}.cmp_sheet p{margin:0 0 8px;font-size:13px;word-break:break-word}
+
+.ctx-btn{font:600 13px system-ui,sans-serif;border:2px solid #ddd3c3;background:#fff;border-radius:16px;padding:6px 12px;color:#1b1b1b}.ctx svg{width:100%;height:auto;display:block}.ctx-line{stroke:#ff6600;stroke-width:2}.ctx-band{fill:#f1e6d3}.ctx p.ctx-note{font-size:12px;color:#6f655a;margin:4px 0 0}

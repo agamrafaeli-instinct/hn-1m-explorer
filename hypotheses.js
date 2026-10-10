@@ -116,6 +116,29 @@
     });
     return box;
   }
+  // Context only (#130): the monthly title share for the card's topic, loaded when asked. The verdict never reads from it.
+  let TS;
+  function contextBlock(card) {
+    const key = String(card.check.field || '').replace(/_[sph]$/, ''), box = el('div', 'ctx');
+    const b = el('button', 'ctx-btn', 'Show the monthly line, 2006 to now'); b.type = 'button'; box.appendChild(b);
+    b.addEventListener('click', async () => {
+      b.disabled = true; b.textContent = 'Loading...';
+      try {
+        TS = TS || await fetch('data/topic_series.json').then(r => r.json());
+        const t = TS.topics.find(x => x.id === key); if (!t) { box.remove(); return; }
+        const W = 320, H = 110, pl = 4, pt = 8, pb = 16, n = t.series.length, sm = t.series.map((_, i) => { const x = t.series.slice(Math.max(0, i - 5), i + 1); return x.reduce((u, w) => u + w, 0) / x.length; }), mx = Math.max.apply(null, sm) || 1;
+        const X = i => pl + (W - 2 * pl) * i / (n - 1), Y = v => pt + (H - pt - pb) * (1 - v / mx);
+        const s = sv('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Monthly share of story titles for ' + t.label + ', ' + TS.months[0] + ' to ' + TS.months[n - 1] + ', 6-month average. Peak ' + (mx * 100).toFixed(2) + '%.' });
+        s.appendChild(sv('rect', { x: X(n - 12), y: pt, width: X(n - 1) - X(n - 12), height: H - pt - pb, class: 'ctx-band' }));
+        s.appendChild(sv('path', { d: sm.map((v, i) => (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(v).toFixed(1)).join(''), class: 'ctx-line', fill: 'none' }));
+        s.appendChild(sv('text', { x: pl, y: H - 3, class: 'g-lab' }, TS.months[0].slice(0, 4)));
+        s.appendChild(sv('text', { x: W - pl, y: H - 3, 'text-anchor': 'end', class: 'g-lab' }, TS.months[n - 1].slice(0, 4)));
+        s.appendChild(sv('text', { x: pl, y: pt + 8, class: 'g-lab' }, 'peak ' + (mx * 100).toFixed(2) + '%'));
+        box.replaceChildren(s, el('p', 'ctx-note', 'Context only: monthly share of story titles for ' + t.label + ', 6-month average, 2006 to ' + TS.months[n - 1].slice(0, 4) + '. The shaded band is the latest 12 months. The verdict above reads only from the card\'s own windows.'));
+      } catch (e) { b.disabled = false; b.textContent = 'Could not load. Try again'; }
+    });
+    return box;
+  }
   function storyBody(a, card, r, la, lb) {
     const st = r.story.story, v = r.story.vars, k = card.check;
     a.classList.add('tl');
@@ -127,6 +150,7 @@
     const desc = la + ' ' + fmtN(r.mean_a, k) + ', ' + lb + ' ' + fmtN(r.mean_b, k) + ', ratio ' + fmt(r.value) + (k.unit || 'x') + '.';
     step(a, 'What we saw', [el('p', '', opening), storyChart(card, r, la, lb, desc), lg]);
     step(a, 'Takeaway', el('p', 'take', take));
+    { const cx = contextBlock(card); if (cx) step(a, 'Context', cx); }
     const bd = step(a, 'Keep in mind', el('p', 'boundary', st.boundary));
     if (st.explore && st.explore.length) {
       const p = el('p', 'xlink'), key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
