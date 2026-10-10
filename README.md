@@ -1,5 +1,7 @@
 # Hacker News Explorer
 
+<!-- last-closed -->Last closed task: [#152](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/152) All-time pilot: five terms, old window against all-time, Oct 10, 6:46 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
+
 **Everyone has a theory about Hacker News. Bring yours.**
 
 Has the conversation shifted from chatbots to agents? Is Kubernetes losing mindshare? Do strange little side projects get more attention than serious technology?
