@@ -14,7 +14,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 776332.0,
+   "group_a_count": 776259.0,
    "id": "h001",
    "score": 0.6,
    "title": "Engineers work weekdays"
@@ -72,7 +72,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 155592.0,
+   "group_a_count": 155519.0,
    "id": "h004",
    "score": 0.6,
    "title": "Friday slump"
@@ -91,7 +91,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 122936.0,
+   "group_a_count": 122863.0,
    "id": "h005",
    "score": 0.6,
    "title": "Early birds"
@@ -110,7 +110,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 320055.0,
+   "group_a_count": 320065.0,
    "id": "h006",
    "score": 0.6,
    "title": "Quiet days pay the same"
@@ -129,7 +129,7 @@
     "interesting",
     "relevant"
    ],
-   "group_a_count": 112235.0,
+   "group_a_count": 112308.0,
    "id": "h007",
    "score": 0.6,
    "title": "Saturday is for side projects"
