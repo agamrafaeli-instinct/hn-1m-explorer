@@ -31,17 +31,18 @@
     var home = /^#?\/?(\?.*)?$/.test(location.hash);
     var tid = topicId();
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
-    root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months.'));
+    root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months. The vertical scale is square-root, so small topics stay visible.'));
     if (tid) { var t0 = D.byId[tid]; var bd = el('span', 'cmp_badge', t0.pattern + (t0.ratio ? ' \u00b7 ' + (t0.ratio >= 10 ? t0.ratio.toFixed(0) : t0.ratio.toFixed(1)) + 'x the earlier share' : '')); root.appendChild(bd); }
     var box = el('div', 'cmp_box'), row = el('div', 'cmp_row'); root.appendChild(box); root.appendChild(row);
-    var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 30, padR = 132, padT = 14, padB = 22;
+    var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 34, padR = 112, padT = 14, padB = 22;
     var ser = tops.map(function (t) { return smooth(t.series); }), n = D.months.length;
     var max = Math.max.apply(null, ser.map(function (s) { return Math.max.apply(null, s); })) * 1.08 || 1;
-    var X = function (i) { return padL + (W - padL - padR) * i / (n - 1); }, Y = function (v) { return padT + (H - padT - padB) * (1 - v / max); };
+    var X = function (i) { return padL + (W - padL - padR) * i / (n - 1); }, Y = function (v) { return padT + (H - padT - padB) * (1 - Math.sqrt(Math.max(v, 0) / max)); };
     var svg = S('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, role: 'img', 'aria-label': 'Line chart of title share by month for ' + tops.map(function (t) { return t.label; }).join(', ') });
     svg.appendChild(S('rect', { x: X(n - 12), y: padT, width: X(n - 1) - X(n - 12), height: H - padT - padB, fill: '#f1e6d3' }));
-    var ticks = [0, max / 2, max].map(function (v) { return Math.round(v * 100) / 100; });
-    ticks.forEach(function (v) { var g = S('text', { x: padL - 4, y: Y(v) + 4, 'text-anchor': 'end', class: 'cmp_ax' }); g.textContent = (v === 0 ? '0' : pct(v)); svg.appendChild(g); });
+    var ticks = [0].concat([0.1, 0.5, 1, 2, 5, 10].filter(function (v) { return v < max * 0.98; })); ticks = ticks.filter(function (v, i) { return i === 0 || Math.abs(Y(v) - Y(ticks[i - 1])) > 22; });
+    ticks.forEach(function (v) { svg.appendChild(S('line', { x1: padL, x2: W - padR, y1: Y(v), y2: Y(v), stroke: '#efe6d6' })); });
+    ticks.forEach(function (v) { var g = S('text', { x: padL - 4, y: Y(v) + 4, 'text-anchor': 'end', class: 'cmp_ax' }); g.textContent = v + '%'; svg.appendChild(g); });
     for (var y = 2010; y <= 2025; y += 5) { var i = D.months.indexOf(y + '-01'); if (i < 0) continue; var tx = S('text', { x: X(i), y: H - 6, 'text-anchor': 'middle', class: 'cmp_ax' }); tx.textContent = y; svg.appendChild(tx); }
     var ends = [];
     ser.forEach(function (s, k) {

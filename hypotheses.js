@@ -296,7 +296,7 @@
       const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); fill(e.target, bl[slots.indexOf(e.target)]); } }), { rootMargin: '700px 0px' }) : null;
       slots.forEach((s, i) => io ? io.observe(s) : fill(s, bl[i]));
       const t = await tally(), c = { supported: 0, refuted: 0, inconclusive: 0 };
-      t.filter(x => !x.error && !x.audience).forEach(x => { c[x.verdict]++; });
+      t.filter(x => !x.error).forEach(x => { c[x.verdict]++; });
       const tl = document.getElementById('hyp_tally'); if (tl) tl.textContent = c.supported + ' supported, ' + c.refuted + ' refuted, ' + c.inconclusive + ' inconclusive';
     } catch (e) { host.textContent = 'Could not load hypotheses: ' + e.message; }
   }
