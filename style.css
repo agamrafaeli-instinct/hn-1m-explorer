@@ -197,3 +197,11 @@ article.hyp.skel{padding:20px;color:#8a7f70}
 
 .home .homedek{font-size:17px;margin:0 0 14px}.homeh{font:800 22px Fraunces,Georgia,serif;margin:18px 0 8px}
 .domains{display:flex;flex-direction:column;gap:10px}.dom{display:block;padding:12px 14px;border-radius:14px;background:#fff8ee;border:1px solid #e3d9ca;text-decoration:none;color:inherit}.dom .domgo{display:block;margin-top:6px;font-size:13px;font-weight:700;color:var(--act)}
+
+/* Compare view: fits one screen, no vertical scroll */
+body[data-view=compare]{overflow:hidden;padding-bottom:0}
+.cmpwrap{height:calc(100dvh - 58px);display:flex;flex-direction:column;padding:12px 14px 6px;gap:4px;max-width:900px;margin:0 auto}
+.cmp_t{font-size:18px;margin:0}.cmp_s{margin:0;color:#6f655a;font-size:12px;line-height:1.3}
+.cmp_box{flex:1;min-height:0}.cmp_box svg{display:block}.cmp_ax{font:10px system-ui,sans-serif;fill:#8a7f70}.cmp_lb{font:600 11px system-ui,sans-serif}
+.cmp_row{min-height:44px;display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding:4px 0 8px}.cmp_chip,.cmp_add{flex:none;font:12px system-ui,sans-serif;border:2px solid #ddd3c3;background:#fff;border-radius:16px;padding:5px 10px;color:#1b1b1b}
+.cmp_row{scrollbar-width:none}.cmp_row::-webkit-scrollbar{display:none}
