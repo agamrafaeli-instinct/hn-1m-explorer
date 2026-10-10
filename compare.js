@@ -32,6 +32,7 @@
     var tid = topicId();
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
     root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months.'));
+    if (tid) { var t0 = D.byId[tid]; var bd = el('span', 'cmp_badge', t0.pattern + (t0.ratio ? ' \u00b7 ' + (t0.ratio >= 10 ? t0.ratio.toFixed(0) : t0.ratio.toFixed(1)) + 'x the earlier share' : '')); root.appendChild(bd); }
     var box = el('div', 'cmp_box'), row = el('div', 'cmp_row'); root.appendChild(box); root.appendChild(row);
     var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 30, padR = 132, padT = 14, padB = 22;
     var ser = tops.map(function (t) { return smooth(t.series); }), n = D.months.length;
@@ -61,7 +62,7 @@
       row.appendChild(sel);
     }
     if (tid) { var t0 = D.byId[tid], b = el('button', 'cmp_chip cmp_det', 'Details'); b.onclick = function () { sheet(t0); }; row.insertBefore(b, row.firstChild);
-      var bd = el('span', 'cmp_badge', t0.pattern + (t0.ratio ? ' \u00b7 ' + (t0.ratio >= 10 ? t0.ratio.toFixed(0) : t0.ratio.toFixed(1)) + 'x the earlier share' : '')); root.insertBefore(bd, box); }
+       }
   }
   function sheet(t) {
     var d = document.createElement('dialog'); d.className = 'cmp_sheet';
