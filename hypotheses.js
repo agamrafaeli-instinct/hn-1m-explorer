@@ -103,6 +103,19 @@
     return 'Thresholds as declared on the card.';
   }
 
+
+  // Honor scorecard (data/honor.json): one quality line in card details. Missing file shows nothing.
+  const QR = { sharp: 'two named groups, a source that resolves, numeric rules', interesting: 'an audience tag and a why-care line', fresh: 'the verdict changed within the last 14 logged days', relevant: 'an audience tag and at least 30 matching items', insightful: 'a different comparison group, a numeric rule and a caveat', novel: 'no older card with the same fields or title' };
+  let honorP; const honor = () => honorP || (honorP = get('data/honor.json').then(d => { const m = {}; d.cards.forEach(c => { m[c.id] = c; }); return m; }).catch(() => null));
+  function qualityBlock(q) {
+    if (!q) return null;
+    const box = el('div', 'cav'); box.appendChild(el('b', '', 'Quality checks'));
+    Object.keys(q.criteria).forEach(k => {
+      const v = q.criteria[k]; if (v === null) return;
+      box.appendChild(el('p', '', k + ': ' + (v ? 'pass' : 'fail, needs ' + QR[k])));
+    });
+    return box;
+  }
   function storyBody(a, card, r, la, lb) {
     const st = r.story.story, v = r.story.vars, k = card.check;
     a.classList.add('tl');
@@ -133,6 +146,7 @@
     const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'Rule: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\\s*/i, ''))); d.appendChild(ex);
     if (r.win) d.appendChild(el('p', 'hyp-cov', 'Data window: ' + r.win + '.'));
     if (card.caveats && card.caveats.length) { const bx = el('div', 'cav'); bx.appendChild(el('b', '', 'Caveats')); card.caveats.forEach(t => bx.appendChild(el('p', '', t))); d.appendChild(bx); }
+    { const qb = qualityBlock(r.quality); if (qb) d.appendChild(qb); }
     d.appendChild(el('p', 'src', 'Check: ' + k.source + ' \\u203a ' + k.path + '.' + k.field + (card.author ? ' \\u00b7 by ' + card.author : '')));
     return d;
   }
@@ -185,6 +199,7 @@
     const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'Rule: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); d.appendChild(ex);
     if (r.win) d.appendChild(el('p', 'hyp-cov', 'Data window: ' + r.win + '.'));
     if (card.caveats && card.caveats.length) { const bx = el('div', 'cav'); bx.appendChild(el('b', '', 'Caveats')); card.caveats.forEach(t => bx.appendChild(el('p', '', t))); d.appendChild(bx); }
+    { const qb = qualityBlock(r.quality); if (qb) d.appendChild(qb); }
     d.appendChild(el('p', 'src', 'Check: ' + k.source + ' \u203a ' + k.path + '.' + k.field + (card.author ? ' \u00b7 by ' + card.author : '')));
     a.appendChild(d); a.classList.add('compact');
     return a;
@@ -221,6 +236,7 @@
       if (!/^data\/[\w.-]+\.json$/.test(src)) throw new Error('source must be data/*.json');
       const data = await source(src), r = HypEval.evaluate(b.card, data);
       r.win = winText(b.card, data);
+      try { const H = await honor(); if (H && H[b.card.id]) r.quality = H[b.card.id]; } catch (e) { }
       try {
         const idx = await storyIndex();
         if (idx.includes(b.card.id)) {
@@ -260,12 +276,22 @@
     try {
       const bl = (await bundle()).filter(b => b.error || !b.card.audience);
       const slots = bl.map(b => { const a = el('article', 'hyp skel'); a.appendChild(el('p', 'src', 'Loading ' + b.name.split('-')[0].toUpperCase() + '...')); return a; });
+      const H = await honor();
+      slots.forEach((sl, i) => { const q = H && H[bl[i].name.split('-')[0]]; sl.dataset.flag = q && q.failing.length ? '1' : '0'; });
+      if (H) {
+        const nflag = slots.filter(sl => sl.dataset.flag === '1').length, hostP = host.parentNode;
+        if (nflag && hostP && !document.getElementById('hyp_flag')) {
+          const b = el('button', 'flag-btn', 'Show only cards flagged for upgrade (' + nflag + ')'); b.type = 'button'; b.id = 'hyp_flag'; b.setAttribute('aria-pressed', 'false');
+          b.addEventListener('click', () => { const on = host.classList.toggle('only-flagged'); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.textContent = on ? 'Show all cards' : 'Show only cards flagged for upgrade (' + nflag + ')'; });
+          hostP.insertBefore(b, host);
+        }
+      }
       host.replaceChildren(...slots);
       const fill = async (slot, b) => {
         const x = await evalOne(b);
         let n;
         if (x.error) { n = el('article', 'hyp inconclusive'); n.appendChild(el('p', 'src', 'Card ' + b.name + ' could not run: ' + x.error)); } else n = compact(render(x.card, x.r));
-        slot.replaceWith(n);
+        n.dataset.flag = slot.dataset.flag || '0'; slot.replaceWith(n);
       };
       const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); fill(e.target, bl[slots.indexOf(e.target)]); } }), { rootMargin: '700px 0px' }) : null;
       slots.forEach((s, i) => io ? io.observe(s) : fill(s, bl[i]));
