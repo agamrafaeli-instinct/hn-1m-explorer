@@ -35,6 +35,7 @@ jobs:
         run: |
           pip install duckdb
           python scripts/film.py shares
+          python scripts/build_topic_series.py
       - name: Check the data before it is saved or published
         run: |
           set -o pipefail
