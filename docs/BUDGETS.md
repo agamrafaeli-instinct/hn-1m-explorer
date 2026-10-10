@@ -46,3 +46,5 @@ The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --toleranc
 `node scripts/perf.mjs --width 320` (or 430) runs every screen at that width and fails on sideways overflow. Time, size and request budgets apply at 390px only. Checked 2026-10-10: all seven screens pass at 320 and 430.
 
 2026-10-10: the home budget is 150 KB and 16 requests. Home is now the Compare chart and loads data/topic_series.json (133 KB measured).
+
+2026-10-10: the card budget is 2200 ms and 21 requests. A card loads its story file as one more request (#131).

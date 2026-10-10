@@ -9,7 +9,7 @@
   "site": "https://agamrafaeli-instinct.github.io/hn-1m-explorer/",
   "date": "2026-10-09",
   "rule": "measured median + 15 percent, time rounded up to 50 ms",
-  "note": "2026-10-10: audience and card size budgets raised to 310 KB. The film data file grew to 111 KB gzipped (45 term dictionaries and 20 years of monthly counts). The audience pages go away in #169. Home budget raised to 150 KB and 16 requests (#169): home is now the Compare chart and loads data/topic_series.json (133 KB measured)."
+  "note": "2026-10-10: audience and card size budgets raised to 310 KB. The film data file grew to 111 KB gzipped (45 term dictionaries and 20 years of monthly counts). The audience pages go away in #169. Home budget raised to 150 KB and 16 requests (#169): home is now the Compare chart and loads data/topic_series.json (133 KB measured). Card budget raised to 2200 ms and 21 requests (#131): a card now also loads its story file, and CI measured 2501 ms with the 25% tolerance applied to 1950 ms before."
  },
  "screens": {
   "home": {
@@ -35,13 +35,13 @@
    }
   },
   "card": {
-   "ms": 1950,
+   "ms": 2200,
    "kb": 310,
-   "reqs": 20,
+   "reqs": 21,
    "measured": {
-    "ms": 1688,
-    "reqs": 17,
-    "kb": 197,
+    "ms": 2501,
+    "reqs": 20,
+    "kb": 240,
     "overflow": 0
    }
   },
