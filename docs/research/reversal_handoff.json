@@ -1,0 +1,139 @@
+{
+  "Ukraine country/context": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 526,
+      "total": 350244,
+      "pct": 0.15018101666266945
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 7541,
+      "total": 4383318,
+      "pct": 0.17203862462180475
+    },
+    "peak": {
+      "start": "2022-01",
+      "end": "2022-12",
+      "n": 4200,
+      "total": 299562,
+      "pct": 1.4020469886033609
+    },
+    "vs_history": 0.8729494146608924,
+    "vs_peak": 0.1071155374131014,
+    "expression": "regexp_matches(lower(title),'\\b(ukrain(e|ian|ians)|kyiv|kiev|zelenskyy?|zelenskiy|donbas|donbass|donetsk|luhansk|lugansk|mariupol|bakhmut|kherson|euromaidan|holodomor)\\b|(\\bcrim(ea|ean)\\b.*\\b(russia|russian|annex\\w*|war|invasion|occupation)\\b|\\b(russia|russian|annex\\w*|war|invasion|occupation)\\b.*\\bcrim(ea|ean)\\b)')"
+  },
+  "Basic income family": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 82,
+      "total": 350244,
+      "pct": 0.023412249745891435
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 1382,
+      "total": 4383318,
+      "pct": 0.0315286274005217
+    },
+    "peak": {
+      "start": "2016-03",
+      "end": "2017-02",
+      "n": 272,
+      "total": 284858,
+      "pct": 0.0954861720576568
+    },
+    "vs_history": 0.7425711702725135,
+    "vs_peak": 0.24518994993070375,
+    "expression": "regexp_matches(lower(title),'\\b(basic income|guaranteed income|guaranteed minimum income|negative income tax|citizen.s income|citizen.s dividend|freedom dividend|ubi)\\b') and not regexp_matches(lower(title),'\\b(ubi[ /-]?(i/?o|camera|images?|container|file system|filesystem|nuri|ticon)|ubifs|jffs2|sheevaplug|semper ubi|ubi sub ubi|the ubiquitous computer|tcp sack panic)\\b')"
+  },
+  "YC attributed": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 573,
+      "total": 350244,
+      "pct": 0.1636002329804365
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 13298,
+      "total": 4383318,
+      "pct": 0.3033774870999549
+    },
+    "peak": {
+      "start": "2007-02",
+      "end": "2008-01",
+      "n": 532,
+      "total": 24957,
+      "pct": 2.131666466322074
+    },
+    "vs_history": 0.53926293128842,
+    "vs_peak": 0.07674757546039011,
+    "expression": "regexp_matches(lower(title),'\\b(y[ -]*combinator|yc)\\b') and not regexp_matches(lower(title),'\\bnews[. -]yc\\b|^ask yc\\s*:')"
+  },
+  "YC excluding batch tags": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 401,
+      "total": 350244,
+      "pct": 0.11449161156222519
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 8551,
+      "total": 4383318,
+      "pct": 0.19508053031972583
+    },
+    "peak": {
+      "start": "2007-02",
+      "end": "2008-01",
+      "n": 532,
+      "total": 24957,
+      "pct": 2.131666466322074
+    },
+    "vs_history": 0.5868940963743536,
+    "vs_peak": 0.05370990883004613,
+    "expression": "regexp_matches(lower(title),'\\b(y[ -]*combinator|yc)\\b') and not regexp_matches(lower(title),'\\bnews[. -]yc\\b|^ask yc\\s*:') and not regexp_matches(lower(title),'\\byc [swfx][0-9]{2}\\b')"
+  },
+  "GPT": {
+    "pattern": "\\b(chatgpt|gpt-?[0-9a-z.]*)\\b",
+    "latest": {
+      "from": "2025-08",
+      "to": "2026-07",
+      "n": 3285,
+      "total": 350244,
+      "pct": 0.9379175660396752
+    },
+    "earlier": {
+      "from": "2006-10",
+      "to": "2025-07",
+      "n": 17154,
+      "total": 4383318,
+      "pct": 0.39134737657637436
+    },
+    "peak_earlier_12": {
+      "from": "2022-12",
+      "to": "2023-11",
+      "n": 10422,
+      "total": 320159,
+      "pct": 3.2552575439078706
+    },
+    "ratio_history": 2.3966369066910906,
+    "ratio_peak": 0.28812392057733294,
+    "caveat": "Lexical screen. Fixed latest period. Peak searched over earlier rolling 12-month windows starting Jan 2007 or later."
+  },
+  "_method": {
+    "as_of_repo": "a15bc21fe0995d32e9bd9702b6944fcae3e3121a",
+    "metric": "Matched title share among titled live HN stories. UTC month boundaries. Submission-weighted, not URL-deduplicated.",
+    "caveat": "Screening measures, not complete semantic classification. Audits sampled candidates; recall not certified. Do not infer adoption, importance, influence or sentiment. YC includes portfolio labels; basic income includes targeted experiments.",
+    "source": "https://github.com/agamrafaeli-instinct/hn-1m-explorer"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "h332",
+  "title": "The six deep-tech themes together: points premium, all-time base",
+  "author": "film-cards",
+  "audience": "deep-tech investors",
+  "hypothesis": "Stories about all six deep-tech themes earn more points than the average story of the same months, across 2006 to 2026.",
+  "expect": "Points per matching story against the average story of the same months, all months: at least 1.3x strongly supports, at least 1.1x weakly supports; at or below 0.9x refutes. Between is inconclusive.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "points_vs_month_mean",
+    "unit": "x",
+    "field": "vcall_p",
+    "count_field": "vcall_s",
+    "avg_points": "pts_total",
+    "avg_count": "total",
+    "per_label": "points per story against the same-month average",
+    "group_a": {
+      "label": "all six deep-tech themes stories ({from} to {to})",
+      "indices": "all"
+    },
+    "group_b": {
+      "label": "Average story of the same months ({from} to {to})",
+      "indices": "all"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "HN attention is not technical validation, adoption, revenue or investment return.",
+    "Title matching only; some titles about the theme will be missed and some matches will be false. Archive scores for 2025-26 stories are low for all stories, so the points cards use ratios.",
+    "Solar matches panels, power, energy, cells and photovoltaics, not eclipses or the solar system."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "h323",
+  "title": "Neural biology: share of stories, all-time base",
+  "author": "film-cards",
+  "audience": "deep-tech investors",
+  "hypothesis": "Titles about neural biology take at least as large a share of HN stories in the latest 12 months as they did across all earlier years.",
+  "expect": "Share of stories in the latest 12 months divided by the pooled share of all earlier stories since 2006: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive. Title matches only, the dictionary is in scripts/film.py.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "vcnb_s",
+    "per_label": "neural biology share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "vcnb_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "vcnb_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 0.8
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.5
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "HN attention is not technical validation, adoption, revenue or investment return.",
+    "Title matching only; some titles about the theme will be missed and some matches will be false. Archive scores for 2025-26 stories are low for all stories, so the points cards use ratios.",
+    "Solar matches panels, power, energy, cells and photovoltaics, not eclipses or the solar system."
+  ]
+}

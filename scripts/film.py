@@ -38,6 +38,13 @@ TERMS = {
  'kubernetes': ('Kubernetes', r'\b(kubernetes|k8s)\b'),
  'vue': ('Vue', r'\bvue(\.?js)?\b'),
  'java': ('Java', r'\bjava\b'),
+ 'vcdc': ('data centers and grid', r'\b(data ?cent(er|re)s?|hyperscal\w*|(power|electric(al)?) grid)\b'),
+ 'vcgpu': ('GPU and chip hardware', r'\b(gpus?|nvidia|cuda|tpus?|semiconductors?|tsmc|asml)\b'),
+ 'vcnb': ('neural biology', r'\b(neuro\w*|brains?|neurons?|connectome|fmri|eeg)\b'),
+ 'vcaero': ('aerospace', r'\b(spacex|nasa|rockets?|satellites?|starship|aerospace|orbital|boeing|airbus)\b'),
+ 'vcsol': ('solar energy', r'\b(solar (panels?|power|energy|farms?|cells?)|photovoltaics?|rooftop solar)\b'),
+ 'vcrob': ('physical robotics', r'\b(robots?|robotics?|humanoids?|boston dynamics)\b'),
+ 'vcall': ('all six deep-tech themes', r'\b(data ?cent(er|re)s?|hyperscal\w*|(power|electric(al)?) grid|gpus?|nvidia|cuda|tpus?|semiconductors?|tsmc|asml|neuro\w*|brains?|neurons?|connectome|fmri|eeg|spacex|nasa|rockets?|satellites?|starship|aerospace|orbital|boeing|airbus|solar (panels?|power|energy|farms?|cells?)|photovoltaics?|rooftop solar|robots?|robotics?|humanoids?|boston dynamics)\b'),
 }
 def build_shares():
     import duckdb  # only the shares build needs it (the daily workflow installs it); cards and tests do not

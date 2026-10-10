@@ -1,6 +1,6 @@
 'use strict';
-// Guards the 5 remaining older Engineers and VC cards (h115-h119; the rest were retired when their film versions passed checks) and the ID rules for new cards.
-// 1. The 5 files are byte-identical to tests/old_cards.sha256.
+// Guards the one remaining older VC card (h119; the rest were retired when their film versions passed checks) and the ID rules for new cards.
+// 1. The file is byte-identical to tests/old_cards.sha256.
 // 2. Card IDs are unique and match their file name prefix (checked on every file, so new cards are covered).
 // 3. Adding a new card does not change the tally entry (verdict, confidence) of any old card.
 // 4. Any card added after the old set passes the same checks as tests/hypotheses.test.js.
@@ -8,11 +8,11 @@ const fs = require('fs'), path = require('path'), os = require('os'), crypto = r
 const root = path.join(__dirname, '..'), hd = path.join(root, 'hypotheses');
 const sha = f => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const listed = fs.readFileSync(path.join(__dirname, 'old_cards.sha256'), 'utf8').trim().split('\n').map(l => l.split(/\s+/));
-const OLD = n => { const k = +n.slice(1, 4); return k >= 115 && k <= 119; };
-assert.strictEqual(listed.length, 5, 'hash list must hold 5 cards');
+const OLD = n => { const k = +n.slice(1, 4); return k === 119; };
+assert.strictEqual(listed.length, 1, "hash list must hold 1 card");
 for (const [h, f] of listed) assert.strictEqual(sha(path.join(hd, f)), h, 'old card changed: ' + f);
 const files = fs.readdirSync(hd).filter(f => /^h\d{3}-[a-z0-9-]+\.json$/.test(f));
-assert.strictEqual(files.filter(OLD).length, 5, 'an old card file is missing or extra');
+assert.strictEqual(files.filter(OLD).length, 1, 'an old card file is missing or extra');
 const ids = new Set();
 for (const f of files) { const id = JSON.parse(fs.readFileSync(path.join(hd, f))).id; assert(f.startsWith(id + '-'), 'id must match file name: ' + f); assert(!ids.has(id), 'duplicate id ' + id); ids.add(id); }
 // Build the tally twice in a scratch site: as it is, and with one extra new card. Old entries must match.

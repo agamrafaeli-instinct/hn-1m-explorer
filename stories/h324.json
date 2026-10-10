@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "id": "h324",
+ "for_verdict": "refuted",
+ "question": "Does neural biology earn more points than the average story?",
+ "why": "Topics picked from past data often fade. This checks whether this one held.",
+ "opening": "Across all months, {n_a} neural biology stories are in the archive. Their points per story ran at {ratio}x the average story of the same months.",
+ "takeaway": "No premium. The card refuted at {refute_at}x or lower.",
+ "boundary": "The topic was first picked from a five-week sample, so this is exploratory. Title matching only. Archive scores for 2025-26 are low for all stories, so only the ratio is used. HN attention is not technical validation or an investment signal.",
+ "explore": [
+  "h323",
+  "h322"
+ ],
+ "counts": {
+  "n_a": {
+   "field": "vcnb_s",
+   "group": "a",
+   "op": "sum"
+  }
+ }
+}

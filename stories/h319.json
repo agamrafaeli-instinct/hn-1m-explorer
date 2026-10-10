@@ -1,0 +1,36 @@
+{
+ "schema": 1,
+ "id": "h319",
+ "for_verdict": "supported",
+ "question": "Is HN writing about data centers and the grid more than it used to?",
+ "why": "Power and compute are central themes for deep-tech readers.",
+ "opening": "Data center and grid titles were {share_b} of stories from {window_b} ({n_b} of {t_b}) and {share_a} from {window_a} ({n_a} of {t_a}).",
+ "takeaway": "Yes. The share is {ratio}x the earlier one. The card's rule for yes was {support_at}x or more.",
+ "boundary": "Title matching only, and the topic was first picked from a five-week sample, so this is exploratory. The base is every story since 2006. HN attention is not technical validation or an investment signal.",
+ "explore": [
+  "h321",
+  "h323"
+ ],
+ "counts": {
+  "n_a": {
+   "field": "vcdc_s",
+   "group": "a",
+   "op": "sum"
+  },
+  "t_a": {
+   "field": "total",
+   "group": "a",
+   "op": "sum"
+  },
+  "n_b": {
+   "field": "vcdc_s",
+   "group": "b",
+   "op": "sum"
+  },
+  "t_b": {
+   "field": "total",
+   "group": "b",
+   "op": "sum"
+  }
+ }
+}

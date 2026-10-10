@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h319",
+  "title": "Data centers and grid: share of stories, all-time base",
+  "author": "film-cards",
+  "audience": "deep-tech investors",
+  "hypothesis": "Titles about data centers and grid take at least as large a share of HN stories in the latest 12 months as they did across all earlier years.",
+  "expect": "Share of stories in the latest 12 months divided by the pooled share of all earlier stories since 2006: at least 1.5x strongly supports growth, at least 0.8x weakly supports persistence; at or below 0.5x refutes. Between is inconclusive. Title matches only, the dictionary is in scripts/film.py.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "vcdc_s",
+    "per_label": "data centers and grid share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "vcdc_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "vcdc_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 0.8
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.5
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}
