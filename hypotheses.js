@@ -55,12 +55,12 @@
   const nfmt = x => Math.round(x).toLocaleString('en-US');
   const rowsOf = (card, data, g) => {
     const rows = card.check.path.split('.').reduce((o, k) => o && o[k], data), ix = card.check['group_' + g].indices, n = rows.length;
-    return { rows, pick: (ix === 'all' ? rows.map((_, i) => i) : ix.map(i => (i < 0 ? n + i : i))).map(i => rows[i]) };
+    return { rows, pick: HypEval.resolve(ix, n).map(i => rows[i]) };
   };
   function storyVars(story, card, data, r) {
     const c = card.check, v = {}, pct = !!c.display_pct;
     const f = x => pct ? (x * 100).toFixed(2) + '%' : (Math.abs(x) >= 10 ? x.toFixed(1) : x.toFixed(2));
-    v.ratio = r.value.toFixed(2); v.a = f(r.mean_a); v.b = f(r.mean_b); v.label_a = c.group_a.label; v.label_b = c.group_b.label;
+    v.ratio = r.value.toFixed(2); v.a = f(r.mean_a); v.b = f(r.mean_b); v.label_a = r.label_a || c.group_a.label; v.label_b = r.label_b || c.group_b.label;
     const win = g => {
       const x = rowsOf(card, data, g).pick, k = c.label_field; if (!k || !x.length) return null;
       const A = String(x[0][k]), B = String(x[x.length - 1][k]);
@@ -153,7 +153,7 @@
   function render(card, r) {
     TH = (card.verdicts || []).filter(x => x.when).map(x => x.when.value);
     const k = card.check, split = r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''));
-    const la = split ? (k.legend_a || 'Matching stories') : k.group_a.label, lb = split ? (k.legend_b || 'Everything else') : k.group_b.label;
+    const la = split ? (k.legend_a || 'Matching stories') : (r.label_a || k.group_a.label), lb = split ? (k.legend_b || 'Everything else') : (r.label_b || k.group_b.label);
     const per = k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'average');
     const a = el('article', 'hyp narr ' + r.verdict);
     const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
