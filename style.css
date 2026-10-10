@@ -205,3 +205,5 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 .cmp_box{flex:1;min-height:0}.cmp_box svg{display:block}.cmp_ax{font:10px system-ui,sans-serif;fill:#8a7f70}.cmp_lb{font:600 11px system-ui,sans-serif}
 .cmp_row{min-height:44px;display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding:4px 0 8px}.cmp_chip,.cmp_add{flex:none;font:12px system-ui,sans-serif;border:2px solid #ddd3c3;background:#fff;border-radius:16px;padding:5px 10px;color:#1b1b1b}
 .cmp_row{scrollbar-width:none}.cmp_row::-webkit-scrollbar{display:none}
+
+#cmp{flex:1;min-height:0;display:flex;flex-direction:column;gap:4px}.cmp_week{flex:none;display:block;padding:6px 0 10px;font-size:13px;color:#ff6600;text-decoration:none}.cmp_week b{color:#1b1b1b}

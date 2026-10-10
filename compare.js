@@ -14,15 +14,20 @@
     return { topics: ids.slice(0, 6) };
   }
   function defaults() {
-    return D.topics.filter(function (t) { return t.ratio; }).sort(function (a, b) {
-      return Math.max(b.ratio, 1 / b.ratio) - Math.max(a.ratio, 1 / a.ratio); }).slice(0, 4).map(function (t) { return t.id; });
+    // one topic per pattern, the one with the largest change between windows, so the first view shows different shapes
+    var by = {};
+    D.topics.filter(function (t) { return t.ratio && t.latest.share > 0.0003; }).forEach(function (t) {
+      var m = Math.max(t.ratio, 1 / t.ratio), b = by[t.pattern]; if (!b || m > b.m) by[t.pattern] = { m: m, id: t.id }; });
+    return ['Reversal', 'Emergence', 'Peak decay', 'Composition shift', 'Steady'].filter(function (p) { return by[p]; }).map(function (p) { return by[p].id; }).slice(0, 5);
   }
+  function short(l) { return l.split(/, | and /)[0]; }
   function go(ids) { location.hash = '#/compare?topics=' + ids.join(','); }
   function smooth(s) { return s.map(function (_, i) { var a = s.slice(Math.max(0, i - 5), i + 1); return a.reduce(function (x, y) { return x + y; }, 0) / a.length * 100; }); }
   function draw() {
     var st = state(), root = document.getElementById('cmp'); root.replaceChildren();
     var tops = st.topics.map(function (id) { return D.byId[id]; });
-    root.appendChild(el('h2', 'cmp_t', 'Share of Hacker News story titles'));
+    var home = /^#?\/?(\?.*)?$/.test(location.hash);
+    root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : 'Share of Hacker News story titles'));
     root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months.'));
     var box = el('div', 'cmp_box'), row = el('div', 'cmp_row'); root.appendChild(box); root.appendChild(row);
     var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 30, padR = 132, padT = 14, padB = 22;
@@ -43,9 +48,9 @@
     });
     ends.sort(function (a, b) { return a.y - b.y; });
     for (var j = 1; j < ends.length; j++) if (ends[j].y - ends[j - 1].y < 14) ends[j].y = ends[j - 1].y + 14;
-    ends.forEach(function (e) { var t = S('text', { x: W - padR + 6, y: e.y + 4, fill: COL[e.k], class: 'cmp_lb' }); t.textContent = tops[e.k].label.replace(/ and .*/, '') + ' ' + pct(e.v); svg.appendChild(t); });
+    ends.forEach(function (e) { var t = S('text', { x: W - padR + 6, y: e.y + 4, fill: COL[e.k], class: 'cmp_lb' }); t.textContent = short(tops[e.k].label) + ' ' + pct(e.v); svg.appendChild(t); });
     box.appendChild(svg);
-    tops.forEach(function (t, k) { var b = el('button', 'cmp_chip', t.label.replace(/ and .*/, '') + ' \u00d7'); b.style.borderColor = COL[k]; b.onclick = function () { go(st.topics.filter(function (x) { return x !== t.id; })); }; row.appendChild(b); });
+    tops.forEach(function (t, k) { var b = el('button', 'cmp_chip', short(t.label) + ' \u00d7'); b.style.borderColor = COL[k]; b.onclick = function () { go(st.topics.filter(function (x) { return x !== t.id; })); }; row.appendChild(b); });
     if (st.topics.length < 6) {
       var sel = el('select', 'cmp_add'); sel.appendChild(el('option', '', '+ topic')); sel.firstChild.value = '';
       D.topics.filter(function (t) { return st.topics.indexOf(t.id) < 0; }).sort(function (a, b) { return a.label < b.label ? -1 : 1; }).forEach(function (t) { var o = el('option', '', t.label); o.value = t.id; sel.appendChild(o); });
@@ -57,5 +62,5 @@
     loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
     loading.then(draw).catch(function () { document.getElementById('cmp').textContent = 'The comparison data could not be loaded. Try again.'; loading = null; });
   };
-  addEventListener('resize', function () { if (D && location.hash.indexOf('#/compare') === 0) draw(); });
+  addEventListener('resize', function () { if (D && document.getElementById('v_compare') && !document.getElementById('v_compare').hidden) draw(); });
 })();
