@@ -64,8 +64,42 @@ def evaluate(s):
     return out
 
 
+FILE_KEYS = ('name', 'rows', 'first_id', 'last_id', 'sha256', 'bytes')
+
+
+def archive_checks(root, archive_dir=None):
+    """Checks on data/archive/manifest.json. Files that are present in archive_dir are counted and hashed.
+    Files that are not present are not failures (they live as release assets); they are reported as 'not held here'."""
+    out = []
+    mp = root / 'data/archive/manifest.json'
+    if not mp.exists():
+        return [('archive_manifest', 'missing', False, 'data/archive/manifest.json exists')]
+    try: files = json.loads(mp.read_text())['files']
+    except (ValueError, KeyError, TypeError): return [('archive_manifest', 'unreadable', False, 'valid JSON with a files list')]
+    bad = []
+    for f in files:
+        if not all(k in f for k in FILE_KEYS) or f['first_id'] > f['last_id'] or not 0 < f['rows'] <= f['last_id'] - f['first_id'] + 1:
+            bad.append(str(f.get('name', '?')))
+    ordered = sorted((f for f in files if f.get('name') not in bad), key=lambda f: f['first_id'])
+    overlap = [b['name'] for a, b in zip(ordered, ordered[1:]) if b['first_id'] <= a['last_id']]
+    out.append(('archive_manifest_entries', len(bad), not bad, '0 entries with missing fields or impossible counts'))
+    out.append(('archive_id_ranges', len(overlap), not overlap, '0 files whose id range overlaps the one before'))
+    mismatch, held = [], 0
+    for f in ordered:
+        p = pathlib.Path(archive_dir) / f['name'] if archive_dir else None
+        if not p or not p.exists(): continue
+        held += 1
+        if hashlib.sha256(p.read_bytes()).hexdigest() != f['sha256']: mismatch.append(f['name'] + ' hash'); continue
+        with open(p, newline='') as fh:
+            ids = [int(r['id']) for r in csv.DictReader(fh)]
+        if len(ids) != f['rows'] or (ids and (min(ids) != f['first_id'] or max(ids) != f['last_id'])): mismatch.append(f['name'] + ' count or ids')
+    out.append(('archive_files_checked', f'{held} of {len(ordered)}', not mismatch, '0 held files differ from the manifest' + (': ' + ', '.join(mismatch) if mismatch else '')))
+    return out
+
+
 def main():
-    res = evaluate(scan(ROOT)); bad = 0
+    ad = sys.argv[sys.argv.index('--archive-dir') + 1] if '--archive-dir' in sys.argv else None
+    res = evaluate(scan(ROOT)) + archive_checks(ROOT, ad); bad = 0
     for name, value, ok, limit in res:
         print(('ok  ' if ok else 'FAIL'), name.ljust(22), str(value).ljust(12), 'limit', limit)
         bad += not ok

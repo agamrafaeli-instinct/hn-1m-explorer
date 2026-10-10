@@ -74,4 +74,56 @@ class Checks(unittest.TestCase):
         res = {n: ok for n, v, ok, l in dc.evaluate(dc.scan(ROOT))}
         self.assertTrue(all(res.values()), res)
 
-if __name__ == '__main__': unittest.main()
+
+class ArchiveManifest(unittest.TestCase):
+    def mk(self, files, held=None):
+        tmp = pathlib.Path(tempfile.mkdtemp()); self.addCleanup(shutil.rmtree, tmp)
+        (tmp / 'data/archive').mkdir(parents=True)
+        (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': files}))
+        ad = tmp / 'held'; ad.mkdir()
+        for name, ids in (held or {}).items():
+            with open(ad / name, 'w', newline='') as fh:
+                w = csv.writer(fh); w.writerow(['id']); [w.writerow([i]) for i in ids]
+        return tmp, ad
+
+    def res(self, tmp, ad):
+        return {n: ok for n, v, ok, l in dc.archive_checks(tmp, ad)}
+
+    def entry(self, tmp, ad, name, rows, first, last):
+        sha = hashlib.sha256((ad / name).read_bytes()).hexdigest() if (ad / name).exists() else 'x'
+        return dict(name=name, rows=rows, first_id=first, last_id=last, sha256=sha, bytes=1)
+
+    def test_empty_manifest_passes(self):
+        tmp, ad = self.mk([]); self.assertTrue(all(self.res(tmp, ad).values()))
+
+    def test_good_file_passes(self):
+        tmp, ad = self.mk([], {'a.csv': [1, 2, 3]})
+        tmp2, _ = tmp, ad
+        (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': [self.entry(tmp, ad, 'a.csv', 3, 1, 3)]}))
+        self.assertTrue(all(self.res(tmp, ad).values()))
+
+    def test_count_mismatch_fails(self):
+        tmp, ad = self.mk([], {'a.csv': [1, 2, 3]})
+        (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': [self.entry(tmp, ad, 'a.csv', 2, 1, 3)]}))
+        self.assertFalse(self.res(tmp, ad)['archive_files_checked'])
+
+    def test_hash_mismatch_fails(self):
+        tmp, ad = self.mk([], {'a.csv': [1, 2, 3]})
+        e = self.entry(tmp, ad, 'a.csv', 3, 1, 3); e['sha256'] = '0' * 64
+        (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': [e]}))
+        self.assertFalse(self.res(tmp, ad)['archive_files_checked'])
+
+    def test_overlap_and_bad_entry_fail(self):
+        a = dict(name='a', rows=3, first_id=1, last_id=3, sha256='x', bytes=1)
+        b = dict(name='b', rows=3, first_id=3, last_id=5, sha256='x', bytes=1)
+        tmp, ad = self.mk([a, b]); self.assertFalse(self.res(tmp, ad)['archive_id_ranges'])
+        c = dict(name='c', rows=9, first_id=1, last_id=3, sha256='x', bytes=1)
+        tmp, ad = self.mk([c]); self.assertFalse(self.res(tmp, ad)['archive_manifest_entries'])
+
+    def test_missing_manifest_fails(self):
+        tmp = pathlib.Path(tempfile.mkdtemp()); self.addCleanup(shutil.rmtree, tmp)
+        self.assertFalse(dc.archive_checks(tmp)[0][2])
+
+
+if __name__ == '__main__':
+    unittest.main()

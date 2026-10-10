@@ -16,3 +16,9 @@
 | comment_share | 0.75 to 0.93 | 0.886 | About 89% of items are comments. |
 
 Limits are wide on purpose. They catch broken data, not normal weekly movement. Change a limit only with a new measured value in this table.
+
+## Archive manifest checks (#115)
+`data/archive/manifest.json` lists each archive file with `name`, `rows`, `first_id`, `last_id`, `sha256` and `bytes`. The list is empty until the storage slices add files. Three checks run with the daily checks:
+- `archive_manifest_entries`: every entry has all fields, first id is not above last id, and rows fit in the id span.
+- `archive_id_ranges`: no file's id range overlaps the one before it.
+- `archive_files_checked`: files present in the directory given with `--archive-dir` must match the manifest on SHA-256, row count, first id and last id. Files not present are not failures, because archive files live as release assets.

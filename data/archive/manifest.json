@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "note": "One entry per archive file held outside the repo (release assets). Fields: name, rows, first_id, last_id, sha256, bytes. No files are listed until the storage slices add them.",
+  "files": []
+}
