@@ -22,6 +22,8 @@ jobs:
           if [ -n "$bad" ]; then echo "Hypothesis PRs may only add files under hypotheses/hNNN-name.json. Found:"; echo "$bad"; exit 1; fi
       - name: Validate and evaluate cards
         run: node tests/hypotheses.test.js
+      - name: Card rule messages and the worked example
+        run: node tests/card_rules.test.js
       - name: Old cards unchanged and IDs unique
         run: node tests/old_cards.test.js
       - name: Story spec checks

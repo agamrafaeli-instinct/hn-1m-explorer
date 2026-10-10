@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "id": "h200",
+  "title": "Deep tech words are rising in titles",
+  "author": "your-name",
+  "audience": "engineers",
+  "hypothesis": "Deep tech words (quantum, fusion, chips and others on the site's list) are appearing in more story titles than ten weeks ago.",
+  "expect": "If true, their share of stories in the latest 4 full weeks should be at least 1.3x the share in the first 4 (1.1x counts as weak, 0.9x or below refutes it).",
+  "check": {
+    "source": "data/summary.json",
+    "path": "terms.weekly",
+    "label_field": "week",
+    "stat": "mean_ratio_a_over_b",
+    "unit": "x",
+    "field": "deeptech_stories",
+    "per_label": "share of stories",
+    "group_a": {
+      "label": "Latest 4 weeks",
+      "indices": [
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "per": "stories"
+    },
+    "group_b": {
+      "label": "First 4 weeks",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "per": "stories"
+    },
+    "display_pct": true
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ]
+}
