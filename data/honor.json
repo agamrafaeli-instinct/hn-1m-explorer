@@ -1,0 +1,1317 @@
+{
+ "cards": [
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 778280.0,
+   "id": "h001",
+   "score": 0.6,
+   "title": "Engineers work weekdays"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": false
+   },
+   "failing": [
+    "sharp",
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 165792.0,
+   "id": "h002",
+   "score": 0.4,
+   "title": "HN never sleeps"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 149850.0,
+   "id": "h003",
+   "score": 0.6,
+   "title": "Monday rush"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 157540.0,
+   "id": "h004",
+   "score": 0.6,
+   "title": "Friday slump"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 123213.0,
+   "id": "h005",
+   "score": 0.6,
+   "title": "Early birds"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 319617.0,
+   "id": "h006",
+   "score": 0.6,
+   "title": "Quiet days pay the same"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 110287.0,
+   "id": "h007",
+   "score": 0.6,
+   "title": "Saturday is for side projects"
+  },
+  {
+   "audience": null,
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": false,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "interesting",
+    "relevant"
+   ],
+   "group_a_count": 470890.0,
+   "id": "h008",
+   "score": 0.6,
+   "title": "The midweek peak"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 336.0,
+   "id": "h009",
+   "score": 1.0,
+   "title": "The new systems languages rise"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 578.0,
+   "id": "h010",
+   "score": 1.0,
+   "title": "Deep tech punches above its weight"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 482.0,
+   "id": "h011",
+   "score": 1.0,
+   "title": "Weird goes big"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 986.0,
+   "id": "h012",
+   "score": 1.0,
+   "title": "TypeScript is replacing JavaScript in the conversation"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 15886.0,
+   "id": "h013",
+   "score": 1.0,
+   "title": "Engineers moved from chatbots to agents"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 2139.0,
+   "id": "h014",
+   "score": 1.0,
+   "title": "Boring SQL databases are winning over NoSQL and MySQL"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 268.0,
+   "id": "h015",
+   "score": 1.0,
+   "title": "Microservices and serverless hype is cooling"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1181.0,
+   "id": "h016",
+   "score": 1.0,
+   "title": "React's grip is loosening"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1312.0,
+   "id": "h017",
+   "score": 1.0,
+   "title": "Next.js, Svelte, Vue, htmx and Tailwind are rising together"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1606.0,
+   "id": "h018",
+   "score": 1.0,
+   "title": "Container and cloud infrastructure keeps its share"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1817.0,
+   "id": "h019",
+   "score": 1.0,
+   "title": "The old guard of languages fades"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 153208.0,
+   "id": "h020",
+   "score": 1.0,
+   "title": "AI coding tools earn above-average points"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 55860.0,
+   "id": "h021",
+   "score": 1.0,
+   "title": "SQLite and DuckDB stories punch above their weight"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 4437.0,
+   "id": "h022",
+   "score": 1.0,
+   "title": "Engineers are returning to their tools"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 3758.0,
+   "id": "h023",
+   "score": 1.0,
+   "title": "Systems languages (Rust, Zig, C++) gain share"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 521.0,
+   "id": "h024",
+   "score": 1.0,
+   "title": "More engineers talk about maintenance"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 7500.0,
+   "id": "h025",
+   "score": 1.0,
+   "title": "LLM plumbing becomes an engineering topic"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 14294.0,
+   "id": "h026",
+   "score": 1.0,
+   "title": "Rust's rise shows up in comments, not only titles"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1609.0,
+   "id": "h027",
+   "score": 1.0,
+   "title": "Go is gaining on Python"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 524.0,
+   "id": "h028",
+   "score": 1.0,
+   "title": "Kubernetes is cooling off"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 113.0,
+   "id": "h029",
+   "score": 1.0,
+   "title": "Vue is rising"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 408.0,
+   "id": "h030",
+   "score": 1.0,
+   "title": "Java is dying on HN"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 231.0,
+   "id": "h100",
+   "score": 1.0,
+   "title": "Data centers and grid: attention persists"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 231.0,
+   "id": "h101",
+   "score": 1.0,
+   "title": "Data centers and grid: points premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 371.0,
+   "id": "h102",
+   "score": 1.0,
+   "title": "GPU and chip hardware: attention persists"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 371.0,
+   "id": "h103",
+   "score": 1.0,
+   "title": "GPU and chip hardware: points premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "relevant"
+   ],
+   "group_a_count": 22.0,
+   "id": "h104",
+   "score": 0.8,
+   "title": "Neural biology: attention persists"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "relevant"
+   ],
+   "group_a_count": 22.0,
+   "id": "h105",
+   "score": 0.8,
+   "title": "Neural biology: points premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 239.0,
+   "id": "h106",
+   "score": 1.0,
+   "title": "Aerospace: attention persists"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 239.0,
+   "id": "h107",
+   "score": 1.0,
+   "title": "Aerospace: points premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 53.0,
+   "id": "h108",
+   "score": 1.0,
+   "title": "Solar energy: attention persists"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 53.0,
+   "id": "h109",
+   "score": 1.0,
+   "title": "Solar energy: points premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 189.0,
+   "id": "h110",
+   "score": 1.0,
+   "title": "Physical robotics: attention persists"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 189.0,
+   "id": "h111",
+   "score": 1.0,
+   "title": "Physical robotics: points premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 15579.0,
+   "id": "h112",
+   "score": 1.0,
+   "title": "Discovered themes: discussion premium"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1078.0,
+   "id": "h113",
+   "score": 1.0,
+   "title": "Discovered themes: premium survives hits"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 19246.0,
+   "id": "h114",
+   "score": 1.0,
+   "title": "Discovered themes: domain breadth"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 895.0,
+   "id": "h115",
+   "score": 1.0,
+   "title": "Data centers: long-run share growth"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1111.0,
+   "id": "h116",
+   "score": 1.0,
+   "title": "GPU: long-run share growth"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 959.0,
+   "id": "h117",
+   "score": 1.0,
+   "title": "Robotics: long-run persistence"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 381.0,
+   "id": "h118",
+   "score": 1.0,
+   "title": "Solar matches: long-run share growth"
+  },
+  {
+   "audience": "deep-tech investors",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 835.0,
+   "id": "h119",
+   "score": 1.0,
+   "title": "Data centers without monthly hits: long-run hit robustness"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 482.0,
+   "id": "h120",
+   "score": 1.0,
+   "title": "Weird words, pooled points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 478.0,
+   "id": "h121",
+   "score": 1.0,
+   "title": "Weird without its top 1 percent"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 481.0,
+   "id": "h122",
+   "score": 1.0,
+   "title": "Weird without its top domain"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 113.0,
+   "id": "h123",
+   "score": 1.0,
+   "title": "Weird hit rate"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 6440.0,
+   "id": "h124",
+   "score": 1.0,
+   "title": "Weird gets talked about"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 6440.0,
+   "id": "h125",
+   "score": 1.0,
+   "title": "Weird gets votes, not arguments"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": false,
+    "sharp": true
+   },
+   "failing": [
+    "relevant"
+   ],
+   "group_a_count": 10.1,
+   "id": "h126",
+   "score": 0.8,
+   "title": "Weird lead is steady"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 100.0,
+   "id": "h127",
+   "score": 1.0,
+   "title": "Weird wins the weekend"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 100.0,
+   "id": "h128",
+   "score": 1.0,
+   "title": "Weird gets posted on weekends"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1142.0,
+   "id": "h129",
+   "score": 1.0,
+   "title": "Science oddities"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 275.0,
+   "id": "h130",
+   "score": 1.0,
+   "title": "Retro computing"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1120.0,
+   "id": "h131",
+   "score": 1.0,
+   "title": "History stories"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 303.0,
+   "id": "h132",
+   "score": 1.0,
+   "title": "Puzzles"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 8847.0,
+   "id": "h133",
+   "score": 1.0,
+   "title": "Show and tell"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 434.0,
+   "id": "h134",
+   "score": 1.0,
+   "title": "Boring words sink"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 155.0,
+   "id": "h135",
+   "score": 1.0,
+   "title": "Space has a higher hit rate"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 295.0,
+   "id": "h136",
+   "score": 1.0,
+   "title": "Animals win beyond the biggest hits"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 41.0,
+   "id": "h137",
+   "score": 1.0,
+   "title": "Food stories take over weekends"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 2567.0,
+   "id": "h138",
+   "score": 1.0,
+   "title": "Music starts more conversations"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 6604.0,
+   "id": "h139",
+   "score": 1.0,
+   "title": "Health draws talk relative to votes"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 2591.0,
+   "id": "h140",
+   "score": 1.0,
+   "title": "Climate is unusually discussion-heavy"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 5069.0,
+   "id": "h141",
+   "score": 1.0,
+   "title": "Privacy produces more talk per vote"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 126.0,
+   "id": "h142",
+   "score": 1.0,
+   "title": "Learning stories clear ten points more often"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 287.0,
+   "id": "h143",
+   "score": 1.0,
+   "title": "Games gain weekend shelf space"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 1023.0,
+   "id": "h144",
+   "score": 1.0,
+   "title": "Books beat the average after trimming"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 395.0,
+   "id": "h145",
+   "score": 1.0,
+   "title": "Visual art earns a points premium"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 94.0,
+   "id": "h146",
+   "score": 1.0,
+   "title": "Maps and geography find more hits"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 38.0,
+   "id": "h147",
+   "score": 1.0,
+   "title": "Human languages are gaining share"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 54.0,
+   "id": "h148",
+   "score": 1.0,
+   "title": "Hands-on making gets a weekend boost"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 54925.0,
+   "id": "h149",
+   "score": 1.0,
+   "title": "Question headlines provoke more comments"
+  }
+ ],
+ "schema": 1,
+ "spec": "docs/HONOR_SPEC.md"
+}
