@@ -115,3 +115,22 @@ Reading: with the engine at 8.4 MB and a whole-year file download, Option C is t
 
 
 Decision (2026-10-10): public files for older years carry story titles, scores and ids only, with no comment text. Story files in Tier 2 follow this. Comment counts per story and per day come from precomputed aggregates, not from comment rows.
+
+## Range reads measured (2026-10-10, #140)
+
+Question from slice 7b: DuckDB-WASM fetched a whole 16.5 MB file. Does it read by range, and what does a first query cost in bytes?
+
+Setup: a 50.3 MB Parquet file (200,000 rows, all columns including text, 20 row groups of 10,000, zstd), DuckDB-WASM 1.33.1 (eh bundle) in headless Chrome at 390px, a local static server with Range support. The test page script is [docs/atlas/range-test-page.js](atlas/range-test-page.js). It was never published, so nothing needs removing from the site. Bytes and requests are server independent, so they hold on Pages.
+
+| Setting | Result |
+|---|---|
+| Default (`registerFileURL` with full reads allowed) | One GET of the whole file. Every later query is free, but the first costs the full 50.3 MB. |
+| `allowFullHTTPReads: false`, `reliableHeadRequests: true`, server answers HEAD with Range as 206 | Range reads. Count: 2 requests, 31 KB. Filter on score: 10 requests, 83 KB. Title search on stories, top 25 by score: 154 requests, 2.66 MB (5 percent of the file). |
+| The same settings, server answers HEAD with Range as 200 (what GitHub Pages does) | Fails: "Failed to open file". |
+| The same settings with a one-line change to our own copy of the worker script (treat a 200 HEAD with `Accept-Ranges: bytes` as range capable) | Range reads work. Count 2 requests, 31 KB. Score filter 10 requests, 83 KB. Search 154 requests, 2.66 MB. Times 0.7 s, 0.1 s, 0.7 s on a fast link. |
+
+Why: DuckDB-WASM decides by sending `HEAD` with `Range: bytes=0-` and only uses range reads if the answer is status 206 with a Content-Length. GitHub Pages answers that HEAD with 200 (measured on stories-2007.parquet). Pages does answer GET with a Range header as 206 with `content-range` (measured on that file and earlier on an 8 MB CSV).
+
+Result: DuckDB-WASM reads by range from Pages only if we ship the patched worker script (one changed condition, kept in our repo with a test). Without it, the first query costs the whole file. A year of stories is 16.5 MB, so a first query costs 16.5 MB on the default path, or about 0.1 to 3 MB with the patch, plus the engine download.
+
+Limits of this test: the file was local, not on Pages. A 50 MB file was not put on Pages, because it would stay in the repository history for good. Pages behaviour was measured on a 976 KB Parquet file and an 8 MB CSV. Size does not change how HEAD and Range answers work. Slow 4G is in #141.
