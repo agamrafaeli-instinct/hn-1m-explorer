@@ -3,6 +3,27 @@
  "note": "One entry per archive file. Files held on Pages sit in this folder. Fields: name, rows, first_id, last_id, sha256, bytes.",
  "files": [
   {
+   "name": "stories-2006.parquet",
+   "rows": 45,
+   "first_id": 1,
+   "last_id": 62,
+   "sha256": "60ee7cb83fb3e9994b4c020cdb76493dfc5fe041a066e5fcc9c413724b9845a0",
+   "bytes": 4367,
+   "kind": "stories",
+   "year": 2006,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
    "name": "stories-2007.parquet",
    "rows": 21663,
    "first_id": 63,
@@ -11,6 +32,111 @@
    "bytes": 975962,
    "kind": "stories",
    "year": 2007,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2008.parquet",
+   "rows": 61555,
+   "first_id": 94015,
+   "last_id": 416030,
+   "sha256": "70f3c3ed1ac135ab0e22cd8cd066c40c15b43b8d19126ef987fa49ad865aefa5",
+   "bytes": 2775042,
+   "kind": "stories",
+   "year": 2008,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2009.parquet",
+   "rows": 88268,
+   "first_id": 416052,
+   "last_id": 1025207,
+   "sha256": "8f709d053b63f2ea62967e4a345a19c14f8c9cf4fb4c406daa1f2778600a1318",
+   "bytes": 4057165,
+   "kind": "stories",
+   "year": 2009,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2010.parquet",
+   "rows": 140668,
+   "first_id": 1025229,
+   "last_id": 2056823,
+   "sha256": "fa0fdd90fe59c77569c2191f1e65a50c56b12d9cc7962fe92154c98a0d3f9d74",
+   "bytes": 6525246,
+   "kind": "stories",
+   "year": 2010,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2011.parquet",
+   "rows": 199056,
+   "first_id": 2056840,
+   "last_id": 3412235,
+   "sha256": "c7983e521b8fb4368bbb7ce0590a9cf6cba76d71353f66dc72e1371e40cc7e4e",
+   "bytes": 9534589,
+   "kind": "stories",
+   "year": 2011,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2012.parquet",
+   "rows": 232842,
+   "first_id": 3412255,
+   "last_id": 4991388,
+   "sha256": "693e19ce72c168b93ee3df2edffdb4cef0f64712d04c180fef767ca95a101c06",
+   "bytes": 11356427,
+   "kind": "stories",
+   "year": 2012,
    "columns": [
     "type",
     "id",
