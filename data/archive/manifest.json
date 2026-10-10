@@ -1,5 +1,27 @@
 {
-  "version": 1,
-  "note": "One entry per archive file held outside the repo (release assets). Fields: name, rows, first_id, last_id, sha256, bytes. No files are listed until the storage slices add them.",
-  "files": []
+ "version": 1,
+ "note": "One entry per archive file. Files held on Pages sit in this folder. Fields: name, rows, first_id, last_id, sha256, bytes.",
+ "files": [
+  {
+   "name": "stories-2007.parquet",
+   "rows": 21663,
+   "first_id": 63,
+   "last_id": 94007,
+   "sha256": "fd8ac924ea36506a25eafc538413cf6e4ddb1199003438381d7f808ce037a07f",
+   "bytes": 975962,
+   "kind": "stories",
+   "year": 2007,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  }
+ ]
 }

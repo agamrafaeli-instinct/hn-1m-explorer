@@ -90,6 +90,9 @@ def archive_checks(root, archive_dir=None):
         if not p or not p.exists(): continue
         held += 1
         if hashlib.sha256(p.read_bytes()).hexdigest() != f['sha256']: mismatch.append(f['name'] + ' hash'); continue
+        if p.suffix == '.parquet':  # row count and id range are checked when the file is built (scripts/build_story_file.py)
+            if p.stat().st_size != f['bytes']: mismatch.append(f['name'] + ' bytes')
+            continue
         with open(p, newline='') as fh:
             ids = [int(r['id']) for r in csv.DictReader(fh)]
         if len(ids) != f['rows'] or (ids and (min(ids) != f['first_id'] or max(ids) != f['last_id'])): mismatch.append(f['name'] + ' count or ids')
@@ -98,7 +101,7 @@ def archive_checks(root, archive_dir=None):
 
 
 def main():
-    ad = sys.argv[sys.argv.index('--archive-dir') + 1] if '--archive-dir' in sys.argv else None
+    ad = sys.argv[sys.argv.index('--archive-dir') + 1] if '--archive-dir' in sys.argv else str(ROOT / 'data/archive')
     res = evaluate(scan(ROOT)) + archive_checks(ROOT, ad); bad = 0
     for name, value, ok, limit in res:
         print(('ok  ' if ok else 'FAIL'), name.ljust(22), str(value).ljust(12), 'limit', limit)

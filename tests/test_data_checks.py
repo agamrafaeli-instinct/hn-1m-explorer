@@ -120,6 +120,17 @@ class ArchiveManifest(unittest.TestCase):
         c = dict(name='c', rows=9, first_id=1, last_id=3, sha256='x', bytes=1)
         tmp, ad = self.mk([c]); self.assertFalse(self.res(tmp, ad)['archive_manifest_entries'])
 
+    def test_parquet_file_hash_and_bytes(self):
+        tmp, ad = self.mk([]); (ad / 's.parquet').write_bytes(b'PAR1xxxxPAR1')
+        sha = hashlib.sha256((ad / 's.parquet').read_bytes()).hexdigest()
+        e = dict(name='s.parquet', rows=3, first_id=1, last_id=3, sha256=sha, bytes=12)
+        (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': [e]}))
+        self.assertTrue(self.res(tmp, ad)['archive_files_checked'])
+        e['bytes'] = 99; (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': [e]}))
+        self.assertFalse(self.res(tmp, ad)['archive_files_checked'])
+        e['bytes'] = 12; e['sha256'] = '0' * 64; (tmp / 'data/archive/manifest.json').write_text(json.dumps({'version': 1, 'files': [e]}))
+        self.assertFalse(self.res(tmp, ad)['archive_files_checked'])
+
     def test_missing_manifest_fails(self):
         tmp = pathlib.Path(tempfile.mkdtemp()); self.addCleanup(shutil.rmtree, tmp)
         self.assertFalse(dc.archive_checks(tmp)[0][2])

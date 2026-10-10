@@ -83,3 +83,7 @@ Counts and bytes come from `stats.csv` of the Hugging Face dataset open-index/ha
 ### What this changes
 - Decision (2026-10-10): older-year public files carry story titles, scores and ids only, with no comment text. This closes the open question below. Slice 1 and every public Tier 2 and Tier 3 file follow it. Comment text stays out of the public archive. (Earlier open question:) the source terms above do not clearly allow public redistribution of item text. The owner approved release assets on #114; a yes or no on whether to also publish only story titles, scores and ids (no comment text) for older years would reduce the risk.
 - Slice 4 (gap) can use the Hugging Face months for Dec 2022 to Jul 2026, then the API for Aug 2026 to today.
+
+## Slice 1 result (2026-10-10, #143)
+
+First public story file: `data/archive/stories-2007.parquet`, 21,663 live stories (ids 63 to 94007), 976 KB, hosted on Pages (no third party). Columns: type, id, time, title, url, score, descendants. No comment text, no author names, no deleted or dead rows. Built by `scripts/build_story_file.py --year 2007` from the Hugging Face monthly files, listed in `data/archive/manifest.json` with rows, id range, sha256 and bytes. The data check now hashes held files and compares their size, and runs on every daily run. Row count and id range are checked when the file is built.
