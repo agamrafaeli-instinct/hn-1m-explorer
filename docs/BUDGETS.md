@@ -40,3 +40,7 @@ The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --toleranc
 
 ## UI check
 `node tests/ui.test.mjs [--serve DIR | --site URL]` opens the staged site at 390px and checks: home, an audience page, one card, the three week screens, the week stepper (Previous week, then Next week back to the start) and the explorer (load, then a minimum score of 100 must lower the match count). Any console error, failed request, HTTP error or sideways overflow fails the run. It takes about 10 seconds. It runs before deploy in the daily workflow and as its own job in the PR check.
+
+## Other widths
+
+`node scripts/perf.mjs --width 320` (or 430) runs every screen at that width and fails on sideways overflow. Time, size and request budgets apply at 390px only. Checked 2026-10-10: all seven screens pass at 320 and 430.

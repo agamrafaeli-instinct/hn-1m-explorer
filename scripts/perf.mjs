@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Load-time check on a throttled phone. Not published to the site.
 // usage: node scripts/perf.mjs [--site URL | --serve DIR] [--tolerance 1.25] [--runs N] [--only name,name] [--write-budgets] [--budgets data/budgets.json]
+// --width N sets the screen width (default 390). Other widths check sideways overflow only, since budgets are set at 390.
 // Settings (Lighthouse "slow 4G"): 150 ms round trip, 1.6 Mbps down, 750 kbps up, 4x CPU, 390x844 at 2x, cold cache.
 // Prints one line per screen: median content time, requests, KB, horizontal overflow. Exits 1 if a screen is over budget
 // or overflows sideways. Budgets: data/budgets.json = measured median + 15 percent (rounded up), see docs/BUDGETS.md.
@@ -27,7 +28,7 @@ if (arg('serve', false)) {
   await new Promise(ok => SERVER.listen(0, '127.0.0.1', ok)); SERVE_URL = `http://127.0.0.1:${SERVER.address().port}/`;
 }
 const SITE = String(SERVE_URL || arg('site', 'https://agamrafaeli-instinct.github.io/hn-1m-explorer/')).replace(/\/?$/, '/');
-const RUNS = +arg('runs', 3), ONLY = arg('only', '') ? String(arg('only')).split(',') : null;
+const WIDTH = +arg('width', 390), RUNS = +arg('runs', 3), ONLY = arg('only', '') ? String(arg('only')).split(',') : null;
 const BFILE = String(arg('budgets', 'data/budgets.json'));
 // name, hash route, a selector that exists only when the content is really there, and optional text it must contain
 export const SCREENS = [
@@ -51,7 +52,7 @@ async function once(url, sel, text) {
     const send = (method, params = {}) => new Promise(r => { const i = ++id; pend[i] = r; ws.send(JSON.stringify({ id: i, method, params })); });
     await send('Network.enable'); await send('Page.enable'); await send('Runtime.enable');
     await send('Network.setCacheDisabled', { cacheDisabled: true });
-    await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
+    await send('Emulation.setDeviceMetricsOverride', { width: WIDTH, height: 844, deviceScaleFactor: 2, mobile: true });
     await send('Network.emulateNetworkConditions', { offline: false, latency: 150, downloadThroughput: 204800, uploadThroughput: 93750 });
     await send('Emulation.setCPUThrottlingRate', { rate: 4 });
     const t0 = Date.now(); await send('Page.navigate', { url });
@@ -71,10 +72,10 @@ for (const [name, route, sel, text] of SCREENS) {
   if (!ok.length) { console.log(name.padEnd(16), 'FAIL content never appeared'); bad++; continue; }
   const m = { ms: median(ok.map(r => r.ms)), reqs: median(ok.map(r => r.reqs)), kb: Math.round(median(ok.map(r => r.kb))), overflow: Math.max(...ok.map(r => r.overflow)) };
   out[name] = m; const b = budgets[name]; const over = [];
-  if (b) { if (m.ms > b.ms * TOL) over.push(`time ${m.ms}>${Math.round(b.ms * TOL)} ms`); if (m.kb > b.kb) over.push(`size ${m.kb}>${b.kb} KB`); if (m.reqs > b.reqs) over.push(`requests ${m.reqs}>${b.reqs}`); }
+  if (b && WIDTH === 390) { if (m.ms > b.ms * TOL) over.push(`time ${m.ms}>${Math.round(b.ms * TOL)} ms`); if (m.kb > b.kb) over.push(`size ${m.kb}>${b.kb} KB`); if (m.reqs > b.reqs) over.push(`requests ${m.reqs}>${b.reqs}`); }
   if (m.overflow > 0) over.push(`sideways overflow ${m.overflow}px`);
   if (over.length) bad++;
-  console.log(name.padEnd(16), `${m.ms} ms`.padStart(9), `${m.reqs} req`.padStart(8), `${m.kb} KB`.padStart(8), over.length ? 'OVER: ' + over.join('; ') : (b ? 'ok' : 'no budget'));
+  console.log(name.padEnd(16), `${m.ms} ms`.padStart(9), `${m.reqs} req`.padStart(8), `${m.kb} KB`.padStart(8), over.length ? 'OVER: ' + over.join('; ') : (b && WIDTH === 390 ? 'ok' : WIDTH === 390 ? 'no budget' : 'ok (width ' + WIDTH + ', overflow only)'));
 }
 if (arg('write-budgets', false)) {
   const scr = {}; for (const [k, m] of Object.entries(out)) scr[k] = { ms: Math.ceil(m.ms * 1.15 / 50) * 50, kb: Math.ceil(m.kb * 1.15), reqs: Math.ceil(m.reqs * 1.15), measured: m };
