@@ -7,6 +7,20 @@
   var win = function (w) { return mo(w[0]) + ' to ' + mo(w[1]); };
   var fx = function (v) { return (v >= 10 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2)) + 'x'; };
   var KIND = { 'reversal': 'Reversal', 'peak decay': 'Peak decay', 'emergence': 'Emergence', 'episode': 'Back at its peak' };
+  var DRILL = { 'ChatGPT and GPT': ['#/a/engineers', 'See the cards'], 'Data centers': ['#/c/h319/vcs', 'See the card'] };
+  var DESC = { 'ChatGPT and GPT': 'Titles that name ChatGPT or a GPT model.', 'Ukraine': 'Titles about the country, its cities and the war context.', 'Basic income': 'Basic income, guaranteed income and UBI, without the file system.',
+    'Y Combinator': 'Titles that name Y Combinator, with and without batch labels.', 'Data centers': 'Titles about data centers and hyperscale, and what they are paired with.', 'Shipping chokepoints': 'Hormuz, Suez, Red Sea and Panama, and ship incidents.', 'Recession': 'Recession, soft landing and yield curve talk.' };
+  var homeDone = false;
+  window.HomeInit = function () {
+    if (homeDone) return; homeDone = true;
+    fetch('data/reversal.json').then(function (r) { return r.json(); }).then(function (d) {
+      var box = document.getElementById('home_domains');
+      d.rows.forEach(function (r) {
+        var dr = DRILL[r.label] || ['#/lesson', 'See the numbers'];
+        var a = el('a', 'dom'); a.href = dr[0]; a.appendChild(el('b', '', r.label)); a.appendChild(el('p', 'lsnote', DESC[r.label] || '')); a.appendChild(el('span', 'domgo', dr[1] + ' \u2192')); box.appendChild(a);
+      });
+    }).catch(function () { homeDone = false; });
+  };
   window.LessonInit = function () {
     if (done) return; done = true;
     fetch('data/reversal.json').then(function (r) { return r.json(); }).then(function (d) {

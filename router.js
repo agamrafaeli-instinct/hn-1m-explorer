@@ -79,6 +79,7 @@
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();
     if (v === 'lesson') window.LessonInit && window.LessonInit();
+    if (v === 'home') window.HomeInit && window.HomeInit();
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
     if (v === 'explore') { window.ExploreInit && window.ExploreInit(); window.ExploreVendor && window.ExploreVendor(); }
     if (v === 'week') loadWeek(p[1], p[2]);

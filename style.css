@@ -140,7 +140,7 @@ body{padding-bottom:58px}.view[hidden]{display:none}
 /* single-screen mobile layout */
 html{-webkit-tap-highlight-color:transparent}a,button,summary,select{touch-action:manipulation}
 .home{padding:2vh 16px 12px;min-height:calc(100svh - 58px);justify-content:space-between}
-.home .kicker{margin:10px 0 6px}.home h1{font-size:clamp(36px,10.5vw,64px);margin-bottom:12px}
+.home .kicker{margin:10px 0 6px}.home h1{font-size:clamp(30px,8.6vw,52px);margin-bottom:12px}
 .pick{flex:1;max-height:520px;grid-auto-rows:1fr;gap:10px}
 .big{min-height:0;padding:14px;gap:6px;justify-content:flex-start}
 .big b{font-size:clamp(20px,5.6vw,26px)}.big span{font-size:12.5px}.big em{font-style:normal;font-size:11px;font-weight:700;color:var(--act);margin-top:auto;line-height:1.3}
@@ -194,3 +194,6 @@ article.hyp.skel{padding:20px;color:#8a7f70}
 .lesson h3{font:800 24px Fraunces,Georgia,serif;margin:28px 0 8px}.lesson .steps{padding-left:20px}.lesson .steps li{margin:10px 0}
 .lsrow{display:flex;flex-direction:column;padding:10px 0;border-bottom:1px solid #e3d9ca}.lsrow b{font-size:20px}.lsrow span,.lsnote{font-size:13px;color:var(--mut)}
 .lscard{padding:12px 14px;margin:10px 0;border-radius:14px;background:#fff8ee;border:1px solid #e3d9ca}.lshead{display:flex;justify-content:space-between;gap:8px;align-items:center}.lstag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:#efe6d8}.lsnums{margin:6px 0 2px;font-weight:700}
+
+.home .homedek{font-size:17px;margin:0 0 14px}.homeh{font:800 22px Fraunces,Georgia,serif;margin:18px 0 8px}
+.domains{display:flex;flex-direction:column;gap:10px}.dom{display:block;padding:12px 14px;border-radius:14px;background:#fff8ee;border:1px solid #e3d9ca;text-decoration:none;color:inherit}.dom .domgo{display:block;margin-top:6px;font-size:13px;font-weight:700;color:var(--act)}
