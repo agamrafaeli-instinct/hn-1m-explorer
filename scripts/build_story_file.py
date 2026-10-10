@@ -4,7 +4,7 @@
   python scripts/build_story_file.py --year 2007
 
 Needs `pip install duckdb` (build time only, not part of the daily run). Source: the Hugging Face dataset
-open-index/hacker-news, monthly files. Only story rows are kept (type 1), and only live ones (not deleted, not dead).
+open-index/hacker-news, monthly files. Only story rows are kept (type 1), only live ones (not deleted, not dead), only those with a title, and not the stand-in rows titled exactly "Placeholder" (106 rows in 2013 and 2014, all stamped 2014-06-01) or "ghost" (49 rows in 2018, all stamped 2018-01-20). Those carry old ids out of order and are not real stories.
 Columns: type, id, time, title, url, score, descendants. No comment text, no author names, no story body text.
 Output: data/archive/stories-<year>.parquet, sorted by id. The manifest entry has name, rows, first_id, last_id,
 sha256 and bytes. Rebuilding the same year replaces its entry."""
@@ -20,7 +20,7 @@ def build(root, year):
     tree = json.load(urllib.request.urlopen(f'https://huggingface.co/api/datasets/open-index/hacker-news/tree/main/data/{year}'))
     urls = [SRC.format(y=year, m=int(f['path'][-10:-8])) for f in sorted(tree, key=lambda f: f['path']) if f['path'].endswith('.parquet')]
     assert urls, f'no monthly files for {year}'
-    d.sql(f"copy (select {', '.join(COLS)} from read_parquet({urls!r}) where type = 1 and coalesce(deleted, 0) = 0 and coalesce(dead, 0) = 0 "
+    d.sql(f"copy (select {', '.join(COLS)} from read_parquet({urls!r}) where type = 1 and coalesce(deleted, 0) = 0 and coalesce(dead, 0) = 0 and title is not null and title <> '' and title not in ('Placeholder', 'ghost') "
           f"order by id) to '{out}' (format parquet, compression zstd, compression_level 19, row_group_size 10000)")
     rows, lo, hi, bad = d.sql(f"select count(*), min(id), max(id), sum((title is null or title = '')::int) from read_parquet('{out}')").fetchone()
     cols = [r[0] for r in d.sql(f"describe select * from read_parquet('{out}')").fetchall()]

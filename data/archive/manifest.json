@@ -148,6 +148,216 @@
    ],
    "source": "huggingface.co/datasets/open-index/hacker-news",
    "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2013.parquet",
+   "rows": 260596,
+   "first_id": 4991396,
+   "last_id": 6993518,
+   "sha256": "2ada51689475747dd04f71720722af8235c366227d8480ee582970a014526b36",
+   "bytes": 12665165,
+   "kind": "stories",
+   "year": 2013,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2014.parquet",
+   "rows": 247466,
+   "first_id": 6993523,
+   "last_id": 8821654,
+   "sha256": "e26f8154c9aecc69f95278769128a6b34584612a41115377729a5f3577e9a3bb",
+   "bytes": 12025882,
+   "kind": "stories",
+   "year": 2014,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2015.parquet",
+   "rows": 265048,
+   "first_id": 8821670,
+   "last_id": 10820434,
+   "sha256": "463c3e8bbd39cf7490a91f2ae21776dd52853094a22b165eee92aba03653c3f3",
+   "bytes": 12955206,
+   "kind": "stories",
+   "year": 2015,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2016.parquet",
+   "rows": 283417,
+   "first_id": 10820445,
+   "last_id": 13293874,
+   "sha256": "3bd46de61044f7f7ef9a1295f4fa77e5fe3f16d83f4c78d269572b6ad709fd60",
+   "bytes": 13910531,
+   "kind": "stories",
+   "year": 2016,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2017.parquet",
+   "rows": 286735,
+   "first_id": 13293894,
+   "last_id": 16043719,
+   "sha256": "4d79c57797eedf1dd52178958907bca6b192bf78b933b871f88d987fc4ab3f95",
+   "bytes": 14118960,
+   "kind": "stories",
+   "year": 2017,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2018.parquet",
+   "rows": 276781,
+   "first_id": 16043786,
+   "last_id": 18797948,
+   "sha256": "215a6cb5ce9c4241d9fba0e6fd6c94ba2da3a601c142153563cc256229c2c56c",
+   "bytes": 13747029,
+   "kind": "stories",
+   "year": 2018,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2019.parquet",
+   "rows": 300960,
+   "first_id": 18797971,
+   "last_id": 21925643,
+   "sha256": "7e070cd8a76ca4470652214c9aa3036fbed716af1a05cf77005e9b919498cb8a",
+   "bytes": 14915092,
+   "kind": "stories",
+   "year": 2019,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2020.parquet",
+   "rows": 339618,
+   "first_id": 21925693,
+   "last_id": 25598804,
+   "sha256": "25d6c6cf2998566f37566e80cf46ae781c2ec7493596a14ce21a6018a3dfd518",
+   "bytes": 16550819,
+   "kind": "stories",
+   "year": 2020,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2021.parquet",
+   "rows": 290683,
+   "first_id": 25598811,
+   "last_id": 29753857,
+   "sha256": "6df2f27247c85a7714805fcfa15f33f144a02b3d30d59dc4a343d9675a3ee2e4",
+   "bytes": 14358209,
+   "kind": "stories",
+   "year": 2021,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2022.parquet",
+   "rows": 299562,
+   "first_id": 29753876,
+   "last_id": 34202045,
+   "sha256": "e5fb87d6a00c46f7d079a75d6e4291edfae1603f276981863a4814b2af4b16e8",
+   "bytes": 14535044,
+   "kind": "stories",
+   "year": 2022,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
   }
  ]
 }
