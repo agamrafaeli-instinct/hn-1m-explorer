@@ -17,6 +17,7 @@ jobs:
     timeout-minutes: 120
     permissions:
       contents: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -74,6 +75,11 @@ jobs:
             git commit -m 'Update Honor scorecard'
             git push origin HEAD:main
           fi
+      - name: Open "needs upgrade" issues (max 5 a day, never fails the run)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/honor_issues.py | tee -a "$GITHUB_STEP_SUMMARY"
       - name: UI check at 390px
         run: |
           set -o pipefail

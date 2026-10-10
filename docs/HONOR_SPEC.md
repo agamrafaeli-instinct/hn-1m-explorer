@@ -31,7 +31,7 @@ Inputs are only `hypotheses/*.json`, the data files the cards name, `stories/ind
 - Score = passes divided by scored criteria (pass and fail only).
 - A card needs an upgrade when any scored criterion fails.
 - Queue order when more than 5 are waiting: most failing criteria first, then lowest ID. At most 5 new issues a day. A card with an open "needs upgrade" issue gets no second one.
-- The issue title is `Needs upgrade: <card id> <title>` and it lists the failing criteria and the rule for each.
+- The issue title is `Upgrade card <card id>: <failing criteria>` and it lists the failing criteria and the rule for each.
 
 ## Check by hand on the current cards (2026-10-10)
 
