@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "id": "h352",
+ "for_verdict": "inconclusive",
+ "question": "Does the data back this claim: \"Hands-on making gets a weekend boost\"?",
+ "why": "It checks whether this topic takes a different share of all HN stories now than it did across the earlier years.",
+ "opening": "In {label_a}, the share was {a}. In {label_b}, it was {b}.",
+ "takeaway": "Not clear. The ratio is {ratio}x. The card supports the claim at {support_at}x or more. It refutes the claim at {refute_at}x or less.",
+ "boundary": "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories. Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used. The thresholds were copied from earlier cards, so this test is exploratory.",
+ "explore": []
+}

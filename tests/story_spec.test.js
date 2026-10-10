@@ -95,3 +95,17 @@ if (fs.existsSync(path.join(root, 'stories'))) {
   const ids = fs.readdirSync(path.join(root, 'stories')).filter(f => /^h\d{3}\.json$/.test(f)).map(f => f.slice(0, -5)).sort();
   assert.deepStrictEqual(JSON.parse(fs.readFileSync(path.join(root, 'stories/index.json'))).ids, ids, 'stories/index.json must list every story');
 }
+
+// Every story file passes the spec check and names a card that exists (issue #131).
+{
+  const dir = path.join(root, 'stories'), ids = JSON.parse(fs.readFileSync(path.join(dir, 'index.json'), 'utf8')).ids;
+  const files = fs.readdirSync(dir).filter(f => /^h\d+\.json$/.test(f)).map(f => f.replace('.json', ''));
+  assert.deepStrictEqual([...ids].sort(), files.sort(), 'stories/index.json must list every story file');
+  for (const id of files) {
+    const s = JSON.parse(fs.readFileSync(path.join(dir, id + '.json'), 'utf8'));
+    assert.strictEqual(s.id, id);
+    assert.deepStrictEqual(checkStory(s), [], id + ' fails the story check');
+    assert.ok(fs.readdirSync(path.join(root, 'hypotheses')).some(f => f.startsWith(id + '-')), id + ' has no card');
+  }
+  console.log('ok ' + files.length + ' story files pass the spec check');
+}
