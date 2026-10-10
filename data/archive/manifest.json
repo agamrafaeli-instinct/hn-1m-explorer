@@ -358,6 +358,90 @@
    ],
    "source": "huggingface.co/datasets/open-index/hacker-news",
    "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2023.parquet",
+   "rows": 318742,
+   "first_id": 34202102,
+   "last_id": 38828537,
+   "sha256": "c26173766da2da674920ebcf65f92cccc9fafddc4beeeccbe6ef1105bfeb3617",
+   "bytes": 15247994,
+   "kind": "stories",
+   "year": 2023,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2024.parquet",
+   "rows": 297655,
+   "first_id": 38828561,
+   "last_id": 42562803,
+   "sha256": "60b4cb5b668a39a3619be8b43534fda0a158175ed79ba23963a0601ce5e1d685",
+   "bytes": 14487692,
+   "kind": "stories",
+   "year": 2024,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2025.parquet",
+   "rows": 302282,
+   "first_id": 42562819,
+   "last_id": 46449662,
+   "sha256": "27f2c934a7e3af0e0507d83ee5143fa7153ceb858277cf98fc12326320af9ca9",
+   "bytes": 14641758,
+   "kind": "stories",
+   "year": 2025,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
+  },
+  {
+   "name": "stories-2026.parquet",
+   "rows": 241153,
+   "first_id": 46449679,
+   "last_id": 49395213,
+   "sha256": "af7c6fb334b3791eab855f384b12dd1a25ac92476a171263e3290c2bedc7d5e0",
+   "bytes": 11383464,
+   "kind": "stories",
+   "year": 2026,
+   "columns": [
+    "type",
+    "id",
+    "time",
+    "title",
+    "url",
+    "score",
+    "descendants"
+   ],
+   "source": "huggingface.co/datasets/open-index/hacker-news",
+   "note": "Live stories only. No comment text, no author names."
   }
  ]
 }
