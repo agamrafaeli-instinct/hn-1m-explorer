@@ -1,4 +1,6 @@
-HN new 300+ stories, last 12h, updated 2026-10-10 06:48 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-10 08:52 UTC. Forward only ids not sent before.
+50028275 | 378 pts, 139 comments | REA Reverse – Engineer Anything | https://news.ycombinator.com/item?id=50028275
+50024499 | 315 pts, 40 comments | Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded | https://news.ycombinator.com/item?id=50024499
 50026555 | 408 pts, 224 comments | YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops | https://news.ycombinator.com/item?id=50026555
 50022292 | 650 pts, 120 comments | Triple-A Minesweeper | https://news.ycombinator.com/item?id=50022292
 50021066 | 459 pts, 449 comments | US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize | https://news.ycombinator.com/item?id=50021066

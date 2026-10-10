@@ -1,4 +1,4 @@
-HN digest 2026-10-10 (UTC): 19 new stories at 300+ points
+HN digest 2026-10-10 (UTC): 12 new stories at 300+ points
 - 1065 pts, 556 comments: Cloudflare acquires Deno https://news.ycombinator.com/item?id=50019911
 - 764 pts, 240 comments: Sorry, I'm in a meeting https://news.ycombinator.com/item?id=50018088
 - 650 pts, 120 comments: Triple-A Minesweeper https://news.ycombinator.com/item?id=50022292
@@ -6,15 +6,8 @@ HN digest 2026-10-10 (UTC): 19 new stories at 300+ points
 - 459 pts, 449 comments: US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize https://news.ycombinator.com/item?id=50021066
 - 444 pts, 227 comments: Nobel Peace Prize for 2026 to Navanethem Pillay https://news.ycombinator.com/item?id=50018420
 - 408 pts, 224 comments: YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops https://news.ycombinator.com/item?id=50026555
-- 395 pts, 138 comments: Theranos.world https://news.ycombinator.com/item?id=50009295
+- 378 pts, 139 comments: REA Reverse – Engineer Anything https://news.ycombinator.com/item?id=50028275
 - 378 pts, 165 comments: Show HN: Let your AI agents paint big arrows, boxes and text on your screen https://news.ycombinator.com/item?id=50018817
-- 350 pts, 178 comments: Nature's capacity to 'bounce back' when species are lost is overestimated: study https://news.ycombinator.com/item?id=49976823
-- 342 pts, 400 comments: OpenTPU – An open-source AI accelerator, developed by AI https://news.ycombinator.com/item?id=49980715
-- 339 pts, 213 comments: Navier–Stokes Lost in Translation https://news.ycombinator.com/item?id=49994145
-- 338 pts, 3 comments: OpenAI Withdraws 3 Math Papers https://news.ycombinator.com/item?id=50003107
-- 335 pts, 92 comments: Yes, and https://news.ycombinator.com/item?id=50003796
 - 322 pts, 263 comments: Keyboard differences between Windows and Macs https://news.ycombinator.com/item?id=50015515
-- 321 pts, 147 comments: Anti-patterns in software blogging https://news.ycombinator.com/item?id=49992257
-- 318 pts, 139 comments: Gleam doesn't compile to Erlang source anymore https://news.ycombinator.com/item?id=49975619
 - 317 pts, 202 comments: OpenAI fires three safety researchers for "mishandling research information" https://news.ycombinator.com/item?id=50018350
-- 300 pts, 57 comments: Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai https://news.ycombinator.com/item?id=49990470
+- 315 pts, 40 comments: Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded https://news.ycombinator.com/item?id=50024499
