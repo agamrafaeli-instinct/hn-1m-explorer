@@ -78,6 +78,7 @@
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();
     if (v === 'compare') window.CompareInit && window.CompareInit();
+    if (v === 'how') window.HowInit && window.HowInit();
     if (v === 'topics') window.TopicsInit && window.TopicsInit();
     if (v === 'lesson') window.LessonInit && window.LessonInit();
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();

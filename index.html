@@ -206,7 +206,7 @@
   <h2>Method</h2>
   <p class="lede">Everything here is computed in your browser from public Hacker News data.</p>
   <ul>
-    <li><b>Data.</b> The newest HN items held here (stories, comments, jobs, polls), pulled from the public HN API, plus daily totals from December 2022. A daily job adds new items and keeps a rolling window. The exact count and dates are in data/manifest.json.</li>
+    <li><b>Data.</b> The newest HN items held here (stories, comments, jobs, polls), pulled from the public HN API, plus monthly topic history since <span id="how_start">2006</span> (read from data/topic_series.json). A daily job adds new items and keeps a rolling window. The exact count and dates are in data/manifest.json.</li>
     <li><b>Centers of gravity.</b> For each lens (author, domain, words, hour, weekday, month, score, comments, type) we measure how concentrated points are, for example what share the top 1% of stories hold.</li>
     <li><b>Hypotheses.</b> Each card states a guess and the number that would prove or refute it before looking. The verdict is computed from the data, never typed.</li>
     <li><b>Caveats.</b> About 89% of items are comments, which show no points, so point and comment lenses use stories only. The newest stories may not have final scores. Times are UTC.</li>

@@ -70,7 +70,7 @@ Some existing cards are exploratory: their authors had seen earlier summaries be
 | Layer | What it contains |
 | --- | --- |
 | Recent items | A rolling window of the newest items from the official HN API, including stories, comments, jobs, and polls. |
-| Historical summaries | Daily totals from December 2022, plus topic-specific historical series. Coverage varies by dataset. |
+| Historical summaries | Monthly topic history since 2006 (data/topic_series.json), plus topic-specific historical series. Coverage varies by dataset. |
 | Weekly snapshots | Saved complete UTC weeks and comparisons, with reconstructed weeks labeled. |
 | Hypotheses | 80 JSON cards with explicit checks and verdict rules. Some use refreshing data; others use fixed historical windows. |
 

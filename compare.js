@@ -72,6 +72,10 @@
     [['Latest 12 months, ' + w.latest[0] + ' to ' + w.latest[1], f(t.latest)], ['All earlier stories, ' + w.prior[0] + ' to ' + w.prior[1], f(t.prior)], ['Peak year', t.peak.year + ' at ' + pct(t.peak.share * 100)], ['Pattern', t.pattern], ['Word list (matches story titles, case-insensitive)', t.matcher]].forEach(function (r) { d.appendChild(el('b', '', r[0])); d.appendChild(el('p', '', r[1])); });
     var x = el('button', 'cmp_chip', 'Close'); x.onclick = function () { d.close(); d.remove(); }; d.appendChild(x); document.body.appendChild(d); d.showModal();
   }
+  window.HowInit = function () {
+    loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
+    loading.then(function () { var e = document.getElementById('how_start'); if (e && D.months.length) e.textContent = D.months[0].slice(0, 4); });
+  };
   window.TopicsInit = function () {
     loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
     loading.then(function () {
