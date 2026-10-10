@@ -15,7 +15,7 @@ Inputs are only `hypotheses/*.json`, the data files the cards name, `stories/ind
 - The card has an `audience` tag.
 - A story exists for the card (listed in `stories/index.json`) with a non-empty `why`. This part is n/a until every card has a story, so it switches on when the Throughline rollout (#131) is done. Until then the criterion tests the audience tag only.
 
-**3. Fresh.** Uses the verdict log, one row per card per day. Fail when the verdict and the confidence were identical in the last 14 logged days and the confidence is "strong". Cards on a fixed window (the card's source window never refreshes) are n/a. With fewer than 14 logged days the criterion is n/a. The log began on 2026-10-09, so this is first scored on 2026-10-23.
+**3. Fresh.** Uses the verdict log, one row per card per day. Fail when the verdict and the confidence were identical in the last 14 logged days and the confidence is "strong". Fixed-window cards are n/a: cards whose source is `data/engineers_history.json`, `data/vcs_history.json` or `data/curious_round2.json`, and cards h135 to h149. With fewer than 14 logged days the criterion is n/a. The log began on 2026-10-09, so this is first scored on 2026-10-23.
 
 **4. Relevant.** Pass when the card has an `audience` tag from the site's three audiences and the group A count over its rows is at least 30. The count is the sum of group A's `field`, or of its `per` field when the field name contains "points" (so points do not pass for counts).
 
