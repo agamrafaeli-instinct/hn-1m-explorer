@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-10T15:06:39.845883+00:00",
+  "generated_at": "2026-10-10T15:11:33.657714+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-009aaaba1d4ae60c7694bb65.csv",
+      "rows": 34,
+      "bytes": 10368,
+      "sha256": "009aaaba1d4ae60c7694bb65ed9d6278765944bd9332a969514f64273a64e61d",
+      "min_id": 50033693,
+      "max_id": 50033726,
+      "min_time": 1791644780,
+      "max_time": 1791645058
+    },
     {
       "path": "data/posts-inc-ffe182df25b13de85e84245c.csv",
       "rows": 36,
@@ -1142,13 +1152,13 @@
       "sha256": "1a945f2c35fe0acb9ec34dc3e372e0ff9ac5b23664da6a4cd05ef52152bbb86f"
     },
     {
-      "path": "data/posts-inc-aad966f8846e5bcc80bdc4ae.csv",
-      "rows": 4000,
-      "bytes": 1429146,
-      "sha256": "aad966f8846e5bcc80bdc4ae1a58d33998bcbe3c7e0607f2c77ff3922c3e4042",
-      "min_id": 49033693,
+      "path": "data/posts-inc-b16fef43db20acf7a112989b.csv",
+      "rows": 3966,
+      "bytes": 1417769,
+      "sha256": "b16fef43db20acf7a112989baa4a5069395879da934d2ea558c801b8dae9300c",
+      "min_id": 49033727,
       "max_id": 49037692,
-      "min_time": 1784890223,
+      "min_time": 1784890442,
       "max_time": 1784909308
     }
   ],
@@ -1174,12 +1184,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 345864827,
+  "total_csv_bytes": 345863818,
   "daily_update": {
-    "last_scanned_id": 50033692,
-    "previous_scanned_id": 50033656,
+    "last_scanned_id": 50033726,
+    "previous_scanned_id": 50033692,
     "unavailable_ids": [],
-    "new_rows": 36,
+    "new_rows": 34,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
