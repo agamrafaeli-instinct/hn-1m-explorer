@@ -5,7 +5,7 @@ Epic #109. This is the plan. Numbers marked "estimate" are to be replaced by mea
 ## What is held today (measured 2026-10-09)
 
 - Items: the newest 1,000,000 only, 2026-07-23 to 2026-10-09 (data/posts-*.csv, 346,208,708 bytes, about 346 bytes a row).
-- Daily totals: 2022-12-01 to 2026-07-31 (data/history/daily.csv). No items.
+- Daily totals: 2006-10-09 to 2026-07-31 (data/history/daily.csv). No items. The part before 2022-12-01 was added by task 116 from the Hugging Face monthly files. 123 early days with no items are zero rows. Type codes in that source: 3 poll, 4 poll option, 5 job.
 - Before December 2022: nothing.
 - Item ids run from 1 (2006-10-09) to about 50.0 million now (HN API maxitem 50,020,248). Id 34,000,000 is from 2022-12-15.
 
