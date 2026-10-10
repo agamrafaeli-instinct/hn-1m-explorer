@@ -1,43 +1,20 @@
-HN digest 2026-10-10 (UTC): 42 new stories at 250+ points
-- 1065 pts, 556 comments: Cloudflare acquires Deno
-- 764 pts, 240 comments: Sorry, I'm in a meeting
-- 650 pts, 120 comments: Triple-A Minesweeper
-- 592 pts, 265 comments: Our $445M Series D
-- 531 pts, 120 comments: Whistle: Speech to Text in 16.9 MB
-- 459 pts, 449 comments: US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize
-- 444 pts, 227 comments: Nobel Peace Prize for 2026 to Navanethem Pillay
-- 417 pts, 352 comments: Why isn't the industry freaking out about DeepSeek 4.1 Flash?
-- 408 pts, 224 comments: YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops
-- 396 pts, 250 comments: Man discovers his parents' coffee machine used 1TB of data in 10 days
-- 395 pts, 138 comments: Theranos.world
-- 388 pts, 62 comments: I hired an illustrator to draw my house. Now it's my Home Assistant dashboard
-- 379 pts, 390 comments: The Mathocalypse
-- 378 pts, 165 comments: Show HN: Let your AI agents paint big arrows, boxes and text on your screen
-- 355 pts, 181 comments: I gave Opus 5.5 one prompt and six hours to visualize Invisible Cities
-- 351 pts, 246 comments: OpenAI annualised revenues $20B less than previously signalled
-- 350 pts, 178 comments: Nature's capacity to 'bounce back' when species are lost is overestimated: study
-- 342 pts, 400 comments: OpenTPU – An open-source AI accelerator, developed by AI
-- 339 pts, 213 comments: Navier–Stokes Lost in Translation
-- 338 pts, 3 comments: OpenAI Withdraws 3 Math Papers
-- 335 pts, 92 comments: Yes, and
-- 322 pts, 263 comments: Keyboard differences between Windows and Macs
-- 321 pts, 147 comments: Anti-patterns in software blogging
-- 318 pts, 139 comments: Gleam doesn't compile to Erlang source anymore
-- 317 pts, 202 comments: OpenAI fires three safety researchers for "mishandling research information"
-- 300 pts, 57 comments: Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai
-- 299 pts, 137 comments: Docker Agent
-- 298 pts, 232 comments: What's Earth's dominant species by mass?
-- 290 pts, 156 comments: Beauty in DVD Menus
-- 287 pts, 83 comments: Python 3.15
-- 284 pts, 561 comments: OpenAI withdraws three mathematical results
-- 283 pts, 78 comments: Strands Decider 2B: a small, open-source, decision model
-- 279 pts, 113 comments: The Slow Formation of Durable Software
-- 273 pts, 160 comments: 'Jonathan' is the oldest land animal on Earth
-- 272 pts, 206 comments: Typesafe AI raises $870M at $7.5B
-- 268 pts, 510 comments: Paramount Skydance has completed its $111B merger with Warner Bros. Discovery
-- 267 pts, 153 comments: ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)
-- 266 pts, 153 comments: Claude Code’s suggested message feature: I think the real customer is the model
-- 264 pts, 127 comments: I think I found a planet nobody knew existed. I used Claude Code to find it
-- 261 pts, 169 comments: No Man Is an Island
-- 256 pts, 159 comments: 4-hour battery storage is cheaper to install than gas turbines all across globe
-- 252 pts, 57 comments: Cleo (Mathematician)
+HN digest 2026-10-10 (UTC): 19 new stories at 300+ points
+- 1065 pts, 556 comments: Cloudflare acquires Deno https://news.ycombinator.com/item?id=50019911
+- 764 pts, 240 comments: Sorry, I'm in a meeting https://news.ycombinator.com/item?id=50018088
+- 650 pts, 120 comments: Triple-A Minesweeper https://news.ycombinator.com/item?id=50022292
+- 592 pts, 265 comments: Our $445M Series D https://news.ycombinator.com/item?id=50020014
+- 459 pts, 449 comments: US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize https://news.ycombinator.com/item?id=50021066
+- 444 pts, 227 comments: Nobel Peace Prize for 2026 to Navanethem Pillay https://news.ycombinator.com/item?id=50018420
+- 408 pts, 224 comments: YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops https://news.ycombinator.com/item?id=50026555
+- 395 pts, 138 comments: Theranos.world https://news.ycombinator.com/item?id=50009295
+- 378 pts, 165 comments: Show HN: Let your AI agents paint big arrows, boxes and text on your screen https://news.ycombinator.com/item?id=50018817
+- 350 pts, 178 comments: Nature's capacity to 'bounce back' when species are lost is overestimated: study https://news.ycombinator.com/item?id=49976823
+- 342 pts, 400 comments: OpenTPU – An open-source AI accelerator, developed by AI https://news.ycombinator.com/item?id=49980715
+- 339 pts, 213 comments: Navier–Stokes Lost in Translation https://news.ycombinator.com/item?id=49994145
+- 338 pts, 3 comments: OpenAI Withdraws 3 Math Papers https://news.ycombinator.com/item?id=50003107
+- 335 pts, 92 comments: Yes, and https://news.ycombinator.com/item?id=50003796
+- 322 pts, 263 comments: Keyboard differences between Windows and Macs https://news.ycombinator.com/item?id=50015515
+- 321 pts, 147 comments: Anti-patterns in software blogging https://news.ycombinator.com/item?id=49992257
+- 318 pts, 139 comments: Gleam doesn't compile to Erlang source anymore https://news.ycombinator.com/item?id=49975619
+- 317 pts, 202 comments: OpenAI fires three safety researchers for "mishandling research information" https://news.ycombinator.com/item?id=50018350
+- 300 pts, 57 comments: Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai https://news.ycombinator.com/item?id=49990470
