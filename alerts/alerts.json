@@ -1,5 +1,38 @@
 [
  {
+  "id": "50032556",
+  "title": "Lobbying is corruption",
+  "points": 410,
+  "comments": 200,
+  "author": "LucidLynx",
+  "hn": "https://news.ycombinator.com/item?id=50032556",
+  "url": "https://carette.xyz/posts/lobbying_and_corruption/",
+  "created_at": "2026-10-10T13:05:58Z",
+  "reported_at": 1791651153
+ },
+ {
+  "id": "50031269",
+  "title": "`123456' password used in Danish CPR data breach",
+  "points": 310,
+  "comments": 170,
+  "author": "baal80spam",
+  "hn": "https://news.ycombinator.com/item?id=50031269",
+  "url": "https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/",
+  "created_at": "2026-10-10T09:51:49Z",
+  "reported_at": 1791651153
+ },
+ {
+  "id": "50029123",
+  "title": "Telegram Desktop vulnerability allowed any user's file to be stolen",
+  "points": 314,
+  "comments": 161,
+  "author": "g-b-r",
+  "hn": "https://news.ycombinator.com/item?id=50029123",
+  "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/",
+  "created_at": "2026-10-10T03:02:47Z",
+  "reported_at": 1791651153
+ },
+ {
   "id": "50028275",
   "title": "REA Reverse \u2013 Engineer Anything",
   "points": 378,
