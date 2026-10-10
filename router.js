@@ -7,8 +7,8 @@
     vcs: { name: 'Deep-tech VCs', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
     geeks: { name: 'Curious geeks', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
-  const views = ['home', 'aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'];
-  const tabOf = { topics: 'home', compare: 'home', lesson: 'lesson', home: 'home', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'];
+  const tabOf = { topics: 'home', compare: 'home', lesson: 'lesson', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
   function deeper(list, key) {
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;
@@ -80,7 +80,6 @@
     if (v === 'compare') window.CompareInit && window.CompareInit();
     if (v === 'topics') window.TopicsInit && window.TopicsInit();
     if (v === 'lesson') window.LessonInit && window.LessonInit();
-    if (v === 'home') window.HomeInit && window.HomeInit();
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
     if (v === 'explore') { window.ExploreInit && window.ExploreInit(); window.ExploreVendor && window.ExploreVendor(); }
     if (v === 'week') loadWeek(p[1], p[2]);
