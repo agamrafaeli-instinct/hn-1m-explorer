@@ -24,3 +24,12 @@ jobs:
         run: node tests/hypotheses.test.js
       - name: Old cards unchanged and IDs unique
         run: node tests/old_cards.test.js
+  ui:
+    name: UI check at 390px
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/ui.test.mjs

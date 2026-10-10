@@ -60,6 +60,12 @@ jobs:
             git commit -m 'Log card verdicts'
             git push origin HEAD:main
           fi
+      - name: UI check at 390px
+        run: |
+          set -o pipefail
+          node tests/ui.test.mjs --serve _site | tee ui.txt
+          { echo '### UI check (390px)'; echo '```'; cat ui.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          rm ui.txt
       - name: Check load time and size against budgets
         run: |
           set -o pipefail
