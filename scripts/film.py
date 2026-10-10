@@ -59,6 +59,13 @@ TERMS = {
  'cu_languages': ('human languages', r'\b(linguist\w*|etymolog\w*|dialects?|bilingual|multilingual|translation|translate|phonetic\w*|alphabets?|unicode)\b'),
  'cu_diy': ('hands-on making', r'\b(diy|homemade|woodworking|solder\w*|3d print\w*|3d-print\w*|raspberry pi|arduino|makers?|tinkering|knitting|crochet)\b'),
  'cu_questions': ('question headlines', r'\?'),
+ 'gk_weird': ('weird and mysterious words', r'\b(weird|strange|bizarre|mysterious|mystery|unusual|odd|curious|ancient|abandoned|forgotten|haunted|secret|unexplained|oldest|accidentally)\b'),
+ 'gk_science': ('science words', r'\b(physics|biology|chemistry|astronom\w*|asteroids?|comets?|planets?|dinosaurs?|fossils?|species|octopus|spiders?|insects?|bacteria|fungus|fungi|neurons?|brain|genome|particles?|mathematics|mathematical|primes?|theorem|universe|telescope|volcano|ocean)\b'),
+ 'gk_retro': ('retro computing', r'\b(retro|vintage|1970s|1980s|1990s|commodore|amiga|atari|apple ii|c64|zx spectrum|nes|pdp-?\d+|mainframe|floppy|bbs|ms-dos|msdos|cp/m|8-bit|16-bit|arcade)\b'),
+ 'gk_history': ('history words', r'\b(history|historical|historic|century|centuries|medieval|roman|romans|empire|victorian|archaeolog\w*|antique|museum|1[0-9]{3})\b'),
+ 'gk_puzzle': ('puzzles and games of skill', r'\b(puzzles?|riddles?|chess|sudoku|crosswords?|rubik\w*|maze|wordle|minesweeper|tetris)\b'),
+ 'gk_showhn': ('Show HN posts', r'^show hn'),
+ 'gk_boring': ('business-software words', r'\b(enterprise|compliance|saas|b2b|pricing|invoice|erp|crm|webinar|whitepaper)\b'),
  'vcall': ('all six deep-tech themes', r'\b(data ?cent(er|re)s?|hyperscal\w*|(power|electric(al)?) grid|gpus?|nvidia|cuda|tpus?|semiconductors?|tsmc|asml|neuro\w*|brains?|neurons?|connectome|fmri|eeg|spacex|nasa|rockets?|satellites?|starship|aerospace|orbital|boeing|airbus|solar (panels?|power|energy|farms?|cells?)|photovoltaics?|rooftop solar|robots?|robotics?|humanoids?|boston dynamics)\b'),
 }
 def build_shares():
@@ -66,7 +73,7 @@ def build_shares():
     files = sorted(glob.glob(os.path.join(ROOT, 'data/archive/stories-*.parquet')))
     con = duckdb.connect()
     con.execute("create view s as select * from read_parquet(%s) where title is not null" % json.dumps(files))
-    ex = ', '.join("coalesce(sum(case when regexp_matches(lower(title), '%s') then coalesce(descendants, 0) end), 0) as %s_c, count(*) filter (where regexp_matches(lower(title), '%s') and score >= 10) as %s_h, count(*) filter (where regexp_matches(lower(title), '%s') and dayofweek(time at time zone 'UTC') in (0, 6)) as %s_we" % (rx.replace("'", "''"), k, rx.replace("'", "''"), k, rx.replace("'", "''"), k) for k, (l, rx) in TERMS.items() if k.startswith('cu_'))
+    ex = ', '.join("coalesce(sum(case when regexp_matches(lower(title), '%s') then coalesce(descendants, 0) end), 0) as %s_c, count(*) filter (where regexp_matches(lower(title), '%s') and score >= 10) as %s_h, count(*) filter (where regexp_matches(lower(title), '%s') and dayofweek(time at time zone 'UTC') in (0, 6)) as %s_we" % (rx.replace("'", "''"), k, rx.replace("'", "''"), k, rx.replace("'", "''"), k) for k, (l, rx) in TERMS.items() if k.startswith(('cu_', 'gk_')))
     cols = ', '.join("count(*) filter (where regexp_matches(lower(title), '%s')) as %s_s, coalesce(sum(case when regexp_matches(lower(title), '%s') then score end), 0) as %s_p" % (rx.replace("'", "''"), k, rx.replace("'", "''"), k) for k, (_, rx) in TERMS.items())
     q = "select strftime(time at time zone 'UTC', '%%Y-%%m') as month, count(*) as total, coalesce(sum(score), 0) as pts_total, coalesce(sum(coalesce(descendants, 0)), 0) as c_total, count(*) filter (where score >= 10) as h_total, count(*) filter (where dayofweek(time at time zone 'UTC') in (0, 6)) as we_total, %s, %s from s group by 1 order by 1" % (cols, ex)
     cur = con.execute(q); names = [d[0] for d in cur.description]

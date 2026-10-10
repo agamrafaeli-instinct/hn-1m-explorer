@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "h368",
+  "title": "Business-software words sink",
+  "author": "film-cards",
+  "audience": "curious readers",
+  "hypothesis": "Titles with business-software words earn fewer points per story: the control for the odd-and-fun claims.",
+  "expect": "Points per matching story against the average story of the same months, across 2006 to 2026: at or below 0.9x supports; at or above 1.0x refutes. Between is inconclusive. Title matching only.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "points_vs_month_mean",
+    "unit": "x",
+    "field": "gk_boring_p",
+    "count_field": "gk_boring_s",
+    "avg_points": "pts_total",
+    "avg_count": "total",
+    "per_label": "points per story against the same-month average",
+    "group_a": {
+      "label": "business-software words stories ({from} to {to})",
+      "indices": "all"
+    },
+    "group_b": {
+      "label": "Average story of the same months ({from} to {to})",
+      "indices": "all"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.75
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories.",
+    "Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used.",
+    "Associations do not show what causes attention."
+  ]
+}

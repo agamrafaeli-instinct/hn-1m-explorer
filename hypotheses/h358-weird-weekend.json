@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "h358",
+  "title": "Weird gets posted on weekends",
+  "author": "film-cards",
+  "audience": "curious readers",
+  "hypothesis": "Weird-word stories make up a bigger share of weekend submissions than of all submissions.",
+  "expect": "The topic share of UTC weekend stories divided by its share of all stories, across 2006 to 2026: at least 1.1x supports (1.3x or more is strong); at or below 0.9x refutes. Between is inconclusive. Title matching only.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "gk_weird_we",
+    "per_label": "share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "weird and mysterious words share of weekend stories ({from} to {to})",
+      "indices": "all",
+      "field": "gk_weird_we",
+      "per": "we_total"
+    },
+    "group_b": {
+      "label": "weird and mysterious words share of all stories ({from} to {to})",
+      "indices": "all",
+      "field": "gk_weird_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories.",
+    "Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used.",
+    "Associations do not show what causes attention."
+  ]
+}
