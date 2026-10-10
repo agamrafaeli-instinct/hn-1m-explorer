@@ -11,7 +11,7 @@ Two jobs:
 Stories only (comments carry no score and no title). Dead and deleted stories are excluded because the archive holds live
 stories only. Archive scores for 2025-26 stories are low for all stories, so cards use ratios, never raw score levels.
 """
-import duckdb, glob, json, os, re, sys, datetime as dt
+import glob, json, os, re, sys, datetime as dt
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 # term id -> (label, regex on the lower-cased title). Add terms here; every card names one id.
 TERMS = {
@@ -40,6 +40,7 @@ TERMS = {
  'java': ('Java', r'\bjava\b'),
 }
 def build_shares():
+    import duckdb  # only the shares build needs it (the daily workflow installs it); cards and tests do not
     files = sorted(glob.glob(os.path.join(ROOT, 'data/archive/stories-*.parquet')))
     con = duckdb.connect()
     con.execute("create view s as select * from read_parquet(%s) where title is not null" % json.dumps(files))

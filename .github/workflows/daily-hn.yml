@@ -32,7 +32,9 @@ jobs:
       - name: Refresh curious-geeks numbers
         run: python scripts/geeks.py
       - name: Refresh film-card monthly shares
-        run: python scripts/film.py shares
+        run: |
+          pip install duckdb
+          python scripts/film.py shares
       - name: Check the data before it is saved or published
         run: |
           set -o pipefail
