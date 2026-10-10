@@ -112,3 +112,6 @@ What the numbers do not show:
 - GitHub Pages does answer Range requests: a request for bytes 1000-1999 of data/posts-00016.csv (8,388,608 bytes, the largest file on the site) on the live site returned status 206 with `content-range`, `accept-ranges: bytes` and `access-control-allow-origin: *`. No file near 50 MB is on Pages, so the 50 MB case is not tested.
 
 Reading: with the engine at 8.4 MB and a whole-year file download, Option C is too heavy for a first visit on a phone. Option B (year shards as plain files, loaded on demand) or a smaller per-year file with only the columns the page needs should be compared before 7c. Whether DuckDB-WASM can be made to use range reads is open.
+
+
+Decision (2026-10-10): public files for older years carry story titles, scores and ids only, with no comment text. Story files in Tier 2 follow this. Comment counts per story and per day come from precomputed aggregates, not from comment rows.

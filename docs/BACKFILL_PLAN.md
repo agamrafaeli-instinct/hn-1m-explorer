@@ -81,5 +81,5 @@ Counts and bytes come from `stats.csv` of the Hugging Face dataset open-index/ha
 - Not measured: bytes per year for the 346-byte CSV format on older years, and the Explorer story-only file sizes. Those follow from the counts above and the story share (about 11 percent of items).
 
 ### What this changes
-- Slice 1 (public release assets) has an open question: the source terms above do not clearly allow public redistribution of item text. The owner approved release assets on #114; a yes or no on whether to also publish only story titles, scores and ids (no comment text) for older years would reduce the risk.
+- Decision (2026-10-10): older-year public files carry story titles, scores and ids only, with no comment text. This closes the open question below. Slice 1 and every public Tier 2 and Tier 3 file follow it. Comment text stays out of the public archive. (Earlier open question:) the source terms above do not clearly allow public redistribution of item text. The owner approved release assets on #114; a yes or no on whether to also publish only story titles, scores and ids (no comment text) for older years would reduce the risk.
 - Slice 4 (gap) can use the Hugging Face months for Dec 2022 to Jul 2026, then the API for Aug 2026 to today.
