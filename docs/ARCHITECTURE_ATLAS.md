@@ -131,7 +131,7 @@ Setup: a 50.3 MB Parquet file (200,000 rows, all columns including text, 20 row 
 
 Why: DuckDB-WASM decides by sending `HEAD` with `Range: bytes=0-` and only uses range reads if the answer is status 206 with a Content-Length. GitHub Pages answers that HEAD with 200 (measured on stories-2007.parquet). Pages does answer GET with a Range header as 206 with `content-range` (measured on that file and earlier on an 8 MB CSV).
 
-Result: DuckDB-WASM reads by range from Pages only if we ship the patched worker script (one changed condition, kept in our repo with a test). Without it, the first query costs the whole file. A year of stories is 16.5 MB, so a first query costs 16.5 MB on the default path, or about 0.1 to 3 MB with the patch, plus the engine download.
+Result: DuckDB-WASM reads by range from Pages only if we ship a patched copy of the worker script. The patch is one changed condition, recorded in [docs/atlas/worker-patch.md](atlas/worker-patch.md). It is not in the repo as code yet: it was applied only in the local test, and the full archive mode task (7c) must add it with a test. Without it, the first query costs the whole file. A year of stories is 16.5 MB, so a first query costs 16.5 MB on the default path, or about 0.1 to 3 MB with the patch, plus the engine download.
 
 Limits of this test: the file was local, not on Pages. A 50 MB file was not put on Pages, because it would stay in the repository history for good. Pages behaviour was measured on a 976 KB Parquet file and an 8 MB CSV. Size does not change how HEAD and Range answers work. Slow 4G is in #141.
 
