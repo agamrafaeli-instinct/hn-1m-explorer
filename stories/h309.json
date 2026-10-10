@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "id": "h309",
+ "for_verdict": "supported",
+ "question": "Does the data back this claim: \"SQLite and DuckDB stories punch above their weight\"?",
+ "why": "It checks whether stories on this topic do better than the average story of the same months. The measure is points per story against the same-month average.",
+ "opening": "For these stories the measure was {a}. For the average story of the same months it was {b}.",
+ "takeaway": "Yes. The ratio is {ratio}x. It refutes the claim at {refute_at}x or less.",
+ "boundary": "The thresholds were copied from earlier cards, so this test is exploratory.",
+ "explore": []
+}

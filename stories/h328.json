@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "id": "h328",
+ "for_verdict": "inconclusive",
+ "question": "Does the data back this claim: \"Solar energy: points premium, all-time base\"?",
+ "why": "It checks whether stories on this topic do better than the average story of the same months. The measure is points per story against the same-month average.",
+ "opening": "For these stories the measure was {a}. For the average story of the same months it was {b}.",
+ "takeaway": "Not clear. The ratio is {ratio}x. It refutes the claim at {refute_at}x or less.",
+ "boundary": "Title matching only; some titles about the theme will be missed and some matches will be false. Archive scores for 2025-26 stories are low for all stories, so the points cards use ratios. Solar matches panels, power, energy, cells and photovoltaics, not eclipses or the solar system. The thresholds were copied from earlier cards, so this test is exploratory.",
+ "explore": []
+}

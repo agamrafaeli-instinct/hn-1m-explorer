@@ -49,7 +49,7 @@ def build(c, verdict):
     return s
 
 if __name__ == '__main__':
-    a = argparse.ArgumentParser(); a.add_argument('ids', nargs='*'); a.add_argument('--range', nargs=2)
+    a = argparse.ArgumentParser(); a.add_argument('ids', nargs='*'); a.add_argument('--range', nargs=2); a.add_argument('--force', action='store_true')
     x = a.parse_args(); ids = list(x.ids)
     if x.range:
         lo, hi = (int(r.lstrip('h')) for r in x.range); ids += ['h%d' % n for n in range(lo, hi + 1)]
@@ -57,6 +57,7 @@ if __name__ == '__main__':
     for i in ids:
         try: p = card_path(i)
         except StopIteration: continue
+        if (ROOT / 'stories' / f'{i}.json').exists() and not x.force: continue   # never overwrite a hand-written story
         c = json.load(open(p)); st = build(c, V[i])
         json.dump(st, open(ROOT / 'stories' / f'{i}.json', 'w'), indent=1); open(ROOT / 'stories' / f'{i}.json', 'a').write('\n')
         if i not in idx['ids']: idx['ids'].append(i)

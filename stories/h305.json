@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "id": "h305",
+ "for_verdict": "supported",
+ "question": "Does the data back this claim: \"Next.js, Svelte, Vue, htmx and Tailwind are rising together\"?",
+ "why": "It checks whether this topic takes a different share of all HN stories now than it did across the earlier years.",
+ "opening": "In {label_a}, the share was {a}. In {label_b}, it was {b}.",
+ "takeaway": "Yes. The ratio is {ratio}x. It refutes the claim at {refute_at}x or less.",
+ "boundary": "The thresholds were copied from earlier cards, so this test is exploratory.",
+ "explore": []
+}

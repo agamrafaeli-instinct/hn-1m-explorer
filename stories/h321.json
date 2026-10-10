@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "id": "h321",
+ "for_verdict": "supported",
+ "question": "Does the data back this claim: \"GPU and chip hardware: share of stories, all-time base\"?",
+ "why": "It checks whether this topic takes a different share of all HN stories now than it did across the earlier years.",
+ "opening": "In {label_a}, the share was {a}. In {label_b}, it was {b}.",
+ "takeaway": "Yes. The ratio is {ratio}x. It refutes the claim at {refute_at}x or less.",
+ "boundary": "Title matching only; some titles about the theme will be missed and some matches will be false. Archive scores for 2025-26 stories are low for all stories, so the points cards use ratios. Solar matches panels, power, energy, cells and photovoltaics, not eclipses or the solar system. The thresholds were copied from earlier cards, so this test is exploratory.",
+ "explore": []
+}
