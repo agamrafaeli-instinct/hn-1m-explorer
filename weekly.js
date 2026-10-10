@@ -105,6 +105,7 @@
       frag.append(changes(c, a), shares(c, a), extra(c, a));
       const top = section('Top stories of the week'); top.appendChild(storyList(c.top_stories)); frag.appendChild(top);
       const foot = el('p', 'wn wfoot', 'Hacker News talking, not a measure of what is true. Counts use stories only. Dead and deleted stories keep no title, so title-based shares divide by live stories. The dead or deleted share divides by all stories. '); const l = el('a', null, 'How it is computed'); l.href = SPEC; l.target = '_blank'; l.rel = 'noopener noreferrer'; foot.appendChild(l);
+      if (c.list_version) { const lv = 'Word lists: version ' + c.list_version + (idx[i].saved_at ? ', saved ' + String(idx[i].saved_at).slice(0, 10) : '') + '.'; foot.appendChild(el('span', 'wlv', ' ' + lv)); }
       frag.appendChild(foot);
       b.replaceChildren(frag);
       const rg = range(idx[i].start_utc, idx[i].end_exclusive_utc || idx[i].start_utc);

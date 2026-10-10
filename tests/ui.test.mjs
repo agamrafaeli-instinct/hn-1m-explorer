@@ -66,6 +66,8 @@ for (const a of ['engineers', 'vcs', 'geeks']) await check('week_' + a, '#/w/' +
   const t = await ev('document.title'), d = await ev("document.querySelector('meta[name=description]').content");
   if (!t.startsWith(AUDN[a] + ': week ')) return 'page title is ' + t;
   if (!/\d{4}-W\d{2}/.test(t)) return 'title has no week';
+  const f = await ev("(document.querySelector('#w_body .wfoot')||{}).textContent||''");
+  if (!/Word lists: version \d+/.test(f)) return 'footer has no list version';
   if (!d.includes(AUDN[a]) || d.length < 40) return 'description is ' + d;
   return '';
 });

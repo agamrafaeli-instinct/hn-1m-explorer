@@ -24,13 +24,15 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test snapshot script
-        run: python -m unittest tests.test_weekly_snapshot tests.test_weekly_compare tests.test_verify_weekly -v
+        run: python -m unittest tests.test_weekly_snapshot tests.test_weekly_compare tests.test_verify_weekly tests.test_export_weekly -v
       - name: Check saved weeks against their hashes
         run: python scripts/verify_weekly.py
       - name: Save complete weeks that are not saved yet
         run: python scripts/weekly_snapshot.py
       - name: Compare weeks (writes data/compare, never data/weekly)
         run: python scripts/weekly_compare.py
+      - name: Export weeks to CSV
+        run: python scripts/export_weekly.py
       - name: Record hashes of new weeks, fail if an older week changed
         run: python scripts/verify_weekly.py --add-new
       - name: Refuse to change any saved week
@@ -42,7 +44,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/weekly data/compare
+          git add data/weekly data/compare data/exports
           if git diff --cached --quiet; then echo "pushed=no" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -m 'Save weekly snapshot'
           for i in 1 2 3; do

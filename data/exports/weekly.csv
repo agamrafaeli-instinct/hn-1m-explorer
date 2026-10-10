@@ -1,0 +1,749 @@
+week,start_utc,kind,audience,section,metric,value,unit,estimate,last_week,avg_last_4,flag,list_version
+2026-W31,2026-07-27,backfill,all,volume,stories_all,10460,stories,,,,,1
+2026-W31,2026-07-27,backfill,all,volume,stories_live,7241,stories,,,,,1
+2026-W31,2026-07-27,backfill,all,volume,comments_all,75550,comments,,,,,1
+2026-W31,2026-07-27,backfill,engineers,fact,Stories with 100 or more comments,194,stories,,,,,1
+2026-W31,2026-07-27,backfill,engineers,fact,Stories with 100 or more points,310,stories,,,,,1
+2026-W31,2026-07-27,backfill,engineers,fact,Show HN stories,930,stories,,,,,1
+2026-W31,2026-07-27,backfill,engineers,fact,Show HN stories that link to GitHub,342,stories,,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,84,stories,no,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: AI coding terms in story titles and text,MCP,82,stories,no,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: AI coding terms in story titles and text,agentic,60,stories,no,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,48,stories,no,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: AI coding terms in story titles and text,cursor,28,stories,no,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: AI coding terms in story titles and text,copilot,23,stories,no,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,backend,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,on-site,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,python,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,remote,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,rust,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,0,comments,yes,,,,1
+2026-W31,2026-07-27,backfill,engineers,share,AI in story titles and text,0.2255,share of stories,,,,not_enough_weeks,1
+2026-W31,2026-07-27,backfill,engineers,share,Show HN share of stories,0.1284,share of stories,,,,not_enough_weeks,1
+2026-W31,2026-07-27,backfill,geeks,fact,Stories with no AI term,5608,stories,,,,,1
+2026-W31,2026-07-27,backfill,geeks,fact,Stories that mention an old year,199,stories,,,,,1
+2026-W31,2026-07-27,backfill,geeks,fact,Different sites among linked stories,3503,stories,,,,,1
+2026-W31,2026-07-27,backfill,geeks,fact,Links to Wikipedia,95,stories,,,,,1
+2026-W31,2026-07-27,backfill,geeks,fact,Links to YouTube,213,stories,,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,questions,457,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,books,118,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,games,116,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,history,105,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,science,103,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,space,98,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,education,84,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,bar: Biggest topics,boring,53,stories,no,,,,1
+2026-W31,2026-07-27,backfill,geeks,share,Stories with no AI term,0.7745,share of stories,,,,not_enough_weeks,1
+2026-W31,2026-07-27,backfill,geeks,share,Distinct sites per linked story,0.5017,share of stories,,,,not_enough_weeks,1
+2026-W31,2026-07-27,backfill,shared,share,Stories dead or deleted,0.3077,share of stories,,,,not_enough_weeks,1
+2026-W31,2026-07-27,backfill,vcs,fact,Linked stories from press sites,720,stories,,,,,1
+2026-W31,2026-07-27,backfill,vcs,fact,Linked stories from primary sources,891,stories,,,,,1
+2026-W31,2026-07-27,backfill,vcs,fact,Stories with deal words in the title,35,stories,,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,robotics,40,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,data centers,34,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,quantum,31,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,GPUs,30,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,solar,17,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,chips,13,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,batteries,11,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,fusion and fission,1,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deep tech themes,bio,0,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,raises,11,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,acquisition,8,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,shutdown,7,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,valuation,3,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,funding,2,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,layoffs,2,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,bankrupt,1,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,IPO,1,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Deal words in titles,series,1,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Google,97,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,OpenAI,88,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Apple,64,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Anthropic,53,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Nvidia,47,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Microsoft,40,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Hugging Face,26,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,bar: Names in story titles,Amazon,25,stories,no,,,,1
+2026-W31,2026-07-27,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4469,share of stories,,,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,all,volume,stories_all,9964,stories,,,,,1
+2026-W32,2026-08-03,backfill,all,volume,stories_live,6944,stories,,,,,1
+2026-W32,2026-08-03,backfill,all,volume,comments_all,77973,comments,,,,,1
+2026-W32,2026-08-03,backfill,engineers,fact,Stories with 100 or more comments,195,stories,,,,,1
+2026-W32,2026-08-03,backfill,engineers,fact,Stories with 100 or more points,290,stories,,,,,1
+2026-W32,2026-08-03,backfill,engineers,fact,Show HN stories,887,stories,,,,,1
+2026-W32,2026-08-03,backfill,engineers,fact,Show HN stories that link to GitHub,304,stories,,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,98,stories,no,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: AI coding terms in story titles and text,MCP,89,stories,no,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: AI coding terms in story titles and text,agentic,54,stories,no,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,37,stories,no,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: AI coding terms in story titles and text,cursor,25,stories,no,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: AI coding terms in story titles and text,copilot,11,stories,no,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,112,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,remote,90,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,on-site,68,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,54,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,python,52,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,backend,41,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,bar: Skills in monthly hiring comments,rust,14,comments,yes,,,,1
+2026-W32,2026-08-03,backfill,engineers,share,AI in story titles and text,0.2189,share of stories,,0.2255,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,engineers,share,Show HN share of stories,0.1277,share of stories,,0.1284,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,geeks,fact,Stories with no AI term,5424,stories,,,,,1
+2026-W32,2026-08-03,backfill,geeks,fact,Stories that mention an old year,162,stories,,,,,1
+2026-W32,2026-08-03,backfill,geeks,fact,Different sites among linked stories,3412,stories,,,,,1
+2026-W32,2026-08-03,backfill,geeks,fact,Links to Wikipedia,101,stories,,,,,1
+2026-W32,2026-08-03,backfill,geeks,fact,Links to YouTube,217,stories,,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,questions,427,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,space,119,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,history,118,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,books,107,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,science,103,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,games,99,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,education,62,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,bar: Biggest topics,health,48,stories,no,,,,1
+2026-W32,2026-08-03,backfill,geeks,share,Stories with no AI term,0.7811,share of stories,,0.7745,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,geeks,share,Distinct sites per linked story,0.51,share of stories,,0.5017,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,shared,share,Stories dead or deleted,0.3031,share of stories,,0.3077,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,vcs,fact,Linked stories from press sites,709,stories,,,,,1
+2026-W32,2026-08-03,backfill,vcs,fact,Linked stories from primary sources,845,stories,,,,,1
+2026-W32,2026-08-03,backfill,vcs,fact,Stories with deal words in the title,51,stories,,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,data centers,38,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,quantum,32,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,solar,27,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,robotics,24,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,GPUs,21,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,fusion and fission,13,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,chips,9,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,batteries,1,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,acquisition,15,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,raises,10,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,funding,9,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,IPO,7,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,layoffs,4,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,shutdown,4,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,bankrupt,3,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,series,3,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Deal words in titles,valuation,1,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,OpenAI,100,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,Google,96,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,Apple,61,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,SpaceX,49,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,Anthropic,46,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,Cloudflare,46,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,Meta,35,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,bar: Names in story titles,Microsoft,32,stories,no,,,,1
+2026-W32,2026-08-03,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4562,share of stories,,0.4469,,not_enough_weeks,1
+2026-W32,2026-08-03,backfill,vcs,term,Cloudflare,46,stories,,9,,rose,1
+2026-W32,2026-08-03,backfill,vcs,term,SpaceX,49,stories,,18,,rose,1
+2026-W32,2026-08-03,backfill,vcs,term,Meta,35,stories,,20,,rose,1
+2026-W32,2026-08-03,backfill,vcs,term,Nvidia,11,stories,,47,,fell,1
+2026-W33,2026-08-10,backfill,all,volume,stories_all,10174,stories,,,,,1
+2026-W33,2026-08-10,backfill,all,volume,stories_live,7068,stories,,,,,1
+2026-W33,2026-08-10,backfill,all,volume,comments_all,77288,comments,,,,,1
+2026-W33,2026-08-10,backfill,engineers,fact,Stories with 100 or more comments,182,stories,,,,,1
+2026-W33,2026-08-10,backfill,engineers,fact,Stories with 100 or more points,284,stories,,,,,1
+2026-W33,2026-08-10,backfill,engineers,fact,Show HN stories,897,stories,,,,,1
+2026-W33,2026-08-10,backfill,engineers,fact,Show HN stories that link to GitHub,321,stories,,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: AI coding terms in story titles and text,MCP,81,stories,no,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,80,stories,no,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: AI coding terms in story titles and text,agentic,73,stories,no,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,42,stories,no,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: AI coding terms in story titles and text,cursor,28,stories,no,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: AI coding terms in story titles and text,copilot,10,stories,no,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,33,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,remote,17,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,15,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,python,11,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,on-site,9,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,backend,7,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,bar: Skills in monthly hiring comments,rust,0,comments,yes,,,,1
+2026-W33,2026-08-10,backfill,engineers,share,AI in story titles and text,0.2218,share of stories,,0.2189,,not_enough_weeks,1
+2026-W33,2026-08-10,backfill,engineers,share,Show HN share of stories,0.1269,share of stories,,0.1277,,not_enough_weeks,1
+2026-W33,2026-08-10,backfill,geeks,fact,Stories with no AI term,5500,stories,,,,,1
+2026-W33,2026-08-10,backfill,geeks,fact,Stories that mention an old year,139,stories,,,,,1
+2026-W33,2026-08-10,backfill,geeks,fact,Different sites among linked stories,3424,stories,,,,,1
+2026-W33,2026-08-10,backfill,geeks,fact,Links to Wikipedia,92,stories,,,,,1
+2026-W33,2026-08-10,backfill,geeks,fact,Links to YouTube,209,stories,,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,questions,451,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,science,120,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,books,114,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,games,107,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,history,101,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,education,89,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,privacy,77,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,bar: Biggest topics,health,75,stories,no,,,,1
+2026-W33,2026-08-10,backfill,geeks,share,Stories with no AI term,0.7782,share of stories,,0.7811,,not_enough_weeks,1
+2026-W33,2026-08-10,backfill,geeks,share,Distinct sites per linked story,0.5028,share of stories,,0.51,,not_enough_weeks,1
+2026-W33,2026-08-10,backfill,geeks,term,privacy,77,stories,,43,,rose,1
+2026-W33,2026-08-10,backfill,geeks,term,health,75,stories,,48,,rose,1
+2026-W33,2026-08-10,backfill,geeks,term,education,89,stories,,62,,rose,1
+2026-W33,2026-08-10,backfill,geeks,term,space,73,stories,,119,,fell,1
+2026-W33,2026-08-10,backfill,shared,share,Stories dead or deleted,0.3053,share of stories,,0.3031,,not_enough_weeks,1
+2026-W33,2026-08-10,backfill,vcs,fact,Linked stories from press sites,673,stories,,,,,1
+2026-W33,2026-08-10,backfill,vcs,fact,Linked stories from primary sources,912,stories,,,,,1
+2026-W33,2026-08-10,backfill,vcs,fact,Stories with deal words in the title,67,stories,,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,GPUs,28,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,robotics,26,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,solar,22,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,data centers,20,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,chips,18,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,quantum,17,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,batteries,9,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,fusion and fission,1,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deep tech themes,bio,0,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,raises,16,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,IPO,14,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,shutdown,11,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,funding,10,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,valuation,10,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,acquisition,9,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,layoffs,3,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,series,2,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Deal words in titles,bankrupt,1,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,Apple,70,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,OpenAI,68,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,Google,61,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,Anthropic,48,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,DeepSeek,47,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,Nvidia,47,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,Meta,37,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,bar: Names in story titles,Cloudflare,23,stories,no,,,,1
+2026-W33,2026-08-10,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4246,share of stories,,0.4562,,not_enough_weeks,1
+2026-W33,2026-08-10,backfill,vcs,term,Nvidia,47,stories,,11,,rose,1
+2026-W33,2026-08-10,backfill,vcs,term,DeepSeek,47,stories,,29,,rose,1
+2026-W33,2026-08-10,backfill,vcs,term,valuation,10,stories,,1,,rose,1
+2026-W33,2026-08-10,backfill,vcs,term,Google,61,stories,,96,,fell,1
+2026-W33,2026-08-10,backfill,vcs,term,SpaceX,16,stories,,49,,fell,1
+2026-W33,2026-08-10,backfill,vcs,term,OpenAI,68,stories,,100,,fell,1
+2026-W34,2026-08-17,backfill,all,volume,stories_all,10117,stories,,,,,1
+2026-W34,2026-08-17,backfill,all,volume,stories_live,7026,stories,,,,,1
+2026-W34,2026-08-17,backfill,all,volume,comments_all,78601,comments,,,,,1
+2026-W34,2026-08-17,backfill,engineers,fact,Stories with 100 or more comments,189,stories,,,,,1
+2026-W34,2026-08-17,backfill,engineers,fact,Stories with 100 or more points,271,stories,,,,,1
+2026-W34,2026-08-17,backfill,engineers,fact,Show HN stories,844,stories,,,,,1
+2026-W34,2026-08-17,backfill,engineers,fact,Show HN stories that link to GitHub,303,stories,,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,69,stories,no,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: AI coding terms in story titles and text,MCP,68,stories,no,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: AI coding terms in story titles and text,agentic,57,stories,no,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,41,stories,no,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: AI coding terms in story titles and text,cursor,26,stories,no,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: AI coding terms in story titles and text,copilot,13,stories,no,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,7,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,remote,2,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,backend,1,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,on-site,1,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,python,0,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,rust,0,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,0,comments,yes,,,,1
+2026-W34,2026-08-17,backfill,engineers,share,AI in story titles and text,0.2014,share of stories,,0.2218,,not_enough_weeks,1
+2026-W34,2026-08-17,backfill,engineers,share,Show HN share of stories,0.1201,share of stories,,0.1269,,not_enough_weeks,1
+2026-W34,2026-08-17,backfill,engineers,term,git,47,stories,,27,,rose,1
+2026-W34,2026-08-17,backfill,geeks,fact,Stories with no AI term,5611,stories,,,,,1
+2026-W34,2026-08-17,backfill,geeks,fact,Stories that mention an old year,143,stories,,,,,1
+2026-W34,2026-08-17,backfill,geeks,fact,Different sites among linked stories,3443,stories,,,,,1
+2026-W34,2026-08-17,backfill,geeks,fact,Links to Wikipedia,91,stories,,,,,1
+2026-W34,2026-08-17,backfill,geeks,fact,Links to YouTube,233,stories,,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,questions,467,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,science,120,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,books,116,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,games,111,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,space,96,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,history,95,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,education,83,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,bar: Biggest topics,health,79,stories,no,,,,1
+2026-W34,2026-08-17,backfill,geeks,share,Stories with no AI term,0.7986,share of stories,,0.7782,,not_enough_weeks,1
+2026-W34,2026-08-17,backfill,geeks,share,Distinct sites per linked story,0.5085,share of stories,,0.5028,,not_enough_weeks,1
+2026-W34,2026-08-17,backfill,shared,share,Stories dead or deleted,0.3055,share of stories,,0.3053,,not_enough_weeks,1
+2026-W34,2026-08-17,backfill,vcs,fact,Linked stories from press sites,651,stories,,,,,1
+2026-W34,2026-08-17,backfill,vcs,fact,Linked stories from primary sources,836,stories,,,,,1
+2026-W34,2026-08-17,backfill,vcs,fact,Stories with deal words in the title,49,stories,,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,robotics,52,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,GPUs,36,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,quantum,20,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,solar,19,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,data centers,18,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,chips,10,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,bio,9,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,batteries,8,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,fusion and fission,8,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,raises,9,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,shutdown,9,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,funding,8,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,acquisition,6,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,IPO,6,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,valuation,6,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,layoffs,4,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,bankrupt,2,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Deal words in titles,series,2,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,OpenAI,75,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,Apple,68,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,Google,62,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,Anthropic,44,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,Meta,44,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,Amazon,33,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,DeepSeek,28,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,bar: Names in story titles,Nvidia,28,stories,no,,,,1
+2026-W34,2026-08-17,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4378,share of stories,,0.4246,,not_enough_weeks,1
+2026-W34,2026-08-17,backfill,vcs,term,robotics,52,stories,,26,,rose,1
+2026-W34,2026-08-17,backfill,vcs,term,Stripe,18,stories,,8,,rose,1
+2026-W34,2026-08-17,backfill,vcs,term,bio,9,stories,,0,,rose,1
+2026-W35,2026-08-24,backfill,all,volume,stories_all,10424,stories,,,,,1
+2026-W35,2026-08-24,backfill,all,volume,stories_live,7150,stories,,,,,1
+2026-W35,2026-08-24,backfill,all,volume,comments_all,79870,comments,,,,,1
+2026-W35,2026-08-24,backfill,engineers,fact,Stories with 100 or more comments,185,stories,,,,,1
+2026-W35,2026-08-24,backfill,engineers,fact,Stories with 100 or more points,324,stories,,,,,1
+2026-W35,2026-08-24,backfill,engineers,fact,Show HN stories,919,stories,,,,,1
+2026-W35,2026-08-24,backfill,engineers,fact,Show HN stories that link to GitHub,316,stories,,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,74,stories,no,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: AI coding terms in story titles and text,MCP,66,stories,no,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: AI coding terms in story titles and text,agentic,58,stories,no,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,47,stories,no,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: AI coding terms in story titles and text,cursor,31,stories,no,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: AI coding terms in story titles and text,copilot,9,stories,no,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,1,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,backend,0,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,on-site,0,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,python,0,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,remote,0,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,rust,0,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,0,comments,yes,,,,1
+2026-W35,2026-08-24,backfill,engineers,share,AI in story titles and text,0.2036,share of stories,,0.2014,0.2169,steady,1
+2026-W35,2026-08-24,backfill,engineers,share,Show HN share of stories,0.1285,share of stories,,0.1201,0.1258,steady,1
+2026-W35,2026-08-24,backfill,engineers,term,swift,3,stories,,16,,fell,1
+2026-W35,2026-08-24,backfill,geeks,fact,Stories with no AI term,5694,stories,,,,,1
+2026-W35,2026-08-24,backfill,geeks,fact,Stories that mention an old year,120,stories,,,,,1
+2026-W35,2026-08-24,backfill,geeks,fact,Different sites among linked stories,3548,stories,,,,,1
+2026-W35,2026-08-24,backfill,geeks,fact,Links to Wikipedia,90,stories,,,,,1
+2026-W35,2026-08-24,backfill,geeks,fact,Links to YouTube,209,stories,,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,questions,429,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,games,123,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,science,103,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,books,97,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,history,97,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,education,90,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,space,83,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,bar: Biggest topics,health,64,stories,no,,,,1
+2026-W35,2026-08-24,backfill,geeks,share,Stories with no AI term,0.7964,share of stories,,0.7986,0.7831,steady,1
+2026-W35,2026-08-24,backfill,geeks,share,Distinct sites per linked story,0.5157,share of stories,,0.5085,0.5058,steady,1
+2026-W35,2026-08-24,backfill,shared,share,Stories dead or deleted,0.3141,share of stories,,0.3055,0.3054,steady,1
+2026-W35,2026-08-24,backfill,vcs,fact,Linked stories from press sites,630,stories,,,,,1
+2026-W35,2026-08-24,backfill,vcs,fact,Linked stories from primary sources,888,stories,,,,,1
+2026-W35,2026-08-24,backfill,vcs,fact,Stories with deal words in the title,49,stories,,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,robotics,54,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,GPUs,35,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,data centers,25,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,quantum,24,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,solar,19,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,chips,11,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,batteries,10,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deep tech themes,fusion and fission,1,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,funding,12,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,acquisition,10,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,shutdown,9,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,IPO,5,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,raises,5,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,layoffs,4,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,valuation,4,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,series,2,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Deal words in titles,bankrupt,0,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Nvidia,79,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Google,78,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Apple,66,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Meta,60,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,OpenAI,58,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Anthropic,54,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Hugging Face,35,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,bar: Names in story titles,Amazon,23,stories,no,,,,1
+2026-W35,2026-08-24,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.415,share of stories,,0.4378,0.4414,steady,1
+2026-W35,2026-08-24,backfill,vcs,term,Nvidia,79,stories,,28,,rose,1
+2026-W35,2026-08-24,backfill,vcs,term,Hugging Face,35,stories,,11,,rose,1
+2026-W35,2026-08-24,backfill,vcs,term,DeepSeek,12,stories,,28,,fell,1
+2026-W36,2026-08-31,backfill,all,volume,stories_all,10380,stories,,,,,1
+2026-W36,2026-08-31,backfill,all,volume,stories_live,7260,stories,,,,,1
+2026-W36,2026-08-31,backfill,all,volume,comments_all,77716,comments,,,,,1
+2026-W36,2026-08-31,backfill,engineers,fact,Stories with 100 or more comments,190,stories,,,,,1
+2026-W36,2026-08-31,backfill,engineers,fact,Stories with 100 or more points,301,stories,,,,,1
+2026-W36,2026-08-31,backfill,engineers,fact,Show HN stories,835,stories,,,,,1
+2026-W36,2026-08-31,backfill,engineers,fact,Show HN stories that link to GitHub,270,stories,,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: AI coding terms in story titles and text,MCP,80,stories,no,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,75,stories,no,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: AI coding terms in story titles and text,agentic,48,stories,no,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,43,stories,no,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: AI coding terms in story titles and text,cursor,23,stories,no,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: AI coding terms in story titles and text,copilot,10,stories,no,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,121,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,remote,117,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,on-site,63,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,53,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,python,51,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,backend,42,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,bar: Skills in monthly hiring comments,rust,11,comments,yes,,,,1
+2026-W36,2026-08-31,backfill,engineers,share,AI in story titles and text,0.2164,share of stories,,0.2036,0.2114,steady,1
+2026-W36,2026-08-31,backfill,engineers,share,Show HN share of stories,0.115,share of stories,,0.1285,0.1258,steady,1
+2026-W36,2026-08-31,backfill,engineers,term,rust,98,stories,,69,,rose,1
+2026-W36,2026-08-31,backfill,engineers,term,swift,15,stories,,3,,rose,1
+2026-W36,2026-08-31,backfill,geeks,fact,Stories with no AI term,5689,stories,,,,,1
+2026-W36,2026-08-31,backfill,geeks,fact,Stories that mention an old year,140,stories,,,,,1
+2026-W36,2026-08-31,backfill,geeks,fact,Different sites among linked stories,3602,stories,,,,,1
+2026-W36,2026-08-31,backfill,geeks,fact,Links to Wikipedia,88,stories,,,,,1
+2026-W36,2026-08-31,backfill,geeks,fact,Links to YouTube,199,stories,,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,questions,491,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,games,138,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,history,127,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,education,104,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,science,101,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,books,91,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,maps,81,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,bar: Biggest topics,space,70,stories,no,,,,1
+2026-W36,2026-08-31,backfill,geeks,share,Stories with no AI term,0.7836,share of stories,,0.7964,0.7886,steady,1
+2026-W36,2026-08-31,backfill,geeks,share,Distinct sites per linked story,0.5181,share of stories,,0.5157,0.5092,steady,1
+2026-W36,2026-08-31,backfill,geeks,term,maps,81,stories,,45,,rose,1
+2026-W36,2026-08-31,backfill,shared,share,Stories dead or deleted,0.3006,share of stories,,0.3141,0.307,fell,1
+2026-W36,2026-08-31,backfill,vcs,fact,Linked stories from press sites,626,stories,,,,,1
+2026-W36,2026-08-31,backfill,vcs,fact,Linked stories from primary sources,876,stories,,,,,1
+2026-W36,2026-08-31,backfill,vcs,fact,Stories with deal words in the title,58,stories,,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,robotics,31,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,GPUs,29,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,quantum,25,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,chips,19,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,data centers,18,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,batteries,17,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,solar,17,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,fusion and fission,8,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,funding,14,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,acquisition,11,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,shutdown,11,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,IPO,8,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,layoffs,5,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,raises,5,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,valuation,3,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,bankrupt,2,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Deal words in titles,series,1,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,OpenAI,114,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Apple,91,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Google,88,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Nvidia,46,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Anthropic,45,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Hugging Face,39,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Microsoft,27,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,bar: Names in story titles,Meta,23,stories,no,,,,1
+2026-W36,2026-08-31,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4168,share of stories,,0.415,0.4334,steady,1
+2026-W36,2026-08-31,backfill,vcs,term,OpenAI,114,stories,,58,,rose,1
+2026-W36,2026-08-31,backfill,vcs,term,Tesla,19,stories,,9,,rose,1
+2026-W36,2026-08-31,backfill,vcs,term,Meta,23,stories,,60,,fell,1
+2026-W36,2026-08-31,backfill,vcs,term,Nvidia,46,stories,,79,,fell,1
+2026-W36,2026-08-31,backfill,vcs,term,robotics,31,stories,,54,,fell,1
+2026-W37,2026-09-07,backfill,all,volume,stories_all,10001,stories,,,,,1
+2026-W37,2026-09-07,backfill,all,volume,stories_live,6974,stories,,,,,1
+2026-W37,2026-09-07,backfill,all,volume,comments_all,87855,comments,,,,,1
+2026-W37,2026-09-07,backfill,engineers,fact,Stories with 100 or more comments,206,stories,,,,,1
+2026-W37,2026-09-07,backfill,engineers,fact,Stories with 100 or more points,303,stories,,,,,1
+2026-W37,2026-09-07,backfill,engineers,fact,Show HN stories,888,stories,,,,,1
+2026-W37,2026-09-07,backfill,engineers,fact,Show HN stories that link to GitHub,297,stories,,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: AI coding terms in story titles and text,MCP,77,stories,no,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,60,stories,no,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,52,stories,no,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: AI coding terms in story titles and text,agentic,48,stories,no,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: AI coding terms in story titles and text,cursor,20,stories,no,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: AI coding terms in story titles and text,copilot,10,stories,no,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,18,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,remote,17,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,python,12,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,on-site,7,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,6,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,backend,3,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,bar: Skills in monthly hiring comments,rust,1,comments,yes,,,,1
+2026-W37,2026-09-07,backfill,engineers,share,AI in story titles and text,0.2311,share of stories,,0.2164,0.2108,steady,1
+2026-W37,2026-09-07,backfill,engineers,share,Show HN share of stories,0.1273,share of stories,,0.115,0.1226,steady,1
+2026-W37,2026-09-07,backfill,engineers,term,TypeScript,24,stories,,13,,rose,1
+2026-W37,2026-09-07,backfill,geeks,fact,Stories with no AI term,5362,stories,,,,,1
+2026-W37,2026-09-07,backfill,geeks,fact,Stories that mention an old year,137,stories,,,,,1
+2026-W37,2026-09-07,backfill,geeks,fact,Different sites among linked stories,3414,stories,,,,,1
+2026-W37,2026-09-07,backfill,geeks,fact,Links to Wikipedia,89,stories,,,,,1
+2026-W37,2026-09-07,backfill,geeks,fact,Links to YouTube,219,stories,,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,questions,465,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,games,136,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,science,127,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,history,109,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,books,106,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,education,99,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,space,80,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,bar: Biggest topics,maps,61,stories,no,,,,1
+2026-W37,2026-09-07,backfill,geeks,share,Stories with no AI term,0.7689,share of stories,,0.7836,0.7892,steady,1
+2026-W37,2026-09-07,backfill,geeks,share,Distinct sites per linked story,0.512,share of stories,,0.5181,0.5113,fell,1
+2026-W37,2026-09-07,backfill,geeks,term,science,127,stories,,101,,rose,1
+2026-W37,2026-09-07,backfill,geeks,term,weird,39,stories,,67,,fell,1
+2026-W37,2026-09-07,backfill,shared,share,Stories dead or deleted,0.3027,share of stories,,0.3006,0.3064,steady,1
+2026-W37,2026-09-07,backfill,vcs,fact,Linked stories from press sites,601,stories,,,,,1
+2026-W37,2026-09-07,backfill,vcs,fact,Linked stories from primary sources,871,stories,,,,,1
+2026-W37,2026-09-07,backfill,vcs,fact,Stories with deal words in the title,54,stories,,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,robotics,32,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,GPUs,31,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,quantum,25,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,chips,19,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,solar,19,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,data centers,14,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,batteries,9,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,fusion and fission,1,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,IPO,11,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,raises,11,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,funding,10,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,acquisition,6,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,bankrupt,5,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,shutdown,5,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,valuation,5,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,series,3,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Deal words in titles,layoffs,2,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,OpenAI,121,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,Anthropic,103,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,Apple,88,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,Google,88,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,Meta,42,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,DeepSeek,34,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,Microsoft,31,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,bar: Names in story titles,Nvidia,20,stories,no,,,,1
+2026-W37,2026-09-07,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4083,share of stories,,0.4168,0.4235,steady,1
+2026-W37,2026-09-07,backfill,vcs,term,Anthropic,103,stories,,45,,rose,1
+2026-W37,2026-09-07,backfill,vcs,term,DeepSeek,34,stories,,11,,rose,1
+2026-W37,2026-09-07,backfill,vcs,term,Meta,42,stories,,23,,rose,1
+2026-W37,2026-09-07,backfill,vcs,term,Hugging Face,8,stories,,39,,fell,1
+2026-W37,2026-09-07,backfill,vcs,term,Nvidia,20,stories,,46,,fell,1
+2026-W38,2026-09-14,backfill,all,volume,stories_all,10223,stories,,,,,1
+2026-W38,2026-09-14,backfill,all,volume,stories_live,6953,stories,,,,,1
+2026-W38,2026-09-14,backfill,all,volume,comments_all,81139,comments,,,,,1
+2026-W38,2026-09-14,backfill,engineers,fact,Stories with 100 or more comments,210,stories,,,,,1
+2026-W38,2026-09-14,backfill,engineers,fact,Stories with 100 or more points,317,stories,,,,,1
+2026-W38,2026-09-14,backfill,engineers,fact,Show HN stories,834,stories,,,,,1
+2026-W38,2026-09-14,backfill,engineers,fact,Show HN stories that link to GitHub,278,stories,,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,75,stories,no,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,56,stories,no,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: AI coding terms in story titles and text,MCP,51,stories,no,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: AI coding terms in story titles and text,agentic,47,stories,no,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: AI coding terms in story titles and text,cursor,18,stories,no,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: AI coding terms in story titles and text,copilot,15,stories,no,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,6,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,rust,2,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,backend,1,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,on-site,1,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,python,0,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,remote,0,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,0,comments,yes,,,,1
+2026-W38,2026-09-14,backfill,engineers,share,AI in story titles and text,0.2357,share of stories,,0.2311,0.2131,steady,1
+2026-W38,2026-09-14,backfill,engineers,share,Show HN share of stories,0.1199,share of stories,,0.1273,0.1228,steady,1
+2026-W38,2026-09-14,backfill,geeks,fact,Stories with no AI term,5314,stories,,,,,1
+2026-W38,2026-09-14,backfill,geeks,fact,Stories that mention an old year,138,stories,,,,,1
+2026-W38,2026-09-14,backfill,geeks,fact,Different sites among linked stories,3432,stories,,,,,1
+2026-W38,2026-09-14,backfill,geeks,fact,Links to Wikipedia,95,stories,,,,,1
+2026-W38,2026-09-14,backfill,geeks,fact,Links to YouTube,222,stories,,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,questions,496,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,science,143,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,history,130,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,games,129,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,books,106,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,education,91,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,space,91,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,bar: Biggest topics,health,45,stories,no,,,,1
+2026-W38,2026-09-14,backfill,geeks,share,Stories with no AI term,0.7643,share of stories,,0.7689,0.7869,steady,1
+2026-W38,2026-09-14,backfill,geeks,share,Distinct sites per linked story,0.5129,share of stories,,0.512,0.5136,steady,1
+2026-W38,2026-09-14,backfill,geeks,term,animals,42,stories,,23,,rose,1
+2026-W38,2026-09-14,backfill,geeks,term,climate,31,stories,,18,,rose,1
+2026-W38,2026-09-14,backfill,shared,share,Stories dead or deleted,0.3199,share of stories,,0.3027,0.3057,steady,1
+2026-W38,2026-09-14,backfill,vcs,fact,Linked stories from press sites,632,stories,,,,,1
+2026-W38,2026-09-14,backfill,vcs,fact,Linked stories from primary sources,816,stories,,,,,1
+2026-W38,2026-09-14,backfill,vcs,fact,Stories with deal words in the title,51,stories,,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,robotics,38,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,GPUs,36,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,quantum,21,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,data centers,15,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,chips,13,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,fusion and fission,10,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,solar,1,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,batteries,1,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,IPO,10,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,raises,10,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,shutdown,10,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,acquisition,9,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,valuation,9,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,funding,7,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,bankrupt,3,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,series,2,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Deal words in titles,layoffs,0,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,OpenAI,103,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,Anthropic,87,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,Google,84,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,Apple,59,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,Microsoft,39,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,Nvidia,34,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,Meta,31,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,bar: Names in story titles,DeepSeek,18,stories,no,,,,1
+2026-W38,2026-09-14,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.4365,share of stories,,0.4083,0.4195,steady,1
+2026-W38,2026-09-14,backfill,vcs,term,Nvidia,34,stories,,20,,rose,1
+2026-W38,2026-09-14,backfill,vcs,term,SpaceX,12,stories,,4,,rose,1
+2026-W38,2026-09-14,backfill,vcs,term,Apple,59,stories,,88,,fell,1
+2026-W38,2026-09-14,backfill,vcs,term,solar,5,stories,,19,,fell,1
+2026-W39,2026-09-21,backfill,all,volume,stories_all,9979,stories,,,,,1
+2026-W39,2026-09-21,backfill,all,volume,stories_live,6733,stories,,,,,1
+2026-W39,2026-09-21,backfill,all,volume,comments_all,80627,comments,,,,,1
+2026-W39,2026-09-21,backfill,engineers,fact,Stories with 100 or more comments,201,stories,,,,,1
+2026-W39,2026-09-21,backfill,engineers,fact,Stories with 100 or more points,294,stories,,,,,1
+2026-W39,2026-09-21,backfill,engineers,fact,Show HN stories,874,stories,,,,,1
+2026-W39,2026-09-21,backfill,engineers,fact,Show HN stories that link to GitHub,281,stories,,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: AI coding terms in story titles and text,agentic,69,stories,no,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,69,stories,no,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,68,stories,no,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: AI coding terms in story titles and text,MCP,56,stories,no,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: AI coding terms in story titles and text,copilot,17,stories,no,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: AI coding terms in story titles and text,cursor,11,stories,no,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,1,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,backend,0,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,on-site,0,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,python,0,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,remote,0,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,rust,0,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,0,comments,yes,,,,1
+2026-W39,2026-09-21,backfill,engineers,share,AI in story titles and text,0.2312,share of stories,,0.2357,0.2217,steady,1
+2026-W39,2026-09-21,backfill,engineers,share,Show HN share of stories,0.1298,share of stories,,0.1199,0.1227,steady,1
+2026-W39,2026-09-21,backfill,engineers,term,agentic,69,stories,,47,,rose,1
+2026-W39,2026-09-21,backfill,engineers,term,TypeScript,22,stories,,12,,rose,1
+2026-W39,2026-09-21,backfill,geeks,fact,Stories with no AI term,5176,stories,,,,,1
+2026-W39,2026-09-21,backfill,geeks,fact,Stories that mention an old year,119,stories,,,,,1
+2026-W39,2026-09-21,backfill,geeks,fact,Different sites among linked stories,3378,stories,,,,,1
+2026-W39,2026-09-21,backfill,geeks,fact,Links to Wikipedia,70,stories,,,,,1
+2026-W39,2026-09-21,backfill,geeks,fact,Links to YouTube,184,stories,,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,questions,443,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,games,130,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,history,125,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,science,107,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,books,94,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,space,87,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,education,82,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,bar: Biggest topics,privacy,56,stories,no,,,,1
+2026-W39,2026-09-21,backfill,geeks,share,Stories with no AI term,0.7688,share of stories,,0.7643,0.7783,steady,1
+2026-W39,2026-09-21,backfill,geeks,share,Distinct sites per linked story,0.5199,share of stories,,0.5129,0.5147,steady,1
+2026-W39,2026-09-21,backfill,geeks,term,animals,17,stories,,42,,fell,1
+2026-W39,2026-09-21,backfill,shared,share,Stories dead or deleted,0.3253,share of stories,,0.3199,0.3093,steady,1
+2026-W39,2026-09-21,backfill,vcs,fact,Linked stories from press sites,549,stories,,,,,1
+2026-W39,2026-09-21,backfill,vcs,fact,Linked stories from primary sources,890,stories,,,,,1
+2026-W39,2026-09-21,backfill,vcs,fact,Stories with deal words in the title,43,stories,,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,GPUs,39,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,robotics,32,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,quantum,21,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,data centers,16,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,solar,9,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,batteries,8,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,chips,8,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,fusion and fission,1,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,funding,9,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,raises,7,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,shutdown,6,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,valuation,6,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,layoffs,5,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,bankrupt,4,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,IPO,4,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,acquisition,3,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Deal words in titles,series,1,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,OpenAI,113,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Meta,83,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Apple,68,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Google,67,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Anthropic,44,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Microsoft,29,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Amazon,26,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,bar: Names in story titles,Nvidia,19,stories,no,,,,1
+2026-W39,2026-09-21,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.3815,share of stories,,0.4365,0.4191,fell,1
+2026-W39,2026-09-21,backfill,vcs,term,Meta,83,stories,,31,,rose,1
+2026-W39,2026-09-21,backfill,vcs,term,Amazon,26,stories,,12,,rose,1
+2026-W39,2026-09-21,backfill,vcs,term,AMD,17,stories,,7,,rose,1
+2026-W39,2026-09-21,backfill,vcs,term,Anthropic,44,stories,,87,,fell,1
+2026-W40,2026-09-28,backfill,all,volume,stories_all,10419,stories,,,,,1
+2026-W40,2026-09-28,backfill,all,volume,stories_live,7222,stories,,,,,1
+2026-W40,2026-09-28,backfill,all,volume,comments_all,76758,comments,,,,,1
+2026-W40,2026-09-28,backfill,engineers,fact,Stories with 100 or more comments,196,stories,,,,,1
+2026-W40,2026-09-28,backfill,engineers,fact,Stories with 100 or more points,292,stories,,,,,1
+2026-W40,2026-09-28,backfill,engineers,fact,Show HN stories,939,stories,,,,,1
+2026-W40,2026-09-28,backfill,engineers,fact,Show HN stories that link to GitHub,305,stories,,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: AI coding terms in story titles and text,Claude Code,87,stories,no,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: AI coding terms in story titles and text,AI agents,71,stories,no,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: AI coding terms in story titles and text,MCP,71,stories,no,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: AI coding terms in story titles and text,agentic,63,stories,no,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: AI coding terms in story titles and text,cursor,18,stories,no,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: AI coding terms in story titles and text,copilot,15,stories,no,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,AI and ML,100,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,remote,91,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,on-site,57,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,TypeScript,52,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,python,42,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,backend,38,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,bar: Skills in monthly hiring comments,rust,16,comments,yes,,,,1
+2026-W40,2026-09-28,backfill,engineers,share,AI in story titles and text,0.2371,share of stories,,0.2312,0.2286,steady,1
+2026-W40,2026-09-28,backfill,engineers,share,Show HN share of stories,0.13,share of stories,,0.1298,0.123,steady,1
+2026-W40,2026-09-28,backfill,engineers,term,Postgres,49,stories,,29,,rose,1
+2026-W40,2026-09-28,backfill,engineers,term,C++,25,stories,,12,,rose,1
+2026-W40,2026-09-28,backfill,geeks,fact,Stories with no AI term,5510,stories,,,,,1
+2026-W40,2026-09-28,backfill,geeks,fact,Stories that mention an old year,126,stories,,,,,1
+2026-W40,2026-09-28,backfill,geeks,fact,Different sites among linked stories,3642,stories,,,,,1
+2026-W40,2026-09-28,backfill,geeks,fact,Links to Wikipedia,85,stories,,,,,1
+2026-W40,2026-09-28,backfill,geeks,fact,Links to YouTube,238,stories,,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,questions,475,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,games,158,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,science,115,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,history,113,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,education,111,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,space,109,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,books,90,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,bar: Biggest topics,boring,56,stories,no,,,,1
+2026-W40,2026-09-28,backfill,geeks,share,Stories with no AI term,0.7629,share of stories,,0.7688,0.7714,steady,1
+2026-W40,2026-09-28,backfill,geeks,share,Distinct sites per linked story,0.5213,share of stories,,0.5199,0.5157,steady,1
+2026-W40,2026-09-28,backfill,geeks,term,boring,56,stories,,30,,rose,1
+2026-W40,2026-09-28,backfill,shared,share,Stories dead or deleted,0.3068,share of stories,,0.3253,0.3121,steady,1
+2026-W40,2026-09-28,backfill,vcs,fact,Linked stories from press sites,600,stories,,,,,1
+2026-W40,2026-09-28,backfill,vcs,fact,Linked stories from primary sources,901,stories,,,,,1
+2026-W40,2026-09-28,backfill,vcs,fact,Stories with deal words in the title,69,stories,,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,GPUs,37,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,robotics,37,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,data centers,21,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,quantum,15,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,batteries,13,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,fusion and fission,11,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,solar,11,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,bio,1,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,chips,1,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,IPO,20,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,raises,13,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,acquisition,11,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,funding,10,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,shutdown,6,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,layoffs,5,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,valuation,5,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,series,4,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Deal words in titles,bankrupt,2,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,OpenAI,130,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Google,82,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Anthropic,65,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Meta,53,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Apple,52,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Nvidia,51,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Cloudflare,30,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,bar: Names in story titles,Microsoft,28,stories,no,,,,1
+2026-W40,2026-09-28,backfill,vcs,share,Press share of linked stories (press vs primary sources),0.3997,share of stories,,0.3815,0.4108,steady,1
+2026-W40,2026-09-28,backfill,vcs,term,Nvidia,51,stories,,19,,rose,1
+2026-W40,2026-09-28,backfill,vcs,term,Cloudflare,30,stories,,11,,rose,1
+2026-W40,2026-09-28,backfill,vcs,term,IPO,20,stories,,4,,rose,1
+2026-W40,2026-09-28,backfill,vcs,term,Meta,53,stories,,83,,fell,1
