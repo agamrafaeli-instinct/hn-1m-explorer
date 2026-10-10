@@ -25,9 +25,14 @@ if (!SITE) {
   await new Promise(ok => server.listen(0, '127.0.0.1', ok)); SITE = `http://127.0.0.1:${server.address().port}/`;
 }
 SITE = SITE.replace(/\/?$/, '/');
-const port = 9800 + Math.floor(Math.random() * 150), prof = fs.mkdtempSync(path.join(os.tmpdir(), 'uic-'));
-const ch = spawn('google-chrome', ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=' + port, '--user-data-dir=' + prof, 'about:blank'], { stdio: 'ignore' });
-let tabs; for (let i = 0; i < 60 && !tabs; i++) { await new Promise(r => setTimeout(r, 250)); try { tabs = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); } catch { } }
+let port, prof, ch, tabs;
+for (let attempt = 0; attempt < 3 && !tabs; attempt++) {
+  port = 9800 + Math.floor(Math.random() * 150); prof = fs.mkdtempSync(path.join(os.tmpdir(), 'uic-'));
+  ch = spawn('google-chrome', ['--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--remote-debugging-port=' + port, '--user-data-dir=' + prof, 'about:blank'], { stdio: 'ignore' });
+  for (let i = 0; i < 80 && !tabs; i++) { await new Promise(r => setTimeout(r, 250)); try { const t = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); if (Array.isArray(t) && t.some(x => x.type === 'page')) tabs = t; } catch { } }
+  if (!tabs) { try { ch.kill(); } catch { } }
+}
+if (!tabs) { console.error('Chrome devtools did not start after 3 tries'); process.exit(1); }
 const ws = new WebSocket(tabs.find(t => t.type === 'page').webSocketDebuggerUrl); await new Promise(r => ws.onopen = r);
 let id = 0; const pend = {}, problems = [], urls = {};
 ws.onmessage = e => {
