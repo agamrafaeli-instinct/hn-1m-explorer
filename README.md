@@ -1,6 +1,6 @@
 # Hacker News Explorer
 
-<!-- last-closed -->Last closed task: [#145](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/145) Upgrade card h002: sharp, interesting, relevant, Oct 10, 8:50 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
+<!-- last-closed -->Last closed task: [#158](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/158) Film cards: Geeks (15 cards replace the rolling cards), Oct 10, 9:07 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
 
 **Everyone has a theory about Hacker News. Bring yours.**
 
