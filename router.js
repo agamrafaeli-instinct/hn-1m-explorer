@@ -8,7 +8,7 @@
     geeks: { name: 'Curious geeks', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
   const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'];
-  const tabOf = { topics: 'home', compare: 'home', lesson: 'lesson', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  const tabOf = { topics: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
   function deeper(list, key) {
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;

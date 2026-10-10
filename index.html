@@ -203,7 +203,7 @@
 </div>
 <div class="view" id="v_how" hidden>
 <section class="doc">
-  <h2>How it works</h2>
+  <h2>Method</h2>
   <p class="lede">Everything here is computed in your browser from public Hacker News data.</p>
   <ul>
     <li><b>Data.</b> The newest HN items held here (stories, comments, jobs, polls), pulled from the public HN API, plus daily totals from December 2022. A daily job adds new items and keeps a rolling window. The exact count and dates are in data/manifest.json.</li>
@@ -211,7 +211,7 @@
     <li><b>Hypotheses.</b> Each card states a guess and the number that would prove or refute it before looking. The verdict is computed from the data, never typed.</li>
     <li><b>Caveats.</b> About 89% of items are comments, which show no points, so point and comment lenses use stories only. The newest stories may not have final scores. Times are UTC.</li>
   </ul>
-  <p><a class="btn" href="#/story">Read the full story</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
+  <p><a class="btn" href="#/lesson">How to read trends</a> <a class="btn" href="#/story">Read the full story</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
 </section>
 </div>
 <div class="view" id="v_compare" hidden><section class="cmpwrap"><div id="cmp"></div><div class="cmp_foot"><a id="homeweek" class="cmp_week" href="#/w/engineers/"><b>This week</b> <span id="homeweek_s"></span> &rarr;</a><a class="cmp_week" href="#/topics"><b>Topics</b> &rarr;</a><a class="cmp_week" href="#/hypotheses"><b>Tests</b> &rarr;</a></div></section></div>
@@ -220,8 +220,7 @@
   <a href="#/" data-t="home"><i>&#8962;</i>Home</a>
   <a href="#/explore" data-t="explore"><i>&#8981;</i>Explorer</a>
   <a href="#/submit" data-t="submit"><i>+</i>Submit</a>
-  <a href="#/lesson" data-t="lesson"><i>&#9733;</i>Lesson</a>
-  <a href="#/how" data-t="how"><i>?</i>How it works</a>
+  <a href="#/how" data-t="how"><i>?</i>Method</a>
 </nav>
 <script defer src="app.js"></script>
 <script defer src="hyp-eval.js"></script>
