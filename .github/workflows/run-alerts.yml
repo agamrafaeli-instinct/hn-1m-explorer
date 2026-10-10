@@ -3,7 +3,7 @@ name: Run alerts
 # One problem = one issue: while an issue for that workflow is open, later failures add a comment.
 on:
   workflow_run:
-    workflows: ['Daily Hacker News update and Pages', 'Daily HN 250+ points digest', 'Weekly snapshot']
+    workflows: ['Daily Hacker News update and Pages', 'Daily HN 300+ points digest', 'Weekly snapshot']
     types: [completed]
   schedule:
     - cron: '41 8 * * *'  # missed-run check
@@ -54,5 +54,5 @@ jobs:
             else gh issue create -R "$REPO" --label bug --title "$title" --body "No successful run in the last $2 hours. Last success: ${last:-none}."; fi
           }
           check daily-hn.yml 30 "Daily Hacker News update and Pages"
-          check watch-350.yml 30 "Daily HN 250+ points digest"
+          check watch-350.yml 6 "Daily HN 300+ points digest"
           check weekly-snapshot.yml 196 "Weekly snapshot"
