@@ -24,14 +24,18 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test snapshot script
-        run: python -m unittest tests.test_weekly_snapshot tests.test_weekly_compare -v
+        run: python -m unittest tests.test_weekly_snapshot tests.test_weekly_compare tests.test_verify_weekly -v
+      - name: Check saved weeks against their hashes
+        run: python scripts/verify_weekly.py
       - name: Save complete weeks that are not saved yet
         run: python scripts/weekly_snapshot.py
       - name: Compare weeks (writes data/compare, never data/weekly)
         run: python scripts/weekly_compare.py
+      - name: Record hashes of new weeks, fail if an older week changed
+        run: python scripts/verify_weekly.py --add-new
       - name: Refuse to change any saved week
         run: |
-          changed=$(git diff --name-only -- data/weekly | grep -v '^data/weekly/index.json$' || true)
+          changed=$(git diff --name-only -- data/weekly | grep -v -e '^data/weekly/index.json$' -e '^data/weekly/hashes.json$' || true)
           if [ -n "$changed" ]; then echo "Saved week changed: $changed"; exit 1; fi
       - name: Commit new weeks
         id: commit
