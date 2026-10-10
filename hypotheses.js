@@ -50,6 +50,92 @@
   };
   const CONF = { strong: 'Strong: it cleared the higher bar we set.', weak: 'Weak: it cleared only the lower bar we set.' };
   function step(a, kick, node) { const s = el('section', 'st'); s.appendChild(el('h4', '', kick)); (Array.isArray(node) ? node : [node]).forEach(n => s.appendChild(n)); a.appendChild(s); return s; }
+
+  // ---- Throughline stories (docs/THROUGHLINE_SPEC.md) ----
+  const nfmt = x => Math.round(x).toLocaleString('en-US');
+  const rowsOf = (card, data, g) => {
+    const rows = card.check.path.split('.').reduce((o, k) => o && o[k], data), ix = card.check['group_' + g].indices, n = rows.length;
+    return { rows, pick: (ix === 'all' ? rows.map((_, i) => i) : ix.map(i => (i < 0 ? n + i : i))).map(i => rows[i]) };
+  };
+  function storyVars(story, card, data, r) {
+    const c = card.check, v = {}, pct = !!c.display_pct;
+    const f = x => pct ? (x * 100).toFixed(2) + '%' : (Math.abs(x) >= 10 ? x.toFixed(1) : x.toFixed(2));
+    v.ratio = r.value.toFixed(2); v.a = f(r.mean_a); v.b = f(r.mean_b); v.label_a = c.group_a.label; v.label_b = c.group_b.label;
+    const win = g => {
+      const x = rowsOf(card, data, g).pick, k = c.label_field; if (!k || !x.length) return null;
+      const A = String(x[0][k]), B = String(x[x.length - 1][k]);
+      if (/^\d{4}-\d{2}-\d{2}$/.test(A)) return dstr(new Date(A)) + ' to ' + dstr(new Date(Date.parse(B) + 6 * 864e5));
+      if (/^\d{4}-\d{2}$/.test(A)) return mon(A) + ' to ' + mon(B);
+      return null;
+    };
+    v.window_a = win('a'); v.window_b = win('b');
+    const rule = w => (card.verdicts || []).find(y => y.verdict === w && y.when);
+    v.support_at = rule('supported') ? rule('supported').when.value : null; v.refute_at = rule('refuted') ? rule('refuted').when.value : null;
+    const raw = {};
+    Object.keys(story.counts || {}).forEach(k => { const d = story.counts[k]; raw[k] = rowsOf(card, data, d.group).pick.reduce((t, x) => t + (+x[d.field] || 0), 0); v[k] = nfmt(raw[k]); });
+    if (raw.n_a != null && raw.t_a) v.share_a = (raw.n_a / raw.t_a * 100).toFixed(2) + '%';
+    if (raw.n_b != null && raw.t_b) v.share_b = (raw.n_b / raw.t_b * 100).toFixed(2) + '%';
+    return v;
+  }
+  const fillTpl = (t, v) => t.replace(/\{(\w+)\}/g, (_, k) => v[k]);
+  function storyOk(story, verdict, v) {
+    const names = ((story.opening || '') + (story.takeaway || '')).match(/\{(\w+)\}/g) || [];
+    return story.for_verdict === verdict && names.every(n => { const x = v[n.slice(1, -1)]; return x != null && x !== '' && !/NaN|undefined/.test(String(x)); });
+  }
+  // Two bars with the values on them and the ratio written above, plus a text description for assistive tech.
+  function storyChart(card, r, la, lb, desc) {
+    const k = card.check, W = 320, H = 150, base = 118, max = Math.max(r.mean_a, r.mean_b) || 1;
+    const s = sv('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': desc });
+    [[r.mean_b, 'b-b', 50, lb], [r.mean_a, 'b-a', 190, la]].forEach(([x, cls, px, lab]) => {
+      const h = Math.max(2, (x / max) * 68);
+      s.appendChild(sv('rect', { x: px, y: base - h, width: 80, height: h, rx: 3, class: cls }));
+      s.appendChild(sv('text', { x: px + 40, y: base - h - 6, 'text-anchor': 'middle', class: 'g-val' }, fmtN(x, k)));
+      s.appendChild(sv('text', { x: px + 40, y: base + 14, 'text-anchor': 'middle', class: 'g-lab' }, lab.length > 24 ? lab.slice(0, 23) + '\u2026' : lab));
+    });
+    s.appendChild(sv('text', { x: W / 2, y: 16, 'text-anchor': 'middle', class: 'g-val' }, 'ratio ' + fmt(r.value) + (k.unit || 'x')));
+    s.appendChild(sv('path', { d: 'M50 24 H130 M190 24 H270', class: 'g-tick', fill: 'none' }));
+    return s;
+  }
+  function rulesLabel(card) {
+    const t = JSON.stringify([card.caveats, card.expect, card.rules]);
+    if (/exploratory|set after|after (seeing|earlier)|saved after/i.test(t)) return 'Thresholds saved after earlier summaries were seen (exploratory).';
+    if (/set before|in advance|before the test/i.test(t)) return 'Thresholds set before the test.';
+    return 'Thresholds as declared on the card.';
+  }
+
+  function storyBody(a, card, r, la, lb) {
+    const st = r.story.story, v = r.story.vars, k = card.check;
+    a.classList.add('tl');
+    a.appendChild(el('h3', '', st.question));
+    a.appendChild(el('p', 'tested', 'Tested proposition: ' + card.hypothesis));
+    step(a, 'Why care', el('p', '', st.why));
+    const opening = fillTpl(st.opening, v), take = fillTpl(st.takeaway, v);
+    const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(la)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(lb));
+    const desc = la + ' ' + fmtN(r.mean_a, k) + ', ' + lb + ' ' + fmtN(r.mean_b, k) + ', ratio ' + fmt(r.value) + (k.unit || 'x') + '.';
+    step(a, 'What we saw', [el('p', '', opening), storyChart(card, r, la, lb, desc), lg]);
+    step(a, 'Takeaway', el('p', 'take', take));
+    const bd = step(a, 'Keep in mind', el('p', 'boundary', st.boundary));
+    if (st.explore && st.explore.length) {
+      const p = el('p', 'xlink'), key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
+      st.explore.forEach((id, i) => { if (i) p.appendChild(document.createTextNode(', ')); const l = el('a', '', id.toUpperCase()); l.href = '#/c/' + id + '/' + key; p.appendChild(l); });
+      step(a, 'Explore further', p);
+    }
+    const V = VERDICT[r.verdict], vb = el('div', 'verdict');
+    vb.appendChild(el('b', '', V[0])); vb.appendChild(el('span', '', V[1] + (CONF[r.confidence] ? ' ' + CONF[r.confidence] : '')));
+    step(a, 'Verdict', vb);
+    a.appendChild(detailsBlock(card, r));
+    a.classList.add('compact');
+  }
+  function detailsBlock(card, r) {
+    const k = card.check, d = el('details', 'more-d'); d.appendChild(el('summary', '', 'Caveats, the rules we set, source'));
+    d.appendChild(gauge(card, r));
+    d.appendChild(el('p', 'hyp-rules', rulesLabel(card)));
+    const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'Rule: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\\s*/i, ''))); d.appendChild(ex);
+    if (r.win) d.appendChild(el('p', 'hyp-cov', 'Data window: ' + r.win + '.'));
+    if (card.caveats && card.caveats.length) { const bx = el('div', 'cav'); bx.appendChild(el('b', '', 'Caveats')); card.caveats.forEach(t => bx.appendChild(el('p', '', t))); d.appendChild(bx); }
+    d.appendChild(el('p', 'src', 'Check: ' + k.source + ' \\u203a ' + k.path + '.' + k.field + (card.author ? ' \\u00b7 by ' + card.author : '')));
+    return d;
+  }
   function render(card, r) {
     TH = (card.verdicts || []).filter(x => x.when).map(x => x.when.value);
     const k = card.check, split = r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''));
@@ -67,8 +153,10 @@
       sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share'; }, 2000);
     });
     top.appendChild(sh); a.appendChild(top);
+    if (r.story) { storyBody(a, card, r, la, lb); return a; }
     // 1. the guess
     a.appendChild(el('h3', '', card.title));
+    if (r.storyReview) a.appendChild(el('p', 'hnote diff', 'This story needs review after the latest refresh.'));
     step(a, 'The guess', el('p', 'hyp-q', card.hypothesis));
     // 2. why it might be true (only when the card author wrote it)
     if (card.why) step(a, 'Why it might be true', el('p', '', card.why));
@@ -80,11 +168,11 @@
     if (r.hist) {
       const h = r.hist, lg2 = el('p', 'hyp-lg'); lg2.appendChild(el('span', 'sw a')); lg2.appendChild(document.createTextNode(la)); lg2.appendChild(el('span', 'sw b')); lg2.appendChild(document.createTextNode(lb));
       const same = h.verdict === r.verdict, hv = VERDICT[h.verdict][0].toLowerCase();
-      step(a, 'Across the whole archive', [bars(card, h), lg2, el('p', 'take', h.win + ': ' + la + ' ' + fmtN(h.mean_a, k) + ', ' + lb + ' ' + fmtN(h.mean_b, k) + ', ratio ' + fmt(h.value) + (k.unit || 'x') + '.'),
-        (k.field === 'points' ? el('p', 'hnote diff', 'Caution: archive points per story shift level in Dec 2023 and Jan 2026 (about 2, then 12 to 16, then about 2), cause unknown. Treat this check as rough.') : document.createTextNode('')), el('p', 'hnote' + (same ? '' : ' diff'), same ? 'The same rules give the same call over the full archive.' : 'Different call: the same rules over the full archive would read ' + hv + ', not ' + VERDICT[r.verdict][0].toLowerCase() + '. The verdict below stays based on the newest window.')]);
+      step(a, 'Longer context', [bars(card, h), lg2, el('p', 'take', h.win + ': ' + la + ' ' + fmtN(h.mean_a, k) + ', ' + lb + ' ' + fmtN(h.mean_b, k) + ', ratio ' + fmt(h.value) + (k.unit || 'x') + '.'),
+        (k.field === 'points' ? el('p', 'hnote diff', 'Caution: archive points per story shift level in Dec 2023 and Jan 2026 (about 2, then 12 to 16, then about 2), cause unknown. Treat this check as rough.') : document.createTextNode('')), el('p', 'hnote' + (same ? '' : ' diff'), same ? 'The same rules give the same call over the longer history.' : 'Different call: the same rules over the longer history would read ' + hv + ', not ' + VERDICT[r.verdict][0].toLowerCase() + '. The verdict below stays based on the newest window.')]);
     }
     if (r.strip) {
-      step(a, 'Across the whole archive', [strip(r.strip.series, r.strip.labels), el('p', 'take', r.strip.name + ': share of stories matching "rust" each month, ' + r.strip.win + '. Zig and the other words in this card are not in the archive\'s term list, so this is not the same measure as the chart above.')]);
+      step(a, 'Longer context', [strip(r.strip.series, r.strip.labels), el('p', 'take', r.strip.name + ': share of stories matching "rust" each month, ' + r.strip.win + '. Zig and the other words in this card are not in the archive\'s term list, so this is not the same measure as the chart above.')]);
     }
     // 5. verdict in plain words
     const V = VERDICT[r.verdict], vb = el('div', 'verdict');
@@ -93,7 +181,9 @@
     // 6. folded: rules, gauge, caveats, source
     const d = el('details', 'more-d'); d.appendChild(el('summary', '', 'Caveats, the rules we set, source'));
     d.appendChild(gauge(card, r));
-    const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'Rules set in advance: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); d.appendChild(ex);
+    d.appendChild(el('p', 'hyp-rules', rulesLabel(card)));
+    const ex = el('p', 'hyp-ex'); ex.appendChild(el('b', '', 'Rule: ')); ex.appendChild(document.createTextNode(card.expect.replace(/^If true,\s*/i, ''))); d.appendChild(ex);
+    if (r.win) d.appendChild(el('p', 'hyp-cov', 'Data window: ' + r.win + '.'));
     if (card.caveats && card.caveats.length) { const bx = el('div', 'cav'); bx.appendChild(el('b', '', 'Caveats')); card.caveats.forEach(t => bx.appendChild(el('p', '', t))); d.appendChild(bx); }
     d.appendChild(el('p', 'src', 'Check: ' + k.source + ' \u203a ' + k.path + '.' + k.field + (card.author ? ' \u00b7 by ' + card.author : '')));
     a.appendChild(d); a.classList.add('compact');
@@ -102,6 +192,7 @@
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
   let bundleP, tallyP, allP; const srcC = {};
   const source = s => srcC[s] || (srcC[s] = get(s));
+  let storyIdxP; const storyIndex = () => storyIdxP || (storyIdxP = get('stories/index.json').then(x => x.ids).catch(() => []));
   function bundle() {
     return bundleP || (bundleP = get('hypotheses/bundle.json').then(b => b.cards).catch(async () => {
       const names = await get('hypotheses/index.json');
@@ -116,7 +207,7 @@
       const p = card.check.path, rows = p.split('.').reduce((o, k) => o[k], data), l0 = rows[0] || {};
       const sec = x => new Date(x * 1000);
       if (data.window && data.window.start_utc) return 'newest items, ' + dstr(new Date(data.window.start_utc)) + ' to ' + dstr(new Date(Date.parse(data.window.end_exclusive_utc) - 1));
-      if (l0.month || (l0.label === undefined && /monthly/.test(p))) return 'full archive, ' + mon(rows[0].month) + ' to ' + mon(rows[rows.length - 1].month);
+      if (l0.month || (l0.label === undefined && /monthly/.test(p))) return 'monthly keyword counts, ' + mon(rows[0].month) + ' to ' + mon(rows[rows.length - 1].month) + ', not the full HN archive';
       const wk = r => r.week || r.label; const f = wk(rows[0]), l = wk(rows[rows.length - 1]);
       if (/^\d{4}-\d{2}-\d{2}$/.test(f || '') && /^\d{4}-\d{2}-\d{2}$/.test(l || '')) return 'newest items, ' + dstr(new Date(f)) + ' to ' + dstr(new Date(Date.parse(l) + 6 * 864e5)) + ' (' + rows.length + ' weeks)';
       const tr = data.time_range || data.window; if (tr && tr.min) return 'newest ' + (data.total_rows ? data.total_rows.toLocaleString() + ' ' : '') + 'items, ' + dstr(sec(tr.min)) + ' to ' + dstr(sec(tr.max));
@@ -131,13 +222,20 @@
       const data = await source(src), r = HypEval.evaluate(b.card, data);
       r.win = winText(b.card, data);
       try {
+        const idx = await storyIndex();
+        if (idx.includes(b.card.id)) {
+          const story = await get('stories/' + b.card.id + '.json'), vars = storyVars(story, b.card, data, r);
+          if (storyOk(story, r.verdict, vars)) r.story = { story, vars }; else r.storyReview = true;
+        }
+      } catch (e) { if (!/404/.test(String(e.message))) r.storyReview = true; }
+      try {
         if (b.card.check.path === 'concentration.cyclic.weekday') {
           const H = await source('data/history/strips.json'), w = H.weekday;
           const syn = { time_range: H.time_range, concentration: { cyclic: { weekday: [0, 1, 2, 3, 4, 5, 6].map(i => ({ posts: w.posts[i], points: w.points[i], comments: w.comments[i] })) } } };
-          r.hist = HypEval.evaluate(b.card, syn); r.hist.win = 'Full archive, ' + mon(H.first) + ' to ' + mon(H.last);
+          r.hist = HypEval.evaluate(b.card, syn); r.hist.win = 'Context: ' + mon(H.first) + ' to ' + mon(H.last) + ', daily counts of the saved history, not the full HN archive';
         } else if (b.card.id === 'h009') {
           const H = await source('data/history/strips.json');
-          r.strip = { labels: H.months, series: H.term_share.rust, name: 'Rust alone', win: 'Full archive, ' + mon(H.first) + ' to ' + mon(H.last) };
+          r.strip = { labels: H.months, series: H.term_share.rust, name: 'Rust alone', win: 'Context: ' + mon(H.first) + ' to ' + mon(H.last) + ', not the full HN archive' };
         }
       } catch (e) { }
       return { name: b.name, card: b.card, r };

@@ -47,7 +47,7 @@ const names = fs.readdirSync(path.join(root, 'hypotheses')).filter(f => /^h\d{3}
 const tally = { exploratory: 0, before: 0, declared: 0 };
 for (const n of names) tally[rulesLabel(JSON.parse(fs.readFileSync(path.join(root, 'hypotheses', n))))]++;
 assert.strictEqual(tally.exploratory + tally.before + tally.declared, names.length);
-for (const f of fs.existsSync(path.join(root, 'stories')) ? fs.readdirSync(path.join(root, 'stories')) : []) {
+for (const f of (fs.existsSync(path.join(root, 'stories')) ? fs.readdirSync(path.join(root, 'stories')) : []).filter(x => /^h\d{3}\.json$/.test(x))) {
   const s = JSON.parse(fs.readFileSync(path.join(root, 'stories', f))); const e = checkStory(s); assert.deepStrictEqual(e, [], f + ': ' + e);
 }
 console.log('ok story spec checks; rules labels', JSON.stringify(tally), 'for', names.length, 'cards');
@@ -79,7 +79,7 @@ function storyVars(story, card, data, r) {
 }
 const fill = (t, v) => t.replace(/\{(\w+)\}/g, (_, k) => v[k]);
 const cardIds = new Set(names.map(n => n.slice(0, 4)));
-if (fs.existsSync(path.join(root, 'stories'))) for (const f of fs.readdirSync(path.join(root, 'stories'))) {
+if (fs.existsSync(path.join(root, 'stories'))) for (const f of fs.readdirSync(path.join(root, 'stories')).filter(x => /^h\d{3}\.json$/.test(x))) {
   const s = JSON.parse(fs.readFileSync(path.join(root, 'stories', f)));
   const cf = names.find(n => n.startsWith(s.id + '-')), card = JSON.parse(fs.readFileSync(path.join(root, 'hypotheses', cf)));
   const data = card.check.source === 'data/summary.json' ? sum0 : JSON.parse(fs.readFileSync(path.join(root, card.check.source)));
@@ -90,4 +90,8 @@ if (fs.existsSync(path.join(root, 'stories'))) for (const f of fs.readdirSync(pa
   for (const e of s.explore) assert.ok(cardIds.has(e), s.id + ' explore ' + e);
   assert.strictEqual(render(s, r.verdict, v).mode, 'story');
   if (process.env.SHOW_STORIES) console.log('\n' + s.id + ' ' + s.question + '\n  ' + fill(s.opening, v) + '\n  ' + fill(s.takeaway, v));
+}
+if (fs.existsSync(path.join(root, 'stories'))) {
+  const ids = fs.readdirSync(path.join(root, 'stories')).filter(f => /^h\d{3}\.json$/.test(f)).map(f => f.slice(0, -5)).sort();
+  assert.deepStrictEqual(JSON.parse(fs.readFileSync(path.join(root, 'stories/index.json'))).ids, ids, 'stories/index.json must list every story');
 }
