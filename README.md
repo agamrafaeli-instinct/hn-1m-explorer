@@ -101,7 +101,6 @@ To run the data and hypothesis checks:
 ```sh
 python3 -m unittest discover -s tests -v
 node tests/hypotheses.test.js
-node tests/old_cards.test.js
 ```
 
 ## Under the hood

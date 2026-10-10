@@ -3,9 +3,9 @@
 (function () {
   const $ = id => document.getElementById(id);
   const AUD = {
-    engineers: { name: 'Engineers', fallback: 'h300', tag: 'engineers', clean: [], note: 'Read this first: the all-time cards (h300 onward) copy their thresholds from the older cards, so they are exploratory, not blind pre-registrations.' },
-    vcs: { name: 'Deep-tech VCs', fallback: 'h319', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
-    geeks: { name: 'Curious geeks', fallback: 'h011', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
+    engineers: { name: 'Engineers', tag: 'engineers', clean: [], note: 'Read this first: the all-time cards (h300 onward) copy their thresholds from the older cards, so they are exploratory, not blind pre-registrations.' },
+    vcs: { name: 'Deep-tech VCs', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
+    geeks: { name: 'Curious geeks', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
   const views = ['home', 'aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson'];
   const tabOf = { lesson: 'lesson', home: 'home', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
@@ -33,12 +33,11 @@
     $('aud_others').replaceChildren(...Object.keys(AUD).filter(k => k !== key).map(k => { const l = document.createElement('a'); l.href = '#/a/' + k; l.textContent = AUD[k].name + ' \u2192'; return l; }));
     try {
       const ok = (await HypCards.tally()).filter(x => !x.error);
-      const mine = ok.filter(x => x.audience === a.tag), own = mine.find(x => x.name.startsWith(a.fallback)) || mine[0], pick = own || ok.find(x => x.name.startsWith(a.fallback));
-      if (!pick) throw new Error('no card yet');
+      const mine = ok.filter(x => x.audience === a.tag), pick = mine[0];
+      if (!pick) { $('aud_card').textContent = 'The cards for this group are being rebuilt as all-time cards.'; return; }
       const x = await HypCards.one(pick.name.split('-')[0]);
       $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r)));
       deeper(mine.filter(y => y !== pick), key);
-      if (!own) $('aud_note').textContent = 'A card written for this audience is coming. This is the closest tested hypothesis for now.';
     } catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
   const compact = c => HypCards.compact(c);

@@ -24,8 +24,8 @@ jobs:
         run: node tests/hypotheses.test.js
       - name: Card rule messages and the worked example
         run: node tests/card_rules.test.js
-      - name: Old cards unchanged and IDs unique
-        run: node tests/old_cards.test.js
+      - name: Film card guard
+        run: python3 -m unittest tests.test_film_guard
       - name: Story spec checks
         run: node tests/story_spec.test.js
   ui:

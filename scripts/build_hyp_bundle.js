@@ -3,8 +3,7 @@
 // usage: node scripts/build_hyp_bundle.js <staged site dir>
 const fs = require('fs'), path = require('path'), E = require('../hyp-eval.js');
 const site = path.resolve(process.argv[2]), hd = path.join(site, 'hypotheses');
-const hiddenFile = path.join(__dirname, '../docs/hidden_cards.json'), hidden = new Set(fs.existsSync(hiddenFile) ? JSON.parse(fs.readFileSync(hiddenFile)).hidden : []);
-const names = JSON.parse(fs.readFileSync(path.join(hd, 'index.json'))).filter(n => !hidden.has(n.split('-')[0]));
+const names = JSON.parse(fs.readFileSync(path.join(hd, 'index.json')));
 const cache = {}, cards = [], tally = [];
 for (const n of names) {
   try {
