@@ -77,7 +77,10 @@ await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
 await check('explorer', '#/explore', q1('#loadbtn'), async () => {
   await ev("(()=>{const s=document.getElementById('loadn');if(s&&s.options.length)s.selectedIndex=0;document.getElementById('loadbtn').click()})()");
   if (!await wait("/\\d.*matching/.test(document.getElementById('count').textContent)", 60000)) return 'explorer never showed a match count';
-  const n0 = await ev("+document.getElementById('count').textContent.replace(/[^0-9]/g,'')");
+  // The list loads in parts: wait until the count stops moving before reading the baseline.
+  const cnt = () => ev("+document.getElementById('count').textContent.replace(/[^0-9]/g,'')");
+  let n0 = await cnt();
+  for (let i = 0; i < 40; i++) { await new Promise(r => setTimeout(r, 1000)); const x = await cnt(); if (x === n0) break; n0 = x; }
   await ev("(()=>{const e=document.getElementById('minscore');e.value='100';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}))})()");
   await wait(`+document.getElementById('count').textContent.replace(/[^0-9]/g,'')!==${n0}`, 10000);
   const n1 = await ev("+document.getElementById('count').textContent.replace(/[^0-9]/g,'')");
