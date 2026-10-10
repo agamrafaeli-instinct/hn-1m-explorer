@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "id": "h350",
+  "title": "Maps and geography find more hits",
+  "author": "film-cards",
+  "audience": "curious readers",
+  "hypothesis": "Titles matching maps reach ten snapshot points at least 1.25x as often as other stories.",
+  "expect": "Share of stories reaching ten points, against all stories of the same months, across 2006 to 2026: at least 1.25x supports; at or below 1.0x refutes. Between is inconclusive. Title matching only.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "points_vs_month_mean",
+    "unit": "x",
+    "field": "cu_maps_h",
+    "count_field": "cu_maps_s",
+    "avg_points": "h_total",
+    "avg_count": "total",
+    "per_label": "stories reaching ten points per story against the same-month average",
+    "group_a": {
+      "label": "maps and geography stories ({from} to {to})",
+      "indices": "all"
+    },
+    "group_b": {
+      "label": "Average story of the same months ({from} to {to})",
+      "indices": "all"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.25
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "weak"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories.",
+    "Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used.",
+    "Associations do not show what causes attention."
+  ]
+}

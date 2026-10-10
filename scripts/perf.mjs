@@ -34,7 +34,7 @@ const BFILE = String(arg('budgets', 'data/budgets.json'));
 export const SCREENS = [
   ['home', '#/', '#homeweek_s', '2026'],
   ['audience', '#/a/engineers', '#aud_card article.hyp', ''],
-  ['card', '#/c/h009/engineers', '#aud_card article.hyp', ''],
+  ['card', '#/c/h300/engineers', '#aud_card article.hyp', ''],
   ['week_engineers', '#/w/engineers', '#w_body .wsec', ''],
   ['week_vcs', '#/w/vcs', '#w_body .wsec', ''],
   ['week_geeks', '#/w/geeks', '#w_body .wsec', ''],

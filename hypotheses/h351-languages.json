@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "id": "h351",
+  "title": "Human languages are gaining share",
+  "author": "film-cards",
+  "audience": "curious readers",
+  "hypothesis": "Titles matching the linguistics, translation or Unicode word list take at least 1.25x as much of the story mix in the final three complete weeks as in the first three.",
+  "expect": "Share of stories in the latest 12 months divided by the pooled share of all earlier stories since 2006: at least 1.25x supports; at or below 1.0x refutes. Between is inconclusive. Title matching only.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "cu_languages_s",
+    "per_label": "human languages share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "cu_languages_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "cu_languages_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.25
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "weak"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories.",
+    "Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used.",
+    "Associations do not show what causes attention."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "h345",
+  "title": "Privacy produces more talk per vote",
+  "author": "film-cards",
+  "audience": "curious readers",
+  "hypothesis": "Titles matching privacy average at least 1.25x the comments per point of other stories.",
+  "expect": "Comments per point for matching stories divided by comments per point for all stories, across 2006 to 2026: at least 1.25x supports; at or below 1.0x refutes. Between is inconclusive. Title matching only.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "cu_privacy_c",
+    "per_label": "comments per point",
+    "display_pct": false,
+    "group_a": {
+      "label": "privacy and surveillance comments per point ({from} to {to})",
+      "indices": "all",
+      "field": "cu_privacy_c",
+      "per": "cu_privacy_p"
+    },
+    "group_b": {
+      "label": "All stories, comments per point ({from} to {to})",
+      "indices": "all",
+      "field": "c_total",
+      "per": "pts_total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.25
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "weak"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories.",
+    "Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used.",
+    "Associations do not show what causes attention."
+  ]
+}

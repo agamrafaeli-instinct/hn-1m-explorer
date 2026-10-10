@@ -1,0 +1,62 @@
+{
+ "h135": {
+  "title": "Space has a higher hit rate",
+  "hypothesis": "Titles matching space reach ten snapshot points at least 1.25x as often as other stories."
+ },
+ "h136": {
+  "title": "Animals win beyond the biggest hits",
+  "hypothesis": "Titles matching animals earn at least 1.25x the points per story of other stories after removing the top 1% separately each week."
+ },
+ "h137": {
+  "title": "Food stories take over weekends",
+  "hypothesis": "Titles matching food take at least 1.25x as much of the story mix on UTC weekends as on weekdays."
+ },
+ "h138": {
+  "title": "Music starts more conversations",
+  "hypothesis": "Titles matching music average at least 1.25x the comments per story of other stories."
+ },
+ "h139": {
+  "title": "Health draws talk relative to votes",
+  "hypothesis": "Titles matching health average at least 1.25x the comments per point of other stories."
+ },
+ "h140": {
+  "title": "Climate is unusually discussion-heavy",
+  "hypothesis": "Titles matching climate average at least 1.5x the comments per point of other stories."
+ },
+ "h141": {
+  "title": "Privacy produces more talk per vote",
+  "hypothesis": "Titles matching privacy average at least 1.25x the comments per point of other stories."
+ },
+ "h142": {
+  "title": "Learning stories clear ten points more often",
+  "hypothesis": "Titles matching education reach ten snapshot points at least 1.25x as often as other stories."
+ },
+ "h143": {
+  "title": "Games gain weekend shelf space",
+  "hypothesis": "Titles matching games take at least 1.25x as much of the story mix on UTC weekends as on weekdays."
+ },
+ "h144": {
+  "title": "Books beat the average after trimming",
+  "hypothesis": "Titles matching books earn at least 1.25x the points per story of other stories after removing the top 1% separately each week."
+ },
+ "h145": {
+  "title": "Visual art earns a points premium",
+  "hypothesis": "Titles matching art average at least 1.25x the points per story of other stories."
+ },
+ "h146": {
+  "title": "Maps and geography find more hits",
+  "hypothesis": "Titles matching maps reach ten snapshot points at least 1.25x as often as other stories."
+ },
+ "h147": {
+  "title": "Human languages are gaining share",
+  "hypothesis": "Titles matching the linguistics, translation or Unicode word list take at least 1.25x as much of the story mix in the final three complete weeks as in the first three."
+ },
+ "h148": {
+  "title": "Hands-on making gets a weekend boost",
+  "hypothesis": "Titles matching diy take at least 1.25x as much of the story mix on UTC weekends as on weekdays."
+ },
+ "h149": {
+  "title": "Question headlines provoke more comments",
+  "hypothesis": "Titles containing a question mark average at least 1.25x the comments per story of other stories."
+ }
+}

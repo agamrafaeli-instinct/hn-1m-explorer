@@ -8,7 +8,8 @@
   "runs": 3,
   "site": "https://agamrafaeli-instinct.github.io/hn-1m-explorer/",
   "date": "2026-10-09",
-  "rule": "measured median + 15 percent, time rounded up to 50 ms"
+  "rule": "measured median + 15 percent, time rounded up to 50 ms",
+  "note": "2026-10-10: audience and card size budgets raised to 310 KB. The film data file grew to 111 KB gzipped (45 term dictionaries and 20 years of monthly counts). The audience pages go away in #169."
  },
  "screens": {
   "home": {
@@ -24,7 +25,7 @@
   },
   "audience": {
    "ms": 2150,
-   "kb": 227,
+   "kb": 310,
    "reqs": 20,
    "measured": {
     "ms": 1858,
@@ -35,7 +36,7 @@
   },
   "card": {
    "ms": 1950,
-   "kb": 227,
+   "kb": 310,
    "reqs": 20,
    "measured": {
     "ms": 1688,

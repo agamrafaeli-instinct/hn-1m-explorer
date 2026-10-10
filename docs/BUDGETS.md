@@ -15,8 +15,8 @@ Measured 2026-10-09 on the live site. Budget = measured median plus 15 percent, 
 | Screen | Measured | Budget |
 |---|---|---|
 | Home | 857 ms, 12 req, 87 KB | 1000 ms, 14 req, 101 KB |
-| Audience page | 1858 ms, 17 req, 197 KB | 2150 ms, 20 req, 227 KB |
-| One card | 1688 ms, 17 req, 197 KB | 1950 ms, 20 req, 227 KB |
+| Audience page | 1858 ms, 17 req, 197 KB | 2150 ms, 20 req, 310 KB (raised 2026-10-10, film data grew) |
+| One card | 1688 ms, 17 req, 197 KB | 1950 ms, 20 req, 310 KB (raised 2026-10-10, film data grew) |
 | This week, Engineers | 1566 ms, 20 req, 197 KB | 1850 ms, 23 req, 227 KB |
 | This week, VCs | 1617 ms, 20 req, 197 KB | 1900 ms, 23 req, 227 KB |
 | This week, Geeks | 1553 ms, 20 req, 197 KB | 1800 ms, 23 req, 227 KB |

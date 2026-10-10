@@ -87,7 +87,20 @@ def make_card(cid, slug, term, title, hypothesis, expect, strong, weak, refute, 
     direction 'up' supports on >= thresholds, 'down' supports on <= thresholds (strong, weak, refute are then ratios, refute is a >= value)."""
     label = TERMS[term][0]; per = ('%s_s' % versus) if versus else 'total'
     f = term + '_s'
-    if kind == 'points':
+    if kind in ('discussion', 'weekend'):
+        if kind == 'discussion':
+            ga = {'label': label + ' comments per point ({from} to {to})', 'indices': 'all', 'field': term + '_c', 'per': term + '_p'}
+            gb = {'label': 'All stories, comments per point ({from} to {to})', 'indices': 'all', 'field': 'c_total', 'per': 'pts_total'}; pl = 'comments per point'
+        else:
+            ga = {'label': label + ' share of weekend stories ({from} to {to})', 'indices': 'all', 'field': term + '_we', 'per': 'we_total'}
+            gb = {'label': label + ' share of all stories ({from} to {to})', 'indices': 'all', 'field': term + '_s', 'per': 'total'}; pl = 'share of stories'
+        check = {'source': 'data/film_shares.json', 'path': 'monthly', 'label_field': 'month', 'stat': 'pooled_share_ratio', 'unit': 'x', 'field': ga['field'], 'per_label': pl, 'display_pct': kind == 'weekend', 'group_a': ga, 'group_b': gb}
+    elif kind in ('points', 'comments', 'hit'):
+        num, avg, what = {'points': ('_p', 'pts_total', 'points'), 'comments': ('_c', 'c_total', 'comments'), 'hit': ('_h', 'h_total', 'stories reaching ten points')}[kind]
+        check = {'source': 'data/film_shares.json', 'path': 'monthly', 'label_field': 'month', 'stat': 'points_vs_month_mean', 'unit': 'x',
+          'field': term + num, 'count_field': term + '_s', 'avg_points': avg, 'avg_count': 'total', 'per_label': what + ' per story against the same-month average',
+          'group_a': {'label': label + ' stories ({from} to {to})', 'indices': 'all'}, 'group_b': {'label': 'Average story of the same months ({from} to {to})', 'indices': 'all'}}
+    elif False:
         check = {'source': 'data/film_shares.json', 'path': 'monthly', 'label_field': 'month', 'stat': 'points_vs_month_mean', 'unit': 'x',
           'field': term + '_p', 'count_field': term + '_s', 'avg_points': 'pts_total', 'avg_count': 'total', 'per_label': 'points per story against the same-month average',
           'group_a': {'label': label + ' stories ({from} to {to})', 'indices': 'all'}, 'group_b': {'label': 'Average story of the same months ({from} to {to})', 'indices': 'all'}}

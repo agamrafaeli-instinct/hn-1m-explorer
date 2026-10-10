@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "h341",
+  "title": "Food stories take over weekends",
+  "author": "film-cards",
+  "audience": "curious readers",
+  "hypothesis": "Titles matching food take at least 1.25x as much of the story mix on UTC weekends as on weekdays.",
+  "expect": "The topic share of UTC weekend stories divided by its share of all stories, across 2006 to 2026: at least 1.25x supports; at or below 1.0x refutes. Between is inconclusive. Title matching only.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "cu_food_we",
+    "per_label": "share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "food and drink share of weekend stories ({from} to {to})",
+      "indices": "all",
+      "field": "cu_food_we",
+      "per": "we_total"
+    },
+    "group_b": {
+      "label": "food and drink share of all stories ({from} to {to})",
+      "indices": "all",
+      "field": "cu_food_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.25
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "weak"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces.",
+  "caveats": [
+    "Title matching only: the word list is in scripts/film.py and will miss and mis-match some stories.",
+    "Archive scores and comment counts for recent stories are low for all stories, so only ratios against the same months are used.",
+    "Associations do not show what causes attention."
+  ]
+}
