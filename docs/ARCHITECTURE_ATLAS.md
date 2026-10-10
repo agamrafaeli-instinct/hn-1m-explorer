@@ -134,3 +134,23 @@ Why: DuckDB-WASM decides by sending `HEAD` with `Range: bytes=0-` and only uses 
 Result: DuckDB-WASM reads by range from Pages only if we ship the patched worker script (one changed condition, kept in our repo with a test). Without it, the first query costs the whole file. A year of stories is 16.5 MB, so a first query costs 16.5 MB on the default path, or about 0.1 to 3 MB with the patch, plus the engine download.
 
 Limits of this test: the file was local, not on Pages. A 50 MB file was not put on Pages, because it would stay in the repository history for good. Pages behaviour was measured on a 976 KB Parquet file and an 8 MB CSV. Size does not change how HEAD and Range answers work. Slow 4G is in #141.
+
+## Slow 4G measured, workers included (2026-10-10, #141)
+
+The 7b run did not slow the engine and Parquet requests, because Chrome's network throttle skips workers. This run shapes the link on the server instead, so every request is covered: one shared link at 1.6 Mbps (200 KB/s) with 150 ms added to each request, cold cache, 390px viewport, 4x CPU slowdown on the page thread (workers are not CPU throttled). File: 2022 stories, 16.5 MB, 299,563 rows. Engine 1.33.1, eh bundle, the same 8.1 MB gzipped wasm. Test page: [docs/atlas/range-test-page.js](atlas/range-test-page.js) (the file name is a query parameter).
+
+| Step | Default (whole file read) | Range reads (patched worker, see above) |
+|---|---|---|
+| Engine start | 43.8 s | 43.7 s |
+| First query, count | 83.6 s (reads the whole 16.5 MB) | 1.6 s (2 requests) |
+| Score filter | 0.07 s (file already in memory) | 19.9 s (93 requests, 0.5 MB) |
+| Title search, top 25 | 0.6 s | 86.1 s (193 requests, 9.9 MB) |
+
+What it shows:
+- The target of engine plus first query under 5 s is not met on a first visit on slow 4G. The engine alone takes about 44 s, which matches the arithmetic in 7b (8.4 MB at 200 KB/s).
+- Range reads fix the first count but not a text search. A title search reads most of the title column (9.9 MB in 193 requests), so it costs about as much as the whole year, and the 150 ms per request adds up.
+- The default path pays once (about 84 s) and then answers in under a second for that year.
+- A repeat visit was not measured, because the cache was off. The engine would come from the browser cache, but whether the browser caches range responses was not tested.
+- This is a desktop headless browser with 4x CPU on the page thread, not a phone.
+
+Consequence for the plan: the full archive mode cannot promise a fast first search on slow 4G. Options for 7c: show a progress line with the size, keep the old Explorer as the default (already in the plan), and use precomputed aggregates (7a) for anything that must be instant.
