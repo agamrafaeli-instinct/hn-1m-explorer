@@ -60,7 +60,7 @@ async function check(name, route, ready, extra) {
 const q1 = s => `(()=>{const e=document.querySelector(${JSON.stringify(s)});return !!e&&e.textContent.trim().length>0})()`;
 await check('home', '#/', q1('#homeweek_s'), async () => (await ev(q1('#homeweek')) ? '' : 'no latest-week link'));
 await check('audience', '#/a/engineers', q1('#aud_card article.hyp'));
-await check('card', '#/c/h009/engineers', q1('#aud_card article.hyp'), async () => ((await ev("document.querySelectorAll('#aud_card article.hyp').length")) === 1 ? '' : 'expected exactly one card'));
+await check('card', '#/c/h300/engineers', q1('#aud_card article.hyp'), async () => ((await ev("document.querySelectorAll('#aud_card article.hyp').length")) === 1 ? '' : 'expected exactly one card'));
 const AUDN = { engineers: 'Engineers', vcs: 'Deep-tech VCs', geeks: 'Curious geeks' };
 for (const a of ['engineers', 'vcs', 'geeks']) await check('week_' + a, '#/w/' + a, q1('#w_body .wsec'), async () => {
   const t = await ev('document.title'), d = await ev("document.querySelector('meta[name=description]').content");
