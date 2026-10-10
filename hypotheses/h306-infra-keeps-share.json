@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h306",
+  "title": "Container and cloud infrastructure keeps its share",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Docker, Kubernetes and Terraform hold or grow their share of stories.",
+  "expect": "If true, the share of stories mentioning Docker, Kubernetes or Terraform should be at least 1.1x higher in the latest 12 months than in all earlier stories since 2006 (pooled) (0.9x or lower refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "infra_s",
+    "per_label": "Docker, Kubernetes and Terraform share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "infra_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "infra_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.0
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}

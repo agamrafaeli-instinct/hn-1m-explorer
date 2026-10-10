@@ -1,43 +1,34 @@
 {
   "schema": 1,
-  "id": "h012",
+  "id": "h300",
   "title": "TypeScript is replacing JavaScript in the conversation",
-  "author": "engineers-deeper-agent",
+  "author": "film-cards",
   "audience": "engineers",
   "hypothesis": "Engineers now talk about TypeScript more than plain JavaScript, and the gap keeps widening.",
-  "expect": "If true, the monthly ratio of TypeScript stories to JavaScript stories should be at least 1.5x higher in the latest 6 months than the first 6 (1.15x is weak, 0.9x or lower refutes it).",
+  "expect": "If true, the ratio of TypeScript stories to JavaScript stories should be at least 1.5x higher in the latest 12 months than in all earlier stories since 2006 (pooled) (1.15x is weak, 0.9x or lower refutes it).",
   "check": {
-    "source": "data/engineers_history.json",
+    "source": "data/film_shares.json",
     "path": "monthly",
     "label_field": "month",
-    "stat": "mean_ratio_a_over_b",
+    "stat": "pooled_share_ratio",
     "unit": "x",
-    "field": "ts_s",
+    "field": "typescript_s",
     "per_label": "TypeScript per JavaScript story",
+    "display_pct": false,
     "group_a": {
-      "label": "Latest 6 months",
-      "indices": [
-        -6,
-        -5,
-        -4,
-        -3,
-        -2,
-        -1
-      ],
-      "field": "ts_s",
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "typescript_s",
       "per": "js_s"
     },
     "group_b": {
-      "label": "First 6 months",
-      "indices": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "field": "ts_s",
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "typescript_s",
       "per": "js_s"
     }
   },
@@ -72,8 +63,5 @@
       "confidence": "inconclusive"
     }
   ],
-  "caveats": [
-    "Many JavaScript stories never use the word, and TypeScript posts often say JavaScript too.",
-    "Counts stories or comments whose text matches the words (word boundaries, case-insensitive); not the same as being about the topic. Complete months Jan 2023 to Jun 2026."
-  ]
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
 }

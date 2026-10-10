@@ -18,8 +18,8 @@ Pick something you have an opinion about. Read the prediction, inspect the check
 
 | Your hunch | Open the test |
 | --- | --- |
-| “Everyone moved from chatbots to agents.” | [Did the conversation actually shift?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h013/engineers) |
-| “People are tired of React.” | [Is React losing its share of the conversation?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h016/engineers) |
+| “Everyone moved from chatbots to agents.” | [Did the conversation actually shift?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h301/engineers) |
+| “People are tired of React.” | [Is React losing its share of the conversation?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h304/engineers) |
 | “HN loves weird stuff.” | [Does the advantage survive removing the biggest hits?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h121/geeks) |
 | “Deep-tech buzz comes from the same few websites.” | [How much attention comes from outside the top five domains?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h114/vcs) |
 

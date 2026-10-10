@@ -37,7 +37,12 @@
     // pooled_share_ratio: share = sum(field) / sum(per) over the whole group, so busy months weigh more than quiet ones.
     const pooled = (g, ix) => { const num = ix.reduce((s, i) => s + (+rows[i][g.field || c.field] || 0), 0), den = ix.reduce((s, i) => s + (+rows[i][g.per] || 0), 0); return den ? num / den : 0; };
     let a, b;
-    if (c.stat === 'pooled_share_ratio') { a = pooled(c.group_a, ia); b = pooled(c.group_b, ib); }
+    // points_vs_month_mean: points of the matching stories against what the same number of average stories scored in the same months.
+    if (c.stat === 'points_vs_month_mean') {
+      const num = ia.reduce((s, i) => s + (+rows[i][c.field] || 0), 0);
+      const den = ia.reduce((s, i) => s + ((+rows[i][c.avg_count]) ? (+rows[i][c.count_field] || 0) * (+rows[i][c.avg_points] || 0) / +rows[i][c.avg_count] : 0), 0);
+      a = den ? num / den : 0; b = 1; ib.length || ib.push(0);
+    } else if (c.stat === 'pooled_share_ratio') { a = pooled(c.group_a, ia); b = pooled(c.group_b, ib); }
     else if (c.stat === 'mean_ratio_a_over_b') { a = mean(sa, ia); b = mean(sb, ib); }
     else throw new Error('unknown stat: ' + c.stat);
     const value = b ? a / b : null;

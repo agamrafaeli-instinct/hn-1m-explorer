@@ -20,6 +20,10 @@ def dig(o, path):
 def pick(ix, n):
     if ix == 'all':
         return list(range(n))
+    if isinstance(ix, dict):  # film cards: {"last": N} or {"before_last": N}
+        if ix.get('last'): return list(range(max(0, n - ix['last']), n))
+        if ix.get('before_last'): return list(range(max(0, n - ix['before_last'])))
+        return []
     return [i + n if i < 0 else i for i in ix if 0 <= (i + n if i < 0 else i) < n]
 
 def words(t):

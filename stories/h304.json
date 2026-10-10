@@ -1,0 +1,36 @@
+{
+ "schema": 1,
+ "id": "h304",
+ "for_verdict": "supported",
+ "question": "Is React losing ground on HN?",
+ "why": "React is the default front-end name. A fall would mean attention moved on.",
+ "opening": "React appeared in {share_b} of stories from {window_b} ({n_b} of {t_b}) and {share_a} from {window_a} ({n_a} of {t_a}).",
+ "takeaway": "Yes. React's share is now {ratio}x of its earlier share. The card needed {support_at}x or lower to support the idea, and {refute_at}x or higher refutes it.",
+ "boundary": "\"React\" also matches the verb, and a story that names React is not proof anyone uses it. The earlier base is every story since 2006 and its share is pooled, so busy years count for more.",
+ "explore": [
+  "h300",
+  "h318"
+ ],
+ "counts": {
+  "n_a": {
+   "field": "react_s",
+   "group": "a",
+   "op": "sum"
+  },
+  "t_a": {
+   "field": "total",
+   "group": "a",
+   "op": "sum"
+  },
+  "n_b": {
+   "field": "react_s",
+   "group": "b",
+   "op": "sum"
+  },
+  "t_b": {
+   "field": "total",
+   "group": "b",
+   "op": "sum"
+  }
+ }
+}

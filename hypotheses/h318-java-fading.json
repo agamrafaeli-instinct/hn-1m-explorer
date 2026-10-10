@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h318",
+  "title": "Java is dying on HN",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Java mentions collapse as a share of stories.",
+  "expect": "If true, the share of stories mentioning Java should be at most 0.6x as high in the latest 12 months as in all earlier stories since 2006 (pooled) (0.85x is weak, 1.0x or higher refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "java_s",
+    "per_label": "Java share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "java_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "java_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.6
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.85
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}

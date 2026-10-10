@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h316",
+  "title": "Kubernetes is cooling off",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Kubernetes appears in a shrinking share of stories.",
+  "expect": "If true, the share of stories mentioning Kubernetes should be at most 0.7x as high in the latest 12 months as in all earlier stories since 2006 (pooled) (0.9x is weak, 1.05x or higher refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "kubernetes_s",
+    "per_label": "Kubernetes share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "kubernetes_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "kubernetes_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.7
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.05
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}

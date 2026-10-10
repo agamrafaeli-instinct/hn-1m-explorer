@@ -58,7 +58,7 @@ const dig = (o, p) => p.split('.').reduce((x, k) => (x == null ? undefined : x[k
 const nf = x => Math.round(x).toLocaleString('en-US');
 function groupRows(card, data, g) {
   const rows = dig(data, card.check.path), ix = card.check['group_' + g].indices;
-  const n = rows.length; return (ix === 'all' ? rows.map((_, i) => i) : ix.map(i => (i < 0 ? n + i : i))).map(i => rows[i]);
+  return E.resolve(ix, rows.length).map(i => rows[i]);
 }
 function storyVars(story, card, data, r) {
   const c = card.check, v = {}, pct = !!c.display_pct;

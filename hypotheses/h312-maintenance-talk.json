@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h312",
+  "title": "More engineers talk about maintenance",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Code review and technical debt appear more often as AI writes more code.",
+  "expect": "If true, the share of stories mentioning code review or technical debt should be at least 1.5x higher in the latest 12 months than in all earlier stories since 2006 (pooled) (1.15x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "maint_s",
+    "per_label": "code review and technical debt share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "maint_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "maint_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.15
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}

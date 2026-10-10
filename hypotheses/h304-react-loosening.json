@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h304",
+  "title": "React's grip is loosening",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "React is losing share of engineering conversation to newer front-end tools.",
+  "expect": "If true, the share of stories mentioning React should be at most 0.85x as high in the latest 12 months as in all earlier stories since 2006 (pooled) (0.95x is weak, 1.1x or higher refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "react_s",
+    "per_label": "React share of stories",
+    "display_pct": true,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "react_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "react_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.85
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}

@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "id": "h301",
+  "title": "Engineers moved from chatbots to agents",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Hacker News talk shifted from ChatGPT and GPT toward agents.",
+  "expect": "If true, the ratio of agent(s) stories to ChatGPT/GPT stories should be at least 3x higher in the latest 12 months than in all earlier stories since 2006 (pooled) (1.5x is weak, 1x or lower refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "agents_s",
+    "per_label": "agents per ChatGPT and GPT models story",
+    "display_pct": false,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "agents_s",
+      "per": "gpt_s"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "agents_s",
+      "per": "gpt_s"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 3
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 1.0
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory. Thresholds copied from the card this one replaces."
+}
