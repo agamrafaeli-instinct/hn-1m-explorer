@@ -49,8 +49,12 @@ jobs:
           git add data/
           if ! git diff --cached --quiet; then
             git commit -m 'Update rolling HN dataset'
-            # Fail rather than overwrite concurrent human changes. Next run catches up.
-            git push origin HEAD:main
+            # Rebase onto any commit that landed during the run (the bot only touches data/), then push. Never force.
+            for i in 1 2 3; do
+              git pull --rebase -q origin main && git push origin HEAD:main && break
+              sleep 5
+            done
+            git diff --quiet origin/main HEAD -- data/ || { echo 'push failed after 3 tries'; exit 1; }
           fi
       - name: Stage only published site files
         run: python scripts/stage_site.py --output _site
