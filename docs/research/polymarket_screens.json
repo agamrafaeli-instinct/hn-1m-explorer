@@ -1,0 +1,132 @@
+{
+  "Data centers, all": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 1571,
+      "total": 350244,
+      "pct": 0.44854444330238347
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 4608,
+      "total": 4383318,
+      "pct": 0.10512584302576268
+    },
+    "peak": {
+      "start": "2024-08",
+      "end": "2025-07",
+      "n": 613,
+      "total": 289222,
+      "pct": 0.21194791544211714
+    },
+    "vs_history": 4.266738133956851,
+    "vs_peak": 2.116295611432332,
+    "expression": "regexp_matches(lower(title),'\\b(data[ -]?cent(er|re)s?|datacent(er|re)s?|hyperscale)\\b')"
+  },
+  "Data-center resource/policy pressure": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 416,
+      "total": 350244,
+      "pct": 0.1187743401742785
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 540,
+      "total": 4383318,
+      "pct": 0.012319434729581564
+    },
+    "peak": {
+      "start": "2024-08",
+      "end": "2025-07",
+      "n": 189,
+      "total": 289222,
+      "pct": 0.06534772596828733
+    },
+    "vs_history": 9.641216726371075,
+    "vs_peak": 1.8175741912108558,
+    "expression": "regexp_matches(lower(title),'\\b(data[ -]?cent(er|re)s?|datacent(er|re)s?|hyperscale)\\b') and regexp_matches(lower(title),'\\b(moratorium|moratoria|ban|bans|banned|oppose|opposed|opposition|protest|protests|backlash|resistance|nimby|zoning|permit|permits|permitting|water|electricity|power|grid|energy|noise|pollution|environmental|diesel|emissions|community|communities|residents)\\b')"
+  },
+  "Recession concern family, global": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 62,
+      "total": 350244,
+      "pct": 0.017701944929820353
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 1929,
+      "total": 4383318,
+      "pct": 0.04400775850622748
+    },
+    "peak": {
+      "start": "2008-10",
+      "end": "2009-09",
+      "n": 309,
+      "total": 80666,
+      "pct": 0.3830610170331986
+    },
+    "vs_history": 0.40224600231151003,
+    "vs_peak": 0.04621181520093491,
+    "expression": "regexp_matches(lower(title),'\\b(recession|recessions|soft landing|hard landing|sahm rule|yield curve|yield-curve|economic downturn|economic contraction)\\b') and not regexp_matches(lower(title),'\\b(gingival|gum recession|receding gums|hairline|galaxy|galaxies|glacial|glacier|medical|periodontal)\\b') and not (regexp_matches(lower(title),'\\b(soft landing|hard landing)\\b') and regexp_matches(lower(title),'\\b(spacex|falcon|rocket|rockets|moon|mars|aircraft|airplane)\\b') and not regexp_matches(lower(title),'\\b(recession|economy|economic|fed|inflation)\\b'))"
+  },
+  "Data-center opposition explicit": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 80,
+      "total": 350244,
+      "pct": 0.022841219264284326
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 2,
+      "total": 4383318,
+      "pct": 4.5627536035487274e-05
+    },
+    "peak": {
+      "start": "2024-06",
+      "end": "2025-05",
+      "n": 1,
+      "total": 287110,
+      "pct": 0.0003482985615269409
+    },
+    "vs_history": 500.6016377154212,
+    "vs_peak": 65.57942462968673,
+    "expression": "regexp_matches(lower(title),'\\b(data[ -]?cent(er|re)s?|datacent(er|re)s?|hyperscale)\\b') and regexp_matches(lower(title),'\\b(moratorium|moratoria|ban|bans|banned|oppose|opposed|opposing|opposition|protest|protests|backlash|nimby|blocked|blocking|rejected|rejection|deny|denied)\\b') and not regexp_matches(lower(title),'\\b(chips?|gpus?|exports?|routers?|ips|disk|guru|chinese parts|chinese data center devices|illegal spying|spy|spying|solar farms rejected|home ban)\\b')"
+  },
+  "Shipping chokepoints": {
+    "latest": {
+      "start": "2025-08",
+      "end": "2026-07",
+      "n": 193,
+      "total": 350244,
+      "pct": 0.05510444147508594
+    },
+    "history": {
+      "start": "2006-10",
+      "end": "2025-07",
+      "n": 305,
+      "total": 4383318,
+      "pct": 0.006958199245411809
+    },
+    "peak": {
+      "start": "2021-01",
+      "end": "2021-12",
+      "n": 163,
+      "total": 290683,
+      "pct": 0.056074830657451585
+    },
+    "vs_history": 7.919353776973467,
+    "vs_peak": 0.9826947460921722,
+    "expression": "regexp_matches(lower(title),'\\bever given\\b.*\\b(ship|ships|shipping|suez|canal|vessel|container|grounded|stuck|blocked|unstuck)\\b|\\b(ship|ships|shipping|suez|canal|vessel|container|grounded|stuck|blocked|unstuck)\\b.*\\bever given\\b|\\b(hormuz|suez canal|suez crisis|bab[ -]el[ -]mandeb|panama canal)\\b|\\bred sea\\b.*\\b(ship|ships|shipping|cargo|container|tanker|tankers|trade|houthi|houthis)\\b|\\b(ship|ships|shipping|cargo|container|tanker|tankers|trade|houthi|houthis)\\b.*\\bred sea\\b') and not regexp_matches(lower(title),'\\b(gnu|linux|library|package|python|rust|javascript|node|npm)\\b.*\\bsuez\\b') and not regexp_matches(lower(title),'hormuz island|tech sector.s strait of hormuz|other suez canal|first person to swim|free diver')"
+  }
+}

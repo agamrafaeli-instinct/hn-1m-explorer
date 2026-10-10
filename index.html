@@ -16,6 +16,7 @@
 <section class="home">
   <p class="kicker">Hacker News, the newest posts</p>
   <h1>What do you<br>want to see?</h1>
+  <a class="lessonlink" href="#/lesson"><b>A fall from a peak is not a return to the past</b><span>GPT is down 71% from its peak year and 2.4x above its history. Both are true. Read why it matters.</span><i>&rarr;</i></a>
   <div class="pick">
     <a class="big" href="#/a/engineers"><b>Engineers</b><span>What the data says about people who build</span><em data-aud="engineers"></em></a>
     <a class="big" href="#/a/vcs"><b>Deep-tech VCs</b><span>Where attention and money signals pile up</span><em data-aud="deep-tech investors"></em></a>
@@ -192,6 +193,28 @@
   <p><a class="btn" href="https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/CONTRIBUTING.md">Full instructions</a> <a class="btn alt2" href="https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/HYPOTHESES.md">Card format</a></p>
 </section>
 </div>
+<div class="view" id="v_lesson" hidden>
+<section class="doc lesson">
+  <p class="kicker">The main idea</p>
+  <h2>A fall from a peak is not a return to the past</h2>
+  <p class="lede" id="ls_lede"></p>
+  <div id="ls_gpt"></div>
+  <h3>The same test on other topics</h3>
+  <p>Same latest window for every row. Only the baseline changes. Share of story titles that match the topic's word list.</p>
+  <div id="ls_rows"></div>
+  <p class="caveat-note" id="ls_frame"></p>
+  <h3>How to read trends</h3>
+  <ol class="steps">
+    <li><b>Fix the latest window.</b> Pick one recent period, here the last 12 complete months, and do not change it.</li>
+    <li><b>Swap the baseline.</b> Compare it to the topic's peak and to all earlier history. A trend that looks different against each is the interesting kind.</li>
+    <li><b>Name the pattern.</b> Reversal: below the peak, above history. Peak decay: below both. Emergence: above both. Composition shift: the mix inside the topic changes, like data centers moving toward power, water and local opposition. A pattern matters when it supports an argument you can test, not only when the windows disagree.</li>
+    <li><b>Watch vocabulary drift.</b> People rename things. "Basic income" and "UBI" are one idea with two words, and a single word hides that.</li>
+    <li><b>Check the dictionary.</b> List what the word list matches and misses. "Ask YC:" is the forum, not the company. "UBI" is also a Linux file system. Read a sample of matches before you trust a number.</li>
+  </ol>
+  <p class="caveat-note" id="ls_cav"></p>
+  <p><a class="btn" href="#/a/engineers">See the tested cards</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
+</section>
+</div>
 <div class="view" id="v_how" hidden>
 <section class="doc">
   <h2>How it works</h2>
@@ -209,11 +232,13 @@
   <a href="#/" data-t="home"><i>&#8962;</i>Home</a>
   <a href="#/explore" data-t="explore"><i>&#8981;</i>Explorer</a>
   <a href="#/submit" data-t="submit"><i>+</i>Submit</a>
+  <a href="#/lesson" data-t="lesson"><i>&#9733;</i>Lesson</a>
   <a href="#/how" data-t="how"><i>?</i>How it works</a>
 </nav>
 <script defer src="app.js"></script>
 <script defer src="hyp-eval.js"></script>
 <script defer src="hypotheses.js"></script>
 <script defer src="story.js"></script>
+<script defer src="lesson.js"></script>
 <script defer src="router.js"></script>
 </body></html>

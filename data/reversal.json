@@ -1,0 +1,256 @@
+{
+ "note": "Dictionary screens on story titles, not semantic topic estimates. Built by scripts/build_reversal.py from docs/research/.",
+ "rows": [
+  {
+   "label": "ChatGPT and GPT",
+   "kind": "reversal",
+   "note": "Down from its peak year, well above everything before it.",
+   "latest": {
+    "n": 3285,
+    "total": 350244,
+    "pct": 0.9379175660396752,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 17154,
+    "total": 4383318,
+    "pct": 0.39134737657637436,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 10422,
+    "total": 320159,
+    "pct": 3.2552575439078706,
+    "window": [
+     "2022-12",
+     "2023-11"
+    ]
+   },
+   "vs_history": 2.3966369066910906,
+   "vs_peak": 0.28812392057733294
+  },
+  {
+   "label": "Ukraine",
+   "kind": "peak decay",
+   "note": "Below its 2022 peak and a little below its own history. Not war-only, not all Russia stories.",
+   "latest": {
+    "n": 526,
+    "total": 350244,
+    "pct": 0.15018101666266945,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 7541,
+    "total": 4383318,
+    "pct": 0.17203862462180475,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 4200,
+    "total": 299562,
+    "pct": 1.4020469886033609,
+    "window": [
+     "2022-01",
+     "2022-12"
+    ]
+   },
+   "vs_history": 0.8729494146608924,
+   "vs_peak": 0.1071155374131014
+  },
+  {
+   "label": "Basic income",
+   "kind": "peak decay",
+   "note": "Below its 2016-17 peak and below history. Includes targeted experiments, so not only universal basic income.",
+   "latest": {
+    "n": 82,
+    "total": 350244,
+    "pct": 0.023412249745891435,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 1382,
+    "total": 4383318,
+    "pct": 0.0315286274005217,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 272,
+    "total": 284858,
+    "pct": 0.0954861720576568,
+    "window": [
+     "2016-03",
+     "2017-02"
+    ]
+   },
+   "vs_history": 0.7425711702725135,
+   "vs_peak": 0.24518994993070375
+  },
+  {
+   "label": "Y Combinator",
+   "kind": "peak decay",
+   "note": "Includes batch labels like \"YC S25\". Without them it is 0.59x history. The 2007 peak is a tiny base, so it is fragile. Not a sign that startup interest fell.",
+   "latest": {
+    "n": 573,
+    "total": 350244,
+    "pct": 0.1636002329804365,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 13298,
+    "total": 4383318,
+    "pct": 0.3033774870999549,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 532,
+    "total": 24957,
+    "pct": 2.131666466322074,
+    "window": [
+     "2007-02",
+     "2008-01"
+    ]
+   },
+   "vs_history": 0.53926293128842,
+   "vs_peak": 0.07674757546039011
+  },
+  {
+   "label": "Data centers",
+   "kind": "emergence",
+   "note": "Above its own peak and above history.",
+   "latest": {
+    "n": 1571,
+    "total": 350244,
+    "pct": 0.44854444330238347,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 4608,
+    "total": 4383318,
+    "pct": 0.10512584302576268,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 613,
+    "total": 289222,
+    "pct": 0.21194791544211714,
+    "window": [
+     "2024-08",
+     "2025-07"
+    ]
+   },
+   "vs_history": 4.266738133956851,
+   "vs_peak": 2.116295611432332
+  },
+  {
+   "label": "Shipping chokepoints",
+   "kind": "episode",
+   "note": "Back at the level of its 2021 peak year, far above history.",
+   "latest": {
+    "n": 193,
+    "total": 350244,
+    "pct": 0.05510444147508594,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 305,
+    "total": 4383318,
+    "pct": 0.006958199245411809,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 163,
+    "total": 290683,
+    "pct": 0.056074830657451585,
+    "window": [
+     "2021-01",
+     "2021-12"
+    ]
+   },
+   "vs_history": 7.919353776973467,
+   "vs_peak": 0.9826947460921722
+  },
+  {
+   "label": "Recession",
+   "kind": "peak decay",
+   "note": "Below history and far below 2008-09. A control: nothing to see.",
+   "latest": {
+    "n": 62,
+    "total": 350244,
+    "pct": 0.017701944929820353,
+    "window": [
+     "2025-08",
+     "2026-07"
+    ]
+   },
+   "history": {
+    "n": 1929,
+    "total": 4383318,
+    "pct": 0.04400775850622748,
+    "window": [
+     "2006-10",
+     "2025-07"
+    ]
+   },
+   "peak": {
+    "n": 309,
+    "total": 80666,
+    "pct": 0.3830610170331986,
+    "window": [
+     "2008-10",
+     "2009-09"
+    ]
+   },
+   "vs_history": 0.40224600231151003,
+   "vs_peak": 0.04621181520093491
+  }
+ ],
+ "framing": {
+  "latest": {
+   "n": 416,
+   "of": 1571,
+   "share": 0.26479949077021003
+  },
+  "history": {
+   "n": 540,
+   "of": 4608,
+   "share": 0.1171875
+  }
+ },
+ "caveat": "Screening measures, not complete semantic classification. Audits sampled candidates; recall not certified. Do not infer adoption, importance, influence or sentiment. YC includes portfolio labels; basic income includes targeted experiments."
+}
