@@ -564,6 +564,262 @@
    "id": "h332",
    "score": 0.8,
    "title": "The six deep-tech themes together: points premium, all-time base"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 8738.0,
+   "id": "h339",
+   "score": 0.8,
+   "title": "Space has a higher hit rate"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 319875.0,
+   "id": "h340",
+   "score": 0.8,
+   "title": "Animals win beyond the biggest hits"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 4750.0,
+   "id": "h341",
+   "score": 1.0,
+   "title": "Food stories take over weekends"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 143885.0,
+   "id": "h342",
+   "score": 0.8,
+   "title": "Music starts more conversations"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 371498.0,
+   "id": "h343",
+   "score": 1.0,
+   "title": "Health draws talk relative to votes"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 159591.0,
+   "id": "h344",
+   "score": 1.0,
+   "title": "Climate is unusually discussion-heavy"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 302585.0,
+   "id": "h345",
+   "score": 1.0,
+   "title": "Privacy produces more talk per vote"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 13025.0,
+   "id": "h346",
+   "score": 0.8,
+   "title": "Learning stories clear ten points more often"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 15055.0,
+   "id": "h347",
+   "score": 1.0,
+   "title": "Games gain weekend shelf space"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 1102680.0,
+   "id": "h348",
+   "score": 0.8,
+   "title": "Books beat the average after trimming"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 439209.0,
+   "id": "h349",
+   "score": 0.8,
+   "title": "Visual art earns a points premium"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 3093.0,
+   "id": "h350",
+   "score": 0.8,
+   "title": "Maps and geography find more hits"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 732.0,
+   "id": "h351",
+   "score": 1.0,
+   "title": "Human languages are gaining share"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 4790.0,
+   "id": "h352",
+   "score": 1.0,
+   "title": "Hands-on making gets a weekend boost"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 3879556.0,
+   "id": "h353",
+   "score": 0.8,
+   "title": "Question headlines provoke more comments"
   }
  ],
  "schema": 1,
