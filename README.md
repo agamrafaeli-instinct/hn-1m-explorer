@@ -1,6 +1,6 @@
 # Hacker News Explorer
 
-<!-- last-closed -->Last closed task: [#155](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/155) Film cards: Engineers (19 cards, h300-h318), Oct 10, 8:04 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
+<!-- last-closed -->Last closed task: [#156](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/156) Film cards: VC (14 cards, h319-h332), Oct 10, 8:13 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
 
 **Everyone has a theory about Hacker News. Bring yours.**
 
