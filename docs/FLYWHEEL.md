@@ -32,3 +32,12 @@ The standing cycle that keeps work moving. Epics feed tasks, tasks feed developm
 - Site changes go live only through the deploy workflow. Contributors use fork and PR, and the owner merges after the PR check passes.
 - Existing hypothesis cards are never changed by a rebuild. New cards get new IDs.
 - Sourced claims only. Estimates are labelled as estimates.
+
+## QA walkthroughs
+
+Only batches of new abilities that matter for how the product is presented (weekly screens, new cards, new explorer capabilities) get a walkthrough. Small fixes and internal work (review fixes, data checks, tests, docs, specs) do not. They close on review plus passing tests.
+
+- One `QA walkthrough:` ticket per batch of 5 or 6 related cards in QA. It is the owner's to-do on the board, status QA.
+- It holds a short step-by-step the owner can do in a couple of minutes: a link, what to tap, what to see, with a 390px screenshot for each step. Screenshots live in `docs/walkthroughs/`.
+- It lists the cards it covers.
+- Passing the walkthrough moves every covered card to Done and closes them. A failed step becomes a comment on the walkthrough and the covered card goes back to Dev.
