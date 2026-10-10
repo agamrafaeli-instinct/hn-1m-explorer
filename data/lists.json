@@ -1,0 +1,550 @@
+{
+ "list_version": "1",
+ "ai_coding": {
+  "claude_code": {
+   "words": [],
+   "phrases": [
+    "claude code"
+   ]
+  },
+  "cursor": {
+   "words": [
+    "cursor"
+   ],
+   "phrases": []
+  },
+  "mcp": {
+   "words": [
+    "mcp"
+   ],
+   "phrases": []
+  },
+  "copilot": {
+   "words": [
+    "copilot"
+   ],
+   "phrases": []
+  },
+  "agentic": {
+   "words": [
+    "agentic"
+   ],
+   "phrases": []
+  },
+  "ai_agents": {
+   "words": [],
+   "phrases": [
+    "ai agent"
+   ]
+  }
+ },
+ "ai_core": {
+  "words": [
+   "ai",
+   "llm",
+   "llms",
+   "chatgpt",
+   "gpt",
+   "openai",
+   "claude",
+   "copilot",
+   "anthropic",
+   "gemini"
+  ],
+  "phrases": []
+ },
+ "ai_infra": {
+  "words": [
+   "gpu",
+   "gpus",
+   "nvidia",
+   "tpu",
+   "tpus"
+  ],
+  "phrases": [
+   "data center",
+   "data centre"
+  ]
+ },
+ "baseline": {
+  "ai": {
+   "words": [
+    "ai"
+   ],
+   "phrases": []
+  },
+  "llm": {
+   "words": [
+    "llm",
+    "llms"
+   ],
+   "phrases": []
+  },
+  "chatgpt": {
+   "words": [
+    "chatgpt"
+   ],
+   "phrases": []
+  },
+  "gpt": {
+   "words": [
+    "gpt"
+   ],
+   "phrases": []
+  },
+  "openai": {
+   "words": [
+    "openai"
+   ],
+   "phrases": []
+  },
+  "claude": {
+   "words": [
+    "claude"
+   ],
+   "phrases": []
+  },
+  "copilot": {
+   "words": [
+    "copilot"
+   ],
+   "phrases": []
+  },
+  "rust": {
+   "words": [
+    "rust"
+   ],
+   "phrases": []
+  },
+  "python": {
+   "words": [
+    "python"
+   ],
+   "phrases": []
+  },
+  "remote": {
+   "words": [
+    "remote"
+   ],
+   "phrases": []
+  }
+ },
+ "case_sensitive": [
+  "Amazon",
+  "Apple",
+  "Intel",
+  "Meta"
+ ],
+ "deal_words": {
+  "raises": {
+   "words": [
+    "raises",
+    "raised"
+   ],
+   "phrases": []
+  },
+  "series": {
+   "words": [],
+   "phrases": [
+    "series a",
+    "series b",
+    "series c",
+    "series d",
+    "series e",
+    "seed round"
+   ]
+  },
+  "funding": {
+   "words": [
+    "funding",
+    "funded"
+   ],
+   "phrases": []
+  },
+  "acquisition": {
+   "words": [
+    "acquires",
+    "acquired",
+    "acquisition"
+   ],
+   "phrases": []
+  },
+  "ipo": {
+   "words": [
+    "ipo"
+   ],
+   "phrases": []
+  },
+  "valuation": {
+   "words": [
+    "valuation"
+   ],
+   "phrases": []
+  },
+  "bankrupt": {
+   "words": [
+    "bankrupt",
+    "bankruptcy"
+   ],
+   "phrases": []
+  },
+  "layoffs": {
+   "words": [
+    "layoffs"
+   ],
+   "phrases": [
+    "laid off"
+   ]
+  },
+  "shutdown": {
+   "words": [],
+   "phrases": [
+    "shuts down",
+    "shutting down",
+    "shut down"
+   ]
+  }
+ },
+ "hiring_skills": {
+  "ai_ml": {
+   "words": [
+    "ai",
+    "ml",
+    "llm"
+   ],
+   "phrases": []
+  },
+  "python": {
+   "words": [
+    "python"
+   ],
+   "phrases": []
+  },
+  "rust": {
+   "words": [
+    "rust"
+   ],
+   "phrases": []
+  },
+  "typescript": {
+   "words": [
+    "typescript",
+    "react"
+   ],
+   "phrases": []
+  },
+  "backend": {
+   "words": [
+    "backend"
+   ],
+   "phrases": [
+    "back-end"
+   ]
+  },
+  "remote": {
+   "words": [
+    "remote"
+   ],
+   "phrases": []
+  },
+  "onsite": {
+   "words": [
+    "onsite"
+   ],
+   "phrases": [
+    "on-site"
+   ]
+  }
+ },
+ "languages": {
+  "rust": {
+   "words": [
+    "rust"
+   ],
+   "phrases": []
+  },
+  "python": {
+   "words": [
+    "python"
+   ],
+   "phrases": []
+  },
+  "typescript": {
+   "words": [
+    "typescript"
+   ],
+   "phrases": []
+  },
+  "javascript": {
+   "words": [
+    "javascript"
+   ],
+   "phrases": []
+  },
+  "java": {
+   "words": [
+    "java"
+   ],
+   "phrases": []
+  },
+  "swift": {
+   "words": [
+    "swift"
+   ],
+   "phrases": []
+  },
+  "zig": {
+   "words": [
+    "zig"
+   ],
+   "phrases": []
+  },
+  "cpp": {
+   "words": [],
+   "phrases": [
+    "c++"
+   ]
+  },
+  "kotlin": {
+   "words": [
+    "kotlin"
+   ],
+   "phrases": []
+  }
+ },
+ "press": [
+  "techcrunch.com",
+  "bloomberg.com",
+  "reuters.com",
+  "wsj.com",
+  "ft.com",
+  "nytimes.com",
+  "economist.com",
+  "theinformation.com",
+  "wired.com",
+  "theverge.com",
+  "arstechnica.com",
+  "cnbc.com",
+  "forbes.com",
+  "businessinsider.com",
+  "theregister.com",
+  "bbc.com",
+  "theguardian.com",
+  "washingtonpost.com",
+  "axios.com",
+  "fortune.com"
+ ],
+ "primary": [
+  "arxiv.org",
+  "nature.com",
+  "science.org",
+  "github.com",
+  "acm.org",
+  "ieee.org",
+  "biorxiv.org",
+  "openai.com",
+  "anthropic.com",
+  "blog.google",
+  "research.google",
+  "huggingface.co",
+  "nasa.gov"
+ ],
+ "reading": {
+  "youtube": [
+   "youtube.com",
+   "youtu.be"
+  ],
+  "wikipedia": [
+   "en.wikipedia.org"
+  ]
+ },
+ "themes": {
+  "quantum": {
+   "words": [
+    "quantum",
+    "qubit",
+    "qubits"
+   ],
+   "phrases": []
+  },
+  "fusion_fission": {
+   "words": [
+    "fusion",
+    "fission",
+    "tokamak",
+    "reactor"
+   ],
+   "phrases": []
+  },
+  "chips": {
+   "words": [
+    "semiconductor",
+    "semiconductors",
+    "lithography",
+    "fpga",
+    "asic"
+   ],
+   "phrases": [
+    "risc-v"
+   ]
+  },
+  "batteries": {
+   "words": [
+    "battery",
+    "batteries"
+   ],
+   "phrases": [
+    "solid-state"
+   ]
+  },
+  "bio": {
+   "words": [
+    "crispr",
+    "mrna"
+   ],
+   "phrases": [
+    "gene editing",
+    "synthetic biology"
+   ]
+  },
+  "photonics_lidar": {
+   "words": [
+    "photonic",
+    "photonics",
+    "lidar",
+    "neuromorphic",
+    "perovskite",
+    "superconductor",
+    "superconductors",
+    "superconducting",
+    "superconductivity"
+   ],
+   "phrases": []
+  },
+  "data_center": {
+   "words": [],
+   "phrases": [
+    "data center",
+    "data centre"
+   ]
+  },
+  "gpu": {
+   "words": [
+    "gpu",
+    "gpus"
+   ],
+   "phrases": []
+  },
+  "robotics": {
+   "words": [
+    "robot",
+    "robots",
+    "robotics"
+   ],
+   "phrases": []
+  },
+  "solar": {
+   "words": [
+    "solar"
+   ],
+   "phrases": []
+  }
+ },
+ "tools": {
+  "postgres": {
+   "words": [
+    "postgres",
+    "postgresql"
+   ],
+   "phrases": []
+  },
+  "sqlite": {
+   "words": [
+    "sqlite"
+   ],
+   "phrases": []
+  },
+  "docker": {
+   "words": [
+    "docker"
+   ],
+   "phrases": []
+  },
+  "kubernetes": {
+   "words": [
+    "kubernetes",
+    "k8s"
+   ],
+   "phrases": []
+  },
+  "linux": {
+   "words": [
+    "linux"
+   ],
+   "phrases": []
+  },
+  "git": {
+   "words": [
+    "git"
+   ],
+   "phrases": []
+  },
+  "vscode": {
+   "words": [
+    "vscode"
+   ],
+   "phrases": [
+    "vs code"
+   ]
+  },
+  "neovim": {
+   "words": [
+    "neovim",
+    "nvim"
+   ],
+   "phrases": []
+  },
+  "react": {
+   "words": [
+    "react"
+   ],
+   "phrases": []
+  },
+  "wasm": {
+   "words": [
+    "wasm",
+    "webassembly"
+   ],
+   "phrases": []
+  }
+ },
+ "watchlist": [
+  "OpenAI",
+  "Anthropic",
+  "Nvidia",
+  "Google",
+  "Meta",
+  "Microsoft",
+  "Apple",
+  "Amazon",
+  "Tesla",
+  "SpaceX",
+  "xAI",
+  "DeepSeek",
+  "Mistral",
+  "Intel",
+  "AMD",
+  "TSMC",
+  "Cloudflare",
+  "Stripe",
+  "Palantir",
+  "Figma",
+  "Vercel",
+  "Supabase",
+  "Hugging Face",
+  "Perplexity",
+  "Rocket Lab",
+  "Anduril",
+  "Cerebras"
+ ]
+}
