@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-11 18:55 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-11 20:52 UTC. Forward only ids not sent before.
 50042219 | 314 pts, 167 comments | I paid people to try and follow my README | https://news.ycombinator.com/item?id=50042219
 50040276 | 344 pts, 131 comments | LineageOS 24.0 | https://news.ycombinator.com/item?id=50040276
 50043682 | 305 pts, 148 comments | Documents Add to Evidence in Climate Deception Case Against ExxonMobil | https://news.ycombinator.com/item?id=50043682
