@@ -82,7 +82,7 @@ await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
   const prevOk = await ev("(()=>{const a=document.querySelector('#w_body a[aria-label=\"Previous week\"]');if(!a)return false;a.click();return true})()");
   if (!prevOk) return 'no enabled Previous week link on the newest week';
   if (!await wait(`location.hash!==${JSON.stringify(h0)}`)) return 'Previous did not change the route';
-  await wait(`(document.querySelector('#w_body .wmid b')?.textContent||'')!==${JSON.stringify(r0)}`);
+  await wait(`(document.querySelector('#w_body .wmid b')?.textContent||'')&&(document.querySelector('#w_body .wmid b')?.textContent||'')!==${JSON.stringify(r0)}`);
   const r1 = await t1(); if (r1 === r0 || !r1) return 'Previous did not change the week shown';
   if (!await ev("(()=>{const a=document.querySelector('#w_body a[aria-label=\"Next week\"]');if(!a)return false;a.click();return true})()")) return 'no Next week link after going back';
   if (!await wait(`(document.querySelector('#w_body .wmid b')?.textContent||'')===${JSON.stringify(r0)}`)) return 'Next did not return to the first week';
