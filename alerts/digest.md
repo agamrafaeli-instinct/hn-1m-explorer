@@ -1,4 +1,4 @@
-HN digest 2026-10-11 (UTC): 7 new stories at 300+ points
+HN digest 2026-10-11 (UTC): 8 new stories at 300+ points
 - 410 pts, 200 comments: Lobbying is corruption https://news.ycombinator.com/item?id=50032556
 - 330 pts, 102 comments: A city-building game in which the city would prefer you didn't https://news.ycombinator.com/item?id=50036864
 - 324 pts, 239 comments: Bitwarden Dual License Model https://news.ycombinator.com/item?id=50033407
@@ -6,3 +6,4 @@ HN digest 2026-10-11 (UTC): 7 new stories at 300+ points
 - 316 pts, 46 comments: The Lightbulb Computer https://news.ycombinator.com/item?id=50029487
 - 314 pts, 161 comments: Telegram Desktop vulnerability allowed any user's file to be stolen https://news.ycombinator.com/item?id=50029123
 - 310 pts, 170 comments: `123456' password used in Danish CPR data breach https://news.ycombinator.com/item?id=50031269
+- 303 pts, 137 comments: Talorys – A self-hosted personal AI agent on Cloudflare's free tier https://news.ycombinator.com/item?id=50031614
