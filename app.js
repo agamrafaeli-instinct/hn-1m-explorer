@@ -150,6 +150,19 @@ $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetT
 $('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('minscore').value = 0; page = 0; refresh(); };
 $('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Error: ' + e.message; }); };
 
+// Link into the explorer: #/explore?week=2026-W40&q=postgres. Bad values are ignored. (#189)
+function isoWeekRange(w) {
+  const m = /^(\d{4})-W(\d{2})$/.exec(w || ''); if (!m || +m[2] < 1 || +m[2] > 53) return null;
+  const jan4 = Date.UTC(+m[1], 0, 4), dow = (new Date(jan4).getUTCDay() + 6) % 7, mon = jan4 - dow * 864e5 + (+m[2] - 1) * 7 * 864e5;
+  const f = t => new Date(t).toISOString().slice(0, 10); return [f(mon), f(mon + 6 * 864e5)];
+}
+window.ExploreLink = () => {
+  const qs = new URLSearchParams((location.hash.split('?')[1] || '')), q = (qs.get('q') || '').slice(0, 80), wk = isoWeekRange(qs.get('week'));
+  if (!q && !wk) return;
+  if (q) $('q').value = q;
+  if (wk) { $('from').value = wk[0]; $('to').value = wk[1]; }
+  if ($('app').hidden) { const sel = $('loadn'); if (sel.options.length) sel.selectedIndex = 0; $('loadbtn').click(); } else { page = 0; refresh(); }
+};
 window.ExploreInit = (() => { let d; return () => d || (d = (async () => {
   try {
     let r = await fetch('data/manifest.json'), base = 'data/'; if (!r.ok) r = await fetch('sample/manifest.json');

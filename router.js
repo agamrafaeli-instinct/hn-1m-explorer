@@ -83,7 +83,7 @@
     if (v === 'topics') window.TopicsInit && window.TopicsInit();
     if (v === 'lesson') window.LessonInit && window.LessonInit();
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
-    if (v === 'explore') { window.ExploreInit && window.ExploreInit(); window.ExploreVendor && window.ExploreVendor(); }
+    if (v === 'explore') { window.ExploreInit && window.ExploreInit().then(() => window.ExploreLink && window.ExploreLink()); window.ExploreVendor && window.ExploreVendor(); }
     if (v === 'week') loadWeek(p[1], p[2]);
     if (v === 'aud') { if (p[0] === 'c') single(p[1], p[2]); else audience(p[1]); }
     if (cur !== v || v === 'aud') scrollTo({ top: 0, behavior: 'instant' });

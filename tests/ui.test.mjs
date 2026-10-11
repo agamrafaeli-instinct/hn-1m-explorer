@@ -100,6 +100,18 @@ await check('explorer', '#/explore', q1('#loadbtn'), async () => {
   const n1 = await settle();
   return n1 < n0 ? '' : `minimum score 100 did not reduce the count (${n0} to ${n1})`;
 });
+await check('explorer link', '#/explore?week=2026-W40&q=postgres&bad=1', q1('#loadbtn'), async () => {
+  // The link fills the filters and loads by itself, no click.
+  if (!await wait("/\\d.*matching/.test(document.getElementById('count').textContent)", 60000)) return 'a link did not load the explorer by itself';
+  const v = await ev("JSON.stringify([document.getElementById('q').value,document.getElementById('from').value,document.getElementById('to').value])");
+  return v === JSON.stringify(['postgres', '2026-09-28', '2026-10-04']) ? '' : 'link filters not applied: ' + v;
+});
+await check('explorer bad link', '#/explore', q1('#loadbtn'), async () => {
+  await ev("document.getElementById('reset').click()");
+  await ev("(()=>{location.hash='#/explore?week=nope&q=';window.ExploreLink()})()");
+  const v = await ev("JSON.stringify([document.getElementById('q').value,document.getElementById('from').value,document.getElementById('to').value])");
+  return v === JSON.stringify(['', '', '']) ? '' : 'a bad link changed the filters: ' + v;
+});
 ws.close(); ch.kill(); server?.close();
 try { fs.rmSync(prof, { recursive: true, force: true }); if (tmp) fs.rmSync(tmp, { recursive: true, force: true }); } catch { }
 const bad = results.filter(r => !r.ok).length;
