@@ -93,6 +93,12 @@ await check('lens bad address', '#/l/bad!id', q1('#lens_body'), async () => {
   if (!await wait("/No page for this one/.test(document.getElementById('lens_body').textContent)", 5000)) return 'a missing lens page did not say so';
   return '';
 });
+await check('week to lens links', '#/w/engineers', q1('#w_body .wsec'), async () => {
+  const v = await ev("JSON.stringify([...document.querySelectorAll('#w_body .wf a.wlens')].map(a=>a.getAttribute('href')))");
+  const l = JSON.parse(v || '[]');
+  const none = await ev("[...document.querySelectorAll('#w_body .wf')].some(li=>!li.querySelector('a.wlens'))");
+  return l.length && l.every(h => /^#\/l\/.+/.test(h)) && none ? '' : 'lens links missing or on every row: ' + v + ' ' + none;
+});
 await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
   const wk = () => ev("location.hash"), t1 = () => ev("document.querySelector('#w_body .wmid b')?.textContent||''");
   const h0 = await wk(), r0 = await t1();

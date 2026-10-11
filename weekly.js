@@ -27,12 +27,18 @@
     return ul;
   }
   function section(title, cls) { const s = el('section', 'wsec ' + (cls || '')); s.appendChild(el('h3', null, title)); return s; }
-  let curWeek = '';
+  let curWeek = '', lensIds = new Set();
+  function slug(x) { return String(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
   function flagRow(r, kind) {
     const li = el('li', 'wf ' + kind);
     const b = el('b'), lk = el('a', 'wexp', r.label);
     lk.href = '#/explore?week=' + curWeek + '&q=' + encodeURIComponent(r.label); lk.setAttribute('aria-label', r.label + ', open in the explorer');
     b.appendChild(lk); li.appendChild(b);
+    const lid = r.group === 'Sites' ? r.key : r.group === 'Names' ? 'n-' + slug(r.key) : '';
+    if (lid && lensIds.has(lid)) {
+      const ll = el('a', 'wexp wlens', 'Weeks'); ll.href = '#/l/' + (r.group === 'Names' ? 'n/' + encodeURIComponent(r.key) : r.key);
+      ll.setAttribute('aria-label', r.label + ', its saved weeks'); b.appendChild(ll);
+    }
     const txt = kind === 'new'
       ? (r.last == null && r.group === 'Sites' ? n(r.this) + ' stories this week, 2 or fewer last week' : n(r.this) + ' this week, none in the 4 weeks before')
       : n(r.this) + ' this week, about ' + n(Math.round(r.expected)) + ' expected from last week';
@@ -109,6 +115,7 @@
       let i = idx.findIndex(x => x.week === wk); if (i < 0) i = idx.length - 1;
       const c = await getJSON('data/compare/' + idx[i].week + '.json');
       const fnd = await getJSON('data/findings/' + idx[i].week + '.json').catch(() => null);
+      const li0 = await getJSON('data/lens/index.json').catch(() => null); lensIds = new Set(li0 ? li0.entries.map(e => e.id) : []);
       if (my !== token) return;
       idx[i].end_exclusive_utc = c.end_exclusive_utc; curWeek = idx[i].week;
       const b = root(), frag = document.createDocumentFragment();
