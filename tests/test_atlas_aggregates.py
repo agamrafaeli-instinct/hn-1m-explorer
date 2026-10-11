@@ -19,7 +19,7 @@ class AtlasTests(unittest.TestCase):
             self.assertNotIn('top_domains',nov)
             tops=json.load(open(r/'data/atlas/tops-2023.json'))
             self.assertEqual(tops['months']['2023-12']['top_domains'][0][0],'example.com')
-            terms=json.load(open(r/'data/atlas/terms-2023.json'))
+            terms=json.load(open(r/'data/atlas/terms-r.json'))
             self.assertIn('rust',terms['terms']); self.assertIn('range',terms)
             self.assertTrue(all('name' in f and 'bytes' in f for f in idx['files']))
 if __name__=='__main__': unittest.main()

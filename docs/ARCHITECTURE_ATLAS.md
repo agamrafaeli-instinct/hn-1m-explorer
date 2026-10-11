@@ -158,3 +158,5 @@ Consequence for the plan: the full archive mode cannot promise a fast first sear
 ## Slice 7a as built (2026-10-12, #121)
 
 scripts/atlas_aggregates.py writes data/atlas/ from data/archive (stories) and data/history/daily.csv (counts by type), weekly in weekly-snapshot.yml. Files: months.json (23 KB, counts by type and stories held per month, 2006-10 to the last archived month), tops-<year>.json (top 20 domains and top 30 stories per month), terms-<year>.json (monthly story counts for the top 20,000 title terms of the whole archive, stop words removed), index.json (file list, range, bytes). Total 39.9 MB on Pages (limit 60 MB). Each file names its source and range. Not included: top authors, because the archive holds no author names. Built year by year with a 1 GB memory cap; the build takes about 1 minute.
+
+Update (#119): the term files are grouped by first character (terms-a.json ... terms-z.json, terms-0 to terms-9, terms-_), each term carrying its whole monthly series, so one word lookup loads one file (largest, terms-s, 700 KB over the wire). The Explorer page opens on this full-history view (history.js, lazy). Row-level search over all years is #198.

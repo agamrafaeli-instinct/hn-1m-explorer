@@ -111,6 +111,13 @@ await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
   if (!await wait(`(document.querySelector('#w_body .wmid b')?.textContent||'')===${JSON.stringify(r0)}`)) return 'Next did not return to the first week';
   return '';
 });
+await check('full history', '#/explore', q1('#loadbtn'), async () => {
+  if (!await wait("document.querySelectorAll('#hist_body svg.lens_svg').length>=2", 20000)) return 'the history charts did not draw';
+  await ev("(()=>{const b=document.getElementById('hist_body');b.querySelector('input[type=search]').value='rust';b.querySelector('form').dispatchEvent(new Event('submit',{cancelable:true}))})()");
+  if (!await wait("document.querySelectorAll('#hist_body svg.lens_svg').length>=3", 20000)) return 'a word did not draw its series';
+  if (!await wait("document.querySelectorAll('#hist_body .lens_top li').length>0", 20000)) return 'the month list did not show stories';
+  return '';
+});
 await check('explorer', '#/explore', q1('#loadbtn'), async () => {
   await ev("(()=>{const s=document.getElementById('loadn');if(s&&s.options.length)s.selectedIndex=0;document.getElementById('loadbtn').click()})()");
   if (!await wait("/\\d.*matching/.test(document.getElementById('count').textContent)", 60000)) return 'explorer never showed a match count';

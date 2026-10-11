@@ -20,7 +20,7 @@ Measured 2026-10-09 on the live site. Budget = measured median plus 15 percent, 
 | This week, Engineers | 1566 ms, 20 req, 197 KB | 1850 ms, 27 req, 227 KB |
 | This week, VCs | 1617 ms, 20 req, 197 KB | 1900 ms, 27 req, 227 KB |
 | This week, Geeks | 1553 ms, 20 req, 197 KB | 1800 ms, 27 req, 227 KB |
-| Explorer (before loading data) | 287 ms, 9 req, 37 KB | 350 ms, 11 req, 43 KB |
+| Explorer (before loading data) | 287 ms, 9 req, 37 KB (before #119) | 350 ms, 14 req, 56 KB |
 
 The story page is not measured yet: its content test did not settle in the script. It is tracked as a follow-up.
 Earlier targets were: home about 0.7 s, audience about 1.7 s, card about 1.5 s. The measured numbers are slightly higher because the script waits for the content, not the first paint.

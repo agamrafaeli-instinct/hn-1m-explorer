@@ -80,8 +80,8 @@
   },
   "explorer": {
    "ms": 350,
-   "kb": 43,
-   "reqs": 11,
+   "kb": 56,
+   "reqs": 14,
    "measured": {
     "ms": 287,
     "reqs": 9,

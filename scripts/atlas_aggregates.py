@@ -4,7 +4,7 @@
 Writes data/atlas/:
   months.json        one row per month, 2006 to the last archived month: counts by type (data/history/daily.csv) and stories held. Small, loads first.
   tops-<year>.json   per month: top 20 domains by story count, top 30 stories by score.
-  terms-<year>.json  for each year, counts of stories whose title holds the term, by month, for the top TERMS terms of the whole archive.
+  terms-<char>.json  terms grouped by first character (a-z, 0-9, _): for each term, the number of stories whose title holds it, by month, for the top TERMS terms of the whole archive. One lookup loads one file.
   index.json         file list with source, date range and bytes.
 Source of stories: data/archive/stories-*.parquet. Counts by type: data/history/daily.csv. No author lists: the archive holds no author names.
 """
@@ -52,15 +52,20 @@ def build(root=R, out=None, terms=TERMS):
     stop = ','.join("'%s'" % x for x in STOP)
     top = [r[0] for r in db.execute("SELECT w FROM w WHERE w NOT IN (%s) GROUP BY w ORDER BY sum(c) DESC, w LIMIT %d" % (stop, terms)).fetchall()]
     db.execute('CREATE TABLE top AS SELECT unnest(?) AS w', [top])
-    by_year = {}
+    by_bucket = {}
     for m, wd, c in db.execute('SELECT m, w.w, c FROM w JOIN top ON w.w=top.w ORDER BY w.w, m').fetchall():
-        by_year.setdefault(m[:4], {}).setdefault(wd, {})[m] = c
-    for y in sorted(by_year):
-        _write(out / ('terms-%s.json' % y), {'year': int(y), 'source': 'story titles in data/archive', 'range': [min(m for t in by_year[y].values() for m in t), max(m for t in by_year[y].values() for m in t)], 'terms': by_year[y]}, files)
+        by_bucket.setdefault(_bucket(wd), {}).setdefault(wd, {})[m] = c
+    for b in sorted(by_bucket):
+        ms = [m for t in by_bucket[b].values() for m in t]
+        _write(out / ('terms-%s.json' % b), {'bucket': b, 'source': 'story titles in data/archive', 'range': [min(ms), max(ms)], 'terms': by_bucket[b]}, files)
     idx = {'built_from': 'scripts/atlas_aggregates.py', 'range': [lo, hi], 'terms_kept': len(top), 'files': files,
            'total_bytes': sum(f['bytes'] for f in files)}
     (out / 'index.json').write_text(json.dumps(idx, indent=1) + '\n')
     return idx
+
+
+def _bucket(w):
+    return w[0] if w[0].isalnum() and w[0].isascii() else '_'
 
 
 def _groups(rows):

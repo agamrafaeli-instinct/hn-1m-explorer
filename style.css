@@ -227,3 +227,4 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 .lens_svg{display:block;width:100%;height:auto;margin:6px 0}.lens_lab{font:11px system-ui,sans-serif;fill:#6a6056}
 
 .wf .wlens{margin-left:12px;font-size:13px;font-weight:700;color:var(--act)}
+.hist_f{display:flex;gap:8px;margin:8px 0}.hist_f input{flex:1;min-width:0;font:inherit;padding:10px;border:1px solid var(--bd);border-radius:8px}#hist{margin-bottom:28px}
