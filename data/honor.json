@@ -1078,6 +1078,25 @@
    "id": "h368",
    "score": 0.8,
    "title": "Business-software words sink"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": false,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "insightful",
+    "novel"
+   ],
+   "group_a_count": 8521.0,
+   "id": "h369",
+   "score": 0.6,
+   "title": "LLM, RAG and fine-tuning: a bigger share than before"
   }
  ],
  "schema": 1,
