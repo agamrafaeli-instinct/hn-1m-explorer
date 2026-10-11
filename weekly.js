@@ -37,6 +37,14 @@
     li.appendChild(el('i', null, r.group));
     return li;
   }
+  function findingsSection(f, a) {
+    if (!f || !f.audiences || !f.audiences[a]) return document.createDocumentFragment();
+    const s = section('Findings'), lines = f.audiences[a].concat(f.flips || []);
+    const ul = el('ul', 'wfind');
+    lines.forEach(x => { const li = el('li'); li.appendChild(el('span', null, x.text)); if (x.source_line) li.appendChild(el('small', 'wsrc', x.source_line.replace(/^Source: /, 'Source: '))); ul.appendChild(li); });
+    s.appendChild(ul); s.appendChild(el('p', 'wn', f.caveat + (f.backfill ? ' This week was rebuilt from the archive after it ended.' : '')));
+    return s;
+  }
   function changes(c, a) {
     const d = c.audiences[a], s = section('What changed');
     if (!c.prev_week) { s.appendChild(el('p', 'wn', 'This is the first saved week, so there is no week before it to compare with.')); return s; }
@@ -97,12 +105,13 @@
       const idx = (await getJSON('data/weekly/index.json')).weeks.slice().sort((x, y) => x.start_utc < y.start_utc ? -1 : 1);
       let i = idx.findIndex(x => x.week === wk); if (i < 0) i = idx.length - 1;
       const c = await getJSON('data/compare/' + idx[i].week + '.json');
+      const fnd = await getJSON('data/findings/' + idx[i].week + '.json').catch(() => null);
       if (my !== token) return;
       idx[i].end_exclusive_utc = c.end_exclusive_utc;
       const b = root(), frag = document.createDocumentFragment();
       frag.append(pills(a, idx[i].week), el('h1', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), stepper(idx, i, a));
       if (c.kind === 'backfill') frag.appendChild(el('p', 'wbf', 'This week was rebuilt from the archive after it ended, with the same method and fields as a live save. The newest stories may have had more time to collect points.'));
-      frag.append(changes(c, a), shares(c, a), extra(c, a));
+      frag.append(findingsSection(fnd, a), changes(c, a), shares(c, a), extra(c, a));
       const top = section('Top stories of the week'); top.appendChild(storyList(c.top_stories)); frag.appendChild(top);
       const foot = el('p', 'wn wfoot', 'Hacker News talking, not a measure of what is true. Counts use stories only. Dead and deleted stories keep no title, so title-based shares divide by live stories. The dead or deleted share divides by all stories. '); const l = el('a', null, 'How it is computed'); l.href = SPEC; l.target = '_blank'; l.rel = 'noopener noreferrer'; foot.appendChild(l);
       if (c.list_version) { const lv = 'Word lists: version ' + c.list_version + (idx[i].saved_at ? ', saved ' + String(idx[i].saved_at).slice(0, 10) : '') + '.'; foot.appendChild(el('span', 'wlv', ' ' + lv)); }
