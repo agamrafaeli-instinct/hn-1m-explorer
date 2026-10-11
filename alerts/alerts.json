@@ -1,5 +1,16 @@
 [
  {
+  "id": "50029487",
+  "title": "The Lightbulb Computer",
+  "points": 316,
+  "comments": 46,
+  "author": "oskarth",
+  "hn": "https://news.ycombinator.com/item?id=50029487",
+  "url": "https://lightbulbcomputer.com/",
+  "created_at": "2026-10-10T04:12:26Z",
+  "reported_at": 1791694422
+ },
+ {
   "id": "50033407",
   "title": "Bitwarden Dual License Model",
   "points": 324,
