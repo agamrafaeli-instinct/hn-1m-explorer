@@ -22,6 +22,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
+      - name: Start from the newest main
+        # A run queued behind another run (the group above) would otherwise start from the older commit it was triggered on and conflict with the data commits the first run pushed.
+        run: |
+          git fetch -q origin main
+          git reset -q --hard origin/main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -60,6 +65,7 @@ jobs:
             # Rebase onto any commit that landed during the run (the bot only touches data/), then push. Never force.
             for i in 1 2 3; do
               git pull --rebase -q origin main && git push origin HEAD:main && break
+              git rebase --abort 2>/dev/null || true
               sleep 5
             done
             git diff --quiet origin/main HEAD -- data/ || { echo 'push failed after 3 tries'; exit 1; }
