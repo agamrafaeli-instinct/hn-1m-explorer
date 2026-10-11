@@ -5,7 +5,7 @@ import pathlib, shutil, sqlite3, tempfile, time, urllib.request
 from prepare_data import NAMES, COLUMNS, normalize, encode
 from concentration import compute as concentration
 from terms import compute as terms
-import redact_secrets
+import redact_secrets, archive_append
 API = 'https://hacker-news.firebaseio.com/v0'
 DBCOLS = 'id,type,author,time,title,url,domain,score,comments,text,dead,deleted'
 
@@ -94,6 +94,9 @@ def update(root, workers=32, limit=RETENTION_ROWS, getter=fetch, max_new=250000)
                 added+=cursor.rowcount
         db.commit()
         # This is a rolling newest-by-creation-time window, not an archive.
+        # Stories that leave the window are kept in data/archive (slice 6). Staged here, moved in below.
+        leaving=db.execute("SELECT id,time,title,url,score,comments FROM items WHERE type='story' AND time IS NOT NULL AND id NOT IN (SELECT id FROM items ORDER BY time DESC,id DESC LIMIT ?)",(limit,)).fetchall()
+        arch_staged=tmp/'archive_staged'; arch_names=archive_append.stage(root,leaving,arch_staged)
         db.execute('DELETE FROM items WHERE id NOT IN (SELECT id FROM items ORDER BY time DESC,id DESC LIMIT ?)',(limit,)); db.commit()
         kept=dict(db.execute('SELECT origin,count(*) FROM items WHERE origin IS NOT NULL GROUP BY origin'))
         staged=tmp/'staged'; staged.mkdir(); chunks=[]; header=encode(NAMES)
@@ -130,7 +133,7 @@ def update(root, workers=32, limit=RETENTION_ROWS, getter=fetch, max_new=250000)
         if not summary['total_rows']: raise ValueError('Would produce an empty dataset')
         new=dict(manifest); new.update(generated_at=stamp,total_rows=summary['total_rows'],chunks=chunks,total_csv_bytes=sum(c['bytes'] for c in chunks))
         new['daily_update']={'last_scanned_id':upper,'previous_scanned_id':checkpoint,'unavailable_ids':unavailable,
-            'new_rows':added,'retention_rows':limit,'mode':'daily additions since last successful scan; catch-up included',
+            'new_rows':added,'archived_stories':len(leaving),'retention_rows':limit,'mode':'daily additions since last successful scan; catch-up included',
             'score_policy':'snapshot at first retrieval; older scores/comments are not refreshed',
             'redaction_policy':'credential-shaped strings in text/title/url replaced using scripts/redact_secrets.py',
             'redacted_strings_this_run':redact_secrets.n-redaction_start}
@@ -142,6 +145,8 @@ def update(root, workers=32, limit=RETENTION_ROWS, getter=fetch, max_new=250000)
         site_bytes=sum(p.stat().st_size for p in root.rglob('*') if p.is_file() and '.git' not in p.relative_to(root).parts and 'data'!=p.relative_to(root).parts[0])
         proposed=site_bytes+new['total_csv_bytes']+(staged/'manifest.json').stat().st_size+(staged/'summary.json').stat().st_size
         if proposed>900000000: raise ValueError('Site exceeds 900 MB safety budget; dataset left unchanged')
+        # Archive first: a rerun skips ids already archived, so a failure after this point loses nothing.
+        for n in arch_names: os.replace(arch_staged/n,data/'archive'/n)
         for p in staged.iterdir(): os.replace(p,data/p.name)
         for c in manifest['chunks']:
             if c['path'] not in keep: (root/c['path']).unlink()

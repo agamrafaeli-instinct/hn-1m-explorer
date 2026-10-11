@@ -31,7 +31,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test data pipeline
-        run: python -m unittest discover -s tests -v
+        run: |
+          pip install duckdb
+          python -m unittest discover -s tests -v
       - name: Add new items and keep the rolling window
         run: python scripts/update_daily.py
       - name: Refresh curious-geeks numbers
