@@ -49,6 +49,10 @@ jobs:
           pick=$(python -c "import json,datetime;print(json.load(open('data/finder/'+datetime.date.today().isoformat()+'.json'))['term'])" 2>/dev/null || true)
           if [ -n "$pick" ]; then python scripts/finder_dictionary.py term "$pick"; fi
           python scripts/finder_publish.py
+      - name: Draft, check and publish weekly findings
+        run: |
+          python scripts/findings_draft.py
+          python scripts/findings_publish.py
       - name: Check the data before it is saved or published
         run: |
           set -o pipefail

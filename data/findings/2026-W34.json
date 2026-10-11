@@ -1,0 +1,35 @@
+{
+ "audiences": {
+  "engineers": [
+   {
+    "source_line": "Source: data/compare/2026-W34.json, audiences.engineers.rose, key \"git\" (this 47, expected 26.8).",
+    "text": "git appeared in 47 story titles and texts this week, against about 26.8 expected from last week."
+   }
+  ],
+  "geeks": [
+   {
+    "text": "No big changes this week."
+   }
+  ],
+  "vcs": [
+   {
+    "source_line": "Source: data/compare/2026-W34.json, audiences.vcs.rose, key \"robotics\" (this 52, expected 25.8).",
+    "text": "robotics appeared in 52 story titles and texts this week, against about 25.8 expected from last week."
+   },
+   {
+    "source_line": "Source: data/compare/2026-W34.json, audiences.vcs.rose, key \"Stripe\" (this 18, expected 8).",
+    "text": "Stripe appeared in 18 story titles and texts this week, against about 8 expected from last week."
+   },
+   {
+    "source_line": "Source: data/compare/2026-W34.json, audiences.vcs.rose, key \"bio\" (this 9, expected 0).",
+    "text": "bio appeared in 9 story titles and texts this week, against about 0 expected from last week."
+   }
+  ]
+ },
+ "backfill": true,
+ "caveat": "Hacker News talking, not a measure of what is true.",
+ "dropped": [],
+ "flips": [],
+ "published": "2026-10-11",
+ "week": "2026-W34"
+}
