@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-11T13:20:15.576321+00:00",
+  "generated_at": "2026-10-11T14:05:53.664840+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-63e5ae19eecdcf827a389a1b.csv",
+      "rows": 398,
+      "bytes": 125372,
+      "sha256": "63e5ae19eecdcf827a389a1b93cdd5aee2e7e8ed2451acc19ea986abe72cc838",
+      "min_id": 50043044,
+      "max_id": 50043441,
+      "min_time": 1791724817,
+      "max_time": 1791727534
+    },
     {
       "path": "data/posts-inc-4d93e2c0c28d4f6b84e69b9b.csv",
       "rows": 120,
@@ -1302,13 +1312,13 @@
       "sha256": "a08ac8b80b54352593d37444023f020d611640d2b0d198e004143809e23e71c1"
     },
     {
-      "path": "data/posts-inc-de8f5375f58f3b2990eb10f6.csv",
-      "rows": 18830,
-      "bytes": 6581676,
-      "sha256": "de8f5375f58f3b2990eb10f61548e1cb94e11256740e8c1a623b8b10620dc60e",
-      "min_id": 49043044,
+      "path": "data/posts-inc-46ecf27b5a86b8f22d6d057a.csv",
+      "rows": 18432,
+      "bytes": 6441137,
+      "sha256": "46ecf27b5a86b8f22d6d057a80270c94a29b630092812dcb9dc919a51657c51d",
+      "min_id": 49043442,
       "max_id": 49061873,
-      "min_time": 1784937421,
+      "min_time": 1784940875,
       "max_time": 1785096025
     }
   ],
@@ -1334,12 +1344,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 345805134,
+  "total_csv_bytes": 345789967,
   "daily_update": {
-    "last_scanned_id": 50043043,
-    "previous_scanned_id": 50042923,
+    "last_scanned_id": 50043441,
+    "previous_scanned_id": 50043043,
     "unavailable_ids": [],
-    "new_rows": 120,
+    "new_rows": 398,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
