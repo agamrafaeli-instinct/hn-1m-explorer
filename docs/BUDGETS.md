@@ -48,3 +48,5 @@ The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --toleranc
 2026-10-10: the home budget is 150 KB and 16 requests. Home is now the Compare chart and loads data/topic_series.json (133 KB measured).
 
 2026-10-10: the card budget is 2200 ms and 21 requests. A card loads its story file as one more request (#131).
+
+2026-10-11: home budget is 19 requests, audience and card pages 23 (#181). The Today's story line adds finder.js on every page and data/finder/latest.json on the home page.

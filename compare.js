@@ -32,6 +32,7 @@
     var tid = topicId();
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
     root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months. The vertical scale is square-root, so small topics stay visible.'));
+    if (home && window.TodayLine) { var tl = el('div', 'today_host'); root.appendChild(tl); window.TodayLine(tl); }
     if (tid) { var t0 = D.byId[tid]; var bd = el('span', 'cmp_badge', t0.pattern + (t0.ratio ? ' \u00b7 ' + (t0.ratio >= 10 ? t0.ratio.toFixed(0) : t0.ratio.toFixed(1)) + 'x the earlier share' : '')); root.appendChild(bd); }
     var box = el('div', 'cmp_box'), row = el('div', 'cmp_row'); root.appendChild(box); root.appendChild(row);
     var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 34, padR = 112, padT = 14, padB = 22;

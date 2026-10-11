@@ -36,6 +36,14 @@ jobs:
           pip install duckdb
           python scripts/film.py shares
           python scripts/build_topic_series.py
+      - name: Find and publish today's story
+        run: |
+          pip install duckdb
+          python scripts/finder_candidates.py
+          python scripts/finder_select.py
+          pick=$(python -c "import json,datetime;print(json.load(open('data/finder/'+datetime.date.today().isoformat()+'.json'))['term'])" 2>/dev/null || true)
+          if [ -n "$pick" ]; then python scripts/finder_dictionary.py term "$pick"; fi
+          python scripts/finder_publish.py
       - name: Check the data before it is saved or published
         run: |
           set -o pipefail
