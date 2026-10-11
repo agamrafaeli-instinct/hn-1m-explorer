@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-11T02:35:16.396768+00:00",
+  "generated_at": "2026-10-11T09:55:13.417324+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-ddb07e2c905d2cf74b8a191e.csv",
+      "rows": 2180,
+      "bytes": 650390,
+      "sha256": "ddb07e2c905d2cf74b8a191e0ff38be30ab9f71b6aeb63db6e683c4a676facb3",
+      "min_id": 50039271,
+      "max_id": 50041450,
+      "min_time": 1791686085,
+      "max_time": 1791712436
+    },
     {
       "path": "data/posts-inc-ff0c9cdca2fe3496b76ac031.csv",
       "rows": 4939,
@@ -1232,13 +1242,13 @@
       "sha256": "a08ac8b80b54352593d37444023f020d611640d2b0d198e004143809e23e71c1"
     },
     {
-      "path": "data/posts-inc-465eb08bfb0b7841bef00754.csv",
-      "rows": 22603,
-      "bytes": 7890205,
-      "sha256": "465eb08bfb0b7841bef0075449e8868345669f53535338bda6f66aff7df3c886",
-      "min_id": 49039271,
+      "path": "data/posts-inc-8690232c968ff9bbdffe5df2.csv",
+      "rows": 20423,
+      "bytes": 7146882,
+      "sha256": "8690232c968ff9bbdffe5df27b58309dec2b869d18af9aa4d3faff4f22f91c83",
+      "min_id": 49041451,
       "max_id": 49061873,
-      "min_time": 1784915334,
+      "min_time": 1784926406,
       "max_time": 1785096025
     }
   ],
@@ -1264,12 +1274,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 345959347,
+  "total_csv_bytes": 345866414,
   "daily_update": {
-    "last_scanned_id": 50039270,
-    "previous_scanned_id": 50034331,
+    "last_scanned_id": 50041450,
+    "previous_scanned_id": 50039270,
     "unavailable_ids": [],
-    "new_rows": 4939,
+    "new_rows": 2180,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
