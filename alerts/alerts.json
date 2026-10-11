@@ -1,5 +1,16 @@
 [
  {
+  "id": "50041540",
+  "title": "IRCv3",
+  "points": 322,
+  "comments": 277,
+  "author": "basilikum",
+  "hn": "https://news.ycombinator.com/item?id=50041540",
+  "url": "https://ircv3.net/",
+  "created_at": "2026-10-11T10:11:27Z",
+  "reported_at": 1791759171
+ },
+ {
   "id": "50042219",
   "title": "I paid people to try and follow my README",
   "points": 314,

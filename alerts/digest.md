@@ -1,9 +1,10 @@
-HN digest 2026-10-11 (UTC): 11 new stories at 300+ points
+HN digest 2026-10-11 (UTC): 12 new stories at 300+ points
 - 450 pts, 162 comments: Bot traffic from Yandex https://news.ycombinator.com/item?id=50041619
 - 345 pts, 429 comments: 3rd Yandex Cloud Data Center Was Hit https://news.ycombinator.com/item?id=50040547
 - 344 pts, 131 comments: LineageOS 24.0 https://news.ycombinator.com/item?id=50040276
 - 330 pts, 102 comments: A city-building game in which the city would prefer you didn't https://news.ycombinator.com/item?id=50036864
 - 324 pts, 239 comments: Bitwarden Dual License Model https://news.ycombinator.com/item?id=50033407
+- 322 pts, 277 comments: IRCv3 https://news.ycombinator.com/item?id=50041540
 - 320 pts, 72 comments: Build your own decision model https://news.ycombinator.com/item?id=50037949
 - 316 pts, 154 comments: Nitter: Update Oct 10th seeking funding and legal help https://news.ycombinator.com/item?id=50041682
 - 316 pts, 46 comments: The Lightbulb Computer https://news.ycombinator.com/item?id=50029487
