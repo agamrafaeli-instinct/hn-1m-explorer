@@ -4,7 +4,7 @@
 Writes data/findings/<week>.draft.json. A draft is never read by the site.
 Up to 3 lines per audience, ranked by flag size. Numbers are copied from the file.
 """
-import argparse, glob, json, math, os, re
+import argparse, csv, datetime, glob, json, math, os, re
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 AUDIENCES = ('engineers', 'vcs', 'geeks')
@@ -37,7 +37,39 @@ def new_line(it):
     return '%s is new this week, in %s story titles and texts.' % (it['label'], num(it['this']))
 
 
-def draft_week(week, d):
+def load_log(path):
+    if not os.path.exists(path): return []
+    with open(path) as f: return list(csv.DictReader(f))
+
+
+def flips_in_window(log, start, end):
+    """Flip rule (docs/SCOREBOARD.md): the verdict word changed between two logged days.
+    A confidence-only move is a shift and is not listed. start inclusive, end exclusive (ISO dates)."""
+    by = {}
+    for r in sorted(log, key=lambda r: (r['card_id'], r['date'])):
+        by.setdefault(r['card_id'], []).append(r)
+    out = []
+    for card, rows in by.items():
+        for a, b in zip(rows, rows[1:]):
+            if a['verdict'] != b['verdict'] and start <= b['date'] < end:
+                out.append({'card_id': card, 'from': a['verdict'], 'to': b['verdict'], 'date': b['date'], 'prev_date': a['date']})
+    return sorted(out, key=lambda x: (x['date'], x['card_id']))
+
+
+def flip_lines(week, d, log, titles):
+    end = d.get('end_exclusive_utc')
+    if not end: return []
+    start = (datetime.date.fromisoformat(end) - datetime.timedelta(days=7)).isoformat()
+    lines = []
+    for f in flips_in_window(log, start, end)[:MAX_PER_AUDIENCE]:
+        title = titles.get(f['card_id'], f['card_id'])
+        lines.append({'text': 'Card %s changed from %s to %s on %s.' % (f['card_id'], f['from'], f['to'], f['date']),
+                      'card_title': title, 'source': 'data/verdicts/log.csv', 'path': 'card_id,date', 'key': f['card_id'],
+                      'source_line': 'Source: data/verdicts/log.csv, card_id %s, %s %s, %s %s.' % (f['card_id'], f['prev_date'], f['from'], f['date'], f['to'])})
+    return lines
+
+
+def draft_week(week, d, log=None, titles=None):
     out = {}
     for aud in AUDIENCES:
         a = d['audiences'].get(aud, {})
@@ -63,15 +95,25 @@ def draft_week(week, d):
                           'size': round(size, 2)})
         out[aud] = lines or [{'text': QUIET, 'quiet': True}]
     note = 'backfill' if d.get('kind') == 'backfill' else None
-    return {'week': week, 'caveat': CAVEAT, 'backfill': note == 'backfill', 'audiences': out}
+    return {'week': week, 'caveat': CAVEAT, 'backfill': note == 'backfill', 'audiences': out,
+            'flips': flip_lines(week, d, log or [], titles or {})}
 
 
-def run(compare_dir, out_dir):
+def card_titles():
+    t = {}
+    for f in glob.glob(os.path.join(ROOT, 'hypotheses/h*.json')):
+        try: c = json.load(open(f)); t[c['id']] = c['title']
+        except Exception: pass
+    return t
+
+
+def run(compare_dir, out_dir, log_path=os.path.join(ROOT, 'data/verdicts/log.csv')):
     os.makedirs(out_dir, exist_ok=True)
+    log, titles = load_log(log_path), card_titles()
     n = 0
     for f in sorted(glob.glob(os.path.join(compare_dir, '20*-W*.json'))):
         week = os.path.basename(f)[:-5]
-        res = draft_week(week, json.load(open(f)))
+        res = draft_week(week, json.load(open(f)), log, titles)
         json.dump(res, open(os.path.join(out_dir, week + '.draft.json'), 'w'), indent=1, sort_keys=True)
         n += 1
     return n

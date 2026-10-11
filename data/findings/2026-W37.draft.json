@@ -65,5 +65,6 @@
  },
  "backfill": true,
  "caveat": "Hacker News talking, not a measure of what is true.",
+ "flips": [],
  "week": "2026-W37"
 }

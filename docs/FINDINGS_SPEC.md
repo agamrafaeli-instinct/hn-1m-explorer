@@ -7,7 +7,7 @@ Spec for the Headliner epic (#64). A finding is a short written line about one t
 Only two sources, both already computed:
 
 1. **Flags in the weekly compare files** (`data/compare/<week>.json`): `rose`, `fell`, `new` and a `shares` entry whose `state` is not `steady`. The flag rules are in [WEEKLY_SPEC.md](WEEKLY_SPEC.md) section 7 (a rise needs a difference of at least 8 and at least 3 times the square root of the expected count; a share moves by more than 3 times its usual weekly change).
-2. **Verdict flips** from the verdict log (`data/verdicts/log.csv`), once the flip rule is decided (see [SCOREBOARD.md](SCOREBOARD.md)).
+2. **Verdict flips** from the verdict log (`data/verdicts/log.csv`), using the flip rule in [SCOREBOARD.md](SCOREBOARD.md): the verdict word changed between two logged days in that week. A confidence-only move is a shift and is never listed. Flips go in a separate `flips` list (up to 3), not under an audience. Source line: `Source: data/verdicts/log.csv, card_id <id>, <date> <from>, <date> <to>.`.
 
 Nothing else may be picked. No outside news, no guesses about causes.
 

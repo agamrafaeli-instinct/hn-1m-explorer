@@ -42,4 +42,22 @@ class Draft(unittest.TestCase):
                          {'key': 't', 'label': 'T', 'this': .3, 'last': .3, 'avg4': .3, 'usual_change': .02, 'state': 'steady'}]}}}
         lines = fd.draft_week('2026-W41', d)['audiences']['engineers']
         self.assertEqual([l['key'] for l in lines], ['x', 's'])
+
+class Flips(unittest.TestCase):
+    LOG = [{'date': '2026-10-01', 'card_id': 'h1', 'verdict': 'supported', 'confidence': 'strong'},
+           {'date': '2026-10-02', 'card_id': 'h1', 'verdict': 'refuted', 'confidence': 'weak'},
+           {'date': '2026-10-01', 'card_id': 'h2', 'verdict': 'supported', 'confidence': 'strong'},
+           {'date': '2026-10-02', 'card_id': 'h2', 'verdict': 'supported', 'confidence': 'weak'},
+           {'date': '2026-09-01', 'card_id': 'h3', 'verdict': 'supported', 'confidence': 'weak'},
+           {'date': '2026-09-02', 'card_id': 'h3', 'verdict': 'inconclusive', 'confidence': 'inconclusive'}]
+    def test_flip_not_shift_and_window(self):
+        d = {'end_exclusive_utc': '2026-10-05', 'audiences': {}}
+        r = fd.draft_week('2026-W40', d, self.LOG, {'h1': 'T'})
+        self.assertEqual([x['key'] for x in r['flips']], ['h1'])
+        self.assertIn('data/verdicts/log.csv', r['flips'][0]['source_line'])
+        self.assertIn('changed from supported to refuted on 2026-10-02', r['flips'][0]['text'])
+    def test_real_data_has_no_flip_lines_without_flips(self):
+        log = fd.load_log(os.path.join(ROOT, 'data/verdicts/log.csv'))
+        for ln in fd.draft_week('2026-W40', json.load(open(os.path.join(ROOT, 'data/compare/2026-W40.json'))), log)['flips']:
+            self.assertIn(ln['key'], {r['card_id'] for r in log})
 if __name__ == '__main__': unittest.main()
