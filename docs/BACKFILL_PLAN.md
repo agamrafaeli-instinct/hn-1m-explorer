@@ -91,3 +91,7 @@ First public story file: `data/archive/stories-2007.parquet`, 21,663 live storie
 ## Slice 6 as built (#118)
 
 The daily run (scripts/update_daily.py) collects stories that fall out of the rolling window and adds them to the year file in data/archive (scripts/archive_append.py). Ids already in the file are skipped, so a rerun adds nothing twice. The new files are staged first and moved in before the window files, so a failure while staging leaves both unchanged. Measured: 30,000 added rows take 18 s on the 2026 file; a normal day adds about a thousand. Comments are not archived here; the archive holds stories only.
+
+## What the window is for now (#197)
+
+After the 2026-10-11 decision the window is plumbing for the daily run, never a scope. The full list of readers and what happens to each is in [WINDOW_READERS.md](WINDOW_READERS.md). The line above in step 5 ("Nothing there changes until the cards are told to read by range") still holds for the data, but the Explorer and home screen move to the full archive first (#119, #195) and the copy follows (#196).
