@@ -27,3 +27,24 @@ Checked 2026-10-10 on a local copy of the site, with `node scripts/a11y_week.mjs
 - Colour-only meaning: the verdict words are always written out on cards. Not re-checked on week screens beyond the "Rose" and "New" labels, which have text.
 
 Screenshot after the fix at 390px: [docs/a11y/pill-after-390.png](a11y/pill-after-390.png).
+
+---
+
+# Accessibility check: Compare home, topic page, card, Tests, Method, story page (#180)
+
+Checked 2026-10-11 on a local copy with `node scripts/a11y_pages.mjs` (Chrome, headless). It opens `#/`, `#/a/geeks`, `#/t/llm`, `#/c/h369/all`, `#/hypotheses`, `#/how` and `#/s/2026-10-11` at 320, 390 and 430px. Raw results after the fixes: [docs/a11y/pages-audit-2026-10-11.json](a11y/pages-audit-2026-10-11.json). Standard: WCAG 2.2 level AA.
+
+| Check | 320 | 390 | 430 | Result |
+|---|---|---|---|---|
+| Text contrast (4.5:1, large text 3:1) | pass | pass | pass | Failed before: orange text on white was 2.73:1 (links, small headings, badges on the home, topic and story screens), white text on the orange verdict bar and badge was 2.94:1, grey notes 4.05:1. Text now uses the darker orange (5.4:1) and the grey is darker. Lines and fills keep the bright orange. |
+| Sideways overflow | pass | pass | pass | Failed before at 320 and 390 on the home and topic screens: the row under the chart (Details, Share) was 37px too wide. It now wraps. The topic chips scroll inside their own row on purpose. |
+| Names (every link, button, select, chart) | pass | pass | pass | Every chart has an aria-label and every control has text. |
+| Headings | pass | pass | pass | One h1 on every screen. |
+| Tap targets (24px or more) | pass | pass | pass | None smaller. |
+| Image alt text | pass | pass | pass | No images without alt. |
+| Landmarks | pass | pass | pass | Failed before: no main landmark. Each screen now has role="main". |
+
+## Not checked
+- Screen reader speech (VoiceOver, TalkBack). Names and order were checked in code only.
+- Focus order by keyboard on the topic chips and the add-topic menu.
+- Colour contrast of text inside chart images other than the axis labels.

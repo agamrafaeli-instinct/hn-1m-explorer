@@ -12,7 +12,7 @@
 <div id="banner" hidden>SAMPLE DATA (synthetic). The real numbers are still being prepared.</div>
 <div id="progress"><i></i></div>
 
-<div class="view" id="v_aud" hidden>
+<div class="view" role="main" id="v_aud" hidden>
   <section class="aud">
     <div class="audbar"><a class="back" id="aud_back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a><p class="kicker" id="aud_kicker"></p></div>
     <div id="aud_card"></div>
@@ -21,14 +21,14 @@
     <nav class="others" id="aud_others"></nav>
   </section>
 </div>
-<div class="view" id="v_week" hidden>
+<div class="view" role="main" id="v_week" hidden>
   <section class="wk">
     <div class="audbar"><a class="back" id="w_back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a><p class="kicker" id="w_kicker"></p></div>
     <div id="w_body"></div>
   </section>
 </div>
-<div class="view" id="v_today" hidden><section class="aud"><a class="back" href="#/">&larr; Home</a><div id="today_body"></div></section></div>
-<div class="view" id="v_story" hidden>
+<div class="view" role="main" id="v_today" hidden><section class="aud"><a class="back" href="#/">&larr; Home</a><div id="today_body"></div></section></div>
+<div class="view" role="main" id="v_story" hidden>
 <section class="hero">
   <p class="kicker">Hacker News, <span id="bigcount">...</span> posts</p>
   <h1>Where does the <span class="ac">attention</span> live?</h1>
@@ -120,7 +120,7 @@
 
 <footer><p id="foot_note" style="max-width:560px;margin:0 auto 12px"></p>Data: Hacker News (public API / dataset). CSV chunks in <a href="data/manifest.json">data/</a>. Built by an AI agent for Agam.</footer>
 </div>
-<div class="view" id="v_hyp" hidden>
+<div class="view" role="main" id="v_hyp" hidden>
 <section class="hypo" id="s_hyp">
   <a class="back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a>
   <p class="kicker">All audiences</p>
@@ -132,7 +132,7 @@
 </section>
 
 </div>
-<div class="view" id="v_explore" hidden>
+<div class="view" role="main" id="v_explore" hidden>
 <section class="explore" id="explore">
   <h2>Dig in yourself</h2>
   <p class="lede">Search and filter every post. The full CSV is about <span id="mb">...</span>, so pick how much to load (newest first).</p>
@@ -165,7 +165,7 @@
   </div>
 </section>
 </div>
-<div class="view" id="v_submit" hidden>
+<div class="view" role="main" id="v_submit" hidden>
 <section class="doc">
   <h2>Submit a hypothesis</h2>
   <p class="lede">Guess something about Hacker News, say in advance what the data must show, and the site checks it.</p>
@@ -180,7 +180,7 @@
   <p><a class="btn" href="https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/CONTRIBUTING.md">Full instructions</a> <a class="btn alt2" href="https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/HYPOTHESES.md">Card format</a></p>
 </section>
 </div>
-<div class="view" id="v_lesson" hidden>
+<div class="view" role="main" id="v_lesson" hidden>
 <section class="doc lesson">
   <p class="kicker">The main idea</p>
   <h2>A fall from a peak is not a return to the past</h2>
@@ -202,7 +202,7 @@
   <p><a class="btn" href="#/a/engineers">See the tested cards</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
 </section>
 </div>
-<div class="view" id="v_how" hidden>
+<div class="view" role="main" id="v_how" hidden>
 <section class="doc">
   <h2>Method</h2>
   <p class="lede">Everything here is computed in your browser from public Hacker News data.</p>
@@ -216,8 +216,8 @@
   <p><a class="btn" href="#/lesson">How to read trends</a> <a class="btn" href="#/story">Read the full story</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
 </section>
 </div>
-<div class="view" id="v_compare" hidden><section class="cmpwrap"><div id="cmp"></div><div class="cmp_foot"><a id="homeweek" class="cmp_week" href="#/w/engineers/"><b>This week</b> <span id="homeweek_s"></span> &rarr;</a><a class="cmp_week" href="#/topics"><b>Topics</b> &rarr;</a><a class="cmp_week" href="#/hypotheses"><b>Tests</b> &rarr;</a></div></section></div>
-<div class="view" id="v_topics" hidden><section class="cmpwrap"><h2 class="cmp_t">Topics</h2><p class="cmp_s">Each topic is a word list matched on story titles. Tap one for its chart and word list.</p><div id="topics_list"></div></section></div>
+<div class="view" role="main" id="v_compare" hidden><section class="cmpwrap"><div id="cmp"></div><div class="cmp_foot"><a id="homeweek" class="cmp_week" href="#/w/engineers/"><b>This week</b> <span id="homeweek_s"></span> &rarr;</a><a class="cmp_week" href="#/topics"><b>Topics</b> &rarr;</a><a class="cmp_week" href="#/hypotheses"><b>Tests</b> &rarr;</a></div></section></div>
+<div class="view" role="main" id="v_topics" hidden><section class="cmpwrap"><h2 class="cmp_t">Topics</h2><p class="cmp_s">Each topic is a word list matched on story titles. Tap one for its chart and word list.</p><div id="topics_list"></div></section></div>
 <nav id="tabs" aria-label="Main">
   <a href="#/" data-t="home"><i>&#8962;</i>Home</a>
   <a href="#/explore" data-t="explore"><i>&#8981;</i>Explorer</a>
