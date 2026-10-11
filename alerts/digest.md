@@ -1,4 +1,4 @@
-HN digest 2026-10-10 (UTC): 16 new stories at 300+ points
+HN digest 2026-10-11 (UTC): 16 new stories at 300+ points
 - 1065 pts, 556 comments: Cloudflare acquires Deno https://news.ycombinator.com/item?id=50019911
 - 764 pts, 240 comments: Sorry, I'm in a meeting https://news.ycombinator.com/item?id=50018088
 - 650 pts, 120 comments: Triple-A Minesweeper https://news.ycombinator.com/item?id=50022292
