@@ -154,3 +154,7 @@ What it shows:
 - This is a desktop headless browser with 4x CPU on the page thread, not a phone.
 
 Consequence for the plan: the full archive mode cannot promise a fast first search on slow 4G. Options for 7c: show a progress line with the size, keep the old Explorer as the default (already in the plan), and use precomputed aggregates (7a) for anything that must be instant.
+
+## Slice 7a as built (2026-10-12, #121)
+
+scripts/atlas_aggregates.py writes data/atlas/ from data/archive (stories) and data/history/daily.csv (counts by type), weekly in weekly-snapshot.yml. Files: months.json (23 KB, counts by type and stories held per month, 2006-10 to the last archived month), tops-<year>.json (top 20 domains and top 30 stories per month), terms-<year>.json (monthly story counts for the top 20,000 title terms of the whole archive, stop words removed), index.json (file list, range, bytes). Total 39.9 MB on Pages (limit 60 MB). Each file names its source and range. Not included: top authors, because the archive holds no author names. Built year by year with a 1 GB memory cap; the build takes about 1 minute.

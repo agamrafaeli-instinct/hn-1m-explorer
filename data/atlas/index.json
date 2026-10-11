@@ -1,0 +1,183 @@
+{
+ "built_from": "scripts/atlas_aggregates.py",
+ "range": [
+  "2006-10",
+  "2026-08"
+ ],
+ "terms_kept": 20000,
+ "files": [
+  {
+   "name": "months.json",
+   "bytes": 22949
+  },
+  {
+   "name": "tops-2006.json",
+   "bytes": 4213
+  },
+  {
+   "name": "tops-2007.json",
+   "bytes": 43729
+  },
+  {
+   "name": "tops-2008.json",
+   "bytes": 47522
+  },
+  {
+   "name": "tops-2009.json",
+   "bytes": 48925
+  },
+  {
+   "name": "tops-2010.json",
+   "bytes": 50070
+  },
+  {
+   "name": "tops-2011.json",
+   "bytes": 52524
+  },
+  {
+   "name": "tops-2012.json",
+   "bytes": 49074
+  },
+  {
+   "name": "tops-2013.json",
+   "bytes": 50927
+  },
+  {
+   "name": "tops-2014.json",
+   "bytes": 47965
+  },
+  {
+   "name": "tops-2015.json",
+   "bytes": 50442
+  },
+  {
+   "name": "tops-2016.json",
+   "bytes": 49975
+  },
+  {
+   "name": "tops-2017.json",
+   "bytes": 54295
+  },
+  {
+   "name": "tops-2018.json",
+   "bytes": 55616
+  },
+  {
+   "name": "tops-2019.json",
+   "bytes": 54297
+  },
+  {
+   "name": "tops-2020.json",
+   "bytes": 53349
+  },
+  {
+   "name": "tops-2021.json",
+   "bytes": 53464
+  },
+  {
+   "name": "tops-2022.json",
+   "bytes": 50779
+  },
+  {
+   "name": "tops-2023.json",
+   "bytes": 56755
+  },
+  {
+   "name": "tops-2024.json",
+   "bytes": 51068
+  },
+  {
+   "name": "tops-2025.json",
+   "bytes": 51056
+  },
+  {
+   "name": "tops-2026.json",
+   "bytes": 35980
+  },
+  {
+   "name": "terms-2006.json",
+   "bytes": 4052
+  },
+  {
+   "name": "terms-2007.json",
+   "bytes": 572263
+  },
+  {
+   "name": "terms-2008.json",
+   "bytes": 1071795
+  },
+  {
+   "name": "terms-2009.json",
+   "bytes": 1300049
+  },
+  {
+   "name": "terms-2010.json",
+   "bytes": 1590578
+  },
+  {
+   "name": "terms-2011.json",
+   "bytes": 1804834
+  },
+  {
+   "name": "terms-2012.json",
+   "bytes": 1930538
+  },
+  {
+   "name": "terms-2013.json",
+   "bytes": 2031277
+  },
+  {
+   "name": "terms-2014.json",
+   "bytes": 2030289
+  },
+  {
+   "name": "terms-2015.json",
+   "bytes": 2104409
+  },
+  {
+   "name": "terms-2016.json",
+   "bytes": 2166212
+  },
+  {
+   "name": "terms-2017.json",
+   "bytes": 2189312
+  },
+  {
+   "name": "terms-2018.json",
+   "bytes": 2213395
+  },
+  {
+   "name": "terms-2019.json",
+   "bytes": 2296464
+  },
+  {
+   "name": "terms-2020.json",
+   "bytes": 2344036
+  },
+  {
+   "name": "terms-2021.json",
+   "bytes": 2287145
+  },
+  {
+   "name": "terms-2022.json",
+   "bytes": 2306052
+  },
+  {
+   "name": "terms-2023.json",
+   "bytes": 2355698
+  },
+  {
+   "name": "terms-2024.json",
+   "bytes": 2310098
+  },
+  {
+   "name": "terms-2025.json",
+   "bytes": 2299348
+  },
+  {
+   "name": "terms-2026.json",
+   "bytes": 1640316
+  }
+ ],
+ "total_bytes": 39883134
+}
