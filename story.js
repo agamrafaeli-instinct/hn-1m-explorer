@@ -25,11 +25,16 @@
     let S, sample = false;
     try { S = await getJSON('data/summary.json'); } catch (e) { S = await getJSON('sample/summary.json'); sample = true; }
     if (sample || S.sample) $('banner').hidden = false;
-    const C = S.concentration;
+    let C = S.concentration, full = null;
+    // Full history first (#195): the lenses over every archived story. The newest-items summary is the fallback only.
+    try { full = await getJSON('data/atlas/concentration.json'); } catch (e) { full = null; }
+    if (full) { C = full; S = Object.assign({}, S, { top_posts: full.top_posts, type_counts: {}, totals: { posts: full.totals.posts }, time_range: { min: full.range_utc[0], max: full.range_utc[1] } }); ['s_auth', 's_type'].forEach(id => { const n = $(id); if (n) n.hidden = true; }); }
     const total = (S.totals && (S.totals.posts || S.totals.rows)) || (C && C.totals.posts) || 0;
     const tr = S.time_range || {};
-    $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>`;
-    if (C && C.posts.scored_posts) $('foot_note').innerHTML = `${pct(((S.type_counts || {}).comment || (total - C.posts.scored_posts)) / total, 0)} of items are comments, which carry no points, so point and comment lenses use the ${fmt(C.posts.scored_posts)} scored stories. Snapshot: ${S.generated_at ? S.generated_at.slice(0, 10) : 'recent'}; the newest stories may not have collected their final scores yet. All times are UTC.`;
+    if (full) { $('dek').innerHTML = `Every story from <b>${dlabel(tr.min)}</b> to <b>${dlabel(tr.max)}</b>, asked one question through every lens: <b>where does the weight pile up?</b>`; $('kicker_n').textContent = 'stories'; }
+    else $('dek').innerHTML = `Every story in the latest ${fmt(total)} Hacker News items${tr.min ? ', from <b>' + dlabel(tr.min) + '</b> to <b>' + dlabel(tr.max) + '</b>' : ''}, asked one question through every lens: <b>where does the weight pile up?</b>`;
+    if (full) $('foot_note').innerHTML = `These lenses cover the ${fmt(total)} stories in the archive, ${dlabel(tr.min)} to ${dlabel(tr.max)}. Comments are not in the archive, and neither are author names, so there is no author lens here. Scores were saved when each story was fetched, so recent years show lower points; read the shares, not the totals. All times are UTC.`;
+    else if (C && C.posts.scored_posts) $('foot_note').innerHTML = `${pct(((S.type_counts || {}).comment || (total - C.posts.scored_posts)) / total, 0)} of items are comments, which carry no points, so point and comment lenses use the ${fmt(C.posts.scored_posts)} scored stories. Snapshot: ${S.generated_at ? S.generated_at.slice(0, 10) : 'recent'}; the newest stories may not have collected their final scores yet. All times are UTC.`;
     $('bigcount').textContent = fmt(total);
     getJSON((sample ? 'sample/' : 'data/') + 'manifest.json').then(m => { const b = (m.chunks || m.files || []).reduce((a, c) => a + (c.bytes || 0), 0); $('mb').textContent = b ? Math.round(b / 1048576) + ' MB' : 'a few MB'; }).catch(() => { $('mb').textContent = 'a few MB'; });
     hall(S.top_posts || []);
@@ -39,13 +44,13 @@
     $('intro').innerHTML = `Attention online is never spread evenly. On Hacker News, the top <b>1%</b> of stories hold <b>${pct(P.top_share_points['0.01'])}</b> of all points, and <b>${pct(P.zero_comment_share, 0)}</b> of stories get no comment at all. This page measures that pile-up for authors, domains, words, the clock and the calendar.`;
     lorenzScrolly('s_lz', 'svg_lz', P.lorenz_points, 'cap_lz', 'stories', 'points');
     lenses(C);
-    ent('bars_auth', 'lede_auth', E.author, 'author', 'authors', T);
+    if (!full) ent('bars_auth', 'lede_auth', E.author, 'author', 'authors', T);
     ent('bars_dom', 'lede_dom', E.domain, 'domain', 'domains', T);
     ent('bars_word', 'lede_word', E.word, 'word', 'words', T);
     clock(C.cyclic, T); heat(C.cyclic.hourweek);
     idx('idx_wd', C.cyclic.weekday, WD, T); idx('idx_mo', C.cyclic.month, MN, T);
     calLede(C.cyclic, T);
-    types(C.type, T);
+    if (!full) types(C.type, T);
     observe();
   }
   function ptsStep(S) {
@@ -119,7 +124,8 @@
   function lenses(C) {
     const E = C.entities, cards = [];
     [['author', 'Authors', 'authors'], ['domain', 'Domains', 'domains'], ['word', 'Title words', 'words']].forEach(([k, name, pl]) => {
-      const e = E[k], y1 = at(e.lorenz_points, 0.01), y10 = at(e.lorenz_points, 0.1);
+      const e = E[k]; if (!e.lorenz_points || !e.lorenz_points.length) return;
+      const y1 = at(e.lorenz_points, 0.01), y10 = at(e.lorenz_points, 0.1);
       cards.push({ name, big: pct(y1, 0), line: `of all points sit with the top <b>1%</b> of ${pl}. The top 10% hold ${pct(y10, 0)}.`, sub: `${fmt(e.count)} ${pl} · gini ${e.gini_points.toFixed(2)}`, L: e.lorenz_points });
     });
     const P = C.posts;

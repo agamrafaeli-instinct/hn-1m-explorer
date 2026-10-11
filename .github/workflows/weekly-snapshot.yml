@@ -35,6 +35,7 @@ jobs:
         run: |
           pip install duckdb
           python scripts/atlas_aggregates.py
+          python scripts/concentration_archive.py
       - name: Build Lens history files
         run: python scripts/lens_build.py
       - name: Draft, check and publish weekly findings
