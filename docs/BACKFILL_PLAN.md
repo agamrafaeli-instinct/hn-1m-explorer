@@ -27,7 +27,7 @@ Conclusion: 17 GB does not fit in the repo or on Pages. Full item files must liv
 2. Newest to oldest, one year at a time, so the data nearest today is complete first.
 3. Full item files (all items, comments too) are stored one per year (or month for busy years) as release assets. Release assets have no CORS header (measured), so the browser cannot read them; they are the download archive. Story-only files for the Explorer are covered in [ARCHITECTURE_ATLAS.md](ARCHITECTURE_ATLAS.md). The repo holds only a manifest with row counts, id ranges and SHA-256 per file.
 4. Pages publishes summaries: daily and monthly totals, yearly term counts. Item-level pages load a year on demand from the release asset, not from Pages.
-5. The rolling newest-window files (data/posts-*.csv) keep feeding the cards and weekly screens exactly as now. Nothing there changes until the cards are told to read by range.
+5. The newest-items files (data/posts-*.csv) are plumbing for the daily run and the author search. Pages and the Explorer read the full history (decision 2026-10-11, see WINDOW_READERS.md).
 6. Each slice has a size and run-time budget: no Pages file over 50 MB, Pages total under 700 MB, any one job step under 60 minutes, any release file under 1.5 GiB.
 7. Saved weekly files are never overwritten.
 8. Copy says only what is held. "Since 2006" goes into copy only once 2006 is loaded and checked.

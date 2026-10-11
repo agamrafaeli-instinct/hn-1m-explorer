@@ -53,7 +53,7 @@ Use A and C together, with comments out of the browsing path.
 - **Tier 1, aggregates (A).** Static JSON on Pages. Per day and per month: counts by type, top 20 domains, top 20 authors, top 30 stories by score, and counts for the top about 20,000 title terms by month. Estimate: 20 to 60 MB. Powers all charts, time ranges across 2006 to now, trends for common terms, domains and authors, and the cards. Works offline after load.
 - **Tier 2, stories as Parquet (C).** One file per year, stories only, sorted by time, small row groups, columns: id, time, by, title, url, domain, score, comments. Read by DuckDB-WASM with range requests. Serves free text, author and domain filters, minimum score and the 25 row list for any year. Loaded newest year first, with a visible "searching 2019 of 2006 to 2026" progress.
 - **Tier 3, full items.** Every item including comments as yearly files in release assets, with manifest hashes. Download only, not browsable in the Explorer. Comment counts stay in Tier 1.
-- **Today's Explorer stays as the default** for the newest window until Tier 2 is proven. Nothing existing is replaced until a stage passes its budget.
+- **Decision (2026-10-11): the full history is the default.** The Explorer opens on the aggregates (#119); row-level search over Tier 2 follows in #198. The newest-items search stays only for author names, which the archive does not hold.
 
 Why not B: plain files hit the 1 GB Pages cap and force the whole year into memory. Why not D: breaks the static, no-cost rule and adds an outage risk.
 

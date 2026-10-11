@@ -8,7 +8,7 @@ Has the conversation shifted from chatbots to agents? Is Kubernetes losing minds
 
 Hacker News Explorer turns those questions into something you can inspect: charts, explicit tests, and the stories behind the numbers.
 
-Explore a rolling window of the **newest HN items**, browse **80 hypothesis cards**, or catch up on what changed this week. Built for your phone. Runs in your browser. No account required.
+Explore **every HN story since 2006**, browse **80 hypothesis cards**, or catch up on what changed this week. Built for your phone. Runs in your browser. No account required.
 
 **[Explore the site →](https://agamrafaeli-instinct.github.io/hn-1m-explorer/)** · [This week](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/w/engineers) · [Tested hypotheses](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/hypotheses) · [Bring a hypothesis](CONTRIBUTING.md)
 
@@ -69,7 +69,8 @@ Some existing cards are exploratory: their authors had seen earlier summaries be
 
 | Layer | What it contains |
 | --- | --- |
-| Recent items | A rolling window of the newest items from the official HN API, including stories, comments, jobs, and polls. |
+| Full history | Every story since 2006 as year files in data/archive, with monthly and daily counts in data/atlas and data/history. |
+| Newest items | The newest items from the official HN API with author names and comments, kept as plumbing for the daily run and the author search. |
 | Historical summaries | Monthly topic history since 2006 (data/topic_series.json), plus topic-specific historical series. Coverage varies by dataset. |
 | Weekly snapshots | Saved complete UTC weeks and comparisons, with reconstructed weeks labeled. |
 | Hypotheses | 80 JSON cards with explicit checks and verdict rules. Some use refreshing data; others use fixed historical windows. |
@@ -115,7 +116,7 @@ The interface is plain HTML, CSS, and JavaScript, with Chart.js and Papa Parse l
 | Hypothesis rules and rendering | [hyp-eval.js](hyp-eval.js), [hypotheses.js](hypotheses.js) |
 | Collection and saved weeks | [scripts/update_daily.py](scripts/update_daily.py), [scripts/weekly_snapshot.py](scripts/weekly_snapshot.py) |
 
-The next ambition is a longer memory: browsable verdict histories, short editorial findings, and an Explorer that reaches beyond the recent window. The [roadmap](ROADMAP.md), [full-archive architecture plan](docs/ARCHITECTURE_ATLAS.md), and [project board](https://github.com/users/agamrafaeli-instinct/projects/1) track that work. Some roadmap checklists may lag the implementation.
+The next ambition is a longer memory: browsable verdict histories, short editorial findings, and row-level search over every year (#198). The [roadmap](ROADMAP.md), [full-archive architecture plan](docs/ARCHITECTURE_ATLAS.md), and [project board](https://github.com/users/agamrafaeli-instinct/projects/1) track that work. Some roadmap checklists may lag the implementation.
 
 ## Bring a theory worth testing
 
