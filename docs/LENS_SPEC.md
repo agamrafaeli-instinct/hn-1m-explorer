@@ -8,10 +8,10 @@ Only the saved weekly files, `data/weekly/<week>.json`, and nothing else:
 
 | Page shows | Field | Notes |
 |---|---|---|
-| Stories per week, domain | `domains["<domain>"][0]` | Each week lists every domain with 3 or more stories (WEEKLY_SPEC.md section 6). A domain missing from a week had 0, 1 or 2 stories, so the page shows "under 3", not zero. |
+| Stories per week, domain | `domains["<domain>"][0]` | Each week lists every domain with 3 or more stories (WEEKLY_SPEC.md section 9). A domain missing from a week had 0, 1 or 2 stories, so the page shows "under 3", not zero. |
 | Points per week, domain | `domains["<domain>"][1]` | Points are as first retrieved, the same as every week screen. |
 | Mentions per week, name | `vcs.watchlist.mentions["<name>"]` | Counts stories whose title or text mentions the name. Zero is a real zero. |
-| Top story that week, domain | `top_stories` and the per-domain top story where the file has one | Linked to the HN item. A week with none shows no line. |
+| Top stories, domain | `top_stories` (top 10 of the week) filtered to the domain | Linked to the HN item. A week with none shows no line, so older weeks may show fewer. |
 | First seen | the first saved week where the count is above 0 (name) or 3 or more (domain) | Worded "first seen in the saved weeks", never "first appeared on Hacker News". |
 
 ## Which entries get a page
