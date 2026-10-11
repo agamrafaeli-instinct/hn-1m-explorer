@@ -1097,6 +1097,22 @@
    "id": "h369",
    "score": 0.6,
    "title": "LLM, RAG and fine-tuning: a bigger share than before"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 114563.0,
+   "id": "h370",
+   "score": 1.0,
+   "title": "SQLite and DuckDB stories beat MongoDB and MySQL stories on points"
   }
  ],
  "schema": 1,
