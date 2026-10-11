@@ -81,6 +81,18 @@ await check('week to explorer links', '#/w/engineers', q1('#w_body .wsec'), asyn
   const l = JSON.parse(v || '[]');
   return l.length && l.every(h => /^#\/explore\?week=\d{4}-W\d{2}&q=.+/.test(h)) ? '' : 'flagged items do not link to the explorer: ' + v;
 });
+await check('lens page', '#/l/github.com', q1('#lens_body .lens_h'), async () => {
+  const v = await ev("JSON.stringify([document.querySelector('#lens_body .lens_h')?.textContent, document.querySelectorAll('#lens_body .lens_wk li').length, !!document.querySelector('#lens_body svg[aria-label]')])");
+  return v === JSON.stringify(['github.com', 10, true]) ? '' : 'lens page not as expected: ' + v;
+});
+await check('lens name page', '#/l/n/Nvidia', q1('#lens_body .lens_h'), async () => {
+  const v = await ev("JSON.stringify([document.querySelector('#lens_body .lens_h')?.textContent, document.querySelectorAll('#lens_body .lens_wk li').length])");
+  return v === JSON.stringify(['Nvidia', 10]) ? '' : 'lens name page not as expected: ' + v;
+});
+await check('lens bad address', '#/l/bad!id', q1('#lens_body'), async () => {
+  if (!await wait("/No page for this one/.test(document.getElementById('lens_body').textContent)", 5000)) return 'a missing lens page did not say so';
+  return '';
+});
 await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
   const wk = () => ev("location.hash"), t1 = () => ev("document.querySelector('#w_body .wmid b')?.textContent||''");
   const h0 = await wk(), r0 = await t1();
