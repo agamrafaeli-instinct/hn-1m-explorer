@@ -32,10 +32,12 @@ Rules:
 
 ## Steps
 
-1. **Draft.** A script reads the compare file and writes draft lines in `data/findings/<week>.draft.json`. It does not publish anything.
-2. **Review.** An owner reads each draft line against its source and edits or drops it. Each finding is reviewed by the owner before it is published.
-3. **Publish.** Approved lines are saved to `data/findings/<week>.json` with the reviewer's date. Saved findings are never edited. A correction is a new file version with a note.
-4. **Show.** The week screen shows the approved lines above "What changed". A draft is never shown.
+Decision (2026-10-11): findings publish automatically, with no owner review step, the same as Today's story. Checks replace the review.
+
+1. **Draft.** A script reads the compare file and writes lines in `data/findings/<week>.draft.json`.
+2. **Check.** A script checks every line against its source key: the numbers match the file, the line is 25 words or fewer, no banned words, the source line resolves. A line that fails is dropped. A week where every line fails publishes the quiet-week line.
+3. **Publish.** Lines that pass are saved to `data/findings/<week>.json` by the daily run, with the run date. Saved findings are never edited. A correction is a new file version with a note.
+4. **Show.** The week screen shows the published lines above "What changed". Draft files are never shown.
 
 ## Limits
 
