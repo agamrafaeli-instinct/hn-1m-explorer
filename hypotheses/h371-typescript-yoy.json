@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "id": "h371",
+  "title": "TypeScript pulled further ahead of JavaScript year over year",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "For each JavaScript story, HN ran more TypeScript stories in the latest 12 months than in the 12 months before.",
+  "expect": "If true, the ratio of TypeScript stories to JavaScript stories should be at least 1.2x higher in the latest 12 months than in the 12 months before them (1.05x is weak, 0.95x or lower refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "typescript_s",
+    "per_label": "TypeScript per JavaScript story",
+    "display_pct": false,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "typescript_s",
+      "per": "js_s"
+    },
+    "group_b": {
+      "label": "The 12 months before ({from} to {to})",
+      "indices": [
+        -24,
+        -23,
+        -22,
+        -21,
+        -20,
+        -19,
+        -18,
+        -17,
+        -16,
+        -15,
+        -14,
+        -13
+      ],
+      "field": "typescript_s",
+      "per": "js_s"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.2
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.05
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Thresholds were written before the card was run. h300 is left unchanged.",
+  "caveats": [
+    "The JavaScript list also matches the word \"js\", and a story can name both languages, so the two counts overlap.",
+    "Title words only: stories about TypeScript that never say so in the title are missed.",
+    "The latest 12 months stop at the last full month in the film file, not today."
+  ]
+}
