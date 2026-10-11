@@ -1,6 +1,6 @@
 # DuckDB-WASM worker patch for range reads on GitHub Pages
 
-Used only in the local test of #140 and #141 (version 1.33.1, file `duckdb-browser-eh.worker.js`). Not applied to the site.
+Applied on the site since #198: `scripts/patch_duckdb_worker.py STOCK OUT` writes `vendor/duckdb/worker.js` from the stock `duckdb-browser-eh.worker.js` (npm @duckdb/duckdb-wasm 1.33.1-dev65.0, since 1.33.1 itself is not on npm). The script and `tests/test_rowsearch.py` fail if the stock string is not found exactly once, so an engine upgrade cannot ship unpatched. `vendor/duckdb/duck.mjs` is the esbuild bundle of `duckdb-browser.mjs` (exports AsyncDuckDB, VoidLogger, DuckDBDataProtocol).
 
 Original condition in the HTTP file open step:
 

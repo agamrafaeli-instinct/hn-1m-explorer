@@ -228,3 +228,5 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 
 .wf .wlens{margin-left:12px;font-size:13px;font-weight:700;color:var(--act)}
 .hist_f{display:flex;gap:8px;margin:8px 0}.hist_f input{flex:1;min-width:0;font:inherit;padding:10px;border:1px solid var(--bd);border-radius:8px}#hist{margin-bottom:28px}
+.rs_f{margin:8px 0}.rs_dates{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}.rs_dates input{font:inherit;padding:8px;border:1px solid var(--bd);border-radius:8px;min-width:0;max-width:100%}.rs_dates input[type=number]{width:90px}.rs_h{font:700 15px Inter,sans-serif;margin:16px 0 4px}.rs_l{padding-left:20px;margin:4px 0}.rs_l li{margin:6px 0}.rs_m{color:#6b6157;font-size:13px}.rs_n{font-size:13px;color:#6b6157;margin-top:12px}
+.rs_l a{color:var(--ac);text-decoration:none;font-weight:600}.rs_m{display:block}

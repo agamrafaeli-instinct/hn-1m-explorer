@@ -34,6 +34,11 @@
       }).catch(function () { out.textContent = 'Could not load this word. Try again.'; });
     };
   }
+  function rowBlock(root) {
+    var box = el('div'); root.appendChild(el('h3', 'fk', 'Find stories, all years')); root.appendChild(el('p', 'wsh', 'Title words, domain, score and dates, over every year of stories. The search engine loads only when you search.'));
+    root.appendChild(box);
+    var sc = document.createElement('script'); sc.src = 'rowsearch.js'; sc.onload = function () { window.RowSearch(box); }; document.head.appendChild(sc);
+  }
   function monthBlock(root) {
     var f = el('div', 'hist_f'), i = el('input'), out = el('div'), last = M.range[1];
     i.type = 'month'; i.min = M.range[0]; i.max = last; i.value = last; i.setAttribute('aria-label', 'Month');
@@ -59,7 +64,7 @@
       root.appendChild(chart(series('stories'), 'Stories', 'stories per month'));
       root.appendChild(el('p', 'wsh', 'Comments a month'));
       root.appendChild(chart(series('comments'), 'Comments', 'comments per month'));
-      termBlock(root); monthBlock(root);
+      termBlock(root); monthBlock(root); rowBlock(root);
       root.appendChild(el('p', 'wn wfoot', 'From the archive in data/archive and the daily counts in data/history. ' + M.note));
     }).catch(function () { root.textContent = 'Could not load the history files.'; });
   };
