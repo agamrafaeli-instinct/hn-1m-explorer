@@ -1,0 +1,1608 @@
+{
+ "latest_from": "2025-08-21",
+ "latest_to": "2026-08-21",
+ "rule": "term in at least 30 titles of the latest year and a latest share at least 3x its share over the 3 years before (or never seen before)",
+ "schema": 1,
+ "terms": [
+  {
+   "n_latest": 35,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 0.0,
+   "term": "100k fee"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 0.0,
+   "term": "2025 year"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 0.0,
+   "term": "2026 edition"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 0.0,
+   "term": "agent actions"
+  },
+  {
+   "n_latest": 116,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00032775861143368964,
+   "share_prior": 0.0,
+   "term": "agent harness"
+  },
+  {
+   "n_latest": 42,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00011867122138116349,
+   "share_prior": 0.0,
+   "term": "agent sessions"
+  },
+  {
+   "n_latest": 92,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00025994648493016763,
+   "share_prior": 0.0,
+   "term": "agent skill"
+  },
+  {
+   "n_latest": 282,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0007967924864163835,
+   "share_prior": 0.0,
+   "term": "agent skills"
+  },
+  {
+   "n_latest": 57,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00016105380044586473,
+   "share_prior": 0.0,
+   "term": "anthropic mythos"
+  },
+  {
+   "n_latest": 60,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.000169530316258805,
+   "share_prior": 0.0,
+   "term": "april 2026"
+  },
+  {
+   "n_latest": 81,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0002288659269493867,
+   "share_prior": 0.0,
+   "term": "autoresearch"
+  },
+  {
+   "n_latest": 71,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00020061087423958588,
+   "share_prior": 0.0,
+   "term": "banana pro"
+  },
+  {
+   "n_latest": 47,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001327987477360639,
+   "share_prior": 0.0,
+   "term": "charlie kirk"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "chatgpt atlas"
+  },
+  {
+   "n_latest": 62,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00017518132680076514,
+   "share_prior": 0.0,
+   "term": "claude agent"
+  },
+  {
+   "n_latest": 71,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00020061087423958588,
+   "share_prior": 0.0,
+   "term": "claude cowork"
+  },
+  {
+   "n_latest": 122,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00034471164305957015,
+   "share_prior": 0.0,
+   "term": "claude fable"
+  },
+  {
+   "n_latest": 67,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00018930885315566556,
+   "share_prior": 0.0,
+   "term": "claude mythos"
+  },
+  {
+   "n_latest": 58,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00016387930571684482,
+   "share_prior": 0.0,
+   "term": "claude skill"
+  },
+  {
+   "n_latest": 79,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00022321491640742657,
+   "share_prior": 0.0,
+   "term": "claude skills"
+  },
+  {
+   "n_latest": 119,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0003362351272466299,
+   "share_prior": 0.0,
+   "term": "clawdbot"
+  },
+  {
+   "n_latest": 42,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00011867122138116349,
+   "share_prior": 0.0,
+   "term": "code mode"
+  },
+  {
+   "n_latest": 51,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00014410076881998424,
+   "share_prior": 0.0,
+   "term": "code skills"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 0.0,
+   "term": "codex claude"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "coding-agent"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 0.0,
+   "term": "commerce protocol"
+  },
+  {
+   "n_latest": 61,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00017235582152978508,
+   "share_prior": 0.0,
+   "term": "december 2025"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "department war"
+  },
+  {
+   "n_latest": 35,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 0.0,
+   "term": "fosdem 2026"
+  },
+  {
+   "n_latest": 37,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00010454369502626307,
+   "share_prior": 0.0,
+   "term": "gas town"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 0.0,
+   "term": "gemini 3.1"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 0.0,
+   "term": "genesis mission"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 0.0,
+   "term": "glasswing"
+  },
+  {
+   "n_latest": 38,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00010736920029724316,
+   "share_prior": 0.0,
+   "term": "glm 5.2"
+  },
+  {
+   "n_latest": 53,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001497517793619444,
+   "share_prior": 0.0,
+   "term": "glm-5.2"
+  },
+  {
+   "n_latest": 54,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00015257728463292448,
+   "share_prior": 0.0,
+   "term": "google antigravity"
+  },
+  {
+   "n_latest": 51,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00014410076881998424,
+   "share_prior": 0.0,
+   "term": "gpt 5.6"
+  },
+  {
+   "n_latest": 64,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001808323373427253,
+   "share_prior": 0.0,
+   "term": "gpt-5.2"
+  },
+  {
+   "n_latest": 41,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001158457161101834,
+   "share_prior": 0.0,
+   "term": "gpt-5.4"
+  },
+  {
+   "n_latest": 77,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0002175639058654664,
+   "share_prior": 0.0,
+   "term": "gpt-5.5"
+  },
+  {
+   "n_latest": 103,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0002910270429109486,
+   "share_prior": 0.0,
+   "term": "gpt-5.6"
+  },
+  {
+   "n_latest": 45,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00012714773719410373,
+   "share_prior": 0.0,
+   "term": "gpt-5.6 sol"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 0.0,
+   "term": "grok build"
+  },
+  {
+   "n_latest": 58,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00016387930571684482,
+   "share_prior": 0.0,
+   "term": "grokipedia"
+  },
+  {
+   "n_latest": 64,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001808323373427253,
+   "share_prior": 0.0,
+   "term": "harness engineering"
+  },
+  {
+   "n_latest": 50,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00014127526354900416,
+   "share_prior": 0.0,
+   "term": "hermes agent"
+  },
+  {
+   "n_latest": 81,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0002288659269493867,
+   "share_prior": 0.0,
+   "term": "july 2026"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 0.0,
+   "term": "k2.5"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 0.0,
+   "term": "kimi k2.5"
+  },
+  {
+   "n_latest": 33,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.324167394234274e-05,
+   "share_prior": 0.0,
+   "term": "llm wiki"
+  },
+  {
+   "n_latest": 41,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001158457161101834,
+   "share_prior": 0.0,
+   "term": "local coding"
+  },
+  {
+   "n_latest": 113,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0003192820956207494,
+   "share_prior": 0.0,
+   "term": "macbook neo"
+  },
+  {
+   "n_latest": 52,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001469262740909643,
+   "share_prior": 0.0,
+   "term": "managed agents"
+  },
+  {
+   "n_latest": 33,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.324167394234274e-05,
+   "share_prior": 0.0,
+   "term": "mcp apps"
+  },
+  {
+   "n_latest": 129,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0003644901799564307,
+   "share_prior": 0.0,
+   "term": "moltbook"
+  },
+  {
+   "n_latest": 59,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001667048109878249,
+   "share_prior": 0.0,
+   "term": "moltbot"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "muse spark"
+  },
+  {
+   "n_latest": 1134,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0032041229772914142,
+   "share_prior": 0.0,
+   "term": "openclaw"
+  },
+  {
+   "n_latest": 48,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.000135624253007044,
+   "share_prior": 0.0,
+   "term": "openclaw agent"
+  },
+  {
+   "n_latest": 50,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00014127526354900416,
+   "share_prior": 0.0,
+   "term": "openclaw agents"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "openclaw partners"
+  },
+  {
+   "n_latest": 90,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00025429547438820746,
+   "share_prior": 0.0,
+   "term": "opus 4.5"
+  },
+  {
+   "n_latest": 131,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00037014119049839087,
+   "share_prior": 0.0,
+   "term": "opus 4.6"
+  },
+  {
+   "n_latest": 101,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0002853760323689884,
+   "share_prior": 0.0,
+   "term": "opus 4.7"
+  },
+  {
+   "n_latest": 61,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00017235582152978508,
+   "share_prior": 0.0,
+   "term": "opus 4.8"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 0.0,
+   "term": "parallel agents"
+  },
+  {
+   "n_latest": 40,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00011302021083920333,
+   "share_prior": 0.0,
+   "term": "rcarmo"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 0.0,
+   "term": "report 2026"
+  },
+  {
+   "n_latest": 35,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 0.0,
+   "term": "s26"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "saaspocalypse"
+  },
+  {
+   "n_latest": 53,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001497517793619444,
+   "share_prior": 0.0,
+   "term": "seedance 2.0"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 0.0,
+   "term": "september 2025"
+  },
+  {
+   "n_latest": 45,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00012714773719410373,
+   "share_prior": 0.0,
+   "term": "shai-hulud"
+  },
+  {
+   "n_latest": 43,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00012149672665214357,
+   "share_prior": 0.0,
+   "term": "show openclaw"
+  },
+  {
+   "n_latest": 36,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00010171818975528298,
+   "share_prior": 0.0,
+   "term": "skill security"
+  },
+  {
+   "n_latest": 33,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.324167394234274e-05,
+   "share_prior": 0.0,
+   "term": "skill.md"
+  },
+  {
+   "n_latest": 43,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00012149672665214357,
+   "share_prior": 0.0,
+   "term": "sonnet 4.5"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 0.0,
+   "term": "sora2"
+  },
+  {
+   "n_latest": 109,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00030798007453682904,
+   "share_prior": 0.0,
+   "term": "spacex ipo"
+  },
+  {
+   "n_latest": 33,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.324167394234274e-05,
+   "share_prior": 0.0,
+   "term": "spec driven"
+  },
+  {
+   "n_latest": 84,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00023734244276232697,
+   "share_prior": 0.0,
+   "term": "spec-driven development"
+  },
+  {
+   "n_latest": 70,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00019778536896860582,
+   "share_prior": 0.0,
+   "term": "steam machine"
+  },
+  {
+   "n_latest": 49,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.00013844975827802407,
+   "share_prior": 0.0,
+   "term": "tokenmaxxing"
+  },
+  {
+   "n_latest": 47,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 0.0001327987477360639,
+   "share_prior": 0.0,
+   "term": "turboquant"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 0.0,
+   "term": "w26"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 0,
+   "ratio": null,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 0.0,
+   "term": "z.ai"
+  },
+  {
+   "n_latest": 228,
+   "n_prior": 1,
+   "ratio": 590.0470107566986,
+   "share_latest": 0.0006442152017834589,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "iran war"
+  },
+  {
+   "n_latest": 366,
+   "n_prior": 3,
+   "ratio": 315.72690926454925,
+   "share_latest": 0.0010341349291787105,
+   "share_prior": 3.275409535372239e-06,
+   "term": "mythos"
+  },
+  {
+   "n_latest": 237,
+   "n_prior": 2,
+   "ratio": 306.6691700643367,
+   "share_latest": 0.0006696447492222796,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "nano banana"
+  },
+  {
+   "n_latest": 103,
+   "n_prior": 1,
+   "ratio": 266.55632503482434,
+   "share_latest": 0.0002910270429109486,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "code codex"
+  },
+  {
+   "n_latest": 73,
+   "n_prior": 1,
+   "ratio": 188.91856046157451,
+   "share_latest": 0.00020626188478154605,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "claude codex"
+  },
+  {
+   "n_latest": 71,
+   "n_prior": 1,
+   "ratio": 183.74270949002454,
+   "share_latest": 0.00020061087423958588,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "march 2026"
+  },
+  {
+   "n_latest": 61,
+   "n_prior": 1,
+   "ratio": 157.86345463227462,
+   "share_latest": 0.00017235582152978508,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "code skill"
+  },
+  {
+   "n_latest": 47,
+   "n_prior": 1,
+   "ratio": 121.6324978314247,
+   "share_latest": 0.0001327987477360639,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "26.04"
+  },
+  {
+   "n_latest": 46,
+   "n_prior": 1,
+   "ratio": 119.0445723456497,
+   "share_latest": 0.00012997324246508382,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "webmcp"
+  },
+  {
+   "n_latest": 45,
+   "n_prior": 1,
+   "ratio": 116.45664685987471,
+   "share_latest": 0.00012714773719410373,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "agent runtime"
+  },
+  {
+   "n_latest": 43,
+   "n_prior": 1,
+   "ratio": 111.28079588832472,
+   "share_latest": 0.00012149672665214357,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "npm supply"
+  },
+  {
+   "n_latest": 40,
+   "n_prior": 1,
+   "ratio": 103.51701943099975,
+   "share_latest": 0.00011302021083920333,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "ubuntu 26.04"
+  },
+  {
+   "n_latest": 79,
+   "n_prior": 2,
+   "ratio": 102.22305668811225,
+   "share_latest": 0.00022321491640742657,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "2026 video"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 1,
+   "ratio": 100.92909394522475,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "loop engineering"
+  },
+  {
+   "n_latest": 116,
+   "n_prior": 3,
+   "ratio": 100.0664521166331,
+   "share_latest": 0.00032775861143368964,
+   "share_prior": 3.275409535372239e-06,
+   "term": "cowork"
+  },
+  {
+   "n_latest": 38,
+   "n_prior": 1,
+   "ratio": 98.34116845944975,
+   "share_latest": 0.00010736920029724316,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "deepseek flash"
+  },
+  {
+   "n_latest": 36,
+   "n_prior": 1,
+   "ratio": 93.16531748789976,
+   "share_latest": 0.00010171818975528298,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "february 2026"
+  },
+  {
+   "n_latest": 36,
+   "n_prior": 1,
+   "ratio": 93.16531748789976,
+   "share_latest": 0.00010171818975528298,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "parallel coding"
+  },
+  {
+   "n_latest": 35,
+   "n_prior": 1,
+   "ratio": 90.57739200212478,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "6.18"
+  },
+  {
+   "n_latest": 35,
+   "n_prior": 1,
+   "ratio": 90.57739200212478,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "linux 6.18"
+  },
+  {
+   "n_latest": 35,
+   "n_prior": 1,
+   "ratio": 90.57739200212478,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "show nano"
+  },
+  {
+   "n_latest": 103,
+   "n_prior": 3,
+   "ratio": 88.85210834494146,
+   "share_latest": 0.0002910270429109486,
+   "share_prior": 3.275409535372239e-06,
+   "term": "where agents"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 1,
+   "ratio": 87.98946651634978,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "39c3"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 1,
+   "ratio": 87.98946651634978,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "war iran"
+  },
+  {
+   "n_latest": 132,
+   "n_prior": 4,
+   "ratio": 85.40154103057479,
+   "share_latest": 0.00037296669576937096,
+   "share_prior": 4.367212713829653e-06,
+   "term": "antigravity"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 1,
+   "ratio": 82.81361554479979,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "seedream"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 1,
+   "ratio": 80.2256900590248,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "agent teams"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 1,
+   "ratio": 80.2256900590248,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "august 2026"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 1,
+   "ratio": 80.2256900590248,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "developer verification"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 1,
+   "ratio": 80.2256900590248,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "token-efficient"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 1,
+   "ratio": 77.63776457324981,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "claude design"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 1,
+   "ratio": 77.63776457324981,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 1.0918031784574132e-06,
+   "term": "every agent"
+  },
+  {
+   "n_latest": 59,
+   "n_prior": 2,
+   "ratio": 76.34380183036231,
+   "share_latest": 0.0001667048109878249,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "june 2026"
+  },
+  {
+   "n_latest": 114,
+   "n_prior": 4,
+   "ratio": 73.75587634458732,
+   "share_latest": 0.00032210760089172947,
+   "share_prior": 4.367212713829653e-06,
+   "term": "spec-driven"
+  },
+  {
+   "n_latest": 198,
+   "n_prior": 7,
+   "ratio": 73.20132088334984,
+   "share_latest": 0.0005594500436540565,
+   "share_prior": 7.642622249201891e-06,
+   "term": "hormuz"
+  },
+  {
+   "n_latest": 47,
+   "n_prior": 2,
+   "ratio": 60.81624891571235,
+   "share_latest": 0.0001327987477360639,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "fewer tokens"
+  },
+  {
+   "n_latest": 40,
+   "n_prior": 2,
+   "ratio": 51.758509715499876,
+   "share_latest": 0.00011302021083920333,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "agent-native"
+  },
+  {
+   "n_latest": 40,
+   "n_prior": 2,
+   "ratio": 51.758509715499876,
+   "share_latest": 0.00011302021083920333,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "agent-to-agent"
+  },
+  {
+   "n_latest": 59,
+   "n_prior": 3,
+   "ratio": 50.89586788690821,
+   "share_latest": 0.0001667048109878249,
+   "share_prior": 3.275409535372239e-06,
+   "term": "agentic commerce"
+  },
+  {
+   "n_latest": 58,
+   "n_prior": 3,
+   "ratio": 50.03322605831655,
+   "share_latest": 0.00016387930571684482,
+   "share_prior": 3.275409535372239e-06,
+   "term": "may 2026"
+  },
+  {
+   "n_latest": 37,
+   "n_prior": 2,
+   "ratio": 47.87662148683738,
+   "share_latest": 0.00010454369502626307,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "26.2"
+  },
+  {
+   "n_latest": 37,
+   "n_prior": 2,
+   "ratio": 47.87662148683738,
+   "share_latest": 0.00010454369502626307,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "when agents"
+  },
+  {
+   "n_latest": 36,
+   "n_prior": 2,
+   "ratio": 46.58265874394988,
+   "share_latest": 0.00010171818975528298,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "agent loop"
+  },
+  {
+   "n_latest": 36,
+   "n_prior": 2,
+   "ratio": 46.58265874394988,
+   "share_latest": 0.00010171818975528298,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "cup 2026"
+  },
+  {
+   "n_latest": 119,
+   "n_prior": 7,
+   "ratio": 43.9947332581749,
+   "share_latest": 0.0003362351272466299,
+   "share_prior": 7.642622249201891e-06,
+   "term": "4.7"
+  },
+  {
+   "n_latest": 102,
+   "n_prior": 6,
+   "ratio": 43.9947332581749,
+   "share_latest": 0.0002882015376399685,
+   "share_prior": 6.550819070744478e-06,
+   "term": "agents.md"
+  },
+  {
+   "n_latest": 119,
+   "n_prior": 7,
+   "ratio": 43.9947332581749,
+   "share_latest": 0.0003362351272466299,
+   "share_prior": 7.642622249201891e-06,
+   "term": "strait hormuz"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 2,
+   "ratio": 43.99473325817489,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "kimmel"
+  },
+  {
+   "n_latest": 505,
+   "n_prior": 30,
+   "ratio": 43.56341234387906,
+   "share_latest": 0.001426880161844942,
+   "share_prior": 3.2754095353722394e-05,
+   "term": "fable"
+  },
+  {
+   "n_latest": 50,
+   "n_prior": 3,
+   "ratio": 43.132091429583234,
+   "share_latest": 0.00014127526354900416,
+   "share_prior": 3.275409535372239e-06,
+   "term": "january 2026"
+  },
+  {
+   "n_latest": 33,
+   "n_prior": 2,
+   "ratio": 42.700770515287395,
+   "share_latest": 9.324167394234274e-05,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "meshcore"
+  },
+  {
+   "n_latest": 82,
+   "n_prior": 5,
+   "ratio": 42.44197796670989,
+   "share_latest": 0.0002316914322203668,
+   "share_prior": 5.459015892287066e-06,
+   "term": "claude.md"
+  },
+  {
+   "n_latest": 80,
+   "n_prior": 5,
+   "ratio": 41.4068077723999,
+   "share_latest": 0.00022604042167840665,
+   "share_prior": 5.459015892287066e-06,
+   "term": "seedance"
+  },
+  {
+   "n_latest": 128,
+   "n_prior": 8,
+   "ratio": 41.406807772399894,
+   "share_latest": 0.0003616646746854506,
+   "share_prior": 8.734425427659306e-06,
+   "term": "code sessions"
+  },
+  {
+   "n_latest": 141,
+   "n_prior": 9,
+   "ratio": 40.54416594380824,
+   "share_latest": 0.00039839624320819173,
+   "share_prior": 9.826228606116718e-06,
+   "term": "epstein files"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 2,
+   "ratio": 40.1128450295124,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "code source"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 2,
+   "ratio": 40.1128450295124,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "into agent"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 2,
+   "ratio": 38.818882286624905,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 2.1836063569148264e-06,
+   "term": "hacktoberfest 2025"
+  },
+  {
+   "n_latest": 45,
+   "n_prior": 3,
+   "ratio": 38.818882286624905,
+   "share_latest": 0.00012714773719410373,
+   "share_prior": 3.275409535372239e-06,
+   "term": "hantavirus"
+  },
+  {
+   "n_latest": 44,
+   "n_prior": 3,
+   "ratio": 37.95624045803324,
+   "share_latest": 0.00012432223192312364,
+   "share_prior": 3.275409535372239e-06,
+   "term": "used claude"
+  },
+  {
+   "n_latest": 43,
+   "n_prior": 3,
+   "ratio": 37.09359862944158,
+   "share_latest": 0.00012149672665214357,
+   "share_prior": 3.275409535372239e-06,
+   "term": "linux 7.0"
+  },
+  {
+   "n_latest": 57,
+   "n_prior": 4,
+   "ratio": 36.87793817229366,
+   "share_latest": 0.00016105380044586473,
+   "share_prior": 4.367212713829653e-06,
+   "term": "agent-first"
+  },
+  {
+   "n_latest": 192,
+   "n_prior": 14,
+   "ratio": 35.491549519199914,
+   "share_latest": 0.000542497012028176,
+   "share_prior": 1.5285244498403782e-05,
+   "term": "4.6"
+  },
+  {
+   "n_latest": 1301,
+   "n_prior": 98,
+   "ratio": 34.356031193808846,
+   "share_latest": 0.003675982357545088,
+   "share_prior": 0.00010699671148882649,
+   "term": "coding agents"
+  },
+  {
+   "n_latest": 53,
+   "n_prior": 4,
+   "ratio": 34.290012686518665,
+   "share_latest": 0.0001497517793619444,
+   "share_prior": 4.367212713829653e-06,
+   "term": "flock cameras"
+  },
+  {
+   "n_latest": 224,
+   "n_prior": 17,
+   "ratio": 34.09972404785874,
+   "share_latest": 0.0006329131806995386,
+   "share_prior": 1.8560654033776022e-05,
+   "term": "opencode"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 3,
+   "ratio": 33.64303131507492,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 3.275409535372239e-06,
+   "term": "agent context"
+  },
+  {
+   "n_latest": 3529,
+   "n_prior": 275,
+   "ratio": 33.210141961090734,
+   "share_latest": 0.009971208101288712,
+   "share_prior": 0.0003002458740757886,
+   "term": "2026"
+  },
+  {
+   "n_latest": 37,
+   "n_prior": 3,
+   "ratio": 31.91774765789159,
+   "share_latest": 0.00010454369502626307,
+   "share_prior": 3.275409535372239e-06,
+   "term": "code cli"
+  },
+  {
+   "n_latest": 36,
+   "n_prior": 3,
+   "ratio": 31.055105829299926,
+   "share_latest": 0.00010171818975528298,
+   "share_prior": 3.275409535372239e-06,
+   "term": "door handles"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 3,
+   "ratio": 29.329822172116597,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "running agents"
+  },
+  {
+   "n_latest": 54,
+   "n_prior": 5,
+   "ratio": 27.94959524636993,
+   "share_latest": 0.00015257728463292448,
+   "share_prior": 5.459015892287066e-06,
+   "term": "agent sdk"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 3,
+   "ratio": 27.604538514933267,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "australia social"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 3,
+   "ratio": 27.604538514933267,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "gave claude"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 3,
+   "ratio": 27.604538514933267,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "nvidia nemotron"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 3,
+   "ratio": 27.604538514933267,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "show deterministic"
+  },
+  {
+   "n_latest": 52,
+   "n_prior": 5,
+   "ratio": 26.914425052059933,
+   "share_latest": 0.0001469262740909643,
+   "share_prior": 5.459015892287066e-06,
+   "term": "aws outage"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 3,
+   "ratio": 26.7418966863416,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "show replaced"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 3,
+   "ratio": 25.87925485774994,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "claude usage"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 3,
+   "ratio": 25.87925485774994,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 3.275409535372239e-06,
+   "term": "mercor"
+  },
+  {
+   "n_latest": 40,
+   "n_prior": 4,
+   "ratio": 25.879254857749938,
+   "share_latest": 0.00011302021083920333,
+   "share_prior": 4.367212713829653e-06,
+   "term": "chinese models"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 4,
+   "ratio": 25.232273486306187,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 4.367212713829653e-06,
+   "term": "local agent"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 4,
+   "ratio": 25.232273486306187,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 4.367212713829653e-06,
+   "term": "show local-first"
+  },
+  {
+   "n_latest": 74,
+   "n_prior": 8,
+   "ratio": 23.93831074341869,
+   "share_latest": 0.00020908739005252614,
+   "share_prior": 8.734425427659306e-06,
+   "term": "code plugin"
+  },
+  {
+   "n_latest": 37,
+   "n_prior": 4,
+   "ratio": 23.93831074341869,
+   "share_latest": 0.00010454369502626307,
+   "share_prior": 4.367212713829653e-06,
+   "term": "our agent"
+  },
+  {
+   "n_latest": 81,
+   "n_prior": 9,
+   "ratio": 23.291329371974943,
+   "share_latest": 0.0002288659269493867,
+   "share_prior": 9.826228606116718e-06,
+   "term": "x402"
+  },
+  {
+   "n_latest": 62,
+   "n_prior": 7,
+   "ratio": 22.921625731149945,
+   "share_latest": 0.00017518132680076514,
+   "share_prior": 7.642622249201891e-06,
+   "term": "agentic development"
+  },
+  {
+   "n_latest": 53,
+   "n_prior": 6,
+   "ratio": 22.86000845767911,
+   "share_latest": 0.0001497517793619444,
+   "share_prior": 6.550819070744478e-06,
+   "term": "agentic era"
+  },
+  {
+   "n_latest": 35,
+   "n_prior": 4,
+   "ratio": 22.644348000531195,
+   "share_latest": 9.889268448430291e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "agents run"
+  },
+  {
+   "n_latest": 70,
+   "n_prior": 8,
+   "ratio": 22.644348000531195,
+   "share_latest": 0.00019778536896860582,
+   "share_prior": 8.734425427659306e-06,
+   "term": "run claude"
+  },
+  {
+   "n_latest": 139,
+   "n_prior": 16,
+   "ratio": 22.482602657670256,
+   "share_latest": 0.00039274523266623156,
+   "share_prior": 1.746885085531861e-05,
+   "term": "agent memory"
+  },
+  {
+   "n_latest": 1242,
+   "n_prior": 143,
+   "ratio": 22.476947226101693,
+   "share_latest": 0.0035092775465572633,
+   "share_prior": 0.00015612785451941008,
+   "term": "codex"
+  },
+  {
+   "n_latest": 43,
+   "n_prior": 5,
+   "ratio": 22.256159177664948,
+   "share_latest": 0.00012149672665214357,
+   "share_prior": 5.459015892287066e-06,
+   "term": "nexperia"
+  },
+  {
+   "n_latest": 43,
+   "n_prior": 5,
+   "ratio": 22.256159177664948,
+   "share_latest": 0.00012149672665214357,
+   "share_prior": 5.459015892287066e-06,
+   "term": "wiggum"
+  },
+  {
+   "n_latest": 68,
+   "n_prior": 8,
+   "ratio": 21.997366629087445,
+   "share_latest": 0.00019213435842664565,
+   "share_prior": 8.734425427659306e-06,
+   "term": "long-horizon"
+  },
+  {
+   "n_latest": 34,
+   "n_prior": 4,
+   "ratio": 21.997366629087445,
+   "share_latest": 9.606717921332283e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "token costs"
+  },
+  {
+   "n_latest": 67,
+   "n_prior": 8,
+   "ratio": 21.67387594336557,
+   "share_latest": 0.00018930885315566556,
+   "share_prior": 8.734425427659306e-06,
+   "term": "glm"
+  },
+  {
+   "n_latest": 50,
+   "n_prior": 6,
+   "ratio": 21.566045714791617,
+   "share_latest": 0.00014127526354900416,
+   "share_prior": 6.550819070744478e-06,
+   "term": "agent orchestration"
+  },
+  {
+   "n_latest": 41,
+   "n_prior": 5,
+   "ratio": 21.220988983354946,
+   "share_latest": 0.0001158457161101834,
+   "share_prior": 5.459015892287066e-06,
+   "term": "ralph wiggum"
+  },
+  {
+   "n_latest": 284,
+   "n_prior": 35,
+   "ratio": 20.999166798859946,
+   "share_latest": 0.0008024434969583435,
+   "share_prior": 3.821311124600946e-05,
+   "term": "kimi"
+  },
+  {
+   "n_latest": 89,
+   "n_prior": 11,
+   "ratio": 20.93866983945222,
+   "share_latest": 0.00025146996911722737,
+   "share_prior": 1.2009834963031544e-05,
+   "term": "tool calls"
+  },
+  {
+   "n_latest": 40,
+   "n_prior": 5,
+   "ratio": 20.70340388619995,
+   "share_latest": 0.00011302021083920333,
+   "share_prior": 5.459015892287066e-06,
+   "term": "agent security"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 4,
+   "ratio": 20.703403886199947,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "arc-agi-3"
+  },
+  {
+   "n_latest": 64,
+   "n_prior": 8,
+   "ratio": 20.703403886199947,
+   "share_latest": 0.0001808323373427253,
+   "share_prior": 8.734425427659306e-06,
+   "term": "dgx spark"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 4,
+   "ratio": 20.703403886199947,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "local agents"
+  },
+  {
+   "n_latest": 32,
+   "n_prior": 4,
+   "ratio": 20.703403886199947,
+   "share_latest": 9.041616867136265e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "steam controller"
+  },
+  {
+   "n_latest": 79,
+   "n_prior": 10,
+   "ratio": 20.44461133762245,
+   "share_latest": 0.00022321491640742657,
+   "share_prior": 1.0918031784574131e-05,
+   "term": "agentic engineering"
+  },
+  {
+   "n_latest": 39,
+   "n_prior": 5,
+   "ratio": 20.18581878904495,
+   "share_latest": 0.00011019470556822324,
+   "share_prior": 5.459015892287066e-06,
+   "term": "coding sessions"
+  },
+  {
+   "n_latest": 78,
+   "n_prior": 10,
+   "ratio": 20.18581878904495,
+   "share_latest": 0.00022038941113644648,
+   "share_prior": 1.0918031784574131e-05,
+   "term": "minimax"
+  },
+  {
+   "n_latest": 31,
+   "n_prior": 4,
+   "ratio": 20.0564225147562,
+   "share_latest": 8.759066340038257e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "run agents"
+  },
+  {
+   "n_latest": 146,
+   "n_prior": 19,
+   "ratio": 19.88616425911311,
+   "share_latest": 0.0004125237695630921,
+   "share_prior": 2.0744260390690848e-05,
+   "term": "kalshi"
+  },
+  {
+   "n_latest": 38,
+   "n_prior": 5,
+   "ratio": 19.668233691889952,
+   "share_latest": 0.00010736920029724316,
+   "share_prior": 5.459015892287066e-06,
+   "term": "khamenei"
+  },
+  {
+   "n_latest": 53,
+   "n_prior": 7,
+   "ratio": 19.594292963724953,
+   "share_latest": 0.0001497517793619444,
+   "share_prior": 7.642622249201891e-06,
+   "term": "october 2025"
+  },
+  {
+   "n_latest": 30,
+   "n_prior": 4,
+   "ratio": 19.409441143312453,
+   "share_latest": 8.47651581294025e-05,
+   "share_prior": 4.367212713829653e-06,
+   "term": "give agents"
+  }
+ ]
+}

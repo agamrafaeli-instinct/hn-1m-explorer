@@ -1,0 +1,176 @@
+{
+ "aliases": [
+  {
+   "count": 11838,
+   "text": "chatgpt"
+  },
+  {
+   "count": 2606,
+   "text": "gpt"
+  },
+  {
+   "count": 1470,
+   "text": "gpt-3"
+  },
+  {
+   "count": 1444,
+   "text": "gpt-4"
+  },
+  {
+   "count": 365,
+   "text": "gpt-5"
+  },
+  {
+   "count": 329,
+   "text": "gpt-2"
+  },
+  {
+   "count": 329,
+   "text": "gpt-4o"
+  },
+  {
+   "count": 289,
+   "text": "gpt4"
+  },
+  {
+   "count": 224,
+   "text": "gpt3"
+  },
+  {
+   "count": 206,
+   "text": "gpts"
+  },
+  {
+   "count": 113,
+   "text": "gpt-5.6"
+  },
+  {
+   "count": 112,
+   "text": "gpt-3.5"
+  },
+  {
+   "count": 97,
+   "text": "gpt-oss"
+  },
+  {
+   "count": 81,
+   "text": "gpt-5.5"
+  },
+  {
+   "count": 78,
+   "text": "gpt2"
+  },
+  {
+   "count": 65,
+   "text": "gpt-5.2"
+  },
+  {
+   "count": 49,
+   "text": "gpt-powered"
+  },
+  {
+   "count": 49,
+   "text": "gpt-4v"
+  },
+  {
+   "count": 49,
+   "text": "gpt-4.5"
+  },
+  {
+   "count": 43,
+   "text": "gpt-5.4"
+  },
+  {
+   "count": 38,
+   "text": "gpt-j"
+  },
+  {
+   "count": 36,
+   "text": "gpt-5.3"
+  },
+  {
+   "count": 35,
+   "text": "gpt-4.1"
+  },
+  {
+   "count": 34,
+   "text": "gpt3.5"
+  },
+  {
+   "count": 28,
+   "text": "gpt4o"
+  },
+  {
+   "count": 27,
+   "text": "gpt-5.1"
+  },
+  {
+   "count": 22,
+   "text": "gptbot"
+  },
+  {
+   "count": 22,
+   "text": "gpt4all"
+  },
+  {
+   "count": 22,
+   "text": "gpt5"
+  },
+  {
+   "count": 15,
+   "text": "gptzero"
+  }
+ ],
+ "exclusions": [],
+ "label": "ChatGPT and GPT models",
+ "matches": 20601,
+ "near_misses_total": 70,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\b(chatgpt|gpt-?[0-9a-z.]*)\\b",
+ "sample_matches": [
+  "How to build GPT-3 for Science",
+  "ChatGPT use declines as users complain about \u2018dumber\u2019 answers",
+  "ChatGPT can get worse over time, Stanford study finds",
+  "Bored Stiff: A Cranky Historian on ChatGPT",
+  "How can we get enough data to train a robot GPT?",
+  "ChatGPT-empowered, Brain-Gmail interface",
+  "Thoughts About AGI and 1 About GPT-5 \u2013 By Steve Newman",
+  "I asked ChatGPT to explain why SVB stock is crashing",
+  "ChatGPT Banned on Chinese Social Media App WeChat",
+  "ChatGPT: Applications, Opportunities, and Threats",
+  "Show HN: Funny movie quizzes generated with ChatGPT",
+  "OpenAI partners with media giants Vox Media, Atlantic to use content in ChatGPT",
+  "OpenAI is offering ChatGPT Plus to citizens of Malta for a year",
+  "Ask HN: Can GPT improve itself ala AlphaGo Zero?",
+  "Experiences with GPT-5-Codex",
+  "A real example of how GPT-5 behaves in Amp",
+  "Learning a new language with ChatGPT Advanced Voice Mode [video]",
+  "Show HN: Visualize your ChatGPT usage locally",
+  "Show HN: GPT Fine-Tune Formatter",
+  "New ways to manage your data in ChatGPT"
+ ],
+ "sample_near_misses": [
+  "Ask HN: ChatGPT3.5 vs. ChatGPT4.0 to Learn Machine Learning",
+  "Everything Is Chatgptable \u2013 By Alberto Romero",
+  "ChatGPTs rather underwhelming performance on a formal problem",
+  "Dialectic with ChatGPT4: Transcendental Properties of Language > Algorithms",
+  "Ask HN: How did ChatGPT4 blew your mind lately?",
+  "ChatGPT4 writes Stan code so I don\u2019t have to",
+  "ChatGPTip",
+  "Claude Sonnet vs. ChatGPT4o: The Moscow Puzzles",
+  "A guy made ChatGPT4 CEO of his company",
+  "From poem to sonic art: strudel live coding with ChatGPT4 [video]",
+  "Did ChatGPT4 prompt and context limits change in the last 24hrs?",
+  "Why Meta\u2019s Yann LeCun Is an AI GodFather and Why ChatGPT3 Is Not Revolutionary",
+  "Show HN: My Old Game Line Square Dot Reimplement by ChatGPTo1 with Sound",
+  "How to use Pinecone and OpenAI to ChatGPTify your website",
+  "Show HN: I spent 20 minutes using ChatGPT4o to generate an Online Tally Counter",
+  "ChatGPT4 will be able design and create applications",
+  "Show HN: Share2ChatGPT Widgets / Buttons",
+  "Helical Spirals Q&A with ChatGPT4",
+  "ChatGPTian philosophy: will the future Internet be AI Saturated?",
+  "ChatGPT4 and a Reader? .md"
+ ],
+ "schema": 1,
+ "term": "gpt"
+}
