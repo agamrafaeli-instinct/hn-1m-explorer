@@ -5,7 +5,8 @@ Run after finder_select.py (it wrote data/finder/<date>.json) and, for the pick,
 Adds the story block (headline, rows, takeaway, limit) built from the evidence numbers only, writes data/finder/latest.json (one line for the
 home page) and appends the pick to data/finder/shown.json. A rerun on the same date changes nothing. With no pick, latest.json is removed so the home entry hides.
 """
-import json, os, sys, datetime as dt
+import glob, json, os, re, sys, datetime as dt
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
 def pct(v): return ('%.3f' if v < 0.001 else '%.2f' if v < 0.01 else '%.1f') % (v * 100) + '%'
@@ -32,6 +33,26 @@ def story(e):
     limit = 'Title matching only: the word list will miss and mis-match some stories. Archive scores for 2025-26 are low for all stories, so only shares of titles are used.'
     return {'headline': head, 'opening': opening, 'rows': rows, 'takeaway': take, 'limit': limit}
 
+STRONG, WEAK, REFUTE = 1.5, 1.25, 0.8
+
+def next_card_id(root):
+    ids = [int(re.match(r'h(\d+)-', os.path.basename(f)).group(1)) for f in glob.glob(os.path.join(root, 'hypotheses', 'h*-*.json'))]
+    return 'h%d' % (max(ids + [368]) + 1)
+
+def make_card(e, today, root=None):
+    """A card for the scoreboard (#182). The rule is the standard film-card rule on the latest 12 months against all earlier months,
+    with fixed thresholds written here, not tuned to the result. The term was picked because of its numbers, so the card tests the term on the
+    current data. It is not a prediction."""
+    import film
+    root = root or ROOT; film.ROOT = root; cid = next_card_id(root); L = e['label']
+    slug = re.sub(r'[^a-z0-9]+', '-', e['term'].lower()).strip('-') + '-story'
+    expect = ('Share of stories in the latest 12 months divided by the pooled share of all earlier stories since 2006: %gx or more supports (%gx or more is strong); %gx or less refutes. Between is inconclusive. Title matching only.' % (WEAK, STRONG, REFUTE))
+    p = film.make_card(cid, slug, e['term'], '%s: a bigger share than before' % L, '%s titles are a bigger share of stories in the latest 12 months than before.' % L, expect, STRONG, WEAK, REFUTE, 'curious readers', author='story-finder')
+    c = json.load(open(p))
+    c['thresholds_note'] = 'Set on %s by the story finder, before the story text was written. These are the standard film-card thresholds, not tuned to this result. The term was picked because its numbers stood out, so this card tests it on the current data and is not a prediction.' % today
+    json.dump(c, open(p, 'w'), indent=2); open(p, 'a').write('\n')
+    return cid, {'strong': STRONG, 'weak': WEAK, 'refute': REFUTE, 'set_on': today}
+
 def main(today):
     d = os.path.join(ROOT, 'data/finder'); p = os.path.join(d, today + '.json'); lp = os.path.join(d, 'latest.json'); sp = os.path.join(d, 'shown.json')
     if not os.path.exists(p):
@@ -39,7 +60,8 @@ def main(today):
         print('no pick for', today); return
     e = json.load(open(p))
     if 'story' not in e:
-        e['story'] = story(e); e['date'] = today
+        e['card_id'], e['rule'] = make_card(e, today); e['story'] = story(e); e['date'] = today
+        e['story']['tracked'] = 'Tracked on the Tests page as %s. Supported at %gx or more against all earlier months, refuted at %gx or less, set on %s before this text was written. The term was picked because of its numbers, so this tests it on the current data and is not a prediction.' % (e['card_id'], WEAK, REFUTE, today)
         dp = 'data/finder/dictionaries/%s.json' % e['term']; e['dictionary'] = dp if os.path.exists(os.path.join(ROOT, dp)) else None
         json.dump(e, open(p, 'w'), indent=1, sort_keys=True)
     json.dump({'date': today, 'term': e['term'], 'headline': e['story']['headline']}, open(lp, 'w'), indent=1, sort_keys=True)

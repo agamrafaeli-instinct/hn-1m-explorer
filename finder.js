@@ -26,6 +26,7 @@
       var t = ts && ts.topics.filter(function (x) { return x.id === e.term; })[0];
       if (t) { var box = el('div', 'ctx'); box.appendChild(line(t.series, ts.months, st.rows)); box.appendChild(el('p', 'ctx-note', 'Monthly share of story titles for ' + t.label + ', 6-month average, ' + ts.months[0] + ' to ' + ts.months[ts.months.length - 1] + '. The shaded band is the latest window.')); step(root, 'The line', box); }
       step(root, 'Takeaway', el('p', 'take', st.takeaway));
+      if (st.tracked) { var tk = el('p', '', st.tracked + ' '); var ta = el('a', '', 'Open the card'); ta.href = '#/c/' + e.card_id + '/all'; tk.appendChild(ta); step(root, 'On the scoreboard', tk); }
       step(root, 'Keep in mind', el('p', '', st.limit));
       var how = el('p', '', 'Found by the story finder: ' + e.generator.replace('_', '-') + ' on ' + date + '. '); if (e.dictionary) { var a = el('a', '', 'See the word list and sample titles'); a.href = e.dictionary; how.appendChild(a); how.appendChild(document.createTextNode('.')); }
       step(root, 'How it was found', how);

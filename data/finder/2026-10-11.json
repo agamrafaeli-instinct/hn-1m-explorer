@@ -1,7 +1,8 @@
 {
+ "card_id": "h369",
  "caveat": "Title matching only. Archive scores for 2025-26 are low for all stories, so only ratios are used.",
  "date": "2026-10-11",
- "dictionary": null,
+ "dictionary": "data/finder/dictionaries/llm.json",
  "generator": "cross_window",
  "label": "LLM, RAG and fine-tuning",
  "minimum_matches_checked": true,
@@ -9,6 +10,12 @@
  "ratios": {
   "latest_vs_before": 1.1993200602723988,
   "latest_vs_prior": 8.260954673044203
+ },
+ "rule": {
+  "refute": 0.8,
+  "set_on": "2026-10-11",
+  "strong": 1.5,
+  "weak": 1.25
  },
  "schema": 1,
  "source": "data/finder/candidates.json",
@@ -42,7 +49,8 @@
     "total": 289222
    }
   ],
-  "takeaway": "Against all earlier months the share is 8.3x. Against the 12 months just before it is 1.2x."
+  "takeaway": "Against all earlier months the share is 8.3x. Against the 12 months just before it is 1.2x.",
+  "tracked": "Tracked on the Tests page as h369. Supported at 1.25x or more against all earlier months, refuted at 0.8x or less, set on 2026-10-11 before this text was written. The term was picked because of its numbers, so this tests it on the current data and is not a prediction."
  },
  "term": "llm",
  "windows": {
