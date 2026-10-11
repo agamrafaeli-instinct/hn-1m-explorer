@@ -1,5 +1,27 @@
 [
  {
+  "id": "50041619",
+  "title": "Bot traffic from Yandex",
+  "points": 450,
+  "comments": 162,
+  "author": "walrus01",
+  "hn": "https://news.ycombinator.com/item?id=50041619",
+  "url": "https://radar.cloudflare.com/bots/as13238?dateRange=7d",
+  "created_at": "2026-10-11T10:27:53Z",
+  "reported_at": 1791730366
+ },
+ {
+  "id": "50040547",
+  "title": "3rd Yandex Cloud Data Center Was Hit",
+  "points": 345,
+  "comments": 429,
+  "author": "defly",
+  "hn": "https://news.ycombinator.com/item?id=50040547",
+  "url": "https://status.yandex.cloud/en/incidents/2136",
+  "created_at": "2026-10-11T07:34:45Z",
+  "reported_at": 1791730366
+ },
+ {
   "id": "50031614",
   "title": "Talorys \u2013 A self-hosted personal AI agent on Cloudflare's free tier",
   "points": 303,

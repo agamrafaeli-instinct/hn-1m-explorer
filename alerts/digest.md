@@ -1,5 +1,7 @@
-HN digest 2026-10-11 (UTC): 8 new stories at 300+ points
+HN digest 2026-10-11 (UTC): 10 new stories at 300+ points
+- 450 pts, 162 comments: Bot traffic from Yandex https://news.ycombinator.com/item?id=50041619
 - 410 pts, 200 comments: Lobbying is corruption https://news.ycombinator.com/item?id=50032556
+- 345 pts, 429 comments: 3rd Yandex Cloud Data Center Was Hit https://news.ycombinator.com/item?id=50040547
 - 330 pts, 102 comments: A city-building game in which the city would prefer you didn't https://news.ycombinator.com/item?id=50036864
 - 324 pts, 239 comments: Bitwarden Dual License Model https://news.ycombinator.com/item?id=50033407
 - 320 pts, 72 comments: Build your own decision model https://news.ycombinator.com/item?id=50037949
