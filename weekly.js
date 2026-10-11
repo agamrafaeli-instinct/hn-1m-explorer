@@ -27,9 +27,12 @@
     return ul;
   }
   function section(title, cls) { const s = el('section', 'wsec ' + (cls || '')); s.appendChild(el('h3', null, title)); return s; }
+  let curWeek = '';
   function flagRow(r, kind) {
     const li = el('li', 'wf ' + kind);
-    li.appendChild(el('b', null, r.label));
+    const b = el('b'), lk = el('a', 'wexp', r.label);
+    lk.href = '#/explore?week=' + curWeek + '&q=' + encodeURIComponent(r.label); lk.setAttribute('aria-label', r.label + ', open in the explorer');
+    b.appendChild(lk); li.appendChild(b);
     const txt = kind === 'new'
       ? (r.last == null && r.group === 'Sites' ? n(r.this) + ' stories this week, 2 or fewer last week' : n(r.this) + ' this week, none in the 4 weeks before')
       : n(r.this) + ' this week, about ' + n(Math.round(r.expected)) + ' expected from last week';
@@ -107,7 +110,7 @@
       const c = await getJSON('data/compare/' + idx[i].week + '.json');
       const fnd = await getJSON('data/findings/' + idx[i].week + '.json').catch(() => null);
       if (my !== token) return;
-      idx[i].end_exclusive_utc = c.end_exclusive_utc;
+      idx[i].end_exclusive_utc = c.end_exclusive_utc; curWeek = idx[i].week;
       const b = root(), frag = document.createDocumentFragment();
       frag.append(pills(a, idx[i].week), el('h1', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), stepper(idx, i, a));
       if (c.kind === 'backfill') frag.appendChild(el('p', 'wbf', 'This week was rebuilt from the archive after it ended, with the same method and fields as a live save. The newest stories may have had more time to collect points.'));

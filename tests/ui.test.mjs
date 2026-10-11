@@ -76,6 +76,11 @@ for (const a of ['engineers', 'vcs', 'geeks']) await check('week_' + a, '#/w/' +
   if (!d.includes(AUDN[a]) || d.length < 40) return 'description is ' + d;
   return '';
 });
+await check('week to explorer links', '#/w/engineers', q1('#w_body .wsec'), async () => {
+  const v = await ev("JSON.stringify([...document.querySelectorAll('#w_body .wf a.wexp')].slice(0,3).map(a=>a.getAttribute('href')))");
+  const l = JSON.parse(v || '[]');
+  return l.length && l.every(h => /^#\/explore\?week=\d{4}-W\d{2}&q=.+/.test(h)) ? '' : 'flagged items do not link to the explorer: ' + v;
+});
 await check('stepper', '#/w/engineers', q1('#w_body .wsec'), async () => {
   const wk = () => ev("location.hash"), t1 = () => ev("document.querySelector('#w_body .wmid b')?.textContent||''");
   const h0 = await wk(), r0 = await t1();
