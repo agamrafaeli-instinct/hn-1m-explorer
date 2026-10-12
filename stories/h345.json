@@ -2,7 +2,7 @@
  "schema": 1,
  "id": "h345",
  "for_verdict": "refuted",
- "question": "Does the data back this claim: \"Privacy produces more talk per vote\"?",
+ "question": "Does the data back this claim: \"Privacy produces more talk per point\"?",
  "why": "It checks whether this topic takes a different share of all HN stories now than it did across the earlier years.",
  "opening": "In {label_a}, the share was {a}. In {label_b}, it was {b}.",
  "takeaway": "No. The ratio is {ratio}x. The card supports the claim at {support_at}x or more. It refutes the claim at {refute_at}x or less.",

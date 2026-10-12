@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "h343",
-  "title": "Health draws talk relative to votes",
+  "title": "Health draws talk relative to points",
   "author": "film-cards",
   "audience": "curious readers",
   "hypothesis": "Titles matching health average at least 1.25x the comments per point of other stories.",
