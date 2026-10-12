@@ -6,9 +6,10 @@ import {writeFileSync} from 'node:fs';
 const arg=(k,d)=>{const i=process.argv.indexOf('--'+k);return i<0?d:process.argv[i+1]};
 const site=arg('site','http://localhost:8766/'), outFile=arg('out','/tmp/phone_sweep.json');
 const port=9340+Math.floor(Math.random()*50);
-const ch=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--remote-debugging-port='+port,'--user-data-dir=/tmp/ps'+Date.now(),'about:blank'],{stdio:'ignore'});
-await new Promise(r=>setTimeout(r,5000));
-const tabs=await (await fetch('http://127.0.0.1:'+port+'/json')).json();
+const ch=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--remote-debugging-port='+port,'--user-data-dir=/tmp/ps'+Date.now(),'about:blank'],{stdio:['ignore','ignore','inherit']});
+ch.on('error',e=>{console.error('chrome did not start:',e.message);process.exit(2)});
+let tabs;for(let i=0;i<40&&!tabs;i++){await new Promise(r=>setTimeout(r,1000));try{tabs=await (await fetch('http://127.0.0.1:'+port+'/json')).json()}catch{}}
+if(!tabs){console.error('chrome debug port never opened');process.exit(2)}
 const ws=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);
 let id=0;const pend={};ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pend[m.id]){pend[m.id](m.result);delete pend[m.id]}};
 const send=(method,params={})=>new Promise(r=>{const i=++id;pend[i]=r;ws.send(JSON.stringify({id:i,method,params}))});

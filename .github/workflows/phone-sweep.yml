@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '22'
       - name: Run the sweep on the live site
-        run: node scripts/phone_sweep.mjs --site "https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" --out phone_sweep.json | tail -30
+        run: node scripts/phone_sweep.mjs --site "https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" --out phone_sweep.json
       - name: Open, update or close the one issue
         run: |
           url="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
