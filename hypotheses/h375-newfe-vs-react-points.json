@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "h375",
+ "title": "Next.js, Svelte, Vue, htmx and Tailwind stories beat React stories on points",
+ "author": "film-cards",
+ "audience": "engineers",
+ "hypothesis": "A story about Next.js, Svelte, Vue, htmx or Tailwind gets more points than a story about React.",
+ "expect": "If true, points per story about Next.js, Svelte, Vue, htmx or Tailwind should be at least 1.5x the points per React story, over all stories from 2006 to 2026 (1.1x is weak, 0.9x or lower refutes it).",
+ "check": {
+  "source": "data/film_shares.json",
+  "path": "monthly",
+  "label_field": "month",
+  "stat": "pooled_share_ratio",
+  "unit": "x",
+  "field": "newfe_p",
+  "per_label": "points per Next.js/Svelte/Vue/htmx/Tailwind story against points per React story",
+  "display_pct": false,
+  "group_a": {
+   "label": "Next.js, Svelte, Vue, htmx and Tailwind stories ({from} to {to})",
+   "indices": "all",
+   "field": "newfe_p",
+   "per": "newfe_s"
+  },
+  "group_b": {
+   "label": "React stories ({from} to {to})",
+   "indices": "all",
+   "field": "react_p",
+   "per": "react_s"
+  }
+ },
+ "verdicts": [
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.5
+   },
+   "verdict": "supported",
+   "confidence": "strong"
+  },
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.1
+   },
+   "verdict": "supported",
+   "confidence": "weak"
+  },
+  {
+   "when": {
+    "op": "<=",
+    "value": 0.9
+   },
+   "verdict": "refuted",
+   "confidence": "strong"
+  },
+  {
+   "else": true,
+   "verdict": "inconclusive",
+   "confidence": "inconclusive"
+  }
+ ],
+ "thresholds_note": "Thresholds are the ones used on h370, set before this card was run and not tuned to its result. h305 is left unchanged.",
+ "caveats": [
+  "Points are the score each story had when the archive fetched it, so 2025 and 2026 stories may still be gaining points.",
+  "A title that names a framework is not proof the story is about it, and one story can match both lists.",
+  "Both lists are title words only, so stories that never name the framework are missed.",
+  "Vue is in the first list and also appears in many React comparisons, so some stories sit in both."
+ ]
+}

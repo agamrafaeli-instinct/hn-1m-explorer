@@ -1177,6 +1177,22 @@
    "id": "h374",
    "score": 1.0,
    "title": "Microservices and serverless stories now score below the average story"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 90751.0,
+   "id": "h375",
+   "score": 1.0,
+   "title": "Next.js, Svelte, Vue, htmx and Tailwind stories beat React stories on points"
   }
  ],
  "schema": 1,
