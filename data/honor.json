@@ -1209,6 +1209,22 @@
    "id": "h376",
    "score": 1.0,
    "title": "React stories are a smaller part of JavaScript stories than before"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 65669.0,
+   "id": "h377",
+   "score": 1.0,
+   "title": "TypeScript stories earn more points than JavaScript stories"
   }
  ],
  "schema": 1,
