@@ -17,6 +17,8 @@
     row.appendChild(box); return row;
   }
   window.SagaInit = function () {
+    var fm = document.getElementById('sg_find');
+    if (fm && !fm.dataset.on) { fm.dataset.on = '1'; fm.addEventListener('submit', function (e) { e.preventDefault(); var q = document.getElementById('sg_q').value.trim().slice(0, 80); location.hash = '#/explore' + (q ? '?q=' + encodeURIComponent(q) : ''); }); }
     var box = document.getElementById('sg_count'); if (!box || box.dataset.on) return; box.dataset.on = '1';
     Promise.all([fetch('data/saga.json').then(function (r) { if (!r.ok) throw new Error('saga.json ' + r.status); return r.json(); }), needRings()]).then(function (a) {
       D = a[0]; var y = D.years, n = y.length - 1, low = D.low_score_years, f = function (v) { return v.toLocaleString('en-US'); };

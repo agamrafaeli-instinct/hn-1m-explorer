@@ -275,3 +275,5 @@ select{min-height:44px}
 
 .rg_qs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.rg_q{font:inherit;font-size:.9em;padding:8px 12px;border-radius:18px;border:1.5px solid #ff6600;background:#fff;color:#b84700;cursor:pointer}.rg_q.on{background:#ff6600;color:#fff}
 .rg_dim .rg_c:not(.on),.rg_dim .rg_h:not(.on){opacity:.15}.rg_facts p{margin:2px 0;font-size:.85em}.rg_qout{margin-bottom:10px}
+
+.sg_find{margin:0 0 14px}.sg_find label{display:block;font-weight:600;margin-bottom:6px}.sg_find div{display:flex;gap:8px}.sg_find input{flex:1;min-width:0;min-height:44px;padding:0 12px;font:inherit;border:1.5px solid #d9cfc0;border-radius:10px;background:#fff}.sg_find .btn{min-height:44px;border:0;cursor:pointer}
