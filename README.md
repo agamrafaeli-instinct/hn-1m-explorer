@@ -2,11 +2,11 @@
 
 <!-- last-closed -->Last closed task: [#158](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/158) Film cards: Geeks (15 cards replace the rolling cards), Oct 10, 9:07 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
 
-**Everyone has a theory about Hacker News. Bring yours.**
+**HN swears it's about everything. We counted.**
 
-Has the conversation shifted from chatbots to agents? Is Kubernetes losing mindshare? Do strange little side projects get more attention than serious technology?
+Twenty years of posts and votes say it's about something much more specific: one community's taste, repeating itself - the clever hack, the doomed startup autopsy, the obscure paper that suddenly matters again. The front page changes daily. The taste doesn't. And because every vote was recorded, that taste can be read back, year by year, like a tree ring.
 
-Hacker News Explorer turns those questions into something you can inspect: charts, explicit tests, and the stories behind the numbers.
+That's what this site does. Each story takes one question you can't answer from the front page, asks it of the entire archive, and lets the data answer honestly. Not what HN claims to be about. What it has always, demonstrably, been about. The wording is kept in [docs/NARRATIVE.md](docs/NARRATIVE.md).
 
 Explore **every HN story since 2006**, browse **80 hypothesis cards**, or catch up on what changed this week. Built for your phone. Runs in your browser. No account required.
 

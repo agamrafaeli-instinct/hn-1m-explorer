@@ -1,5 +1,8 @@
 # Runbook
 
+This runbook keeps the site that tells one story: HN's taste, read back year by year from the full archive. The wording is in docs/NARRATIVE.md.
+
+
 Who this is for: someone new who has to run the scheduled jobs, deploy the site or recover from a failure. All jobs are GitHub Actions workflows in `.github/workflows/`. Times are UTC.
 
 ## Jobs

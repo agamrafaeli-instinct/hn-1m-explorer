@@ -1,5 +1,8 @@
 # Instructions for coding agents
 
+Narrative: all copy, docs and tickets read from docs/NARRATIVE.md.
+
+
 This repo runs on the Flywheel. Read [docs/FLYWHEEL.md](docs/FLYWHEEL.md) first and write issues and comments as in [docs/ISSUES_STYLE.md](docs/ISSUES_STYLE.md).
 
 1. **Work only from the board.** Pick a card in the Ready column of https://github.com/users/agamrafaeli-instinct/projects/1. Ready means go. Do not start items in Grooming, Defined or Needs decision.

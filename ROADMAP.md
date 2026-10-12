@@ -1,10 +1,14 @@
 # Roadmap
 
-Last updated: 2026-10-09. Board: https://github.com/users/agamrafaeli-instinct/projects/1 (public).
+Last updated: 2026-10-12. Board: https://github.com/users/agamrafaeli-instinct/projects/1 (public).
 
 ## Vision
 
-People come back about once a week to see how current AI trends are changing the Hacker News conversation, each from their own audience's perch (engineers, deep-tech investors, curious readers). The site should always answer one question: what is going on on HN, and how has it changed over time?
+HN swears it's about everything. We counted. Twenty years of posts and votes say it's about something much more specific: one community's taste, repeating itself - the clever hack, the doomed startup autopsy, the obscure paper that suddenly matters again. The front page changes daily. The taste doesn't. And because every vote was recorded, that taste can be read back, year by year, like a tree ring.
+
+That's what this site does. Each story takes one question you can't answer from the front page, asks it of the entire archive, and lets the data answer honestly. Not what HN claims to be about. What it has always, demonstrably, been about.
+
+See docs/NARRATIVE.md. Every epic is judged by one test: does it make a story sharper, truer or easier to read as part of this one?
 
 ## How we track work
 
