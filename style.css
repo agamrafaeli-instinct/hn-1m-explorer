@@ -243,3 +243,5 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 .lens_wk li a,.lens_top li a{display:inline-flex;align-items:center;min-height:44px}
 .wf .wlens,.wf .wexp{min-width:44px;justify-content:center}.wlist a{min-width:44px}
 select{min-height:44px}
+.wtrack .wfl li{display:flex;flex-direction:column;gap:2px;padding:6px 0}
+.wtrack .wfl li .wv{font-size:.92em;color:#5a5048}

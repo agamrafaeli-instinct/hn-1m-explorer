@@ -92,6 +92,15 @@
     d.lists.forEach(l => { if (!l.items.length) return; const s = section(l.title); s.appendChild(storyList(l.items)); if (l.note) s.appendChild(el('p', 'wn', l.note)); frag.appendChild(s); });
     return frag;
   }
+  function tracked(c) {
+    const t = c.tracked_domains; if (!t) return null;
+    const rows = t.rose.map(r => ['rose', r]).concat(t.fell.map(r => ['fell', r])).sort((x, y) => Math.abs(y[1].diff) - Math.abs(x[1].diff)).slice(0, 10);
+    const s = section('Tracked domains', 'wtrack');
+    if (!rows.length) { s.appendChild(el('p', 'wn', 'No tracked domain moved more than usual this week.')); }
+    else { const ul = el('ul', 'wfl'); rows.forEach(([k, r]) => { const li = el('li', k); li.appendChild(el('b', null, r.label)); li.appendChild(el('span', 'wv', (k === 'rose' ? 'Up: ' : 'Down: ') + n(r.this) + ' stories, last week ' + n(r.last))); ul.appendChild(li); }); s.appendChild(ul); }
+    s.appendChild(el('p', 'wn', 'Watching the top ' + n(t.in_list) + ' domains by points over the full archive. Only the biggest moves show, at most 10. Names and terms in the sections above use a starter list. Domain list version ' + t.version + '. Archive scores for recent years are low, so this compares story counts, not points.'));
+    return s;
+  }
   function shareBtn(a, week) {
     const sh = el('button', 'share-btn', 'Share this week'); sh.type = 'button'; sh.setAttribute('aria-label', 'Share this week');
     const url = new URL('share/w/' + a + '/' + week + '.html', location.href.split('#')[0]).href, title = A[a].name + ': week ' + week + ' (Hacker News)';
@@ -131,7 +140,7 @@
       const b = root(), frag = document.createDocumentFragment();
       frag.append(pills(a, idx[i].week), el('h1', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), shareBtn(a, idx[i].week), stepper(idx, i, a));
       if (c.kind === 'backfill') frag.appendChild(el('p', 'wbf', 'This week was rebuilt from the archive after it ended, with the same method and fields as a live save. The newest stories may have had more time to collect points.'));
-      frag.append(findingsSection(fnd, a), changes(c, a), shares(c, a), extra(c, a));
+      frag.append(findingsSection(fnd, a), changes(c, a), shares(c, a), tracked(c) || document.createDocumentFragment(), extra(c, a));
       const top = section('Top stories of the week'); top.appendChild(storyList(c.top_stories)); frag.appendChild(top);
       const foot = el('p', 'wn wfoot', 'Hacker News talking, not a measure of what is true. Counts use stories only. Dead and deleted stories keep no title, so title-based shares divide by live stories. The dead or deleted share divides by all stories. '); const l = el('a', null, 'How it is computed'); l.href = SPEC; l.target = '_blank'; l.rel = 'noopener noreferrer'; foot.appendChild(l);
       if (c.list_version) { const lv = 'Word lists: version ' + c.list_version + (idx[i].saved_at ? ', saved ' + String(idx[i].saved_at).slice(0, 10) : '') + '.'; foot.appendChild(el('span', 'wlv', ' ' + lv)); }
