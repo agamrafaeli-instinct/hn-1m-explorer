@@ -1,0 +1,44 @@
+name: Phone sweep
+# Nightly check of every screen at 320, 390 and 430 px on the live site (#245). Report only: it opens or updates one issue
+# labelled phone-sweep, opens none when there are no findings, and is a separate workflow so it can never block a deploy.
+on:
+  schedule:
+    - cron: '17 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+env:
+  GH_TOKEN: ${{ github.token }}
+  REPO: ${{ github.repository }}
+concurrency:
+  group: phone-sweep
+  cancel-in-progress: false
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run the sweep on the live site
+        run: node scripts/phone_sweep.mjs --site "https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" --out phone_sweep.json | tail -30
+      - name: Open, update or close the one issue
+        run: |
+          url="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
+          python3 scripts/phone_sweep_report.py phone_sweep.json "$url" > report.json
+          count=$(jq -r .count report.json)
+          jq -r .body report.json > body.md
+          gh label create phone-sweep --color 0E8A16 --description 'Nightly phone layout findings' 2>/dev/null || true
+          num=$(gh issue list --repo "$REPO" --label phone-sweep --state open --json number -q '.[0].number // empty')
+          if [ "$count" = 0 ]; then
+            if [ -n "$num" ]; then gh issue close "$num" --repo "$REPO" --comment "Nightly sweep found 0 findings. Closing. $url"; fi
+          elif [ -n "$num" ]; then
+            gh issue edit "$num" --repo "$REPO" --body-file body.md
+          else
+            gh issue create --repo "$REPO" --label phone-sweep --title "Phone sweep: $count screen-widths with a finding" --body-file body.md
+          fi

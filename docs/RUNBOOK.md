@@ -101,3 +101,6 @@ When a run fails (the issue already names the failing step, the last 30 log line
 
 ## Look at a page at phone width (#244)
 `scripts/look.sh '#/rings' [out.png] [js]` stages the site fresh, serves it on port 8766, takes a 390 px screenshot and prints the png path (default /tmp/look.png). The optional third argument is JavaScript to run after load, for example `document.querySelector('#sg9').scrollIntoView()`. View the file with `tools read --file-path`.
+
+## Nightly phone sweep (#245)
+`.github/workflows/phone-sweep.yml` runs `scripts/phone_sweep.mjs` against the live site every night (21:17 UTC) and can be started by hand. `scripts/phone_sweep_report.py` builds the issue text. One open issue labelled `phone-sweep` is edited each night; if a night has 0 findings the issue is closed and none is opened. It is a separate workflow, so it never blocks a deploy.
