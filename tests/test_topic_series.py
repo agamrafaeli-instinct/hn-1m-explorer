@@ -1,8 +1,10 @@
-import json, os, unittest
+import json, os, sys, unittest
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from fixture_root import FIX
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 class TopicSeries(unittest.TestCase):
     def test_rows(self):
-        d = json.load(open(os.path.join(R, 'data/topic_series.json')))
+        d = json.load(open(FIX / 'data/topic_series.json'))
         ok = {'Emergence', 'Reversal', 'Peak decay', 'Composition shift', 'Steady'}
         self.assertTrue(d['topics'])
         self.assertEqual(len({t['id'] for t in d['topics']}), len(d['topics']), 'topic ids must be unique')

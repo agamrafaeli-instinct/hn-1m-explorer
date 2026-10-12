@@ -10,7 +10,7 @@ Pattern rules, in this order (documented on the Method page):
   Steady            everything else.
 """
 import json, os
-R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+R = os.environ.get('HN_ROOT') or os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')  # HN_ROOT: test fixture (#248)
 fs = json.load(open(os.path.join(R, 'data/film_shares.json')))
 M = fs['monthly']; months = [m['month'] for m in M]
 def share(rows, k): 

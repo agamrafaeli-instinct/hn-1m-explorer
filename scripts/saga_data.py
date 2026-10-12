@@ -3,9 +3,10 @@
 A month is low-score when its points per story fall under 4 (from 2010 on). A year is flagged when half or more of its months are low,
 so the chart can show those years as hollow bars instead of comparing them. Run from the repo root."""
 import csv, json
+import os
 from pathlib import Path
 from collections import defaultdict
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(os.environ.get('HN_ROOT') or Path(__file__).resolve().parent.parent)  # HN_ROOT: test fixture (#248)
 
 def build(root=ROOT):
     mon = defaultdict(lambda: [0, 0])

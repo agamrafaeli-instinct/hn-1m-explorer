@@ -3,9 +3,10 @@
 Sources: data/film_shares.json (monthly theme counts), data/atlas/tops-YYYY.json (monthly top domains), data/atlas/months.json (items by type).
 Neutral on purpose: it only reports the numbers. Run from the repo root."""
 import json, sys
+import os
 from pathlib import Path
 from collections import defaultdict
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(os.environ.get('HN_ROOT') or Path(__file__).resolve().parent.parent)  # HN_ROOT: test fixture (#248)
 THEMES = [('python', 'Python'), ('react', 'React'), ('rust', 'Rust'), ('kubernetes', 'Kubernetes'), ('llm', 'LLMs'),
           ('vcgpu', 'GPUs'), ('cu_space', 'Space'), ('cu_games', 'Games'), ('cu_privacy', 'Privacy'),
           ('cu_health', 'Health'), ('gk_history', 'History'), ('gk_science', 'Science')]

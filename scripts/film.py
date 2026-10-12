@@ -12,7 +12,7 @@ Stories only (comments carry no score and no title). Dead and deleted stories ar
 stories only. Archive scores for 2025-26 stories are low for all stories, so cards use ratios, never raw score levels.
 """
 import glob, json, os, re, sys, datetime as dt
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+ROOT = os.environ.get('HN_ROOT') or os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')  # HN_ROOT points the data scripts at a test fixture (#248)
 # term id -> (label, regex on the lower-cased title). Add terms here; every card names one id.
 TERMS = {
  'react': ('React', r'\breact(\.js|js)?\b'),
