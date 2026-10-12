@@ -4,7 +4,7 @@
 
 **HN swears it's about everything. We counted.**
 
-Twenty years of posts and votes say it's about something much more specific: one community's taste, repeating itself - the clever hack, the doomed startup autopsy, the obscure paper that suddenly matters again. The front page changes daily. The taste doesn't. And because every vote was recorded, that taste can be read back, year by year, like a tree ring.
+Twenty years of posts and points say it's about something much more specific: one community's taste, repeating itself - the clever hack, the doomed startup autopsy, the obscure paper that suddenly matters again. The front page changes daily. The taste doesn't. And because every story's points were recorded, that taste can be read back, year by year, like a tree ring.
 
 That's what this site does. Each story takes one question you can't answer from the front page, asks it of the entire archive, and lets the data answer honestly. Not what HN claims to be about. What it has always, demonstrably, been about. The wording is kept in [docs/NARRATIVE.md](docs/NARRATIVE.md).
 
