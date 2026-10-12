@@ -1,0 +1,17 @@
+const Z = require('../yearzoom.js'), assert = require('assert');
+const min = 2006, max = 2026;
+assert.deepStrictEqual(Z.parse('', min, max), { from: 2006, to: 2026, all: true });
+assert.deepStrictEqual(Z.parse('all', min, max), { from: 2006, to: 2026, all: true });
+assert.deepStrictEqual(Z.parse('2018-2022', min, max), { from: 2018, to: 2022, all: false });
+assert.deepStrictEqual(Z.parse('2020', min, max), { from: 2020, to: 2020, all: false });
+assert.deepStrictEqual(Z.parse('2000-2010', min, max), { from: 2006, to: 2010, all: false });
+assert.deepStrictEqual(Z.parse('2006-2026', min, max), { from: 2006, to: 2026, all: true });
+for (const bad of ['abc', '2022-2018', '1999', '2030', '2018-', '20x0', '2018-2022-2024', null]) assert.strictEqual(Z.parse(bad, min, max).all, true, 'bad input ' + bad);
+assert.strictEqual(Z.fromHash('#/story?years=2018-2022', min, max).from, 2018);
+assert.strictEqual(Z.fromHash('#/story', min, max).all, true);
+assert.strictEqual(Z.withHash('#/story', { from: 2018, to: 2022, all: false }), '#/story?years=2018-2022');
+assert.strictEqual(Z.withHash('#/story?years=2018-2022&x=1', { from: 2006, to: 2026, all: true }), '#/story?x=1');
+assert.strictEqual(Z.withHash('#/story?years=2018-2022', { from: 2020, to: 2020, all: false }), '#/story?years=2020');
+assert.strictEqual(Z.label({ from: 2006, to: 2026, all: true }, min, max), 'All years, 2006 to 2026');
+assert.deepStrictEqual(Z.pick(['2017-12', '2018-01', '2022-12', '2023-01'], { from: 2018, to: 2022 }), [1, 2]);
+console.log('ok year zoom range parsing and url form');
