@@ -81,13 +81,17 @@ await check('week to explorer links', '#/w/engineers', q1('#w_body .wsec'), asyn
   const l = JSON.parse(v || '[]');
   return l.length && l.every(h => /^#\/explore\?week=\d{4}-W\d{2}&q=.+/.test(h)) ? '' : 'flagged items do not link to the explorer: ' + v;
 });
+// One list item per saved week, so the count follows data/weekly/index.json instead of a fixed number.
+const weeksSaved = async () => Number((await send('Runtime.evaluate', { expression: "fetch('data/weekly/index.json').then(r => r.json()).then(j => j.weeks.length)", awaitPromise: true, returnByValue: true })).result.value);
 await check('lens page', '#/l/github.com', q1('#lens_body .lens_h'), async () => {
   const v = await ev("JSON.stringify([document.querySelector('#lens_body .lens_h')?.textContent, document.querySelectorAll('#lens_body .lens_wk li').length, !!document.querySelector('#lens_body svg[aria-label]')])");
-  return v === JSON.stringify(['github.com', 10, true]) ? '' : 'lens page not as expected: ' + v;
+  const n = await weeksSaved();
+  return v === JSON.stringify(['github.com', n, true]) ? '' : 'lens page not as expected: ' + v;
 });
 await check('lens name page', '#/l/n/Nvidia', q1('#lens_body .lens_h'), async () => {
   const v = await ev("JSON.stringify([document.querySelector('#lens_body .lens_h')?.textContent, document.querySelectorAll('#lens_body .lens_wk li').length])");
-  return v === JSON.stringify(['Nvidia', 10]) ? '' : 'lens name page not as expected: ' + v;
+  const n = await weeksSaved();
+  return v === JSON.stringify(['Nvidia', n]) ? '' : 'lens name page not as expected: ' + v;
 });
 await check('lens bad address', '#/l/bad!id', q1('#lens_body'), async () => {
   if (!await wait("/No page for this one/.test(document.getElementById('lens_body').textContent)", 5000)) return 'a missing lens page did not say so';
