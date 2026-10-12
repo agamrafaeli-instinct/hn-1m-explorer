@@ -140,7 +140,7 @@ Each failure prints the card, the rule and a fix. Common ones:
 
 ## After you open the PR
 
-A check runs on the PR. When it fails, the check's Summary page lists each card with the problem and what to change, in plain words. It fails if the card is malformed, has no refuting rule, points at data that does not exist, or touches other files. A maintainer reviews, then merges.
+A check runs on the PR. When it fails, the check's Summary page lists each card with the problem and what to change, in plain words. It fails if the card is malformed, has no refuting rule, points at data that does not exist, or touches other files. A maintainer reviews with [docs/REVIEW_CARD_PR.md](docs/REVIEW_CARD_PR.md), then merges.
 
 After a merge to `main`, the card is published as a finding on the next deploy. The verdict is computed from the data, not typed by anyone. Failed hypotheses are shown too; that is the point.
 
