@@ -1,5 +1,6 @@
-HN digest 2026-10-12 (UTC): 17 new stories at 300+ points
+HN digest 2026-10-12 (UTC): 19 new stories at 300+ points
 - 450 pts, 162 comments: Bot traffic from Yandex https://news.ycombinator.com/item?id=50041619
+- 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
 - 346 pts, 147 comments: Total Annihilation, rebuilt for modern computers https://news.ycombinator.com/item?id=50045984
 - 345 pts, 429 comments: 3rd Yandex Cloud Data Center Was Hit https://news.ycombinator.com/item?id=50040547
 - 344 pts, 131 comments: LineageOS 24.0 https://news.ycombinator.com/item?id=50040276
@@ -11,8 +12,9 @@ HN digest 2026-10-12 (UTC): 17 new stories at 300+ points
 - 320 pts, 72 comments: Build your own decision model https://news.ycombinator.com/item?id=50037949
 - 318 pts, 142 comments: I'm sorry, but you still have to think https://news.ycombinator.com/item?id=50043689
 - 316 pts, 154 comments: Nitter: Update Oct 10th seeking funding and legal help https://news.ycombinator.com/item?id=50041682
-- 316 pts, 46 comments: The Lightbulb Computer https://news.ycombinator.com/item?id=50029487
 - 314 pts, 167 comments: I paid people to try and follow my README https://news.ycombinator.com/item?id=50042219
 - 310 pts, 366 comments: Terence Tao: Math 2.0 [pdf] https://news.ycombinator.com/item?id=50043026
+- 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055
 - 305 pts, 148 comments: Documents Add to Evidence in Climate Deception Case Against ExxonMobil https://news.ycombinator.com/item?id=50043682
 - 303 pts, 137 comments: Talorys – A self-hosted personal AI agent on Cloudflare's free tier https://news.ycombinator.com/item?id=50031614
+- 300 pts, 47 comments: 'Wallace and Gromit,' 90% Alone https://news.ycombinator.com/item?id=50020533
