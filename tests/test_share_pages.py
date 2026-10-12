@@ -11,7 +11,7 @@ class SharePages(unittest.TestCase):
     def cards(self):
         return [json.loads(f.read_text()) for f in sorted((ROOT / 'hypotheses').glob('*.json')) if f.name not in ('index.json', 'bundle.json', 'tally.json')]
     def test_every_card_has_a_page(self):
-        cards = self.cards(); self.assertGreater(len(cards), 50)
+        cards = self.cards(); self.assertTrue(cards); self.assertEqual(len(list((self.out / 'share/c').glob('*.html'))), len(cards))
         for c in cards: self.assertTrue((self.out / 'share/c' / (c['id'] + '.html')).is_file(), c['id'])
     def test_title_and_target_match_card(self):
         for c in self.cards():

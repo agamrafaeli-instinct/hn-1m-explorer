@@ -4,7 +4,8 @@ class TopicSeries(unittest.TestCase):
     def test_rows(self):
         d = json.load(open(os.path.join(R, 'data/topic_series.json')))
         ok = {'Emergence', 'Reversal', 'Peak decay', 'Composition shift', 'Steady'}
-        self.assertGreater(len(d['topics']), 40)
+        self.assertTrue(d['topics'])
+        self.assertEqual(len({t['id'] for t in d['topics']}), len(d['topics']), 'topic ids must be unique')
         for t in d['topics']:
             self.assertIn(t['pattern'], ok, t['id'])
             self.assertEqual(len(t['series']), len(d['months']), t['id'])

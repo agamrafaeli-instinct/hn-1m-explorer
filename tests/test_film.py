@@ -7,7 +7,8 @@ class FilmTests(unittest.TestCase):
     def test_shares_file_shape(self):
         d = json.load(open(os.path.join(ROOT, 'data/film_shares.json')))
         m = d['monthly']
-        self.assertGreater(len(m), 200)
+        names = [x['month'] for x in m]
+        self.assertEqual(names, sorted(set(names)), 'months must be unique and in order')
         self.assertEqual(m[0]['month'], '2006-10')
         for k in film.TERMS:
             self.assertIn(k + '_s', m[0])

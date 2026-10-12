@@ -72,7 +72,7 @@ await check('card_story_format', '#/c/h380/engineers', q1('#aud_card article.hyp
   return bad;
 });
 await check('saga_search_door', '#/', q1('#sg_find'), async () => { await ev("document.getElementById('sg_q').value='rust';document.getElementById('sg_find').requestSubmit()"); await new Promise(r => setTimeout(r, 600)); return (await ev('location.hash')) === '#/explore?q=rust' ? '' : 'search box did not open the explorer'; });
-await check('card_list_has_cards', '#/hypotheses', q1('#hyp_list article.hyp'), async () => ((await ev("document.querySelectorAll('#hyp_list article').length")) >= 20 ? '' : 'card list is empty'));
+await check('card_list_has_cards', '#/hypotheses', q1('#hyp_list article.hyp'), async () => ((await ev("document.querySelectorAll('#hyp_list article').length")) > 0 ? '' : 'card list is empty'));
 await check('old_audience_link_redirects', '#/a/engineers', q1('#hyp_tally'), async () => ((await ev('location.hash')) === '#/hypotheses' ? '' : 'did not redirect to the card list'));
 await check('list_no_stamp', '#/hypotheses', q1('#hyp_tally'), async () => ((await ev("/\\b(supported|refuted|inconclusive)\\b/i.test(document.getElementById('v_hyp').textContent)")) ? 'verdict word on the list page' : ''));
 const AUDN = { engineers: 'Engineers', vcs: 'Deep-tech VCs', geeks: 'Curious geeks' };

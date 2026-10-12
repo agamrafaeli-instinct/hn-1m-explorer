@@ -58,6 +58,7 @@ class Flips(unittest.TestCase):
         self.assertIn('changed from supported to refuted on 2026-10-02', r['flips'][0]['text'])
     def test_real_data_has_no_flip_lines_without_flips(self):
         log = fd.load_log(os.path.join(ROOT, 'data/verdicts/log.csv'))
-        for ln in fd.draft_week('2026-W40', json.load(open(os.path.join(ROOT, 'data/compare/2026-W40.json'))), log)['flips']:
+        newest = json.load(open(sorted(glob.glob(os.path.join(ROOT, 'data/compare/*-W*.json')))[-1]))
+        for ln in fd.draft_week(newest['week'], newest, log)['flips']:
             self.assertIn(ln['key'], {r['card_id'] for r in log})
 if __name__ == '__main__': unittest.main()
