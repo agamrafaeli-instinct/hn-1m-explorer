@@ -1,23 +1,10 @@
 (function () {
   'use strict';
   // Full history on the Explorer page (#119). Reads only data/atlas (docs/ARCHITECTURE_ATLAS.md, slice 7a): months.json first, then one terms file or one tops file when asked.
-  var jc = {}, M, COLOR = '#b84700';
+  var jc = {}, M, rng = { from: 0, to: 9999, all: true }, onZoom = [], ZL = '';
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
-  function S(t, a) { var e = document.createElementNS('http://www.w3.org/2000/svg', t); for (var k in a) e.setAttribute(k, a[k]); return e; }
   function get(u) { return jc[u] || (jc[u] = fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })); }
-  function fmt(n) { return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e4 ? 0 : 1) + 'k' : String(n); }
-  function chart(rows, label, unit) {
-    var W = 320, H = 150, pl = 8, pr = 46, pt = 10, pb = 22, n = rows.length;
-    var mx = Math.max.apply(null, rows.map(function (r) { return r[1]; }).concat([1]));
-    var X = function (i) { return pl + (W - pl - pr) * (n > 1 ? i / (n - 1) : 0); }, Y = function (v) { return pt + (H - pt - pb) * (1 - v / mx); };
-    var s = S('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'lens_svg', role: 'img', 'aria-label': label + ', ' + unit + ', ' + rows[0][0] + ' to ' + rows[n - 1][0] + ', latest ' + rows[n - 1][1] });
-    s.appendChild(S('path', { d: rows.map(function (r, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(r[1]).toFixed(1); }).join(''), fill: 'none', stroke: COLOR, 'stroke-width': 2, 'stroke-linejoin': 'round' }));
-    var t = S('text', { x: X(n - 1) + 5, y: Y(rows[n - 1][1]) + 4, class: 'lens_lab', fill: COLOR, 'font-weight': 700 }); t.textContent = fmt(rows[n - 1][1]); s.appendChild(t);
-    var pk = S('text', { x: pl, y: pt + 8, class: 'lens_lab' }); pk.textContent = 'top ' + fmt(mx); s.appendChild(pk);
-    [[0, 'start', rows[0][0]], [n - 1, 'end', rows[n - 1][0]]].forEach(function (p) { var q = S('text', { x: p[1] === 'start' ? pl : W - pr + 8, y: H - 4, 'text-anchor': p[1] === 'start' ? 'start' : 'end', class: 'lens_lab' }); q.textContent = p[2]; s.appendChild(q); });
-    return s;
-  }
-  function counted() { return M.months.filter(function (m) { return m.stories || m.comments; }); }
+  function counted() { return M.months.filter(function (m) { var y = +m.month.slice(0, 4); return (m.stories || m.comments) && y >= rng.from && y <= rng.to; }); }
   function series(key) { return counted().map(function (m) { return [m.month, m[key] || 0]; }); }
   function termBlock(root) {
     var f = el('form', 'hist_f'), i = el('input'), b = el('button', 'cta', 'Show'), out = el('div');
@@ -29,11 +16,17 @@
       get('data/atlas/terms-' + k + '.json').then(function (d) {
         var t = d.terms[w]; out.replaceChildren();
         if (!t) { out.appendChild(el('p', 'wn', '"' + w + '" is not one of the 20,000 most used title words in the archive, so it has no series here.')); return; }
-        out.appendChild(el('p', 'wsh', 'Stories a month with "' + w + '" in the title'));
-        out.appendChild(chart(counted().map(function (m) { return [m.month, t[m.month] || 0]; }), w, 'stories per month'));
+        function draw() {
+          out.replaceChildren();
+          var rows = counted().map(function (m) { return [m.month, t[m.month] || 0]; });
+          out.appendChild(el('p', 'wsh', 'Stories a month with "' + w + '" in the title, ' + ZL));
+          if (rows.length) out.appendChild(YearZoom.chart(rows, w, 'stories per month')); else out.appendChild(el('p', 'wn', 'No data for these years.'));
+        }
+        draw(); onZoom.length = 0; onZoom.push(draw);
       }).catch(function () { out.textContent = 'Could not load this word. Try again.'; });
     };
   }
+  function load(src, ok) { if (window.YearZoom) return ok(); var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
   function rowBlock(root) {
     var box = el('div'); root.appendChild(el('h3', 'fk', 'Find stories, all years')); root.appendChild(el('p', 'wsh', 'Title words, domain, score and dates, over every year of stories. The search engine loads only when you search.'));
     root.appendChild(box);
@@ -60,10 +53,22 @@
     root.replaceChildren(el('div', 'skel wsk'));
     get('data/atlas/months.json').then(function (d) {
       M = d; root.replaceChildren();
-      root.appendChild(el('p', 'wsh', 'Stories a month, ' + counted()[0].month + ' to ' + counted().slice(-1)[0].month));
-      root.appendChild(chart(series('stories'), 'Stories', 'stories per month'));
-      root.appendChild(el('p', 'wsh', 'Comments a month'));
-      root.appendChild(chart(series('comments'), 'Comments', 'comments per month'));
+      var zbox = el('div'), cbox = el('div'); root.appendChild(zbox); root.appendChild(cbox);
+      var ys = M.months.filter(function (m) { return m.stories || m.comments; }).map(function (m) { return +m.month.slice(0, 4); });
+      load('yearzoom.js', function () {
+        var Z = YearZoom.mount(zbox, { min: ys[0], max: ys[ys.length - 1] });
+        Z.on(function (r) {
+          rng = r; ZL = Z.label(); var c = counted();
+          cbox.replaceChildren();
+          if (!c.length) { cbox.appendChild(el('p', 'wn', 'No data for these years.')); } else {
+            cbox.appendChild(el('p', 'wsh', 'Stories a month, ' + ZL));
+            cbox.appendChild(YearZoom.chart(series('stories'), 'Stories', 'stories per month'));
+            cbox.appendChild(el('p', 'wsh', 'Comments a month, ' + ZL));
+            cbox.appendChild(YearZoom.chart(series('comments'), 'Comments', 'comments per month'));
+          }
+          onZoom.forEach(function (f) { f(); });
+        });
+      });
       termBlock(root); monthBlock(root); rowBlock(root);
       root.appendChild(el('p', 'wn wfoot', 'From the archive in data/archive and the daily counts in data/history. ' + M.note));
     }).catch(function () { root.textContent = 'Could not load the history files.'; });
