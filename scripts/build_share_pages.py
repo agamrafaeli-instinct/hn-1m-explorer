@@ -62,7 +62,7 @@ def week_audience_pages(site):
     d = site / 'share' / 'a'; d.mkdir(parents=True, exist_ok=True)
     for a, (name, tag, _, _) in AUD.items():
         (d / (a + '.html')).write_text(page(name + ': hypotheses tested on Hacker News | ' + SITE,
-            'Hypothesis cards for ' + tag + ', each tested on the Hacker News archive with its verdict shown.', '../../#/a/' + a)); n += 1
+            'Hypothesis cards for ' + tag + ', each tested on the Hacker News archive.', '../../#/a/' + a)); n += 1
     return n
 
 if __name__ == '__main__':

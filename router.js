@@ -15,8 +15,8 @@
     const h = document.createElement('h3'); h.textContent = 'Go deeper'; box.appendChild(h);
     if (AUD[key].note) { const n = document.createElement('p'); n.className = 'caveat-note'; n.textContent = AUD[key].note; box.appendChild(n); }
     list.forEach(x => { const l = document.createElement('a'); l.href = '#/c/' + x.name.split('-')[0] + '/' + key; l.className = 'deep';
-      const t = document.createElement('b'); t.textContent = x.title; const v = document.createElement('span'); v.textContent = x.verdict === 'inconclusive' ? 'Inconclusive' : (x.verdict[0].toUpperCase() + x.verdict.slice(1) + ' \u00b7 ' + x.confidence);
-      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } v.className = 'vd ' + x.verdict; l.append(t, v); box.appendChild(l); });
+      const t = document.createElement('b'); t.textContent = x.title;
+      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } l.append(t); box.appendChild(l); });
   }
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
@@ -46,8 +46,7 @@
       const list = (await HypCards.tally()).filter(x => !x.error);
       document.querySelectorAll('.pick em').forEach(e => {
         const t = e.dataset.aud, rows = t === '*' ? list.filter(x => !x.audience) : list.filter(x => x.audience === t);
-        const sup = rows.filter(x => x.verdict === 'supported').length, ref = rows.filter(x => x.verdict === 'refuted').length;
-        e.textContent = rows.length + ' tested \u00b7 ' + sup + ' supported \u00b7 ' + ref + ' refuted';
+        e.textContent = rows.length + ' cards';
       });
     } catch (e) { }
   }

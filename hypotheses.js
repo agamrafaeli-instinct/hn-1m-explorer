@@ -323,7 +323,7 @@
       slots.forEach((s, i) => io ? io.observe(s) : fill(s, bl[i]));
       const t = await tally(), c = { supported: 0, refuted: 0, inconclusive: 0 };
       t.filter(x => !x.error).forEach(x => { c[x.verdict]++; });
-      const tl = document.getElementById('hyp_tally'); if (tl) tl.textContent = c.supported + ' supported, ' + c.refuted + ' refuted, ' + c.inconclusive + ' inconclusive';
+      const tl = document.getElementById('hyp_tally'); if (tl) tl.textContent = t.filter(x => !x.error).length + ' cards';
     } catch (e) { host.textContent = 'Could not load hypotheses: ' + e.message; }
   }
 })();
