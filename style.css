@@ -245,3 +245,11 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 select{min-height:44px}
 .wtrack .wfl li{display:flex;flex-direction:column;gap:2px;padding:6px 0}
 .wtrack .wfl li .wv{font-size:.92em;color:#5a5048}
+/* Rings view (#274) */
+.rg_sec{margin:18px 0}.rg_sec h3{margin:0 0 4px}.rg_note{color:#5a5048;font-size:.92em;margin:0 0 8px}
+.rg_row{display:flex;align-items:center;gap:2px;margin-bottom:2px}.rg_y{width:38px;flex:none;font-size:.82em;color:#5a5048}
+.rg_c{flex:1 1 0;min-width:0;height:20px;border-radius:2px;background:#f0ebe3}
+.rg_head{align-items:flex-end}.rg_h{flex:1 1 0;min-width:0;height:74px;position:relative}
+.rg_h b{position:absolute;left:50%;bottom:2px;transform-origin:left bottom;transform:rotate(-70deg);white-space:nowrap;font-size:.72em;font-weight:600}
+.rg_dr{margin:0 0 4px;font-size:.92em}.rg_dr b{display:inline-block;width:44px}
+.rg_tr{display:grid;grid-template-columns:44px 1fr 1fr 1.2fr;gap:4px;font-size:.88em;padding:2px 0;border-bottom:1px solid #eee6da}.rg_th{font-weight:600;font-size:.8em}

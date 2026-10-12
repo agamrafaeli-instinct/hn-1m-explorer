@@ -7,8 +7,8 @@
     vcs: { name: 'Deep-tech VCs', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
     geeks: { name: 'Curious geeks', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
-  const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens'];
-  const tabOf = { topics: 'home', today: 'home', lens: '', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens', 'rings'];
+  const tabOf = { topics: 'home', today: 'home', lens: '', rings: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
   function deeper(list, key) {
     const box = $('aud_deeper'); box.replaceChildren();
     if (!list.length) return;
@@ -72,12 +72,13 @@
   function route() {
     const p = (location.hash || '#/').replace(/^#\/?/, '').split('?')[0].split('/');
     let v = 'compare';
-    if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'hypotheses') v = 'hyp';
+    if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'hypotheses') v = 'hyp';
     if (v !== 'week') { document.title = BASE_TITLE; if (META) META.content = BASE_DESC; }
     views.forEach(n => $('v_' + n).hidden = n !== v);
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();
     if (v === 'compare') window.CompareInit && window.CompareInit();
+    if (v === 'rings') { const go = () => window.RingsInit(); if (window.RingsInit) go(); else { const sc = document.createElement('script'); sc.src = 'rings.js'; sc.onload = go; document.head.appendChild(sc); } }
     if (v === 'how') window.HowInit && window.HowInit();
     if (v === 'lens') {
       const go = () => window.LensInit(p[1], p[2]);

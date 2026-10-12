@@ -46,6 +46,7 @@ jobs:
           pip install duckdb
           python scripts/film.py shares
           python scripts/build_topic_series.py
+          python scripts/rings_data.py
       - name: Find and publish today's story
         run: |
           pip install duckdb
