@@ -33,7 +33,7 @@ def build(root=ROOT):
             for m in json.loads(p.read_text())['months'].values():
                 for d, n in m.get('top_domains', []):
                     agg[d] += n
-        out['domains'].append([[d, n] for d, n in sorted(agg.items(), key=lambda x: -x[1])[:5]])
+        out['domains'].append([[d, n] for d, n in sorted(agg.items(), key=lambda x: -x[1])[:8]])
     mo = json.loads((root / 'data/atlas/months.json').read_text())['months']
     ym = defaultdict(lambda: [0, 0])
     for m in mo:
@@ -44,6 +44,7 @@ def build(root=ROOT):
         sh.append(round(sum(r['gk_showhn_s'] for r in by[y]) / tot, 5) if tot else 0)
         q.append(round(sum(r['cu_questions_s'] for r in by[y]) / tot, 5) if tot else 0)
         s, c = ym[y]; cps.append(round(c / s, 2) if s else 0)
+    out['stories'] = [ym[y][0] for y in years]
     out['types'] = {'show_hn_share': sh, 'question_share': q, 'comments_per_story': cps}
     return out
 

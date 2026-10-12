@@ -71,13 +71,18 @@
     var box = el('div', 'rg_dom');
     d.years.forEach(function (y, i) {
       var r = el('div', 'rg_dr'); r.appendChild(el('span', 'rg_y', String(y)));
-      d.domains[i].slice(0, 3).forEach(function (x) {
-        var b = tipEl('span', 'rg_badge', x[0].replace(/^www\./, '').charAt(0).toUpperCase(), y + ' ' + x[0] + ': ' + x[1].toLocaleString('en-US') + ' front-page appearances');
+      var tot = d.stories[i], sum = 0;
+      d.domains[i].forEach(function (x) {
+        sum += x[1];
+        var b = tipEl('span', 'rg_badge', x[0].replace(/^www\./, '').charAt(0).toUpperCase(), y + ' ' + x[0] + ': ' + x[1].toLocaleString('en-US') + ' stories, ' + pct(x[1] / tot) + ' of the year\'s stories');
         b.style.background = 'hsl(' + hue(x[0]) + ',55%,42%)';
         var im = document.createElement('img'); im.alt = ''; im.loading = 'lazy'; im.width = 26; im.height = 26;
         im.src = 'https://www.google.com/s2/favicons?sz=64&domain=' + encodeURIComponent(x[0]);
         im.onerror = function () { im.remove(); }; b.appendChild(im); r.appendChild(b);
       });
+      var share = sum / tot, tp = y + ': these ' + d.domains[i].length + ' domains are ' + pct(share) + ' of the year\'s stories. The other ' + pct(1 - share) + ' come from thousands of other sites or have no link.';
+      var bar = tipEl('span', 'rg_dbar', '', tp), fill = el('i'); fill.style.width = Math.round(share * 100) + '%'; bar.appendChild(fill); r.appendChild(bar);
+      r.appendChild(tipEl('span', 'rg_dsum', Math.round(share * 100) + '%', tp));
       box.appendChild(r);
     });
     return box;
@@ -102,8 +107,8 @@
   function mount(box) {
     box.replaceChildren(el('p', 'rg_note', 'Loading the years...'));
     return load().then(function (d) {
-      box.replaceChildren(el('p', 'rg_note', 'Tap or hover on anything for the number.'), sec('Themes', heat(d)), sec('Top domains', domains(d)), sec('Story types', types(d)),
-        el('p', 'rg_note rg_fine', 'Source: titles and domains of every story since 2006. Darker is a bigger share than that theme\'s own average year. 2025 and 2026 scores are low, so points are not used.'));
+      box.replaceChildren(el('p', 'rg_note', 'Tap or hover on anything for the number.'), sec('Themes', heat(d)), sec('Top domains, and their share of all stories', domains(d)), sec('Story types', types(d)),
+        el('p', 'rg_note rg_fine', 'Source: titles and domains of every story since 2006. Darker is a bigger share than that theme\'s own average year. Domain counts use each month\'s top 20 sites, and the bar and percent on the right are those sites\' share of all stories that year (orange) against all other stories (grey). 2025 and 2026 scores are low, so points are not used.'));
       wire(box);
     }).catch(function (e) { box.replaceChildren(el('p', 'rg_note', 'Could not load the yearly data: ' + e.message)); });
   }

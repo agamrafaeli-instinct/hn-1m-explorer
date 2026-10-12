@@ -18,6 +18,11 @@ class RingsData(unittest.TestCase):
         for t in d['themes']: self.assertEqual(len(t['share']), n)
         for v in d['types'].values(): self.assertEqual(len(v), n)
 
+    def test_domain_shares_fit_inside_the_year(self):
+        d = R.build(ROOT)
+        for i, y in enumerate(d['years']):
+            if d['stories'][i]: self.assertLessEqual(sum(n for _, n in d['domains'][i]), d['stories'][i], y)
+
     def test_copy_is_neutral(self):
         s = json.dumps(R.build(ROOT)).lower() + (ROOT / 'rings.js').read_text().lower()
         for w in ('never changes', 'taste has shifted', 'votes'): self.assertNotIn(w, s)
