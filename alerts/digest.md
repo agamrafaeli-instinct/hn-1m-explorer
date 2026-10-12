@@ -1,4 +1,4 @@
-HN digest 2026-10-12 (UTC): 20 new stories at 300+ points
+HN digest 2026-10-12 (UTC): 19 new stories at 300+ points
 - 450 pts, 162 comments: Bot traffic from Yandex https://news.ycombinator.com/item?id=50041619
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
 - 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
@@ -7,7 +7,6 @@ HN digest 2026-10-12 (UTC): 20 new stories at 300+ points
 - 344 pts, 131 comments: LineageOS 24.0 https://news.ycombinator.com/item?id=50040276
 - 338 pts, 513 comments: The gap in shared understanding of LLM capability is widening https://news.ycombinator.com/item?id=50047422
 - 337 pts, 168 comments: NYC's "Click to Cancel" rule is now in effect https://news.ycombinator.com/item?id=50045946
-- 330 pts, 102 comments: A city-building game in which the city would prefer you didn't https://news.ycombinator.com/item?id=50036864
 - 322 pts, 277 comments: IRCv3 https://news.ycombinator.com/item?id=50041540
 - 321 pts, 182 comments: Passkeys are a trap https://news.ycombinator.com/item?id=50048312
 - 320 pts, 72 comments: Build your own decision model https://news.ycombinator.com/item?id=50037949
