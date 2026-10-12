@@ -53,7 +53,7 @@
   function tipEl(tag, cls, text, tip, ic) { var e = el(tag, cls, text); if (ic) e.appendChild(icon(ic)); e.dataset.tip = tip; e.setAttribute('aria-label', tip); return e; }
   function heat(d) {
     var wrap = el('div', 'rg_heat'), head = el('div', 'rg_row rg_head'); head.appendChild(el('span', 'rg_y', ''));
-    d.themes.forEach(function (t) { head.appendChild(tipEl('span', 'rg_h', '', (t.terms === t.label ? t.label : t.label + ': ' + t.terms), t.id)); });
+    d.themes.forEach(function (t) { head.appendChild(tipEl('span', 'rg_h t_' + t.id, '', (t.terms === t.label ? t.label : t.label + ': ' + t.terms), t.id)); });
     wrap.appendChild(head);
     var max = d.themes.map(function (t) { return Math.max.apply(null, t.share) || 1; });
     d.years.forEach(function (y, i) {
@@ -61,11 +61,42 @@
       d.themes.forEach(function (t, j) {
         var v = t.share[i], k = v / max[j];
         var c = tipEl('span', 'rg_c', '', y + ' ' + t.label + ': ' + pct(v) + ' of story titles, ' + Math.round(k * 100) + '% of its highest year');
-        c.style.background = 'rgba(255,102,0,' + (k * 0.9).toFixed(2) + ')'; row.appendChild(c);
+        c.classList.add('t_' + t.id); c.style.background = 'rgba(255,102,0,' + (k * 0.9).toFixed(2) + ')'; row.appendChild(c);
       });
       wrap.appendChild(row);
     });
     return wrap;
+  }
+  var QS = [
+    { q: 'What came out of nowhere?', ids: ['llm', 'rust'] },
+    { q: 'What rises and falls, and what stays?', ids: ['react', 'kubernetes', 'python', 'cu_space', 'gk_history', 'cu_games', 'gk_science'] }
+  ];
+  function facts(d, ids, a) {
+    var box = el('div', 'rg_facts');
+    ids.forEach(function (id) {
+      var t = d.themes.filter(function (x) { return x.id === id; })[0], s = t.share, n = s.length - 1, pk = 0, jump = 1, ji = 1;
+      s.forEach(function (v, i) { if (v > s[pk]) pk = i; if (i > 1 && s[i - 1] > 0 && v / s[i - 1] > jump && v > 0.002) { jump = v / s[i - 1]; ji = i; } });
+      var txt = t.label + ': peak ' + pct(s[pk]) + ' in ' + d.years[pk] + ', ' + pct(s[n]) + ' in ' + d.years[n] + '.';
+      if (a) txt = t.label + ': ' + pct(s[ji - 1]) + ' in ' + d.years[ji - 1] + ', ' + pct(s[ji]) + ' in ' + d.years[ji] + ', ' + pct(s[n]) + ' in ' + d.years[n] + '.';
+      box.appendChild(el('p', null, txt));
+    });
+    return box;
+  }
+  function questions(d, wrap) {
+    var box = el('div', 'rg_qs'), out = el('div', 'rg_qout'), cur = -1;
+    QS.forEach(function (Q, qi) {
+      var b = el('button', 'rg_q', Q.q); b.type = 'button';
+      b.addEventListener('click', function () {
+        cur = cur === qi ? -1 : qi;
+        Array.prototype.forEach.call(box.children, function (x, i) { x.classList.toggle('on', i === cur); });
+        wrap.classList.toggle('rg_dim', cur >= 0);
+        wrap.querySelectorAll('.rg_c,.rg_h').forEach(function (c) { c.classList.remove('on'); });
+        out.replaceChildren();
+        if (cur >= 0) { Q.ids.forEach(function (id) { wrap.querySelectorAll('.t_' + id).forEach(function (c) { c.classList.add('on'); }); }); out.appendChild(facts(d, Q.ids, cur === 0)); }
+      });
+      box.appendChild(b);
+    });
+    var all = el('div'); all.appendChild(box); all.appendChild(out); return all;
   }
   function domains(d) {
     var box = el('div', 'rg_dom');
@@ -107,7 +138,7 @@
   function mount(box) {
     box.replaceChildren(el('p', 'rg_note', 'Loading the years...'));
     return load().then(function (d) {
-      box.replaceChildren(el('p', 'rg_note', 'Tap or hover on anything for the number.'), sec('Themes', heat(d)), sec('Top domains, and their share of all stories', domains(d)), sec('Story types', types(d)),
+      box.replaceChildren(el('p', 'rg_note', 'Tap or hover on anything for the number.'), sec('Themes', (function () { var h = heat(d), w = el('div'); w.appendChild(questions(d, h)); w.appendChild(h); return w; })()), sec('Top domains, and their share of all stories', domains(d)), sec('Story types', types(d)),
         el('p', 'rg_note rg_fine', 'Source: titles and domains of every story since 2006. Darker is a bigger share than that theme\'s own average year. Domain counts use each month\'s top 20 sites, and the bar and percent on the right are those sites\' share of all stories that year (orange) against all other stories (grey). Points are not used here, because the archive holds low points for 2023 and 2026.'));
       wire(box);
     }).catch(function (e) { box.replaceChildren(el('p', 'rg_note', 'Could not load the yearly data: ' + e.message)); });

@@ -272,3 +272,6 @@ select{min-height:44px}
 .rg_dr{gap:4px}.rg_badge{width:24px;height:24px;flex:none}.rg_dsum{margin-left:auto;font-weight:700;font-size:.85em;color:#b84700;cursor:pointer;padding-left:6px}
 .rg_dbar{margin-left:auto;width:64px;height:10px;border-radius:5px;background:#ddd2c4;overflow:hidden;flex:none;cursor:pointer}.rg_dbar i{display:block;height:100%;background:#ff6600}.rg_dsum{margin-left:6px;width:34px;text-align:right}
 .rg_badge{width:22px;height:22px}.rg_dbar{width:40px;margin-left:auto}.rg_dsum{width:32px;margin-left:4px;font-size:.8em}.rg_dr{gap:3px}
+
+.rg_qs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.rg_q{font:inherit;font-size:.9em;padding:8px 12px;border-radius:18px;border:1.5px solid #ff6600;background:#fff;color:#b84700;cursor:pointer}.rg_q.on{background:#ff6600;color:#fff}
+.rg_dim .rg_c:not(.on),.rg_dim .rg_h:not(.on){opacity:.15}.rg_facts p{margin:2px 0;font-size:.85em}.rg_qout{margin-bottom:10px}
