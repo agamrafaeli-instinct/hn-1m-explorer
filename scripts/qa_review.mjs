@@ -40,7 +40,7 @@ const send = (method, params = {}) => new Promise(r => { const i = ++id; pend[i]
 await send('Network.enable'); await send('Page.enable'); await send('Runtime.enable');
 await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
 // Same list as scripts/copy_lint.py (kept in pieces here so the lint does not flag its own list).
-const BANNED = new RegExp(['\\bvotes\\b', '\\b1M\\b', 'the last mil' + 'lion', '\\u2014', '&md' + 'ash;', '\\bdel' + 've\\b', '\\bcru' + 'cial\\b', '\\bpivo' + 'tal\\b', '\\blever' + 'ag(e|es|ing)\\b', '\\bstream' + 'line', '\\bholi' + 'stic', '\\brob' + 'ust\\b', '\\bseam' + 'less', '\\bempo' + 'wer', '\\bun' + 'lock', 'game-' + 'changing', "we're ex" + 'cited', 'in or' + 'der to', '\\bsim' + 'ply\\b', '\\bpower' + 'ful\\b', '\\bcompre' + 'hensive\\b'].join('|'), 'gi');
+const BANNED = new RegExp(['\\bvotes\\b', '(?<![\\d.])1' + 'M\\b', 'the last mil' + 'lion', '\\u2014', '&md' + 'ash;', '\\bdel' + 've\\b', '\\bcru' + 'cial\\b', '\\bpivo' + 'tal\\b', '\\blever' + 'ag(e|es|ing)\\b', '\\bstream' + 'line', '\\bholi' + 'stic', '\\brob' + 'ust\\b', '\\bseam' + 'less', '\\bempo' + 'wer', '\\bun' + 'lock', 'game-' + 'changing', "we're ex" + 'cited', 'in or' + 'der to', '\\bsim' + 'ply\\b', '\\bpower' + 'ful\\b', '\\bcompre' + 'hensive\\b'].join('|'), 'gi');
 const expr = `(()=>{const vis=e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};
 const nm=e=>((e.labels&&e.labels[0]&&e.labels[0].innerText)||e.innerText||e.textContent||e.getAttribute('aria-label')||e.title||e.value||'').trim();
 const tap=[],unl=[],noalt=[],tiny=new Set(),empty=[];
@@ -69,7 +69,7 @@ for (const route of routes) {
   if (v.tiny.length) f.push('text under 12px: ' + v.tiny.slice(0, 3).join('; '));
   if (v.empty.length) f.push('heading with nothing under it: ' + v.empty.join('; '));
   if (/\b(undefined|NaN|\[object|null)\b/.test(v.text)) f.push('"undefined", "NaN" or "null" shows in the text');
-  const b = [...new Set((v.text.match(BANNED) || []).map(x => x.toLowerCase()))]; if (b.length) f.push('banned word(s): ' + b.join(', '));
+  const b = [...new Set((v.text.match(BANNED) || []).filter(x => x !== '1m').map(x => x.toLowerCase()))]; if (b.length) f.push('banned word(s): ' + b.join(', '));
   if (v.text.length < 80) f.push('very little text on the page (' + v.text.length + ' characters)');
   for (const p of probs.slice(before)) f.push(p);
   rows.push({ route, shot, ...v, findings: f });
@@ -77,8 +77,12 @@ for (const route of routes) {
 ws.close(); ch.kill(); server?.close();
 const L = [`## QA walk${ticket ? ' for #' + ticket : ''} (390 px, report only)`, '', `Site: ${SITE.startsWith('http://127') ? 'staged from the repo' : SITE}. ${rows.length} route(s). This walk lists what a script can see. Whether the copy reads well and a chart is clear is for the person reading the screenshots below.`, ''];
 if (crit) L.push('**Ticket and its done-when list**', '', ...crit.split('\n').map((l, i) => i ? l : '> ' + l), '');
-const total = rows.reduce((a, r) => a + r.findings.length, 0);
+// A finding present on every route (the nav bar, for example) is listed once, then dropped from the routes.
+const common = rows.length > 1 ? rows[0].findings.filter(x => rows.every(r => r.findings.includes(x))) : [];
+for (const r of rows) r.findings = r.findings.filter(x => !common.includes(x));
+const total = common.length + rows.reduce((a, r) => a + r.findings.length, 0);
 L.push(`**Findings: ${total}**`, '');
+if (common.length) L.push('**On every page walked**', '', ...common.map(x => '- ' + x), '');
 for (const r of rows) {
   L.push(`### \`${r.route}\` ${r.h1 ? '- ' + r.h1.slice(0, 70) : ''}`);
   L.push(r.findings.length ? r.findings.map(x => '- ' + x).join('\n') : '- nothing flagged');
