@@ -36,4 +36,4 @@ Fixed costs of any ticket that changes the site: tests about 10 s, prepush about
 ## Fixes already made
 - Budget drift: audience budget raised to 2850 ms and a RUNBOOK note to run perf before pushing UI or CSS changes.
 - The UI lens test reads the week count from data/weekly/index.json.
-- est.py help: needs GH_TOKEN. Next step is to make it print a clear error instead of a stack trace.
+- est.py help: needs GH_TOKEN. Fixed in #240: scripts/est.py reads the token itself and prints a plain message on failure; the ledger is in minutes.
