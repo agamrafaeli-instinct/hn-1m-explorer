@@ -91,3 +91,6 @@ When a run fails: open the run in the Actions tab, find the step with the red ma
 ## Roadmap and board
 
 `python3 scripts/check_roadmap.py` lists open epics that ROADMAP.md does not name, and the other way round. It only warns, and prepush runs it. `--write` rewrites the "Open epics on the board" list in ROADMAP.md from the board. Run it when an epic opens or closes, and commit the change.
+
+## Prepush marker (skip repeat checks in CI)
+`bash scripts/prepush.sh` ends by writing `.prepush_ok`, a digest of every tracked and new file except the marker itself (scripts/prepush_digest.py). Commit the marker with the change. The daily workflow checks it right after checkout. Only a run triggered by a push (hypotheses/** changes) can skip the UI and budget steps, and only when the digest matches. A missing marker, any edited or added file after prepush, a scheduled run or a manual dispatch runs every check. Run `python3 scripts/prepush_digest.py --check` to see which case applies.
