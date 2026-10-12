@@ -30,6 +30,42 @@ def card_pages(site):
         n += 1
     return n
 
+AUD = {
+    'engineers': ('Engineers', 'engineers', "Builder's radar", 'What moved this week among the things people build with.'),
+    'vcs': ('Deep-tech VCs', 'deep-tech investors', 'Money and names', 'Which deep tech themes, names and deal words moved this week.'),
+    'geeks': ('Curious geeks', 'curious readers', 'Beyond AI', 'What people talked about this week that is not AI.'),
+}
+MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+def week_range(start, end_ex):
+    import datetime as dt
+    s = dt.date.fromisoformat(start); e = dt.date.fromisoformat(end_ex) - dt.timedelta(days=1)
+    f = lambda d: MON[d.month - 1] + ' ' + str(d.day)
+    return f(s) + ' to ' + f(e)
+
+def week_title(a, week, start, end_ex):
+    # Same title and description the week screen sets in the browser (weekly.js).
+    rg = week_range(start, end_ex); name, _, _, intro = AUD[a]
+    return name + ': week ' + week + ' (' + rg + ') | ' + SITE, name + ' view of Hacker News for ' + rg + '. ' + intro
+
+def week_audience_pages(site):
+    site = pathlib.Path(site); idx = json.loads((site / 'data/weekly/index.json').read_text())['weeks']; n = 0
+    for a in AUD:
+        d = site / 'share' / 'w' / a; d.mkdir(parents=True, exist_ok=True)
+        for w in idx:
+            wk = json.loads((site / 'data/weekly' / w['path']).read_text())
+            t, desc = week_title(a, w['week'], w['start_utc'], wk['end_exclusive_utc'])
+            (d / (w['week'] + '.html')).write_text(page(t, desc, '../../../#/w/' + a + '/' + w['week'])); n += 1
+        last = idx[-1]; wk = json.loads((site / 'data/weekly' / last['path']).read_text())
+        t, desc = week_title(a, last['week'], last['start_utc'], wk['end_exclusive_utc'])
+        (d / 'current.html').write_text(page(t, desc, '../../../#/w/' + a + '/' + last['week'])); n += 1
+    d = site / 'share' / 'a'; d.mkdir(parents=True, exist_ok=True)
+    for a, (name, tag, _, _) in AUD.items():
+        (d / (a + '.html')).write_text(page(name + ': hypotheses tested on Hacker News | ' + SITE,
+            'Hypothesis cards for ' + tag + ', each tested on the Hacker News archive with its verdict shown.', '../../#/a/' + a)); n += 1
+    return n
+
 if __name__ == '__main__':
     import sys
-    print('share pages:', card_pages(sys.argv[1] if len(sys.argv) > 1 else '_site'))
+    site = sys.argv[1] if len(sys.argv) > 1 else '_site'
+    print('share pages:', card_pages(site) + week_audience_pages(site))

@@ -20,4 +20,17 @@ class SharePages(unittest.TestCase):
             self.assertIn('property="og:title"', t)
             self.assertIn('url=../../#/c/' + c['id'] + '"', t)
 
+    def test_week_pages_match_saved_weeks(self):
+        idx = json.loads((ROOT / 'data/weekly/index.json').read_text())['weeks']
+        for a in ('engineers', 'vcs', 'geeks'):
+            for w in idx:
+                t = (self.out / 'share/w' / a / (w['week'] + '.html')).read_text()
+                self.assertIn('week ' + w['week'] + ' (', t)
+                self.assertIn('url=../../../#/w/' + a + '/' + w['week'] + '"', t)
+            cur = (self.out / 'share/w' / a / 'current.html').read_text()
+            self.assertIn('url=../../../#/w/' + a + '/' + idx[-1]['week'] + '"', cur)
+    def test_audience_pages(self):
+        for a in ('engineers', 'vcs', 'geeks'):
+            self.assertIn('url=../../#/a/' + a + '"', (self.out / 'share/a' / (a + '.html')).read_text())
+
 if __name__ == '__main__': unittest.main()
