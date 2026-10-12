@@ -19,7 +19,7 @@ Let `c(m)` be a subject's story count in month `m`, and `t(m)` all live stories 
 
 **Active level.** A subject's active level `A` is the median share over its months with `s(m) >= 0.5 x peak year share`, where peak year share is the best calendar year.
 
-**Quiet spell.** A run of at least 12 consecutive months where `s(m) < 0.2 x A` each month, and the run follows at least 12 active months (months with `s(m) >= 0.5 x A`). Shorter dips are not counted.
+**Quiet spell.** A run of at least 12 consecutive months where `s(m) < 0.2 x A` each month, and the run follows at least 12 active months in total (months with `s(m) >= 0.5 x A`, not needing to be consecutive). Shorter dips are not counted.
 
 **Return.** The first month after a quiet spell where `s(m) >= 0.5 x A` for 3 months in a row. The return month is the first of those 3. A single spike month does not count.
 
@@ -63,3 +63,9 @@ In that case the page says there is no clear pattern and shows the data.
 - Summary numbers: count of returns, median and quartiles of burial length, label shares with the shuffled baseline.
 - Each number carries a source line (file and field) and the 2023 and 2026 points caveat.
 - No conclusion text until the owner has seen the numbers.
+
+## Run notes (#287)
+- A spell with no return yet is kept as an open spell, not dropped.
+- A return that would fall after the next quiet spell starts is not counted.
+- The newest partial month (2026-08) is dropped. Shares divide by `stories_held` in data/atlas/months.json.
+- Domain series come from the monthly top lists, so only 55 domains pass the eligibility rule.
