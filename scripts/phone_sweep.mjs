@@ -18,7 +18,7 @@ const idx=await (await fetch(site+'data/weekly/index.json')).json();const wk=idx
 export const SCREENS=['#/','#/compare','#/c/h370','#/hypotheses','#/w/engineers/'+wk,'#/w/vcs/'+wk,'#/w/geeks/'+wk,'#/s/2026-10-11','#/story','#/explore','#/submit','#/how','#/lesson','#/topics','#/today','#/l/github.com','#/l/n/Nvidia','#/t/llm','#/compare','#/rings'];
 const expr=`(()=>{
 const vis=e=>{const r=e.getBoundingClientRect();const s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};
-const nm=e=>(e.innerText||e.textContent||e.getAttribute('aria-label')||e.title||e.value||e.getAttribute('aria-labelledby')||'').trim();
+const nm=e=>((e.labels&&e.labels[0]&&e.labels[0].innerText)||e.innerText||e.textContent||e.getAttribute('aria-label')||e.title||e.value||e.getAttribute('aria-labelledby')||'').trim();
 const tap=[],unl=[];
 for(const e of document.querySelectorAll('a[href],button,input:not([type=hidden]),select,summary,[role=button]')){
  if(!vis(e))continue;const r=e.getBoundingClientRect(),s=getComputedStyle(e);
