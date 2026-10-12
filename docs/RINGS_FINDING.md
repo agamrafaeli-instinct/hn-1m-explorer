@@ -9,7 +9,7 @@ Draft for the owner (epic Rings #272, task #277). Written after the view was liv
 
 ## What the numbers show
 - Average similarity between two years falls as the gap grows: 1 year apart 0.99, 2 years 0.97, 5 years 0.90, 10 years 0.85, 15 years 0.82 (3 pairs only for 15).
-- Split the 12 groups in two. Six general-interest groups (space, games, privacy, health, history, science): 2010 against 2025 is 0.98. Six technology groups (Python, React, Rust, Kubernetes, LLMs, GPUs): the same comparison is far lower (Python alone 0.50; React, Rust, Kubernetes and LLMs were near zero in 2010).
+- Split the 12 groups in two. Six general-interest groups (space, games, privacy, health, history, science): 2010 against 2025 is 0.98. Six technology groups (Python, React, Rust, Kubernetes, LLMs, GPUs): the same comparison is 0.50 (re-checked 2026-10-13 from data/rings.json; an earlier line said "Python alone", which was wrong). React, Rust, Kubernetes and LLMs were near zero in 2010.
 - Domains: the top five of each year share two to four names across a decade (nytimes.com and youtube.com appear in both 2010 and 2025). github.com and medium.com enter in the middle years.
 
 ## Reading, without a verdict
