@@ -1,5 +1,38 @@
 [
  {
+  "id": "50060694",
+  "title": "Codex CLI installs a persistent, self-updating background daemon by default",
+  "points": 310,
+  "comments": 185,
+  "author": "whimblepop",
+  "hn": "https://news.ycombinator.com/item?id=50060694",
+  "url": "https://github.com/openai/codex/issues/48195",
+  "created_at": "2026-10-12T18:29:04Z",
+  "reported_at": 1791838619
+ },
+ {
+  "id": "50059115",
+  "title": "Muse Wonder",
+  "points": 424,
+  "comments": 209,
+  "author": "meetpateltech",
+  "hn": "https://news.ycombinator.com/item?id=50059115",
+  "url": "https://research.meta.ai/blog/muse-wonder",
+  "created_at": "2026-10-12T16:48:01Z",
+  "reported_at": 1791838619
+ },
+ {
+  "id": "50058507",
+  "title": "GLM-Legal",
+  "points": 323,
+  "comments": 179,
+  "author": "ilreb",
+  "hn": "https://news.ycombinator.com/item?id=50058507",
+  "url": "https://z.ai/blog/glm-legal",
+  "created_at": "2026-10-12T16:11:45Z",
+  "reported_at": 1791838619
+ },
+ {
   "id": "50054751",
   "title": "QGIS bans AI assisted contributions",
   "points": 319,

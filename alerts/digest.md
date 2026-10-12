@@ -1,16 +1,17 @@
-HN digest 2026-10-12 (UTC): 16 new stories at 300+ points
+HN digest 2026-10-12 (UTC): 17 new stories at 300+ points
+- 424 pts, 209 comments: Muse Wonder https://news.ycombinator.com/item?id=50059115
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
 - 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
 - 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
 - 346 pts, 147 comments: Total Annihilation, rebuilt for modern computers https://news.ycombinator.com/item?id=50045984
-- 344 pts, 131 comments: LineageOS 24.0 https://news.ycombinator.com/item?id=50040276
 - 338 pts, 513 comments: The gap in shared understanding of LLM capability is widening https://news.ycombinator.com/item?id=50047422
 - 337 pts, 168 comments: NYC's "Click to Cancel" rule is now in effect https://news.ycombinator.com/item?id=50045946
+- 323 pts, 179 comments: GLM-Legal https://news.ycombinator.com/item?id=50058507
 - 322 pts, 277 comments: IRCv3 https://news.ycombinator.com/item?id=50041540
 - 321 pts, 182 comments: Passkeys are a trap https://news.ycombinator.com/item?id=50048312
 - 319 pts, 344 comments: QGIS bans AI assisted contributions https://news.ycombinator.com/item?id=50054751
 - 318 pts, 142 comments: I'm sorry, but you still have to think https://news.ycombinator.com/item?id=50043689
-- 314 pts, 167 comments: I paid people to try and follow my README https://news.ycombinator.com/item?id=50042219
+- 310 pts, 185 comments: Codex CLI installs a persistent, self-updating background daemon by default https://news.ycombinator.com/item?id=50060694
 - 310 pts, 366 comments: Terence Tao: Math 2.0 [pdf] https://news.ycombinator.com/item?id=50043026
 - 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055
 - 300 pts, 61 comments: Cartographers of North Korea (2019) https://news.ycombinator.com/item?id=50047091
