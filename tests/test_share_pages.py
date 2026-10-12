@@ -29,9 +29,8 @@ class SharePages(unittest.TestCase):
                 self.assertIn('url=../../../#/w/' + a + '/' + w['week'] + '"', t)
             cur = (self.out / 'share/w' / a / 'current.html').read_text()
             self.assertIn('url=../../../#/w/' + a + '/' + idx[-1]['week'] + '"', cur)
-    def test_audience_pages(self):
-        for a in ('engineers', 'vcs', 'geeks'):
-            self.assertIn('url=../../#/a/' + a + '"', (self.out / 'share/a' / (a + '.html')).read_text())
+    def test_no_audience_card_list_pages(self):
+        self.assertFalse((self.out / 'share/a').exists())
 
 
 class ShareButtons(unittest.TestCase):

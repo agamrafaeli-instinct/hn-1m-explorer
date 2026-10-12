@@ -9,36 +9,13 @@
   };
   const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens', 'rings', 'saga'];
   const tabOf = { topics: 'home', today: 'home', lens: '', rings: 'home', saga: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
-  function deeper(list, key) {
-    const box = $('aud_deeper'); box.replaceChildren();
-    if (!list.length) return;
-    const h = document.createElement('h3'); h.textContent = 'Go deeper'; box.appendChild(h);
-    if (AUD[key].note) { const n = document.createElement('p'); n.className = 'caveat-note'; n.textContent = AUD[key].note; box.appendChild(n); }
-    list.forEach(x => { const l = document.createElement('a'); l.href = '#/c/' + x.name.split('-')[0] + '/' + key; l.className = 'deep';
-      const t = document.createElement('b'); t.textContent = x.title;
-      const id = x.name.split('-')[0]; if ((AUD[key].clean || []).includes(id)) { const c = document.createElement('i'); c.textContent = 'Cleanest test'; l.appendChild(c); } l.append(t); box.appendChild(l); });
-  }
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
-    const a = AUD[key] || (key === 'all' ? { name: 'All audiences' } : AUD.engineers); $('aud_kicker').textContent = a.name; $('aud_note').textContent = ''; $('aud_deeper').replaceChildren(); $('aud_others').replaceChildren();
-    $('aud_back').href = key === 'all' ? '#/hypotheses' : '#/a/' + (AUD[key] ? key : 'engineers');
+    $('aud_kicker').textContent = 'Hypothesis card';
+    $('aud_back').href = '#/hypotheses';
     skel();
     try { const x = await HypCards.one(id); $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r))); }
     catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
-  }
-  async function audience(key) {
-    $('aud_back').href = '#/';
-    const a = AUD[key]; $('aud_kicker').textContent = a.name;
-    skel(); $('aud_note').textContent = '';
-    $('aud_others').replaceChildren(...Object.keys(AUD).filter(k => k !== key).map(k => { const l = document.createElement('a'); l.href = '#/a/' + k; l.textContent = AUD[k].name + ' \u2192'; return l; }));
-    try {
-      const ok = (await HypCards.tally()).filter(x => !x.error);
-      const mine = ok.filter(x => x.audience === a.tag), pick = mine[0];
-      if (!pick) { $('aud_card').textContent = 'The cards for this group are being rebuilt as all-time cards.'; return; }
-      const x = await HypCards.one(pick.name.split('-')[0]);
-      $('aud_card').replaceChildren(compact(HypCards.render(x.card, x.r)));
-      deeper(mine.filter(y => y !== pick), key);
-    } catch (e) { $('aud_card').textContent = 'Could not load this hypothesis: ' + e.message; }
   }
   const compact = c => HypCards.compact(c);
   async function counts() {
@@ -86,7 +63,7 @@
   function route() {
     const p = (location.hash || '#/').replace(/^#\/?/, '').split('?')[0].split('/');
     let v = 'saga';
-    if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'hypotheses') v = 'hyp';
+    if (p[0] === 'a' && AUD[p[1]]) { location.replace('#/hypotheses'); return; } else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'hypotheses') v = 'hyp';
     if (v !== 'week') { document.title = BASE_TITLE; if (META) META.content = BASE_DESC; }
     if (TITLES[v]) window.SetPageMeta(TITLES[v][0], TITLES[v][1]);
     views.forEach(n => $('v_' + n).hidden = n !== v);
@@ -106,7 +83,7 @@
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
     if (v === 'explore') { const hg = () => window.HistInit(); if (window.HistInit) hg(); else { const sc = document.createElement('script'); sc.src = 'history.js'; sc.onload = hg; document.head.appendChild(sc); } window.ExploreInit && window.ExploreInit().then(() => window.ExploreLink && window.ExploreLink()); window.ExploreVendor && window.ExploreVendor(); }
     if (v === 'week') loadWeek(p[1], p[2]);
-    if (v === 'aud') { if (p[0] === 'c') single(p[1], p[2]); else audience(p[1]); }
+    if (v === 'aud') single(p[1], p[2]);
     if (cur !== v || v === 'aud') scrollTo({ top: 0, behavior: 'instant' });
     cur = v;
     document.body.dataset.view = v;

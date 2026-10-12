@@ -59,10 +59,6 @@ def week_audience_pages(site):
         last = idx[-1]; wk = json.loads((site / 'data/weekly' / last['path']).read_text())
         t, desc = week_title(a, last['week'], last['start_utc'], wk['end_exclusive_utc'])
         (d / 'current.html').write_text(page(t, desc, '../../../#/w/' + a + '/' + last['week'])); n += 1
-    d = site / 'share' / 'a'; d.mkdir(parents=True, exist_ok=True)
-    for a, (name, tag, _, _) in AUD.items():
-        (d / (a + '.html')).write_text(page(name + ': hypotheses tested on Hacker News | ' + SITE,
-            'Hypothesis cards for ' + tag + ', each tested on the Hacker News archive.', '../../#/a/' + a)); n += 1
     return n
 
 if __name__ == '__main__':

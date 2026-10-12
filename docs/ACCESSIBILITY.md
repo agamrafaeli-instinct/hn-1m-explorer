@@ -32,7 +32,7 @@ Screenshot after the fix at 390px: [docs/a11y/pill-after-390.png](a11y/pill-afte
 
 # Accessibility check: Compare home, topic page, card, Tests, Method, story page (#180)
 
-Checked 2026-10-11 on a local copy with `node scripts/a11y_pages.mjs` (Chrome, headless). It opens `#/`, `#/a/geeks`, `#/t/llm`, `#/c/h369/all`, `#/hypotheses`, `#/how` and `#/s/2026-10-11` at 320, 390 and 430px. Raw results after the fixes: [docs/a11y/pages-audit-2026-10-11.json](a11y/pages-audit-2026-10-11.json). Standard: WCAG 2.2 level AA.
+Checked 2026-10-11 on a local copy with `node scripts/a11y_pages.mjs` (Chrome, headless). It opens `#/`, `#/hypotheses`, `#/t/llm`, `#/c/h369/all`, `#/hypotheses`, `#/how` and `#/s/2026-10-11` at 320, 390 and 430px. Raw results after the fixes: [docs/a11y/pages-audit-2026-10-11.json](a11y/pages-audit-2026-10-11.json). Standard: WCAG 2.2 level AA.
 
 | Check | 320 | 390 | 430 | Result |
 |---|---|---|---|---|

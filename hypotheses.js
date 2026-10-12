@@ -300,7 +300,7 @@
     if (listed) return; listed = true;
     const host = document.getElementById('hyp_list'); if (!host) return;
     try {
-      const bl = (await bundle()).filter(b => b.error || !b.card.audience);
+      const bl = (await bundle());
       const slots = bl.map(b => { const a = el('article', 'hyp skel'); a.appendChild(el('p', 'src', 'Loading ' + b.name.split('-')[0].toUpperCase() + '...')); return a; });
       const H = await honor();
       slots.forEach((sl, i) => { const q = H && H[bl[i].name.split('-')[0]]; sl.dataset.flag = q && q.failing.length ? '1' : '0'; });

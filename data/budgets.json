@@ -24,17 +24,6 @@
     "overflow": 0
    }
   },
-  "audience": {
-   "ms": 2850,
-   "kb": 350,
-   "reqs": 25,
-   "measured": {
-    "ms": 1858,
-    "reqs": 17,
-    "kb": 197,
-    "overflow": 0
-   }
-  },
   "card": {
    "ms": 2200,
    "kb": 310,

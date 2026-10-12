@@ -16,9 +16,6 @@
   <section class="aud">
     <div class="audbar"><a class="back" id="aud_back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a><p class="kicker" id="aud_kicker"></p></div>
     <div id="aud_card"></div>
-    <p class="more" id="aud_note"></p>
-    <div id="aud_deeper"></div>
-    <nav class="others" id="aud_others"></nav>
   </section>
 </div>
 <div class="view" role="main" id="v_week" hidden>
@@ -126,12 +123,13 @@
 <div class="view" role="main" id="v_hyp" hidden>
 <section class="hypo" id="s_hyp">
   <a class="back" href="#/" aria-label="Back to home">&larr;<span>Back</span></a>
-  <p class="kicker">All audiences</p>
+  <p class="kicker">Every card</p>
   <h2>Hypotheses, tested</h2>
   <p class="lede">Each card states a guess, what the data should show if it is true, and the check. Wrong guesses stay on the page.</p>
   <p class="hyp-tally" id="hyp_tally"></p>
   <div id="hyp_list"></div>
-  <p class="more">Open the tests by group: <a href="#/a/engineers">Engineers</a> &middot; <a href="#/a/vcs">Deep-tech VCs</a> &middot; <a href="#/a/geeks">Curious geeks</a></p>
+  <h3>How to read these cards</h3>
+  <p class="caveat-note">The cards from h300 onward copy their thresholds from the older cards, so they are exploratory, not blind pre-registrations. The odd-and-fun word lists and thresholds were set while looking at earlier summaries. Theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Wrong guesses stay on the page.</p>
 </section>
 
 </div>
@@ -208,7 +206,7 @@
     <li><b>Check the dictionary.</b> List what the word list matches and misses. "Ask YC:" is the forum, not the company. "UBI" is also a Linux file system. Read a sample of matches before you trust a number.</li>
   </ol>
   <p class="caveat-note" id="ls_cav"></p>
-  <p><a class="btn" href="#/a/engineers">See the tested cards</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
+  <p><a class="btn" href="#/hypotheses">See the tested cards</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
 </section>
 </div>
 <div class="view" role="main" id="v_how" hidden>

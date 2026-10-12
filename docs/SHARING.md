@@ -5,7 +5,7 @@ Status: spec for epic #66 (Ripple).
 ## Today
 
 - The Share button on a card (hypotheses.js) copies or shares `<site>/#/c/<card>/<audience>`. On phones it opens the share sheet with the card title.
-- A week screen is `#/w/<audience>/<week>`. The router sets the page title and description in the browser after load (router.js, loadWeek). Audience screens are `#/a/<audience>`.
+- A week screen is `#/w/<audience>/<week>`. The router sets the page title and description in the browser after load (router.js, loadWeek). Old `#/a/<audience>` links redirect to `#/hypotheses`.
 - The site is static, one `index.html`. Chat apps and link previewers do not run scripts and ignore the part of a link after `#`. So every shared link previews as the home page: "Hacker News posts, explored".
 
 ## What a previewer reads
@@ -21,7 +21,6 @@ Small share pages, one file each, built at deploy. Each has its own title, descr
 | Card | `share/c/<card>.html` (69 cards) | `#/c/<card>` |
 | Week | `share/w/<audience>/<week>.html` for each saved week in `data/findings/` | `#/w/<audience>/<week>` |
 | Current week | `share/w/<audience>/current.html` | the newest saved week for that audience |
-| Audience | `share/a/<audience>.html` | `#/a/<audience>` |
 
 Titles and summaries come from the card file (`hypotheses/*.json` title) and the saved week file (`data/findings/<week>.json`, the published headline). A share page never holds a number that is not in those files.
 

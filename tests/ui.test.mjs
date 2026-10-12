@@ -65,15 +65,15 @@ async function check(name, route, ready, extra) {
 const q1 = s => `(()=>{const e=document.querySelector(${JSON.stringify(s)});return !!e&&e.textContent.trim().length>0})()`;
 await check('saga', '#/', q1('.sg_hook h1'));
 await check('home', '#/compare', q1('#homeweek_s'), async () => (await ev(q1('#homeweek')) ? '' : 'no latest-week link'));
-await check('audience', '#/a/engineers', q1('#aud_card article.hyp'));
 await check('card', '#/c/h300/engineers', q1('#aud_card article.hyp'), async () => ((await ev("document.querySelectorAll('#aud_card article.hyp').length")) === 1 ? '' : 'expected exactly one card'));
 await check('card_story_format', '#/c/h380/engineers', q1('#aud_card article.hyp'), async () => {
   await ev("HypCards.one('h380').then(x=>{window.__x=x.r})"); await wait('!!window.__x', 8000);
   const bad = await ev(`(()=>{const r=window.__x,t=document.querySelector('#aud_card .take'),m=[r.mean_a,r.mean_b].map(v=>v>=10?v.toFixed(1):v.toFixed(2));let w=[];if(document.querySelector('#aud_card .verdict'))w.push('verdict stamp shown');if(/Tested proposition/i.test(document.getElementById('aud_card').textContent))w.push('tested proposition text');if(!t)w.push('no answer sentence');else m.forEach(x=>{if(t.textContent.indexOf(x)<0)w.push('answer lacks '+x)});if(!document.querySelector('#aud_card svg .ln-a'))w.push('no line label');return w.join('; ')})()`);
   return bad;
 });
+await check('card_list_has_cards', '#/hypotheses', q1('#hyp_list article.hyp'), async () => ((await ev("document.querySelectorAll('#hyp_list article').length")) >= 20 ? '' : 'card list is empty'));
+await check('old_audience_link_redirects', '#/a/engineers', q1('#hyp_tally'), async () => ((await ev('location.hash')) === '#/hypotheses' ? '' : 'did not redirect to the card list'));
 await check('list_no_stamp', '#/hypotheses', q1('#hyp_tally'), async () => ((await ev("/\\b(supported|refuted|inconclusive)\\b/i.test(document.getElementById('v_hyp').textContent)")) ? 'verdict word on the list page' : ''));
-await check('audience_list_no_stamp', '#/a/engineers', q1('#aud_deeper .deep b'), async () => ((await ev("/\\b(supported|refuted|inconclusive)\\b/i.test(document.getElementById('aud_deeper').textContent)")) ? 'verdict word in the card list' : ''));
 const AUDN = { engineers: 'Engineers', vcs: 'Deep-tech VCs', geeks: 'Curious geeks' };
 for (const a of ['engineers', 'vcs', 'geeks']) await check('week_' + a, '#/w/' + a, q1('#w_body .wsec'), async () => {
   const t = await ev('document.title'), d = await ev("document.querySelector('meta[name=description]').content");
