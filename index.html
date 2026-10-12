@@ -143,12 +143,12 @@
 <section class="explore" id="explore">
   <h2>Search the newest items, with authors</h2>
   <p class="lede">Posts, comments, jobs and polls with author names, which only the newest items carry (the archive search above has no authors). The full CSV is about <span id="mb">...</span>, so pick how much to load (newest first).</p>
-  <div class="loadrow"><select id="loadn"></select><button id="loadbtn" class="cta">Load</button></div>
+  <div class="loadrow"><select id="loadn" aria-label="How many posts to load"></select><button id="loadbtn" class="cta">Load</button></div>
   <div id="status"></div><div id="bar"><i id="barfill"></i></div>
   <div id="app" hidden>
     <div id="filters">
-      <input id="q" type="search" placeholder="Search titles (words, space = AND)" autocomplete="off">
-      <div class="row"><input id="by" type="search" placeholder="Author"><input id="domain" type="search" placeholder="Domain"></div>
+      <input id="q" type="search" aria-label="Search titles" placeholder="Search titles (words, space = AND)" autocomplete="off">
+      <div class="row"><input id="by" type="search" aria-label="Author" placeholder="Author"><input id="domain" type="search" aria-label="Domain" placeholder="Domain"></div>
       <div class="row"><label>From<input id="from" type="date"></label><label>To<input id="to" type="date"></label></div>
       <div class="row"><label>Type<select id="type"><option value="">All</option></select></label><label>Min score<input id="minscore" type="number" min="0" value="0"></label></div>
       <div class="row"><button id="reset" type="button">Reset</button><span id="count"></span></div>
@@ -165,7 +165,7 @@
       <div class="card"><h3>Top authors</h3><div class="cv tall"><canvas id="c_auth"></canvas></div></div>
     </div>
     <div id="results">
-      <div class="rh"><h3>Posts</h3><select id="sort"><option value="score">Top score</option><option value="comments">Most comments</option><option value="new">Newest</option><option value="old">Oldest</option></select></div>
+      <div class="rh"><h3>Posts</h3><select id="sort" aria-label="Sort posts by"><option value="score">Top score</option><option value="comments">Most comments</option><option value="new">Newest</option><option value="old">Oldest</option></select></div>
       <ol id="list"></ol>
       <div class="pager"><button id="prev">Prev</button><span id="page"></span><button id="next">Next</button></div>
     </div>
