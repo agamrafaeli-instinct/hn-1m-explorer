@@ -31,7 +31,9 @@ Keep one file and add one key, `tracked`, per audience. Nothing else moves.
 
 - The list is the 1,000 domains with the most total story points across the whole archive (2006 to the latest saved month). It is the same for every audience, and it lives in `data/tracked_domains.json`, built by `scripts/tracked_domains.py` from `data/archive/`. No window.
 - Caveat to show beside it: archive scores are as fetched, and stories from 2025 and 2026 carry low scores, so the ranking leans on earlier years.
-- The list is rebuilt on purpose, not every day, so counts stay comparable. A rebuild bumps `list_version`. Each week records which version it used.
+- The list is rebuilt on purpose, not every day, so counts stay comparable: `python scripts/tracked_domains.py`. The file has its own `version`, bumped when the set of domains changes (not when only points move). Lists.json `list_version` is not touched. Each compare file records the domain list version it used (`tracked_domains.version`).
+- Built 2026-10-12: version 1, archive 2006-10 to 2026-08, top five by points: github.com, nytimes.com, techcrunch.com, twitter.com, medium.com.
+- Counts come from the domain counts each saved week already holds (domains with 3 or more stories). A tracked domain with fewer counts as 0. Weekly build: `scripts/weekly_compare.py` writes `tracked_domains` (movers only, 10 per direction, same rose and fell rule as the other lists) into data/compare/<week>.json. Saved weeks (data/weekly) are not changed.
 - The weekly build counts stories per tracked domain for the week. The week screen shows only the domains that moved most (the same rose and fell rules the other lists use), never 1,000 rows.
 - Names and terms: no list from the owner yet. The starter list stays, and the screen keeps its starter-list note.
 

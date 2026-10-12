@@ -10,6 +10,7 @@ import json, math, pathlib, statistics, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MIN_DIFF, MIN_SIGMA, FLOOR = 8, 3.0, 8        # count rule
 SHARE_SIGMA, SHARE_WEEKS = 3.0, 4             # share rule
+TRACKED_MOVERS = 10                           # tracked domains shown per direction
 NEW_NOW, NEW_BEFORE = 5, 2                    # new domain
 WATCH_NOW, WATCH_QUIET_WEEKS = 3, 4           # new watchlist name
 SCHEMA = 1
@@ -162,7 +163,24 @@ def extras(w):
     return {'engineers': e, 'vcs': v, 'geeks': ge}, top
 
 
-def compare(weeks, i):
+def tracked_block(w, prev, tracked):
+    """Movers among the tracked domains (data/tracked_domains.json, top 1,000 by points). Weeks save only domains with
+    3 or more stories, so a tracked domain missing from a week counts as 0 here. Only the biggest movers are kept."""
+    names = {r[0] for r in tracked['domains']}
+    cur, old = w.get('domains', {}), prev.get('domains', {})
+    tl, tp = total_live(w), total_live(prev)
+    rows = {'rose': [], 'fell': []}
+    for dom in sorted(names & (set(cur) | set(old))):
+        this, last = cur.get(dom, [0, 0])[0], old.get(dom, [0, 0])[0]
+        st, exp = count_flag(this, last, tl, tp)
+        if st in ('rose', 'fell'):
+            rows[st].append({'group': 'Sites', 'key': dom, 'label': dom, 'this': this, 'last': last, 'expected': round(exp, 1), 'diff': round(this - exp, 1)})
+    for k in rows:
+        rows[k].sort(key=lambda r: -abs(r['diff'])); rows[k] = rows[k][:TRACKED_MOVERS]
+    return {'version': tracked.get('version'), 'in_list': len(names), 'saved_this_week': len(names & set(cur)), **rows}
+
+
+def compare(weeks, i, tracked=None):
     """weeks: list of snapshot dicts oldest first. Compare weeks[i] with weeks[i-1]."""
     w = weeks[i]
     prev = weeks[i - 1] if i > 0 else None
@@ -192,6 +210,7 @@ def compare(weeks, i):
                 newd.append({'group': 'Sites', 'key': dom, 'label': dom, 'this': n, 'last_known': dom in pd, 'last': before if dom in pd else None, 'points': pts})
         newd.sort(key=lambda r: -r['this'])
         res['new_domains'] = newd[:5]
+        if tracked: res['tracked_domains'] = tracked_block(w, prev, tracked)
         # new watchlist names need 4 quiet weeks
         if i >= WATCH_QUIET_WEEKS:
             quiet = weeks[i - WATCH_QUIET_WEEKS:i]
@@ -237,11 +256,13 @@ def load_weeks(root):
 
 def run(root=ROOT):
     weeks = load_weeks(root)
+    tp = root / 'data/tracked_domains.json'
+    tracked = json.loads(tp.read_text()) if tp.exists() else None
     out = root / 'data/compare'
     out.mkdir(parents=True, exist_ok=True)
     index = []
     for i, w in enumerate(weeks):
-        c = compare(weeks, i)
+        c = compare(weeks, i, tracked)
         (out / (w['week'] + '.json')).write_text(json.dumps(c, separators=(',', ':'), ensure_ascii=False, sort_keys=True))
         index.append(w['week'])
     return index
