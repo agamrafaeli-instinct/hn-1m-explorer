@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "h379",
+ "title": "SQLite and DuckDB stories earn more points than other SQL stories",
+ "author": "film-cards",
+ "audience": "engineers",
+ "hypothesis": "A story about SQLite or DuckDB gets more points than a story about SQL databases in general.",
+ "expect": "If true, points per SQLite or DuckDB story should be at least 1.5x the points per SQL story, over all stories from 2006 to 2026 (1.1x is weak, 0.9x or lower refutes it).",
+ "check": {
+  "source": "data/film_shares.json",
+  "path": "monthly",
+  "label_field": "month",
+  "stat": "pooled_share_ratio",
+  "unit": "x",
+  "field": "localdb_p",
+  "per_label": "points per SQLite/DuckDB story against points per SQL story",
+  "display_pct": false,
+  "group_a": {
+   "label": "SQLite and DuckDB stories ({from} to {to})",
+   "indices": "all",
+   "field": "localdb_p",
+   "per": "localdb_s"
+  },
+  "group_b": {
+   "label": "SQL stories ({from} to {to})",
+   "indices": "all",
+   "field": "sql_p",
+   "per": "sql_s"
+  }
+ },
+ "verdicts": [
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.5
+   },
+   "verdict": "supported",
+   "confidence": "strong"
+  },
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.1
+   },
+   "verdict": "supported",
+   "confidence": "weak"
+  },
+  {
+   "when": {
+    "op": "<=",
+    "value": 0.9
+   },
+   "verdict": "refuted",
+   "confidence": "strong"
+  },
+  {
+   "else": true,
+   "verdict": "inconclusive",
+   "confidence": "inconclusive"
+  }
+ ],
+ "thresholds_note": "Thresholds are the ones used on h370, set before this card was run and not tuned to its result. h309 is left unchanged.",
+ "caveats": [
+  "Points are the score each story had when the archive fetched it, so 2025 and 2026 stories may still be gaining points.",
+  "A title that names a database is not proof the story is about it, and one story can sit in both lists.",
+  "Title words only, so stories that never name the database are missed.",
+  "h309 compares against the average story; this card compares against SQL stories."
+ ]
+}

@@ -1241,6 +1241,22 @@
    "id": "h378",
    "score": 1.0,
    "title": "Language-model stories earn more points than the average story"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 114563.0,
+   "id": "h379",
+   "score": 1.0,
+   "title": "SQLite and DuckDB stories earn more points than other SQL stories"
   }
  ],
  "schema": 1,
