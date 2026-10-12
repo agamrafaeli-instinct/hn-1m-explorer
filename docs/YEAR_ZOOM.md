@@ -14,7 +14,7 @@ Decision (2026-10-12): requested by the owner on the full-history story screen. 
 
 Not time series, so not touched: the concentration curves, the clock, the weekday and hour bars, the lens bars.
 
-Finding for #207: the story-screen monthly charts cover only 44 months today, so a year zoom on them is nearly pointless. Task #207 first moves stories and comments to `data/atlas/months.json` (2006 onward). Points per month needs a full-history source (the daily counts in `data/history/daily.csv` run from 2006-10; check it carries points before using it). If it does not, the points chart keeps its own range and says so on the chart.
+Finding for #207: the story-screen monthly charts cover only 44 months today, so a year zoom on them is nearly pointless. Task #207 first moves stories and comments to `data/atlas/months.json` (2006 onward). Points per month comes from `score_sum_stories` in `data/history/daily.csv` (2006-10 to 2026-07, checked), summed by month. Scores for 2025 and 2026 are low as fetched, so the points chart keeps its existing warning note.
 
 ## The control
 
