@@ -31,7 +31,7 @@ A script, `scripts/build_share_pages.py`, runs in the deploy before the site is 
 
 ## Tasks
 
-- #211 card pages, #212 week and audience pages, #213 point the Share button at these pages.
+- #211 card pages (done, scripts/build_share_pages.py), #212 week and audience pages, #213 point the Share button at these pages.
 
 ## Limits
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Stage public assets by a conservative allowlist, never publish tooling or history."""
-import argparse, pathlib, shutil
+import argparse, pathlib, shutil, sys
 SUFFIXES={'.html','.js','.mjs','.css','.json','.svg','.png','.jpg','.jpeg','.gif','.webp','.ico','.avif','.woff','.woff2','.ttf','.otf','.mp4','.webm','.ogg','.mp3','.wav','.pdf','.txt','.xml','.webmanifest'}
 DIRECTORIES={'demo','data','vendor','sample','assets','images','fonts','media','css','js','hypotheses','stories'}
 MAX_BYTES=900_000_000
@@ -37,6 +37,9 @@ def stage(root,destination):
         except Exception as e:
             print('bundle step skipped:',e)
             for f in ('bundle.json','tally.json'): (hd/f).unlink(missing_ok=True)
+    if hd.is_dir():
+        sys.path.insert(0,str(root/'scripts')); import build_share_pages
+        print('share pages:',build_share_pages.card_pages(destination))
     print('Published bytes:',size,'; assets:',', '.join(sorted(names)))
     return size
 
