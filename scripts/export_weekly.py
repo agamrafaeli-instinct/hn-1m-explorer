@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write data/exports/weekly.csv: one row per week and metric, from the compare files in data/compare/.
+"""Write data/exports/weekly.csv and weekly.json (same rows): one row per week and metric, from the compare files in data/compare/.
 Columns are explained in docs/EXPORTS.md.  Usage: python scripts/export_weekly.py [--root DIR]"""
 import argparse, csv, json, pathlib
 
@@ -23,10 +23,12 @@ def rows(c):
 def export(root):
     root = pathlib.Path(root); out = root / 'data' / 'exports' / 'weekly.csv'; out.parent.mkdir(parents=True, exist_ok=True)
     files = sorted((root / 'data' / 'compare').glob('????-W??.json'))
+    allrows = []
     with open(out, 'w', newline='') as fh:
         w = csv.DictWriter(fh, COLS); w.writeheader(); n = 0
         for f in files:
-            for x in rows(json.loads(f.read_text())): w.writerow(x); n += 1
+            for x in rows(json.loads(f.read_text())): w.writerow(x); allrows.append(x); n += 1
+    (out.parent / 'weekly.json').write_text(json.dumps({'schema': 'docs/EXPORTS.md', 'columns': COLS, 'weeks': len(files), 'rows': allrows}, indent=1) + '\n')
     return n, len(files)
 
 if __name__ == '__main__':

@@ -1,6 +1,9 @@
 # Exports
 
-## data/exports/weekly.csv
+## data/exports/weekly.csv and weekly.json
+
+Both files hold the same rows. The JSON file is `{schema, columns, weeks, rows}` where each row is an object with the columns below. Links: https://agamrafaeli-instinct.github.io/hn-1m-explorer/data/exports/weekly.csv and .../weekly.json.
+
 
 One row per week and metric, for every saved week. Built by `python scripts/export_weekly.py` from `data/compare/<week>.json`, and rebuilt by the weekly workflow after each new week. Open it in any spreadsheet. It is also published at `data/exports/weekly.csv` on the site. Run `python scripts/verify_weekly.py` first if you need proof the saved weeks are unchanged (see [RUNBOOK.md](RUNBOOK.md)).
 

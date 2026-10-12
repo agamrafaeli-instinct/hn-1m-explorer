@@ -14,5 +14,8 @@ class Export(unittest.TestCase):
         self.assertEqual(list(rs[0].keys()), X.COLS)
         self.assertEqual([r['estimate'] for r in rs if r['metric'] == 'Rust'], ['yes'])
         self.assertEqual([r['flag'] for r in rs if r['metric'] == 'Postgres'], ['rose'])
+        j = json.load(open(t / 'data/exports/weekly.json'))
+        self.assertEqual((len(j['rows']), j['weeks'], j['columns']), (7, 1, X.COLS))
+        self.assertEqual([{k: str(v) for k, v in r.items()} for r in j['rows']], [dict(r) for r in rs])
 
 if __name__ == '__main__': unittest.main()
