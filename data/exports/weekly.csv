@@ -747,3 +747,80 @@ week,start_utc,kind,audience,section,metric,value,unit,estimate,last_week,avg_la
 2026-W40,2026-09-28,backfill,vcs,term,Cloudflare,30,stories,,11,,rose,1
 2026-W40,2026-09-28,backfill,vcs,term,IPO,20,stories,,4,,rose,1
 2026-W40,2026-09-28,backfill,vcs,term,Meta,53,stories,,83,,fell,1
+2026-W41,2026-10-05,weekly,all,volume,stories_all,9952,stories,,,,,1
+2026-W41,2026-10-05,weekly,all,volume,stories_live,6860,stories,,,,,1
+2026-W41,2026-10-05,weekly,all,volume,comments_all,80284,comments,,,,,1
+2026-W41,2026-10-05,weekly,engineers,fact,Stories with 100 or more comments,98,stories,,,,,1
+2026-W41,2026-10-05,weekly,engineers,fact,Stories with 100 or more points,151,stories,,,,,1
+2026-W41,2026-10-05,weekly,engineers,fact,Show HN stories,927,stories,,,,,1
+2026-W41,2026-10-05,weekly,engineers,fact,Show HN stories that link to GitHub,342,stories,,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: AI coding terms in story titles and text,Claude Code,90,stories,no,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: AI coding terms in story titles and text,MCP,85,stories,no,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: AI coding terms in story titles and text,AI agents,56,stories,no,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: AI coding terms in story titles and text,agentic,47,stories,no,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: AI coding terms in story titles and text,cursor,13,stories,no,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: AI coding terms in story titles and text,copilot,5,stories,no,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,AI and ML,43,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,remote,40,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,python,16,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,TypeScript,14,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,on-site,8,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,backend,6,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,bar: Skills in monthly hiring comments,rust,4,comments,yes,,,,1
+2026-W41,2026-10-05,weekly,engineers,share,AI in story titles and text,0.2238,share of stories,,0.2371,0.2338,steady,1
+2026-W41,2026-10-05,weekly,engineers,share,Show HN share of stories,0.1351,share of stories,,0.13,0.1268,steady,1
+2026-W41,2026-10-05,weekly,engineers,term,SQLite,24,stories,,7,,rose,1
+2026-W41,2026-10-05,weekly,engineers,term,kubernetes,21,stories,,8,,rose,1
+2026-W41,2026-10-05,weekly,engineers,term,java,19,stories,,7,,rose,1
+2026-W41,2026-10-05,weekly,geeks,fact,Stories with no AI term,5325,stories,,,,,1
+2026-W41,2026-10-05,weekly,geeks,fact,Stories that mention an old year,109,stories,,,,,1
+2026-W41,2026-10-05,weekly,geeks,fact,Different sites among linked stories,3435,stories,,,,,1
+2026-W41,2026-10-05,weekly,geeks,fact,Links to Wikipedia,73,stories,,,,,1
+2026-W41,2026-10-05,weekly,geeks,fact,Links to YouTube,176,stories,,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,questions,422,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,science,145,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,games,136,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,space,104,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,history,96,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,books,94,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,education,84,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,bar: Biggest topics,health,52,stories,no,,,,1
+2026-W41,2026-10-05,weekly,geeks,share,Stories with no AI term,0.7762,share of stories,,0.7629,0.7662,steady,1
+2026-W41,2026-10-05,weekly,geeks,share,Distinct sites per linked story,0.5177,share of stories,,0.5213,0.5165,steady,1
+2026-W41,2026-10-05,weekly,geeks,term,science,145,stories,,115,,rose,1
+2026-W41,2026-10-05,weekly,geeks,term,music,44,stories,,26,,rose,1
+2026-W41,2026-10-05,weekly,shared,share,Stories dead or deleted,0.3107,share of stories,,0.3068,0.3137,steady,1
+2026-W41,2026-10-05,weekly,vcs,fact,Linked stories from press sites,519,stories,,,,,1
+2026-W41,2026-10-05,weekly,vcs,fact,Linked stories from primary sources,966,stories,,,,,1
+2026-W41,2026-10-05,weekly,vcs,fact,Stories with deal words in the title,43,stories,,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,robotics,31,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,GPUs,29,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,data centers,19,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,quantum,17,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,solar,15,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,chips,9,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,batteries,1,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,fusion and fission,1,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,photonics and lidar,1,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deep tech themes,bio,0,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,IPO,9,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,raises,9,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,funding,6,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,valuation,6,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,acquisition,5,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,layoffs,4,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,bankrupt,3,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,series,2,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Deal words in titles,shutdown,2,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,OpenAI,115,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Google,77,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Anthropic,66,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Microsoft,65,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Apple,52,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Nvidia,34,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Cloudflare,28,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,bar: Names in story titles,Amazon,26,stories,no,,,,1
+2026-W41,2026-10-05,weekly,vcs,share,Press share of linked stories (press vs primary sources),0.3495,share of stories,,0.3997,0.4065,steady,1
+2026-W41,2026-10-05,weekly,vcs,term,Microsoft,65,stories,,28,,rose,1
+2026-W41,2026-10-05,weekly,vcs,term,Mistral,16,stories,,2,,rose,1
+2026-W41,2026-10-05,weekly,vcs,term,Meta,22,stories,,53,,fell,1

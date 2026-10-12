@@ -70,6 +70,13 @@
    "kind": "backfill",
    "saved_at": "2026-10-09T07:44:09Z",
    "path": "2026-W40.json"
+  },
+  {
+   "week": "2026-W41",
+   "start_utc": "2026-10-05",
+   "kind": "weekly",
+   "saved_at": "2026-10-12T05:37:24Z",
+   "path": "2026-W41.json"
   }
  ]
 }
