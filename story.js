@@ -149,7 +149,7 @@
     const H = cy.hour, tp = H.reduce((a, h) => a + h.points, 0), tq = H.reduce((a, h) => a + h.posts, 0), svg = $('svg_clock'); svg.innerHTML = '';
     const cx = 200, cyy = 200, r0 = 50, rmax = 170, mx = Math.max(...H.map(h => h.points / tp), ...H.map(h => h.posts / tq));
     const arc = (i, r1, r2, pad) => { const a0 = (i / 24) * 2 * Math.PI - Math.PI / 2 + pad, a1 = ((i + 1) / 24) * 2 * Math.PI - Math.PI / 2 - pad; const p = (r, a) => [cx + r * Math.cos(a), cyy + r * Math.sin(a)]; const A = p(r1, a0), B = p(r1, a1), C = p(r2, a1), D = p(r2, a0); return `M${A}L${D}A${r2} ${r2} 0 0 1 ${C}L${B}A${r1} ${r1} 0 0 0 ${A}Z`; };
-    for (let i = 0; i < 24; i++) { el('text', { x: cx + (rmax + 14) * Math.cos((i + .5) / 24 * 2 * Math.PI - Math.PI / 2), y: cyy + (rmax + 14) * Math.sin((i + .5) / 24 * 2 * Math.PI - Math.PI / 2) + 3, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 12 }, svg).textContent = i % 3 === 0 ? i : ''; }
+    for (let i = 0; i < 24; i++) { el('text', { x: cx + (rmax + 14) * Math.cos((i + .5) / 24 * 2 * Math.PI - Math.PI / 2), y: cyy + (rmax + 14) * Math.sin((i + .5) / 24 * 2 * Math.PI - Math.PI / 2) + 3, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 17 }, svg).textContent = i % 3 === 0 ? i : ''; }
     el('circle', { cx, cy: cyy, r: r0 - 2, fill: 'none', stroke: '#3a322b' }, svg);
     const A = [], B = [];
     H.forEach((h, i) => { A.push(el('path', { fill: '#ff6600', opacity: .9 }, svg)); B.push(el('path', { fill: '#f4ece2', opacity: .95 }, svg)); });
@@ -159,7 +159,7 @@
     const needle = el('line', { x1: cx, y1: cyy, x2: cx + (rmax + 6) * Math.sin(0), y2: cyy, stroke: '#ffd9bf', 'stroke-width': 2, 'stroke-dasharray': '3 3', opacity: 0 }, svg);
     const ta = ang - Math.PI / 2; needle.setAttribute('x2', cx + (rmax + 6) * Math.cos(ta)); needle.setAttribute('y2', cyy + (rmax + 6) * Math.sin(ta));
     el('text', { x: cx, y: cyy - 4, 'text-anchor': 'middle', fill: '#f4ece2', 'font-size': 20, 'font-weight': 800, 'font-family': 'Fraunces,serif' }, svg).textContent = String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
-    el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 12 }, svg).textContent = 'UTC';
+    el('text', { x: cx, y: cyy + 14, 'text-anchor': 'middle', fill: '#a99d8f', 'font-size': 17 }, svg).textContent = 'UTC';
     svg._anim = () => { const t0 = performance.now(); (function f(t) { const p = clamp((t - t0) / 800, 0, 1), e = 1 - Math.pow(1 - p, 3); H.forEach((h, i) => { A[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.points / tp) / mx, .012)); B[i].setAttribute('d', arc(i, r0, r0 + (rmax - r0) * e * (h.posts / tq) / mx * 0.999, .06)); }); needle.setAttribute('opacity', e); if (p < 1) requestAnimationFrame(f); })(t0); };
     const top3 = H.map((h, i) => [h.points / tp, i]).sort((a, b) => b[0] - a[0]).slice(0, 3), sh = top3.reduce((a, b) => a + b[0], 0), eff = H.map((h, i) => [h.points / h.posts, i]).sort((a, b) => b[0] - a[0])[0];
     $('lede_clock').innerHTML = `The attention-weighted center of the day is <b>${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')} UTC</b>. Three hours (<b>${top3.map(x => String(x[1]).padStart(2, '0') + ':00').join(', ')}</b>) carry <b>${pct(sh, 0)}</b> of all points, against 12.5% if the day were flat. Items submitted around <b>${String(eff[1]).padStart(2, '0')}:00</b> earn the most points each on average.`;
