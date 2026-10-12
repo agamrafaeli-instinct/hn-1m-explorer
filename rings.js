@@ -107,6 +107,6 @@
       wire(box);
     }).catch(function (e) { box.replaceChildren(el('p', 'rg_note', 'Could not load the yearly data: ' + e.message)); });
   }
-  window.Rings = { mount: mount };
+  window.Rings = { mount: mount, tipEl: tipEl, wire: wire, strip: strip, pct: pct };
   window.RingsInit = function () { if (window.SetPageMeta) window.SetPageMeta('What HN rewarded, year by year', 'Themes, domains and story types of every year of Hacker News since 2006, from the full archive.'); var b = document.getElementById('rings_body'); if (b) mount(b); };
 })();

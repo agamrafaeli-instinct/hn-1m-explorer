@@ -72,6 +72,7 @@
   function sagaBar() {
     const b = $('saga_bar'); if (b.dataset.on) return; b.dataset.on = '1';
     const upd = () => { const m = document.documentElement.scrollHeight - innerHeight; b.style.width = (m > 0 ? Math.min(100, scrollY / m * 100) : 0) + '%'; };
+    document.querySelector('.sg_more').addEventListener('click', e => { e.preventDefault(); $('sg2').scrollIntoView({ behavior: 'smooth' }); });
     addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
   }
   function route() {
@@ -82,7 +83,7 @@
     views.forEach(n => $('v_' + n).hidden = n !== v);
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();
-    if (v === 'saga') sagaBar();
+    if (v === 'saga') { sagaBar(); const go = () => window.SagaInit(); if (window.SagaInit) go(); else { const sc = document.createElement('script'); sc.src = 'saga.js'; sc.onload = go; document.head.appendChild(sc); } }
     if (v === 'compare') window.CompareInit && window.CompareInit();
     if (v === 'rings') { const go = () => window.RingsInit(); if (window.RingsInit) go(); else { const sc = document.createElement('script'); sc.src = 'rings.js'; sc.onload = go; document.head.appendChild(sc); } }
     if (v === 'how') window.HowInit && window.HowInit();

@@ -266,3 +266,6 @@ select{min-height:44px}
 .sg_more{align-self:flex-start;color:#b84700;font-weight:600;text-decoration:none;padding:10px 0}.sg_more:after{content:" \2193"}
 .sg_beat h2{margin:0 0 12px}
 .sg_hook{min-height:calc(100svh - 220px)}.sg_beat:last-child{padding-bottom:96px}
+
+.sg_row{margin-bottom:18px}.sg_cap{margin:0 0 6px}.sg_bars{align-items:flex-end}.rg_bar.sg_low{background:transparent;border:1.5px dashed #ff6600;box-sizing:border-box}
+.sg_bars{height:64px}
