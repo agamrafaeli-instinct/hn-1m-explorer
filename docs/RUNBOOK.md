@@ -68,3 +68,19 @@ Rollback was rehearsed on a local branch on 2026-10-10: revert of a test commit,
 ## Before pushing a UI or CSS change
 
 Run `node scripts/perf.mjs --serve /tmp/site_pp --runs 3 --tolerance 1.25` (prepush does this). Load times on a busy machine are noisy, so treat a result near the limit as a reason to look, and raise the budget in the same commit when the change is real (data/budgets.json and docs/BUDGETS.md).
+
+## First day
+
+Where things are:
+- Code and data: https://github.com/agamrafaeli-instinct/hn-1m-explorer. The site is https://agamrafaeli-instinct.github.io/hn-1m-explorer/.
+- Board: https://github.com/users/agamrafaeli-instinct/projects/1. The way work moves is in docs/FLYWHEEL.md.
+- Scheduled jobs and how to recover each one are in "Jobs" and "Recovery" above.
+
+Steps, from a clean clone:
+1. Run the tests: `python3 -m unittest discover -s tests`. It must end with OK.
+2. Check the saved weeks: `python3 scripts/verify_weekly.py`. It must say all weeks match.
+3. See the site on your machine: `python3 scripts/stage_site.py --root . --output /tmp/site` then `cd /tmp/site && python3 -m http.server 8766`, and open http://localhost:8766/.
+4. Run every check CI runs before you push: `bash scripts/prepush.sh` (about 3 minutes). Never push while it shows an error.
+5. Push to main. A change under hypotheses/ deploys by itself. Any other site change needs one run of "Daily Hacker News update and Pages" (Actions tab, Run workflow). Docs and tests need no deploy.
+
+When a run fails: open the run in the Actions tab, find the step with the red mark, and read its log. The failure issue on the board links to the run. `gh run view <id> --log-failed` shows the same log. The last good site stays live while a run fails. Fix the cause, push, and run it again once.

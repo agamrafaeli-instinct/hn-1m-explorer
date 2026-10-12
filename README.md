@@ -128,3 +128,7 @@ For larger changes, start with the [board](https://github.com/users/agamrafaeli-
 
 **What do you think is happening on Hacker News—and what result would change your mind?**
 
+
+## Run it yourself
+
+Maintainers start with the [First day section of the runbook](docs/RUNBOOK.md#first-day).
