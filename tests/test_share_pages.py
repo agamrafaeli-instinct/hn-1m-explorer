@@ -33,4 +33,11 @@ class SharePages(unittest.TestCase):
         for a in ('engineers', 'vcs', 'geeks'):
             self.assertIn('url=../../#/a/' + a + '"', (self.out / 'share/a' / (a + '.html')).read_text())
 
+
+class ShareButtons(unittest.TestCase):
+    def test_buttons_use_share_pages(self):
+        self.assertIn("'share/c/' + card.id + '.html'", (ROOT / 'hypotheses.js').read_text())
+        self.assertNotIn("'#/c/' + card.id", (ROOT / 'hypotheses.js').read_text().split("share-btn'")[1].split('addEventListener')[0])
+        self.assertIn("'share/w/' + a + '/' + week + '.html'", (ROOT / 'weekly.js').read_text())
+
 if __name__ == '__main__': unittest.main()

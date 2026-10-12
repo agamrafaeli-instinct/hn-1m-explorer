@@ -182,7 +182,7 @@
     const a = el('article', 'hyp narr ' + r.verdict);
     const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
     const key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
-    const sh = el('button', 'share-btn', 'Share'); sh.type = 'button'; sh.dataset.url = location.origin + location.pathname + '#/c/' + card.id + '/' + key;
+    const sh = el('button', 'share-btn', 'Share'); sh.type = 'button'; sh.dataset.url = new URL('share/c/' + card.id + '.html', location.href.split('#')[0]).href;
     sh.setAttribute('aria-label', 'Share this card');
     sh.addEventListener('click', async () => {
       const url = sh.dataset.url;

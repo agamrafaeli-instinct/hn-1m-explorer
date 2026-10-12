@@ -92,6 +92,16 @@
     d.lists.forEach(l => { if (!l.items.length) return; const s = section(l.title); s.appendChild(storyList(l.items)); if (l.note) s.appendChild(el('p', 'wn', l.note)); frag.appendChild(s); });
     return frag;
   }
+  function shareBtn(a, week) {
+    const sh = el('button', 'share-btn', 'Share this week'); sh.type = 'button'; sh.setAttribute('aria-label', 'Share this week');
+    const url = new URL('share/w/' + a + '/' + week + '.html', location.href.split('#')[0]).href, title = A[a].name + ': week ' + week + ' (Hacker News)';
+    sh.addEventListener('click', async () => {
+      try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+      try { await navigator.clipboard.writeText(url); } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e2) { } t.remove(); }
+      sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this week'; }, 2000);
+    });
+    return sh;
+  }
   function stepper(idx, i, a) {
     const w = idx[i], bar = el('div', 'wstep');
     const mk = (j, lab, arrow) => { const x = j >= 0 && j < idx.length ? el('a', 'wbtn', arrow) : el('span', 'wbtn off', arrow); if (x.tagName !== 'A') { x.setAttribute('role', 'link'); x.setAttribute('aria-disabled', 'true'); } if (x.tagName === 'A') x.href = '#/w/' + a + '/' + idx[j].week; x.setAttribute('aria-label', lab); return x; };
@@ -119,7 +129,7 @@
       if (my !== token) return;
       idx[i].end_exclusive_utc = c.end_exclusive_utc; curWeek = idx[i].week;
       const b = root(), frag = document.createDocumentFragment();
-      frag.append(pills(a, idx[i].week), el('h1', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), stepper(idx, i, a));
+      frag.append(pills(a, idx[i].week), el('h1', 'wtitle', A[a].title), el('p', 'wintro', A[a].intro), shareBtn(a, idx[i].week), stepper(idx, i, a));
       if (c.kind === 'backfill') frag.appendChild(el('p', 'wbf', 'This week was rebuilt from the archive after it ended, with the same method and fields as a live save. The newest stories may have had more time to collect points.'));
       frag.append(findingsSection(fnd, a), changes(c, a), shares(c, a), extra(c, a));
       const top = section('Top stories of the week'); top.appendChild(storyList(c.top_stories)); frag.appendChild(top);
