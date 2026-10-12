@@ -33,4 +33,13 @@ class Verify(unittest.TestCase):
         self.assertEqual(V.verify(t, add_new=True)[0], 1)
         self.assertNotEqual(json.loads((d / 'hashes.json').read_text())['files']['2026-W31.json'], V.sha(d / '2026-W31.json'))
 
+class WorkflowsRunTheCheck(unittest.TestCase):
+    def test_daily_and_weekly_jobs_verify_saved_weeks(self):
+        import pathlib
+        root = pathlib.Path(__file__).resolve().parents[1] / '.github/workflows'
+        self.assertIn('scripts/verify_weekly.py
+', (root / 'daily-hn.yml').read_text())
+        self.assertIn('scripts/verify_weekly.py', (root / 'weekly-snapshot.yml').read_text())
+
+
 if __name__ == '__main__': unittest.main()

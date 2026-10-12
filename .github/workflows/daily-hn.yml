@@ -34,6 +34,9 @@ jobs:
         run: |
           pip install duckdb
           python -m unittest discover -s tests -v
+      - name: Check saved weeks against their recorded hashes
+        # A saved week cannot be rebuilt once it leaves the archive window, so a missing or edited one fails the run the same day (#218).
+        run: python scripts/verify_weekly.py
       - name: Add new items and keep the rolling window
         run: python scripts/update_daily.py
       - name: Refresh curious-geeks numbers
