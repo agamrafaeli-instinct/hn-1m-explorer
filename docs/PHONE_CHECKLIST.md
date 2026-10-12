@@ -4,15 +4,19 @@ Every new or changed screen passes this at 320, 390 and 430 px wide before it sh
 
 | # | Item | Pass line | How |
 |---|---|---|---|
-| 1 | No sideways scroll | `document.documentElement.scrollWidth` is at most the viewport width, at 320, 390 and 430 px | Auto: tests/ui.test.mjs at 390; Eye at 320 and 430 (the sweep in #222 automates it) |
+| 1 | No sideways scroll | `document.documentElement.scrollWidth` is at most the viewport width, at 320, 390 and 430 px | Auto: tests/ui.test.mjs at 390; Eye at 320 and 430 (`scripts/phone_sweep.mjs` automates it) |
 | 2 | Text contrast | At least 4.5:1 for body text, 3:1 for text of 24 px or larger | Auto: `node scripts/a11y_pages.mjs` |
-| 3 | Tap targets | Buttons, pills, arrows and links the reader taps are at least 44 px tall and wide, or have 8 px of space around them | Eye now; the sweep in #222 automates it |
-| 4 | Labels | Every icon button and every chart has an `aria-label` or visible text that says what it is | Auto for charts (tests/ui.test.mjs); Eye for buttons |
+| 3 | Tap targets | Buttons, pills, arrows and links the reader taps are at least 44 px tall and wide, or have 8 px of space around them | Auto: `scripts/phone_sweep.mjs` lists targets under 44 px |
+| 4 | Labels | Every icon button and every chart has an `aria-label` or visible text that says what it is | Auto for charts (tests/ui.test.mjs); Auto: `scripts/phone_sweep.mjs` lists controls with no label |
 | 5 | Keyboard | Tab reaches every control in reading order, a focus ring shows, and Enter or Space works | Eye, with a keyboard in desktop Chrome |
 | 6 | Reduced motion | Animations stop under `prefers-reduced-motion: reduce` | Eye: grep the CSS for the media query next to each new animation |
 | 7 | Chart ends | Line labels sit on the line ends, no legend, no label cut off at 320 px | Eye: screenshot at 320 and 390 |
 | 8 | Reading size | Body text is at least 15 px and line length fits without zoom | Eye |
 | 9 | Fast enough | Stays inside its budget in data/budgets.json | Auto: scripts/prepush.sh |
+
+## The sweep
+
+`node scripts/phone_sweep.mjs --site http://localhost:8766/` visits every screen (21 routes) at 320, 390 and 430 px and prints one row per screen: sideways scroll in px, taps under 44 px, controls with no label, charts with no name. The full list is written to `/tmp/phone_sweep.json`. It takes about 90 s and only reports; it never fails a run. `PHONE_SWEEP=1 bash scripts/prepush.sh` runs it after the usual checks. Inline links inside a sentence are not counted as taps.
 
 ## How to run it
 
