@@ -63,7 +63,8 @@ async function check(name, route, ready, extra) {
   results.push({ name, ok: !why, why }); console.log((why ? 'FAIL ' : 'ok   ') + name.padEnd(22) + (Date.now() - t0) + ' ms' + (why ? '  ' + why : ''));
 }
 const q1 = s => `(()=>{const e=document.querySelector(${JSON.stringify(s)});return !!e&&e.textContent.trim().length>0})()`;
-await check('home', '#/', q1('#homeweek_s'), async () => (await ev(q1('#homeweek')) ? '' : 'no latest-week link'));
+await check('saga', '#/', q1('.sg_hook h1'));
+await check('home', '#/compare', q1('#homeweek_s'), async () => (await ev(q1('#homeweek')) ? '' : 'no latest-week link'));
 await check('audience', '#/a/engineers', q1('#aud_card article.hyp'));
 await check('card', '#/c/h300/engineers', q1('#aud_card article.hyp'), async () => ((await ev("document.querySelectorAll('#aud_card article.hyp').length")) === 1 ? '' : 'expected exactly one card'));
 const AUDN = { engineers: 'Engineers', vcs: 'Deep-tech VCs', geeks: 'Curious geeks' };

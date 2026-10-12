@@ -6,7 +6,7 @@ const ws=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);await
 let id=0;const pend={};ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pend[m.id]){pend[m.id](m.result);delete pend[m.id]}};
 const send=(method,params={})=>new Promise(r=>{const i=++id;pend[i]=r;ws.send(JSON.stringify({id:i,method,params}))});
 await send('Page.enable');
-const routes=['#/','#/a/geeks','#/t/llm','#/c/h369/all','#/hypotheses','#/how','#/s/2026-10-11'];
+const routes=['#/','#/compare','#/a/geeks','#/t/llm','#/c/h369/all','#/hypotheses','#/how','#/s/2026-10-11'];
 const expr=`(()=>{
 const lum=c=>{const a=c.match(/[\\d.]+/g).map(Number);const f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(a[0])+.7152*f(a[1])+.0722*f(a[2])};
 const bg=el=>{while(el){const c=getComputedStyle(el).backgroundColor;const a=c.match(/[\\d.]+/g);if(a&&(a.length<4||+a[3]>.9))return c;el=el.parentElement}return 'rgb(255,255,255)'};

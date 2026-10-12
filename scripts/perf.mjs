@@ -32,7 +32,8 @@ const WIDTH = +arg('width', 390), RUNS = +arg('runs', 3), ONLY = arg('only', '')
 const BFILE = String(arg('budgets', 'data/budgets.json'));
 // name, hash route, a selector that exists only when the content is really there, and optional text it must contain
 export const SCREENS = [
-  ['home', '#/', '#homeweek_s', '2026'],
+  ['home', '#/compare', '#homeweek_s', '2026'],
+  ['saga', '#/', '.sg_hook h1', 'We counted'],
   ['audience', '#/a/engineers', '#aud_card article.hyp', ''],
   ['card', '#/c/h300/engineers', '#aud_card article.hyp', ''],
   ['week_engineers', '#/w/engineers', '#w_body .wsec', ''],
