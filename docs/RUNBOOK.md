@@ -131,3 +131,6 @@ Steps retry on their own (`scripts/retry.sh`). `scripts/contract.py` checks the 
 
 ## UI check on fixed data (#336)
 `scripts/make_ui_fixture.py` builds tests/fixtures/ui/data (small data files as they were, 4 explorer chunks sampled every 25th row, the atlas files the screens fetch). `--stage DIR` stages the site code with that data. Prepush runs `tests/ui.test.mjs` on it; the daily workflow still runs it on live data. Rebuild the fixture only to change what the check sees. Measured 15 s against 20 s on live data (the explorer no longer loads 186 chunks).
+
+## QA reviewer (#254)
+`node scripts/qa_review.mjs --ticket N --routes '#/a,#/b' [--site URL]` walks the routes at 390 px and writes docs-style report.md plus one screenshot per route (default: stages the repo locally). It lists what a script can see (sideways scroll, taps under 44 px, unnamed controls and charts, tiny text, empty sections, "undefined" or banned words, console errors) next to the ticket's done-when list. It always exits 0. The "QA review" workflow runs it on the live site and posts the report as a comment on the ticket, with screenshots kept on the `qa-reports` branch. Run it from Actions with the ticket number and routes. Whether copy reads well or a chart is clear is judged by whoever reads the screenshots.

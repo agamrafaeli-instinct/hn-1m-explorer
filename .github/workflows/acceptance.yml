@@ -3,7 +3,7 @@ name: Acceptance checks
 # The check serves the staged site on localhost, so a branch never touches the live site.
 on:
   push:
-    branches-ignore: [main]
+    branches-ignore: [main, qa-reports]
   workflow_dispatch:
 permissions:
   contents: read

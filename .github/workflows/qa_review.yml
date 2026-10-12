@@ -1,0 +1,45 @@
+name: QA review
+# Walks routes of the live site at 390 px and posts a report on one ticket (#254). Report only: it never fails a build and nothing else waits on it.
+# Screenshots go to the qa-reports branch (not the site) so the comment can show them.
+on:
+  workflow_dispatch:
+    inputs:
+      ticket:
+        description: 'Ticket number to report on'
+        required: true
+      routes:
+        description: 'Comma-separated routes, for example #/,#/rings'
+        required: true
+      site:
+        description: 'Site address (default: the live site)'
+        required: false
+permissions:
+  contents: write
+  issues: write
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Walk the routes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TICKET: ${{ inputs.ticket }}
+          ROUTES: ${{ inputs.routes }}
+          SITE: ${{ inputs.site }}
+        run: |
+          set +e
+          dir="$TICKET/run-$GITHUB_RUN_ID"
+          base="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/qa-reports/$dir"
+          node scripts/qa_review.mjs --ticket "$TICKET" --routes "$ROUTES" --site "${SITE:-https://agamrafaeli-instinct.github.io/hn-1m-explorer/}" --out qa_out --shots-url "$base"
+          # keep the screenshots on the qa-reports branch
+          git config user.name "qa-review"; git config user.email "qa-review@users.noreply.github.com"
+          git fetch -q origin qa-reports:qa-reports 2>/dev/null && git worktree add -q /tmp/qa qa-reports || { git worktree add -q --detach /tmp/qa; (cd /tmp/qa && git checkout -q --orphan qa-reports && git rm -rqf . ); }
+          mkdir -p "/tmp/qa/$dir"; cp qa_out/*.jpg qa_out/report.md "/tmp/qa/$dir/"
+          (cd /tmp/qa && git add -A && git commit -qm "QA walk for #$TICKET (run $GITHUB_RUN_ID)" && git push -q origin HEAD:qa-reports)
+          gh issue comment "$TICKET" --body-file qa_out/report.md
+          exit 0
