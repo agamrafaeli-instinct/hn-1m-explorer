@@ -86,7 +86,7 @@ Steps, from a clean clone:
 4. Run every check CI runs before you push: `bash scripts/prepush.sh` (about 1.5 minutes). The independent checks run in parallel with a log each in /tmp/pp; a failure prints `PREPUSH FAILED in: <names>` and the last lines of those logs. Perf runs alone afterwards. Never push while it shows an error.
 5. Push to main. A change to a published file deploys by itself (see Deploy). Docs and tests need no deploy.
 
-When a run fails: open the run in the Actions tab, find the step with the red mark, and read its log. The failure issue on the board links to the run. `gh run view <id> --log-failed` shows the same log. The last good site stays live while a run fails. Fix the cause, push, and run it again once.
+When a run fails (the issue already names the failing step, the last 30 log lines and the commit; a time-only budget failure retries once by itself): open the run in the Actions tab, find the step with the red mark, and read its log. The failure issue on the board links to the run. `gh run view <id> --log-failed` shows the same log. The last good site stays live while a run fails. Fix the cause, push, and run it again once.
 
 ## Roadmap and board
 

@@ -11,7 +11,7 @@ on:
 permissions:
   contents: read
   issues: write
-  actions: read
+  actions: write
 env:
   GH_TOKEN: ${{ github.token }}
   REPO: ${{ github.repository }}
@@ -23,18 +23,35 @@ jobs:
     if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure'
     runs-on: ubuntu-latest
     steps:
-      - name: Open or update the issue
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Open or update the issue (or retry once when only a load time failed)
         env:
           WF: ${{ github.event.workflow_run.name }}
           URL: ${{ github.event.workflow_run.html_url }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+          MSG: ${{ github.event.workflow_run.head_commit.message }}
+          ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
         run: |
           gh label create bug -R "$REPO" --color d73a4a --description "Something is broken" 2>/dev/null || true
+          gh run view "$RUN_ID" -R "$REPO" --json jobs > jobs.json 2>/dev/null || echo '{}' > jobs.json
+          gh run view "$RUN_ID" -R "$REPO" --log-failed > log.txt 2>/dev/null || : > log.txt
+          python3 scripts/failure_report.py --jobs jobs.json --log log.txt --sha "$SHA" --msg "$(printf '%s' "$MSG" | head -1)" --url "$URL" --wf "$WF" --attempt "$ATTEMPT" > report.json
+          if [ "$(jq -r .retry report.json)" = "true" ]; then
+            echo "Only a load time failed on attempt 1: retrying the run once."
+            gh run rerun "$RUN_ID" -R "$REPO" --failed
+            exit 0
+          fi
+          jq -r .body report.json > body.md
           title="Scheduled run failed: $WF"
           n=$(gh issue list -R "$REPO" --label bug --state open -L 100 --json number,title --jq "[.[]|select(.title==\"$title\")][0].number // empty")
           if [ -n "$n" ]; then
-            gh issue comment "$n" -R "$REPO" --body "Failed again: $URL"
+            { echo "Failed again."; echo; cat body.md; } > comment.md
+            gh issue comment "$n" -R "$REPO" --body-file comment.md
           else
-            gh issue create -R "$REPO" --label bug --title "$title" --body "The run failed: $URL"$'\n\n'"The last good site stays live. The next scheduled run catches up. This issue stays open until someone closes it."
+            gh issue create -R "$REPO" --label bug --title "$title" --body-file body.md
           fi
   missed:
     if: github.event_name != 'workflow_run'
