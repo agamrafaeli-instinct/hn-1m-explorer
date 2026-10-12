@@ -108,7 +108,7 @@
     box.replaceChildren(el('p', 'rg_note', 'Loading the years...'));
     return load().then(function (d) {
       box.replaceChildren(el('p', 'rg_note', 'Tap or hover on anything for the number.'), sec('Themes', heat(d)), sec('Top domains, and their share of all stories', domains(d)), sec('Story types', types(d)),
-        el('p', 'rg_note rg_fine', 'Source: titles and domains of every story since 2006. Darker is a bigger share than that theme\'s own average year. Domain counts use each month\'s top 20 sites, and the bar and percent on the right are those sites\' share of all stories that year (orange) against all other stories (grey). 2025 and 2026 scores are low, so points are not used.'));
+        el('p', 'rg_note rg_fine', 'Source: titles and domains of every story since 2006. Darker is a bigger share than that theme\'s own average year. Domain counts use each month\'s top 20 sites, and the bar and percent on the right are those sites\' share of all stories that year (orange) against all other stories (grey). Points are not used here, because the archive holds low points for 2023 and 2026.'));
       wire(box);
     }).catch(function (e) { box.replaceChildren(el('p', 'rg_note', 'Could not load the yearly data: ' + e.message)); });
   }

@@ -19,7 +19,7 @@ def build(root=ROOT):
         by[int(r['month'][:4])].append(r)
     years = sorted(by)
     out = {'schema': 1, 'built_from': 'scripts/rings_data.py', 'years': years,
-           'note': 'Shares are the part of stories whose title names the theme. Scores for 2025 and 2026 are low, so points are not used here. 2006 starts in October and the latest year is partial.',
+           'note': 'Shares are the part of stories whose title names the theme. Points are not used here, because the archive holds low points for 2023 and 2026. 2006 starts in October and the latest year is partial.',
            'themes': [], 'domains': [], 'types': {}}
     for k, name in THEMES:
         sh = []
