@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h404",
+ "replaces": "h340",
  "title": "Animals stories vs food and drink stories on points",
  "author": "film-cards",
  "audience": "curious readers",

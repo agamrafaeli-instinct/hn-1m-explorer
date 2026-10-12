@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h407",
+ "replaces": "h348",
  "title": "Books and reading stories vs visual art stories on points",
  "author": "film-cards",
  "audience": "curious readers",

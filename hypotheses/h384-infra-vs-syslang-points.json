@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h384",
+ "replaces": "h306",
  "title": "Docker, Kubernetes and Terraform stories vs Rust, Zig and C++ stories on points",
  "author": "film-cards",
  "audience": "engineers",

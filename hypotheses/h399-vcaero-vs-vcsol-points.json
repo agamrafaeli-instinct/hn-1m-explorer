@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h399",
+ "replaces": "h326",
  "title": "Aerospace stories vs solar energy stories on points",
  "author": "film-cards",
  "audience": "deep-tech investors",

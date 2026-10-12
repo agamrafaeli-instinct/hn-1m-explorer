@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h393",
+ "replaces": "h317",
  "title": "Vue stories vs React stories on points",
  "author": "film-cards",
  "audience": "engineers",

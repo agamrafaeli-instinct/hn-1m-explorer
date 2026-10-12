@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h379",
+ "replaces": "h309",
  "title": "SQLite and DuckDB stories earn more points than other SQL stories",
  "author": "film-cards",
  "audience": "engineers",

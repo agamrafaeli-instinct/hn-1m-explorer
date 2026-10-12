@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h394",
+ "replaces": "h318",
  "title": "Java stories vs Python stories on points",
  "author": "film-cards",
  "audience": "engineers",

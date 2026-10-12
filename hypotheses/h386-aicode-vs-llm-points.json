@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h386",
+ "replaces": "h308",
  "title": "Cursor, Claude Code, MCP, Copilot and Devin stories vs LLM, RAG and fine-tuning stories on points",
  "author": "film-cards",
  "audience": "engineers",

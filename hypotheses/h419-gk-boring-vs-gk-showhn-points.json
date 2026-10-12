@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h419",
+ "replaces": "h368",
  "title": "Business-software words stories vs Show HN posts stories on points",
  "author": "film-cards",
  "audience": "curious readers",

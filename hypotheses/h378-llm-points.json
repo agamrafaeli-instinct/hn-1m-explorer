@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h378",
+ "replaces": "h369",
  "title": "Language-model stories earn more points than the average story",
  "author": "film-cards",
  "audience": "curious readers",

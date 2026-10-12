@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h402",
+ "replaces": "h332",
  "title": "All six deep-tech themes stories vs Cursor, Claude Code, MCP, Copilot and Devin stories on points",
  "author": "film-cards",
  "audience": "deep-tech investors",

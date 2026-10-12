@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h410",
+ "replaces": "h353",
  "title": "Question headlines stories vs Show HN posts stories on comments",
  "author": "film-cards",
  "audience": "curious readers",

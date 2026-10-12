@@ -46,3 +46,6 @@ Prototype run of the rules above on the current card files. `+` is pass and `-` 
 | h138 | Music starts more conversations | sharp+ interesting+ relevant+ insightful+ novel+ | 2567.0 |
 
 Over all 80 cards the same run gives these fails: interesting 8 (no audience tag), relevant 11 (those 8 plus h104, h105, h126, whose group A counts are 22, 22 and 10), sharp 1 (h002), novel 0.
+
+## Replaced cards
+Decision (2026-10-12): a new card can set `"replaces": "hNNN"`. The old card stays on the site unchanged but the scorecard no longer lists it as failing and no upgrade issue is opened for it.

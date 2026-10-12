@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h383",
+ "replaces": "h305",
  "title": "Next.js, Svelte, Vue, htmx and Tailwind stories vs Rust, Zig and C++ stories on points",
  "author": "film-cards",
  "audience": "engineers",

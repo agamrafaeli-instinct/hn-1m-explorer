@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h391",
+ "replaces": "h315",
  "title": "Go stories vs Python stories on points",
  "author": "film-cards",
  "audience": "engineers",

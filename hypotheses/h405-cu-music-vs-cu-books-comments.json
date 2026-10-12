@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h405",
+ "replaces": "h342",
  "title": "Music stories vs books and reading stories on comments",
  "author": "film-cards",
  "audience": "curious readers",

@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h381",
+ "replaces": "h302",
  "title": "Postgres, SQLite and DuckDB stories vs MongoDB and MySQL stories on points",
  "author": "film-cards",
  "audience": "engineers",

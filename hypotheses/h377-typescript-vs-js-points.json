@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h377",
+ "replaces": "h300",
  "title": "TypeScript stories earn more points than JavaScript stories",
  "author": "film-cards",
  "audience": "engineers",

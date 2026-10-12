@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h418",
+ "replaces": "h367",
  "title": "Show HN posts stories vs hands-on making stories on points",
  "author": "film-cards",
  "audience": "curious readers",

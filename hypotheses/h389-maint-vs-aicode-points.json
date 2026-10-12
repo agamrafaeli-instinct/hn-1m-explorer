@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h389",
+ "replaces": "h312",
  "title": "Code review and technical debt stories vs Cursor, Claude Code, MCP, Copilot and Devin stories on points",
  "author": "film-cards",
  "audience": "engineers",

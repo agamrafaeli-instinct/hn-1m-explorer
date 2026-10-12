@@ -39,7 +39,7 @@ def card(num, old, a, b, m, audience):
     gen = {'p': 'gets more points', 'c': 'gets more comments', 'h': 'reaches ten points more often'}[m]
     def grp(k, name): return {"label": name + " ({from} to {to})", "indices": "all", "field": k + mk, "per": k + '_s'}
     return cid, {
-     "schema": 1, "id": cid,
+     "schema": 1, "id": cid, "replaces": old,
      "title": "%s stories vs %s stories on %s" % (la[:1].upper() + la[1:], lb, word),
      "author": "film-cards", "audience": audience,
      "hypothesis": "A story about %s %s than a story about %s." % (la, gen, lb),

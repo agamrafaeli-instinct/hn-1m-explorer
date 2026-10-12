@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h414",
+ "replaces": "h360",
  "title": "Science words stories vs history words stories on points",
  "author": "film-cards",
  "audience": "curious readers",

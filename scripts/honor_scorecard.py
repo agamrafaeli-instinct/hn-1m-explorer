@@ -110,12 +110,13 @@ def run(root):
     story_ids = set(json.loads(sp.read_text()).get('ids', [])) if sp.is_file() else set()
     complete = bool(cards) and set(cards) <= story_ids
     out = []
+    replaced = {x: cid for cid, c in cards.items() for x in ([c['replaces']] if isinstance(c.get('replaces'), str) else c.get('replaces', []))}
     for cid, c in cards.items():
         r, n = score_card(c, cards, data_rows(root, c, cache), story_ids, complete, log, root)
         scored = [v for v in r.values() if v is not None]
         out.append({'id': cid, 'title': c['title'], 'audience': c.get('audience'),
             'criteria': {k: r[k] for k in CRITERIA}, 'score': round(sum(scored) / len(scored), 3) if scored else None,
-            'failing': [k for k in CRITERIA if r[k] is False], 'group_a_count': round(n, 1)})
+            'failing': [] if cid in replaced else [k for k in CRITERIA if r[k] is False], 'group_a_count': round(n, 1), **({'replaced_by': replaced[cid]} if cid in replaced else {})})
     return {'schema': 1, 'spec': 'docs/HONOR_SPEC.md', 'cards': out}
 
 def main():

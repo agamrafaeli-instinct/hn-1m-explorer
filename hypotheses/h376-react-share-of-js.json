@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h376",
+ "replaces": "h304",
  "title": "React stories are a smaller part of JavaScript stories than before",
  "author": "film-cards",
  "audience": "engineers",

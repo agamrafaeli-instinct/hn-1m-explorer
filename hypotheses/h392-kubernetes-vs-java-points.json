@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h392",
+ "replaces": "h316",
  "title": "Kubernetes stories vs Java stories on points",
  "author": "film-cards",
  "audience": "engineers",

@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h397",
+ "replaces": "h322",
  "title": "GPU and chip hardware stories vs neural biology stories on points",
  "author": "film-cards",
  "audience": "deep-tech investors",

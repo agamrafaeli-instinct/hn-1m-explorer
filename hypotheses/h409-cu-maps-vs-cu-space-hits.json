@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h409",
+ "replaces": "h350",
  "title": "Maps and geography stories vs space and astronomy stories on hits",
  "author": "film-cards",
  "audience": "curious readers",

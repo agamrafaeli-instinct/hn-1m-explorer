@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h388",
+ "replaces": "h311",
  "title": "Rust, Zig and C++ stories vs Go stories on points",
  "author": "film-cards",
  "audience": "engineers",

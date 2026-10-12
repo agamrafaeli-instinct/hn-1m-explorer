@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h385",
+ "replaces": "h307",
  "title": "Java, PHP, Ruby, Rails and JavaScript stories vs Git, Linux, Neovim, Nix and VS Code stories on points",
  "author": "film-cards",
  "audience": "engineers",

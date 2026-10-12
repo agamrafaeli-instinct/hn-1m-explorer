@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h396",
+ "replaces": "h320",
  "title": "Data centers and grid stories vs aerospace stories on points",
  "author": "film-cards",
  "audience": "deep-tech investors",

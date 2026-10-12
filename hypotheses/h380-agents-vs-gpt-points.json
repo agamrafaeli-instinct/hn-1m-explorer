@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h380",
+ "replaces": "h301",
  "title": "Agents stories vs ChatGPT and GPT models stories on points",
  "author": "film-cards",
  "audience": "engineers",

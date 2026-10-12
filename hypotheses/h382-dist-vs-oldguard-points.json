@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h382",
+ "replaces": "h303",
  "title": "Microservices and serverless stories vs Java, PHP, Ruby, Rails and JavaScript stories on points",
  "author": "film-cards",
  "audience": "engineers",

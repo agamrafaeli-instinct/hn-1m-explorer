@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h395",
+ "replaces": "h319",
  "title": "Data centers and grid stories vs GPU and chip hardware stories on points",
  "author": "film-cards",
  "audience": "deep-tech investors",

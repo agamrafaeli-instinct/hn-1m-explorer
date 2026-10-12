@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "id": "h387",
+ "replaces": "h310",
  "title": "Git, Linux, Neovim, Nix and VS Code stories vs code review and technical debt stories on points",
  "author": "film-cards",
  "audience": "engineers",
