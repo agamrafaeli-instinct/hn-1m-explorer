@@ -1,4 +1,4 @@
-HN digest 2026-10-12 (UTC): 18 new stories at 300+ points
+HN digest 2026-10-12 (UTC): 16 new stories at 300+ points
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
 - 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
 - 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
@@ -10,10 +10,8 @@ HN digest 2026-10-12 (UTC): 18 new stories at 300+ points
 - 321 pts, 182 comments: Passkeys are a trap https://news.ycombinator.com/item?id=50048312
 - 319 pts, 344 comments: QGIS bans AI assisted contributions https://news.ycombinator.com/item?id=50054751
 - 318 pts, 142 comments: I'm sorry, but you still have to think https://news.ycombinator.com/item?id=50043689
-- 316 pts, 154 comments: Nitter: Update Oct 10th seeking funding and legal help https://news.ycombinator.com/item?id=50041682
 - 314 pts, 167 comments: I paid people to try and follow my README https://news.ycombinator.com/item?id=50042219
 - 310 pts, 366 comments: Terence Tao: Math 2.0 [pdf] https://news.ycombinator.com/item?id=50043026
 - 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055
-- 305 pts, 148 comments: Documents Add to Evidence in Climate Deception Case Against ExxonMobil https://news.ycombinator.com/item?id=50043682
 - 300 pts, 61 comments: Cartographers of North Korea (2019) https://news.ycombinator.com/item?id=50047091
 - 300 pts, 47 comments: 'Wallace and Gromit,' 90% Alone https://news.ycombinator.com/item?id=50020533
