@@ -8,4 +8,4 @@ Saved weeks (data/weekly/YYYY-Www.json) cannot be rebuilt once they leave the ar
 - To accept a deliberate replacement, a person edits hashes.json in the same commit and says why in the commit message.
 - Fix for a missing or changed week: restore the file from git history (`git checkout <commit> -- data/weekly/<week>.json`).
 
-A second copy of the weeks is tracked in #220.
+A second copy of the weeks is published as a release after each weekly save. See docs/RESTORE.md.
