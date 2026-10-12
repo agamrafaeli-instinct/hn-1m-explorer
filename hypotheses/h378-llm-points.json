@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "h378",
+ "title": "Language-model stories earn more points than the average story",
+ "author": "film-cards",
+ "audience": "curious readers",
+ "hypothesis": "A story about large language models, RAG or fine-tuning gets more points than the average story of the same months.",
+ "expect": "If true, points per LLM, RAG or fine-tuning story should be at least 1.5x the points of the average story in the same months, across all of 2006 to 2026 (1.1x is weak, 0.9x or lower refutes it).",
+ "check": {
+  "source": "data/film_shares.json",
+  "path": "monthly",
+  "label_field": "month",
+  "stat": "points_vs_month_mean",
+  "unit": "x",
+  "field": "llm_p",
+  "count_field": "llm_s",
+  "avg_points": "pts_total",
+  "avg_count": "total",
+  "per_label": "points per story against the same-month average",
+  "group_a": {
+   "label": "LLM, RAG and fine-tuning stories ({from} to {to})",
+   "indices": "all",
+   "field": "llm_p"
+  },
+  "group_b": {
+   "label": "Average story of the same months ({from} to {to})",
+   "indices": "all"
+  }
+ },
+ "verdicts": [
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.5
+   },
+   "verdict": "supported",
+   "confidence": "strong"
+  },
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.1
+   },
+   "verdict": "supported",
+   "confidence": "weak"
+  },
+  {
+   "when": {
+    "op": "<=",
+    "value": 0.9
+   },
+   "verdict": "refuted",
+   "confidence": "strong"
+  },
+  {
+   "else": true,
+   "verdict": "inconclusive",
+   "confidence": "inconclusive"
+  }
+ ],
+ "thresholds_note": "Thresholds are the ones used on h309, set before this card was run and not tuned to its result. h369 is left unchanged.",
+ "caveats": [
+  "Points are the score each story had when the archive fetched it, so 2025 and 2026 stories may still be gaining points.",
+  "A title that names LLMs, RAG or fine-tuning is not proof the story is about them.",
+  "Title words only, so stories that never name them are missed.",
+  "h369 asks how often these stories appear; this card asks how many points each earns."
+ ]
+}
