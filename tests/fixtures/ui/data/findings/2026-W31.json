@@ -1,0 +1,25 @@
+{
+ "audiences": {
+  "engineers": [
+   {
+    "text": "No big changes this week."
+   }
+  ],
+  "geeks": [
+   {
+    "text": "No big changes this week."
+   }
+  ],
+  "vcs": [
+   {
+    "text": "No big changes this week."
+   }
+  ]
+ },
+ "backfill": true,
+ "caveat": "Hacker News talking, not a measure of what is true.",
+ "dropped": [],
+ "flips": [],
+ "published": "2026-10-11",
+ "week": "2026-W31"
+}

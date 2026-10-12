@@ -1,0 +1,103 @@
+{
+  "scope": "Ten-week snapshot, only titles matching discovered six topics. Entities selected from recurring proper names; discovery, not preregistered evidence. Do not infer current ownership, funding, capabilities, startup eligibility or contact details. No external factual assertions verified.",
+  "leads": [
+    {
+      "name_as_in_title": "Rocket Lab",
+      "title_matches": 5,
+      "distinct_urls": 5,
+      "weeks": [
+        "2026-08-10",
+        "2026-08-17",
+        "2026-09-14"
+      ],
+      "observed_urls": [
+        "https://arstechnica.com/space/2026/09/rocket-lab-is-seeing-red-about-nasas-decision-on-a-mars-spacecraft/",
+        "https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-unveils-ghost-deployable-launch-system-enable",
+        "https://newatlas.com/military/ghost-gives-rocket-launch-sites-flat-pack-treatment/",
+        "https://rocketlabcorp.com/updates/rocket-lab-announces-flatellite-a-new-satellite-designed-for-mass-manufacture-and-tailored-for-large-constellations/",
+        "https://www.space.com/space-exploration/satellites/us-space-force-gives-rocket-lab-usd397-million-to-build-threat-tracking-flatellites"
+      ],
+      "status": "Unverified candidate lead from submitted titles, not a recommended meeting or confirmed startup. Titles may be false; duplicate submissions count."
+    },
+    {
+      "name_as_in_title": "Cerebras",
+      "title_matches": 4,
+      "distinct_urls": 4,
+      "weeks": [
+        "2026-08-17",
+        "2026-08-24",
+        "2026-08-31"
+      ],
+      "observed_urls": [
+        "https://investors.cerebras.ai/news-releases/news-release-details/cerebras-and-compute-nordic-finland-announce-new-165-mw-ai-data",
+        "https://www.cerebras.ai/blog/introducing-cerebras-cs-4",
+        "https://www.theregister.com/systems/2026/08/27/nvidia-and-cerebras-are-selling-performance-their-customers-will-probably-never-see/5293117",
+        "https://www.youtube.com/watch?v=qC_lCFTOJU0"
+      ],
+      "status": "Unverified candidate lead from submitted titles, not a recommended meeting or confirmed startup. Titles may be false; duplicate submissions count."
+    },
+    {
+      "name_as_in_title": "Isar Aerospace",
+      "title_matches": 2,
+      "distinct_urls": 2,
+      "weeks": [
+        "2026-08-31"
+      ],
+      "observed_urls": [
+        "https://isaraerospace.com/press/history-for-european-spaceflight-isar-aerospace-reaches-orbit-and-deploys-payloads-on-second-flight",
+        "https://www.youtube.com/watch?v=Ss1DUqLjecc"
+      ],
+      "status": "Unverified candidate lead from submitted titles, not a recommended meeting or confirmed startup. Titles may be false; duplicate submissions count."
+    },
+    {
+      "name_as_in_title": "Unitree",
+      "title_matches": 5,
+      "distinct_urls": 5,
+      "weeks": [
+        "2026-08-17",
+        "2026-08-24",
+        "2026-09-14"
+      ],
+      "observed_urls": [
+        "https://seekingalpha.com/news/4636470-unitrees-45-post-ipo-plunge-raises-concerns-over-chinas-robotics-bubble",
+        "https://technode.com/2026/09/15/unitree-g1-plus-humanoid-robot/",
+        "https://www.globaltimes.cn/page/202608/1368390.shtml",
+        "https://www.theguardian.com/technology/2026/aug/19/unitree-shares-surge-humanoid-robot-firm-chinese-stock-market-debut",
+        "https://www.youtube.com/watch?v=fLp-75h-Bn8"
+      ],
+      "status": "Unverified candidate lead from submitted titles, not a recommended meeting or confirmed startup. Titles may be false; duplicate submissions count."
+    },
+    {
+      "name_as_in_title": "Boston Dynamics",
+      "title_matches": 6,
+      "distinct_urls": 5,
+      "weeks": [
+        "2026-08-24",
+        "2026-08-31",
+        "2026-09-28"
+      ],
+      "observed_urls": [
+        "https://twitter.com/okpasquale/status/2078102669520961812",
+        "https://www.404media.co/ice-plans-to-spends-millions-on-boston-dynamics-dog-robots/",
+        "https://www.bostonglobe.com/2026/08/29/business/boston-dynamics-robot-dog-ice/",
+        "https://www.wcvb.com/article/ice-boston-dynamics-robot-dogs/73559827",
+        "https://www.youtube.com/watch?v=4whgw2gLBS8"
+      ],
+      "status": "Unverified candidate lead from submitted titles, not a recommended meeting or confirmed startup. Titles may be false; duplicate submissions count."
+    },
+    {
+      "name_as_in_title": "Aptera",
+      "title_matches": 2,
+      "distinct_urls": 2,
+      "weeks": [
+        "2026-08-24",
+        "2026-08-31"
+      ],
+      "observed_urls": [
+        "https://electrek.co/2026/06/17/we-finally-got-to-drive-the-aptera-solar-electric-car/",
+        "https://frequal.com/aptera/ProductionDealAug2026.html"
+      ],
+      "status": "Unverified candidate lead from submitted titles, not a recommended meeting or confirmed startup. Titles may be false; duplicate submissions count."
+    }
+  ]
+}

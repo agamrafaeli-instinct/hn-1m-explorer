@@ -1,0 +1,83 @@
+{
+ "settings": {
+  "rtt_ms": 150,
+  "down_kbps": 1638,
+  "cpu_slowdown": 4,
+  "viewport": "390x844@2x",
+  "cache": "cold",
+  "runs": 3,
+  "site": "https://agamrafaeli-instinct.github.io/hn-1m-explorer/",
+  "date": "2026-10-09",
+  "rule": "measured median + 15 percent, time rounded up to 50 ms",
+  "note": "2026-10-10: audience and card size budgets raised to 310 KB. The film data file grew to 111 KB gzipped (45 term dictionaries and 20 years of monthly counts). The audience pages go away in #169. Home budget raised to 150 KB and 16 requests (#169): home is now the Compare chart and loads data/topic_series.json (133 KB measured). Home 19 requests, audience and card 23 requests (#181: finder.js and data/finder/latest.json load on every page). Card budget raised to 2200 ms and 21 requests (#131): a card now also loads its story file, and CI measured 2501 ms with the 25% tolerance applied to 1950 ms before. Week screens 25 requests (#187: each week now also loads its findings file). Week screens 27 requests (#194: each week screen also loads data/lens/index.json to know which items have a lens page). Week screens 280 KB and 30 requests (#207): data/history/strips.json now covers 2006 to 2026 (237 months, 22 KB instead of 6 KB) and week screens read it for card context. Audience page 350 KB and 25 requests (#208): the Fraunces font file (67 KB) loads on some runs and not others, so the same page measures 247 KB or 313 KB. 2026-10-12: audience time budget raised to 2850 ms (CI run 38225008868 measured 3057 ms with the CI +25% allowance, so about 2450 ms real; it was 1858 ms when first set). The page grew as film data, the Today line and the tap-target CSS (#223) were added."
+ },
+ "screens": {
+  "saga": {"ms": 1000, "kb": 150, "reqs": 19},
+  "home": {
+   "ms": 1000,
+   "kb": 150,
+   "reqs": 19,
+   "measured": {
+    "ms": 838,
+    "reqs": 15,
+    "kb": 133,
+    "overflow": 0
+   }
+  },
+  "card": {
+   "ms": 2200,
+   "kb": 310,
+   "reqs": 23,
+   "measured": {
+    "ms": 2501,
+    "reqs": 20,
+    "kb": 240,
+    "overflow": 0
+   }
+  },
+  "week_engineers": {
+   "ms": 1850,
+   "kb": 280,
+   "reqs": 30,
+   "measured": {
+    "ms": 1566,
+    "reqs": 20,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "week_vcs": {
+   "ms": 1900,
+   "kb": 280,
+   "reqs": 30,
+   "measured": {
+    "ms": 1617,
+    "reqs": 20,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "week_geeks": {
+   "ms": 1800,
+   "kb": 280,
+   "reqs": 30,
+   "measured": {
+    "ms": 1553,
+    "reqs": 20,
+    "kb": 197,
+    "overflow": 0
+   }
+  },
+  "explorer": {
+   "ms": 350,
+   "kb": 56,
+   "reqs": 14,
+   "measured": {
+    "ms": 287,
+    "reqs": 9,
+    "kb": 37,
+    "overflow": 0
+   }
+  }
+ }
+}

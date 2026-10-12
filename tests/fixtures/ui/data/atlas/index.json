@@ -1,0 +1,203 @@
+{
+ "built_from": "scripts/atlas_aggregates.py",
+ "range": [
+  "2006-10",
+  "2026-08"
+ ],
+ "terms_kept": 20000,
+ "files": [
+  {
+   "name": "months.json",
+   "bytes": 22949
+  },
+  {
+   "name": "tops-2006.json",
+   "bytes": 4213
+  },
+  {
+   "name": "tops-2007.json",
+   "bytes": 43729
+  },
+  {
+   "name": "tops-2008.json",
+   "bytes": 47522
+  },
+  {
+   "name": "tops-2009.json",
+   "bytes": 48925
+  },
+  {
+   "name": "tops-2010.json",
+   "bytes": 50070
+  },
+  {
+   "name": "tops-2011.json",
+   "bytes": 52524
+  },
+  {
+   "name": "tops-2012.json",
+   "bytes": 49074
+  },
+  {
+   "name": "tops-2013.json",
+   "bytes": 50927
+  },
+  {
+   "name": "tops-2014.json",
+   "bytes": 47965
+  },
+  {
+   "name": "tops-2015.json",
+   "bytes": 50442
+  },
+  {
+   "name": "tops-2016.json",
+   "bytes": 49975
+  },
+  {
+   "name": "tops-2017.json",
+   "bytes": 54295
+  },
+  {
+   "name": "tops-2018.json",
+   "bytes": 55616
+  },
+  {
+   "name": "tops-2019.json",
+   "bytes": 54297
+  },
+  {
+   "name": "tops-2020.json",
+   "bytes": 53349
+  },
+  {
+   "name": "tops-2021.json",
+   "bytes": 53464
+  },
+  {
+   "name": "tops-2022.json",
+   "bytes": 50779
+  },
+  {
+   "name": "tops-2023.json",
+   "bytes": 56755
+  },
+  {
+   "name": "tops-2024.json",
+   "bytes": 51068
+  },
+  {
+   "name": "tops-2025.json",
+   "bytes": 51056
+  },
+  {
+   "name": "tops-2026.json",
+   "bytes": 35980
+  },
+  {
+   "name": "terms-a.json",
+   "bytes": 2274054
+  },
+  {
+   "name": "terms-b.json",
+   "bytes": 1757956
+  },
+  {
+   "name": "terms-c.json",
+   "bytes": 3253944
+  },
+  {
+   "name": "terms-d.json",
+   "bytes": 2066215
+  },
+  {
+   "name": "terms-e.json",
+   "bytes": 1604303
+  },
+  {
+   "name": "terms-f.json",
+   "bytes": 1561934
+  },
+  {
+   "name": "terms-g.json",
+   "bytes": 1052273
+  },
+  {
+   "name": "terms-h.json",
+   "bytes": 1178853
+  },
+  {
+   "name": "terms-i.json",
+   "bytes": 1437140
+  },
+  {
+   "name": "terms-j.json",
+   "bytes": 358240
+  },
+  {
+   "name": "terms-k.json",
+   "bytes": 332890
+  },
+  {
+   "name": "terms-l.json",
+   "bytes": 1224414
+  },
+  {
+   "name": "terms-m.json",
+   "bytes": 1893227
+  },
+  {
+   "name": "terms-n.json",
+   "bytes": 794643
+  },
+  {
+   "name": "terms-o.json",
+   "bytes": 859633
+  },
+  {
+   "name": "terms-p.json",
+   "bytes": 2604104
+  },
+  {
+   "name": "terms-q.json",
+   "bytes": 158355
+  },
+  {
+   "name": "terms-r.json",
+   "bytes": 2072989
+  },
+  {
+   "name": "terms-s.json",
+   "bytes": 3708818
+  },
+  {
+   "name": "terms-t.json",
+   "bytes": 1846257
+  },
+  {
+   "name": "terms-u.json",
+   "bytes": 648714
+  },
+  {
+   "name": "terms-v.json",
+   "bytes": 636901
+  },
+  {
+   "name": "terms-w.json",
+   "bytes": 982896
+  },
+  {
+   "name": "terms-x.json",
+   "bytes": 70959
+  },
+  {
+   "name": "terms-y.json",
+   "bytes": 126222
+  },
+  {
+   "name": "terms-z.json",
+   "bytes": 94205
+  }
+ ],
+ "total_bytes": 35635113
+}

@@ -11,7 +11,8 @@ job copy python3 scripts/copy_lint.py
 job lists python3 scripts/check_list_version.py
 job roadmap bash -c 'python3 scripts/check_roadmap.py || true'
 job node bash -c 'for t in hypotheses story_spec context_isolation card_rules yearzoom; do node tests/$t.test.js | tail -1; [ "${PIPESTATUS[0]}" = 0 ] || { echo "FAILED tests/$t.test.js"; exit 1; }; done'
-job ui node tests/ui.test.mjs --serve /tmp/site_pp
+rm -rf /tmp/site_ui; python3 scripts/make_ui_fixture.py --stage /tmp/site_ui >/dev/null  # UI check on the fixed data (#336)
+job ui node tests/ui.test.mjs --serve /tmp/site_ui
 wait
 failed=""
 for n in unit copy lists roadmap node ui; do
@@ -24,6 +25,6 @@ if [ -n "$failed" ]; then
   exit 1
 fi
 # Perf budgets and the phone sweep run in CI only (#250): a 2 GB machine gives noisy load times.
-# All checks above passed (set -e): record the digest of these exact files. A push-triggered CI run skips the repeat UI step only when this marker matches; CI always runs the perf budgets. Commit .prepush_ok with the change.
+# All checks above passed (set -e): record the digest of these exact files. CI always runs the UI check on live data and the perf budgets. Commit .prepush_ok with the change.
 echo "prepush took ${SECONDS}s"
 python3 scripts/prepush_digest.py --write

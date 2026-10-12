@@ -1,0 +1,166 @@
+{
+ "schema_version": 1,
+ "generated_at": "2026-10-12T20:15:09.182296+00:00",
+ "total_rows": 4038,
+ "columns": [
+  {
+   "name": "id",
+   "type": "integer",
+   "nullable": false,
+   "description": "HN item ID"
+  },
+  {
+   "name": "type",
+   "type": "string",
+   "nullable": true,
+   "description": "HN item type"
+  },
+  {
+   "name": "by",
+   "type": "string",
+   "nullable": true,
+   "description": "Author handle"
+  },
+  {
+   "name": "time",
+   "type": "integer",
+   "nullable": true,
+   "description": "Unix timestamp in UTC seconds"
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "nullable": true,
+   "description": "Title as returned by source"
+  },
+  {
+   "name": "url",
+   "type": "string",
+   "nullable": true,
+   "description": "External URL"
+  },
+  {
+   "name": "domain",
+   "type": "string",
+   "nullable": true,
+   "description": "Lowercase URL hostname, leading www. removed"
+  },
+  {
+   "name": "score",
+   "type": "integer",
+   "nullable": true,
+   "description": "Score at collection time"
+  },
+  {
+   "name": "descendants",
+   "type": "integer",
+   "nullable": true,
+   "description": "Comment count at collection time"
+  },
+  {
+   "name": "text",
+   "type": "string",
+   "nullable": true,
+   "description": "Full source HTML text, untrusted; render as text, not HTML"
+  },
+  {
+   "name": "dead",
+   "type": "boolean",
+   "nullable": false,
+   "description": "1 if dead, otherwise 0"
+  },
+  {
+   "name": "deleted",
+   "type": "boolean",
+   "nullable": false,
+   "description": "1 if deleted, otherwise 0"
+  }
+ ],
+ "order": "time DESC, id DESC; missing time last",
+ "chunk_target_bytes": 8388608,
+ "csv": {
+  "encoding": "UTF-8",
+  "delimiter": ",",
+  "quote": "\"",
+  "line_ending": "CRLF",
+  "header": true,
+  "null": "",
+  "boolean_values": [
+   0,
+   1
+  ]
+ },
+ "chunks": [
+  {
+   "path": "data/posts-00001.csv",
+   "rows": 1017,
+   "bytes": 323852,
+   "min_id": 49981246,
+   "max_id": 50006646,
+   "min_time": 1791306322,
+   "max_time": 1791471606
+  },
+  {
+   "path": "data/posts-00002.csv",
+   "rows": 1015,
+   "bytes": 327248,
+   "min_id": 49545037,
+   "max_id": 49570387,
+   "min_time": 1788400184,
+   "max_time": 1788556974
+  },
+  {
+   "path": "data/posts-00003.csv",
+   "rows": 1002,
+   "bytes": 331390,
+   "min_id": 49447772,
+   "max_id": 49472797,
+   "min_time": 1787747145,
+   "max_time": 1787875369
+  },
+  {
+   "path": "data/posts-00004.csv",
+   "rows": 1004,
+   "bytes": 340619,
+   "min_id": 49422693,
+   "max_id": 49447768,
+   "min_time": 1787590797,
+   "max_time": 1787747125
+  }
+ ],
+ "summary_path": "data/summary.json",
+ "source": {
+  "name": "Hacker News official Firebase API",
+  "api": "https://hacker-news.firebaseio.com/v0/item/{id}.json",
+  "maxitem_at_cutoff": 50006646,
+  "id_range": [
+   49006647,
+   50006646
+  ],
+  "selection": "The newest 1,000,000 item IDs (stories, comments, jobs, polls, pollopts) by consecutive ID ending at maxitem; every id fetched, none missing/null/errored",
+  "item_types_included": [
+   "story",
+   "comment",
+   "job",
+   "poll",
+   "pollopt"
+  ],
+  "retrieved_at_utc": "2026-10-08T15:00:37Z to 2026-10-08T15:09:10Z",
+  "completeness_limitations": "Snapshot: score, descendants and dead/deleted flags are as of fetch time; very recent items may later change. Items are by ID, so 'posts' includes comments (about 84% comments). Credential-shaped strings (4 found: API keys etc.) were replaced with [REDACTED-SECRET] in text fields before publishing (scripts/redact_secrets.py); all else is verbatim.",
+  "daily_update_api": "https://hacker-news.firebaseio.com/v0",
+  "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
+ },
+ "total_csv_bytes": 1323109,
+ "daily_update": {
+  "last_scanned_id": 50062349,
+  "previous_scanned_id": 50061987,
+  "unavailable_ids": [],
+  "new_rows": 362,
+  "archived_stories": 27,
+  "retention_rows": 1000000,
+  "mode": "daily additions since last successful scan; catch-up included",
+  "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
+  "redaction_policy": "credential-shaped strings in text/title/url replaced using scripts/redact_secrets.py",
+  "redacted_strings_this_run": 0
+ }
+}

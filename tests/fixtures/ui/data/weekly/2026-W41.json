@@ -1,0 +1,3340 @@
+{
+ "archive": {
+  "manifest_generated_at": "2026-10-12T04:26:20.373789+00:00",
+  "manifest_rows": 1000000,
+  "max_time": 1791779139,
+  "min_time": 1785012204,
+  "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
+ },
+ "baskets": {
+  "animals": {
+   "audience": "geeks",
+   "comments": 152,
+   "hit10": 4,
+   "points": 344,
+   "stories": 31,
+   "top_domains": [
+    {
+     "domain": "nature.com",
+     "points": 43,
+     "stories": 2
+    },
+    {
+     "domain": "phys.org",
+     "points": 12,
+     "stories": 2
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 7,
+     "stories": 2
+    },
+    {
+     "domain": "jacobtomlinson.dev",
+     "points": 3,
+     "stories": 2
+    },
+    {
+     "domain": "404media.co",
+     "points": 214,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 121,
+     "domain": "404media.co",
+     "id": 49998066,
+     "points": 214,
+     "title": "'Jonathan' is the oldest land animal on Earth"
+    },
+    {
+     "comments": 14,
+     "domain": "nature.com",
+     "id": 49984854,
+     "points": 22,
+     "title": "The role of cat eye narrowing movements in cat\u2013human communication (2020)"
+    },
+    {
+     "comments": 0,
+     "domain": "nature.com",
+     "id": 49996639,
+     "points": 21,
+     "title": "A 5.3M-year-old deep-sea whale necropolis in the Diamantina Zone"
+    }
+   ]
+  },
+  "art": {
+   "audience": "geeks",
+   "comments": 372,
+   "hit10": 6,
+   "points": 1338,
+   "stories": 51,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 403,
+     "stories": 5
+    },
+    {
+     "domain": "blog.velocifyer.com",
+     "points": 3,
+     "stories": 2
+    },
+    {
+     "domain": "wmp-skin-museum.mitpit.com",
+     "points": 2,
+     "stories": 2
+    },
+    {
+     "domain": "ascii.rest",
+     "points": 420,
+     "stories": 1
+    },
+    {
+     "domain": "artmuseum.artfrompixels.com",
+     "points": 160,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 72,
+     "domain": "ascii.rest",
+     "id": 49993857,
+     "points": 420,
+     "title": "Animated ASCII Art for Web Pages"
+    },
+    {
+     "comments": 64,
+     "domain": "github.com",
+     "id": 49990224,
+     "points": 395,
+     "title": "A font recreated from photographs of classic Commodore 64 keycaps"
+    },
+    {
+     "comments": 63,
+     "domain": "artmuseum.artfrompixels.com",
+     "id": 49992057,
+     "points": 160,
+     "title": "Show HN: A walkable 3D art history museum built from Wikipedia"
+    }
+   ]
+  },
+  "askhn": {
+   "audience": "engineers",
+   "comments": 525,
+   "hit10": 9,
+   "points": 476,
+   "stories": 112,
+   "top_domains": [
+    {
+     "domain": "claude.ai",
+     "points": 2,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 47,
+     "domain": "",
+     "id": 49984484,
+     "points": 45,
+     "title": "Ask HN: Why is Ask HN only showing me 14 posts?"
+    },
+    {
+     "comments": 38,
+     "domain": "",
+     "id": 49985548,
+     "points": 36,
+     "title": "Ask HN: What do you run on a $5 VPS that's worth keeping online 24/7?"
+    },
+    {
+     "comments": 82,
+     "domain": "",
+     "id": 50038458,
+     "points": 35,
+     "title": "Ask HN: Why aren't Americans rising up against tipping?"
+    }
+   ]
+  },
+  "books": {
+   "audience": "geeks",
+   "comments": 458,
+   "hit10": 7,
+   "points": 894,
+   "stories": 94,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 385,
+     "stories": 14
+    },
+    {
+     "domain": "nobelprize.org",
+     "points": 13,
+     "stories": 3
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 87,
+     "stories": 2
+    },
+    {
+     "domain": "engineering.fb.com",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "twitter.com",
+     "points": 6,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 303,
+     "domain": "github.com",
+     "id": 49985664,
+     "points": 356,
+     "title": "AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)"
+    },
+    {
+     "comments": 68,
+     "domain": "mihai.dinculescu.dev",
+     "id": 49978563,
+     "points": 131,
+     "title": "Tapo (Rust/Python library) now speaks TP-Link's TPAP protocol"
+    },
+    {
+     "comments": 6,
+     "domain": "theguardian.com",
+     "id": 50004777,
+     "points": 85,
+     "title": "Anne Carson wins Nobel Prize in literature 2026"
+    }
+   ]
+  },
+  "boring": {
+   "audience": "geeks",
+   "comments": 29,
+   "hit10": 1,
+   "points": 85,
+   "stories": 40,
+   "top_domains": [
+    {
+     "domain": "nativeship.io",
+     "points": 3,
+     "stories": 2
+    },
+    {
+     "domain": "cordhq.app",
+     "points": 2,
+     "stories": 2
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 10,
+     "stories": 1
+    },
+    {
+     "domain": "huggingface.co",
+     "points": 6,
+     "stories": 1
+    },
+    {
+     "domain": "nypost.com",
+     "points": 4,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 3,
+     "domain": "theguardian.com",
+     "id": 49993120,
+     "points": 10,
+     "title": "McDonald's sued for allegedly using AI tool to determine pricing for franchises"
+    },
+    {
+     "comments": 4,
+     "domain": "huggingface.co",
+     "id": 49984522,
+     "points": 6,
+     "title": "Show HN: We Westernized Qwen for US enterprise use"
+    },
+    {
+     "comments": 6,
+     "domain": "stackkit.website",
+     "id": 49961794,
+     "points": 4,
+     "title": "Show HN: StackKit \u2013 Open-source and self-hosted alternatives to SaaS tools"
+    }
+   ]
+  },
+  "climate": {
+   "audience": "geeks",
+   "comments": 9,
+   "hit10": 1,
+   "points": 53,
+   "stories": 16,
+   "top_domains": [
+    {
+     "domain": "theguardian.com",
+     "points": 9,
+     "stories": 3
+    },
+    {
+     "domain": "technologyreview.com",
+     "points": 8,
+     "stories": 2
+    },
+    {
+     "domain": "arstechnica.com",
+     "points": 14,
+     "stories": 1
+    },
+    {
+     "domain": "huggingface.co",
+     "points": 5,
+     "stories": 1
+    },
+    {
+     "domain": "climatenobelprize.org",
+     "points": 3,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 3,
+     "domain": "arstechnica.com",
+     "id": 49979742,
+     "points": 14,
+     "title": "Big Oil asks Supreme Court to kill climate lawsuits before trial"
+    },
+    {
+     "comments": 0,
+     "domain": "technologyreview.com",
+     "id": 50045480,
+     "points": 6,
+     "title": "Why we're watching these climate tech companies"
+    },
+    {
+     "comments": 1,
+     "domain": "theguardian.com",
+     "id": 49998395,
+     "points": 5,
+     "title": "European colonization of Americas cooled Earth's climate (2019)"
+    }
+   ]
+  },
+  "deeptech": {
+   "audience": "vcs",
+   "comments": 372,
+   "hit10": 2,
+   "points": 640,
+   "stories": 40,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 11,
+     "stories": 5
+    },
+    {
+     "domain": "youtube.com",
+     "points": 7,
+     "stories": 3
+    },
+    {
+     "domain": "spectrum.ieee.org",
+     "points": 3,
+     "stories": 2
+    },
+    {
+     "domain": "vals.ai",
+     "points": 490,
+     "stories": 1
+    },
+    {
+     "domain": "solarpowerworldonline.com",
+     "points": 66,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 340,
+     "domain": "vals.ai",
+     "id": 49970667,
+     "points": 490,
+     "title": "Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates"
+    },
+    {
+     "comments": 22,
+     "domain": "solarpowerworldonline.com",
+     "id": 50007519,
+     "points": 66,
+     "title": "4-hour battery storage is cheaper to install than gas turbines all across globe"
+    },
+    {
+     "comments": 1,
+     "domain": "tomshardware.com",
+     "id": 50002993,
+     "points": 5,
+     "title": "AI agent designs a complete RISC-V CPU from a 219-word spec sheet in 12 hours"
+    }
+   ]
+  },
+  "diy": {
+   "audience": "geeks",
+   "comments": 60,
+   "hit10": 3,
+   "points": 151,
+   "stories": 20,
+   "top_domains": [
+    {
+     "domain": "raspberrypi.com",
+     "points": 29,
+     "stories": 2
+    },
+    {
+     "domain": "github.com",
+     "points": 14,
+     "stories": 2
+    },
+    {
+     "domain": "youtube.com",
+     "points": 9,
+     "stories": 2
+    },
+    {
+     "domain": "techcrunch.com",
+     "points": 2,
+     "stories": 2
+    },
+    {
+     "domain": "news.mit.edu",
+     "points": 73,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 45,
+     "domain": "news.mit.edu",
+     "id": 49970459,
+     "points": 73,
+     "title": "3D-printing platform rapidly produces complex electric machines"
+    },
+    {
+     "comments": 2,
+     "domain": "raspberrypi.com",
+     "id": 49989912,
+     "points": 25,
+     "title": "Raspberry Pi Desktop Now Available for PC and Mac"
+    },
+    {
+     "comments": 2,
+     "domain": "github.com",
+     "id": 50038623,
+     "points": 13,
+     "title": "PSPi 6 \u2013 Raspberry Pi in a PSP"
+    }
+   ]
+  },
+  "education": {
+   "audience": "geeks",
+   "comments": 182,
+   "hit10": 5,
+   "points": 405,
+   "stories": 84,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 39,
+     "stories": 4
+    },
+    {
+     "domain": "github.com",
+     "points": 9,
+     "stories": 4
+    },
+    {
+     "domain": "twitter.com",
+     "points": 10,
+     "stories": 3
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 6,
+     "stories": 3
+    },
+    {
+     "domain": "tanzaniaeducationproject.org",
+     "points": 41,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 69,
+     "domain": "edworkingpapers.com",
+     "id": 49972419,
+     "points": 73,
+     "title": "AI tutoring with Khanmigo in a two-year school experiment"
+    },
+    {
+     "comments": 13,
+     "domain": "almostimplemented.github.io",
+     "id": 49971726,
+     "points": 51,
+     "title": "Learning Jazz Pianist Style with Cross-Attention Conditioning"
+    },
+    {
+     "comments": 8,
+     "domain": "tanzaniaeducationproject.org",
+     "id": 50006366,
+     "points": 39,
+     "title": "Show HN: I've been paying for a rural Tanzanian's education for 10 years"
+    }
+   ]
+  },
+  "food": {
+   "audience": "geeks",
+   "comments": 57,
+   "hit10": 1,
+   "points": 147,
+   "stories": 27,
+   "top_domains": [
+    {
+     "domain": "dexerto.com",
+     "points": 98,
+     "stories": 1
+    },
+    {
+     "domain": "knowledgeartist.org",
+     "points": 4,
+     "stories": 1
+    },
+    {
+     "domain": "coffee.9000ish.uk",
+     "points": 3,
+     "stories": 1
+    },
+    {
+     "domain": "github.com",
+     "points": 3,
+     "stories": 1
+    },
+    {
+     "domain": "theatlantic.com",
+     "points": 3,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 47,
+     "domain": "dexerto.com",
+     "id": 49995495,
+     "points": 98,
+     "title": "Man discovers his parents' coffee machine used 1TB of data in 10 days"
+    },
+    {
+     "comments": 1,
+     "domain": "knowledgeartist.org",
+     "id": 49971895,
+     "points": 4,
+     "title": "Food Atlas: Connections behind the dishes we love"
+    },
+    {
+     "comments": 2,
+     "domain": "theconversation.com",
+     "id": 50013678,
+     "points": 3,
+     "title": "Why 'vertical farming' is not a fix for our food system"
+    }
+   ]
+  },
+  "games": {
+   "audience": "geeks",
+   "comments": 465,
+   "hit10": 8,
+   "points": 706,
+   "stories": 136,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 34,
+     "stories": 18
+    },
+    {
+     "domain": "youtube.com",
+     "points": 13,
+     "stories": 8
+    },
+    {
+     "domain": "twitter.com",
+     "points": 8,
+     "stories": 2
+    },
+    {
+     "domain": "quantamagazine.org",
+     "points": 7,
+     "stories": 2
+    },
+    {
+     "domain": "tomshardware.com",
+     "points": 7,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 74,
+     "domain": "housing.over.pizza",
+     "id": 50036864,
+     "points": 183,
+     "title": "A city-building game in which the city would prefer you didn't"
+    },
+    {
+     "comments": 227,
+     "domain": "blog.google",
+     "id": 49991823,
+     "points": 151,
+     "title": "Google Playground: Create and play custom games"
+    },
+    {
+     "comments": 57,
+     "domain": "theverge.com",
+     "id": 49987245,
+     "points": 38,
+     "title": "Xbox has secured exclusive GTA 6 streaming rights"
+    }
+   ]
+  },
+  "health": {
+   "audience": "geeks",
+   "comments": 338,
+   "hit10": 9,
+   "points": 619,
+   "stories": 52,
+   "top_domains": [
+    {
+     "domain": "theguardian.com",
+     "points": 13,
+     "stories": 4
+    },
+    {
+     "domain": "nobelprize.org",
+     "points": 300,
+     "stories": 3
+    },
+    {
+     "domain": "nature.com",
+     "points": 8,
+     "stories": 3
+    },
+    {
+     "domain": "github.com",
+     "points": 6,
+     "stories": 3
+    },
+    {
+     "domain": "pmc.ncbi.nlm.nih.gov",
+     "points": 12,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 49,
+     "domain": "nobelprize.org",
+     "id": 49962572,
+     "points": 157,
+     "title": "2026 Nobel Prize in Physiology or Medicine: Deisseroth, Hegemann, Nagel"
+    },
+    {
+     "comments": 1,
+     "domain": "nobelprize.org",
+     "id": 49963094,
+     "points": 135,
+     "title": "Nobel Prize in Physiology or Medicine 2026"
+    },
+    {
+     "comments": 126,
+     "domain": "cbc.ca",
+     "id": 49969933,
+     "points": 79,
+     "title": "The mental health of young men is declining. Experts warn it could get worse"
+    }
+   ]
+  },
+  "history": {
+   "audience": "geeks",
+   "comments": 617,
+   "hit10": 7,
+   "points": 850,
+   "stories": 96,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 16,
+     "stories": 7
+    },
+    {
+     "domain": "youtube.com",
+     "points": 10,
+     "stories": 5
+    },
+    {
+     "domain": "twitter.com",
+     "points": 7,
+     "stories": 4
+    },
+    {
+     "domain": "hetzner.com",
+     "points": 23,
+     "stories": 2
+    },
+    {
+     "domain": "publicdomainreview.org",
+     "points": 12,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 341,
+     "domain": "worksinprogress.co",
+     "id": 49993908,
+     "points": 202,
+     "title": "Why were Victorian elites so effective?"
+    },
+    {
+     "comments": 63,
+     "domain": "artmuseum.artfrompixels.com",
+     "id": 49992057,
+     "points": 160,
+     "title": "Show HN: A walkable 3D art history museum built from Wikipedia"
+    },
+    {
+     "comments": 87,
+     "domain": "worrydream.com",
+     "id": 49979845,
+     "points": 125,
+     "title": "The Early History of Smalltalk (1993)"
+    }
+   ]
+  },
+  "languages": {
+   "audience": "geeks",
+   "comments": 198,
+   "hit10": 1,
+   "points": 336,
+   "stories": 6,
+   "top_domains": [
+    {
+     "domain": "arxiv.org",
+     "points": 332,
+     "stories": 2
+    },
+    {
+     "domain": "discourse.ubuntu.com",
+     "points": 1,
+     "stories": 1
+    },
+    {
+     "domain": "github.com",
+     "points": 1,
+     "stories": 1
+    },
+    {
+     "domain": "gitlab.com",
+     "points": 1,
+     "stories": 1
+    },
+    {
+     "domain": "shkspr.mobi",
+     "points": 1,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 198,
+     "domain": "arxiv.org",
+     "id": 49994145,
+     "points": 329,
+     "title": "Navier\u2013Stokes Lost in Translation"
+    },
+    {
+     "comments": 0,
+     "domain": "arxiv.org",
+     "id": 50036322,
+     "points": 3,
+     "title": "CAVEWOMAN: How LLMs Behave Under Linguistic Input and Output Compression"
+    },
+    {
+     "comments": 0,
+     "domain": "discourse.ubuntu.com",
+     "id": 49970576,
+     "points": 1,
+     "title": "Investing in automated C to Rust translation"
+    }
+   ]
+  },
+  "maps": {
+   "audience": "geeks",
+   "comments": 9,
+   "hit10": 1,
+   "points": 104,
+   "stories": 39,
+   "top_domains": [
+    {
+     "domain": "vincent.bernat.ch",
+     "points": 12,
+     "stories": 3
+    },
+    {
+     "domain": "twitter.com",
+     "points": 5,
+     "stories": 2
+    },
+    {
+     "domain": "github.com",
+     "points": 4,
+     "stories": 2
+    },
+    {
+     "domain": "cartographers-nk.wonyoung.so",
+     "points": 30,
+     "stories": 1
+    },
+    {
+     "domain": "meanwhilemap.com",
+     "points": 5,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 1,
+     "domain": "cartographers-nk.wonyoung.so",
+     "id": 50047091,
+     "points": 30,
+     "title": "Cartographers of North Korea"
+    },
+    {
+     "comments": 0,
+     "domain": "vincent.bernat.ch",
+     "id": 49962431,
+     "points": 6,
+     "title": "Hacking the Go compiler to efficiently map IPv4 to IPv6"
+    },
+    {
+     "comments": 1,
+     "domain": "meanwhilemap.com",
+     "id": 49969680,
+     "points": 5,
+     "title": "Show HN: Meanwhile Map \u2013 what else was happening in the world at the same time"
+    }
+   ]
+  },
+  "music": {
+   "audience": "geeks",
+   "comments": 64,
+   "hit10": 1,
+   "points": 160,
+   "stories": 44,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 76,
+     "stories": 5
+    },
+    {
+     "domain": "youtube.com",
+     "points": 7,
+     "stories": 5
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "ei3lh.eu",
+     "points": 4,
+     "stories": 2
+    },
+    {
+     "domain": "arstechnica.com",
+     "points": 5,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 46,
+     "domain": "github.com",
+     "id": 49994065,
+     "points": 68,
+     "title": "Reverse Engineering of the M-VAVE FM-1 Pocket Synthesizer Firmware"
+    },
+    {
+     "comments": 4,
+     "domain": "ostra.fm",
+     "id": 49964379,
+     "points": 5,
+     "title": "Show HN: Learn to program a modular synthesizer in the browser"
+    },
+    {
+     "comments": 2,
+     "domain": "arstechnica.com",
+     "id": 49998880,
+     "points": 5,
+     "title": "Fraudster jailed for using 10K bots and AI songs to outstream Taylor Swift"
+    }
+   ]
+  },
+  "newsys": {
+   "audience": "engineers",
+   "comments": 932,
+   "hit10": 17,
+   "points": 1426,
+   "stories": 99,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 604,
+     "stories": 36
+    },
+    {
+     "domain": "lwn.net",
+     "points": 29,
+     "stories": 4
+    },
+    {
+     "domain": "mcmah309.github.io",
+     "points": 7,
+     "stories": 4
+    },
+    {
+     "domain": "herecomesthemoon.net",
+     "points": 19,
+     "stories": 3
+    },
+    {
+     "domain": "getartcraft.com",
+     "points": 31,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 196,
+     "domain": "github.com",
+     "id": 49963385,
+     "points": 246,
+     "title": "Mold Linker Version 3.0.0 Release \u2013 Rewritten in Rust"
+    },
+    {
+     "comments": 184,
+     "domain": "penguin-mail.com",
+     "id": 49984716,
+     "points": 235,
+     "title": "Penguin Mail \u2013 open-source Rust email client for Linux with AI"
+    },
+    {
+     "comments": 68,
+     "domain": "mihai.dinculescu.dev",
+     "id": 49978563,
+     "points": 131,
+     "title": "Tapo (Rust/Python library) now speaks TP-Link's TPAP protocol"
+    }
+   ]
+  },
+  "privacy": {
+   "audience": "geeks",
+   "comments": 296,
+   "hit10": 2,
+   "points": 473,
+   "stories": 33,
+   "top_domains": [
+    {
+     "domain": "techdirt.com",
+     "points": 393,
+     "stories": 2
+    },
+    {
+     "domain": "github.com",
+     "points": 2,
+     "stories": 2
+    },
+    {
+     "domain": "404media.co",
+     "points": 9,
+     "stories": 1
+    },
+    {
+     "domain": "propublica.org",
+     "points": 7,
+     "stories": 1
+    },
+    {
+     "domain": "theguardian.com",
+     "points": 6,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 283,
+     "domain": "techdirt.com",
+     "id": 49977588,
+     "points": 389,
+     "title": "Meta\u2019s Muse is an adorable privacy and security dumpster fire"
+    },
+    {
+     "comments": 2,
+     "domain": "",
+     "id": 49969809,
+     "points": 13,
+     "title": "Our digital privacy is being aggressively disbanded this week"
+    },
+    {
+     "comments": 0,
+     "domain": "404media.co",
+     "id": 50022606,
+     "points": 9,
+     "title": "Senator Demands Info About White House's License Plate Surveillance Program"
+    }
+   ]
+  },
+  "puzzle": {
+   "audience": "geeks",
+   "comments": 160,
+   "hit10": 2,
+   "points": 816,
+   "stories": 30,
+   "top_domains": [
+    {
+     "domain": "minesweeper.mikelacher.com",
+     "points": 693,
+     "stories": 2
+    },
+    {
+     "domain": "github.com",
+     "points": 2,
+     "stories": 2
+    },
+    {
+     "domain": "gwern.net",
+     "points": 60,
+     "stories": 1
+    },
+    {
+     "domain": "bbc.co.uk",
+     "points": 7,
+     "stories": 1
+    },
+    {
+     "domain": "wordminos.com",
+     "points": 6,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 125,
+     "domain": "minesweeper.mikelacher.com",
+     "id": 50022292,
+     "points": 687,
+     "title": "Triple-A Minesweeper"
+    },
+    {
+     "comments": 28,
+     "domain": "gwern.net",
+     "id": 49972211,
+     "points": 60,
+     "title": "Samon: Designing a Zen Garden Raking Puzzle"
+    },
+    {
+     "comments": 0,
+     "domain": "bbc.co.uk",
+     "id": 49990857,
+     "points": 7,
+     "title": "Braid-creator Jonathan Blow on making the 'biggest puzzle game'"
+    }
+   ]
+  },
+  "questions": {
+   "audience": "geeks",
+   "comments": 1698,
+   "hit10": 24,
+   "points": 2365,
+   "stories": 422,
+   "top_domains": [
+    {
+     "domain": "youtube.com",
+     "points": 27,
+     "stories": 15
+    },
+    {
+     "domain": "nytimes.com",
+     "points": 36,
+     "stories": 11
+    },
+    {
+     "domain": "github.com",
+     "points": 25,
+     "stories": 10
+    },
+    {
+     "domain": "arxiv.org",
+     "points": 11,
+     "stories": 6
+    },
+    {
+     "domain": "quantamagazine.org",
+     "points": 14,
+     "stories": 4
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 231,
+     "domain": "signoregalilei.com",
+     "id": 49977531,
+     "points": 295,
+     "title": "What's Earth's dominant species by mass?"
+    },
+    {
+     "comments": 83,
+     "domain": "science.org",
+     "id": 49969073,
+     "points": 249,
+     "title": "How did Rosalind Franklin miss the helix in her iconic DNA image? She didn't"
+    },
+    {
+     "comments": 341,
+     "domain": "worksinprogress.co",
+     "id": 49993908,
+     "points": 202,
+     "title": "Why were Victorian elites so effective?"
+    }
+   ]
+  },
+  "retro": {
+   "audience": "geeks",
+   "comments": 135,
+   "hit10": 6,
+   "points": 622,
+   "stories": 25,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 407,
+     "stories": 5
+    },
+    {
+     "domain": "nanochess.org",
+     "points": 71,
+     "stories": 1
+    },
+    {
+     "domain": "telnetbbsguide.com",
+     "points": 50,
+     "stories": 1
+    },
+    {
+     "domain": "righto.com",
+     "points": 22,
+     "stories": 1
+    },
+    {
+     "domain": "plicerin.github.io",
+     "points": 20,
+     "stories": 1
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 64,
+     "domain": "github.com",
+     "id": 49990224,
+     "points": 395,
+     "title": "A font recreated from photographs of classic Commodore 64 keycaps"
+    },
+    {
+     "comments": 23,
+     "domain": "nanochess.org",
+     "id": 49987675,
+     "points": 71,
+     "title": "La Cueva BBS in Mexico in 1993 (session replay)"
+    },
+    {
+     "comments": 22,
+     "domain": "telnetbbsguide.com",
+     "id": 50005017,
+     "points": 50,
+     "title": "Telnet BBS Guide"
+    }
+   ]
+  },
+  "science": {
+   "audience": "geeks",
+   "comments": 3170,
+   "hit10": 26,
+   "points": 4405,
+   "stories": 145,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 101,
+     "stories": 10
+    },
+    {
+     "domain": "reddit.com",
+     "points": 85,
+     "stories": 8
+    },
+    {
+     "domain": "nobelprize.org",
+     "points": 889,
+     "stories": 6
+    },
+    {
+     "domain": "phys.org",
+     "points": 388,
+     "stories": 6
+    },
+    {
+     "domain": "youtube.com",
+     "points": 14,
+     "stories": 6
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 1478,
+     "domain": "openai.com",
+     "id": 49984923,
+     "points": 1302,
+     "title": "Sharing AI progress in mathematics"
+    },
+    {
+     "comments": 212,
+     "domain": "nobelprize.org",
+     "id": 49976265,
+     "points": 575,
+     "title": "Nobel Prize in Physics 2026: Francis Halzen"
+    },
+    {
+     "comments": 461,
+     "domain": "mathstodon.xyz",
+     "id": 50002008,
+     "points": 474,
+     "title": "\u201cMath 2.0\u201d will need to value mathematical progress more holistically"
+    }
+   ]
+  },
+  "showhn": {
+   "audience": "engineers",
+   "comments": 1178,
+   "hit10": 33,
+   "points": 3906,
+   "stories": 927,
+   "top_domains": [
+    {
+     "domain": "github.com",
+     "points": 995,
+     "stories": 342
+    },
+    {
+     "domain": "huggingface.co",
+     "points": 31,
+     "stories": 13
+    },
+    {
+     "domain": "chromewebstore.google.com",
+     "points": 16,
+     "stories": 9
+    },
+    {
+     "domain": "apps.apple.com",
+     "points": 10,
+     "stories": 7
+    },
+    {
+     "domain": "twitter.com",
+     "points": 9,
+     "stories": 5
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 145,
+     "domain": "bigwords.page",
+     "id": 49994443,
+     "points": 601,
+     "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app"
+    },
+    {
+     "comments": 29,
+     "domain": "carrierexplode.com",
+     "id": 50024499,
+     "points": 221,
+     "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded"
+    },
+    {
+     "comments": 63,
+     "domain": "artmuseum.artfrompixels.com",
+     "id": 49992057,
+     "points": 160,
+     "title": "Show HN: A walkable 3D art history museum built from Wikipedia"
+    }
+   ]
+  },
+  "space": {
+   "audience": "geeks",
+   "comments": 154,
+   "hit10": 7,
+   "points": 665,
+   "stories": 104,
+   "top_domains": [
+    {
+     "domain": "reddit.com",
+     "points": 83,
+     "stories": 7
+    },
+    {
+     "domain": "arstechnica.com",
+     "points": 17,
+     "stories": 6
+    },
+    {
+     "domain": "youtube.com",
+     "points": 7,
+     "stories": 4
+    },
+    {
+     "domain": "wsj.com",
+     "points": 6,
+     "stories": 4
+    },
+    {
+     "domain": "floridatoday.com",
+     "points": 11,
+     "stories": 3
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 29,
+     "domain": "carrierexplode.com",
+     "id": 50024499,
+     "points": 221,
+     "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded"
+    },
+    {
+     "comments": 31,
+     "domain": "tidesdb.com",
+     "id": 49963568,
+     "points": 60,
+     "title": "A new write and space optimized storage engine for MySQL is here"
+    },
+    {
+     "comments": 18,
+     "domain": "reddit.com",
+     "id": 50002665,
+     "points": 58,
+     "title": "I think I found a planet nobody knew existed. I used Claude Code to find it"
+    }
+   ]
+  },
+  "weird": {
+   "audience": "geeks",
+   "comments": 136,
+   "hit10": 2,
+   "points": 323,
+   "stories": 43,
+   "top_domains": [
+    {
+     "domain": "theguardian.com",
+     "points": 6,
+     "stories": 3
+    },
+    {
+     "domain": "youtube.com",
+     "points": 5,
+     "stories": 3
+    },
+    {
+     "domain": "404media.co",
+     "points": 215,
+     "stories": 2
+    },
+    {
+     "domain": "theatlantic.com",
+     "points": 6,
+     "stories": 2
+    },
+    {
+     "domain": "cnn.com",
+     "points": 5,
+     "stories": 2
+    }
+   ],
+   "top_stories": [
+    {
+     "comments": 121,
+     "domain": "404media.co",
+     "id": 49998066,
+     "points": 214,
+     "title": "'Jonathan' is the oldest land animal on Earth"
+    },
+    {
+     "comments": 0,
+     "domain": "nobelprize.org",
+     "id": 49990756,
+     "points": 11,
+     "title": "They solved chemistry's asymmetric mystery [pdf]"
+    },
+    {
+     "comments": 1,
+     "domain": "washingtonpost.com",
+     "id": 49960353,
+     "points": 9,
+     "title": "Florida county discovers mysterious Flock cameras with no obvious owner"
+    }
+   ]
+  }
+ },
+ "domains": {
+  "00f.net": [
+   3,
+   7
+  ],
+  "100r.ca": [
+   3,
+   312
+  ],
+  "404media.co": [
+   8,
+   342
+  ],
+  "a16z.com": [
+   3,
+   16
+  ],
+  "aboutamazon.com": [
+   3,
+   4
+  ],
+  "academy.dair.ai": [
+   3,
+   6
+  ],
+  "aeon.co": [
+   6,
+   27
+  ],
+  "age-of-product.com": [
+   3,
+   3
+  ],
+  "amazon.com": [
+   3,
+   5
+  ],
+  "androidauthority.com": [
+   5,
+   18
+  ],
+  "anthropic.com": [
+   17,
+   1038
+  ],
+  "apnews.com": [
+   12,
+   379
+  ],
+  "apps.apple.com": [
+   13,
+   18
+  ],
+  "archive.org": [
+   5,
+   5
+  ],
+  "arstechnica.com": [
+   39,
+   767
+  ],
+  "artificialanalysis.ai": [
+   3,
+   7
+  ],
+  "arxiv.org": [
+   70,
+   610
+  ],
+  "astralcodexten.com": [
+   3,
+   44
+  ],
+  "astrophyzix.com": [
+   3,
+   10
+  ],
+  "ateliti99.substack.com": [
+   3,
+   7
+  ],
+  "autodidacts.io": [
+   3,
+   196
+  ],
+  "aws.amazon.com": [
+   3,
+   45
+  ],
+  "axios.com": [
+   6,
+   24
+  ],
+  "baldurbjarnason.com": [
+   8,
+   37
+  ],
+  "bbc.co.uk": [
+   14,
+   125
+  ],
+  "bbc.com": [
+   30,
+   246
+  ],
+  "bleepingcomputer.com": [
+   11,
+   55
+  ],
+  "blog.cloudflare.com": [
+   10,
+   52
+  ],
+  "blog.demofox.org": [
+   3,
+   4
+  ],
+  "blog.google": [
+   7,
+   618
+  ],
+  "blog.janestreet.com": [
+   4,
+   21
+  ],
+  "blog.jim-nielsen.com": [
+   3,
+   124
+  ],
+  "blog.python.org": [
+   6,
+   8
+  ],
+  "blogs.windows.com": [
+   6,
+   53
+  ],
+  "bloomberg.com": [
+   27,
+   408
+  ],
+  "blue-continuum.com": [
+   6,
+   11
+  ],
+  "blueberrywren.dev": [
+   3,
+   4
+  ],
+  "brooker.co.za": [
+   3,
+   8
+  ],
+  "bsky.app": [
+   6,
+   141
+  ],
+  "businessinsider.com": [
+   3,
+   11
+  ],
+  "buttondown.com": [
+   3,
+   6
+  ],
+  "carette.xyz": [
+   3,
+   104
+  ],
+  "cbc.ca": [
+   5,
+   256
+  ],
+  "cell.com": [
+   3,
+   5
+  ],
+  "channelnewsasia.com": [
+   3,
+   6
+  ],
+  "chipsandcheese.com": [
+   3,
+   15
+  ],
+  "chromewebstore.google.com": [
+   18,
+   29
+  ],
+  "claix.dev": [
+   3,
+   7
+  ],
+  "claude.ai": [
+   3,
+   6
+  ],
+  "claude.com": [
+   7,
+   21
+  ],
+  "claude.dev": [
+   3,
+   4
+  ],
+  "clickhouse.com": [
+   3,
+   7
+  ],
+  "cloud.freshlimepay.com": [
+   3,
+   4
+  ],
+  "cloud.google.com": [
+   3,
+   19
+  ],
+  "cnbc.com": [
+   16,
+   110
+  ],
+  "cnn.com": [
+   11,
+   28
+  ],
+  "codeberg.org": [
+   3,
+   29
+  ],
+  "colossus.com": [
+   3,
+   6
+  ],
+  "commandline.microsoft.com": [
+   3,
+   154
+  ],
+  "construction-physics.com": [
+   3,
+   7
+  ],
+  "coryd.dev": [
+   4,
+   79
+  ],
+  "daniel.haxx.se": [
+   4,
+   14
+  ],
+  "danielmangum.com": [
+   4,
+   4
+  ],
+  "dbushell.com": [
+   4,
+   403
+  ],
+  "deadparrotbbs.com": [
+   3,
+   217
+  ],
+  "deepmind.google": [
+   3,
+   8
+  ],
+  "devblogs.microsoft.com": [
+   7,
+   76
+  ],
+  "developers.google.com": [
+   4,
+   9
+  ],
+  "discuss.google.dev": [
+   3,
+   7
+  ],
+  "docs.google.com": [
+   4,
+   43
+  ],
+  "duckdb.org": [
+   5,
+   7
+  ],
+  "dutchnews.nl": [
+   3,
+   9
+  ],
+  "dw.com": [
+   7,
+   83
+  ],
+  "eclecticlight.co": [
+   3,
+   4
+  ],
+  "economist.com": [
+   11,
+   74
+  ],
+  "eff.org": [
+   4,
+   13
+  ],
+  "electrek.co": [
+   5,
+   26
+  ],
+  "en.wikipedia.org": [
+   73,
+   502
+  ],
+  "engadget.com": [
+   5,
+   13
+  ],
+  "engineering.fb.com": [
+   3,
+   7
+  ],
+  "epoch.ai": [
+   4,
+   10
+  ],
+  "euronews.com": [
+   4,
+   191
+  ],
+  "facebook.com": [
+   3,
+   4
+  ],
+  "fastcompany.com": [
+   5,
+   18
+  ],
+  "finance.yahoo.com": [
+   4,
+   10
+  ],
+  "floridatoday.com": [
+   3,
+   11
+  ],
+  "forbes.com": [
+   7,
+   17
+  ],
+  "france24.com": [
+   3,
+   33
+  ],
+  "franciscocarloserra.github.io": [
+   3,
+   5
+  ],
+  "frontiersin.org": [
+   3,
+   159
+  ],
+  "ft.com": [
+   28,
+   361
+  ],
+  "fzakaria.com": [
+   3,
+   6
+  ],
+  "gadgetreview.com": [
+   4,
+   51
+  ],
+  "getartcraft.com": [
+   4,
+   51
+  ],
+  "ghuntley.com": [
+   11,
+   52
+  ],
+  "gist.github.com": [
+   8,
+   18
+  ],
+  "github.blog": [
+   6,
+   56
+  ],
+  "github.com": [
+   779,
+   5483
+  ],
+  "githubstatus.com": [
+   4,
+   343
+  ],
+  "gitlab.com": [
+   5,
+   7
+  ],
+  "gizmodo.com": [
+   6,
+   494
+  ],
+  "goto10retro.com": [
+   3,
+   4
+  ],
+  "grigio.org": [
+   3,
+   4
+  ],
+  "heise.de": [
+   4,
+   10
+  ],
+  "herecomesthemoon.net": [
+   4,
+   21
+  ],
+  "hetzner.com": [
+   3,
+   26
+  ],
+  "huggingface.co": [
+   37,
+   88
+  ],
+  "huntback.io": [
+   3,
+   3
+  ],
+  "infisical.com": [
+   3,
+   4
+  ],
+  "insideclimatenews.org": [
+   3,
+   7
+  ],
+  "jacobtomlinson.dev": [
+   3,
+   5
+  ],
+  "jamespember.substack.com": [
+   3,
+   11
+  ],
+  "japantimes.co.jp": [
+   3,
+   9
+  ],
+  "johndcook.com": [
+   5,
+   10
+  ],
+  "justice.gov": [
+   4,
+   12
+  ],
+  "jvt.me": [
+   3,
+   4
+  ],
+  "karagila.org": [
+   3,
+   82
+  ],
+  "kevinboone.me": [
+   4,
+   79
+  ],
+  "kotaku.com": [
+   4,
+   94
+  ],
+  "krebsonsecurity.com": [
+   3,
+   82
+  ],
+  "kubernetes.io": [
+   3,
+   6
+  ],
+  "latimes.com": [
+   4,
+   8
+  ],
+  "launchpact.io": [
+   3,
+   3
+  ],
+  "learn.microsoft.com": [
+   3,
+   9
+  ],
+  "lemire.me": [
+   8,
+   108
+  ],
+  "lesswrong.com": [
+   10,
+   39
+  ],
+  "letsencrypt.org": [
+   3,
+   42
+  ],
+  "lexifina.com": [
+   7,
+   17
+  ],
+  "link.springer.com": [
+   4,
+   91
+  ],
+  "liquid.ai": [
+   3,
+   8
+  ],
+  "livescience.com": [
+   4,
+   25
+  ],
+  "longreads.com": [
+   3,
+   4
+  ],
+  "lpc.events": [
+   4,
+   9
+  ],
+  "lwn.net": [
+   12,
+   52
+  ],
+  "macrumors.com": [
+   9,
+   21
+  ],
+  "mainbrella.com": [
+   9,
+   23
+  ],
+  "marcobambini.substack.com": [
+   3,
+   8
+  ],
+  "marginalrevolution.com": [
+   6,
+   9
+  ],
+  "mcmah309.github.io": [
+   4,
+   7
+  ],
+  "medium.com": [
+   61,
+   171
+  ],
+  "michaelhillaert1.substack.com": [
+   3,
+   3
+  ],
+  "mitchellh.com": [
+   3,
+   18
+  ],
+  "motherduck.com": [
+   3,
+   156
+  ],
+  "nativeship.io": [
+   3,
+   4
+  ],
+  "nature.com": [
+   31,
+   130
+  ],
+  "nautil.us": [
+   6,
+   18
+  ],
+  "nbcnews.com": [
+   4,
+   78
+  ],
+  "nber.org": [
+   4,
+   31
+  ],
+  "newgtldprogram-aps.icann.org": [
+   3,
+   65
+  ],
+  "newrepublic.com": [
+   3,
+   26
+  ],
+  "news.mit.edu": [
+   6,
+   1993
+  ],
+  "newsletter.pragmaticengineer.com": [
+   3,
+   13
+  ],
+  "newsletter.semianalysis.com": [
+   5,
+   100
+  ],
+  "newsweek.com": [
+   3,
+   7
+  ],
+  "newyorker.com": [
+   8,
+   79
+  ],
+  "nobelprize.org": [
+   14,
+   1300
+  ],
+  "npr.org": [
+   7,
+   129
+  ],
+  "nymag.com": [
+   3,
+   8
+  ],
+  "nypost.com": [
+   4,
+   10
+  ],
+  "nytimes.com": [
+   80,
+   446
+  ],
+  "omarchy.org": [
+   3,
+   10
+  ],
+  "onlinelibrary.wiley.com": [
+   4,
+   108
+  ],
+  "openai.com": [
+   10,
+   2089
+  ],
+  "opensource.googleblog.com": [
+   3,
+   9
+  ],
+  "opensourcemalware.com": [
+   3,
+   7
+  ],
+  "papers.ssrn.com": [
+   4,
+   11
+  ],
+  "patreon.com": [
+   3,
+   4
+  ],
+  "perfectdatasolutions.com": [
+   3,
+   3
+  ],
+  "petapixel.com": [
+   5,
+   12
+  ],
+  "phoronix.com": [
+   18,
+   46
+  ],
+  "phpscientist.com": [
+   4,
+   7
+  ],
+  "phys.org": [
+   12,
+   418
+  ],
+  "pivotlake.io": [
+   3,
+   10
+  ],
+  "planetscale.com": [
+   3,
+   8
+  ],
+  "platform.claude.com": [
+   3,
+   16
+  ],
+  "play.google.com": [
+   6,
+   11
+  ],
+  "pluralistic.net": [
+   4,
+   7
+  ],
+  "pmc.ncbi.nlm.nih.gov": [
+   3,
+   14
+  ],
+  "politico.com": [
+   13,
+   116
+  ],
+  "politico.eu": [
+   5,
+   16
+  ],
+  "pranitha.dev": [
+   3,
+   4
+  ],
+  "propublica.org": [
+   5,
+   36
+  ],
+  "pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev": [
+   3,
+   6
+  ],
+  "purplesyringa.moe": [
+   3,
+   5
+  ],
+  "pypi.org": [
+   4,
+   10
+  ],
+  "quantamagazine.org": [
+   6,
+   21
+  ],
+  "quesma.com": [
+   3,
+   174
+  ],
+  "reason.com": [
+   3,
+   10
+  ],
+  "red5.net": [
+   3,
+   4
+  ],
+  "reddit.com": [
+   39,
+   186
+  ],
+  "restofworld.org": [
+   4,
+   72
+  ],
+  "reuters.com": [
+   56,
+   1140
+  ],
+  "rnz.co.nz": [
+   6,
+   43
+  ],
+  "rte.ie": [
+   3,
+   9
+  ],
+  "science.org": [
+   10,
+   275
+  ],
+  "sciencealert.com": [
+   3,
+   7
+  ],
+  "sciencedaily.com": [
+   5,
+   82
+  ],
+  "scmp.com": [
+   3,
+   11
+  ],
+  "scottaaronson.blog": [
+   5,
+   388
+  ],
+  "script.google.com": [
+   5,
+   6
+  ],
+  "seangoedecke.com": [
+   7,
+   23
+  ],
+  "sebsite.pw": [
+   3,
+   3
+  ],
+  "servethehome.com": [
+   9,
+   26
+  ],
+  "sfchronicle.com": [
+   3,
+   35
+  ],
+  "simonwillison.net": [
+   6,
+   17
+  ],
+  "sk500.online": [
+   3,
+   6
+  ],
+  "softwaredoug.com": [
+   3,
+   6
+  ],
+  "spectrum.ieee.org": [
+   11,
+   19
+  ],
+  "sqlite.org": [
+   5,
+   16
+  ],
+  "ssp.sh": [
+   3,
+   10
+  ],
+  "storagereview.com": [
+   5,
+   17
+  ],
+  "store.steampowered.com": [
+   4,
+   8
+  ],
+  "strandsagents.com": [
+   3,
+   290
+  ],
+  "substack.com": [
+   3,
+   4
+  ],
+  "superlogical.com": [
+   4,
+   12
+  ],
+  "support.claude.com": [
+   4,
+   20
+  ],
+  "support.microsoft.com": [
+   3,
+   7
+  ],
+  "tailscale.com": [
+   3,
+   9
+  ],
+  "taoofmac.com": [
+   3,
+   3
+  ],
+  "techcrunch.com": [
+   22,
+   303
+  ],
+  "techdirt.com": [
+   11,
+   514
+  ],
+  "technologyreview.com": [
+   17,
+   57
+  ],
+  "techpolicy.press": [
+   3,
+   4
+  ],
+  "techradar.com": [
+   3,
+   14
+  ],
+  "techrights.org": [
+   8,
+   27
+  ],
+  "techspot.com": [
+   9,
+   1057
+  ],
+  "teorth.github.io": [
+   3,
+   7
+  ],
+  "terrytao.wordpress.com": [
+   12,
+   206
+  ],
+  "testflight.apple.com": [
+   8,
+   9
+  ],
+  "text.npr.org": [
+   6,
+   18
+  ],
+  "the-independent.com": [
+   3,
+   10
+  ],
+  "theatlantic.com": [
+   13,
+   41
+  ],
+  "thecompound.tech": [
+   3,
+   3
+  ],
+  "theconsensus.dev": [
+   3,
+   8
+  ],
+  "theconversation.com": [
+   6,
+   32
+  ],
+  "thedrive.com": [
+   4,
+   339
+  ],
+  "theglobeandmail.com": [
+   3,
+   37
+  ],
+  "theguardian.com": [
+   68,
+   851
+  ],
+  "thehill.com": [
+   3,
+   14
+  ],
+  "theinference.org": [
+   3,
+   11
+  ],
+  "thenewstack.io": [
+   4,
+   7
+  ],
+  "theregister.com": [
+   26,
+   93
+  ],
+  "theverge.com": [
+   31,
+   256
+  ],
+  "tidesdb.com": [
+   4,
+   69
+  ],
+  "time.com": [
+   4,
+   31
+  ],
+  "tomshardware.com": [
+   19,
+   121
+  ],
+  "torrentfreak.com": [
+   4,
+   13
+  ],
+  "transformernews.ai": [
+   3,
+   7
+  ],
+  "twitter.com": [
+   130,
+   657
+  ],
+  "unite.ai": [
+   3,
+   7
+  ],
+  "united24media.com": [
+   4,
+   216
+  ],
+  "usenix.org": [
+   3,
+   5
+  ],
+  "utcc.utoronto.ca": [
+   3,
+   5
+  ],
+  "vals.ai": [
+   5,
+   504
+  ],
+  "variety.com": [
+   5,
+   41
+  ],
+  "vercel.com": [
+   6,
+   11
+  ],
+  "vincent.bernat.ch": [
+   3,
+   12
+  ],
+  "vincentschmalbach.com": [
+   4,
+   15
+  ],
+  "washingtonpost.com": [
+   12,
+   56
+  ],
+  "web.archive.org": [
+   4,
+   6
+  ],
+  "wesbos.com": [
+   3,
+   4
+  ],
+  "wfform.com": [
+   4,
+   5
+  ],
+  "wired.com": [
+   12,
+   42
+  ],
+  "world.hey.com": [
+   6,
+   18
+  ],
+  "worldsensorium.com": [
+   4,
+   5
+  ],
+  "write.as": [
+   3,
+   5
+  ],
+  "wsj.com": [
+   43,
+   172
+  ],
+  "x.com": [
+   4,
+   8
+  ],
+  "yahoo.com": [
+   4,
+   11
+  ],
+  "youtube.com": [
+   176,
+   591
+  ],
+  "zenodo.org": [
+   15,
+   17
+  ]
+ },
+ "end_exclusive_utc": "2026-10-12",
+ "engineers": {
+  "ai_coding": {
+   "agentic": {
+    "comments": 219,
+    "stories": 47
+   },
+   "ai_agents": {
+    "comments": 101,
+    "stories": 56
+   },
+   "claude_code": {
+    "comments": 245,
+    "stories": 90
+   },
+   "copilot": {
+    "comments": 78,
+    "stories": 5
+   },
+   "cursor": {
+    "comments": 92,
+    "stories": 13
+   },
+   "mcp": {
+    "comments": 161,
+    "stories": 85
+   }
+  },
+  "ask_hn": {
+   "stories": 112,
+   "top_by_comments": [
+    {
+     "comments": 82,
+     "domain": "",
+     "id": 50038458,
+     "points": 35,
+     "title": "Ask HN: Why aren't Americans rising up against tipping?"
+    },
+    {
+     "comments": 47,
+     "domain": "",
+     "id": 49984484,
+     "points": 45,
+     "title": "Ask HN: Why is Ask HN only showing me 14 posts?"
+    },
+    {
+     "comments": 44,
+     "domain": "",
+     "id": 49985180,
+     "points": 8,
+     "title": "Ask HN: How would you feel if we nationalized Google?"
+    },
+    {
+     "comments": 38,
+     "domain": "",
+     "id": 49985548,
+     "points": 36,
+     "title": "Ask HN: What do you run on a $5 VPS that's worth keeping online 24/7?"
+    },
+    {
+     "comments": 32,
+     "domain": "",
+     "id": 49985502,
+     "points": 14,
+     "title": "Ask HN: What games do you religiously play on your phone browser?"
+    }
+   ]
+  },
+  "hiring": {
+   "estimated_posts": 70,
+   "job_items": 2,
+   "note": "Estimate. A comment counts when its first line has two or more \"|\" separated fields. Not linked to a thread; the monthly thread can span two weeks.",
+   "skills": {
+    "ai_ml": 43,
+    "backend": 6,
+    "onsite": 8,
+    "python": 16,
+    "remote": 40,
+    "rust": 4,
+    "typescript": 14
+   }
+  },
+  "languages": {
+   "cpp": {
+    "comments": 322,
+    "stories": 13
+   },
+   "java": {
+    "comments": 181,
+    "stories": 19
+   },
+   "javascript": {
+    "comments": 220,
+    "stories": 26
+   },
+   "kotlin": {
+    "comments": 40,
+    "stories": 6
+   },
+   "python": {
+    "comments": 415,
+    "stories": 62
+   },
+   "rust": {
+    "comments": 694,
+    "stories": 110
+   },
+   "swift": {
+    "comments": 58,
+    "stories": 15
+   },
+   "typescript": {
+    "comments": 232,
+    "stories": 25
+   },
+   "zig": {
+    "comments": 56,
+    "stories": 6
+   }
+  },
+  "show_hn": {
+   "github": 342,
+   "hit10": 33,
+   "stories": 927,
+   "top": [
+    {
+     "comments": 145,
+     "domain": "bigwords.page",
+     "id": 49994443,
+     "points": 601,
+     "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app"
+    },
+    {
+     "comments": 29,
+     "domain": "carrierexplode.com",
+     "id": 50024499,
+     "points": 221,
+     "title": "Show HN: Carrier-Explode: iPhone, Pixel and Galaxy carrier settings decoded"
+    },
+    {
+     "comments": 63,
+     "domain": "artmuseum.artfrompixels.com",
+     "id": 49992057,
+     "points": 160,
+     "title": "Show HN: A walkable 3D art history museum built from Wikipedia"
+    },
+    {
+     "comments": 70,
+     "domain": "quake-srp.pages.dev",
+     "id": 50016312,
+     "points": 98,
+     "title": "Show HN: Quake ported to safe Rust, playable in browser"
+    },
+    {
+     "comments": 24,
+     "domain": "parseable.com",
+     "id": 49978171,
+     "points": 86,
+     "title": "Show HN: Parseable, an open observability datalake, handles 100M time-series/min"
+    }
+   ]
+  },
+  "tools": {
+   "docker": {
+    "comments": 175,
+    "stories": 17
+   },
+   "git": {
+    "comments": 198,
+    "stories": 41
+   },
+   "kubernetes": {
+    "comments": 81,
+    "stories": 21
+   },
+   "linux": {
+    "comments": 813,
+    "stories": 101
+   },
+   "neovim": {
+    "comments": 20,
+    "stories": 1
+   },
+   "postgres": {
+    "comments": 151,
+    "stories": 33
+   },
+   "react": {
+    "comments": 226,
+    "stories": 13
+   },
+   "sqlite": {
+    "comments": 67,
+    "stories": 24
+   },
+   "vscode": {
+    "comments": 105,
+    "stories": 7
+   },
+   "wasm": {
+    "comments": 74,
+    "stories": 20
+   }
+  }
+ },
+ "geeks": {
+  "ai_free": {
+   "stories": 5325,
+   "top": [
+    {
+     "comments": 212,
+     "domain": "news.mit.edu",
+     "id": 49998895,
+     "points": 1911,
+     "title": "Margaret Hamilton has died"
+    },
+    {
+     "comments": 125,
+     "domain": "minesweeper.mikelacher.com",
+     "id": 50022292,
+     "points": 687,
+     "title": "Triple-A Minesweeper"
+    },
+    {
+     "comments": 145,
+     "domain": "bigwords.page",
+     "id": 49994443,
+     "points": 601,
+     "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app"
+    },
+    {
+     "comments": 561,
+     "domain": "helgilibrary.com",
+     "id": 49977072,
+     "points": 591,
+     "title": "JetBrains reports revenue growth, net financial loss for 2025"
+    },
+    {
+     "comments": 284,
+     "domain": "developers.cloudflare.com",
+     "id": 49963171,
+     "points": 591,
+     "title": "Web Search API"
+    }
+   ]
+  },
+  "debated_non_ai": [
+   {
+    "comments": 502,
+    "domain": "arstechnica.com",
+    "id": 49983703,
+    "points": 267,
+    "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
+   },
+   {
+    "comments": 415,
+    "domain": "apnews.com",
+    "id": 50006832,
+    "points": 304,
+    "title": "Trump administration is suspending Microsoft from a green card program"
+   },
+   {
+    "comments": 415,
+    "domain": "thedrive.com",
+    "id": 49981186,
+    "points": 147,
+    "title": "California closed the Montana license plate loophole"
+   },
+   {
+    "comments": 401,
+    "domain": "vivienhenz.com",
+    "id": 49973598,
+    "points": 294,
+    "title": "Why Common Lisp is now the best programming language"
+   },
+   {
+    "comments": 388,
+    "domain": "techfundingnews.com",
+    "id": 49963366,
+    "points": 349,
+    "title": "Germany\u2019s RobCo hits $1B valuation"
+   }
+  ],
+  "old_year_tag": {
+   "stories": 109
+  },
+  "reading": {
+   "wikipedia": 73,
+   "youtube": 176
+  },
+  "variety": {
+   "distinct_domains": 3435,
+   "linked_stories": 6635,
+   "top10_domain_stories": 1536
+  }
+ },
+ "items": {
+  "comment": 80284,
+  "dead": 7658,
+  "deleted": 2827,
+  "job": 2,
+  "other": 3,
+  "story": 9952,
+  "total": 90241
+ },
+ "kind": "weekly",
+ "methods": {
+  "list_version": "1",
+  "lists": "scripts/weekly_lists.py",
+  "spec": "docs/WEEKLY_SPEC.md"
+ },
+ "saved_at": "2026-10-12T05:37:24Z",
+ "schema_version": 2,
+ "shared": {
+  "ai": {
+   "note": "Whole-word matches. Stories: title plus text. Comments: text. Dead and deleted items keep no title or text in the archive, so a term count is the same on the live and all bases. Only the denominator differs (stories_live vs stories_all). data/history/terms_daily.csv divides by all items.",
+   "terms": {
+    "ai": {
+     "comment_all": 6813,
+     "comment_live": 6813,
+     "story_all": 1047,
+     "story_live": 1047
+    },
+    "chatgpt": {
+     "comment_all": 373,
+     "comment_live": 373,
+     "story_all": 41,
+     "story_live": 41
+    },
+    "claude": {
+     "comment_all": 1379,
+     "comment_live": 1379,
+     "story_all": 227,
+     "story_live": 227
+    },
+    "copilot": {
+     "comment_all": 78,
+     "comment_live": 78,
+     "story_all": 5,
+     "story_live": 5
+    },
+    "core": {
+     "comment_all": 11846,
+     "comment_live": 11846,
+     "story_all": 1535,
+     "story_live": 1535
+    },
+    "gpt": {
+     "comment_all": 243,
+     "comment_live": 243,
+     "story_all": 29,
+     "story_live": 29
+    },
+    "llm": {
+     "comment_all": 3185,
+     "comment_live": 3185,
+     "story_all": 159,
+     "story_live": 159
+    },
+    "openai": {
+     "comment_all": 1207,
+     "comment_live": 1207,
+     "story_all": 130,
+     "story_live": 130
+    },
+    "python": {
+     "comment_all": 415,
+     "comment_live": 415,
+     "story_all": 62,
+     "story_live": 62
+    },
+    "remote": {
+     "comment_all": 483,
+     "comment_live": 483,
+     "story_all": 22,
+     "story_live": 22
+    },
+    "rust": {
+     "comment_all": 694,
+     "comment_live": 694,
+     "story_all": 110,
+     "story_live": 110
+    }
+   }
+  },
+  "discussion": {
+   "debated": [
+    {
+     "comments": 1478,
+     "domain": "openai.com",
+     "id": 49984923,
+     "points": 1302,
+     "title": "Sharing AI progress in mathematics"
+    },
+    {
+     "comments": 502,
+     "domain": "arstechnica.com",
+     "id": 49983703,
+     "points": 267,
+     "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
+    },
+    {
+     "comments": 415,
+     "domain": "apnews.com",
+     "id": 50006832,
+     "points": 304,
+     "title": "Trump administration is suspending Microsoft from a green card program"
+    },
+    {
+     "comments": 415,
+     "domain": "thedrive.com",
+     "id": 49981186,
+     "points": 147,
+     "title": "California closed the Montana license plate loophole"
+    },
+    {
+     "comments": 401,
+     "domain": "vivienhenz.com",
+     "id": 49973598,
+     "points": 294,
+     "title": "Why Common Lisp is now the best programming language"
+    },
+    {
+     "comments": 399,
+     "domain": "github.com",
+     "id": 49980715,
+     "points": 340,
+     "title": "OpenTPU \u2013 An open-source AI accelerator, developed by AI"
+    },
+    {
+     "comments": 388,
+     "domain": "techfundingnews.com",
+     "id": 49963366,
+     "points": 349,
+     "title": "Germany\u2019s RobCo hits $1B valuation"
+    },
+    {
+     "comments": 368,
+     "domain": "rswebsols.com",
+     "id": 49997161,
+     "points": 356,
+     "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI"
+    },
+    {
+     "comments": 341,
+     "domain": "worksinprogress.co",
+     "id": 49993908,
+     "points": 202,
+     "title": "Why were Victorian elites so effective?"
+    },
+    {
+     "comments": 334,
+     "domain": "themoscowtimes.com",
+     "id": 49960084,
+     "points": 304,
+     "title": "Nearly 200 people under observation after Irkutsk lab worker dies from plague"
+    }
+   ],
+   "most_commented": [
+    {
+     "comments": 1478,
+     "domain": "openai.com",
+     "id": 49984923,
+     "points": 1302,
+     "title": "Sharing AI progress in mathematics"
+    },
+    {
+     "comments": 1207,
+     "domain": "mistral.ai",
+     "id": 49977979,
+     "points": 2020,
+     "title": "Mistral Large 4"
+    },
+    {
+     "comments": 674,
+     "domain": "techspot.com",
+     "id": 49961057,
+     "points": 830,
+     "title": "Anthropic reported diary entry to police, woman faces felony charge"
+    },
+    {
+     "comments": 561,
+     "domain": "helgilibrary.com",
+     "id": 49977072,
+     "points": 591,
+     "title": "JetBrains reports revenue growth, net financial loss for 2025"
+    },
+    {
+     "comments": 502,
+     "domain": "arstechnica.com",
+     "id": 49983703,
+     "points": 267,
+     "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
+    },
+    {
+     "comments": 461,
+     "domain": "mathstodon.xyz",
+     "id": 50002008,
+     "points": 474,
+     "title": "\u201cMath 2.0\u201d will need to value mathematical progress more holistically"
+    },
+    {
+     "comments": 457,
+     "domain": "reuters.com",
+     "id": 50021066,
+     "points": 464,
+     "title": "US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize"
+    },
+    {
+     "comments": 453,
+     "domain": "anthropic.com",
+     "id": 49996437,
+     "points": 971,
+     "title": "Claude Haiku 5.5"
+    },
+    {
+     "comments": 421,
+     "domain": "niemanlab.org",
+     "id": 49971846,
+     "points": 555,
+     "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons"
+    },
+    {
+     "comments": 419,
+     "domain": "classaction.org",
+     "id": 49993914,
+     "points": 568,
+     "title": "Visa, Mastercard, major banks facing new litigation over 'anticompetitive' fees"
+    }
+   ],
+   "note": "debated = 100 or more comments and more comments than points. Counts are first readings.",
+   "stories_100_comments": 98,
+   "stories_100_points": 151
+  },
+  "volume": {
+   "comments_all": 80284,
+   "comments_dead_or_deleted": 6844,
+   "comments_live": 73440,
+   "distinct_authors": 22370,
+   "stories_all": 9952,
+   "stories_live": 6860
+  }
+ },
+ "start_utc": "2026-10-05",
+ "stories": {
+  "comments": 38250,
+  "hit10": 593,
+  "points": 71787,
+  "stories": 6860
+ },
+ "stories_missing_score": 0,
+ "top_domains": [
+  {
+   "domain": "github.com",
+   "points": 5483,
+   "stories": 779
+  },
+  {
+   "domain": "youtube.com",
+   "points": 591,
+   "stories": 176
+  },
+  {
+   "domain": "twitter.com",
+   "points": 657,
+   "stories": 130
+  },
+  {
+   "domain": "nytimes.com",
+   "points": 446,
+   "stories": 80
+  },
+  {
+   "domain": "en.wikipedia.org",
+   "points": 502,
+   "stories": 73
+  },
+  {
+   "domain": "arxiv.org",
+   "points": 610,
+   "stories": 70
+  },
+  {
+   "domain": "theguardian.com",
+   "points": 851,
+   "stories": 68
+  },
+  {
+   "domain": "medium.com",
+   "points": 171,
+   "stories": 61
+  },
+  {
+   "domain": "reuters.com",
+   "points": 1140,
+   "stories": 56
+  },
+  {
+   "domain": "wsj.com",
+   "points": 172,
+   "stories": 43
+  },
+  {
+   "domain": "arstechnica.com",
+   "points": 767,
+   "stories": 39
+  },
+  {
+   "domain": "reddit.com",
+   "points": 186,
+   "stories": 39
+  },
+  {
+   "domain": "huggingface.co",
+   "points": 88,
+   "stories": 37
+  },
+  {
+   "domain": "theverge.com",
+   "points": 256,
+   "stories": 31
+  },
+  {
+   "domain": "nature.com",
+   "points": 130,
+   "stories": 31
+  }
+ ],
+ "top_stories": [
+  {
+   "comments": 1207,
+   "domain": "mistral.ai",
+   "id": 49977979,
+   "points": 2020,
+   "title": "Mistral Large 4"
+  },
+  {
+   "comments": 212,
+   "domain": "news.mit.edu",
+   "id": 49998895,
+   "points": 1911,
+   "title": "Margaret Hamilton has died"
+  },
+  {
+   "comments": 1478,
+   "domain": "openai.com",
+   "id": 49984923,
+   "points": 1302,
+   "title": "Sharing AI progress in mathematics"
+  },
+  {
+   "comments": 453,
+   "domain": "anthropic.com",
+   "id": 49996437,
+   "points": 971,
+   "title": "Claude Haiku 5.5"
+  },
+  {
+   "comments": 674,
+   "domain": "techspot.com",
+   "id": 49961057,
+   "points": 830,
+   "title": "Anthropic reported diary entry to police, woman faces felony charge"
+  },
+  {
+   "comments": 412,
+   "domain": "openai.com",
+   "id": 49996425,
+   "points": 705,
+   "title": "GPT\u20116 and Intelligent UI for everyone"
+  },
+  {
+   "comments": 125,
+   "domain": "minesweeper.mikelacher.com",
+   "id": 50022292,
+   "points": 687,
+   "title": "Triple-A Minesweeper"
+  },
+  {
+   "comments": 145,
+   "domain": "bigwords.page",
+   "id": 49994443,
+   "points": 601,
+   "title": "Show HN: Bigwords.page \u2013 Turn any screen into a sign. The URL is the app"
+  },
+  {
+   "comments": 561,
+   "domain": "helgilibrary.com",
+   "id": 49977072,
+   "points": 591,
+   "title": "JetBrains reports revenue growth, net financial loss for 2025"
+  },
+  {
+   "comments": 284,
+   "domain": "developers.cloudflare.com",
+   "id": 49963171,
+   "points": 591,
+   "title": "Web Search API"
+  }
+ ],
+ "vcs": {
+  "ai_infra": {
+   "comments": 674,
+   "stories": 89
+  },
+  "deal_words": {
+   "by_word": {
+    "acquisition": 5,
+    "bankrupt": 3,
+    "funding": 6,
+    "ipo": 9,
+    "layoffs": 4,
+    "raises": 9,
+    "series": 2,
+    "shutdown": 2,
+    "valuation": 6
+   },
+   "note": "Titles that talk about deals. HN talking, not a deal database.",
+   "stories": 43,
+   "top": [
+    {
+     "comments": 388,
+     "domain": "techfundingnews.com",
+     "id": 49963366,
+     "points": 349,
+     "title": "Germany\u2019s RobCo hits $1B valuation"
+    },
+    {
+     "comments": 216,
+     "domain": "typesafe.ai",
+     "id": 50023450,
+     "points": 283,
+     "title": "Typesafe AI raises $870M at $7.5B"
+    },
+    {
+     "comments": 66,
+     "domain": "npr.org",
+     "id": 49969375,
+     "points": 64,
+     "title": "After bankruptcy, he was banned from betting sites. Then he discovered Kalshi"
+    },
+    {
+     "comments": 4,
+     "domain": "bloomberg.com",
+     "id": 50029452,
+     "points": 14,
+     "title": "Data Center Darling's $30B IPO Dream Crushed in 48 Hours"
+    },
+    {
+     "comments": 4,
+     "domain": "techcrunch.com",
+     "id": 49979734,
+     "points": 12,
+     "title": "Etched fields funding offers at $40B+ valuation"
+    }
+   ]
+  },
+  "sources": {
+   "linked_stories": 6635,
+   "press": {
+    "comments": 3210,
+    "hit10": 78,
+    "points": 5381,
+    "stories": 519
+   },
+   "primary": {
+    "comments": 5919,
+    "hit10": 62,
+    "points": 10345,
+    "stories": 966
+   }
+  },
+  "themes": {
+   "batteries": {
+    "stories": 7
+   },
+   "bio": {
+    "stories": 0
+   },
+   "chips": {
+    "stories": 9
+   },
+   "data_center": {
+    "stories": 19
+   },
+   "fusion_fission": {
+    "stories": 4
+   },
+   "gpu": {
+    "stories": 29
+   },
+   "photonics_lidar": {
+    "stories": 3
+   },
+   "quantum": {
+    "stories": 17
+   },
+   "robotics": {
+    "stories": 31
+   },
+   "solar": {
+    "stories": 15
+   }
+  },
+  "watchlist": {
+   "mentions": {
+    "AMD": 10,
+    "Amazon": 26,
+    "Anduril": 1,
+    "Anthropic": 66,
+    "Apple": 52,
+    "Cerebras": 0,
+    "Cloudflare": 28,
+    "DeepSeek": 9,
+    "Figma": 1,
+    "Google": 77,
+    "Hugging Face": 1,
+    "Intel": 7,
+    "Meta": 22,
+    "Microsoft": 65,
+    "Mistral": 16,
+    "Nvidia": 34,
+    "OpenAI": 115,
+    "Palantir": 3,
+    "Perplexity": 2,
+    "Rocket Lab": 0,
+    "SpaceX": 15,
+    "Stripe": 4,
+    "Supabase": 3,
+    "TSMC": 0,
+    "Tesla": 10,
+    "Vercel": 2,
+    "xAI": 1
+   },
+   "note": "Starter list from scripts/weekly_lists.py, to be replaced by an owner-chosen list. Mentions in story titles."
+  }
+ },
+ "week": "2026-W41"
+}

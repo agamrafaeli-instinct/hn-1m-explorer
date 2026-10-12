@@ -1,0 +1,116 @@
+{
+ "aliases": [
+  {
+   "count": 11033,
+   "text": "llm"
+  },
+  {
+   "count": 8072,
+   "text": "llms"
+  },
+  {
+   "count": 1660,
+   "text": "rag"
+  },
+  {
+   "count": 516,
+   "text": "fine-tuning"
+  },
+  {
+   "count": 202,
+   "text": "fine-tune"
+  },
+  {
+   "count": 173,
+   "text": "fine-tuned"
+  },
+  {
+   "count": 148,
+   "text": "finetuning"
+  },
+  {
+   "count": 51,
+   "text": "finetune"
+  },
+  {
+   "count": 42,
+   "text": "finetuned"
+  },
+  {
+   "count": 15,
+   "text": "fine-tunes"
+  },
+  {
+   "count": 6,
+   "text": "finetunes"
+  },
+  {
+   "count": 2,
+   "text": "fine-tunning"
+  },
+  {
+   "count": 1,
+   "text": "finetunedb"
+  },
+  {
+   "count": 1,
+   "text": "fine-tunable"
+  },
+  {
+   "count": 1,
+   "text": "fine-tuner"
+  }
+ ],
+ "exclusions": [],
+ "label": "LLM, RAG and fine-tuning",
+ "matches": 21923,
+ "near_misses_total": 3178,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\b(llms?|rag|fine-?tun\\w*)\\b",
+ "sample_matches": [
+  "Show HN: A React and Next.js UI Toolkit for LLMs",
+  "Show HN: I built an LLM agent that finds you online and roasts you",
+  "Consensus in the Machine: A New Method for Tackling LLM Hallucinations",
+  "LLM Ported to the C64, Kinda",
+  "Show HN: Impersona \u2013 Chatroom where messages are run through an LLM",
+  "Finetuning Mistral-7B to play DOOM",
+  "Graph-guard, a knowledge graph behind RAG for multi-hop retrieval",
+  "Improving Retrieval with Finetuning an Adapter Model",
+  "Show HN: Dokimos \u2013 LLM evaluation framework for Java",
+  "Why does the Universe appear fine-tuned for life to exist?",
+  "Evaluation of LLMs and LLM Systems [video]",
+  "Show HN: Goulash \u2013 heckler/helper to local-LLM your shell as little as possible",
+  "Bird-eye view visualization of LLM activations",
+  "Ask HN: LLM Router Recommendations",
+  "Show HN: Allos \u2013 An open-source, LLM-agnostic agentic SDK for Python",
+  "Ask HN: Do you use LLMs to perform tasks in real applications?",
+  "Show HN: Core Rth. A governed AI kernel for engineers who don't trust their LLMs",
+  "Show HN: Hanky, a Custom RAG Generator",
+  "Show HN: GPT Fine-Tune Formatter",
+  "A PostgreSQL Database for Every Agent: In-Database RAG, Graph, and Multitenancy"
+ ],
+ "sample_near_misses": [
+  "Richard Stallman response to Boston Police efforts",
+  "Richard Stallman Interview: Lunduke Hour",
+  "KDE: On the reappointment of Richard Stallman as a director of the FSF",
+  "Freedom: Just another word for agreeing with Richard Stallman and Eric Raymond",
+  "Steve Ballmer Now Owns More Microsoft Stock Than Bill Gates",
+  "Interview with Richard Stallman about the Harms of DRM and DMCA",
+  "Online Advertising's Shady Core: Jesse Willms, the Dark Lord of the Internet",
+  "How to Handle Asynchronous Tasks with Node.js and BullMQ",
+  "Richard Stallman Explains [video]",
+  "Take a sneak peek at Billme \u2013 invoices on the go",
+  "AIBrix: Cost-Effective and Scalable Control Plane for VLLM from ByteDance",
+  "Yahoo Got a Great Deal, Says Microsoft\u2019s Ballmer",
+  "Ballmer's farewell speech at a Microsoft company wide meeting",
+  "Show HN: Proxima serves 4x more requests with no hardware change on vLLM",
+  "Asahi Linux Add Support for the Broadcom FullMAC WiFi Chips Used on Apple T2/M1",
+  "Google Chrome OS mauled by Richard Stallman",
+  "A prerecorded message from Richard Stallman",
+  "I Built CLI for Bullmq",
+  "Enrollment for Stanford's online DB class now open",
+  "Shellm: A one-file Ollama CLI client written in bash"
+ ],
+ "schema": 1,
+ "term": "llm"
+}

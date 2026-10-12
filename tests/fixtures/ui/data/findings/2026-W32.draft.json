@@ -1,0 +1,46 @@
+{
+ "audiences": {
+  "engineers": [
+   {
+    "quiet": true,
+    "text": "No big changes this week."
+   }
+  ],
+  "geeks": [
+   {
+    "quiet": true,
+    "text": "No big changes this week."
+   }
+  ],
+  "vcs": [
+   {
+    "key": "Cloudflare",
+    "path": "audiences.vcs.rose",
+    "size": 12.75,
+    "source": "data/compare/2026-W32.json",
+    "source_line": "Source: data/compare/2026-W32.json, audiences.vcs.rose, key \"Cloudflare\" (this 46, expected 8.6).",
+    "text": "Cloudflare appeared in 46 story titles and texts this week, against about 8.6 expected from last week."
+   },
+   {
+    "key": "SpaceX",
+    "path": "audiences.vcs.rose",
+    "size": 7.62,
+    "source": "data/compare/2026-W32.json",
+    "source_line": "Source: data/compare/2026-W32.json, audiences.vcs.rose, key \"SpaceX\" (this 49, expected 17.3).",
+    "text": "SpaceX appeared in 49 story titles and texts this week, against about 17.3 expected from last week."
+   },
+   {
+    "key": "Nvidia",
+    "path": "audiences.vcs.fell",
+    "size": 5.08,
+    "source": "data/compare/2026-W32.json",
+    "source_line": "Source: data/compare/2026-W32.json, audiences.vcs.fell, key \"Nvidia\" (this 11, expected 45.1).",
+    "text": "Nvidia appeared in 11 story titles and texts this week, against about 45.1 expected from last week."
+   }
+  ]
+ },
+ "backfill": true,
+ "caveat": "Hacker News talking, not a measure of what is true.",
+ "flips": [],
+ "week": "2026-W32"
+}

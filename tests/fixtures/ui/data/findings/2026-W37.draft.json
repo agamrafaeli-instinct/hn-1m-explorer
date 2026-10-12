@@ -1,0 +1,70 @@
+{
+ "audiences": {
+  "engineers": [
+   {
+    "key": "typescript",
+    "path": "audiences.engineers.rose",
+    "size": 3.25,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.engineers.rose, key \"typescript\" (this 24, expected 12.5).",
+    "text": "TypeScript appeared in 24 story titles and texts this week, against about 12.5 expected from last week."
+   }
+  ],
+  "geeks": [
+   {
+    "key": "weird",
+    "path": "audiences.geeks.fell",
+    "size": 3.17,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.geeks.fell, key \"weird\" (this 39, expected 64.4).",
+    "text": "weird appeared in 39 story titles and texts this week, against about 64.4 expected from last week."
+   },
+   {
+    "key": "variety",
+    "path": "audiences.geeks.shares",
+    "size": 3.05,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.geeks.shares, key \"variety\" (this 0.512, avg4 0.5113).",
+    "text": "Distinct sites per linked story was 51.2% this week, against a 4-week average of 51.1%."
+   },
+   {
+    "key": "science",
+    "path": "audiences.geeks.rose",
+    "size": 3.05,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.geeks.rose, key \"science\" (this 127, expected 97).",
+    "text": "science appeared in 127 story titles and texts this week, against about 97 expected from last week."
+   }
+  ],
+  "vcs": [
+   {
+    "key": "Anthropic",
+    "path": "audiences.vcs.rose",
+    "size": 9.1,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.vcs.rose, key \"Anthropic\" (this 103, expected 43.2).",
+    "text": "Anthropic appeared in 103 story titles and texts this week, against about 43.2 expected from last week."
+   },
+   {
+    "key": "DeepSeek",
+    "path": "audiences.vcs.rose",
+    "size": 7.19,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.vcs.rose, key \"DeepSeek\" (this 34, expected 10.6).",
+    "text": "DeepSeek appeared in 34 story titles and texts this week, against about 10.6 expected from last week."
+   },
+   {
+    "key": "Hugging Face",
+    "path": "audiences.vcs.fell",
+    "size": 4.82,
+    "source": "data/compare/2026-W37.json",
+    "source_line": "Source: data/compare/2026-W37.json, audiences.vcs.fell, key \"Hugging Face\" (this 8, expected 37.5).",
+    "text": "Hugging Face appeared in 8 story titles and texts this week, against about 37.5 expected from last week."
+   }
+  ]
+ },
+ "backfill": true,
+ "caveat": "Hacker News talking, not a measure of what is true.",
+ "flips": [],
+ "week": "2026-W37"
+}

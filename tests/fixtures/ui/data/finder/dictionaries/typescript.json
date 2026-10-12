@@ -1,0 +1,53 @@
+{
+ "aliases": [
+  {
+   "count": 5362,
+   "text": "typescript"
+  }
+ ],
+ "exclusions": [],
+ "label": "TypeScript",
+ "matches": 5362,
+ "near_misses_total": 15,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\btypescript\\b",
+ "sample_matches": [
+  "We use TypeScript not based on preference, but because we want to make money",
+  "Impressions of React and TypeScript from an Elixir/Elm Developer",
+  "Embedded TypeScript: Hosting a Front End on a ESP32 with Rust",
+  "Retrieval Augmented Generation in TypeScript live code review",
+  "Svelte and TypeScript",
+  "Show HN: Internationalizationext selector API \u2013 selector t for TypeScript",
+  "Show HN: Iceberg-JS, a TypeScript Client for the Apache Iceberg REST Catalog",
+  "Ask HN: What is the \u201cproper\u201d way to do error-handling in TypeScript?",
+  "Advanced TypeScript: The ultimate Tailwind typings",
+  "Deep Introduction to TypeScript Decorators",
+  "Testing Types in TypeScript",
+  "Show HN: Tweed CLI (Babel|TypeScript|ES5, Webpack, Jest|Mocha)",
+  "TypeScript 5.3 First Look",
+  "Effect \u2013 Production-Grade TypeScript",
+  "VCL.JS \u2013 Typescript RAD framework for enterprise web application",
+  "TypeScript for Functional Programmers",
+  "N4JS and TypeScript",
+  "TypeScript 5.4",
+  "Show HN: I created over 300 TypeScript boilerplates in less than 1 week",
+  "Show HN: Feedstock \u2013 Web Crawler for TypeScript Built on Bun and Playwright"
+ ],
+ "sample_near_misses": [
+  "Tic-Tac-Toe in Typescripts Type System",
+  "Typescripten: Generating Type-safe JavaScript Bindings for emscripten",
+  "Ask HN / TypeScripters: How Choose JavaScript?",
+  "Typescripten, generate type-safe JavaScript bindings for C++/emscripten",
+  "The Temporal Dead Zone, why TypeScripts codebase is littered with var statements",
+  "Show HN: TypeScriptNotebook \u2013 Experiment with NPM in the Browser",
+  "Generate TypeScripts definitions from GraphQL",
+  "Free Modern JavaScript Course (webpack, nodejs, es6, typescriptt)",
+  "TypeScripts Type System Is Turing Complete",
+  "When TypeScripts' string enums don't quite get you there",
+  "Show HN: TypeScript7 LSP Claude Code Plugin",
+  "TypeScripting the Technical Interview",
+  "Show HN: TinyTypescript. Add Typed Interfaces to JavaScript in 13 lines of code"
+ ],
+ "schema": 1,
+ "term": "typescript"
+}

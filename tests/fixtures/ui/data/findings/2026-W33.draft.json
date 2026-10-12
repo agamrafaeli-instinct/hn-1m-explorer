@@ -1,0 +1,66 @@
+{
+ "audiences": {
+  "engineers": [
+   {
+    "quiet": true,
+    "text": "No big changes this week."
+   }
+  ],
+  "geeks": [
+   {
+    "key": "privacy",
+    "path": "audiences.geeks.rose",
+    "size": 5.02,
+    "source": "data/compare/2026-W33.json",
+    "source_line": "Source: data/compare/2026-W33.json, audiences.geeks.rose, key \"privacy\" (this 77, expected 43.8).",
+    "text": "privacy appeared in 77 story titles and texts this week, against about 43.8 expected from last week."
+   },
+   {
+    "key": "space",
+    "path": "audiences.geeks.fell",
+    "size": 4.37,
+    "source": "data/compare/2026-W33.json",
+    "source_line": "Source: data/compare/2026-W33.json, audiences.geeks.fell, key \"space\" (this 73, expected 121.1).",
+    "text": "space appeared in 73 story titles and texts this week, against about 121.1 expected from last week."
+   },
+   {
+    "key": "health",
+    "path": "audiences.geeks.rose",
+    "size": 3.73,
+    "source": "data/compare/2026-W33.json",
+    "source_line": "Source: data/compare/2026-W33.json, audiences.geeks.rose, key \"health\" (this 75, expected 48.9).",
+    "text": "health appeared in 75 story titles and texts this week, against about 48.9 expected from last week."
+   }
+  ],
+  "vcs": [
+   {
+    "key": "Nvidia",
+    "path": "audiences.vcs.rose",
+    "size": 10.7,
+    "source": "data/compare/2026-W33.json",
+    "source_line": "Source: data/compare/2026-W33.json, audiences.vcs.rose, key \"Nvidia\" (this 47, expected 11.2).",
+    "text": "Nvidia appeared in 47 story titles and texts this week, against about 11.2 expected from last week."
+   },
+   {
+    "key": "valuation",
+    "path": "audiences.vcs.rose",
+    "size": 9.0,
+    "source": "data/compare/2026-W33.json",
+    "source_line": "Source: data/compare/2026-W33.json, audiences.vcs.rose, key \"valuation\" (this 10, expected 1).",
+    "text": "valuation appeared in 10 story titles and texts this week, against about 1 expected from last week."
+   },
+   {
+    "key": "SpaceX",
+    "path": "audiences.vcs.fell",
+    "size": 4.8,
+    "source": "data/compare/2026-W33.json",
+    "source_line": "Source: data/compare/2026-W33.json, audiences.vcs.fell, key \"SpaceX\" (this 16, expected 49.9).",
+    "text": "SpaceX appeared in 16 story titles and texts this week, against about 49.9 expected from last week."
+   }
+  ]
+ },
+ "backfill": true,
+ "caveat": "Hacker News talking, not a measure of what is true.",
+ "flips": [],
+ "week": "2026-W33"
+}

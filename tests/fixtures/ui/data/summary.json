@@ -1,0 +1,5714 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-12T20:15:09.182296+00:00",
+  "total_rows": 1000000,
+  "totals": {
+    "posts": 1000000,
+    "score_sum": 1433261,
+    "comments_sum": 761058,
+    "dead": 85079,
+    "deleted": 31987,
+    "missing_time": 0,
+    "missing_score": 890613,
+    "missing_comments": 921543
+  },
+  "time_range": {
+    "min": 1785099590,
+    "max": 1791836075
+  },
+  "type_counts": {
+    "comment": 886290,
+    "story": 113614,
+    "job": 60,
+    "pollopt": 28,
+    "poll": 8
+  },
+  "monthly": [
+    {
+      "month": "2026-07",
+      "posts": 67497,
+      "score_sum": 110708,
+      "comments_sum": 55328
+    },
+    {
+      "month": "2026-08",
+      "posts": 386454,
+      "score_sum": 594257,
+      "comments_sum": 308809
+    },
+    {
+      "month": "2026-09",
+      "posts": 399728,
+      "score_sum": 585538,
+      "comments_sum": 323017
+    },
+    {
+      "month": "2026-10",
+      "posts": 146321,
+      "score_sum": 142758,
+      "comments_sum": 73904
+    }
+  ],
+  "top_domains": [
+    {
+      "domain": "github.com",
+      "posts": 7816
+    },
+    {
+      "domain": "youtube.com",
+      "posts": 2338
+    },
+    {
+      "domain": "twitter.com",
+      "posts": 1381
+    },
+    {
+      "domain": "en.wikipedia.org",
+      "posts": 974
+    },
+    {
+      "domain": "arxiv.org",
+      "posts": 969
+    },
+    {
+      "domain": "nytimes.com",
+      "posts": 938
+    },
+    {
+      "domain": "theguardian.com",
+      "posts": 767
+    },
+    {
+      "domain": "reuters.com",
+      "posts": 661
+    },
+    {
+      "domain": "medium.com",
+      "posts": 636
+    },
+    {
+      "domain": "wsj.com",
+      "posts": 607
+    },
+    {
+      "domain": "arstechnica.com",
+      "posts": 500
+    },
+    {
+      "domain": "ft.com",
+      "posts": 431
+    },
+    {
+      "domain": "bloomberg.com",
+      "posts": 420
+    },
+    {
+      "domain": "bbc.com",
+      "posts": 415
+    },
+    {
+      "domain": "theregister.com",
+      "posts": 396
+    },
+    {
+      "domain": "techcrunch.com",
+      "posts": 345
+    },
+    {
+      "domain": "reddit.com",
+      "posts": 343
+    },
+    {
+      "domain": "nature.com",
+      "posts": 321
+    },
+    {
+      "domain": "wired.com",
+      "posts": 269
+    },
+    {
+      "domain": "cnbc.com",
+      "posts": 257
+    },
+    {
+      "domain": "economist.com",
+      "posts": 254
+    },
+    {
+      "domain": "huggingface.co",
+      "posts": 251
+    },
+    {
+      "domain": "tomshardware.com",
+      "posts": 246
+    },
+    {
+      "domain": "theverge.com",
+      "posts": 235
+    },
+    {
+      "domain": "theatlantic.com",
+      "posts": 222
+    },
+    {
+      "domain": "technologyreview.com",
+      "posts": 194
+    },
+    {
+      "domain": "phoronix.com",
+      "posts": 190
+    },
+    {
+      "domain": "apnews.com",
+      "posts": 184
+    },
+    {
+      "domain": "cnn.com",
+      "posts": 177
+    },
+    {
+      "domain": "apps.apple.com",
+      "posts": 162
+    },
+    {
+      "domain": "spectrum.ieee.org",
+      "posts": 148
+    },
+    {
+      "domain": "404media.co",
+      "posts": 144
+    },
+    {
+      "domain": "chromewebstore.google.com",
+      "posts": 144
+    },
+    {
+      "domain": "bbc.co.uk",
+      "posts": 142
+    },
+    {
+      "domain": "axios.com",
+      "posts": 137
+    },
+    {
+      "domain": "openai.com",
+      "posts": 137
+    },
+    {
+      "domain": "science.org",
+      "posts": 137
+    },
+    {
+      "domain": "zenodo.org",
+      "posts": 135
+    },
+    {
+      "domain": "washingtonpost.com",
+      "posts": 134
+    },
+    {
+      "domain": "macrumors.com",
+      "posts": 127
+    },
+    {
+      "domain": "newyorker.com",
+      "posts": 127
+    },
+    {
+      "domain": "blog.cloudflare.com",
+      "posts": 126
+    },
+    {
+      "domain": "npr.org",
+      "posts": 121
+    },
+    {
+      "domain": "quantamagazine.org",
+      "posts": 116
+    },
+    {
+      "domain": "cbc.ca",
+      "posts": 112
+    },
+    {
+      "domain": "theconversation.com",
+      "posts": 103
+    },
+    {
+      "domain": "bleepingcomputer.com",
+      "posts": 102
+    },
+    {
+      "domain": "businessinsider.com",
+      "posts": 102
+    },
+    {
+      "domain": "lwn.net",
+      "posts": 100
+    },
+    {
+      "domain": "devblogs.microsoft.com",
+      "posts": 97
+    },
+    {
+      "domain": "phys.org",
+      "posts": 97
+    },
+    {
+      "domain": "politico.com",
+      "posts": 95
+    },
+    {
+      "domain": "seangoedecke.com",
+      "posts": 91
+    },
+    {
+      "domain": "lemire.me",
+      "posts": 89
+    },
+    {
+      "domain": "euronews.com",
+      "posts": 87
+    },
+    {
+      "domain": "anthropic.com",
+      "posts": 86
+    },
+    {
+      "domain": "lesswrong.com",
+      "posts": 84
+    },
+    {
+      "domain": "abc.net.au",
+      "posts": 82
+    },
+    {
+      "domain": "blog.google",
+      "posts": 81
+    },
+    {
+      "domain": "finance.yahoo.com",
+      "posts": 81
+    },
+    {
+      "domain": "clickhouse.com",
+      "posts": 78
+    },
+    {
+      "domain": "eff.org",
+      "posts": 77
+    },
+    {
+      "domain": "johndcook.com",
+      "posts": 76
+    },
+    {
+      "domain": "artificialanalysis.ai",
+      "posts": 75
+    },
+    {
+      "domain": "gizmodo.com",
+      "posts": 74
+    },
+    {
+      "domain": "nautil.us",
+      "posts": 74
+    },
+    {
+      "domain": "sciencedaily.com",
+      "posts": 73
+    },
+    {
+      "domain": "techdirt.com",
+      "posts": 73
+    },
+    {
+      "domain": "gist.github.com",
+      "posts": 72
+    },
+    {
+      "domain": "play.google.com",
+      "posts": 72
+    },
+    {
+      "domain": "scientificamerican.com",
+      "posts": 71
+    },
+    {
+      "domain": "servethehome.com",
+      "posts": 71
+    },
+    {
+      "domain": "github.blog",
+      "posts": 67
+    },
+    {
+      "domain": "nbcnews.com",
+      "posts": 64
+    },
+    {
+      "domain": "fortune.com",
+      "posts": 62
+    },
+    {
+      "domain": "hackaday.com",
+      "posts": 61
+    },
+    {
+      "domain": "electrek.co",
+      "posts": 60
+    },
+    {
+      "domain": "thezvi.substack.com",
+      "posts": 59
+    },
+    {
+      "domain": "web.archive.org",
+      "posts": 59
+    },
+    {
+      "domain": "xcancel.com",
+      "posts": 57
+    },
+    {
+      "domain": "old.reddit.com",
+      "posts": 56
+    },
+    {
+      "domain": "simonwillison.net",
+      "posts": 56
+    },
+    {
+      "domain": "engadget.com",
+      "posts": 55
+    },
+    {
+      "domain": "terrytao.wordpress.com",
+      "posts": 55
+    },
+    {
+      "domain": "vercel.com",
+      "posts": 55
+    },
+    {
+      "domain": "dl.acm.org",
+      "posts": 53
+    },
+    {
+      "domain": "forbes.com",
+      "posts": 53
+    },
+    {
+      "domain": "sciencealert.com",
+      "posts": 53
+    },
+    {
+      "domain": "astralcodexten.com",
+      "posts": 52
+    },
+    {
+      "domain": "cacm.acm.org",
+      "posts": 52
+    },
+    {
+      "domain": "thenewstack.io",
+      "posts": 50
+    },
+    {
+      "domain": "codeberg.org",
+      "posts": 49
+    },
+    {
+      "domain": "news.mit.edu",
+      "posts": 48
+    },
+    {
+      "domain": "cbsnews.com",
+      "posts": 47
+    },
+    {
+      "domain": "papers.ssrn.com",
+      "posts": 47
+    },
+    {
+      "domain": "runtimewire.com",
+      "posts": 47
+    },
+    {
+      "domain": "heise.de",
+      "posts": 46
+    },
+    {
+      "domain": "restofworld.org",
+      "posts": 46
+    },
+    {
+      "domain": "rnz.co.nz",
+      "posts": 46
+    },
+    {
+      "domain": "apple.com",
+      "posts": 45
+    }
+  ],
+  "top_authors": [
+    {
+      "by": "inigyou",
+      "posts": 4036
+    },
+    {
+      "by": "mitxela",
+      "posts": 1680
+    },
+    {
+      "by": "pjmlp",
+      "posts": 1654
+    },
+    {
+      "by": "toomuchtodo",
+      "posts": 1633
+    },
+    {
+      "by": "dgellow",
+      "posts": 1566
+    },
+    {
+      "by": "embedding-shape",
+      "posts": 1420
+    },
+    {
+      "by": "verdverm",
+      "posts": 1376
+    },
+    {
+      "by": "ChrisArchitect",
+      "posts": 1375
+    },
+    {
+      "by": "andsoitis",
+      "posts": 1325
+    },
+    {
+      "by": "rbanffy",
+      "posts": 1217
+    },
+    {
+      "by": "pixl97",
+      "posts": 1213
+    },
+    {
+      "by": "speckx",
+      "posts": 1174
+    },
+    {
+      "by": "account42",
+      "posts": 1138
+    },
+    {
+      "by": "fragmede",
+      "posts": 1092
+    },
+    {
+      "by": "JumpCrisscross",
+      "posts": 1028
+    },
+    {
+      "by": "ben_w",
+      "posts": 1006
+    },
+    {
+      "by": "bluGill",
+      "posts": 999
+    },
+    {
+      "by": "bookofjoe",
+      "posts": 993
+    },
+    {
+      "by": "tosh",
+      "posts": 989
+    },
+    {
+      "by": "walrus01",
+      "posts": 953
+    },
+    {
+      "by": "amelius",
+      "posts": 932
+    },
+    {
+      "by": "andai",
+      "posts": 929
+    },
+    {
+      "by": "TeMPOraL",
+      "posts": 900
+    },
+    {
+      "by": "SoftTalker",
+      "posts": 879
+    },
+    {
+      "by": "tptacek",
+      "posts": 866
+    },
+    {
+      "by": "cindyllm",
+      "posts": 861
+    },
+    {
+      "by": "someonebaggy",
+      "posts": 852
+    },
+    {
+      "by": "watwut",
+      "posts": 846
+    },
+    {
+      "by": "cyanydeez",
+      "posts": 838
+    },
+    {
+      "by": "simonw",
+      "posts": 838
+    },
+    {
+      "by": "dofm",
+      "posts": 820
+    },
+    {
+      "by": "chrisjj",
+      "posts": 819
+    },
+    {
+      "by": "eru",
+      "posts": 812
+    },
+    {
+      "by": "Bluestein",
+      "posts": 804
+    },
+    {
+      "by": "LoganDark",
+      "posts": 799
+    },
+    {
+      "by": "ButlerianJihad",
+      "posts": 788
+    },
+    {
+      "by": "Aurornis",
+      "posts": 771
+    },
+    {
+      "by": "mooreds",
+      "posts": 749
+    },
+    {
+      "by": "Dylan16807",
+      "posts": 742
+    },
+    {
+      "by": "mdp2021",
+      "posts": 730
+    },
+    {
+      "by": "Cider9986",
+      "posts": 728
+    },
+    {
+      "by": "matheusmoreira",
+      "posts": 725
+    },
+    {
+      "by": "estearum",
+      "posts": 723
+    },
+    {
+      "by": "zahlman",
+      "posts": 723
+    },
+    {
+      "by": "bigyabai",
+      "posts": 715
+    },
+    {
+      "by": "ibobev",
+      "posts": 704
+    },
+    {
+      "by": "iamnothere",
+      "posts": 698
+    },
+    {
+      "by": "ericmay",
+      "posts": 670
+    },
+    {
+      "by": "jacquesm",
+      "posts": 667
+    },
+    {
+      "by": "layer8",
+      "posts": 655
+    },
+    {
+      "by": "dang",
+      "posts": 653
+    },
+    {
+      "by": "saghm",
+      "posts": 646
+    },
+    {
+      "by": "WarmWash",
+      "posts": 629
+    },
+    {
+      "by": "rayiner",
+      "posts": 629
+    },
+    {
+      "by": "charcircuit",
+      "posts": 618
+    },
+    {
+      "by": "shevy-java",
+      "posts": 615
+    },
+    {
+      "by": "gruez",
+      "posts": 609
+    },
+    {
+      "by": "rvz",
+      "posts": 601
+    },
+    {
+      "by": "gmays",
+      "posts": 595
+    },
+    {
+      "by": "autoexec",
+      "posts": 590
+    },
+    {
+      "by": "ceejayoz",
+      "posts": 590
+    },
+    {
+      "by": "Terr_",
+      "posts": 587
+    },
+    {
+      "by": "WalterBright",
+      "posts": 586
+    },
+    {
+      "by": "asdff",
+      "posts": 580
+    },
+    {
+      "by": "antonvs",
+      "posts": 579
+    },
+    {
+      "by": "wat10000",
+      "posts": 575
+    },
+    {
+      "by": "graemep",
+      "posts": 570
+    },
+    {
+      "by": "paulpauper",
+      "posts": 570
+    },
+    {
+      "by": "dylan604",
+      "posts": 569
+    },
+    {
+      "by": "defrost",
+      "posts": 567
+    },
+    {
+      "by": "pjc50",
+      "posts": 565
+    },
+    {
+      "by": "Gigachad",
+      "posts": 563
+    },
+    {
+      "by": "simianwords",
+      "posts": 558
+    },
+    {
+      "by": "theanonymousone",
+      "posts": 556
+    },
+    {
+      "by": "HarHarVeryFunny",
+      "posts": 553
+    },
+    {
+      "by": "satvikpendem",
+      "posts": 550
+    },
+    {
+      "by": "otterley",
+      "posts": 546
+    },
+    {
+      "by": "xnx",
+      "posts": 544
+    },
+    {
+      "by": "hardbass",
+      "posts": 543
+    },
+    {
+      "by": "BeetleB",
+      "posts": 542
+    },
+    {
+      "by": "frollogaston",
+      "posts": 542
+    },
+    {
+      "by": "MiroslavPokorny",
+      "posts": 540
+    },
+    {
+      "by": "esafak",
+      "posts": 539
+    },
+    {
+      "by": "vrganj",
+      "posts": 532
+    },
+    {
+      "by": "Razengan",
+      "posts": 530
+    },
+    {
+      "by": "krapp",
+      "posts": 515
+    },
+    {
+      "by": "bonoboTP",
+      "posts": 512
+    },
+    {
+      "by": "fc417fc802",
+      "posts": 511
+    },
+    {
+      "by": "CamperBob2",
+      "posts": 510
+    },
+    {
+      "by": "OutOfHere",
+      "posts": 510
+    },
+    {
+      "by": "1vuio0pswjnm7",
+      "posts": 508
+    },
+    {
+      "by": "tim333",
+      "posts": 508
+    },
+    {
+      "by": "cucumber3732842",
+      "posts": 506
+    },
+    {
+      "by": "Forgeties79",
+      "posts": 505
+    },
+    {
+      "by": "user43928",
+      "posts": 505
+    },
+    {
+      "by": "gus_massa",
+      "posts": 502
+    },
+    {
+      "by": "xp84",
+      "posts": 501
+    },
+    {
+      "by": "pfdietz",
+      "posts": 499
+    },
+    {
+      "by": "hypfer",
+      "posts": 498
+    },
+    {
+      "by": "bigstrat2003",
+      "posts": 497
+    }
+  ],
+  "top_posts": [
+    {
+      "id": 49711544,
+      "type": "story",
+      "by": "arnemunthekaas",
+      "time": 1789475470,
+      "title": "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations",
+      "url": "https://github.com/arnegiacomo/fugleramme",
+      "domain": "github.com",
+      "score": 2391,
+      "descendants": 267,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49563355,
+      "type": "story",
+      "by": "moultano",
+      "time": 1788522893,
+      "title": "Discovery of a new OpenAI agent message board",
+      "url": "https://collusion.wiki/",
+      "domain": "collusion.wiki",
+      "score": 2301,
+      "descendants": 1603,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49554643,
+      "type": "story",
+      "by": "kibae",
+      "time": 1788460865,
+      "title": "GPT-6 Astra",
+      "url": "https://openai.com/index/gpt-6-astra/",
+      "domain": "openai.com",
+      "score": 2279,
+      "descendants": 2081,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49550772,
+      "type": "story",
+      "by": "pavel_lishin",
+      "time": 1788447279,
+      "title": ".name Termination",
+      "url": "https://neil.fraser.name/news/2026/09/03/",
+      "domain": "neil.fraser.name",
+      "score": 2230,
+      "descendants": 547,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49605915,
+      "type": "story",
+      "by": "procedurecall",
+      "time": 1788846148,
+      "title": "Navier-Stokes – Tristan Buckmaster [pdf]",
+      "url": "https://cims.nyu.edu/~tristanb/statement.pdf",
+      "domain": "cims.nyu.edu",
+      "score": 2054,
+      "descendants": 827,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49977979,
+      "type": "story",
+      "by": "Philpax",
+      "time": 1791292549,
+      "title": "Mistral Large 4",
+      "url": "https://mistral.ai/news/mistral-large-4/\\",
+      "domain": "mistral.ai",
+      "score": 2020,
+      "descendants": 1207,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49870367,
+      "type": "story",
+      "by": "sancho-panza",
+      "time": 1790539974,
+      "title": "When did Google get so weird?",
+      "url": "https://sancho.bearblog.dev/google-weird/",
+      "domain": "sancho.bearblog.dev",
+      "score": 2015,
+      "descendants": 1125,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49717558,
+      "type": "story",
+      "by": "albelfio",
+      "time": 1789500303,
+      "title": "Introducing System One Models and Jev",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "domain": "typesafe.ai",
+      "score": 1989,
+      "descendants": 520,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49458161,
+      "type": "story",
+      "by": "mfiguiere",
+      "time": 1787793175,
+      "title": "Nvidia agrees to acquire Hugging Face for $13B",
+      "url": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8",
+      "domain": "businessinsider.com",
+      "score": 1988,
+      "descendants": 925,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49998895,
+      "type": "story",
+      "by": "muglug",
+      "time": 1791407778,
+      "title": "Margaret Hamilton has died",
+      "url": "https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007",
+      "domain": "news.mit.edu",
+      "score": 1911,
+      "descendants": 212,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49764791,
+      "type": "story",
+      "by": "ereiamjh",
+      "time": 1789809658,
+      "title": "AI-generated posters don’t have to be horrible",
+      "url": "https://john.hartnup.uk/2026/06/07/ai-event-posters.html",
+      "domain": "john.hartnup.uk",
+      "score": 1902,
+      "descendants": 962,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49151933,
+      "type": "story",
+      "by": "ngruhn",
+      "time": 1785738481,
+      "title": "Don't be a meat proxy",
+      "url": "https://gruhn.me/blog/2026-08-03/",
+      "domain": "gruhn.me",
+      "score": 1849,
+      "descendants": 741,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49803892,
+      "type": "story",
+      "by": "km144",
+      "time": 1790094545,
+      "title": "Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "domain": "anthropic.com",
+      "score": 1806,
+      "descendants": 1134,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49805509,
+      "type": "story",
+      "by": "OfficialTurkey",
+      "time": 1790100034,
+      "title": "GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "domain": "openai.com",
+      "score": 1779,
+      "descendants": 855,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49303202,
+      "type": "story",
+      "by": "DemiGuru",
+      "time": 1786734200,
+      "title": "Firefox is now the last major browser that still supports uBlock Origin",
+      "url": "https://www.pcworld.com/article/3212428/firefox-is-now-the-last-major-browser-that-still-supports-ublock-origin.html",
+      "domain": "pcworld.com",
+      "score": 1765,
+      "descendants": 718,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49379550,
+      "type": "story",
+      "by": "speckx",
+      "time": 1787256446,
+      "title": "Aaron Swartz was prosecuted for scraping, while Meta does it without consequence",
+      "url": "https://blog.curiousquail.com/im-upset-again-about-a-co-creator-of-rss-being-prosecuted-for-something-meta-is-doing-with-little-consequence/",
+      "domain": "blog.curiousquail.com",
+      "score": 1704,
+      "descendants": 404,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49913571,
+      "type": "story",
+      "by": "bradleyg223",
+      "time": 1790798677,
+      "title": "Gemini 4 Argon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "domain": "blog.google",
+      "score": 1702,
+      "descendants": 1190,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49926069,
+      "type": "story",
+      "by": "sergiotapia",
+      "time": 1790883185,
+      "title": "Pi 1.0",
+      "url": "https://earendil.com/posts/pi-1-0/",
+      "domain": "earendil.com",
+      "score": 1687,
+      "descendants": 607,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49124218,
+      "type": "story",
+      "by": "Jrh0203",
+      "time": 1785511048,
+      "title": "Show HN: Elevators",
+      "url": "https://john.fun/elevators",
+      "domain": "john.fun",
+      "score": 1680,
+      "descendants": 415,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49419237,
+      "type": "story",
+      "by": "l-one-lone",
+      "time": 1787576725,
+      "title": "How Europe is killing makers and micro-entrepreneurs",
+      "url": "https://lectronz.com/u/lectronz/articles/how-europe-is-killing-makers-and-micro-entrepreneurs",
+      "domain": "lectronz.com",
+      "score": 1647,
+      "descendants": 1033,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49173165,
+      "type": "story",
+      "by": "jdcampolargo",
+      "time": 1785869498,
+      "title": "In Memory of My Wife, Elise Cawley, with Thanks for 36 Wonderful Years",
+      "url": "https://writings.stephenwolfram.com/2026/08/in-memory-of-my-wife-elise-cawley-1961-2026-with-thanks-for-36-wonderful-years/",
+      "domain": "writings.stephenwolfram.com",
+      "score": 1645,
+      "descendants": 95,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49355606,
+      "type": "story",
+      "by": "amatheus",
+      "time": 1787104708,
+      "title": "OpenLogi",
+      "url": "https://openlogi.org/en",
+      "domain": "openlogi.org",
+      "score": 1635,
+      "descendants": 430,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49438052,
+      "type": "story",
+      "by": "helsinkiandrew",
+      "time": 1787680942,
+      "title": "Dolly Parton has died",
+      "url": "https://www.theguardian.com/music/2026/aug/25/dolly-parton-country-singer-dead",
+      "domain": "theguardian.com",
+      "score": 1602,
+      "descendants": 249,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49630931,
+      "type": "story",
+      "by": "thecosmicfrog",
+      "time": 1788977743,
+      "title": "iPhone Duo",
+      "url": "https://www.apple.com/iphone-duo/",
+      "domain": "apple.com",
+      "score": 1485,
+      "descendants": 2545,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49831968,
+      "type": "story",
+      "by": "daveoc64",
+      "time": 1790263572,
+      "title": "F-Droid 2.0",
+      "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
+      "domain": "f-droid.org",
+      "score": 1465,
+      "descendants": 421,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49413320,
+      "type": "story",
+      "by": "schlarpc",
+      "time": 1787524864,
+      "title": "Everything I own, owned",
+      "url": "https://schlarp.com/posts/everything-i-own-owned/",
+      "domain": "schlarp.com",
+      "score": 1453,
+      "descendants": 351,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49299605,
+      "type": "story",
+      "by": "erdaltoprak",
+      "time": 1786719600,
+      "title": "Qwen 3.8 27B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B-FP8",
+      "domain": "huggingface.co",
+      "score": 1438,
+      "descendants": 793,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49525378,
+      "type": "story",
+      "by": "denysvitali",
+      "time": 1788285233,
+      "title": "Claude Fable 5.1 and Claude Mythos 5.1",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "domain": "anthropic.com",
+      "score": 1419,
+      "descendants": 1395,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49161518,
+      "type": "story",
+      "by": "MaxMussio",
+      "time": 1785791633,
+      "title": "LLMs reward expertise",
+      "url": "https://www.seangoedecke.com/llms-reward-expertise/",
+      "domain": "seangoedecke.com",
+      "score": 1416,
+      "descendants": 573,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49345263,
+      "type": "story",
+      "by": "herbertl",
+      "time": 1787059358,
+      "title": "The Amazon tax",
+      "url": "https://seths.blog/2026/08/the-amazon-tax/",
+      "domain": "seths.blog",
+      "score": 1415,
+      "descendants": 705,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49491791,
+      "type": "story",
+      "by": "zdw",
+      "time": 1788025741,
+      "title": "Creepy Crawlies",
+      "url": "https://people.kernel.org/monsieuricon/creepy-crawlies",
+      "domain": "people.kernel.org",
+      "score": 1390,
+      "descendants": 710,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49065752,
+      "type": "story",
+      "by": "nateb2022",
+      "time": 1785133090,
+      "title": "Kimi-K3 on HuggingFace",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "domain": "huggingface.co",
+      "score": 1382,
+      "descendants": 544,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49765348,
+      "type": "story",
+      "by": "nandakishor_ml",
+      "time": 1789814818,
+      "title": "I built non-autoregressive decision models with RL a year ago",
+      "url": "https://laya.convaiinnovations.com/",
+      "domain": "laya.convaiinnovations.com",
+      "score": 1363,
+      "descendants": 319,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49586171,
+      "type": "story",
+      "by": "mraniki",
+      "time": 1788699761,
+      "title": "QBittorrent breaks out of sandbox to commit crimes",
+      "url": "https://beige.party/@intransitivelie/117057396732763183",
+      "domain": "beige.party",
+      "score": 1355,
+      "descendants": 293,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49613262,
+      "type": "story",
+      "by": "tedsanders",
+      "time": 1788887601,
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "domain": "openai.com",
+      "score": 1346,
+      "descendants": 1137,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49063022,
+      "type": "story",
+      "by": "eecc",
+      "time": 1785104501,
+      "title": "US citizen charged after GrapheneOS phone wipes during airport search",
+      "url": "https://www.techspot.com/news/113236-us-prosecutors-charge-atlanta-man-after-grapheneos-phone.html",
+      "domain": "techspot.com",
+      "score": 1340,
+      "descendants": 1120,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49433292,
+      "type": "story",
+      "by": "interpol_p",
+      "time": 1787662882,
+      "title": "Apple introduces M6 and M5 Ultra",
+      "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/",
+      "domain": "apple.com",
+      "score": 1312,
+      "descendants": 1307,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49984923,
+      "type": "story",
+      "by": "OfficialTurkey",
+      "time": 1791325041,
+      "title": "Sharing AI progress in mathematics",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+      "domain": "openai.com",
+      "score": 1302,
+      "descendants": 1478,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49643982,
+      "type": "story",
+      "by": "fnthawar2",
+      "time": 1789049371,
+      "title": "Shopify is moving from React Native back to Swift and Kotlin",
+      "url": "https://shopify.engineering/back-to-native",
+      "domain": "shopify.engineering",
+      "score": 1275,
+      "descendants": 957,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49388154,
+      "type": "story",
+      "by": "speckx",
+      "time": 1787320597,
+      "title": "Kagi added a setting for removing paywalled links from search results",
+      "url": "https://kagi.com/changelog#11296",
+      "domain": "kagi.com",
+      "score": 1275,
+      "descendants": 394,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49503601,
+      "type": "story",
+      "by": "zdw",
+      "time": 1788130188,
+      "title": "“I just chose words carefully”",
+      "url": "https://unsung.aresluna.org/i-just-chose-words-carefully/",
+      "domain": "unsung.aresluna.org",
+      "score": 1255,
+      "descendants": 353,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49662371,
+      "type": "story",
+      "by": "meredydd",
+      "time": 1789148712,
+      "title": "A misalignment of AI in mathematics",
+      "url": "https://mathandai.org/",
+      "domain": "mathandai.org",
+      "score": 1242,
+      "descendants": 1215,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49113929,
+      "type": "story",
+      "by": "dickfickling",
+      "time": 1785436852,
+      "title": "UEFA and its national associations will not participate in FIFA competitions",
+      "url": "https://www.uefa.com/news-media/news/02a7-213a92896eb0-54dfbf454e3b-1000--statement-on-behalf-of-uefa-and-its-55-national-associations/",
+      "domain": "uefa.com",
+      "score": 1235,
+      "descendants": 674,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49272832,
+      "type": "story",
+      "by": "ropbear",
+      "time": 1786544550,
+      "title": "Tracking down the 16-year-old WAL-reset SQLite bug",
+      "url": "https://tailscale.com/blog/sqlite-wal-reset-bug",
+      "domain": "tailscale.com",
+      "score": 1223,
+      "descendants": 239,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49688695,
+      "type": "story",
+      "by": "u1hcw9nx",
+      "time": 1789333573,
+      "title": "Fable 5.1 Solves the Cyphral Distich, a 370-year-old cipher",
+      "url": "https://www.vals.ai/blogs/fable-solves-cyphral-distich",
+      "domain": "vals.ai",
+      "score": 1218,
+      "descendants": 571,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49623754,
+      "type": "story",
+      "by": "matthieu_bl",
+      "time": 1788946786,
+      "title": "Claude, change the “Add to Cart” button to blue",
+      "url": "https://opusfived.dev/",
+      "domain": "opusfived.dev",
+      "score": 1215,
+      "descendants": 453,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49437283,
+      "type": "story",
+      "by": "Banditoz",
+      "time": 1787677701,
+      "title": "Nitter and XCancel receive cease and desist notices",
+      "url": "https://github.com/zedeus/nitter/issues/1442",
+      "domain": "github.com",
+      "score": 1214,
+      "descendants": 1352,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49241679,
+      "type": "story",
+      "by": "riordan",
+      "time": 1786356602,
+      "title": "Muse Glimmer: 30B-parameter model optimized for always-on local agent workflows",
+      "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+      "domain": "research.meta.ai",
+      "score": 1209,
+      "descendants": 638,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49594878,
+      "type": "story",
+      "by": "chris_overseas",
+      "time": 1788764600,
+      "title": "LG smart TVs caught logging audio with screen off and snooping on local devices",
+      "url": "https://www.notebookcheck.net/LG-smart-TVs-caught-logging-audio-with-screen-off-and-snooping-on-local-devices.1391214.0.html",
+      "domain": "notebookcheck.net",
+      "score": 1201,
+      "descendants": 4,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49195231,
+      "type": "story",
+      "by": "theanonymousone",
+      "time": 1786015493,
+      "title": "Mario Meets Pareto",
+      "url": "https://www.mayerowitz.io/blog/mario-meets-pareto",
+      "domain": "mayerowitz.io",
+      "score": 1188,
+      "descendants": 169,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49758736,
+      "type": "story",
+      "by": "theanonymousone",
+      "time": 1789758189,
+      "title": "Android 17 is the first since 3.x to add new APIs without releasing to the AOSP",
+      "url": "https://grapheneos.social/@GrapheneOS/117282080803799576",
+      "domain": "grapheneos.social",
+      "score": 1180,
+      "descendants": 724,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49076057,
+      "type": "story",
+      "by": "surprisetalk",
+      "time": 1785189829,
+      "title": "Our position on open-weights models",
+      "url": "https://www.anthropic.com/news/position-open-weights-models",
+      "domain": "anthropic.com",
+      "score": 1180,
+      "descendants": 1749,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49294997,
+      "type": "story",
+      "by": "pella",
+      "time": 1786684799,
+      "title": "GLM-5.3: Frontier coding with emergent cyber capabilities",
+      "url": "https://z.ai/blog/glm-5.3",
+      "domain": "z.ai",
+      "score": 1171,
+      "descendants": 584,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49548395,
+      "type": "story",
+      "by": "ClydeN",
+      "time": 1788432788,
+      "title": "Audacity 4.0",
+      "url": "https://github.com/audacity/audacity/releases/tag/Audacity-4.0.0",
+      "domain": "github.com",
+      "score": 1163,
+      "descendants": 266,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49708431,
+      "type": "story",
+      "by": "networked",
+      "time": 1789452984,
+      "title": "I can't stop thinking about Papua New Guinea",
+      "url": "https://notnottalmud.substack.com/p/why-i-cant-stop-thinking-about-papua",
+      "domain": "notnottalmud.substack.com",
+      "score": 1160,
+      "descendants": 489,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49537553,
+      "type": "story",
+      "by": "bratao",
+      "time": 1788361960,
+      "title": "Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "domain": "blog.google",
+      "score": 1160,
+      "descendants": 669,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49626190,
+      "type": "story",
+      "by": "EdwinHoksberg",
+      "time": 1788960431,
+      "title": "Shopify acquires Tailwind",
+      "url": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+      "domain": "tailwindcss.com",
+      "score": 1149,
+      "descendants": 444,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49449507,
+      "type": "story",
+      "by": "Philpax",
+      "time": 1787753330,
+      "title": "GLM-5.3-Flash",
+      "url": "https://z.ai/blog/glm-5.3-flash",
+      "domain": "z.ai",
+      "score": 1132,
+      "descendants": 580,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49792730,
+      "type": "story",
+      "by": "volf_",
+      "time": 1790021532,
+      "title": "MiMo v2.6",
+      "url": "https://mimo.xiaomi.com/mimo-v2-6",
+      "domain": "mimo.xiaomi.com",
+      "score": 1130,
+      "descendants": 483,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49150470,
+      "type": "story",
+      "by": "ai2027",
+      "time": 1785723369,
+      "title": "Qwen3.8-Max: A New Bar for Coding and Cowork",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "domain": "qwen.ai",
+      "score": 1124,
+      "descendants": 612,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49336573,
+      "type": "story",
+      "by": "mooreds",
+      "time": 1786996035,
+      "title": "AI;DR (AI; Didn't Read)",
+      "url": "https://www.rickmanelius.com/p/aidr-ai-didnt-read",
+      "domain": "rickmanelius.com",
+      "score": 1119,
+      "descendants": 692,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49209539,
+      "type": "story",
+      "by": "RickJWagner",
+      "time": 1786106547,
+      "title": "What happens if an entire class of workers loses faith in their careers",
+      "url": "https://www.noemamag.com/why-is-everyone-in-tech-so-sad/",
+      "domain": "noemamag.com",
+      "score": 1110,
+      "descendants": 1325,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49386895,
+      "type": "story",
+      "by": "floathub",
+      "time": 1787314213,
+      "title": "Felony charges for citizen deleting phone data at US Border",
+      "url": "https://www.nytimes.com/2026/08/21/us/politics/samuel-tunick-deleted-phone-felony.html",
+      "domain": "nytimes.com",
+      "score": 1107,
+      "descendants": 1383,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49448321,
+      "type": "story",
+      "by": "onderkalaci",
+      "time": 1787749166,
+      "title": "AWS Acquires DuckLabs",
+      "url": "https://ducklabs.com/news/2026/08/26/ducklabs-to-join-aws",
+      "domain": "ducklabs.com",
+      "score": 1102,
+      "descendants": 316,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49872723,
+      "type": "story",
+      "by": "Eric_Gullichsen",
+      "time": 1790561113,
+      "title": "Owed a billion dollars in Nvidia stock",
+      "url": "https://colo.to/nvidia-stock-narrative.html",
+      "domain": "colo.to",
+      "score": 1091,
+      "descendants": 458,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49787726,
+      "type": "story",
+      "by": "zer0tonin",
+      "time": 1790000816,
+      "title": "Attention is all you have",
+      "url": "https://alicegg.tech/2026/09/21/attention",
+      "domain": "alicegg.tech",
+      "score": 1090,
+      "descendants": 330,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49337392,
+      "type": "story",
+      "by": "DeepLogin",
+      "time": 1786999570,
+      "title": "Israel creates fake think tank in likely attempt to dupe AI chatbots",
+      "url": "https://responsiblestatecraft.org/israel-influence-chatgpt/",
+      "domain": "responsiblestatecraft.org",
+      "score": 1071,
+      "descendants": 881,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49794330,
+      "type": "story",
+      "by": "mooreds",
+      "time": 1790029841,
+      "title": "I don't want to read what you didn't write",
+      "url": "https://blog.colinbreck.com/i-dont-want-to-read-what-you-didnt-write/",
+      "domain": "blog.colinbreck.com",
+      "score": 1070,
+      "descendants": 460,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49896586,
+      "type": "story",
+      "by": "crorella",
+      "time": 1790701605,
+      "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+      "domain": "openai.com",
+      "score": 1067,
+      "descendants": 955,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49254880,
+      "type": "story",
+      "by": "aziaziazi",
+      "time": 1786436146,
+      "title": "France to ban unsolicited telemarketing calls",
+      "url": "https://www.lemonde.fr/en/france/article/2026/08/06/france-to-ban-unsolicited-telemarketing-calls-from-august-11_6756208_7.html",
+      "domain": "lemonde.fr",
+      "score": 1064,
+      "descendants": 512,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49371857,
+      "type": "story",
+      "by": "pjerem",
+      "time": 1787214044,
+      "title": "Don't paste the AI, please",
+      "url": "https://dontpastetheai.com/",
+      "domain": "dontpastetheai.com",
+      "score": 1061,
+      "descendants": 580,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49372583,
+      "type": "story",
+      "by": "emctech",
+      "time": 1787220532,
+      "title": "AliExpress runs silent WebAudio fingerprinting that breaks Bluetooth multipoint",
+      "url": "https://blog.laserphile.com/2026/08/aliexpress-webpage-keeping-multipoint.html",
+      "domain": "blog.laserphile.com",
+      "score": 1059,
+      "descendants": 337,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49593563,
+      "type": "story",
+      "by": "sonicrocketman",
+      "time": 1788751791,
+      "title": "Keep Our Servers Running",
+      "url": "https://blog.archive.org/2026/09/01/keep-our-servers-running-your-recurring-donation-goes-3x-this-september/",
+      "domain": "blog.archive.org",
+      "score": 1058,
+      "descendants": 284,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49479837,
+      "type": "story",
+      "by": "ckardaris",
+      "time": 1787930229,
+      "title": "GUIs should be fully keyboard-driven",
+      "url": "https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html",
+      "domain": "ckardaris.com",
+      "score": 1055,
+      "descendants": 528,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49274600,
+      "type": "story",
+      "by": "explosion-s",
+      "time": 1786550690,
+      "title": "DeepSeek V4 Pro 0813",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+      "domain": "openrouter.ai",
+      "score": 1041,
+      "descendants": 453,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49458418,
+      "type": "story",
+      "by": "GrumpySciGuy",
+      "time": 1787795182,
+      "title": "CEO fired developers to make room for AI. Developers create open source AI CEO",
+      "url": "https://github.com/SenteLabsAI/OpenExecutive",
+      "domain": "github.com",
+      "score": 1035,
+      "descendants": 716,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49360015,
+      "type": "story",
+      "by": "kareiva",
+      "time": 1787138510,
+      "title": "A joke domain purchase turned in geopolitical warfare",
+      "url": "https://sprocketfox.io/xssfox/2026/08/19/sondehub-and-war/",
+      "domain": "sprocketfox.io",
+      "score": 1035,
+      "descendants": 171,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49362689,
+      "type": "story",
+      "by": "encyclopedism",
+      "time": 1787152296,
+      "title": "HTML Can Do That",
+      "url": "https://chrisburnell.com/html-can-do-that/",
+      "domain": "chrisburnell.com",
+      "score": 1023,
+      "descendants": 231,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49841563,
+      "type": "story",
+      "by": "fjfaase",
+      "time": 1790323609,
+      "title": "Dutch governments builds alternative for Microsoft based on NixOS",
+      "url": "https://www.dawo.community/en/",
+      "domain": "dawo.community",
+      "score": 1021,
+      "descendants": 583,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49639090,
+      "type": "story",
+      "by": "Liwink",
+      "time": 1789020665,
+      "title": "DeepSeek v4.1 Flash",
+      "url": "https://twitter.com/deepseek_ai/status/2097930608790167907",
+      "domain": "twitter.com",
+      "score": 1016,
+      "descendants": 574,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49271994,
+      "type": "story",
+      "by": "florianherrengt",
+      "time": 1786540805,
+      "title": "AI is removing the middle class of software engineering?",
+      "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+      "domain": "blog.florianherrengt.com",
+      "score": 1014,
+      "descendants": 937,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49420873,
+      "type": "story",
+      "by": "tosh",
+      "time": 1787584097,
+      "title": "Xiaomi: New CPU matches Apple cores single threaded, much faster multithreaded",
+      "url": "https://twitter.com/lemire/status/2091894299289874926",
+      "domain": "twitter.com",
+      "score": 1003,
+      "descendants": 736,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49527748,
+      "type": "story",
+      "by": "speckx",
+      "time": 1788294651,
+      "title": "Hang on to Your Firefox",
+      "url": "https://www.newsonaut.com/articles/hang-on-to-your-firefox",
+      "domain": "newsonaut.com",
+      "score": 994,
+      "descendants": 537,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49296740,
+      "type": "story",
+      "by": "numeri",
+      "time": 1786702368,
+      "title": "Why does Opus 5 feel worse to work with?",
+      "url": "https://mun-logadan.github.io/why-does-opus-5-feel-worse/",
+      "domain": "mun-logadan.github.io",
+      "score": 993,
+      "descendants": 874,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49666735,
+      "type": "story",
+      "by": "chao-",
+      "time": 1789168662,
+      "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
+      "url": "https://www.rubyhack.ai/",
+      "domain": "rubyhack.ai",
+      "score": 975,
+      "descendants": 613,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49806430,
+      "type": "story",
+      "by": "devonnull",
+      "time": 1790103818,
+      "title": "Pentagon says overreliance on AI contributed to missile strike on Iran school",
+      "url": "https://www.bloomberg.com/graphics/2026-iran-school-attack/",
+      "domain": "bloomberg.com",
+      "score": 974,
+      "descendants": 553,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49996437,
+      "type": "story",
+      "by": "sfkgtbor",
+      "time": 1791396092,
+      "title": "Claude Haiku 5.5",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "domain": "anthropic.com",
+      "score": 971,
+      "descendants": 453,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49724881,
+      "type": "story",
+      "by": "nonmaskable",
+      "time": 1789557353,
+      "title": "Nvidia announces native GPU programming in Rust",
+      "url": "https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/",
+      "domain": "developer.nvidia.com",
+      "score": 970,
+      "descendants": 404,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49289112,
+      "type": "story",
+      "by": "thisisauserid",
+      "time": 1786641802,
+      "title": "Gemini 3.7 Flash",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "domain": "blog.google",
+      "score": 968,
+      "descendants": 495,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49710883,
+      "type": "story",
+      "by": "iamnothere",
+      "time": 1789471608,
+      "title": "25 years of mass surveillance is enough",
+      "url": "https://www.schneier.com/blog/archives/2026/09/25-years-of-mass-surveillance-is-enough.html",
+      "domain": "schneier.com",
+      "score": 964,
+      "descendants": 358,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49364559,
+      "type": "story",
+      "by": "rvz",
+      "time": 1787160758,
+      "title": "OpenRouter is joining Stripe",
+      "url": "https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe/",
+      "domain": "openrouter.ai",
+      "score": 964,
+      "descendants": 500,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49686445,
+      "type": "story",
+      "by": "iamflimflam1",
+      "time": 1789321064,
+      "title": "Why is Google still serving dodgy ads?",
+      "url": "https://www.atomic14.com/2026/09/13/why-is-google-still-serving-dodgy-ads",
+      "domain": "atomic14.com",
+      "score": 962,
+      "descendants": 404,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49321298,
+      "type": "story",
+      "by": "nichochar",
+      "time": 1786896537,
+      "title": "Being ambitious and being a dad",
+      "url": "https://nicholascharriere.com/blog/being-ambitious-and-being-a-dad/",
+      "domain": "nicholascharriere.com",
+      "score": 959,
+      "descendants": 768,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49752056,
+      "type": "story",
+      "by": "pluc",
+      "time": 1789724707,
+      "title": "Microsoft exec called AI scraping 'the largest theft of labor in human history'",
+      "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
+      "domain": "techcrunch.com",
+      "score": 955,
+      "descendants": 841,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49184960,
+      "type": "story",
+      "by": "xtreak29",
+      "time": 1785946784,
+      "title": "Discovery Loop",
+      "url": "https://www.discoveryloop.com/",
+      "domain": "discoveryloop.com",
+      "score": 954,
+      "descendants": 599,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49201970,
+      "type": "story",
+      "by": "itvision",
+      "time": 1786047791,
+      "title": "AMD acquires Taalas to boost inference performance by etching models in silicon",
+      "url": "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344",
+      "domain": "theregister.com",
+      "score": 949,
+      "descendants": 722,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49222189,
+      "type": "story",
+      "by": "senko",
+      "time": 1786199553,
+      "title": "“Code was never the hard part” is an insult to all programmers",
+      "url": "https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers",
+      "domain": "blog.senko.net",
+      "score": 946,
+      "descendants": 589,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49879645,
+      "type": "story",
+      "by": "slowin",
+      "time": 1790609538,
+      "title": "Updated Google Maps shows destruction of the city of Rafah",
+      "url": "https://twitter.com/AliAbunimah/status/2103890594137309425",
+      "domain": "twitter.com",
+      "score": 944,
+      "descendants": 949,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49949438,
+      "type": "story",
+      "by": "paveworld",
+      "time": 1791075052,
+      "title": "Tell HN: Bob Cringely has died",
+      "url": null,
+      "domain": null,
+      "score": 943,
+      "descendants": 221,
+      "dead": 0,
+      "deleted": 0
+    },
+    {
+      "id": 49592375,
+      "type": "story",
+      "by": "treve",
+      "time": 1788740524,
+      "title": "216M Spy TVs – The LG Smart TV Problem [video]",
+      "url": "https://www.youtube.com/watch?v=6IFVTcM28KA",
+      "domain": "youtube.com",
+      "score": 940,
+      "descendants": 1012,
+      "dead": 0,
+      "deleted": 0
+    }
+  ],
+  "concentration": {
+    "basis": {
+      "points": "sum of score where score is known (comments have no score)",
+      "comments": "sum of descendants where known (stories/polls only)",
+      "posts": "all items counted, comments included",
+      "time": "UTC",
+      "word": "lowercased title tokens (3+ chars), stopwords removed, counted once per post"
+    },
+    "totals": {
+      "posts": 1000000,
+      "points": 1433261,
+      "comments": 761058
+    },
+    "entities": {
+      "author": {
+        "count": 93510,
+        "gini_points": 0.963059,
+        "gini_posts": 0.777802,
+        "lorenz_points": [
+          [
+            1.069e-05,
+            0.019211
+          ],
+          [
+            2.139e-05,
+            0.032162
+          ],
+          [
+            3.208e-05,
+            0.041544
+          ],
+          [
+            4.278e-05,
+            0.050248
+          ],
+          [
+            5.347e-05,
+            0.057972
+          ],
+          [
+            6.416e-05,
+            0.064479
+          ],
+          [
+            7.486e-05,
+            0.070965
+          ],
+          [
+            8.555e-05,
+            0.077178
+          ],
+          [
+            9.625e-05,
+            0.082434
+          ],
+          [
+            0.00011763,
+            0.091198
+          ],
+          [
+            0.00013902,
+            0.09893
+          ],
+          [
+            0.00016041,
+            0.105902
+          ],
+          [
+            0.00019249,
+            0.11619
+          ],
+          [
+            0.00023527,
+            0.129032
+          ],
+          [
+            0.00027805,
+            0.141147
+          ],
+          [
+            0.00033152,
+            0.153851
+          ],
+          [
+            0.00038499,
+            0.165181
+          ],
+          [
+            0.00045984,
+            0.18001
+          ],
+          [
+            0.0005454,
+            0.195335
+          ],
+          [
+            0.00065234,
+            0.212175
+          ],
+          [
+            0.00076997,
+            0.229042
+          ],
+          [
+            0.00091969,
+            0.249056
+          ],
+          [
+            0.00110149,
+            0.271228
+          ],
+          [
+            0.00130467,
+            0.293255
+          ],
+          [
+            0.00155064,
+            0.317057
+          ],
+          [
+            0.00185007,
+            0.342411
+          ],
+          [
+            0.00220297,
+            0.369155
+          ],
+          [
+            0.00262004,
+            0.397791
+          ],
+          [
+            0.00312266,
+            0.428913
+          ],
+          [
+            0.00372153,
+            0.461779
+          ],
+          [
+            0.00442733,
+            0.496151
+          ],
+          [
+            0.00527216,
+            0.532741
+          ],
+          [
+            0.0062774,
+            0.570597
+          ],
+          [
+            0.00747514,
+            0.608847
+          ],
+          [
+            0.00890814,
+            0.647207
+          ],
+          [
+            0.01060849,
+            0.686029
+          ],
+          [
+            0.01262967,
+            0.723999
+          ],
+          [
+            0.01504652,
+            0.760924
+          ],
+          [
+            0.01792322,
+            0.795621
+          ],
+          [
+            0.02134531,
+            0.826916
+          ],
+          [
+            0.02541974,
+            0.854546
+          ],
+          [
+            0.03027484,
+            0.878037
+          ],
+          [
+            0.03606031,
+            0.897153
+          ],
+          [
+            0.04294728,
+            0.912357
+          ],
+          [
+            0.0511603,
+            0.924529
+          ],
+          [
+            0.06093466,
+            0.934679
+          ],
+          [
+            0.07258047,
+            0.943421
+          ],
+          [
+            0.08643995,
+            0.951268
+          ],
+          [
+            0.10296225,
+            0.95831
+          ],
+          [
+            0.12263929,
+            0.964985
+          ],
+          [
+            0.14606994,
+            0.971182
+          ],
+          [
+            0.17399209,
+            0.976852
+          ],
+          [
+            0.20723987,
+            0.982309
+          ],
+          [
+            0.24683991,
+            0.987476
+          ],
+          [
+            0.29401134,
+            0.991598
+          ],
+          [
+            0.35019784,
+            0.995264
+          ],
+          [
+            0.41712116,
+            0.99963
+          ],
+          [
+            0.49683456,
+            1.0
+          ],
+          [
+            0.59177628,
+            1.0
+          ],
+          [
+            0.70486579,
+            1.0
+          ],
+          [
+            0.83956796,
+            1.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "lorenz_posts": [
+          [
+            1.069e-05,
+            0.004169
+          ],
+          [
+            2.139e-05,
+            0.005905
+          ],
+          [
+            3.208e-05,
+            0.007614
+          ],
+          [
+            4.278e-05,
+            0.009301
+          ],
+          [
+            5.347e-05,
+            0.010918
+          ],
+          [
+            6.416e-05,
+            0.012385
+          ],
+          [
+            7.486e-05,
+            0.013807
+          ],
+          [
+            8.555e-05,
+            0.015227
+          ],
+          [
+            9.625e-05,
+            0.016596
+          ],
+          [
+            0.00011763,
+            0.019106
+          ],
+          [
+            0.00013902,
+            0.021495
+          ],
+          [
+            0.00016041,
+            0.023685
+          ],
+          [
+            0.00019249,
+            0.026782
+          ],
+          [
+            0.00023527,
+            0.03071
+          ],
+          [
+            0.00027805,
+            0.034332
+          ],
+          [
+            0.00033152,
+            0.038665
+          ],
+          [
+            0.00038499,
+            0.04282
+          ],
+          [
+            0.00045984,
+            0.048158
+          ],
+          [
+            0.0005454,
+            0.053825
+          ],
+          [
+            0.00065234,
+            0.060149
+          ],
+          [
+            0.00076997,
+            0.066669
+          ],
+          [
+            0.00091969,
+            0.074509
+          ],
+          [
+            0.00110149,
+            0.083349
+          ],
+          [
+            0.00130467,
+            0.092597
+          ],
+          [
+            0.00155064,
+            0.102913
+          ],
+          [
+            0.00185007,
+            0.114615
+          ],
+          [
+            0.00220297,
+            0.127365
+          ],
+          [
+            0.00262004,
+            0.141392
+          ],
+          [
+            0.00312266,
+            0.157008
+          ],
+          [
+            0.00372153,
+            0.173881
+          ],
+          [
+            0.00442733,
+            0.192151
+          ],
+          [
+            0.00527216,
+            0.211962
+          ],
+          [
+            0.0062774,
+            0.232917
+          ],
+          [
+            0.00747514,
+            0.255301
+          ],
+          [
+            0.00890814,
+            0.279506
+          ],
+          [
+            0.01060849,
+            0.305384
+          ],
+          [
+            0.01262967,
+            0.332968
+          ],
+          [
+            0.01504652,
+            0.362342
+          ],
+          [
+            0.01792322,
+            0.393203
+          ],
+          [
+            0.02134531,
+            0.424899
+          ],
+          [
+            0.02541974,
+            0.457384
+          ],
+          [
+            0.03027484,
+            0.49082
+          ],
+          [
+            0.03606031,
+            0.524615
+          ],
+          [
+            0.04294728,
+            0.558612
+          ],
+          [
+            0.0511603,
+            0.592889
+          ],
+          [
+            0.06093466,
+            0.626879
+          ],
+          [
+            0.07258047,
+            0.660287
+          ],
+          [
+            0.08643995,
+            0.692587
+          ],
+          [
+            0.10296225,
+            0.724026
+          ],
+          [
+            0.12263929,
+            0.754334
+          ],
+          [
+            0.14606994,
+            0.783193
+          ],
+          [
+            0.17399209,
+            0.810455
+          ],
+          [
+            0.20723987,
+            0.836105
+          ],
+          [
+            0.24683991,
+            0.860381
+          ],
+          [
+            0.29401134,
+            0.882622
+          ],
+          [
+            0.35019784,
+            0.903468
+          ],
+          [
+            0.41712116,
+            0.922863
+          ],
+          [
+            0.49683456,
+            0.939472
+          ],
+          [
+            0.59177628,
+            0.957815
+          ],
+          [
+            0.70486579,
+            0.97149
+          ],
+          [
+            0.83956796,
+            0.984502
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "top": [
+          {
+            "name": "speckx",
+            "posts": 1174,
+            "points": 27535,
+            "comments": 16482
+          },
+          {
+            "name": "tosh",
+            "posts": 989,
+            "points": 18562,
+            "comments": 9549
+          },
+          {
+            "name": "surprisetalk",
+            "posts": 454,
+            "points": 13447,
+            "comments": 8783
+          },
+          {
+            "name": "theanonymousone",
+            "posts": 556,
+            "points": 12475,
+            "comments": 6518
+          },
+          {
+            "name": "ibobev",
+            "posts": 704,
+            "points": 11070,
+            "comments": 5141
+          },
+          {
+            "name": "bookofjoe",
+            "posts": 993,
+            "points": 9326,
+            "comments": 5543
+          },
+          {
+            "name": "rbanffy",
+            "posts": 1217,
+            "points": 9296,
+            "comments": 5329
+          },
+          {
+            "name": "zdw",
+            "posts": 115,
+            "points": 8905,
+            "comments": 4161
+          },
+          {
+            "name": "mooreds",
+            "posts": 749,
+            "points": 7534,
+            "comments": 3505
+          },
+          {
+            "name": "Bluestein",
+            "posts": 804,
+            "points": 6438,
+            "comments": 2395
+          },
+          {
+            "name": "gmays",
+            "posts": 595,
+            "points": 6123,
+            "comments": 2709
+          },
+          {
+            "name": "pseudolus",
+            "posts": 290,
+            "points": 6001,
+            "comments": 4128
+          },
+          {
+            "name": "andsoitis",
+            "posts": 1325,
+            "points": 5080,
+            "comments": 4257
+          },
+          {
+            "name": "sbulaev",
+            "posts": 491,
+            "points": 5040,
+            "comments": 2432
+          },
+          {
+            "name": "geox",
+            "posts": 351,
+            "points": 4953,
+            "comments": 2963
+          },
+          {
+            "name": "Philpax",
+            "posts": 97,
+            "points": 4941,
+            "comments": 2393
+          },
+          {
+            "name": "Brajeshwar",
+            "posts": 437,
+            "points": 4928,
+            "comments": 3398
+          },
+          {
+            "name": "signa11",
+            "posts": 216,
+            "points": 4876,
+            "comments": 2855
+          },
+          {
+            "name": "Cider9986",
+            "posts": 728,
+            "points": 4767,
+            "comments": 2825
+          },
+          {
+            "name": "cdrnsf",
+            "posts": 333,
+            "points": 4577,
+            "comments": 2167
+          },
+          {
+            "name": "mfiguiere",
+            "posts": 87,
+            "points": 4571,
+            "comments": 2239
+          },
+          {
+            "name": "DeepLogin",
+            "posts": 99,
+            "points": 4491,
+            "comments": 3082
+          },
+          {
+            "name": "hn_acker",
+            "posts": 358,
+            "points": 4459,
+            "comments": 1971
+          },
+          {
+            "name": "doener",
+            "posts": 258,
+            "points": 4379,
+            "comments": 1804
+          },
+          {
+            "name": "matt_d",
+            "posts": 273,
+            "points": 4269,
+            "comments": 1038
+          },
+          {
+            "name": "birdculture",
+            "posts": 433,
+            "points": 4257,
+            "comments": 1316
+          },
+          {
+            "name": "Anon84",
+            "posts": 248,
+            "points": 4020,
+            "comments": 3213
+          },
+          {
+            "name": "giuliomagnifico",
+            "posts": 226,
+            "points": 4016,
+            "comments": 2743
+          },
+          {
+            "name": "meetpateltech",
+            "posts": 66,
+            "points": 3436,
+            "comments": 2386
+          },
+          {
+            "name": "ilamont",
+            "posts": 155,
+            "points": 3418,
+            "comments": 2854
+          },
+          {
+            "name": "JumpCrisscross",
+            "posts": 1028,
+            "points": 3318,
+            "comments": 1467
+          },
+          {
+            "name": "pavel_lishin",
+            "posts": 295,
+            "points": 3315,
+            "comments": 935
+          },
+          {
+            "name": "luu",
+            "posts": 81,
+            "points": 3306,
+            "comments": 1525
+          },
+          {
+            "name": "ingve",
+            "posts": 122,
+            "points": 3249,
+            "comments": 1833
+          },
+          {
+            "name": "thm",
+            "posts": 283,
+            "points": 3207,
+            "comments": 2488
+          },
+          {
+            "name": "herbertl",
+            "posts": 114,
+            "points": 3163,
+            "comments": 1874
+          },
+          {
+            "name": "NaOH",
+            "posts": 37,
+            "points": 3137,
+            "comments": 1338
+          },
+          {
+            "name": "colinprince",
+            "posts": 94,
+            "points": 3115,
+            "comments": 1741
+          },
+          {
+            "name": "vinhnx",
+            "posts": 115,
+            "points": 3087,
+            "comments": 1480
+          },
+          {
+            "name": "OfficialTurkey",
+            "posts": 4,
+            "points": 3081,
+            "comments": 2333
+          },
+          {
+            "name": "Tomte",
+            "posts": 358,
+            "points": 2964,
+            "comments": 1409
+          },
+          {
+            "name": "gumby",
+            "posts": 254,
+            "points": 2941,
+            "comments": 1579
+          },
+          {
+            "name": "ilreb",
+            "posts": 87,
+            "points": 2928,
+            "comments": 1268
+          },
+          {
+            "name": "karakoram",
+            "posts": 123,
+            "points": 2881,
+            "comments": 2711
+          },
+          {
+            "name": "bilsbie",
+            "posts": 192,
+            "points": 2848,
+            "comments": 2393
+          },
+          {
+            "name": "chmaynard",
+            "posts": 52,
+            "points": 2816,
+            "comments": 1668
+          },
+          {
+            "name": "thunderbong",
+            "posts": 430,
+            "points": 2784,
+            "comments": 605
+          },
+          {
+            "name": "Jimmc414",
+            "posts": 183,
+            "points": 2781,
+            "comments": 1231
+          },
+          {
+            "name": "DemiGuru",
+            "posts": 99,
+            "points": 2649,
+            "comments": 858
+          },
+          {
+            "name": "ksec",
+            "posts": 333,
+            "points": 2610,
+            "comments": 1586
+          }
+        ]
+      },
+      "domain": {
+        "count": 26373,
+        "gini_points": 0.909758,
+        "gini_posts": 0.617853,
+        "lorenz_points": [
+          [
+            3.792e-05,
+            0.060482
+          ],
+          [
+            7.584e-05,
+            0.075549
+          ],
+          [
+            0.00011375,
+            0.087941
+          ],
+          [
+            0.00015167,
+            0.10009
+          ],
+          [
+            0.00018959,
+            0.111671
+          ],
+          [
+            0.00022751,
+            0.122567
+          ],
+          [
+            0.00030334,
+            0.140995
+          ],
+          [
+            0.00034126,
+            0.148645
+          ],
+          [
+            0.00041709,
+            0.162879
+          ],
+          [
+            0.00049293,
+            0.176194
+          ],
+          [
+            0.00056876,
+            0.187021
+          ],
+          [
+            0.00068252,
+            0.202195
+          ],
+          [
+            0.00079627,
+            0.21534
+          ],
+          [
+            0.00094794,
+            0.231273
+          ],
+          [
+            0.00109961,
+            0.244998
+          ],
+          [
+            0.00132711,
+            0.262432
+          ],
+          [
+            0.00155462,
+            0.276564
+          ],
+          [
+            0.00185796,
+            0.292244
+          ],
+          [
+            0.00219922,
+            0.308083
+          ],
+          [
+            0.00265423,
+            0.326904
+          ],
+          [
+            0.00314716,
+            0.344278
+          ],
+          [
+            0.00371592,
+            0.362592
+          ],
+          [
+            0.00443636,
+            0.383357
+          ],
+          [
+            0.00527054,
+            0.403852
+          ],
+          [
+            0.00629432,
+            0.425906
+          ],
+          [
+            0.00750768,
+            0.449043
+          ],
+          [
+            0.00891063,
+            0.472611
+          ],
+          [
+            0.01061692,
+            0.498107
+          ],
+          [
+            0.01262655,
+            0.525126
+          ],
+          [
+            0.01505327,
+            0.554422
+          ],
+          [
+            0.01793501,
+            0.584662
+          ],
+          [
+            0.02134759,
+            0.616123
+          ],
+          [
+            0.02544269,
+            0.648826
+          ],
+          [
+            0.03029614,
+            0.682239
+          ],
+          [
+            0.03605961,
+            0.71646
+          ],
+          [
+            0.0429606,
+            0.751112
+          ],
+          [
+            0.05118872,
+            0.784543
+          ],
+          [
+            0.06093353,
+            0.816749
+          ],
+          [
+            0.07257422,
+            0.847083
+          ],
+          [
+            0.08645205,
+            0.874812
+          ],
+          [
+            0.10298411,
+            0.899069
+          ],
+          [
+            0.12266333,
+            0.919678
+          ],
+          [
+            0.14609639,
+            0.935723
+          ],
+          [
+            0.17400372,
+            0.947563
+          ],
+          [
+            0.20725742,
+            0.956364
+          ],
+          [
+            0.24684336,
+            0.963244
+          ],
+          [
+            0.29401282,
+            0.969085
+          ],
+          [
+            0.35020665,
+            0.974389
+          ],
+          [
+            0.41713116,
+            0.979521
+          ],
+          [
+            0.49683388,
+            0.984126
+          ],
+          [
+            0.59177947,
+            0.988681
+          ],
+          [
+            0.70488757,
+            0.993038
+          ],
+          [
+            0.83957077,
+            0.99691
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "lorenz_posts": [
+          [
+            3.792e-05,
+            0.103373
+          ],
+          [
+            7.584e-05,
+            0.134294
+          ],
+          [
+            0.00011375,
+            0.152559
+          ],
+          [
+            0.00015167,
+            0.165441
+          ],
+          [
+            0.00018959,
+            0.178257
+          ],
+          [
+            0.00022751,
+            0.190663
+          ],
+          [
+            0.00030334,
+            0.209549
+          ],
+          [
+            0.00034126,
+            0.217961
+          ],
+          [
+            0.00041709,
+            0.232602
+          ],
+          [
+            0.00049293,
+            0.243857
+          ],
+          [
+            0.00056876,
+            0.254583
+          ],
+          [
+            0.00068252,
+            0.267928
+          ],
+          [
+            0.00079627,
+            0.278244
+          ],
+          [
+            0.00094794,
+            0.290861
+          ],
+          [
+            0.00109961,
+            0.300714
+          ],
+          [
+            0.00132711,
+            0.312313
+          ],
+          [
+            0.00155462,
+            0.322854
+          ],
+          [
+            0.00185796,
+            0.334519
+          ],
+          [
+            0.00219922,
+            0.345206
+          ],
+          [
+            0.00265423,
+            0.357188
+          ],
+          [
+            0.00314716,
+            0.367742
+          ],
+          [
+            0.00371592,
+            0.377701
+          ],
+          [
+            0.00443636,
+            0.388546
+          ],
+          [
+            0.00527054,
+            0.399445
+          ],
+          [
+            0.00629432,
+            0.410409
+          ],
+          [
+            0.00750768,
+            0.421505
+          ],
+          [
+            0.00891063,
+            0.43284
+          ],
+          [
+            0.01061692,
+            0.444743
+          ],
+          [
+            0.01262655,
+            0.456937
+          ],
+          [
+            0.01505327,
+            0.469528
+          ],
+          [
+            0.01793501,
+            0.481788
+          ],
+          [
+            0.02134759,
+            0.494313
+          ],
+          [
+            0.02544269,
+            0.507486
+          ],
+          [
+            0.03029614,
+            0.520473
+          ],
+          [
+            0.03605961,
+            0.534056
+          ],
+          [
+            0.0429606,
+            0.548499
+          ],
+          [
+            0.05118872,
+            0.563365
+          ],
+          [
+            0.06093353,
+            0.578654
+          ],
+          [
+            0.07257422,
+            0.594895
+          ],
+          [
+            0.08645205,
+            0.61152
+          ],
+          [
+            0.10298411,
+            0.628819
+          ],
+          [
+            0.12266333,
+            0.649411
+          ],
+          [
+            0.14609639,
+            0.666261
+          ],
+          [
+            0.17400372,
+            0.685729
+          ],
+          [
+            0.20725742,
+            0.708927
+          ],
+          [
+            0.24684336,
+            0.736543
+          ],
+          [
+            0.29401282,
+            0.75375
+          ],
+          [
+            0.35020665,
+            0.77335
+          ],
+          [
+            0.41713116,
+            0.796694
+          ],
+          [
+            0.49683388,
+            0.824494
+          ],
+          [
+            0.59177947,
+            0.857611
+          ],
+          [
+            0.70488757,
+            0.897064
+          ],
+          [
+            0.83957077,
+            0.944042
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "top": [
+          {
+            "name": "github.com",
+            "posts": 7816,
+            "points": 82819,
+            "comments": 30356
+          },
+          {
+            "name": "twitter.com",
+            "posts": 1381,
+            "points": 20632,
+            "comments": 12987
+          },
+          {
+            "name": "openai.com",
+            "posts": 137,
+            "points": 16969,
+            "comments": 14248
+          },
+          {
+            "name": "bbc.com",
+            "posts": 415,
+            "points": 16635,
+            "comments": 16842
+          },
+          {
+            "name": "youtube.com",
+            "posts": 2338,
+            "points": 15858,
+            "comments": 6102
+          },
+          {
+            "name": "theguardian.com",
+            "posts": 767,
+            "points": 14921,
+            "comments": 7183
+          },
+          {
+            "name": "nytimes.com",
+            "posts": 938,
+            "points": 13348,
+            "comments": 8413
+          },
+          {
+            "name": "arxiv.org",
+            "posts": 969,
+            "points": 11885,
+            "comments": 5132
+          },
+          {
+            "name": "anthropic.com",
+            "posts": 86,
+            "points": 10475,
+            "comments": 8645
+          },
+          {
+            "name": "reuters.com",
+            "posts": 661,
+            "points": 9829,
+            "comments": 5557
+          },
+          {
+            "name": "blog.google",
+            "posts": 81,
+            "points": 9663,
+            "comments": 6933
+          },
+          {
+            "name": "en.wikipedia.org",
+            "posts": 974,
+            "points": 9353,
+            "comments": 2816
+          },
+          {
+            "name": "arstechnica.com",
+            "posts": 500,
+            "points": 8879,
+            "comments": 4820
+          },
+          {
+            "name": "techcrunch.com",
+            "posts": 345,
+            "points": 7579,
+            "comments": 4932
+          },
+          {
+            "name": "apple.com",
+            "posts": 45,
+            "points": 7247,
+            "comments": 8054
+          },
+          {
+            "name": "wsj.com",
+            "posts": 607,
+            "points": 7054,
+            "comments": 5429
+          },
+          {
+            "name": "ft.com",
+            "posts": 431,
+            "points": 6930,
+            "comments": 4673
+          },
+          {
+            "name": "huggingface.co",
+            "posts": 251,
+            "points": 6793,
+            "comments": 2413
+          },
+          {
+            "name": "bloomberg.com",
+            "posts": 420,
+            "points": 6141,
+            "comments": 3883
+          },
+          {
+            "name": "theregister.com",
+            "posts": 396,
+            "points": 6052,
+            "comments": 3207
+          },
+          {
+            "name": "tomshardware.com",
+            "posts": 246,
+            "points": 5807,
+            "comments": 4023
+          },
+          {
+            "name": "blog.cloudflare.com",
+            "posts": 126,
+            "points": 5692,
+            "comments": 1973
+          },
+          {
+            "name": "404media.co",
+            "posts": 144,
+            "points": 5503,
+            "comments": 3126
+          },
+          {
+            "name": "earendil.com",
+            "posts": 19,
+            "points": 5362,
+            "comments": 2077
+          },
+          {
+            "name": "economist.com",
+            "posts": 254,
+            "points": 5261,
+            "comments": 5551
+          },
+          {
+            "name": "science.org",
+            "posts": 137,
+            "points": 4908,
+            "comments": 3115
+          },
+          {
+            "name": "wired.com",
+            "posts": 269,
+            "points": 4823,
+            "comments": 2524
+          },
+          {
+            "name": "lwn.net",
+            "posts": 100,
+            "points": 4578,
+            "comments": 2882
+          },
+          {
+            "name": "mistral.ai",
+            "posts": 9,
+            "points": 4485,
+            "comments": 2156
+          },
+          {
+            "name": "reddit.com",
+            "posts": 343,
+            "points": 4393,
+            "comments": 1961
+          },
+          {
+            "name": "grapheneos.social",
+            "posts": 15,
+            "points": 4180,
+            "comments": 2427
+          },
+          {
+            "name": "cnbc.com",
+            "posts": 257,
+            "points": 4172,
+            "comments": 3333
+          },
+          {
+            "name": "spectrum.ieee.org",
+            "posts": 148,
+            "points": 3835,
+            "comments": 2871
+          },
+          {
+            "name": "simonwillison.net",
+            "posts": 56,
+            "points": 3783,
+            "comments": 2262
+          },
+          {
+            "name": "artificialanalysis.ai",
+            "posts": 75,
+            "points": 3509,
+            "comments": 1933
+          },
+          {
+            "name": "theverge.com",
+            "posts": 235,
+            "points": 3482,
+            "comments": 2096
+          },
+          {
+            "name": "openrouter.ai",
+            "posts": 33,
+            "points": 3340,
+            "comments": 1856
+          },
+          {
+            "name": "businessinsider.com",
+            "posts": 102,
+            "points": 3239,
+            "comments": 1987
+          },
+          {
+            "name": "apnews.com",
+            "posts": 184,
+            "points": 3225,
+            "comments": 2010
+          },
+          {
+            "name": "unsung.aresluna.org",
+            "posts": 31,
+            "points": 3085,
+            "comments": 1412
+          },
+          {
+            "name": "danluu.com",
+            "posts": 21,
+            "points": 2980,
+            "comments": 2395
+          },
+          {
+            "name": "qwen.ai",
+            "posts": 6,
+            "points": 2930,
+            "comments": 1182
+          },
+          {
+            "name": "z.ai",
+            "posts": 4,
+            "points": 2775,
+            "comments": 1472
+          },
+          {
+            "name": "medium.com",
+            "posts": 636,
+            "points": 2731,
+            "comments": 1008
+          },
+          {
+            "name": "githubstatus.com",
+            "posts": 18,
+            "points": 2663,
+            "comments": 1849
+          },
+          {
+            "name": "techdirt.com",
+            "posts": 73,
+            "points": 2628,
+            "comments": 1028
+          },
+          {
+            "name": "tailscale.com",
+            "posts": 20,
+            "points": 2616,
+            "comments": 687
+          },
+          {
+            "name": "newyorker.com",
+            "posts": 127,
+            "points": 2577,
+            "comments": 2181
+          },
+          {
+            "name": "techspot.com",
+            "posts": 15,
+            "points": 2552,
+            "comments": 2142
+          },
+          {
+            "name": "quantamagazine.org",
+            "posts": 116,
+            "points": 2549,
+            "comments": 1318
+          }
+        ]
+      },
+      "word": {
+        "count": 46220,
+        "gini_points": 0.896893,
+        "gini_posts": 0.799971,
+        "lorenz_points": [
+          [
+            2.164e-05,
+            0.005346
+          ],
+          [
+            4.327e-05,
+            0.009193
+          ],
+          [
+            6.491e-05,
+            0.012982
+          ],
+          [
+            8.654e-05,
+            0.016765
+          ],
+          [
+            0.00010818,
+            0.020431
+          ],
+          [
+            0.00012981,
+            0.023775
+          ],
+          [
+            0.00015145,
+            0.027086
+          ],
+          [
+            0.00017309,
+            0.030355
+          ],
+          [
+            0.00019472,
+            0.033539
+          ],
+          [
+            0.00023799,
+            0.039706
+          ],
+          [
+            0.00028126,
+            0.04496
+          ],
+          [
+            0.00032453,
+            0.049663
+          ],
+          [
+            0.00038944,
+            0.056493
+          ],
+          [
+            0.00047598,
+            0.064723
+          ],
+          [
+            0.00056253,
+            0.072415
+          ],
+          [
+            0.00064907,
+            0.079337
+          ],
+          [
+            0.00077888,
+            0.088882
+          ],
+          [
+            0.00093033,
+            0.09894
+          ],
+          [
+            0.00110342,
+            0.109496
+          ],
+          [
+            0.00131977,
+            0.121817
+          ],
+          [
+            0.00155777,
+            0.134225
+          ],
+          [
+            0.00186067,
+            0.148872
+          ],
+          [
+            0.00220684,
+            0.163972
+          ],
+          [
+            0.00261791,
+            0.180401
+          ],
+          [
+            0.00313717,
+            0.19955
+          ],
+          [
+            0.00372133,
+            0.219545
+          ],
+          [
+            0.00443531,
+            0.241719
+          ],
+          [
+            0.0052791,
+            0.265391
+          ],
+          [
+            0.00627434,
+            0.290637
+          ],
+          [
+            0.00748594,
+            0.318277
+          ],
+          [
+            0.00891389,
+            0.347656
+          ],
+          [
+            0.01060147,
+            0.378491
+          ],
+          [
+            0.01263522,
+            0.410831
+          ],
+          [
+            0.01505842,
+            0.444087
+          ],
+          [
+            0.01791432,
+            0.478255
+          ],
+          [
+            0.02135439,
+            0.514434
+          ],
+          [
+            0.0254219,
+            0.551584
+          ],
+          [
+            0.03028992,
+            0.590025
+          ],
+          [
+            0.03606664,
+            0.628939
+          ],
+          [
+            0.04294678,
+            0.668239
+          ],
+          [
+            0.05116833,
+            0.707794
+          ],
+          [
+            0.06094764,
+            0.746481
+          ],
+          [
+            0.07258762,
+            0.78402
+          ],
+          [
+            0.08645608,
+            0.820357
+          ],
+          [
+            0.10296408,
+            0.854661
+          ],
+          [
+            0.12265253,
+            0.885771
+          ],
+          [
+            0.14608395,
+            0.912854
+          ],
+          [
+            0.17399394,
+            0.935618
+          ],
+          [
+            0.20724794,
+            0.953687
+          ],
+          [
+            0.24684119,
+            0.967494
+          ],
+          [
+            0.29400692,
+            0.977334
+          ],
+          [
+            0.35019472,
+            0.984141
+          ],
+          [
+            0.4171138,
+            0.988857
+          ],
+          [
+            0.49684119,
+            0.992306
+          ],
+          [
+            0.59177845,
+            0.995003
+          ],
+          [
+            0.70486802,
+            0.997151
+          ],
+          [
+            0.83957161,
+            0.998891
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "lorenz_posts": [
+          [
+            2.164e-05,
+            0.005719
+          ],
+          [
+            4.327e-05,
+            0.011365
+          ],
+          [
+            6.491e-05,
+            0.016361
+          ],
+          [
+            8.654e-05,
+            0.021272
+          ],
+          [
+            0.00010818,
+            0.025531
+          ],
+          [
+            0.00012981,
+            0.029227
+          ],
+          [
+            0.00015145,
+            0.032712
+          ],
+          [
+            0.00017309,
+            0.036042
+          ],
+          [
+            0.00019472,
+            0.039008
+          ],
+          [
+            0.00023799,
+            0.044722
+          ],
+          [
+            0.00028126,
+            0.049872
+          ],
+          [
+            0.00032453,
+            0.054488
+          ],
+          [
+            0.00038944,
+            0.060899
+          ],
+          [
+            0.00047598,
+            0.068711
+          ],
+          [
+            0.00056253,
+            0.075676
+          ],
+          [
+            0.00064907,
+            0.082164
+          ],
+          [
+            0.00077888,
+            0.091457
+          ],
+          [
+            0.00093033,
+            0.1015
+          ],
+          [
+            0.00110342,
+            0.111978
+          ],
+          [
+            0.00131977,
+            0.123934
+          ],
+          [
+            0.00155777,
+            0.135559
+          ],
+          [
+            0.00186067,
+            0.148611
+          ],
+          [
+            0.00220684,
+            0.162266
+          ],
+          [
+            0.00261791,
+            0.177767
+          ],
+          [
+            0.00313717,
+            0.195414
+          ],
+          [
+            0.00372133,
+            0.213361
+          ],
+          [
+            0.00443531,
+            0.233455
+          ],
+          [
+            0.0052791,
+            0.25487
+          ],
+          [
+            0.00627434,
+            0.277658
+          ],
+          [
+            0.00748594,
+            0.302135
+          ],
+          [
+            0.00891389,
+            0.327744
+          ],
+          [
+            0.01060147,
+            0.354781
+          ],
+          [
+            0.01263522,
+            0.383046
+          ],
+          [
+            0.01505842,
+            0.412224
+          ],
+          [
+            0.01791432,
+            0.442455
+          ],
+          [
+            0.02135439,
+            0.474625
+          ],
+          [
+            0.0254219,
+            0.507576
+          ],
+          [
+            0.03028992,
+            0.540668
+          ],
+          [
+            0.03606664,
+            0.573572
+          ],
+          [
+            0.04294678,
+            0.606608
+          ],
+          [
+            0.05116833,
+            0.63957
+          ],
+          [
+            0.06094764,
+            0.671414
+          ],
+          [
+            0.07258762,
+            0.702633
+          ],
+          [
+            0.08645608,
+            0.733141
+          ],
+          [
+            0.10296408,
+            0.76257
+          ],
+          [
+            0.12265253,
+            0.790354
+          ],
+          [
+            0.14608395,
+            0.815988
+          ],
+          [
+            0.17399394,
+            0.839626
+          ],
+          [
+            0.20724794,
+            0.861409
+          ],
+          [
+            0.24684119,
+            0.88125
+          ],
+          [
+            0.29400692,
+            0.899431
+          ],
+          [
+            0.35019472,
+            0.916379
+          ],
+          [
+            0.4171138,
+            0.930895
+          ],
+          [
+            0.49684119,
+            0.945427
+          ],
+          [
+            0.59177845,
+            0.955724
+          ],
+          [
+            0.70486802,
+            0.96799
+          ],
+          [
+            0.83957161,
+            0.9826
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "top": [
+          {
+            "name": "open",
+            "posts": 2093,
+            "points": 38265,
+            "comments": 16908
+          },
+          {
+            "name": "google",
+            "posts": 778,
+            "points": 27528,
+            "comments": 16287
+          },
+          {
+            "name": "openai",
+            "posts": 911,
+            "points": 27124,
+            "comments": 17634
+          },
+          {
+            "name": "claude",
+            "posts": 1419,
+            "points": 27072,
+            "comments": 17381
+          },
+          {
+            "name": "data",
+            "posts": 1575,
+            "points": 26241,
+            "comments": 16673
+          },
+          {
+            "name": "agents",
+            "posts": 2406,
+            "points": 23929,
+            "comments": 12499
+          },
+          {
+            "name": "model",
+            "posts": 1264,
+            "points": 23699,
+            "comments": 10797
+          },
+          {
+            "name": "models",
+            "posts": 943,
+            "points": 23399,
+            "comments": 11103
+          },
+          {
+            "name": "code",
+            "posts": 1815,
+            "points": 22789,
+            "comments": 12635
+          },
+          {
+            "name": "agent",
+            "posts": 2129,
+            "points": 22275,
+            "comments": 10902
+          },
+          {
+            "name": "source",
+            "posts": 1485,
+            "points": 21857,
+            "comments": 8712
+          },
+          {
+            "name": "video",
+            "posts": 2437,
+            "points": 20533,
+            "comments": 8266
+          },
+          {
+            "name": "apple",
+            "posts": 637,
+            "points": 17077,
+            "comments": 11487
+          },
+          {
+            "name": "years",
+            "posts": 558,
+            "points": 17035,
+            "comments": 8975
+          },
+          {
+            "name": "linux",
+            "posts": 712,
+            "points": 16625,
+            "comments": 8925
+          },
+          {
+            "name": "gpt",
+            "posts": 341,
+            "points": 16389,
+            "comments": 10178
+          },
+          {
+            "name": "first",
+            "posts": 1175,
+            "points": 16354,
+            "comments": 9375
+          },
+          {
+            "name": "llm",
+            "posts": 1034,
+            "points": 16137,
+            "comments": 7373
+          },
+          {
+            "name": "year",
+            "posts": 494,
+            "points": 15226,
+            "comments": 8197
+          },
+          {
+            "name": "built",
+            "posts": 1260,
+            "points": 14581,
+            "comments": 7343
+          },
+          {
+            "name": "software",
+            "posts": 816,
+            "points": 14560,
+            "comments": 9293
+          },
+          {
+            "name": "like",
+            "posts": 655,
+            "points": 14534,
+            "comments": 8716
+          },
+          {
+            "name": "coding",
+            "posts": 1161,
+            "points": 14522,
+            "comments": 8014
+          },
+          {
+            "name": "meta",
+            "posts": 357,
+            "points": 14025,
+            "comments": 8792
+          },
+          {
+            "name": "rust",
+            "posts": 768,
+            "points": 13403,
+            "comments": 6782
+          },
+          {
+            "name": "says",
+            "posts": 545,
+            "points": 13105,
+            "comments": 9081
+          },
+          {
+            "name": "flash",
+            "posts": 229,
+            "points": 13104,
+            "comments": 6141
+          },
+          {
+            "name": "system",
+            "posts": 667,
+            "points": 12932,
+            "comments": 5967
+          },
+          {
+            "name": "app",
+            "posts": 957,
+            "points": 11782,
+            "comments": 6705
+          },
+          {
+            "name": "memory",
+            "posts": 684,
+            "points": 11725,
+            "comments": 5548
+          },
+          {
+            "name": "llms",
+            "posts": 563,
+            "points": 11594,
+            "comments": 7383
+          },
+          {
+            "name": "time",
+            "posts": 868,
+            "points": 11466,
+            "comments": 7487
+          },
+          {
+            "name": "without",
+            "posts": 649,
+            "points": 11342,
+            "comments": 5890
+          },
+          {
+            "name": "world",
+            "posts": 724,
+            "points": 11337,
+            "comments": 6093
+          },
+          {
+            "name": "anthropic",
+            "posts": 559,
+            "points": 11293,
+            "comments": 8133
+          },
+          {
+            "name": "flock",
+            "posts": 239,
+            "points": 11285,
+            "comments": 6060
+          },
+          {
+            "name": "language",
+            "posts": 597,
+            "points": 11171,
+            "comments": 5508
+          },
+          {
+            "name": "work",
+            "posts": 673,
+            "points": 10869,
+            "comments": 6113
+          },
+          {
+            "name": "astra",
+            "posts": 251,
+            "points": 10213,
+            "comments": 7335
+          },
+          {
+            "name": "people",
+            "posts": 524,
+            "points": 9972,
+            "comments": 7822
+          },
+          {
+            "name": "intelligence",
+            "posts": 451,
+            "points": 9946,
+            "comments": 5967
+          },
+          {
+            "name": "search",
+            "posts": 511,
+            "points": 9915,
+            "comments": 4364
+          },
+          {
+            "name": "microsoft",
+            "posts": 335,
+            "points": 9899,
+            "comments": 6649
+          },
+          {
+            "name": "github",
+            "posts": 425,
+            "points": 9674,
+            "comments": 5368
+          },
+          {
+            "name": "run",
+            "posts": 545,
+            "points": 9657,
+            "comments": 4845
+          },
+          {
+            "name": "old",
+            "posts": 357,
+            "points": 9572,
+            "comments": 4487
+          },
+          {
+            "name": "stop",
+            "posts": 356,
+            "points": 9456,
+            "comments": 5565
+          },
+          {
+            "name": "deepseek",
+            "posts": 226,
+            "points": 9401,
+            "comments": 4118
+          },
+          {
+            "name": "nvidia",
+            "posts": 360,
+            "points": 9307,
+            "comments": 4491
+          },
+          {
+            "name": "made",
+            "posts": 623,
+            "points": 9304,
+            "comments": 4253
+          }
+        ]
+      }
+    },
+    "posts": {
+      "scored_posts": 109387,
+      "commented_posts": 78457,
+      "lorenz_points": [
+        [
+          9.14e-06,
+          0.001668
+        ],
+        [
+          1.828e-05,
+          0.003274
+        ],
+        [
+          2.743e-05,
+          0.004864
+        ],
+        [
+          3.657e-05,
+          0.00642
+        ],
+        [
+          4.571e-05,
+          0.007853
+        ],
+        [
+          5.485e-05,
+          0.009262
+        ],
+        [
+          6.399e-05,
+          0.010668
+        ],
+        [
+          7.313e-05,
+          0.012056
+        ],
+        [
+          8.228e-05,
+          0.013443
+        ],
+        [
+          0.00010056,
+          0.016103
+        ],
+        [
+          0.00011884,
+          0.018653
+        ],
+        [
+          0.00013713,
+          0.021126
+        ],
+        [
+          0.00016455,
+          0.024679
+        ],
+        [
+          0.00019198,
+          0.028148
+        ],
+        [
+          0.00022855,
+          0.032465
+        ],
+        [
+          0.00027426,
+          0.037447
+        ],
+        [
+          0.00032911,
+          0.043152
+        ],
+        [
+          0.00038396,
+          0.048497
+        ],
+        [
+          0.00045709,
+          0.055267
+        ],
+        [
+          0.00054851,
+          0.063325
+        ],
+        [
+          0.00064907,
+          0.071664
+        ],
+        [
+          0.00077706,
+          0.081656
+        ],
+        [
+          0.00092333,
+          0.092332
+        ],
+        [
+          0.00109702,
+          0.104235
+        ],
+        [
+          0.00130729,
+          0.117624
+        ],
+        [
+          0.00155412,
+          0.132377
+        ],
+        [
+          0.00184665,
+          0.148819
+        ],
+        [
+          0.00220319,
+          0.167879
+        ],
+        [
+          0.00262371,
+          0.188945
+        ],
+        [
+          0.00311737,
+          0.211998
+        ],
+        [
+          0.00372073,
+          0.237693
+        ],
+        [
+          0.00442466,
+          0.264593
+        ],
+        [
+          0.00527485,
+          0.293983
+        ],
+        [
+          0.00628045,
+          0.325434
+        ],
+        [
+          0.00747804,
+          0.35935
+        ],
+        [
+          0.00890417,
+          0.395585
+        ],
+        [
+          0.01060455,
+          0.434001
+        ],
+        [
+          0.01263404,
+          0.474522
+        ],
+        [
+          0.01504749,
+          0.515743
+        ],
+        [
+          0.01791803,
+          0.557077
+        ],
+        [
+          0.02133709,
+          0.598145
+        ],
+        [
+          0.02541435,
+          0.638362
+        ],
+        [
+          0.03027782,
+          0.677286
+        ],
+        [
+          0.03605547,
+          0.713336
+        ],
+        [
+          0.04294843,
+          0.746774
+        ],
+        [
+          0.05115782,
+          0.776416
+        ],
+        [
+          0.06093046,
+          0.801128
+        ],
+        [
+          0.07257718,
+          0.820844
+        ],
+        [
+          0.08644537,
+          0.837218
+        ],
+        [
+          0.1029647,
+          0.851219
+        ],
+        [
+          0.12263797,
+          0.863698
+        ],
+        [
+          0.14607769,
+          0.875277
+        ],
+        [
+          0.17398777,
+          0.886577
+        ],
+        [
+          0.20723669,
+          0.897882
+        ],
+        [
+          0.2468392,
+          0.909972
+        ],
+        [
+          0.29401117,
+          0.921097
+        ],
+        [
+          0.35019701,
+          0.933961
+        ],
+        [
+          0.41711538,
+          0.945203
+        ],
+        [
+          0.49683235,
+          0.957371
+        ],
+        [
+          0.5917705,
+          0.968844
+        ],
+        [
+          0.70486438,
+          0.977475
+        ],
+        [
+          0.83956046,
+          0.987755
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "lorenz_comments": [
+        [
+          1.275e-05,
+          0.003344
+        ],
+        [
+          2.549e-05,
+          0.006078
+        ],
+        [
+          3.824e-05,
+          0.008376
+        ],
+        [
+          5.098e-05,
+          0.010606
+        ],
+        [
+          6.373e-05,
+          0.012713
+        ],
+        [
+          7.648e-05,
+          0.014655
+        ],
+        [
+          8.922e-05,
+          0.016566
+        ],
+        [
+          0.00010197,
+          0.018399
+        ],
+        [
+          0.00011471,
+          0.020217
+        ],
+        [
+          0.0001402,
+          0.023734
+        ],
+        [
+          0.0001657,
+          0.027074
+        ],
+        [
+          0.00019119,
+          0.030257
+        ],
+        [
+          0.00022943,
+          0.034892
+        ],
+        [
+          0.00028041,
+          0.04072
+        ],
+        [
+          0.00033139,
+          0.046178
+        ],
+        [
+          0.00038238,
+          0.051398
+        ],
+        [
+          0.00045885,
+          0.058942
+        ],
+        [
+          0.00054807,
+          0.067398
+        ],
+        [
+          0.00065004,
+          0.076613
+        ],
+        [
+          0.0007775,
+          0.087527
+        ],
+        [
+          0.0009177,
+          0.09856
+        ],
+        [
+          0.00109614,
+          0.111823
+        ],
+        [
+          0.00130008,
+          0.126011
+        ],
+        [
+          0.00155499,
+          0.142125
+        ],
+        [
+          0.00184815,
+          0.159469
+        ],
+        [
+          0.00220503,
+          0.179453
+        ],
+        [
+          0.00262564,
+          0.201347
+        ],
+        [
+          0.00312273,
+          0.225114
+        ],
+        [
+          0.00372178,
+          0.251902
+        ],
+        [
+          0.0044228,
+          0.280898
+        ],
+        [
+          0.00527678,
+          0.313081
+        ],
+        [
+          0.0062837,
+          0.347235
+        ],
+        [
+          0.00748181,
+          0.383579
+        ],
+        [
+          0.00890934,
+          0.422556
+        ],
+        [
+          0.01060453,
+          0.463921
+        ],
+        [
+          0.01263112,
+          0.507391
+        ],
+        [
+          0.01504009,
+          0.553018
+        ],
+        [
+          0.01792064,
+          0.599802
+        ],
+        [
+          0.02133653,
+          0.646091
+        ],
+        [
+          0.0254152,
+          0.692786
+        ],
+        [
+          0.03027136,
+          0.739271
+        ],
+        [
+          0.03605797,
+          0.784634
+        ],
+        [
+          0.04295346,
+          0.827916
+        ],
+        [
+          0.05116178,
+          0.86723
+        ],
+        [
+          0.06093784,
+          0.898571
+        ],
+        [
+          0.07257479,
+          0.92206
+        ],
+        [
+          0.08644225,
+          0.939208
+        ],
+        [
+          0.10296086,
+          0.951757
+        ],
+        [
+          0.12264043,
+          0.961511
+        ],
+        [
+          0.14608002,
+          0.969581
+        ],
+        [
+          0.1739934,
+          0.976311
+        ],
+        [
+          0.20723454,
+          0.983164
+        ],
+        [
+          0.24683585,
+          0.98729
+        ],
+        [
+          0.29400818,
+          0.992153
+        ],
+        [
+          0.35019182,
+          0.997945
+        ],
+        [
+          0.41712021,
+          1.0
+        ],
+        [
+          0.49683266,
+          1.0
+        ],
+        [
+          0.59177639,
+          1.0
+        ],
+        [
+          0.70485744,
+          1.0
+        ],
+        [
+          0.83956817,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "top_share_points": {
+        "0.001": 0.098122,
+        "0.01": 0.420909,
+        "0.1": 0.848958
+      },
+      "top_share_comments": {
+        "0.001": 0.105282,
+        "0.01": 0.449854,
+        "0.1": 0.949928
+      },
+      "zero_score_share": 0.0,
+      "zero_comment_share": 0.629874,
+      "score_hist": [
+        {
+          "lo": 1,
+          "hi": 1,
+          "posts": 48982,
+          "points": 48982
+        },
+        {
+          "lo": 2,
+          "hi": 3,
+          "posts": 32939,
+          "points": 78192
+        },
+        {
+          "lo": 4,
+          "hi": 7,
+          "posts": 14269,
+          "points": 69709
+        },
+        {
+          "lo": 8,
+          "hi": 15,
+          "posts": 4536,
+          "points": 47691
+        },
+        {
+          "lo": 16,
+          "hi": 31,
+          "posts": 2406,
+          "points": 52416
+        },
+        {
+          "lo": 32,
+          "hi": 63,
+          "posts": 1935,
+          "points": 88331
+        },
+        {
+          "lo": 64,
+          "hi": 127,
+          "posts": 1733,
+          "points": 156608
+        },
+        {
+          "lo": 128,
+          "hi": 255,
+          "posts": 1275,
+          "points": 228651
+        },
+        {
+          "lo": 256,
+          "hi": 511,
+          "posts": 886,
+          "points": 312167
+        },
+        {
+          "lo": 512,
+          "hi": 1023,
+          "posts": 349,
+          "points": 241518
+        },
+        {
+          "lo": 1024,
+          "hi": 2047,
+          "posts": 72,
+          "points": 97741
+        },
+        {
+          "lo": 2048,
+          "hi": 4095,
+          "posts": 5,
+          "points": 11255
+        }
+      ]
+    },
+    "cyclic": {
+      "hour": [
+        {
+          "posts": 31765,
+          "points": 36038,
+          "comments": 17761
+        },
+        {
+          "posts": 29653,
+          "points": 36398,
+          "comments": 19182
+        },
+        {
+          "posts": 28087,
+          "points": 33303,
+          "comments": 19046
+        },
+        {
+          "posts": 25830,
+          "points": 26796,
+          "comments": 14101
+        },
+        {
+          "posts": 24319,
+          "points": 25970,
+          "comments": 11635
+        },
+        {
+          "posts": 25453,
+          "points": 26744,
+          "comments": 14035
+        },
+        {
+          "posts": 29345,
+          "points": 34036,
+          "comments": 18045
+        },
+        {
+          "posts": 31416,
+          "points": 31919,
+          "comments": 15372
+        },
+        {
+          "posts": 31251,
+          "points": 31782,
+          "comments": 15613
+        },
+        {
+          "posts": 31115,
+          "points": 41314,
+          "comments": 22175
+        },
+        {
+          "posts": 32702,
+          "points": 54166,
+          "comments": 29518
+        },
+        {
+          "posts": 37490,
+          "points": 59928,
+          "comments": 33666
+        },
+        {
+          "posts": 45552,
+          "points": 71410,
+          "comments": 39430
+        },
+        {
+          "posts": 54470,
+          "points": 104326,
+          "comments": 58859
+        },
+        {
+          "posts": 61308,
+          "points": 109822,
+          "comments": 58244
+        },
+        {
+          "posts": 63317,
+          "points": 118846,
+          "comments": 66810
+        },
+        {
+          "posts": 62611,
+          "points": 87633,
+          "comments": 43981
+        },
+        {
+          "posts": 60553,
+          "points": 99533,
+          "comments": 61082
+        },
+        {
+          "posts": 59021,
+          "points": 93037,
+          "comments": 47064
+        },
+        {
+          "posts": 55751,
+          "points": 78480,
+          "comments": 40804
+        },
+        {
+          "posts": 53192,
+          "points": 70180,
+          "comments": 36420
+        },
+        {
+          "posts": 47977,
+          "points": 55960,
+          "comments": 26457
+        },
+        {
+          "posts": 42046,
+          "points": 61639,
+          "comments": 31252
+        },
+        {
+          "posts": 35776,
+          "points": 44001,
+          "comments": 20506
+        }
+      ],
+      "weekday": [
+        {
+          "posts": 162721,
+          "points": 230495,
+          "comments": 127322
+        },
+        {
+          "posts": 160864,
+          "points": 249424,
+          "comments": 133148
+        },
+        {
+          "posts": 158351,
+          "points": 238230,
+          "comments": 124830
+        },
+        {
+          "posts": 151675,
+          "points": 213283,
+          "comments": 110600
+        },
+        {
+          "posts": 145145,
+          "points": 204463,
+          "comments": 106384
+        },
+        {
+          "posts": 107904,
+          "points": 141321,
+          "comments": 73220
+        },
+        {
+          "posts": 113340,
+          "points": 156045,
+          "comments": 85554
+        }
+      ],
+      "hourweek": [
+        [
+          6351,
+          3972,
+          6507,
+          4677,
+          3473,
+          4304,
+          8973,
+          6288,
+          5838,
+          7874,
+          8025,
+          8687,
+          9848,
+          16491,
+          18491,
+          19006,
+          14446,
+          15296,
+          9927,
+          10765,
+          10768,
+          10272,
+          12211,
+          8005
+        ],
+        [
+          4419,
+          6207,
+          5526,
+          4563,
+          3553,
+          5376,
+          4056,
+          4149,
+          5879,
+          6121,
+          8712,
+          10265,
+          14274,
+          22277,
+          20156,
+          15313,
+          17814,
+          21902,
+          17440,
+          14825,
+          11289,
+          8277,
+          10376,
+          6655
+        ],
+        [
+          5198,
+          5341,
+          5062,
+          2170,
+          4863,
+          3215,
+          4005,
+          5225,
+          4181,
+          8417,
+          7276,
+          14385,
+          13753,
+          18415,
+          19260,
+          24399,
+          15441,
+          15484,
+          16475,
+          11332,
+          10241,
+          9547,
+          8903,
+          5642
+        ],
+        [
+          4108,
+          7966,
+          3458,
+          3371,
+          4549,
+          2976,
+          5059,
+          3370,
+          6660,
+          3920,
+          8515,
+          7000,
+          10077,
+          15160,
+          17756,
+          19233,
+          13467,
+          15179,
+          15627,
+          11817,
+          12896,
+          7821,
+          6585,
+          6713
+        ],
+        [
+          4693,
+          3318,
+          5737,
+          4770,
+          2873,
+          5398,
+          4727,
+          4966,
+          3433,
+          5206,
+          9322,
+          10376,
+          12061,
+          16875,
+          14369,
+          21502,
+          10453,
+          11274,
+          14410,
+          12332,
+          7689,
+          7288,
+          5460,
+          5931
+        ],
+        [
+          5021,
+          5736,
+          3266,
+          3010,
+          3123,
+          3029,
+          3579,
+          4138,
+          1783,
+          6333,
+          8339,
+          3667,
+          3787,
+          7189,
+          9645,
+          7927,
+          7635,
+          9082,
+          11544,
+          7963,
+          6922,
+          5423,
+          7422,
+          5758
+        ],
+        [
+          6248,
+          3858,
+          3747,
+          4235,
+          3536,
+          2446,
+          3637,
+          3783,
+          4008,
+          3443,
+          3977,
+          5548,
+          7610,
+          7919,
+          10145,
+          11466,
+          8377,
+          11316,
+          7614,
+          9446,
+          10375,
+          7332,
+          10682,
+          5297
+        ]
+      ],
+      "month": [
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 67497,
+          "points": 110708,
+          "comments": 55328
+        },
+        {
+          "posts": 386454,
+          "points": 594257,
+          "comments": 308809
+        },
+        {
+          "posts": 399728,
+          "points": 585538,
+          "comments": 323017
+        },
+        {
+          "posts": 146321,
+          "points": 142758,
+          "comments": 73904
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        },
+        {
+          "posts": 0,
+          "points": 0,
+          "comments": 0
+        }
+      ]
+    },
+    "type": {
+      "comment": {
+        "posts": 886290,
+        "points": 0,
+        "comments": 0
+      },
+      "story": {
+        "posts": 113614,
+        "points": 1433106,
+        "comments": 761037
+      },
+      "job": {
+        "posts": 60,
+        "points": 59,
+        "comments": 0
+      },
+      "pollopt": {
+        "posts": 28,
+        "points": 75,
+        "comments": 0
+      },
+      "poll": {
+        "posts": 8,
+        "points": 21,
+        "comments": 21
+      }
+    }
+  },
+  "terms": {
+    "weekly": [
+      {
+        "week": "2026-07-27",
+        "stories": 7241,
+        "points": 132964,
+        "newsys_rest_stories": 7177,
+        "newsys_rest_points": 131529,
+        "deeptech_rest_stories": 7179,
+        "deeptech_rest_points": 132055,
+        "weird_rest_stories": 7188,
+        "weird_rest_points": 131715,
+        "weird_stories": 53,
+        "weird_points": 1249,
+        "newsys_stories": 64,
+        "newsys_points": 1435,
+        "deeptech_stories": 62,
+        "deeptech_points": 909
+      },
+      {
+        "week": "2026-08-03",
+        "stories": 6944,
+        "points": 128636,
+        "newsys_rest_stories": 6880,
+        "newsys_rest_points": 127310,
+        "deeptech_rest_stories": 6880,
+        "deeptech_rest_points": 127741,
+        "weird_rest_stories": 6901,
+        "weird_rest_points": 128135,
+        "weird_stories": 43,
+        "weird_points": 501,
+        "newsys_stories": 64,
+        "newsys_points": 1326,
+        "deeptech_stories": 64,
+        "deeptech_points": 895
+      },
+      {
+        "week": "2026-08-10",
+        "stories": 7068,
+        "points": 130002,
+        "newsys_rest_stories": 7008,
+        "newsys_rest_points": 129338,
+        "deeptech_rest_stories": 7016,
+        "deeptech_rest_points": 127793,
+        "weird_rest_stories": 7019,
+        "weird_rest_points": 128843,
+        "newsys_stories": 60,
+        "newsys_points": 664,
+        "deeptech_stories": 52,
+        "deeptech_points": 2209,
+        "weird_stories": 49,
+        "weird_points": 1159
+      },
+      {
+        "week": "2026-08-17",
+        "stories": 7026,
+        "points": 132171,
+        "newsys_rest_stories": 6949,
+        "newsys_rest_points": 129750,
+        "deeptech_rest_stories": 6969,
+        "deeptech_rest_points": 131005,
+        "weird_rest_stories": 6974,
+        "weird_rest_points": 131233,
+        "weird_stories": 52,
+        "weird_points": 938,
+        "newsys_stories": 77,
+        "newsys_points": 2421,
+        "deeptech_stories": 57,
+        "deeptech_points": 1166
+      },
+      {
+        "week": "2026-08-24",
+        "stories": 7150,
+        "points": 142129,
+        "newsys_rest_stories": 7080,
+        "newsys_rest_points": 141460,
+        "deeptech_rest_stories": 7095,
+        "deeptech_rest_points": 141419,
+        "weird_rest_stories": 7102,
+        "weird_rest_points": 141071,
+        "deeptech_stories": 55,
+        "deeptech_points": 710,
+        "weird_stories": 48,
+        "weird_points": 1058,
+        "newsys_stories": 70,
+        "newsys_points": 669
+      },
+      {
+        "week": "2026-08-31",
+        "stories": 7260,
+        "points": 133933,
+        "newsys_rest_stories": 7163,
+        "newsys_rest_points": 132810,
+        "deeptech_rest_stories": 7187,
+        "deeptech_rest_points": 133065,
+        "weird_rest_stories": 7193,
+        "weird_rest_points": 131960,
+        "weird_stories": 67,
+        "weird_points": 1973,
+        "newsys_stories": 97,
+        "newsys_points": 1123,
+        "deeptech_stories": 73,
+        "deeptech_points": 868
+      },
+      {
+        "week": "2026-09-07",
+        "stories": 6974,
+        "points": 137217,
+        "newsys_rest_stories": 6898,
+        "newsys_rest_points": 135251,
+        "deeptech_rest_stories": 6913,
+        "deeptech_rest_points": 136645,
+        "weird_rest_stories": 6935,
+        "weird_rest_points": 136318,
+        "newsys_stories": 76,
+        "newsys_points": 1966,
+        "deeptech_stories": 61,
+        "deeptech_points": 572,
+        "weird_stories": 39,
+        "weird_points": 899
+      },
+      {
+        "week": "2026-09-14",
+        "stories": 6953,
+        "points": 134798,
+        "newsys_rest_stories": 6883,
+        "newsys_rest_points": 132230,
+        "deeptech_rest_stories": 6902,
+        "deeptech_rest_points": 134346,
+        "weird_rest_stories": 6917,
+        "weird_rest_points": 134099,
+        "weird_stories": 36,
+        "weird_points": 699,
+        "deeptech_stories": 51,
+        "deeptech_points": 452,
+        "newsys_stories": 70,
+        "newsys_points": 2568
+      },
+      {
+        "week": "2026-09-21",
+        "stories": 6733,
+        "points": 124823,
+        "newsys_rest_stories": 6653,
+        "newsys_rest_points": 124104,
+        "deeptech_rest_stories": 6684,
+        "deeptech_rest_points": 123595,
+        "weird_rest_stories": 6681,
+        "weird_rest_points": 121137,
+        "deeptech_stories": 49,
+        "deeptech_points": 1228,
+        "weird_stories": 52,
+        "weird_points": 3686,
+        "newsys_stories": 80,
+        "newsys_points": 719
+      },
+      {
+        "week": "2026-09-28",
+        "stories": 7222,
+        "points": 122602,
+        "newsys_rest_stories": 7112,
+        "newsys_rest_points": 121175,
+        "deeptech_rest_stories": 7168,
+        "deeptech_rest_points": 121725,
+        "weird_rest_stories": 7179,
+        "weird_rest_points": 120860,
+        "weird_stories": 43,
+        "weird_points": 1742,
+        "deeptech_stories": 54,
+        "deeptech_points": 877,
+        "newsys_stories": 110,
+        "newsys_points": 1427
+      },
+      {
+        "week": "2026-10-05",
+        "stories": 6860,
+        "points": 71787,
+        "newsys_rest_stories": 6761,
+        "newsys_rest_points": 70361,
+        "deeptech_rest_stories": 6820,
+        "deeptech_rest_points": 71147,
+        "weird_rest_stories": 6817,
+        "weird_rest_points": 71464,
+        "deeptech_stories": 40,
+        "deeptech_points": 640,
+        "weird_stories": 43,
+        "weird_points": 323,
+        "newsys_stories": 99,
+        "newsys_points": 1426
+      }
+    ]
+  }
+}

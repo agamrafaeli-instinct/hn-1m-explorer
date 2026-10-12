@@ -195,8 +195,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/honor_issues.py | tee -a "$GITHUB_STEP_SUMMARY"
       - name: UI check at 390px
-        # Skipped after a matching prepush (push runs), or when the site files are unchanged since the last good check and this is not a full run (#252).
-        if: steps.pp.outputs.skip != 'true'
+        # The live-data pass. Prepush checks the fixed fixture (#336), so this always runs on a push; a daily run skips it when the site files are unchanged since the last good check and this is not a full run (#252).
         env:
           FULL: ${{ steps.pp.outputs.full }}
         run: |

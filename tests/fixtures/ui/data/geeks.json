@@ -1,0 +1,1036 @@
+{
+ "window": {
+  "min": 1785099590,
+  "max": 1791836075,
+  "stories": 77431
+ },
+ "baskets": [
+  {
+   "name": "weird",
+   "one": 1,
+   "stories": 525,
+   "points": 14227,
+   "comments": 6576,
+   "hit10": 115,
+   "rest_stories": 76906,
+   "rest_points": 1376835,
+   "rest_comments": 752337,
+   "rest_hit10": 10944,
+   "t_stories": 520,
+   "t_points": 10233,
+   "t_comments": 4853,
+   "t_hit10": 110,
+   "t_rest_stories": 76137,
+   "t_rest_points": 883101,
+   "t_rest_comments": 465939,
+   "t_rest_hit10": 10175,
+   "nd_stories": 524,
+   "nd_points": 12212,
+   "nd_comments": 5451,
+   "nd_hit10": 114,
+   "top_domain": "sancho.bearblog.dev"
+  },
+  {
+   "name": "science",
+   "one": 1,
+   "stories": 1287,
+   "points": 26345,
+   "comments": 14167,
+   "hit10": 200,
+   "rest_stories": 76144,
+   "rest_points": 1364717,
+   "rest_comments": 744746,
+   "rest_hit10": 10859,
+   "t_stories": 1275,
+   "t_points": 18376,
+   "t_comments": 8737,
+   "t_hit10": 188,
+   "t_rest_stories": 75383,
+   "t_rest_points": 875354,
+   "t_rest_comments": 462359,
+   "t_rest_hit10": 10098,
+   "nd_stories": 1283,
+   "nd_points": 23870,
+   "nd_comments": 11680,
+   "nd_hit10": 196,
+   "top_domain": "openai.com"
+  },
+  {
+   "name": "retro",
+   "one": 1,
+   "stories": 300,
+   "points": 6495,
+   "comments": 1893,
+   "hit10": 73,
+   "rest_stories": 77131,
+   "rest_points": 1384567,
+   "rest_comments": 757020,
+   "rest_hit10": 10986,
+   "t_stories": 297,
+   "t_points": 5360,
+   "t_comments": 1514,
+   "t_hit10": 70,
+   "t_rest_stories": 76360,
+   "t_rest_points": 887978,
+   "t_rest_comments": 469218,
+   "t_rest_hit10": 10215,
+   "nd_stories": 264,
+   "nd_points": 5484,
+   "nd_comments": 1593,
+   "nd_hit10": 66,
+   "top_domain": "github.com"
+  },
+  {
+   "name": "history",
+   "one": 1,
+   "stories": 1216,
+   "points": 26083,
+   "comments": 12952,
+   "hit10": 238,
+   "rest_stories": 76215,
+   "rest_points": 1364979,
+   "rest_comments": 745961,
+   "rest_hit10": 10821,
+   "t_stories": 1204,
+   "t_points": 19791,
+   "t_comments": 8976,
+   "t_hit10": 226,
+   "t_rest_stories": 75453,
+   "t_rest_points": 873547,
+   "t_rest_comments": 461756,
+   "t_rest_hit10": 10059,
+   "nd_stories": 1215,
+   "nd_points": 25128,
+   "nd_comments": 12111,
+   "nd_hit10": 237,
+   "top_domain": "techcrunch.com"
+  },
+  {
+   "name": "puzzle",
+   "one": 1,
+   "stories": 333,
+   "points": 3878,
+   "comments": 1315,
+   "hit10": 33,
+   "rest_stories": 77098,
+   "rest_points": 1387184,
+   "rest_comments": 757598,
+   "rest_hit10": 11026,
+   "t_stories": 330,
+   "t_points": 2417,
+   "t_comments": 961,
+   "t_hit10": 30,
+   "t_rest_stories": 76328,
+   "t_rest_points": 891280,
+   "t_rest_comments": 469953,
+   "t_rest_hit10": 10256,
+   "nd_stories": 331,
+   "nd_points": 3185,
+   "nd_comments": 1190,
+   "nd_hit10": 32,
+   "top_domain": "minesweeper.mikelacher.com"
+  },
+  {
+   "name": "showhn",
+   "one": 1,
+   "stories": 9774,
+   "points": 74574,
+   "comments": 26030,
+   "hit10": 765,
+   "rest_stories": 67657,
+   "rest_points": 1316488,
+   "rest_comments": 732883,
+   "rest_hit10": 10294,
+   "t_stories": 9677,
+   "t_points": 45275,
+   "t_comments": 16084,
+   "t_hit10": 668,
+   "t_rest_stories": 66981,
+   "t_rest_points": 861765,
+   "t_rest_comments": 466798,
+   "t_rest_hit10": 9618,
+   "nd_stories": 6415,
+   "nd_points": 49076,
+   "nd_comments": 18391,
+   "nd_hit10": 499,
+   "top_domain": "github.com"
+  },
+  {
+   "name": "askhn",
+   "one": 1,
+   "stories": 1385,
+   "points": 14059,
+   "comments": 18269,
+   "hit10": 162,
+   "rest_stories": 76046,
+   "rest_points": 1377003,
+   "rest_comments": 740644,
+   "rest_hit10": 10897,
+   "t_stories": 1372,
+   "t_points": 8877,
+   "t_comments": 11678,
+   "t_hit10": 149,
+   "t_rest_stories": 75286,
+   "t_rest_points": 885317,
+   "t_rest_comments": 457601,
+   "t_rest_hit10": 10137,
+   "nd_stories": 13,
+   "nd_points": 28,
+   "nd_comments": 22,
+   "nd_hit10": 0,
+   "top_domain": ""
+  },
+  {
+   "name": "boring",
+   "one": 1,
+   "stories": 474,
+   "points": 4471,
+   "comments": 2535,
+   "hit10": 40,
+   "rest_stories": 76957,
+   "rest_points": 1386591,
+   "rest_comments": 756378,
+   "rest_hit10": 11019,
+   "t_stories": 470,
+   "t_points": 2927,
+   "t_comments": 1695,
+   "t_hit10": 36,
+   "t_rest_stories": 76188,
+   "t_rest_points": 890983,
+   "t_rest_comments": 469391,
+   "t_rest_hit10": 10250,
+   "nd_stories": 472,
+   "nd_points": 3833,
+   "nd_comments": 2086,
+   "nd_hit10": 39,
+   "top_domain": "openrouter.ai"
+  }
+ ],
+ "weekly": [
+  {
+   "week": "2026-07-27",
+   "stories": 7241,
+   "lift": 1.2860545818265423,
+   "weird_stories": 53,
+   "weird_points": 1249,
+   "weird_comments": 791,
+   "weird_hit10": 14,
+   "rest_stories": 7188,
+   "rest_points": 131715,
+   "rest_comments": 67704,
+   "rest_hit10": 1265
+  },
+  {
+   "week": "2026-08-03",
+   "stories": 6944,
+   "lift": 0.6274997028025492,
+   "weird_stories": 43,
+   "weird_points": 501,
+   "weird_comments": 122,
+   "weird_hit10": 7,
+   "rest_stories": 6901,
+   "rest_points": 128135,
+   "rest_comments": 71619,
+   "rest_hit10": 1064
+  },
+  {
+   "week": "2026-08-10",
+   "stories": 7068,
+   "lift": 1.2885514675589198,
+   "weird_stories": 49,
+   "weird_points": 1159,
+   "weird_comments": 527,
+   "weird_hit10": 12,
+   "rest_stories": 7019,
+   "rest_points": 128843,
+   "rest_comments": 69526,
+   "rest_hit10": 1110
+  },
+  {
+   "week": "2026-08-17",
+   "stories": 7026,
+   "lift": 0.9586021105151202,
+   "weird_stories": 52,
+   "weird_points": 938,
+   "weird_comments": 171,
+   "weird_hit10": 5,
+   "rest_stories": 6974,
+   "rest_points": 131233,
+   "rest_comments": 68603,
+   "rest_hit10": 969
+  },
+  {
+   "week": "2026-08-24",
+   "stories": 7150,
+   "lift": 1.10965341329307,
+   "weird_stories": 48,
+   "weird_points": 1058,
+   "weird_comments": 611,
+   "weird_hit10": 12,
+   "rest_stories": 7102,
+   "rest_points": 141071,
+   "rest_comments": 73670,
+   "rest_hit10": 1082
+  },
+  {
+   "week": "2026-08-31",
+   "stories": 7260,
+   "lift": 1.6051663100080078,
+   "weird_stories": 67,
+   "weird_points": 1973,
+   "weird_comments": 765,
+   "weird_hit10": 23,
+   "rest_stories": 7193,
+   "rest_points": 131960,
+   "rest_comments": 70214,
+   "rest_hit10": 1018
+  },
+  {
+   "week": "2026-09-07",
+   "stories": 6974,
+   "lift": 1.1727038324039454,
+   "weird_stories": 39,
+   "weird_points": 899,
+   "weird_comments": 220,
+   "weird_hit10": 9,
+   "rest_stories": 6935,
+   "rest_points": 136318,
+   "rest_comments": 79064,
+   "rest_hit10": 1029
+  },
+  {
+   "week": "2026-09-14",
+   "stories": 6953,
+   "lift": 1.0015367999264224,
+   "weird_stories": 36,
+   "weird_points": 699,
+   "weird_comments": 197,
+   "weird_hit10": 4,
+   "rest_stories": 6917,
+   "rest_points": 134099,
+   "rest_comments": 72905,
+   "rest_hit10": 1014
+  },
+  {
+   "week": "2026-09-21",
+   "stories": 6733,
+   "lift": 3.909458839038571,
+   "weird_stories": 52,
+   "weird_points": 3686,
+   "weird_comments": 1788,
+   "weird_hit10": 14,
+   "rest_stories": 6681,
+   "rest_points": 121137,
+   "rest_comments": 70668,
+   "rest_hit10": 906
+  },
+  {
+   "week": "2026-09-28",
+   "stories": 7222,
+   "lift": 2.4063625413220757,
+   "weird_stories": 43,
+   "weird_points": 1742,
+   "weird_comments": 1248,
+   "weird_hit10": 13,
+   "rest_stories": 7179,
+   "rest_points": 120860,
+   "rest_comments": 70250,
+   "rest_hit10": 896
+  },
+  {
+   "week": "2026-10-05",
+   "stories": 6860,
+   "lift": 0.7165393406730727,
+   "weird_stories": 43,
+   "weird_points": 323,
+   "weird_comments": 136,
+   "weird_hit10": 2,
+   "rest_stories": 6817,
+   "rest_points": 71464,
+   "rest_comments": 38114,
+   "rest_hit10": 591
+  }
+ ],
+ "weekday": [
+  {
+   "day": "Mon",
+   "stories": 11637,
+   "weird_stories": 78,
+   "weird_points": 1760,
+   "weird_comments": 998,
+   "weird_hit10": 16,
+   "rest_stories": 11559,
+   "rest_points": 220471,
+   "rest_comments": 125756,
+   "rest_hit10": 1759
+  },
+  {
+   "day": "Tue",
+   "stories": 13226,
+   "weird_stories": 102,
+   "weird_points": 2215,
+   "weird_comments": 1181,
+   "weird_hit10": 22,
+   "rest_stories": 13124,
+   "rest_points": 241173,
+   "rest_comments": 131967,
+   "rest_hit10": 1783
+  },
+  {
+   "day": "Wed",
+   "stories": 12676,
+   "weird_stories": 92,
+   "weird_points": 2431,
+   "weird_comments": 1021,
+   "weird_hit10": 25,
+   "rest_stories": 12584,
+   "rest_points": 230129,
+   "rest_comments": 123800,
+   "rest_hit10": 1840
+  },
+  {
+   "day": "Thu",
+   "stories": 12645,
+   "weird_stories": 69,
+   "weird_points": 1413,
+   "weird_comments": 454,
+   "weird_hit10": 11,
+   "rest_stories": 12576,
+   "rest_points": 206327,
+   "rest_comments": 110136,
+   "rest_hit10": 1660
+  },
+  {
+   "day": "Fri",
+   "stories": 11264,
+   "weird_stories": 73,
+   "weird_points": 2640,
+   "weird_comments": 1074,
+   "weird_hit10": 20,
+   "rest_stories": 11191,
+   "rest_points": 196209,
+   "rest_comments": 105310,
+   "rest_hit10": 1552
+  },
+  {
+   "day": "Sat",
+   "stories": 8015,
+   "weird_stories": 61,
+   "weird_points": 1287,
+   "weird_comments": 553,
+   "weird_hit10": 12,
+   "rest_stories": 7954,
+   "rest_points": 135593,
+   "rest_comments": 72666,
+   "rest_hit10": 1113
+  },
+  {
+   "day": "Sun",
+   "stories": 7968,
+   "weird_stories": 50,
+   "weird_points": 2481,
+   "weird_comments": 1295,
+   "weird_hit10": 9,
+   "rest_stories": 7918,
+   "rest_points": 146933,
+   "rest_comments": 82702,
+   "rest_hit10": 1237
+  }
+ ],
+ "top_domains": {
+  "weird": [
+   [
+    "sancho.bearblog.dev",
+    2015
+   ],
+   [
+    "lina.sh",
+    688
+   ],
+   [
+    "thisamericanlife.org",
+    484
+   ],
+   [
+    "blog.coredump.cx",
+    477
+   ],
+   [
+    "ahmedhossamdev.com",
+    429
+   ],
+   [
+    "spinoff.nasa.gov",
+    378
+   ],
+   [
+    "science.org",
+    367
+   ],
+   [
+    "aviationweek.com",
+    336
+   ],
+   [
+    "propublica.org",
+    328
+   ],
+   [
+    "thespacereview.com",
+    306
+   ]
+  ],
+  "science": [
+   [
+    "openai.com",
+    2475
+   ],
+   [
+    "mathandai.org",
+    1242
+   ],
+   [
+    "anthropic.com",
+    1073
+   ],
+   [
+    "youtube.com",
+    966
+   ],
+   [
+    "nobelprize.org",
+    889
+   ],
+   [
+    "quantamagazine.org",
+    739
+   ],
+   [
+    "med.stanford.edu",
+    696
+   ],
+   [
+    "terrytao.wordpress.com",
+    690
+   ],
+   [
+    "arxiv.org",
+    539
+   ],
+   [
+    "mathstodon.xyz",
+    474
+   ]
+  ],
+  "retro": [
+   [
+    "github.com",
+    1011
+   ],
+   [
+    "babyloniantwins.com",
+    381
+   ],
+   [
+    "dfarq.homeip.net",
+    367
+   ],
+   [
+    "bumbershootsoft.wordpress.com",
+    304
+   ],
+   [
+    "nand2mario.github.io",
+    194
+   ],
+   [
+    "amiga.lychesis.net",
+    171
+   ],
+   [
+    "goto10retro.com",
+    169
+   ],
+   [
+    "blog.archive.org",
+    164
+   ],
+   [
+    "computer.org",
+    150
+   ],
+   [
+    "datagubbe.se",
+    144
+   ]
+  ],
+  "history": [
+   [
+    "techcrunch.com",
+    955
+   ],
+   [
+    "space.com",
+    760
+   ],
+   [
+    "store.steampowered.com",
+    745
+   ],
+   [
+    "inference-docs.cerebras.ai",
+    691
+   ],
+   [
+    "youtube.com",
+    668
+   ],
+   [
+    "bbc.com",
+    649
+   ],
+   [
+    "en.wikipedia.org",
+    570
+   ],
+   [
+    "dfarq.homeip.net",
+    519
+   ],
+   [
+    "arstechnica.com",
+    496
+   ],
+   [
+    "users.wpi.edu",
+    453
+   ]
+  ],
+  "puzzle": [
+   [
+    "minesweeper.mikelacher.com",
+    693
+   ],
+   [
+    "dontwordle.com",
+    397
+   ],
+   [
+    "gameshelf.jmac.org",
+    377
+   ],
+   [
+    "everycube.alen.is",
+    295
+   ],
+   [
+    "github.com",
+    126
+   ],
+   [
+    "owntime.app",
+    118
+   ],
+   [
+    "thereader.mitpress.mit.edu",
+    115
+   ],
+   [
+    "youtube.com",
+    100
+   ],
+   [
+    "blog.janestreet.com",
+    99
+   ],
+   [
+    "leadedsolder.com",
+    87
+   ]
+  ],
+  "showhn": [
+   [
+    "github.com",
+    25498
+   ],
+   [
+    "john.fun",
+    1680
+   ],
+   [
+    "",
+    1037
+   ],
+   [
+    "bastardica.mitpit.com",
+    867
+   ],
+   [
+    "cactuscompute.com",
+    773
+   ],
+   [
+    "louisabraham.github.io",
+    710
+   ],
+   [
+    "rivendell.dmitrybrant.com",
+    654
+   ],
+   [
+    "toneyalexander.github.io",
+    627
+   ],
+   [
+    "bigwords.page",
+    601
+   ],
+   [
+    "simedw.com",
+    598
+   ]
+  ],
+  "askhn": [
+   [
+    "",
+    14031
+   ],
+   [
+    "drive.google.com",
+    5
+   ],
+   [
+    "github.com",
+    4
+   ],
+   [
+    "twitter.com",
+    3
+   ],
+   [
+    "claude.ai",
+    2
+   ],
+   [
+    "digital-strategy.ec.europa.eu",
+    2
+   ],
+   [
+    "heltes.com",
+    2
+   ],
+   [
+    "track-hacker-news.com",
+    2
+   ],
+   [
+    "google.com",
+    2
+   ],
+   [
+    "axios.com",
+    2
+   ]
+  ],
+  "boring": [
+   [
+    "openrouter.ai",
+    638
+   ],
+   [
+    "advocacy.consumerreports.org",
+    395
+   ],
+   [
+    "api-docs.deepseek.com",
+    368
+   ],
+   [
+    "withspecific.com",
+    275
+   ],
+   [
+    "chipsandcheese.com",
+    208
+   ],
+   [
+    "github.com",
+    198
+   ],
+   [
+    "",
+    197
+   ],
+   [
+    "eff.org",
+    167
+   ],
+   [
+    "blog.sshh.io",
+    166
+   ],
+   [
+    "spawn-queue.acm.org",
+    160
+   ]
+  ]
+ },
+ "top_hits": {
+  "weird": [
+   [
+    2015,
+    1125,
+    "sancho.bearblog.dev",
+    "When did Google get so weird?"
+   ],
+   [
+    688,
+    89,
+    "lina.sh",
+    "I accidentally logged hundreds of thousands of phone calls to military bases"
+   ],
+   [
+    484,
+    257,
+    "thisamericanlife.org",
+    "Kids turned low-traffic NPR Spotify comments into a secret group chat"
+   ],
+   [
+    429,
+    181,
+    "ahmedhossamdev.com",
+    "My weird new hobby: Wandering around Tokyo on Google Maps"
+   ],
+   [
+    378,
+    71,
+    "spinoff.nasa.gov",
+    "Technique for Manipulating Satellite Photos Now Reveals Ancient Images (2025)"
+   ]
+  ],
+  "science": [
+   [
+    1302,
+    1478,
+    "openai.com",
+    "Sharing AI progress in mathematics"
+   ],
+   [
+    1242,
+    1215,
+    "mathandai.org",
+    "A misalignment of AI in mathematics"
+   ],
+   [
+    773,
+    512,
+    "anthropic.com",
+    "Formalizing Fermat's Last Theorem"
+   ],
+   [
+    664,
+    258,
+    "med.stanford.edu",
+    "Two parallel neural ectoderm progenitors contribute to the developing brain"
+   ],
+   [
+    638,
+    86,
+    "youtube.com",
+    "Terence Tao explains 6 essential mathematical concepts [video]"
+   ]
+  ],
+  "retro": [
+   [
+    395,
+    64,
+    "github.com",
+    "A font recreated from photographs of classic Commodore 64 keycaps"
+   ],
+   [
+    381,
+    133,
+    "babyloniantwins.com",
+    "Porting my 1993 Amiga game to Godot, with an LLM reading the 68000 assembly"
+   ],
+   [
+    359,
+    182,
+    "dfarq.homeip.net",
+    "Commodore 64 released September 1, 1982"
+   ],
+   [
+    190,
+    59,
+    "nand2mario.github.io",
+    "Recreating Voodoo Graphics and a Late-1990s Gaming PC on an FPGA"
+   ],
+   [
+    171,
+    25,
+    "amiga.lychesis.net",
+    "Amiga Graphics Archive"
+   ]
+  ],
+  "history": [
+   [
+    955,
+    841,
+    "techcrunch.com",
+    "Microsoft exec called AI scraping 'the largest theft of labor in human history'"
+   ],
+   [
+    751,
+    436,
+    "space.com",
+    "Private German rocket makes history, reaches orbit from European soil"
+   ],
+   [
+    745,
+    649,
+    "store.steampowered.com",
+    "Steam Frame starts at $1059"
+   ],
+   [
+    691,
+    228,
+    "inference-docs.cerebras.ai",
+    "Qwen 3.8 27B available on Cerebras at 1500 tokens/s"
+   ],
+   [
+    453,
+    445,
+    "users.wpi.edu",
+    "There Will Come Soft Rains (1950) [pdf]"
+   ]
+  ],
+  "puzzle": [
+   [
+    687,
+    125,
+    "minesweeper.mikelacher.com",
+    "Triple-A Minesweeper"
+   ],
+   [
+    397,
+    130,
+    "dontwordle.com",
+    "Don't Wordle"
+   ],
+   [
+    377,
+    99,
+    "gameshelf.jmac.org",
+    "Grim Fandango Puzzle Document (1996) [pdf]"
+   ],
+   [
+    295,
+    122,
+    "everycube.alen.is",
+    "Show HN: Scroll through all 43252003274489856000 Rubik's Cube states"
+   ],
+   [
+    118,
+    67,
+    "owntime.app",
+    "Show HN: OwnTime \u2013 a chess clock for your day's priorities"
+   ]
+  ],
+  "showhn": [
+   [
+    2391,
+    267,
+    "github.com",
+    "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations"
+   ],
+   [
+    1680,
+    415,
+    "john.fun",
+    "Show HN: Elevators"
+   ],
+   [
+    919,
+    342,
+    "github.com",
+    "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac"
+   ],
+   [
+    862,
+    126,
+    "bastardica.mitpit.com",
+    "Show HN: Make cursed fonts like Times New Bastard"
+   ],
+   [
+    710,
+    326,
+    "louisabraham.github.io",
+    "Show HN: The load-bearing vocabulary of Claude"
+   ]
+  ],
+  "askhn": [
+   [
+    868,
+    403,
+    "",
+    "Ask HN: Can we please limit the AI news flood?"
+   ],
+   [
+    649,
+    437,
+    "",
+    "Ask HN: Alternatives to GitHub"
+   ],
+   [
+    469,
+    884,
+    "",
+    "Ask HN: What are you reading?"
+   ],
+   [
+    404,
+    705,
+    "",
+    "Ask HN: Why were OpenAI, Claude, and Grok simultaneously down?"
+   ],
+   [
+    381,
+    1235,
+    "",
+    "Ask HN: What are you working on? (September 2026)"
+   ]
+  ],
+  "boring": [
+   [
+    636,
+    449,
+    "openrouter.ai",
+    "GPT-5.6 Sol Pricing Cut by 50% on OpenRouter"
+   ],
+   [
+    395,
+    230,
+    "advocacy.consumerreports.org",
+    "Seattle City Council votes to ban surveillance pricing in sale of groceries"
+   ],
+   [
+    275,
+    158,
+    "withspecific.com",
+    "Real-SWE: Benchmarking AI models on private, real-world, enterprise codebases"
+   ],
+   [
+    238,
+    3,
+    "api-docs.deepseek.com",
+    "DeepSeek peak/off-peak pricing update"
+   ],
+   [
+    208,
+    46,
+    "chipsandcheese.com",
+    "Nvidia\u2019s Vera Whitepaper Has a Thread Loose"
+   ]
+  ]
+ }
+}

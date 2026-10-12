@@ -69,7 +69,7 @@ Rollback was rehearsed on a local branch on 2026-10-10: revert of a test commit,
 - If a token may have leaked, delete it in GitHub settings first, then make a new one.
 
 ## Before pushing a UI or CSS change
-Where each check runs (#250): prepush runs unit tests, copy lint, list version, roadmap, node tests and the UI check at 390 px. CI runs those again (the UI check is skipped when a matching `.prepush_ok` is committed) and always runs the perf budgets in the daily workflow, with results in the run summary. The phone sweep and the screenshot snapshots run only in CI, nightly. A budget the change needs is raised in the same commit; CI is where a failure shows.
+Where each check runs (#250): prepush runs unit tests, copy lint, list version, roadmap, node tests and the UI check at 390 px. CI runs those again, runs the UI check on live data (prepush uses the fixed data in tests/fixtures/ui, #336) and always runs the perf budgets in the daily workflow, with results in the run summary. The phone sweep and the screenshot snapshots run only in CI, nightly. A budget the change needs is raised in the same commit; CI is where a failure shows.
 
 
 Run `node scripts/perf.mjs --serve /tmp/site_pp --runs 3 --tolerance 1.25` (CI does this on every run; prepush no longer does). Load times on a busy machine are noisy, so treat a result near the limit as a reason to look, and raise the budget in the same commit when the change is real (data/budgets.json and docs/BUDGETS.md).
@@ -95,7 +95,7 @@ When a run fails (the issue already names the failing step, the last 30 log line
 `python3 scripts/check_roadmap.py` lists open epics that ROADMAP.md does not name, and the other way round. It only warns, and prepush runs it. `--write` rewrites the "Open epics on the board" list in ROADMAP.md from the board. Run it when an epic opens or closes, and commit the change.
 
 ## Prepush marker (skip repeat checks in CI)
-`bash scripts/prepush.sh` ends by writing `.prepush_ok`, a digest of every tracked and new file except the marker itself (scripts/prepush_digest.py). Commit the marker with the change. The daily workflow checks it right after checkout. Only a run triggered by a push (hypotheses/** changes) can skip the UI step (the perf budgets always run, #250), and only when the digest matches. A missing marker, any edited or added file after prepush, a scheduled run or a manual dispatch runs every check. Run `python3 scripts/prepush_digest.py --check` to see which case applies.
+`bash scripts/prepush.sh` ends by writing `.prepush_ok`, a digest of every tracked and new file except the marker itself (scripts/prepush_digest.py). Commit the marker with the change. The daily workflow checks it right after checkout. Since #336 the marker no longer skips the UI step: prepush checks fixed data and CI checks live data, so both always run. Run `python3 scripts/prepush_digest.py --check` to see which case applies.
 
 ## CI caching and skipped steps (#243)
 - pip installs are cached by setup-python (`cache: pip`, keyed on `requirements-ci.txt`). Add a new Python dependency there.
@@ -128,3 +128,6 @@ Each ticket with a visible done-when list gets `tests/acceptance/<n>.mjs` (see t
 
 ## Self-healing daily run (#253)
 Steps retry on their own (`scripts/retry.sh`). `scripts/contract.py` checks the new data against the last commit; a break is reverted by `scripts/quarantine.sh`, one `data-quarantine` issue is opened, and the last good site stays live. To test, run the daily workflow by hand with `simulate_bad_day` ticked. Details: docs/ALERTS.md.
+
+## UI check on fixed data (#336)
+`scripts/make_ui_fixture.py` builds tests/fixtures/ui/data (small data files as they were, 4 explorer chunks sampled every 25th row, the atlas files the screens fetch). `--stage DIR` stages the site code with that data. Prepush runs `tests/ui.test.mjs` on it; the daily workflow still runs it on live data. Rebuild the fixture only to change what the check sees. Measured 15 s against 20 s on live data (the explorer no longer loads 186 chunks).
