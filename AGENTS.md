@@ -10,3 +10,4 @@ This repo runs on the Flywheel. Read [docs/FLYWHEEL.md](docs/FLYWHEEL.md) first 
 6. **Test.** Run `python3 -m unittest discover -s tests`, `node tests/hypotheses.test.js` before you push. Every card must be an all-time film card (tests/test_film_guard.py).
 7. **Public text is public.** No private information, tokens, emails or personal names in code, issues, commits or docs. Claims on the site must be sourced from the data. Use simple words, no em dashes.
 8. **Small UI choices** (colors, spacing, copy tweaks) need no approval. Anything about meaning, data or scope goes in a comment on the issue for the owner.
+9. **Phone check.** A new or changed screen passes [docs/PHONE_CHECKLIST.md](docs/PHONE_CHECKLIST.md) at 320, 390 and 430 px.
