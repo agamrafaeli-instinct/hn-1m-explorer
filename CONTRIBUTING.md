@@ -6,7 +6,7 @@ Guess something about HN, say in advance what the data must show, and let the si
 
 1. Fork the repo and clone it.
 2. Pick the next free number. List `hypotheses/` and take the number after the highest one.
-3. Create `hypotheses/hNNN-your-name.json`. Start from the worked example below. The `id` must match the file name prefix.
+3. Create `hypotheses/hNNN-your-name.json`. Copy the blank [docs/examples/card-template.json](docs/examples/card-template.json) and replace every line that starts with `REPLACE`, or start from the worked example below. The `id` must match the file name prefix.
 4. Say what you expect and set the thresholds before you look at the result. Include a rule that refutes you.
 5. Run `node tests/hypotheses.test.js`. A passing card prints a line like `ok h200 0.927 inconclusive inconclusive`: the card id, the measured value, the verdict and the confidence.
 6. Open a PR with only that file. The PR template has the checklist.
@@ -95,6 +95,29 @@ What each part does:
 - `hypothesis` is your guess in one sentence. `expect` says in numbers what must be true, before you look.
 - `check` says where the number comes from: a file in `data/`, the path inside it, and how to compute it. New stats or data sources need a code change to `hyp-eval.js`, in a separate PR.
 - `verdicts` are read top to bottom. The first rule that matches wins. The last rule must be `"else": true`. One rule must have `"verdict": "refuted"`, so the card says in advance what would prove you wrong.
+
+## Field by field
+
+- `id`: the card number, like `h201`. The file name starts with it.
+- `title`: what a reader sees first. Say the claim, not the method.
+- `author`: your handle.
+- `audience`: who the card is for: `engineers`, `deep-tech investors` or `curious readers`.
+- `hypothesis`: your guess in one plain sentence.
+- `expect`: the numbers that must show up if you are right, written before you look.
+- `check`: where the number comes from. Keep the template values unless you know a different data file and stat.
+- `verdicts`: what each result means. The first rule that matches wins.
+- `caveats` (optional): honest limits, one sentence each.
+
+## Thresholds before the result
+
+Write the lines first, then run the check. Example for the card above:
+
+- Supported, strong: the ratio is 1.3x or more.
+- Supported, weak: 1.1x or more.
+- Refuted: 0.9x or less.
+- Anything between 0.9x and 1.1x: inconclusive.
+
+If you change a line after you see the number, the card is not a test any more. A maintainer may ask for a new card instead.
 
 ## When the check fails
 
