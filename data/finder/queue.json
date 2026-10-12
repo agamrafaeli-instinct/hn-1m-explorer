@@ -10,8 +10,8 @@
    "note": "verdict is down against the peak year and up against all earlier months",
    "rank": 1,
    "ratios": {
-    "latest_vs_peak": 0.3041512937632176,
-    "latest_vs_prior": 2.39660953594914
+    "latest_vs_peak": 0.3041504253773157,
+    "latest_vs_prior": 2.3966026933613356
    },
    "score": 0.5951,
    "sturdiness": 0.5,
@@ -20,9 +20,9 @@
     "latest": {
      "from": "2025-08",
      "n": 3285,
-     "share": 0.009379068545716178,
+     "share": 0.009379041767428315,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "peak": {
      "from": "2023-01",
@@ -49,8 +49,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 2,
    "ratios": {
-    "latest_vs_before": 1.0109429722734289,
-    "latest_vs_prior": 3.209283172283913
+    "latest_vs_before": 1.0109400859183724,
+    "latest_vs_prior": 3.209274009422143
    },
    "score": 0.583,
    "sturdiness": 0.5,
@@ -66,9 +66,9 @@
     "latest": {
      "from": "2025-08",
      "n": 737,
-     "share": 0.002104223293209383,
+     "share": 0.0021042172854169464,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -87,8 +87,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 3,
    "ratios": {
-    "latest_vs_before": 1.0659855562084841,
-    "latest_vs_prior": 0.3492758486924413
+    "latest_vs_before": 1.0659825127007048,
+    "latest_vs_prior": 0.34927485147089693
    },
    "score": 0.5259,
    "sturdiness": 0.5,
@@ -104,9 +104,9 @@
     "latest": {
      "from": "2025-08",
      "n": 71,
-     "share": 0.00020271350585870584,
+     "share": 0.00020271292708901381,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -125,8 +125,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 4,
    "ratios": {
-    "latest_vs_before": 1.0427013169167494,
-    "latest_vs_prior": 2.630913595431649
+    "latest_vs_before": 1.042698339888073,
+    "latest_vs_prior": 2.6309060838795952
    },
    "score": 0.4837,
    "sturdiness": 0.5,
@@ -142,9 +142,9 @@
     "latest": {
      "from": "2025-08",
      "n": 3278,
-     "share": 0.00935908270711039,
+     "share": 0.009359055985884329,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -163,8 +163,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 5,
    "ratios": {
-    "latest_vs_before": 1.2013303544199978,
-    "latest_vs_prior": 2.4936561832994113
+    "latest_vs_before": 1.2013269244877085,
+    "latest_vs_prior": 2.4936490636325934
    },
    "score": 0.4569,
    "sturdiness": 0.5,
@@ -180,9 +180,9 @@
     "latest": {
      "from": "2025-08",
      "n": 3477,
-     "share": 0.009927251547474931,
+     "share": 0.009927223204063395,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -201,8 +201,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 6,
    "ratios": {
-    "latest_vs_before": 0.8781928850052009,
-    "latest_vs_prior": 0.47136429879170144
+    "latest_vs_before": 0.8781903776664647,
+    "latest_vs_prior": 0.47136295299400094
    },
    "score": 0.3761,
    "sturdiness": 0.5,
@@ -218,9 +218,9 @@
     "latest": {
      "from": "2025-08",
      "n": 536,
-     "share": 0.0015303442132431878,
+     "share": 0.0015303398439395972,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -239,8 +239,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 7,
    "ratios": {
-    "latest_vs_before": 0.947435059509306,
-    "latest_vs_prior": 2.0094653222808114
+    "latest_vs_before": 0.9474323544764308,
+    "latest_vs_prior": 2.0094595850329613
    },
    "score": 0.3489,
    "sturdiness": 0.5,
@@ -256,9 +256,9 @@
     "latest": {
      "from": "2025-08",
      "n": 2009,
-     "share": 0.005735935679861127,
+     "share": 0.0057359193031243485,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -277,8 +277,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 8,
    "ratios": {
-    "latest_vs_before": 1.1569340197302804,
-    "latest_vs_prior": 1.9810179877939997
+    "latest_vs_before": 1.1569307165544835,
+    "latest_vs_prior": 1.9810123317664654
    },
    "score": 0.3418,
    "sturdiness": 0.5,
@@ -294,9 +294,9 @@
     "latest": {
      "from": "2025-08",
      "n": 4814,
-     "share": 0.01374454672118042,
+     "share": 0.013744507478964964,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -315,8 +315,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 9,
    "ratios": {
-    "latest_vs_before": 1.0567113882215198,
-    "latest_vs_prior": 1.6963928255790228
+    "latest_vs_before": 1.0567083711925254,
+    "latest_vs_prior": 1.696387982188105
    },
    "score": 0.2643,
    "sturdiness": 0.5,
@@ -332,9 +332,9 @@
     "latest": {
      "from": "2025-08",
      "n": 636,
-     "share": 0.001815856193325872,
+     "share": 0.0018158510088537012,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -353,8 +353,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 10,
    "ratios": {
-    "latest_vs_before": 0.8520952019886551,
-    "latest_vs_prior": 0.5977066234271596
+    "latest_vs_before": 0.8520927691617177,
+    "latest_vs_prior": 0.5977049169080164
    },
    "score": 0.2573,
    "sturdiness": 0.5,
@@ -370,9 +370,9 @@
     "latest": {
      "from": "2025-08",
      "n": 809,
-     "share": 0.0023097919188689157,
+     "share": 0.002309785324155101,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -391,8 +391,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 11,
    "ratios": {
-    "latest_vs_before": 0.8439099151497281,
-    "latest_vs_prior": 0.6299125642244393
+    "latest_vs_before": 0.8439075056926986,
+    "latest_vs_prior": 0.6299107657537393
    },
    "score": 0.2311,
    "sturdiness": 0.5,
@@ -408,9 +408,9 @@
     "latest": {
      "from": "2025-08",
      "n": 4232,
-     "share": 0.012082866997099198,
+     "share": 0.01208283249916488,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -429,8 +429,8 @@
    "note": "verdict is down against the peak year and up against all earlier months",
    "rank": 12,
    "ratios": {
-    "latest_vs_peak": 0.650643633456801,
-    "latest_vs_prior": 1.3614533405570652
+    "latest_vs_peak": 0.6506417757965837,
+    "latest_vs_prior": 1.3614494534557728
    },
    "score": 0.2149,
    "sturdiness": 0.5,
@@ -439,9 +439,9 @@
     "latest": {
      "from": "2025-08",
      "n": 650,
-     "share": 0.0018558278705374477,
+     "share": 0.0018558225719416757,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "peak": {
      "from": "2024-01",
@@ -468,8 +468,8 @@
    "note": "verdict is down against the peak year and up against all earlier months",
    "rank": 13,
    "ratios": {
-    "latest_vs_peak": 0.6591293944520746,
-    "latest_vs_prior": 1.3511454708917363
+    "latest_vs_peak": 0.6591275125640622,
+    "latest_vs_prior": 1.3511416132205625
    },
    "score": 0.2084,
    "sturdiness": 0.5,
@@ -478,9 +478,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1166,
-     "share": 0.0033290696877640987,
+     "share": 0.003329060182898452,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "peak": {
      "from": "2022-01",
@@ -507,8 +507,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 14,
    "ratios": {
-    "latest_vs_before": 0.8417424948077384,
-    "latest_vs_prior": 0.6874005154152274
+    "latest_vs_before": 0.841740091538936,
+    "latest_vs_prior": 0.6873985528100083
    },
    "score": 0.1874,
    "sturdiness": 0.5,
@@ -524,9 +524,9 @@
     "latest": {
      "from": "2025-08",
      "n": 23389,
-     "share": 0.06677839702153902,
+     "share": 0.06677820636175978,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -545,8 +545,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 15,
    "ratios": {
-    "latest_vs_before": 1.0031230889317682,
-    "latest_vs_prior": 1.4524642790665145
+    "latest_vs_before": 1.0031202249033513,
+    "latest_vs_prior": 1.4524601321188315
    },
    "score": 0.1866,
    "sturdiness": 0.5,
@@ -562,9 +562,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1397,
-     "share": 0.003988602361755099,
+     "share": 0.003988590973850032,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -583,8 +583,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 16,
    "ratios": {
-    "latest_vs_before": 1.0082516318294497,
-    "latest_vs_prior": 1.445369570549143
+    "latest_vs_before": 1.0082487531584705,
+    "latest_vs_prior": 1.4453654438576449
    },
    "score": 0.1842,
    "sturdiness": 0.5,
@@ -600,9 +600,9 @@
     "latest": {
      "from": "2025-08",
      "n": 11260,
-     "share": 0.03214864895731025,
+     "share": 0.03214855716932811,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -621,8 +621,8 @@
    "note": "verdict is flat against all earlier months and down against the 12 months before",
    "rank": 17,
    "ratios": {
-    "latest_vs_before": 0.7126767919226609,
-    "latest_vs_prior": 0.8835392105782525
+    "latest_vs_before": 0.7126747571508502,
+    "latest_vs_prior": 0.8835366879751598
    },
    "score": 0.1694,
    "sturdiness": 0.5,
@@ -638,9 +638,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1544,
-     "share": 0.004408304972476645,
+     "share": 0.004408292386273765,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -659,8 +659,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 18,
    "ratios": {
-    "latest_vs_before": 1.1107084419427249,
-    "latest_vs_prior": 1.3524726224964734
+    "latest_vs_before": 1.1107052707461136,
+    "latest_vs_prior": 1.352468761036134
    },
    "score": 0.151,
    "sturdiness": 0.5,
@@ -676,9 +676,9 @@
     "latest": {
      "from": "2025-08",
      "n": 5005,
-     "share": 0.014289874603138348,
+     "share": 0.014289833803950904,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -697,8 +697,8 @@
    "note": "verdict is flat against all earlier months and down against the 12 months before",
    "rank": 19,
    "ratios": {
-    "latest_vs_before": 0.7447305962322666,
-    "latest_vs_prior": 0.8149039530763489
+    "latest_vs_before": 0.7447284699432657,
+    "latest_vs_prior": 0.8149016264345794
    },
    "score": 0.1474,
    "sturdiness": 0.5,
@@ -714,9 +714,9 @@
     "latest": {
      "from": "2025-08",
      "n": 193,
-     "share": 0.0005510381215595807,
+     "share": 0.0005510365482842206,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -735,8 +735,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 20,
    "ratios": {
-    "latest_vs_before": 0.9442586639186501,
-    "latest_vs_prior": 0.7455260930373738
+    "latest_vs_before": 0.944255967954739,
+    "latest_vs_prior": 0.7455239644771409
    },
    "score": 0.1468,
    "sturdiness": 0.5,
@@ -752,9 +752,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1275,
-     "share": 0.0036402777460542244,
+     "share": 0.0036402673526548255,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -773,8 +773,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 21,
    "ratios": {
-    "latest_vs_before": 0.8170712120975333,
-    "latest_vs_prior": 0.7483463189703226
+    "latest_vs_before": 0.8170688792679974,
+    "latest_vs_prior": 0.7483441823580297
    },
    "score": 0.1449,
    "sturdiness": 0.5,
@@ -790,9 +790,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1410,
-     "share": 0.004025718919165848,
+     "share": 0.004025707425288866,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -811,8 +811,8 @@
    "note": "verdict is flat against all earlier months and down against the 12 months before",
    "rank": 22,
    "ratios": {
-    "latest_vs_before": 0.7653759951937651,
-    "latest_vs_prior": 0.8063150985034626
+    "latest_vs_before": 0.7653738099598452,
+    "latest_vs_prior": 0.8063127963838319
    },
    "score": 0.1337,
    "sturdiness": 0.5,
@@ -828,9 +828,9 @@
     "latest": {
      "from": "2025-08",
      "n": 545,
-     "share": 0.0015560402914506293,
+     "share": 0.0015560358487818665,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -849,8 +849,8 @@
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 23,
    "ratios": {
-    "latest_vs_before": 0.8875162046669044,
-    "latest_vs_prior": 0.7714150182869142
+    "latest_vs_before": 0.8875136707090497,
+    "latest_vs_prior": 0.7714128158109091
    },
    "score": 0.1298,
    "sturdiness": 0.5,
@@ -866,9 +866,9 @@
     "latest": {
      "from": "2025-08",
      "n": 618,
-     "share": 0.0017644640369109887,
+     "share": 0.0017644589991691626,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
@@ -887,8 +887,8 @@
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "rank": 24,
    "ratios": {
-    "latest_vs_before": 1.0993063572791495,
-    "latest_vs_prior": 1.2887570434041402
+    "latest_vs_before": 1.0993032186367628,
+    "latest_vs_prior": 1.2887533638588926
    },
    "score": 0.1268,
    "sturdiness": 0.5,
@@ -904,9 +904,9 @@
     "latest": {
      "from": "2025-08",
      "n": 2355,
-     "share": 0.006723807130947215,
+     "share": 0.006723787933727149,
      "to": "2026-07",
-     "total": 350248
+     "total": 350249
     },
     "prior": {
      "from": "2006-10",
