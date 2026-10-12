@@ -26,6 +26,7 @@
       var ax = el('div', 'rg_ax'); ax.appendChild(el('span', null, String(y[0]))); ax.appendChild(el('span', null, String(y[n]))); box.appendChild(ax);
       box.appendChild(el('p', 'rg_note rg_fine', 'Source: daily counts of every story in the archive, ' + D.first_month + ' to ' + D.last_month + '. 2006 and ' + y[n] + ' are partial years. Hollow bars: the archive holds low points for ' + low.join(' and ') + ', so they are not compared.'));
       window.Rings.wire(box);
+      var rb = document.getElementById('sg_rings'); if (rb && !rb.dataset.on) { rb.dataset.on = '1'; window.Rings.mount(rb); }
     }).catch(function (e) { box.textContent = 'Could not load the counts: ' + e.message; });
   };
 })();
