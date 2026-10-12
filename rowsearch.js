@@ -68,7 +68,7 @@
     r1.appendChild(qw); r1.appendChild(dm); r2.appendChild(el('label', null, 'From')); r2.lastChild.appendChild(fr); r2.appendChild(el('label', null, 'To')); r2.lastChild.appendChild(to); r2.appendChild(sc); r2.appendChild(go);
     f.appendChild(r1); f.appendChild(r2); more.hidden = true; more.type = 'button';
     root.appendChild(f); root.appendChild(st); root.appendChild(out); root.appendChild(more);
-    root.appendChild(el('p', 'rs_n', 'Stories only: the archive keeps no author names or comment text. Scores are as fetched, so stories from 2025 and 2026 may still be gaining points. Author search is below, on the newest items.'));
+    root.appendChild(el('p', 'rs_n', 'Stories only: the archive keeps no author names or comment text. Scores are as fetched, so recent stories may still be gaining points. Points are low for 2023 and 2026. Author search is below, on the newest items.'));
     var say = function (t) { st.textContent = t; };
     function run(first) {
       if (first) { out.replaceChildren(); cur = null; }

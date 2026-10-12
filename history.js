@@ -41,7 +41,7 @@
       get('data/atlas/tops-' + m.slice(0, 4) + '.json').then(function (d) {
         var x = d.months[m]; out.replaceChildren(); if (!x) { out.appendChild(el('p', 'wn', 'No stories in the archive for this month.')); return; }
         out.appendChild(el('p', 'wsh', 'Sites with the most stories in ' + m + ': ' + x.top_domains.slice(0, 8).map(function (r) { return r[0] + ' ' + r[1]; }).join(', ') + '.'));
-        out.appendChild(el('p', 'wn', 'Top stories by score. Archive scores were saved when the story was fetched, so they are low for 2025 and 2026.'));
+        out.appendChild(el('p', 'wn', 'Top stories by score. Archive scores were saved when the story was fetched, so they are low for 2023 and 2026.'));
         var ul = el('ul', 'lens_top'); x.top_stories.slice(0, 10).forEach(function (s) { var li = el('li'), a = el('a', null, s[1]); a.href = 'https://news.ycombinator.com/item?id=' + s[0]; a.rel = 'noopener'; li.appendChild(a); li.appendChild(el('span', 'wn', s[2] + ' points')); ul.appendChild(li); });
         out.appendChild(ul);
       }).catch(function () { out.textContent = 'Could not load this month.'; });

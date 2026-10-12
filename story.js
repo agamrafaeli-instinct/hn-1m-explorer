@@ -57,7 +57,7 @@
     const sec = $('s_pts'); sec.style.height = (+sec.dataset.tall) + 'vh';
     const cm = (S.type_counts || {}).comment, tot = (S.totals && S.totals.posts) || S.total_rows || 0;
     const steps = [
-      'Someone posts a story. Readers vote it up, and its <b>points</b> are the score Hacker News shows next to it.',
+      'Someone posts a story. Readers upvote it, and its <b>points</b> are the score Hacker News shows next to it.',
       'HN ranks a story by dividing its points by a power of the time since it was submitted. Points have to keep arriving to hold a spot.',
       'Comments have no score in HN&rsquo;s data' + (cm && tot ? ', and they make up <b>' + pct(cm / tot, 0) + '</b> of the items here' : '') + '. So every points number below is <b>story points</b>.'
     ];

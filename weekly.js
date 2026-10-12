@@ -98,7 +98,7 @@
     const s = section('Tracked domains', 'wtrack');
     if (!rows.length) { s.appendChild(el('p', 'wn', 'No tracked domain moved more than usual this week.')); }
     else { const ul = el('ul', 'wfl'); rows.forEach(([k, r]) => { const li = el('li', k); li.appendChild(el('b', null, r.label)); li.appendChild(el('span', 'wv', (k === 'rose' ? 'Up: ' : 'Down: ') + n(r.this) + ' stories, last week ' + n(r.last))); ul.appendChild(li); }); s.appendChild(ul); }
-    s.appendChild(el('p', 'wn', 'Watching the top ' + n(t.in_list) + ' domains by points over the full archive. Only the biggest moves show, at most 10. Names and terms in the sections above use a starter list. Domain list version ' + t.version + '. Archive scores for recent years are low, so this compares story counts, not points.'));
+    s.appendChild(el('p', 'wn', 'Watching the top ' + n(t.in_list) + ' domains by points over the full archive. Only the biggest moves show, at most 10. Names and terms in the sections above use a starter list. Domain list version ' + t.version + '. Points in the archive are low for 2023 and 2026, so this compares story counts, not points.'));
     return s;
   }
   function shareBtn(a, week) {
@@ -150,7 +150,7 @@
       window.SetPageMeta && window.SetPageMeta(A[a].name + ': week ' + idx[i].week + ' (' + rg + ')', A[a].name + ' view of Hacker News for ' + rg + '. ' + A[a].intro);
       document.getElementById('w_back').href = '#/';
       scrollTo({ top: 0, behavior: 'instant' });
-    } catch (e) { if (my === token) root().textContent = 'Could not load this week: ' + e.message; }
+    } catch (e) { if (my === token) root().textContent = 'Could not load this week (' + e.message + '). Try again.'; }
   }
   window.WeekInit = (a, wk) => show(a, wk);
 })();
