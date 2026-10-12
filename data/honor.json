@@ -1161,6 +1161,22 @@
    "id": "h373",
    "score": 1.0,
    "title": "Postgres, SQLite and DuckDB take a bigger slice of all HN stories"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 3017.0,
+   "id": "h374",
+   "score": 1.0,
+   "title": "Microservices and serverless stories now score below the average story"
   }
  ],
  "schema": 1,
