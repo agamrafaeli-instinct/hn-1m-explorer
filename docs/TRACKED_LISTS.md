@@ -1,6 +1,6 @@
 # Tracked names, domains and terms
 
-Spec for #226, epic #68 (Spyglass). Status: proposed. The owner's actual lists are waiting on #227.
+Spec for #226, epic #68 (Spyglass). Status: proposed. Decision (2026-10-12): domains are the top 1,000 domains by points, across the full archive. Names and terms keep the starter lists for now, flagged as starter lists.
 
 ## Today
 
@@ -21,11 +21,19 @@ Keep one file and add one key, `tracked`, per audience. Nothing else moves.
 ```
 
 - `names`: a product, company or person. Matched on story titles, case-insensitive, whole words.
-- `domains`: a site such as `github.com`. Matched on the story link host, with `www.` ignored.
+- `domains`: a site such as `github.com`. Matched on the story link host, with `www.` ignored. Not typed by hand: see Domains below.
 - `terms`: a word or phrase matched on titles the same way as the other word lists.
 - A name with several spellings is one entry with a list: `{ "label": "Hugging Face", "match": ["hugging face", "huggingface"] }`. A plain string means the label and the only spelling.
-- At most 25 entries per audience, so a screen stays short on a phone.
+- At most 25 names and 25 terms per audience, so a screen stays short on a phone. Domains are a separate, much longer list (below) and the screen shows only the biggest movers.
 - The VC `watchlist` is replaced by `tracked.vcs.names` once the owner has chosen. Until then `watchlist` stays as the fallback and the screen keeps saying it is a starter list.
+
+## Domains: top 1,000 by points
+
+- The list is the 1,000 domains with the most total story points across the whole archive (2006 to the latest saved month). It is the same for every audience, and it lives in `data/tracked_domains.json`, built by `scripts/tracked_domains.py` from `data/archive/`. No window.
+- Caveat to show beside it: archive scores are as fetched, and stories from 2025 and 2026 carry low scores, so the ranking leans on earlier years.
+- The list is rebuilt on purpose, not every day, so counts stay comparable. A rebuild bumps `list_version`. Each week records which version it used.
+- The weekly build counts stories per tracked domain for the week. The week screen shows only the domains that moved most (the same rose and fell rules the other lists use), never 1,000 rows.
+- Names and terms: no list from the owner yet. The starter list stays, and the screen keeps its starter-list note.
 
 ## Versioning
 
@@ -37,9 +45,6 @@ Keep one file and add one key, `tracked`, per audience. Nothing else moves.
 
 `weekly_snapshot.py` reads `tracked` for each audience, counts stories matching each entry for the week, and writes the counts under `audiences.<audience>.tracked` with the list version. The week screen draws the list from that block, so a list edit needs no code change.
 
-## Tasks to build this (not yet created)
+## Tasks
 
-1. Loader and counts in the weekly build, with tests.
-2. Week screen section "Tracked", at 390 px.
-3. Version bump check.
-4. Replace the starter list once the owner's lists arrive (#227).
+- #228 domain list build and weekly counts, #229 Tracked section on the week screens, #230 version bump check, #231 owner names and terms (waits on a list from the owner; the starter list stays until then).
