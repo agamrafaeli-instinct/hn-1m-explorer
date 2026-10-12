@@ -42,7 +42,7 @@ await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, devi
 // Same list as scripts/copy_lint.py (kept in pieces here so the lint does not flag its own list).
 const BANNED = new RegExp(['\\bvotes\\b', '\\b1M\\b', 'the last mil' + 'lion', '\\u2014', '&md' + 'ash;', '\\bdel' + 've\\b', '\\bcru' + 'cial\\b', '\\bpivo' + 'tal\\b', '\\blever' + 'ag(e|es|ing)\\b', '\\bstream' + 'line', '\\bholi' + 'stic', '\\brob' + 'ust\\b', '\\bseam' + 'less', '\\bempo' + 'wer', '\\bun' + 'lock', 'game-' + 'changing', "we're ex" + 'cited', 'in or' + 'der to', '\\bsim' + 'ply\\b', '\\bpower' + 'ful\\b', '\\bcompre' + 'hensive\\b'].join('|'), 'gi');
 const expr = `(()=>{const vis=e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};
-const nm=e=>((e.labels&&e.labels[0]&&e.labels[0].innerText)||e.innerText||e.getAttribute('aria-label')||e.title||e.value||'').trim();
+const nm=e=>((e.labels&&e.labels[0]&&e.labels[0].innerText)||e.innerText||e.textContent||e.getAttribute('aria-label')||e.title||e.value||'').trim();
 const tap=[],unl=[],noalt=[],tiny=new Set(),empty=[];
 for(const e of document.querySelectorAll('a[href],button,input:not([type=hidden]),select,summary')){if(!vis(e))continue;const r=e.getBoundingClientRect(),s=getComputedStyle(e);
  if(!nm(e)&&!e.querySelector('img[alt],svg[aria-label]'))unl.push(e.tagName.toLowerCase()+' '+e.outerHTML.slice(0,40).replace(/\\s+/g,' '));

@@ -6,7 +6,7 @@
 .hyp.supported{border-left-color:var(--act)}
 .hyp.refuted{border-left-color:var(--ink);background:#f3ead9}
 .hyp-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.hyp-id{font:600 11px Inter;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
+.hyp-id{font:600 12px Inter;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
 .hyp-badge{font:700 12px Inter;text-transform:uppercase;letter-spacing:.06em;padding:5px 11px;border-radius:99px;background:var(--bd);color:var(--ink)}
 .supported .hyp-badge{background:var(--act);color:#fff}.refuted .hyp-badge{background:var(--ink);color:#fff}
 .hyp h3{font:800 clamp(22px,6vw,28px)/1.1 Fraunces,Georgia,serif;margin:10px 0 6px}
@@ -25,7 +25,7 @@
 .hyp.narr{padding:16px 16px 6px}
 .hyp.narr .hyp-id{margin:0}
 .hyp.narr h3{font-size:clamp(24px,6.6vw,30px);margin:6px 0 4px}
-.st{margin:14px 0 0}.st h4{font:700 11px Inter;text-transform:uppercase;letter-spacing:.12em;color:var(--act);margin:0 0 4px}
+.st{margin:14px 0 0}.st h4{font:700 12px Inter;text-transform:uppercase;letter-spacing:.12em;color:var(--act);margin:0 0 4px}
 .st p{margin:0 0 6px;font-size:16px;line-height:1.45}
 .st .hyp-q{font:500 17px/1.4 Fraunces,Georgia,serif}
 .refuted .st .hyp-q{text-decoration:none}
