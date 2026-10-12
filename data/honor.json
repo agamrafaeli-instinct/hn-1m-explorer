@@ -1056,7 +1056,7 @@
    "failing": [
     "novel"
    ],
-   "group_a_count": 2611707.0,
+   "group_a_count": 2611744.0,
    "id": "h367",
    "score": 0.8,
    "title": "Show HN earns more points"
@@ -1129,6 +1129,40 @@
    "id": "h371",
    "score": 1.0,
    "title": "TypeScript takes a bigger slice of all HN stories"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 15498.0,
+   "id": "h372",
+   "score": 1.0,
+   "title": "Agents take a bigger slice of all HN stories"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": false,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "insightful"
+   ],
+   "group_a_count": 3285.0,
+   "id": "h373",
+   "score": 0.8,
+   "title": "ChatGPT and GPT models: a bigger share than before"
   }
  ],
  "schema": 1,
