@@ -7,7 +7,7 @@ const arg=(k,d)=>{const i=process.argv.indexOf('--'+k);return i<0?d:process.argv
 const site=arg('site','http://localhost:8766/'), outFile=arg('out','/tmp/phone_sweep.json');
 const port=9340+Math.floor(Math.random()*50);
 const ch=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--remote-debugging-port='+port,'--user-data-dir=/tmp/ps'+Date.now(),'about:blank'],{stdio:'ignore'});
-await new Promise(r=>setTimeout(r,3000));
+await new Promise(r=>setTimeout(r,5000));
 const tabs=await (await fetch('http://127.0.0.1:'+port+'/json')).json();
 const ws=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);
 let id=0;const pend={};ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pend[m.id]){pend[m.id](m.result);delete pend[m.id]}};
@@ -17,7 +17,7 @@ const idx=await (await fetch(site+'data/weekly/index.json')).json();const wk=idx
 export const SCREENS=['#/','#/a/engineers','#/a/vcs','#/a/geeks','#/c/h370','#/hypotheses','#/w/engineers/'+wk,'#/w/vcs/'+wk,'#/w/geeks/'+wk,'#/s/2026-10-11','#/story','#/explore','#/submit','#/how','#/lesson','#/topics','#/today','#/l/github.com','#/l/n/Nvidia','#/t/llm','#/compare'];
 const expr=`(()=>{
 const vis=e=>{const r=e.getBoundingClientRect();const s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};
-const nm=e=>(e.innerText||e.getAttribute('aria-label')||e.title||e.value||e.getAttribute('aria-labelledby')||'').trim();
+const nm=e=>(e.innerText||e.textContent||e.getAttribute('aria-label')||e.title||e.value||e.getAttribute('aria-labelledby')||'').trim();
 const tap=[],unl=[];
 for(const e of document.querySelectorAll('a[href],button,input:not([type=hidden]),select,summary,[role=button]')){
  if(!vis(e))continue;const r=e.getBoundingClientRect(),s=getComputedStyle(e);

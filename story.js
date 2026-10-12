@@ -130,7 +130,7 @@
     });
     const P = C.posts;
     cards.push({ name: 'Single stories', big: pct(P.top_share_points['0.01'], 0), line: `of points sit with the top <b>1%</b> of stories. Comments (dark line) are ${pct(P.top_share_comments['0.01'], 0)}.`, sub: `${pct(P.zero_comment_share, 0)} of stories have no comments`, L: P.lorenz_points, L2: P.lorenz_comments });
-    $('mgrid').innerHTML = cards.map(c => `<div class="mc"><h3>${c.name}</h3><div class="big">${c.big}</div><div class="sm">${c.line}</div><svg viewBox="0 0 300 150" preserveAspectRatio="none">${mini(c.L, c.L2, 300, 150)}</svg><div class="sm" style="margin-top:6px">${c.sub}</div></div>`).join('');
+    $('mgrid').innerHTML = cards.map(c => `<div class="mc"><h3>${c.name}</h3><div class="big">${c.big}</div><div class="sm">${c.line}</div><svg viewBox="0 0 300 150" preserveAspectRatio="none" role="img" aria-label="${String(c.name).replace(/"/g, '')}: ${String(c.line).replace(/<[^>]*>|"/g, '')}">${mini(c.L, c.L2, 300, 150)}</svg><div class="sm" style="margin-top:6px">${c.sub}</div></div>`).join('');
     $('lede_lens').innerHTML = `Rank everything in a lens from heaviest to lightest, then ask how much of the total the top slice holds. The curve hugging the top-left means the weight is concentrated. <b>Gini</b> is the single-number version (0 = equal, 1 = one entity holds everything).`;
     document.querySelectorAll('.mc .lz,.mc .lz2').forEach(p => { p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = 'stroke-dashoffset .9s ease'; });
   }

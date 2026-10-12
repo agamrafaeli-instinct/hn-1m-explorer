@@ -233,3 +233,13 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 .yz{margin:8px 0}.yz_s{display:flex;gap:8px;align-items:center}.yz_s select{font:inherit;padding:10px;border:1px solid var(--bd);border-radius:8px;min-height:44px}.yz_p{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.yz_b{font:inherit;font-weight:600;padding:10px 14px;min-height:44px;border:1px solid var(--bd);border-radius:999px;background:#fff;cursor:pointer}.yz_b[aria-pressed=true]{background:var(--ac);color:#fff;border-color:var(--ac)}.yz_l{font-size:14px;color:#6b6157;margin:4px 0}
 
 .wintro+.share-btn{min-height:44px;padding:0 16px;margin:0 0 10px;border:1.5px solid var(--ac);border-radius:99px;background:#fff;color:var(--act);font:700 14px Inter;cursor:pointer}.wintro+.share-btn:active{background:var(--ac);color:#fff}
+/* Phone tap targets: 44 px minimum (docs/PHONE_CHECKLIST.md item 3, #223) */
+.cmp_chip,.cmp_add,.ctx-btn{min-height:44px}
+.cmp_foot a,.cmp_week{display:inline-flex;align-items:center;min-height:44px}
+.tp_row{min-height:44px}
+.wlist a{display:flex;align-items:center;min-height:44px}
+.wf .wlens,.wf .wexp{display:inline-flex;align-items:center;min-height:44px}
+.row input[type=date],.row select,input[type=date]{min-height:44px}
+.lens_wk li a,.lens_top li a{display:inline-flex;align-items:center;min-height:44px}
+.wf .wlens,.wf .wexp{min-width:44px;justify-content:center}.wlist a{min-width:44px}
+select{min-height:44px}
