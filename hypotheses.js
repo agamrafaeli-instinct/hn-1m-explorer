@@ -42,6 +42,15 @@
     });
     return s;
   }
+  // Names written on the chart itself, in the colour of their bars, instead of a legend below it.
+  function labelled(svg, la, lb) {
+    const cut = t => { t = t.replace(/\s*\([^)]*\d{4}[^)]*\)/g, ''); return t.length > 46 ? t.slice(0, 45) + '\u2026' : t; };
+    const vb = svg.getAttribute('viewBox').split(' ').map(Number); svg.setAttribute('viewBox', [vb[0], vb[1] - 32, vb[2], vb[3] + 32].join(' '));
+    svg.classList.add('lined');
+    svg.appendChild(sv('text', { x: 6, y: -20, class: 'ln-a' }, cut(la)));
+    svg.appendChild(sv('text', { x: 6, y: -7, class: 'ln-b' }, cut(lb)));
+    return svg;
+  }
   function strip(series, labels) { return bars(null, { series, labels, ia: series.map((_, i) => i), ib: [], split: false }); }
   const VERDICT = {
     supported: ['Supported', 'The data backs the guess.'],
@@ -90,7 +99,7 @@
       const h = Math.max(2, (x / max) * 68);
       s.appendChild(sv('rect', { x: px, y: base - h, width: 80, height: h, rx: 3, class: cls }));
       s.appendChild(sv('text', { x: px + 40, y: base - h - 6, 'text-anchor': 'middle', class: 'g-val' }, fmtN(x, k)));
-      s.appendChild(sv('text', { x: px + 40, y: base + 14, 'text-anchor': 'middle', class: 'g-lab' }, lab.length > 24 ? lab.slice(0, 23) + '\u2026' : lab));
+      s.appendChild(sv('text', { x: px + 40, y: base + 14, 'text-anchor': 'middle', class: 'g-lab' }, (l => l.length > 24 ? l.slice(0, 23) + '\u2026' : l)(lab.replace(/\s*\([^)]*\d{4}[^)]*\)/g, ''))));
     });
     s.appendChild(sv('text', { x: W / 2, y: 16, 'text-anchor': 'middle', class: 'g-val' }, 'ratio ' + fmt(r.value) + (k.unit || 'x')));
     s.appendChild(sv('path', { d: 'M50 24 H130 M190 24 H270', class: 'g-tick', fill: 'none' }));
@@ -143,12 +152,11 @@
     const st = r.story.story, v = r.story.vars, k = card.check;
     a.classList.add('tl');
     a.appendChild(el('h3', '', st.question));
-    a.appendChild(el('p', 'tested', 'Tested proposition: ' + card.hypothesis));
     step(a, 'Why care', el('p', '', st.why));
     const opening = fillTpl(st.opening, v), take = fillTpl(st.takeaway, v);
     const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(la)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(lb));
     const desc = la + ' ' + fmtN(r.mean_a, k) + ', ' + lb + ' ' + fmtN(r.mean_b, k) + ', ratio ' + fmt(r.value) + (k.unit || 'x') + '.';
-    step(a, 'What we saw', [el('p', '', opening), storyChart(card, r, la, lb, desc), lg]);
+    step(a, 'What we saw', [el('p', '', opening), storyChart(card, r, la, lb, desc)]);
     step(a, 'Takeaway', el('p', 'take', take));
     { const cx = contextBlock(card); if (cx) step(a, 'Context', cx); }
     const bd = step(a, 'Keep in mind', el('p', 'boundary', st.boundary));
@@ -157,9 +165,6 @@
       st.explore.forEach((id, i) => { if (i) p.appendChild(document.createTextNode(', ')); const l = el('a', '', id.toUpperCase()); l.href = '#/c/' + id + '/' + key; p.appendChild(l); });
       step(a, 'Explore further', p);
     }
-    const V = VERDICT[r.verdict], vb = el('div', 'verdict');
-    vb.appendChild(el('b', '', V[0])); vb.appendChild(el('span', '', V[1] + (CONF[r.confidence] ? ' ' + CONF[r.confidence] : '')));
-    step(a, 'Verdict', vb);
     a.appendChild(detailsBlock(card, r));
     a.classList.add('compact');
   }
@@ -179,7 +184,7 @@
     const k = card.check, split = r.split && !/^\d{4}-/.test(String((r.labels || [])[0] || ''));
     const la = split ? (k.legend_a || 'Matching stories') : (r.label_a || k.group_a.label), lb = split ? (k.legend_b || 'Everything else') : (r.label_b || k.group_b.label);
     const per = k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'average');
-    const a = el('article', 'hyp narr ' + r.verdict);
+    const a = el('article', 'hyp narr');
     const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
     const key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
     const sh = el('button', 'share-btn', 'Share'); sh.type = 'button'; sh.dataset.url = new URL('share/c/' + card.id + '.html', location.href.split('#')[0]).href;
@@ -202,20 +207,17 @@
     step(a, 'What we checked', el('p', '', 'We compared ' + la + ' with ' + lb + ' (' + per + ')' + (r.win ? '. Data window: ' + r.win + '.' : ' in the data window.')));
     // 4. what we saw
     const lg = el('p', 'hyp-lg'); lg.appendChild(el('span', 'sw a')); lg.appendChild(document.createTextNode(la)); lg.appendChild(el('span', 'sw b')); lg.appendChild(document.createTextNode(lb));
-    step(a, 'What we saw', [bars(card, r), lg, el('p', 'take', la + ' came out at ' + fmtN(r.mean_a, k) + ', ' + lb + ' at ' + fmtN(r.mean_b, k) + '. That is a ratio of ' + fmt(r.value) + (k.unit || 'x') + '.')]);
+    step(a, 'What we saw', [labelled(bars(card, r), la, lb), el('p', 'take', la + ' came out at ' + fmtN(r.mean_a, k) + ', ' + lb + ' at ' + fmtN(r.mean_b, k) + '. That is a ratio of ' + fmt(r.value) + (k.unit || 'x') + '.')].concat(card.caveats && card.caveats.length ? [el('p', 'hnote', 'Keep in mind: ' + card.caveats[0])] : []));
     if (r.hist) {
       const h = r.hist, lg2 = el('p', 'hyp-lg'); lg2.appendChild(el('span', 'sw a')); lg2.appendChild(document.createTextNode(la)); lg2.appendChild(el('span', 'sw b')); lg2.appendChild(document.createTextNode(lb));
       const same = h.verdict === r.verdict, hv = VERDICT[h.verdict][0].toLowerCase();
-      step(a, 'Longer context', [bars(card, h), lg2, el('p', 'take', h.win + ': ' + la + ' ' + fmtN(h.mean_a, k) + ', ' + lb + ' ' + fmtN(h.mean_b, k) + ', ratio ' + fmt(h.value) + (k.unit || 'x') + '.'),
+      step(a, 'Longer context', [labelled(bars(card, h), la, lb), el('p', 'take', h.win + ': ' + la + ' ' + fmtN(h.mean_a, k) + ', ' + lb + ' ' + fmtN(h.mean_b, k) + ', ratio ' + fmt(h.value) + (k.unit || 'x') + '.'),
         (k.field === 'points' ? el('p', 'hnote diff', 'Caution: archive points per story shift level in Dec 2023 and Jan 2026 (about 2, then 12 to 16, then about 2), cause unknown. Treat this check as rough.') : document.createTextNode('')), el('p', 'hnote' + (same ? '' : ' diff'), same ? 'The same rules give the same call over the longer history.' : 'Different call: the same rules over the longer history would read ' + hv + ', not ' + VERDICT[r.verdict][0].toLowerCase() + '. The verdict below stays based on the newest window.')]);
     }
     if (r.strip) {
       step(a, 'Longer context', [strip(r.strip.series, r.strip.labels), el('p', 'take', r.strip.name + ': share of stories matching "rust" each month, ' + r.strip.win + '. Zig and the other words in this card are not in the archive\'s term list, so this is not the same measure as the chart above.')]);
     }
     // 5. verdict in plain words
-    const V = VERDICT[r.verdict], vb = el('div', 'verdict');
-    vb.appendChild(el('b', '', V[0])); vb.appendChild(el('span', '', V[1] + (CONF[r.confidence] ? ' ' + CONF[r.confidence] : '')));
-    step(a, 'Verdict', vb);
     // 6. folded: rules, gauge, caveats, source
     const d = el('details', 'more-d'); d.appendChild(el('summary', '', 'Caveats, the rules we set, source'));
     d.appendChild(gauge(card, r));

@@ -44,3 +44,5 @@
 .hyp-rules,.hyp-cov{font-size:14px;margin:0 0 6px;color:#3b342d}
 .flag-btn{display:block;margin:6px 0 10px;min-height:44px;padding:0 16px;border:1.5px solid var(--ac);border-radius:99px;background:#fff;color:var(--act);font:700 14px Inter;cursor:pointer}.flag-btn[aria-pressed=true]{background:var(--ac);color:#fff}
 #hyp_list.only-flagged article[data-flag="0"]{display:none}
+.hyp .ln-a,.hyp .ln-b{font:700 9px Inter,sans-serif}.hyp .ln-a{fill:var(--act)}.hyp .ln-b{fill:var(--ink)}
+.st svg.lined{max-height:165px}.hyp .ln-a,.hyp .ln-b{font-size:11px}
