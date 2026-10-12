@@ -32,6 +32,11 @@ jobs:
         run: python3 -m unittest tests.test_film_guard
       - name: Story spec checks
         run: node tests/story_spec.test.js
+      - name: Honor score (informational)
+        continue-on-error: true
+        run: |
+          files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -E '^hypotheses/h[0-9]{3}-[a-z0-9-]+\.json$' || true)
+          python3 scripts/honor_pr_summary.py $files | tee -a "$GITHUB_STEP_SUMMARY"
   ui:
     name: UI check at 390px
     runs-on: ubuntu-latest

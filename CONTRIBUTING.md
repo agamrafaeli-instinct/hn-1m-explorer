@@ -119,6 +119,19 @@ Write the lines first, then run the check. Example for the card above:
 
 If you change a line after you see the number, the card is not a test any more. A maintainer may ask for a new card instead.
 
+## Quality bar
+
+The site scores every card on six things (full rules in [docs/HONOR_SPEC.md](docs/HONOR_SPEC.md)):
+
+- **Sharp:** both groups have a label and rows, and the thresholds are numbers you set in advance.
+- **Interesting:** the card names an audience.
+- **Fresh:** a strong verdict that has not moved for 14 days gets flagged. Fixed-window cards are exempt.
+- **Relevant:** group A holds at least 30 items.
+- **Insightful:** group B differs from group A, `expect` states a number, and there is at least one caveat.
+- **Novel:** no older card uses the same data and groups or nearly the same title.
+
+The PR check prints this score for your card on its Summary page. It is advice. A low score never blocks the merge. It only helps you improve the card before review.
+
 ## When the check fails
 
 Each failure prints the card, the rule and a fix. Common ones:
