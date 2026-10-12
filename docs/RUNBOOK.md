@@ -64,3 +64,7 @@ Rollback was rehearsed on a local branch on 2026-10-10: revert of a test commit,
 - Manual pushes and board changes need a personal access token. It lives in the owner's password manager or in the environment of whoever is working, never in the repo, an issue or a message.
 - A token has an expiry date set when it is made. Renew it before then: create a new fine-grained token in GitHub settings for this repo only (contents, issues, actions and projects write), put it in the password manager, then delete the old token in GitHub. Pass it to commands through an environment variable, for example `export GH_TOKEN=...`, typed into the shell or read from the password manager. Do not write it to a file in the repo.
 - If a token may have leaked, delete it in GitHub settings first, then make a new one.
+
+## Before pushing a UI or CSS change
+
+Run `node scripts/perf.mjs --serve /tmp/site_pp --runs 3 --tolerance 1.25` (prepush does this). Load times on a busy machine are noisy, so treat a result near the limit as a reason to look, and raise the budget in the same commit when the change is real (data/budgets.json and docs/BUDGETS.md).

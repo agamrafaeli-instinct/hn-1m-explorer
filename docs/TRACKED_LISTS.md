@@ -50,3 +50,7 @@ Keep one file and add one key, `tracked`, per audience. Nothing else moves.
 ## Tasks
 
 - #228 domain list build and weekly counts, #229 Tracked section on the week screens, #230 version bump check, #231 owner names and terms (waits on a list from the owner; the starter list stays until then).
+
+## Changing a list needs a new version
+
+data/lists_versions.json records a hash of the lists for each list_version. A test and scripts/prepush.sh fail if data/lists.json changes while list_version stays the same. To change a list: edit it, bump list_version, then run `python3 scripts/check_list_version.py --record`.
