@@ -34,6 +34,10 @@ on:
         description: 'Skip checks whose inputs are unchanged (default: full run, skip nothing)'
         type: boolean
         default: false
+      simulate_bad_day:
+        description: 'Test only: break the data after the update to prove the quarantine path (#253)'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -79,7 +83,26 @@ jobs:
         # A saved week cannot be rebuilt once it leaves the archive window, so a missing or edited one fails the run the same day (#218).
         run: python scripts/verify_weekly.py
       - name: Add new items and keep the rolling window
-        run: python scripts/update_daily.py
+        # Retries twice on its own (#253): a transient network failure heals without a person.
+        run: bash scripts/retry.sh 3 python scripts/update_daily.py
+      - name: Simulate a bad day (test only)
+        if: inputs.simulate_bad_day == true
+        run: python3 -c "import json;m=json.load(open('data/manifest.json'));m['total_rows']-=5;json.dump(m,open('data/manifest.json','w'),indent=1)"
+      - name: Check the data contract
+        id: contract
+        # A break does not fail the run: the next step quarantines the day and the run carries on from the last good data (#253).
+        run: |
+          set +e
+          python scripts/contract.py --base HEAD | tee contract.txt
+          rc=${PIPESTATUS[0]}
+          echo "bad=$([ "$rc" != 0 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Quarantine the day
+        if: steps.contract.outputs.bad == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          bash scripts/quarantine.sh contract.txt "Data quarantined: contract broken, today's update was not saved"
       - name: Refresh curious-geeks numbers
         run: python scripts/geeks.py
       - name: Refresh film-card monthly shares
@@ -111,11 +134,18 @@ jobs:
           python scripts/findings_draft.py
           python scripts/findings_publish.py
       - name: Check the data before it is saved or published
+        id: dchecks
+        # A failing check quarantines the day instead of stopping the run: today's update is dropped, an issue is opened, and the last good data is published (#253).
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          set -o pipefail
+          set +e
           python scripts/data_checks.py | tee data_checks.txt
+          rc=${PIPESTATUS[0]}
           { echo '### Data checks'; echo '```'; cat data_checks.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
-          rm data_checks.txt
+          if [ "$rc" != 0 ]; then bash scripts/quarantine.sh data_checks.txt "Data quarantined: a data check failed, today's update was not saved"; fi
+          rm -f data_checks.txt contract.txt
+          exit 0
       - name: Commit dataset atomically
         run: |
           git config user.name 'github-actions[bot]'
