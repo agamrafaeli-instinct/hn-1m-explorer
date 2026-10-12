@@ -18,17 +18,17 @@ jobs:
         id: drill
         run: |
           set +e
-          bash scripts/quarantine_drill.sh | tee drill.txt
+          bash scripts/quarantine_drill.sh | tee "$RUNNER_TEMP/drill.txt"
           echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
-          { echo '### Quarantine drill'; echo '```'; cat drill.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          { echo '### Quarantine drill'; echo '```'; cat "$RUNNER_TEMP/drill.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           exit 0
       - name: Report a failed drill (one issue at a time)
         if: steps.drill.outputs.rc != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          { echo "The monthly drill of the bad-day quarantine did not hold. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; echo; echo '```'; cat drill.txt; echo '```'; echo; echo "See docs/ALERTS.md (self-healing run). Fix scripts/contract.py or scripts/quarantine.sh, then run the Quarantine drill workflow by hand."; } > body.md
+          { echo "The monthly drill of the bad-day quarantine did not hold. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; echo; echo '```'; cat "$RUNNER_TEMP/drill.txt"; echo '```'; echo; echo "See docs/ALERTS.md (self-healing run). Fix scripts/contract.py or scripts/quarantine.sh, then run the Quarantine drill workflow by hand."; } > "$RUNNER_TEMP/body.md"
           gh label create drill-failed --color B60205 --description 'The quarantine drill failed' 2>/dev/null || true
           num=$(gh issue list --label drill-failed --state open --json number -q '.[0].number // empty')
-          if [ -n "$num" ]; then gh issue comment "$num" --body-file body.md
-          else gh issue create --label drill-failed --title "Quarantine drill failed: the bad-day check needs a look" --body-file body.md; fi
+          if [ -n "$num" ]; then gh issue comment "$num" --body-file "$RUNNER_TEMP/body.md"
+          else gh issue create --label drill-failed --title "Quarantine drill failed: the bad-day check needs a look" --body-file "$RUNNER_TEMP/body.md"; fi
