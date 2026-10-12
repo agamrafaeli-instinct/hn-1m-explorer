@@ -1,0 +1,34 @@
+name: Quarantine drill
+# Monthly check that the bad-day quarantine from #253 still works (#340). It breaks the data inside this runner's own checkout, never pushes,
+# never touches the live site, and opens one issue labelled drill-failed only if the quarantine does not hold.
+on:
+  schedule:
+    - cron: '41 3 3 * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  drill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the drill
+        id: drill
+        run: |
+          set +e
+          bash scripts/quarantine_drill.sh | tee drill.txt
+          echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+          { echo '### Quarantine drill'; echo '```'; cat drill.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+      - name: Report a failed drill (one issue at a time)
+        if: steps.drill.outputs.rc != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { echo "The monthly drill of the bad-day quarantine did not hold. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"; echo; echo '```'; cat drill.txt; echo '```'; echo; echo "See docs/ALERTS.md (self-healing run). Fix scripts/contract.py or scripts/quarantine.sh, then run the Quarantine drill workflow by hand."; } > body.md
+          gh label create drill-failed --color B60205 --description 'The quarantine drill failed' 2>/dev/null || true
+          num=$(gh issue list --label drill-failed --state open --json number -q '.[0].number // empty')
+          if [ -n "$num" ]; then gh issue comment "$num" --body-file body.md
+          else gh issue create --label drill-failed --title "Quarantine drill failed: the bad-day check needs a look" --body-file body.md; fi
