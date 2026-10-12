@@ -52,7 +52,7 @@ jobs:
           git reset -q --hard origin/main
       - name: Did a passing prepush already check these exact files?
         id: pp
-        # Only a push-triggered run may skip the repeat UI and budget steps, and only when .prepush_ok matches these files. Scheduled and manual runs keep every check. Missing or stale marker means every check runs.
+        # Only a push-triggered run may skip the repeat UI step (budgets always run, #250), and only when .prepush_ok matches these files. Scheduled and manual runs keep every check. Missing or stale marker means every check runs.
         run: |
           skip=false
           if [ "${{ github.event_name }}" = "push" ] && python3 scripts/prepush_digest.py --check; then skip=true; fi
@@ -157,7 +157,6 @@ jobs:
           { echo '### UI check (390px)'; echo '```'; cat ui.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           rm ui.txt
       - name: Check load time and size against budgets
-        if: steps.pp.outputs.skip != 'true'
         run: |
           set -o pipefail
           node scripts/perf.mjs --serve _site --runs 3 --tolerance 1.25 --trend perf_trend.csv | tee perf.txt

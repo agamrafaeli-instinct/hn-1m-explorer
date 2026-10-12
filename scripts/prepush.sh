@@ -23,13 +23,7 @@ if [ -n "$failed" ]; then
   for n in $failed; do echo "---- $n (last 25 lines of /tmp/pp/$n.log)"; tail -25 "/tmp/pp/$n.log"; done
   exit 1
 fi
-node scripts/perf.mjs --serve /tmp/site_pp --runs 3 --tolerance 1.25 --trend
-# All checks above passed (set -e): record the digest of these exact files. A push-triggered CI run skips the repeat UI and budget steps only when this marker matches. Commit .prepush_ok with the change.
+# Perf budgets and the phone sweep run in CI only (#250): a 2 GB machine gives noisy load times.
+# All checks above passed (set -e): record the digest of these exact files. A push-triggered CI run skips the repeat UI step only when this marker matches; CI always runs the perf budgets. Commit .prepush_ok with the change.
 echo "prepush took ${SECONDS}s"
 python3 scripts/prepush_digest.py --write
-# Optional, about 90 s more: PHONE_SWEEP=1 bash scripts/prepush.sh lists phone layout findings at 320, 390 and 430 px (report only).
-if [ -n "$PHONE_SWEEP" ]; then
-  (cd /tmp/site_pp && python3 -m http.server 8790 >/dev/null 2>&1 & echo $! > /tmp/sweep_srv.pid); sleep 1
-  node scripts/phone_sweep.mjs --site http://localhost:8790/ || true
-  kill "$(cat /tmp/sweep_srv.pid)" 2>/dev/null || true
-fi
