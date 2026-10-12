@@ -67,6 +67,15 @@
   homeWeek();
   const BASE_TITLE = document.title, META = document.querySelector('meta[name="description"]'), BASE_DESC = META ? META.content : '';
   window.SetPageMeta = (t, d) => { document.title = t + ' | ' + BASE_TITLE; if (META) META.content = d; };
+  const TITLES = {
+    how: ['Method', 'Where the data comes from and how every number on this site is computed.'],
+    explore: ['Explorer', 'Search every Hacker News story since 2006 and see where points and attention sit.'],
+    submit: ['Submit a hypothesis', 'Propose a hypothesis for the full Hacker News archive to test.'],
+    story: ['Where the attention lives', 'How points are spread across every Hacker News story since 2006.'],
+    lesson: ['How to read trends', 'Why a fall from a peak is not a return to the past.'],
+    topics: ['Topics', 'One chart per topic across every Hacker News story since 2006.'],
+    hyp: ['Hypotheses, tested', 'Every card on this site, each checked against the full Hacker News archive.']
+  };
   let cur;
   function sagaBar() {
     const b = $('saga_bar'); if (b.dataset.on) return; b.dataset.on = '1';
@@ -79,6 +88,7 @@
     let v = 'saga';
     if (p[0] === 'a' && AUD[p[1]]) v = 'aud'; else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'hypotheses') v = 'hyp';
     if (v !== 'week') { document.title = BASE_TITLE; if (META) META.content = BASE_DESC; }
+    if (TITLES[v]) window.SetPageMeta(TITLES[v][0], TITLES[v][1]);
     views.forEach(n => $('v_' + n).hidden = n !== v);
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();
