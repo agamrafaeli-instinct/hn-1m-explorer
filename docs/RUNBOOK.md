@@ -9,7 +9,7 @@ Who this is for: someone new who has to run the scheduled jobs, deploy the site 
 
 | Job | Workflow | Schedule | Writes | Must produce |
 |---|---|---|---|---|
-| Daily update and Pages deploy | `daily-hn.yml` | 02:23 daily, on a push that changes `hypotheses/`, or by hand | `data/` (rolling dataset, `data/honor.json`, `data/verdicts/log.csv`) and the live site | A green run, a "Deploy Pages" step and a new page on the live site |
+| Daily update and Pages deploy | `daily-hn.yml` | 02:23 daily, on a push that changes the published site (see Deploy), or by hand | `data/` (rolling dataset, `data/honor.json`, `data/verdicts/log.csv`) and the live site | A green run, a "Deploy Pages" step and a new page on the live site |
 | 300+ points digest | `watch-350.yml` | Every 2 hours at minute 41 | `alerts/` (`digest.md`, `new.md`, `seen.json`, `alerts.json`) | A commit in `alerts/` when a new story passed 300 points |
 | Weekly snapshot | `weekly-snapshot.yml` | Mondays 05:17 | `data/weekly/<year>-W<nn>.json` and `data/compare/` | One new file per complete week, then a site deploy |
 | Run alerts | `run-alerts.yml` | After the jobs above, and a missed-run check at 08:41 daily | One GitHub issue per failure | Nothing when all is well |
@@ -45,11 +45,11 @@ Steps in order: tests, check saved weeks against their hashes, save complete wee
 
 ## Deploy and rollback
 
-The site goes live only through `daily-hn.yml`. A push to `main` that only changes docs or tests needs no deploy. A push that changes `hypotheses/` starts the workflow by itself, so do not start it by hand for that push.
+The site goes live only through `daily-hn.yml`. A push to `main` starts it by itself when it changes the published site: root `.html .js .mjs .css .json .svg .png .jpg .ico .webp` files (not `source.json`), `data/`, `hypotheses/`, `stories/`, `vendor/`, `assets/`, `demo/`, `sample/`, `scripts/stage_site.py`, `scripts/build_share_pages.py`, `scripts/build_hyp_bundle.js` or the workflow itself. A push that only changes docs, tests or other scripts starts nothing. Do not also start it by hand for a push that already started it: the second run only repeats the first. Use `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-1m-explorer` only to re-run without a change.
 
 Never push or start a run while a daily or weekly run is in progress: the bot commits to `data/` at the end of the run and the push can collide.
 
-Deploy: push to `main`, then `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-1m-explorer`, and wait for a green run. Check the live page afterwards.
+Deploy: push to `main`. If the change touches a published file the workflow starts by itself; wait for a green run and check the live page afterwards.
 
 Rollback:
 1. Find the bad commit: `git log --oneline -20`.
@@ -84,7 +84,7 @@ Steps, from a clean clone:
 2. Check the saved weeks: `python3 scripts/verify_weekly.py`. It must say all weeks match.
 3. See the site on your machine: `python3 scripts/stage_site.py --root . --output /tmp/site` then `cd /tmp/site && python3 -m http.server 8766`, and open http://localhost:8766/.
 4. Run every check CI runs before you push: `bash scripts/prepush.sh` (about 3 minutes). Never push while it shows an error.
-5. Push to main. A change under hypotheses/ deploys by itself. Any other site change needs one run of "Daily Hacker News update and Pages" (Actions tab, Run workflow). Docs and tests need no deploy.
+5. Push to main. A change to a published file deploys by itself (see Deploy). Docs and tests need no deploy.
 
 When a run fails: open the run in the Actions tab, find the step with the red mark, and read its log. The failure issue on the board links to the run. `gh run view <id> --log-failed` shows the same log. The last good site stays live while a run fails. Fix the cause, push, and run it again once.
 

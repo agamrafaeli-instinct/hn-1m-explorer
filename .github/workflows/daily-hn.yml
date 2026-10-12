@@ -4,7 +4,30 @@ on:
     - cron: '23 2 * * *'  # 09:23 Asia/Bangkok daily
   push:
     branches: [main]
-    paths: ['hypotheses/**']
+    # Only changes that alter the published site start a deploy (the allowlist in scripts/stage_site.py, plus the scripts that build staged files and this workflow). Docs, tests and other scripts do not.
+    paths:
+      - '*.html'
+      - '*.js'
+      - '*.mjs'
+      - '*.css'
+      - '*.json'
+      - '*.svg'
+      - '*.png'
+      - '*.jpg'
+      - '*.ico'
+      - '*.webp'
+      - 'data/**'
+      - 'hypotheses/**'
+      - 'stories/**'
+      - 'vendor/**'
+      - 'assets/**'
+      - 'demo/**'
+      - 'sample/**'
+      - 'scripts/stage_site.py'
+      - 'scripts/build_share_pages.py'
+      - 'scripts/build_hyp_bundle.js'
+      - '.github/workflows/daily-hn.yml'
+      - '!source.json'
   workflow_dispatch:
 permissions:
   contents: read
