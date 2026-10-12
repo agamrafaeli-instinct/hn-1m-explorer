@@ -16,5 +16,5 @@ HN digest 2026-10-12 (UTC): 19 new stories at 300+ points
 - 310 pts, 366 comments: Terence Tao: Math 2.0 [pdf] https://news.ycombinator.com/item?id=50043026
 - 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055
 - 305 pts, 148 comments: Documents Add to Evidence in Climate Deception Case Against ExxonMobil https://news.ycombinator.com/item?id=50043682
-- 303 pts, 137 comments: Talorys – A self-hosted personal AI agent on Cloudflare's free tier https://news.ycombinator.com/item?id=50031614
+- 300 pts, 61 comments: Cartographers of North Korea (2019) https://news.ycombinator.com/item?id=50047091
 - 300 pts, 47 comments: 'Wallace and Gromit,' 90% Alone https://news.ycombinator.com/item?id=50020533
