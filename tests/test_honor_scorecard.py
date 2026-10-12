@@ -27,6 +27,14 @@ def make(card=None, rows=None, extra=None, log=None, stories=None):
 def crit(d, cid='h900'):
     return next(c for c in h.run(d)['cards'] if c['id'] == cid)['criteria']
 
+class Replaces(unittest.TestCase):
+    def test_new_card_is_not_a_duplicate_of_the_card_it_replaces(self):
+        new = copy.deepcopy(CARD); new['id'] = 'h901'; new['replaces'] = 'h900'
+        self.assertFalse(crit(make(extra=[new]), 'h901')['novel'] is False)
+    def test_still_a_duplicate_of_other_cards(self):
+        new = copy.deepcopy(CARD); new['id'] = 'h901'; new['replaces'] = 'h899'
+        self.assertFalse(crit(make(extra=[new]), 'h901')['novel'])
+
 class T(unittest.TestCase):
     def test_all_pass(self):
         c = crit(make()); self.assertEqual({k: v for k, v in c.items() if k != 'fresh'}, {k: True for k in h.CRITERIA if k != 'fresh'}); self.assertIsNone(c['fresh'])

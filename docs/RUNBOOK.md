@@ -113,3 +113,7 @@ When a run fails (the issue already names the failing step, the last 30 log line
 
 ## Test fixture (#248)
 `tests/fixtures/root` is a small fixed copy of the data layout: 90 stories per month from the archive (the smallest md5 of the id, so the same sample every time), the daily counts and atlas files built from them, and the film shares, topic series, rings and saga files made by the real scripts with `HN_ROOT` pointing there. Rebuild with `python3 scripts/make_fixture.py` (needs data/archive; output is byte-identical on repeat). Tests import `FIX` from `tests/fixture_root.py` and read it instead of live data, so a new month or a daily run cannot break them. Moved so far: film, topic series, rings and saga data tests.
+
+## Card generators (#249)
+- `python3 scripts/new_card.py spec.json` makes a film card and what it needs from one JSON spec: the card file, `stories/<id>.json` with its index entry, an optional row in docs/CARD_QUESTIONS.md (give `question`), and a Honor score for the new card (exit 1 if any criterion is False). Fields are listed at the top of `scripts/card_tools.py`. Share pages and test coverage need no file: `stage_site.py` builds a share page for every card and the tests loop over every card.
+- `python3 scripts/upgrade_card.py hOLD hNEW [--set audience="curious readers"] [--strong X --weak X --refute X] [--question "..."]` copies an old card under a new id with `"replaces"`, so the old one stays on the site and stops counting as failing. The scorecard no longer calls a card a duplicate of the card it replaces.
