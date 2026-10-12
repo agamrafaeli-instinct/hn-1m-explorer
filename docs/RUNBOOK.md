@@ -98,3 +98,6 @@ When a run fails (the issue already names the failing step, the last 30 log line
 ## CI caching and skipped steps (#243)
 - pip installs are cached by setup-python (`cache: pip`, keyed on `requirements-ci.txt`). Add a new Python dependency there.
 - The steps that write film_shares, topic_series, rings and saga data run only when `scripts/inputs_hash.py --check` fails. The hash covers the archive, history, atlas, those four scripts and the current UTC month. The result is stored in `data/film_inputs.sha` and committed with the data. To force a rebuild, delete that file.
+
+## Look at a page at phone width (#244)
+`scripts/look.sh '#/rings' [out.png] [js]` stages the site fresh, serves it on port 8766, takes a 390 px screenshot and prints the png path (default /tmp/look.png). The optional third argument is JavaScript to run after load, for example `document.querySelector('#sg9').scrollIntoView()`. View the file with `tools read --file-path`.
