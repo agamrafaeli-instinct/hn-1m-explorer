@@ -7,13 +7,14 @@ rm -rf /tmp/site_pp; python3 scripts/stage_site.py --root . --output /tmp/site_p
 mkdir -p /tmp/pp; rm -f /tmp/pp/*.log /tmp/pp/*.rc
 job() { local name=$1; shift; ( "$@" >"/tmp/pp/$name.log" 2>&1; echo $? >"/tmp/pp/$name.rc" ) & }
 job unit python3 -m unittest discover -s tests
+job copy python3 scripts/copy_lint.py
 job lists python3 scripts/check_list_version.py
 job roadmap bash -c 'python3 scripts/check_roadmap.py || true'
 job node bash -c 'for t in hypotheses story_spec context_isolation card_rules yearzoom; do node tests/$t.test.js | tail -1; [ "${PIPESTATUS[0]}" = 0 ] || { echo "FAILED tests/$t.test.js"; exit 1; }; done'
 job ui node tests/ui.test.mjs --serve /tmp/site_pp
 wait
 failed=""
-for n in unit lists roadmap node ui; do
+for n in unit copy lists roadmap node ui; do
   echo "== $n: $( (grep -E '^(OK|FAILED)|passed|FAIL' /tmp/pp/$n.log || tail -n 5 /tmp/pp/$n.log) | tail -1)"
   [ "$(cat /tmp/pp/$n.rc 2>/dev/null || echo 1)" = 0 ] || failed="$failed $n"
 done
