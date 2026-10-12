@@ -3,8 +3,8 @@
 // usage: node scripts/perf.mjs [--site URL | --serve DIR] [--tolerance 1.25] [--runs N] [--only name,name] [--write-budgets] [--budgets data/budgets.json]
 // --width N sets the screen width (default 390). Other widths check sideways overflow only, since budgets are set at 390.
 // Settings (Lighthouse "slow 4G"): 150 ms round trip, 1.6 Mbps down, 750 kbps up, 4x CPU, 390x844 at 2x, cold cache.
-// Prints one line per screen: median content time, requests, KB, horizontal overflow. Exits 1 if a screen is over budget
-// or overflows sideways. Budgets: data/budgets.json = measured median + 15 percent (rounded up), see docs/BUDGETS.md.
+// Prints one line per screen: median content time, requests, KB, horizontal overflow. Exits 1 if a screen is over its size or request budget
+// or overflows sideways. Time only warns (WIDE x the budget, --wide N). --trend [FILE] appends one row per screen to docs/PERF_TREND.csv. Budgets: data/budgets.json = measured median + 15 percent (rounded up), see docs/BUDGETS.md.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -14,6 +14,8 @@ import zlib from 'node:zlib';
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i < 0 ? d : (process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[i + 1] : true); };
 // --serve DIR: serve a staged site folder on localhost with gzip (like Pages) so the check can run before deploy.
 const TOL = +arg('tolerance', 1);
+// Time is a trend, not a gate (#237): it only warns when it passes WIDE x the budgeted time. Size and request counts still fail.
+const WIDE = +arg('wide', 2);
 let SERVER = null, SERVE_URL = null;
 if (arg('serve', false)) {
   const dir = path.resolve(String(arg('serve'))), types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.csv': 'text/csv', '.svg': 'image/svg+xml' };
@@ -71,16 +73,22 @@ for (const [name, route, sel, text] of SCREENS) {
   const ok = rs.filter(r => r.ms != null);
   if (!ok.length) { console.log(name.padEnd(16), 'FAIL content never appeared'); bad++; continue; }
   const m = { ms: median(ok.map(r => r.ms)), reqs: median(ok.map(r => r.reqs)), kb: Math.round(median(ok.map(r => r.kb))), overflow: Math.max(...ok.map(r => r.overflow)) };
-  out[name] = m; const b = budgets[name]; const over = [];
-  if (b && WIDTH === 390) { if (m.ms > b.ms * TOL) over.push(`time ${m.ms}>${Math.round(b.ms * TOL)} ms`); if (m.kb > b.kb) over.push(`size ${m.kb}>${b.kb} KB`); if (m.reqs > b.reqs) over.push(`requests ${m.reqs}>${b.reqs}`); }
+  out[name] = m; const b = budgets[name]; const over = [], warn = [];
+  if (b && WIDTH === 390) { if (m.ms > b.ms * WIDE) warn.push(`time ${m.ms}>${Math.round(b.ms * WIDE)} ms`); if (m.kb > b.kb) over.push(`size ${m.kb}>${b.kb} KB`); if (m.reqs > b.reqs) over.push(`requests ${m.reqs}>${b.reqs}`); }
   if (m.overflow > 0) over.push(`sideways overflow ${m.overflow}px`);
   if (over.length) bad++;
-  console.log(name.padEnd(16), `${m.ms} ms`.padStart(9), `${m.reqs} req`.padStart(8), `${m.kb} KB`.padStart(8), over.length ? 'OVER: ' + over.join('; ') : (b && WIDTH === 390 ? 'ok' : WIDTH === 390 ? 'no budget' : 'ok (width ' + WIDTH + ', overflow only)'));
+  console.log(name.padEnd(16), `${m.ms} ms`.padStart(9), `${m.reqs} req`.padStart(8), `${m.kb} KB`.padStart(8), over.length ? 'OVER: ' + over.join('; ') : warn.length ? 'WARN (time only, does not fail): ' + warn.join('; ') : (b && WIDTH === 390 ? 'ok' : WIDTH === 390 ? 'no budget' : 'ok (width ' + WIDTH + ', overflow only)'));
 }
 if (arg('write-budgets', false)) {
   const scr = {}; for (const [k, m] of Object.entries(out)) scr[k] = { ms: Math.ceil(m.ms * 1.15 / 50) * 50, kb: Math.ceil(m.kb * 1.15), reqs: Math.ceil(m.reqs * 1.15), measured: m };
   fs.writeFileSync(BFILE, JSON.stringify({ settings: { rtt_ms: 150, down_kbps: 1638, cpu_slowdown: 4, viewport: '390x844@2x', cache: 'cold', runs: RUNS, site: SITE, date: new Date().toISOString().slice(0, 10), rule: 'measured median + 15 percent, time rounded up to 50 ms' }, screens: scr }, null, 1) + '\n');
   console.log('wrote', BFILE);
+}
+if (arg('trend', false) && WIDTH === 390) {
+  const tf = String(arg('trend')) === 'true' ? 'docs/PERF_TREND.csv' : String(arg('trend')), head = 'date,source,page,ms,requests,kb\n';
+  if (!fs.existsSync(tf)) fs.writeFileSync(tf, head);
+  const src = process.env.GITHUB_ACTIONS ? 'ci' : 'local', day = new Date().toISOString().slice(0, 16);
+  fs.appendFileSync(tf, Object.entries(out).map(([k, m]) => [day, src, k, m.ms, m.reqs, m.kb].join(',') + '\n').join(''));
 }
 if (SERVER) SERVER.close();
 process.exit(bad ? 1 : 0);

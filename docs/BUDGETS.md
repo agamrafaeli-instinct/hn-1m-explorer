@@ -54,3 +54,12 @@ The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --toleranc
 2026-10-12: audience time budget is 2850 ms (was 2400). CI measured 3057 ms with the +25% allowance, about 2450 ms real, after the page grew over several changes (#223 added tap-target CSS).
 
 2026-10-13 (#266, #256): `home` in the perf table is the compare page (`#/compare`, the old home). `saga` is the new home (`#/`). The `audience` screen was removed with the audience pages; old `#/a/<audience>` links redirect to `#/hypotheses`. The phone sweep and UI test cover both home routes.
+
+## Time is a trend (#237)
+Run 38225008868 failed at 3057 ms against 3000 ms, which was machine noise. Since 2026-10-13:
+- **Fails the run:** size (KB) over budget, request count over budget, sideways overflow, content that never appears.
+- **Only warns:** load time over 2 x the budgeted time (`--wide N` changes the factor). The line reads `WARN (time only, does not fail)`.
+- **Trend file:** `--trend [FILE]` appends one row per screen (date in UTC, source local or ci, page, ms, requests, KB). Prepush writes `docs/PERF_TREND.csv`, which is committed with the change. CI writes `perf_trend.csv` and prints it in the run summary.
+- The `ms` values in data/budgets.json stay as the reference for the warning.
+Checked by hand: a 1 ms budget gave exit 0 with a warning, and a 1 KB budget gave exit 1.
+

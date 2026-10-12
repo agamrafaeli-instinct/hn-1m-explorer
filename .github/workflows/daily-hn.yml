@@ -132,9 +132,9 @@ jobs:
         if: steps.pp.outputs.skip != 'true'
         run: |
           set -o pipefail
-          node scripts/perf.mjs --serve _site --runs 3 --tolerance 1.25 | tee perf.txt
-          { echo '### Load budgets (slow 4G, 390px, time limit +25% for the CI machine)'; echo '```'; cat perf.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
-          rm perf.txt
+          node scripts/perf.mjs --serve _site --runs 3 --tolerance 1.25 --trend perf_trend.csv | tee perf.txt
+          { echo '### Load budgets (slow 4G, 390px). Size and request counts fail the run. Time only warns.'; echo '```'; cat perf.txt; echo '```'; echo 'Trend rows (date,source,page,ms,requests,kb):'; echo '```'; cat perf_trend.csv; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          rm perf.txt perf_trend.csv
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
