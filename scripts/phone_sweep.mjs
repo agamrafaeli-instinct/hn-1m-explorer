@@ -14,7 +14,7 @@ let id=0;const pend={};ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pend
 const send=(method,params={})=>new Promise(r=>{const i=++id;pend[i]=r;ws.send(JSON.stringify({id:i,method,params}))});
 await send('Page.enable');
 const idx=await (await fetch(site+'data/weekly/index.json')).json();const wk=idx.weeks[idx.weeks.length-1].week;
-export const SCREENS=['#/','#/a/engineers','#/a/vcs','#/a/geeks','#/c/h370','#/hypotheses','#/w/engineers/'+wk,'#/w/vcs/'+wk,'#/w/geeks/'+wk,'#/s/2026-10-11','#/story','#/explore','#/submit','#/how','#/lesson','#/topics','#/today','#/l/github.com','#/l/n/Nvidia','#/t/llm','#/compare'];
+export const SCREENS=['#/','#/a/engineers','#/a/vcs','#/a/geeks','#/c/h370','#/hypotheses','#/w/engineers/'+wk,'#/w/vcs/'+wk,'#/w/geeks/'+wk,'#/s/2026-10-11','#/story','#/explore','#/submit','#/how','#/lesson','#/topics','#/today','#/l/github.com','#/l/n/Nvidia','#/t/llm','#/compare','#/rings'];
 const expr=`(()=>{
 const vis=e=>{const r=e.getBoundingClientRect();const s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};
 const nm=e=>(e.innerText||e.textContent||e.getAttribute('aria-label')||e.title||e.value||e.getAttribute('aria-labelledby')||'').trim();

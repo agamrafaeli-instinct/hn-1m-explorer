@@ -245,11 +245,13 @@ body[data-view=compare]{overflow:hidden;padding-bottom:0}
 select{min-height:44px}
 .wtrack .wfl li{display:flex;flex-direction:column;gap:2px;padding:6px 0}
 .wtrack .wfl li .wv{font-size:.92em;color:#5a5048}
-/* Rings view (#274) */
-.rg_sec{margin:18px 0}.rg_sec h3{margin:0 0 4px}.rg_note{color:#5a5048;font-size:.92em;margin:0 0 8px}
-.rg_row{display:flex;align-items:center;gap:2px;margin-bottom:2px}.rg_y{width:38px;flex:none;font-size:.82em;color:#5a5048}
-.rg_c{flex:1 1 0;min-width:0;height:20px;border-radius:2px;background:#f0ebe3}
-.rg_head{align-items:flex-end}.rg_h{flex:1 1 0;min-width:0;height:74px;position:relative}
-.rg_h b{position:absolute;left:50%;bottom:2px;transform-origin:left bottom;transform:rotate(-70deg);white-space:nowrap;font-size:.72em;font-weight:600}
-.rg_dr{margin:0 0 4px;font-size:.92em}.rg_dr b{display:inline-block;width:44px}
-.rg_tr{display:grid;grid-template-columns:44px 1fr 1fr 1.2fr;gap:4px;font-size:.88em;padding:2px 0;border-bottom:1px solid #eee6da}.rg_th{font-weight:600;font-size:.8em}
+/* Rings view (#274, #275) */
+.rg_sec{margin:16px 0}.rg_sec h3{margin:0 0 6px}.rg_note{color:#5a5048;font-size:.92em;margin:0 0 8px}.rg_fine{font-size:.78em;margin-top:16px}
+.rg_row{display:flex;align-items:center;gap:2px;margin-bottom:2px}.rg_y{width:38px;flex:none;font-size:.8em;color:#5a5048}
+.rg_c{flex:1 1 0;min-width:0;height:20px;border-radius:2px;background:#f0ebe3;cursor:pointer}
+.rg_h{flex:1 1 0;min-width:0;display:flex;justify-content:center;padding:2px 0 4px;cursor:pointer}.rg_ic{width:20px;height:20px;fill:none;stroke:#1b1b1b;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rg_dr{display:flex;align-items:center;gap:6px;margin-bottom:4px}.rg_badge{width:26px;height:26px;border-radius:6px;color:#fff;font-weight:700;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.rg_st{display:flex;align-items:flex-end;gap:6px;margin-bottom:10px}.rg_si{width:32px;flex:none;display:flex;justify-content:center;cursor:pointer}.rg_si .rg_ic{width:24px;height:24px;stroke:#ff6600}
+.rg_bars{flex:1;display:flex;align-items:flex-end;gap:2px;height:46px}.rg_bar{flex:1 1 0;min-width:0;background:#ff6600;border-radius:2px 2px 0 0;cursor:pointer}
+.rg_ax{display:flex;justify-content:space-between;margin-left:38px;font-size:.78em;color:#5a5048}
+.rg_pop{position:fixed;z-index:50;background:#1b1b1b;color:#fff;border-radius:10px;padding:10px 12px;font-size:.9em;line-height:1.35;box-shadow:0 6px 20px rgba(0,0,0,.25);pointer-events:none}
