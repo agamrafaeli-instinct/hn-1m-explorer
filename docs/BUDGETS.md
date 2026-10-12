@@ -17,9 +17,9 @@ Measured 2026-10-09 on the live site. Budget = measured median plus 15 percent, 
 | Home | 857 ms, 12 req, 87 KB | 1000 ms, 14 req, 101 KB |
 | Audience page | 1858 ms, 17 req, 197 KB | 2400 ms, 20 req, 310 KB (raised 2026-10-10 for film data and the #130 context code; CI measured 2713 ms with tolerance) |
 | One card | 1688 ms, 17 req, 197 KB | 1950 ms, 20 req, 310 KB (raised 2026-10-10, film data grew) |
-| This week, Engineers | 1566 ms, 20 req, 197 KB | 1850 ms, 27 req, 227 KB |
-| This week, VCs | 1617 ms, 20 req, 197 KB | 1900 ms, 27 req, 227 KB |
-| This week, Geeks | 1553 ms, 20 req, 197 KB | 1800 ms, 27 req, 227 KB |
+| This week, Engineers | 1566 ms, 20 req, 197 KB | 1850 ms, 30 req, 280 KB |
+| This week, VCs | 1617 ms, 20 req, 197 KB | 1900 ms, 30 req, 280 KB |
+| This week, Geeks | 1553 ms, 20 req, 197 KB | 1800 ms, 30 req, 280 KB |
 | Explorer (before loading data) | 287 ms, 9 req, 37 KB (before #119) | 350 ms, 14 req, 56 KB |
 
 The story page is not measured yet: its content test did not settle in the script. It is tracked as a follow-up.

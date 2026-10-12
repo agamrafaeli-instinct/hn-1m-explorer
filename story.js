@@ -210,13 +210,22 @@
       const mon = iso => { const p = iso.split('-'); return MN[+p[1] - 1] + ' ' + p[0]; };
       const tot = H.monthly.stories.reduce((a, b) => a + b, 0) + H.monthly.comments.reduce((a, b) => a + b, 0);
       $('lede_hist').textContent = 'Daily counts from the archive in data/history/ (' + mon(H.months[0]) + ' to ' + mon(H.months[H.months.length - 1]) + ', about ' + fmtS(tot) + ' stories and comments). The lenses above cover every archived story, which is the full history to the last archived month. Comment text is not in the archive, only counts.';
-      const box = $('hist_charts'); box.replaceChildren();
-      [['stories', 'Stories per month'], ['comments', 'Comments per month'], ['points', 'Story points per month']].forEach(([k, t]) => {
-        const v = H.monthly[k], pk = v.indexOf(Math.max.apply(null, v)), d = document.createElement('div'); d.className = 'hchart';
-        const h3 = document.createElement('h3'); h3.textContent = t; const cap = document.createElement('p'); cap.className = 'lede';
-        cap.textContent = mon(H.months[0]) + ': ' + fmt(v[0]) + '. ' + mon(H.months[v.length - 1]) + ': ' + fmt(v[v.length - 1]) + '. Peak: ' + mon(H.months[pk]) + ', ' + fmt(v[pk]) + '.';
-        d.append(h3, HypCards.strip(v, H.months), cap);
-        if (k === 'points') { const n = document.createElement('p'); n.className = 'lede'; n.style.fontWeight = '700'; n.textContent = 'Read with care: points per story are about 2 until Nov 2023, about 12 to 16 from Dec 2023 to Dec 2025, and about 2 again from Jan 2026. This file cannot tell us whether that is a real change or a change in how scores were recorded, so do not compare points across those periods.'; d.appendChild(n); } box.appendChild(d);
+      const box = $('hist_charts'), zbox = $('hist_zoom'); box.replaceChildren(); zbox.replaceChildren();
+      const first = +H.months[0].slice(0, 4), last = +H.months[H.months.length - 1].slice(0, 4);
+      await new Promise((ok, no) => { if (window.YearZoom) return ok(); const sc = document.createElement('script'); sc.src = 'yearzoom.js'; sc.onload = ok; sc.onerror = no; document.head.appendChild(sc); });
+      const Z = YearZoom.mount(zbox, { min: first, max: last });
+      const defs = [['stories', 'Stories per month'], ['comments', 'Comments per month'], ['points', 'Story points per month']];
+      const cards = defs.map(([k, t]) => { const d = document.createElement('div'); d.className = 'hchart'; box.appendChild(d); return d; });
+      Z.on(r => {
+        const idx = YearZoom.pick(H.months, r);
+        defs.forEach(([k, t], j) => {
+          const d = cards[j], h3 = document.createElement('h3'); h3.textContent = t + ', ' + Z.label(); d.replaceChildren(h3);
+          if (!idx.length) { const e = document.createElement('p'); e.className = 'lede'; e.textContent = 'No data for these years.'; d.appendChild(e); return; }
+          const v = idx.map(i => H.monthly[k][i]), ms = idx.map(i => H.months[i]), pk = v.indexOf(Math.max.apply(null, v)), cap = document.createElement('p'); cap.className = 'lede';
+          d.appendChild(YearZoom.chart(ms.map((m, i) => [m, v[i]]), t, k === 'points' ? 'points per month' : k + ' per month'));
+          cap.textContent = mon(ms[0]) + ': ' + fmt(v[0]) + '. ' + mon(ms[ms.length - 1]) + ': ' + fmt(v[v.length - 1]) + '. Peak: ' + mon(ms[pk]) + ', ' + fmt(v[pk]) + '.'; d.appendChild(cap);
+          if (k === 'points') { const n = document.createElement('p'); n.className = 'lede'; n.style.fontWeight = '700'; n.textContent = 'Read with care: points per story rise from about 5 in 2007 to about 15 in 2022, are about 2 from Jan to Nov 2023, about 14 to 16 from Jan 2024 to Nov 2025, and about 2 again from Jan 2026. This file cannot tell us whether that is a real change or a change in how scores were recorded, so do not compare points across those periods.'; d.appendChild(n); }
+        });
       });
     } catch (e) { $('lede_hist').textContent = 'The long view could not load.'; }
   }

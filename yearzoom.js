@@ -54,6 +54,20 @@
     draw();
     return { get: function () { return cur; }, on: function (f) { listeners.push(f); f(cur); }, label: function () { return label(cur, min, max); } };
   }
-  var api = { parse: parse, text: text, label: label, fromHash: fromHash, withHash: withHash, pick: pick, mount: mount };
+  var COLOR = '#b84700';
+  function S(t, a) { var e = document.createElementNS('http://www.w3.org/2000/svg', t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function fmt(n) { return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e4 ? 0 : 1) + 'k' : String(n); }
+  function chart(rows, label, unit) {
+    var W = 320, H = 150, pl = 8, pr = 46, pt = 10, pb = 22, n = rows.length;
+    var mx = Math.max.apply(null, rows.map(function (r) { return r[1]; }).concat([1]));
+    var X = function (i) { return pl + (W - pl - pr) * (n > 1 ? i / (n - 1) : 0); }, Y = function (v) { return pt + (H - pt - pb) * (1 - v / mx); };
+    var s = S('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'lens_svg', role: 'img', 'aria-label': label + ', ' + unit + ', ' + rows[0][0] + ' to ' + rows[n - 1][0] + ', latest ' + rows[n - 1][1] });
+    s.appendChild(S('path', { d: rows.map(function (r, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(r[1]).toFixed(1); }).join(''), fill: 'none', stroke: COLOR, 'stroke-width': 2, 'stroke-linejoin': 'round' }));
+    var t = S('text', { x: X(n - 1) + 5, y: Y(rows[n - 1][1]) + 4, class: 'lens_lab', fill: COLOR, 'font-weight': 700 }); t.textContent = fmt(rows[n - 1][1]); s.appendChild(t);
+    var pk = S('text', { x: pl, y: pt + 8, class: 'lens_lab' }); pk.textContent = 'top ' + fmt(mx); s.appendChild(pk);
+    [[0, 'start', rows[0][0]], [n - 1, 'end', rows[n - 1][0]]].forEach(function (p) { var q = S('text', { x: p[1] === 'start' ? pl : W - pr + 8, y: H - 4, 'text-anchor': p[1] === 'start' ? 'start' : 'end', class: 'lens_lab' }); q.textContent = p[2]; s.appendChild(q); });
+    return s;
+  }
+  var api = { chart: chart, parse: parse, text: text, label: label, fromHash: fromHash, withHash: withHash, pick: pick, mount: mount };
   if (typeof module !== 'undefined') module.exports = api; else root.YearZoom = api;
 })(typeof window !== 'undefined' ? window : globalThis);
