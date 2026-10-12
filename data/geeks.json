@@ -1,179 +1,179 @@
 {
  "window": {
-  "min": 1785110001,
-  "max": 1791842134,
-  "stories": 77431
+  "min": 1785112111,
+  "max": 1791843229,
+  "stories": 70190
  },
  "baskets": [
   {
    "name": "weird",
    "one": 1,
-   "stories": 525,
-   "points": 14227,
-   "comments": 6576,
-   "hit10": 115,
-   "rest_stories": 76906,
-   "rest_points": 1376835,
-   "rest_comments": 752337,
-   "rest_hit10": 10944,
-   "t_stories": 520,
-   "t_points": 10233,
-   "t_comments": 4853,
-   "t_hit10": 110,
-   "t_rest_stories": 76137,
-   "t_rest_points": 883101,
-   "t_rest_comments": 465939,
-   "t_rest_hit10": 10175,
-   "nd_stories": 524,
-   "nd_points": 12212,
-   "nd_comments": 5451,
-   "nd_hit10": 114,
+   "stories": 472,
+   "points": 12978,
+   "comments": 5785,
+   "hit10": 101,
+   "rest_stories": 69718,
+   "rest_points": 1245120,
+   "rest_comments": 684633,
+   "rest_hit10": 9679,
+   "t_stories": 468,
+   "t_points": 9362,
+   "t_comments": 4133,
+   "t_hit10": 97,
+   "t_rest_stories": 69021,
+   "t_rest_points": 791855,
+   "t_rest_comments": 418712,
+   "t_rest_hit10": 8982,
+   "nd_stories": 471,
+   "nd_points": 10963,
+   "nd_comments": 4660,
+   "nd_hit10": 100,
    "top_domain": "sancho.bearblog.dev"
   },
   {
    "name": "science",
    "one": 1,
-   "stories": 1287,
-   "points": 26345,
-   "comments": 14167,
-   "hit10": 200,
-   "rest_stories": 76144,
-   "rest_points": 1364717,
-   "rest_comments": 744746,
-   "rest_hit10": 10859,
-   "t_stories": 1275,
-   "t_points": 18376,
-   "t_comments": 8737,
-   "t_hit10": 188,
-   "t_rest_stories": 75383,
-   "t_rest_points": 875354,
-   "t_rest_comments": 462359,
-   "t_rest_hit10": 10098,
-   "nd_stories": 1283,
-   "nd_points": 23870,
-   "nd_comments": 11680,
-   "nd_hit10": 196,
+   "stories": 1184,
+   "points": 24886,
+   "comments": 13581,
+   "hit10": 184,
+   "rest_stories": 69006,
+   "rest_points": 1233212,
+   "rest_comments": 676837,
+   "rest_hit10": 9596,
+   "t_stories": 1173,
+   "t_points": 17381,
+   "t_comments": 8151,
+   "t_hit10": 173,
+   "t_rest_stories": 68316,
+   "t_rest_points": 783850,
+   "t_rest_comments": 415073,
+   "t_rest_hit10": 8906,
+   "nd_stories": 1181,
+   "nd_points": 22875,
+   "nd_comments": 11094,
+   "nd_hit10": 181,
    "top_domain": "openai.com"
   },
   {
    "name": "retro",
    "one": 1,
-   "stories": 300,
-   "points": 6495,
-   "comments": 1893,
-   "hit10": 73,
-   "rest_stories": 77131,
-   "rest_points": 1384567,
-   "rest_comments": 757020,
-   "rest_hit10": 10986,
-   "t_stories": 297,
-   "t_points": 5360,
-   "t_comments": 1514,
-   "t_hit10": 70,
-   "t_rest_stories": 76360,
-   "t_rest_points": 887978,
-   "t_rest_comments": 469218,
-   "t_rest_hit10": 10215,
-   "nd_stories": 264,
-   "nd_points": 5484,
-   "nd_comments": 1593,
-   "nd_hit10": 66,
+   "stories": 273,
+   "points": 5901,
+   "comments": 1780,
+   "hit10": 63,
+   "rest_stories": 69917,
+   "rest_points": 1252197,
+   "rest_comments": 688638,
+   "rest_hit10": 9717,
+   "t_stories": 271,
+   "t_points": 5125,
+   "t_comments": 1583,
+   "t_hit10": 61,
+   "t_rest_stories": 69218,
+   "t_rest_points": 796083,
+   "t_rest_comments": 421362,
+   "t_rest_hit10": 9018,
+   "nd_stories": 241,
+   "nd_points": 4898,
+   "nd_comments": 1481,
+   "nd_hit10": 56,
    "top_domain": "github.com"
   },
   {
    "name": "history",
    "one": 1,
-   "stories": 1216,
-   "points": 26083,
-   "comments": 12952,
-   "hit10": 238,
-   "rest_stories": 76215,
-   "rest_points": 1364979,
-   "rest_comments": 745961,
-   "rest_hit10": 10821,
-   "t_stories": 1204,
-   "t_points": 19791,
-   "t_comments": 8976,
-   "t_hit10": 226,
-   "t_rest_stories": 75453,
-   "t_rest_points": 873547,
-   "t_rest_comments": 461756,
-   "t_rest_hit10": 10059,
-   "nd_stories": 1215,
-   "nd_points": 25128,
-   "nd_comments": 12111,
-   "nd_hit10": 237,
+   "stories": 1111,
+   "points": 24332,
+   "comments": 12233,
+   "hit10": 213,
+   "rest_stories": 69079,
+   "rest_points": 1233766,
+   "rest_comments": 678185,
+   "rest_hit10": 9567,
+   "t_stories": 1100,
+   "t_points": 18399,
+   "t_comments": 8439,
+   "t_hit10": 202,
+   "t_rest_stories": 68389,
+   "t_rest_points": 782809,
+   "t_rest_comments": 414506,
+   "t_rest_hit10": 8877,
+   "nd_stories": 1110,
+   "nd_points": 23377,
+   "nd_comments": 11392,
+   "nd_hit10": 212,
    "top_domain": "techcrunch.com"
   },
   {
    "name": "puzzle",
    "one": 1,
-   "stories": 333,
-   "points": 3878,
-   "comments": 1315,
-   "hit10": 33,
-   "rest_stories": 77098,
-   "rest_points": 1387184,
-   "rest_comments": 757598,
-   "rest_hit10": 11026,
-   "t_stories": 330,
-   "t_points": 2417,
-   "t_comments": 961,
-   "t_hit10": 30,
-   "t_rest_stories": 76328,
-   "t_rest_points": 891280,
-   "t_rest_comments": 469953,
-   "t_rest_hit10": 10256,
-   "nd_stories": 331,
-   "nd_points": 3185,
-   "nd_comments": 1190,
-   "nd_hit10": 32,
+   "stories": 309,
+   "points": 3663,
+   "comments": 1271,
+   "hit10": 29,
+   "rest_stories": 69881,
+   "rest_points": 1254435,
+   "rest_comments": 689147,
+   "rest_hit10": 9751,
+   "t_stories": 306,
+   "t_points": 2202,
+   "t_comments": 917,
+   "t_hit10": 26,
+   "t_rest_stories": 69183,
+   "t_rest_points": 799006,
+   "t_rest_comments": 422028,
+   "t_rest_hit10": 9053,
+   "nd_stories": 307,
+   "nd_points": 2970,
+   "nd_comments": 1146,
+   "nd_hit10": 28,
    "top_domain": "minesweeper.mikelacher.com"
   },
   {
    "name": "showhn",
    "one": 1,
-   "stories": 9774,
-   "points": 74574,
-   "comments": 26030,
-   "hit10": 765,
-   "rest_stories": 67657,
-   "rest_points": 1316488,
-   "rest_comments": 732883,
-   "rest_hit10": 10294,
-   "t_stories": 9677,
-   "t_points": 45275,
-   "t_comments": 16084,
-   "t_hit10": 668,
-   "t_rest_stories": 66981,
-   "t_rest_points": 861765,
-   "t_rest_comments": 466798,
-   "t_rest_hit10": 9618,
-   "nd_stories": 6415,
-   "nd_points": 49076,
-   "nd_comments": 18391,
-   "nd_hit10": 499,
+   "stories": 8844,
+   "points": 63999,
+   "comments": 22160,
+   "hit10": 668,
+   "rest_stories": 61346,
+   "rest_points": 1194099,
+   "rest_comments": 668258,
+   "rest_hit10": 9112,
+   "t_stories": 8756,
+   "t_points": 39389,
+   "t_comments": 13908,
+   "t_hit10": 580,
+   "t_rest_stories": 60733,
+   "t_rest_points": 775017,
+   "t_rest_comments": 422170,
+   "t_rest_hit10": 8499,
+   "nd_stories": 5827,
+   "nd_points": 43244,
+   "nd_comments": 16239,
+   "nd_hit10": 445,
    "top_domain": "github.com"
   },
   {
    "name": "askhn",
    "one": 1,
-   "stories": 1385,
-   "points": 14059,
-   "comments": 18269,
-   "hit10": 162,
-   "rest_stories": 76046,
-   "rest_points": 1377003,
-   "rest_comments": 740644,
-   "rest_hit10": 10897,
-   "t_stories": 1372,
-   "t_points": 8877,
-   "t_comments": 11678,
-   "t_hit10": 149,
-   "t_rest_stories": 75286,
-   "t_rest_points": 885317,
-   "t_rest_comments": 457601,
-   "t_rest_hit10": 10137,
+   "stories": 1272,
+   "points": 13268,
+   "comments": 17303,
+   "hit10": 145,
+   "rest_stories": 68918,
+   "rest_points": 1244830,
+   "rest_comments": 673115,
+   "rest_hit10": 9635,
+   "t_stories": 1260,
+   "t_points": 8356,
+   "t_comments": 11067,
+   "t_hit10": 133,
+   "t_rest_stories": 68229,
+   "t_rest_points": 793305,
+   "t_rest_comments": 410436,
+   "t_rest_hit10": 8946,
    "nd_stories": 13,
    "nd_points": 28,
    "nd_comments": 22,
@@ -183,43 +183,30 @@
   {
    "name": "boring",
    "one": 1,
-   "stories": 474,
-   "points": 4471,
-   "comments": 2535,
-   "hit10": 40,
-   "rest_stories": 76957,
-   "rest_points": 1386591,
-   "rest_comments": 756378,
-   "rest_hit10": 11019,
-   "t_stories": 470,
-   "t_points": 2927,
-   "t_comments": 1695,
-   "t_hit10": 36,
-   "t_rest_stories": 76188,
-   "t_rest_points": 890983,
-   "t_rest_comments": 469391,
-   "t_rest_hit10": 10250,
-   "nd_stories": 472,
-   "nd_points": 3833,
-   "nd_comments": 2086,
-   "nd_hit10": 39,
+   "stories": 421,
+   "points": 3943,
+   "comments": 2317,
+   "hit10": 34,
+   "rest_stories": 69769,
+   "rest_points": 1254155,
+   "rest_comments": 688101,
+   "rest_hit10": 9746,
+   "t_stories": 417,
+   "t_points": 2399,
+   "t_comments": 1477,
+   "t_hit10": 30,
+   "t_rest_stories": 69072,
+   "t_rest_points": 799035,
+   "t_rest_comments": 421550,
+   "t_rest_hit10": 9049,
+   "nd_stories": 419,
+   "nd_points": 3305,
+   "nd_comments": 1868,
+   "nd_hit10": 33,
    "top_domain": "openrouter.ai"
   }
  ],
  "weekly": [
-  {
-   "week": "2026-07-27",
-   "stories": 7241,
-   "lift": 1.2860545818265423,
-   "weird_stories": 53,
-   "weird_points": 1249,
-   "weird_comments": 791,
-   "weird_hit10": 14,
-   "rest_stories": 7188,
-   "rest_points": 131715,
-   "rest_comments": 67704,
-   "rest_hit10": 1265
-  },
   {
    "week": "2026-08-03",
    "stories": 6944,
@@ -354,87 +341,87 @@
  "weekday": [
   {
    "day": "Mon",
-   "stories": 11637,
-   "weird_stories": 78,
-   "weird_points": 1760,
-   "weird_comments": 998,
-   "weird_hit10": 16,
-   "rest_stories": 11559,
-   "rest_points": 220471,
-   "rest_comments": 125756,
-   "rest_hit10": 1759
+   "stories": 10551,
+   "weird_stories": 70,
+   "weird_points": 1704,
+   "weird_comments": 984,
+   "weird_hit10": 15,
+   "rest_stories": 10481,
+   "rest_points": 201221,
+   "rest_comments": 114817,
+   "rest_hit10": 1596
   },
   {
    "day": "Tue",
-   "stories": 13226,
-   "weird_stories": 102,
-   "weird_points": 2215,
-   "weird_comments": 1181,
-   "weird_hit10": 22,
-   "rest_stories": 13124,
-   "rest_points": 241173,
-   "rest_comments": 131967,
-   "rest_hit10": 1783
+   "stories": 12006,
+   "weird_stories": 92,
+   "weird_points": 2145,
+   "weird_comments": 1163,
+   "weird_hit10": 20,
+   "rest_stories": 11914,
+   "rest_points": 218429,
+   "rest_comments": 120800,
+   "rest_hit10": 1546
   },
   {
    "day": "Wed",
-   "stories": 12676,
-   "weird_stories": 92,
-   "weird_points": 2431,
-   "weird_comments": 1021,
-   "weird_hit10": 25,
-   "rest_stories": 12584,
-   "rest_points": 230129,
-   "rest_comments": 123800,
-   "rest_hit10": 1840
+   "stories": 11416,
+   "weird_stories": 85,
+   "weird_points": 2354,
+   "weird_comments": 996,
+   "weird_hit10": 23,
+   "rest_stories": 11331,
+   "rest_points": 207889,
+   "rest_comments": 113582,
+   "rest_hit10": 1628
   },
   {
    "day": "Thu",
-   "stories": 12645,
-   "weird_stories": 69,
-   "weird_points": 1413,
-   "weird_comments": 454,
-   "weird_hit10": 11,
-   "rest_stories": 12576,
-   "rest_points": 206327,
-   "rest_comments": 110136,
-   "rest_hit10": 1660
+   "stories": 11472,
+   "weird_stories": 61,
+   "weird_points": 1057,
+   "weird_comments": 238,
+   "weird_hit10": 8,
+   "rest_stories": 11411,
+   "rest_points": 186072,
+   "rest_comments": 99356,
+   "rest_hit10": 1473
   },
   {
    "day": "Fri",
-   "stories": 11264,
-   "weird_stories": 73,
-   "weird_points": 2640,
-   "weird_comments": 1074,
-   "weird_hit10": 20,
-   "rest_stories": 11191,
-   "rest_points": 196209,
-   "rest_comments": 105310,
-   "rest_hit10": 1552
+   "stories": 10174,
+   "weird_stories": 67,
+   "weird_points": 2356,
+   "weird_comments": 787,
+   "weird_hit10": 19,
+   "rest_stories": 10107,
+   "rest_points": 176020,
+   "rest_comments": 95203,
+   "rest_hit10": 1376
   },
   {
    "day": "Sat",
-   "stories": 8015,
-   "weird_stories": 61,
-   "weird_points": 1287,
-   "weird_comments": 553,
-   "weird_hit10": 12,
-   "rest_stories": 7954,
-   "rest_points": 135593,
-   "rest_comments": 72666,
-   "rest_hit10": 1113
+   "stories": 7312,
+   "weird_stories": 52,
+   "weird_points": 911,
+   "weird_comments": 325,
+   "weird_hit10": 9,
+   "rest_stories": 7260,
+   "rest_points": 121611,
+   "rest_comments": 65621,
+   "rest_hit10": 986
   },
   {
    "day": "Sun",
-   "stories": 7968,
-   "weird_stories": 50,
-   "weird_points": 2481,
-   "weird_comments": 1295,
-   "weird_hit10": 9,
-   "rest_stories": 7918,
-   "rest_points": 146933,
-   "rest_comments": 82702,
-   "rest_hit10": 1237
+   "stories": 7259,
+   "weird_stories": 45,
+   "weird_points": 2451,
+   "weird_comments": 1292,
+   "weird_hit10": 7,
+   "rest_stories": 7214,
+   "rest_points": 133878,
+   "rest_comments": 75254,
+   "rest_hit10": 1074
   }
  ],
  "top_domains": {
@@ -483,7 +470,7 @@
   "science": [
    [
     "openai.com",
-    2475
+    2011
    ],
    [
     "mathandai.org",
@@ -495,7 +482,7 @@
    ],
    [
     "youtube.com",
-    966
+    955
    ],
    [
     "nobelprize.org",
@@ -515,7 +502,7 @@
    ],
    [
     "arxiv.org",
-    539
+    522
    ],
    [
     "mathstodon.xyz",
@@ -525,7 +512,7 @@
   "retro": [
    [
     "github.com",
-    1011
+    1003
    ],
    [
     "babyloniantwins.com",
@@ -537,15 +524,11 @@
    ],
    [
     "bumbershootsoft.wordpress.com",
-    304
+    301
    ],
    [
     "nand2mario.github.io",
     194
-   ],
-   [
-    "amiga.lychesis.net",
-    171
    ],
    [
     "goto10retro.com",
@@ -561,6 +544,10 @@
    ],
    [
     "datagubbe.se",
+    144
+   ],
+   [
+    "amigaux.org",
     144
    ]
   ],
@@ -582,16 +569,16 @@
     691
    ],
    [
-    "youtube.com",
-    668
+    "bbc.com",
+    644
    ],
    [
-    "bbc.com",
-    649
+    "youtube.com",
+    633
    ],
    [
     "en.wikipedia.org",
-    570
+    556
    ],
    [
     "dfarq.homeip.net",
@@ -625,7 +612,7 @@
    ],
    [
     "github.com",
-    126
+    122
    ],
    [
     "owntime.app",
@@ -636,30 +623,26 @@
     115
    ],
    [
-    "youtube.com",
-    100
-   ],
-   [
     "blog.janestreet.com",
     99
    ],
    [
-    "leadedsolder.com",
-    87
+    "securityaffairs.com",
+    86
+   ],
+   [
+    "youtube.com",
+    81
    ]
   ],
   "showhn": [
    [
     "github.com",
-    25498
-   ],
-   [
-    "john.fun",
-    1680
+    20755
    ],
    [
     "",
-    1037
+    956
    ],
    [
     "bastardica.mitpit.com",
@@ -688,12 +671,16 @@
    [
     "simedw.com",
     598
+   ],
+   [
+    "inflightsimulator.com",
+    446
    ]
   ],
   "askhn": [
    [
     "",
-    14031
+    13240
    ],
    [
     "drive.google.com",
@@ -754,24 +741,24 @@
     208
    ],
    [
-    "github.com",
-    198
-   ],
-   [
     "",
-    197
+    187
    ],
    [
-    "eff.org",
-    167
+    "github.com",
+    182
    ],
    [
     "blog.sshh.io",
     166
    ],
    [
-    "spawn-queue.acm.org",
-    160
+    "morganlewis.com",
+    105
+   ],
+   [
+    "prospect.org",
+    99
    ]
   ]
  },
@@ -866,10 +853,10 @@
     "Recreating Voodoo Graphics and a Late-1990s Gaming PC on an FPGA"
    ],
    [
-    171,
-    25,
-    "amiga.lychesis.net",
-    "Amiga Graphics Archive"
+    164,
+    31,
+    "blog.archive.org",
+    "Vintage Artificial Intelligence: Before It Got Awkward"
    ]
   ],
   "history": [
@@ -944,18 +931,6 @@
     "Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations"
    ],
    [
-    1680,
-    415,
-    "john.fun",
-    "Show HN: Elevators"
-   ],
-   [
-    919,
-    342,
-    "github.com",
-    "Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac"
-   ],
-   [
     862,
     126,
     "bastardica.mitpit.com",
@@ -966,6 +941,18 @@
     326,
     "louisabraham.github.io",
     "Show HN: The load-bearing vocabulary of Claude"
+   ],
+   [
+    633,
+    290,
+    "rivendell.dmitrybrant.com",
+    "Show HN: What if the speed of light was 5 km/h?"
+   ],
+   [
+    627,
+    99,
+    "toneyalexander.github.io",
+    "Show HN: Simple algorithm and color space to generate diverse skin tones"
    ]
   ],
   "askhn": [
