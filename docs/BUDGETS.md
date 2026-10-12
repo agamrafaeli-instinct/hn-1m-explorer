@@ -39,7 +39,7 @@ Exit code is 1 if a screen is over budget, never loaded or overflows sideways. N
 The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --tolerance 1.25` after the site is staged and before it is uploaded. The script serves the staged folder on localhost with gzip, like Pages. A screen over its size or request budget, or over its time budget plus 25%, or with sideways overflow, stops the deploy. The last good site stays live. The extra 25% on time is for CI machine speed. The result table is in the run summary.
 
 ## UI check
-`node tests/ui.test.mjs [--serve DIR | --site URL]` opens the staged site at 390px and checks: home, an audience page, one card, the three week screens, the week stepper (Previous week, then Next week back to the start) and the explorer (load, then a minimum score of 100 must lower the match count). Any console error, failed request, HTTP error or sideways overflow fails the run. It takes about 10 seconds. It runs before deploy in the daily workflow and as its own job in the PR check.
+`node tests/ui.test.mjs [--serve DIR | --site URL]` opens the staged site at 390px and checks: the essay home, the compare page (the old home), one card, the card list, the three week screens, the week stepper (Previous week, then Next week back to the start) and the explorer (load, then a minimum score of 100 must lower the match count). Any console error, failed request, HTTP error or sideways overflow fails the run. It takes about 10 seconds. It runs before deploy in the daily workflow and as its own job in the PR check.
 
 ## Other widths
 
@@ -52,3 +52,5 @@ The daily workflow runs `node scripts/perf.mjs --serve _site --runs 3 --toleranc
 2026-10-11: home budget is 19 requests, audience and card pages 23 (#181). The Today's story line adds finder.js on every page and data/finder/latest.json on the home page.
 
 2026-10-12: audience time budget is 2850 ms (was 2400). CI measured 3057 ms with the +25% allowance, about 2450 ms real, after the page grew over several changes (#223 added tap-target CSS).
+
+2026-10-13 (#266, #256): `home` in the perf table is the compare page (`#/compare`, the old home). `saga` is the new home (`#/`). The `audience` screen was removed with the audience pages; old `#/a/<audience>` links redirect to `#/hypotheses`. The phone sweep and UI test cover both home routes.
