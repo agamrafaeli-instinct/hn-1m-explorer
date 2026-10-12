@@ -60,9 +60,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
       - name: Test data pipeline
         run: |
-          pip install duckdb
+          pip install -r requirements-ci.txt
           python -m unittest discover -s tests -v
       - name: Check saved weeks against their recorded hashes
         # A saved week cannot be rebuilt once it leaves the archive window, so a missing or edited one fails the run the same day (#218).
@@ -72,15 +74,18 @@ jobs:
       - name: Refresh curious-geeks numbers
         run: python scripts/geeks.py
       - name: Refresh film-card monthly shares
+        # Skipped when the hash of everything these scripts read matches the last run (#243). Output files are the same either way.
         run: |
-          pip install duckdb
+          if python scripts/inputs_hash.py --check; then exit 0; fi
+          pip install -r requirements-ci.txt
           python scripts/film.py shares
           python scripts/build_topic_series.py
           python scripts/rings_data.py
           python scripts/saga_data.py
+          python scripts/inputs_hash.py --write
       - name: Find and publish today's story
         run: |
-          pip install duckdb
+          pip install -r requirements-ci.txt
           python scripts/finder_candidates.py
           python scripts/finder_select.py
           pick=$(python -c "import json,datetime;print(json.load(open('data/finder/'+datetime.date.today().isoformat()+'.json'))['term'])" 2>/dev/null || true)

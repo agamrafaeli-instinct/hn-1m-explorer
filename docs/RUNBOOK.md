@@ -94,3 +94,7 @@ When a run fails (the issue already names the failing step, the last 30 log line
 
 ## Prepush marker (skip repeat checks in CI)
 `bash scripts/prepush.sh` ends by writing `.prepush_ok`, a digest of every tracked and new file except the marker itself (scripts/prepush_digest.py). Commit the marker with the change. The daily workflow checks it right after checkout. Only a run triggered by a push (hypotheses/** changes) can skip the UI and budget steps, and only when the digest matches. A missing marker, any edited or added file after prepush, a scheduled run or a manual dispatch runs every check. Run `python3 scripts/prepush_digest.py --check` to see which case applies.
+
+## CI caching and skipped steps (#243)
+- pip installs are cached by setup-python (`cache: pip`, keyed on `requirements-ci.txt`). Add a new Python dependency there.
+- The steps that write film_shares, topic_series, rings and saga data run only when `scripts/inputs_hash.py --check` fails. The hash covers the archive, history, atlas, those four scripts and the current UTC month. The result is stored in `data/film_inputs.sha` and committed with the data. To force a rebuild, delete that file.
