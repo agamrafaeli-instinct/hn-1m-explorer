@@ -1012,7 +1012,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611744.0,
+   "group_a_count": 2611745.0,
    "id": "h367",
    "replaced_by": "h418",
    "score": 0.8,
@@ -1831,7 +1831,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611744.0,
+   "group_a_count": 2611745.0,
    "id": "h418",
    "score": 1.0,
    "title": "Show HN posts stories vs hands-on making stories on points"
