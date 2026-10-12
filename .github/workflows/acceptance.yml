@@ -1,0 +1,23 @@
+name: Acceptance checks
+# Runs every tests/acceptance/<ticket>.mjs against the staged site of a branch (#251). Pushes to main are covered by the daily workflow.
+# The check serves the staged site on localhost, so a branch never touches the live site.
+on:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run the acceptance checks
+        run: |
+          set -o pipefail
+          node scripts/acceptance.mjs --all | tee acc.txt
+          { echo '### Acceptance checks'; echo '```'; cat acc.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
