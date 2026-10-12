@@ -83,7 +83,7 @@ Steps, from a clean clone:
 1. Run the tests: `python3 -m unittest discover -s tests`. It must end with OK.
 2. Check the saved weeks: `python3 scripts/verify_weekly.py`. It must say all weeks match.
 3. See the site on your machine: `python3 scripts/stage_site.py --root . --output /tmp/site` then `cd /tmp/site && python3 -m http.server 8766`, and open http://localhost:8766/.
-4. Run every check CI runs before you push: `bash scripts/prepush.sh` (about 3 minutes). Never push while it shows an error.
+4. Run every check CI runs before you push: `bash scripts/prepush.sh` (about 1.5 minutes). The independent checks run in parallel with a log each in /tmp/pp; a failure prints `PREPUSH FAILED in: <names>` and the last lines of those logs. Perf runs alone afterwards. Never push while it shows an error.
 5. Push to main. A change to a published file deploys by itself (see Deploy). Docs and tests need no deploy.
 
 When a run fails: open the run in the Actions tab, find the step with the red mark, and read its log. The failure issue on the board links to the run. `gh run view <id> --log-failed` shows the same log. The last good site stays live while a run fails. Fix the cause, push, and run it again once.
