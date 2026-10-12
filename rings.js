@@ -73,7 +73,10 @@
       var r = el('div', 'rg_dr'); r.appendChild(el('span', 'rg_y', String(y)));
       d.domains[i].slice(0, 3).forEach(function (x) {
         var b = tipEl('span', 'rg_badge', x[0].replace(/^www\./, '').charAt(0).toUpperCase(), y + ' ' + x[0] + ': ' + x[1].toLocaleString('en-US') + ' front-page appearances');
-        b.style.background = 'hsl(' + hue(x[0]) + ',55%,42%)'; r.appendChild(b);
+        b.style.background = 'hsl(' + hue(x[0]) + ',55%,42%)';
+        var im = document.createElement('img'); im.alt = ''; im.loading = 'lazy'; im.width = 26; im.height = 26;
+        im.src = 'https://www.google.com/s2/favicons?sz=64&domain=' + encodeURIComponent(x[0]);
+        im.onerror = function () { im.remove(); }; b.appendChild(im); r.appendChild(b);
       });
       box.appendChild(r);
     });

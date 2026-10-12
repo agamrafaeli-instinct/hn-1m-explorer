@@ -250,8 +250,11 @@ select{min-height:44px}
 .rg_row{display:flex;align-items:center;gap:2px;margin-bottom:2px}.rg_y{width:38px;flex:none;font-size:.8em;color:#5a5048}
 .rg_c{flex:1 1 0;min-width:0;height:20px;border-radius:2px;background:#f0ebe3;cursor:pointer}
 .rg_h{flex:1 1 0;min-width:0;display:flex;justify-content:center;padding:2px 0 4px;cursor:pointer}.rg_ic{width:20px;height:20px;fill:none;stroke:#1b1b1b;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.rg_dr{display:flex;align-items:center;gap:6px;margin-bottom:4px}.rg_badge{width:26px;height:26px;border-radius:6px;color:#fff;font-weight:700;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.rg_dr{display:flex;align-items:center;gap:6px;margin-bottom:4px}.rg_badge{position:relative;overflow:hidden;width:26px;height:26px;border-radius:6px;color:#fff;font-weight:700;font-size:.85em;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
 .rg_st{display:flex;align-items:flex-end;gap:6px;margin-bottom:10px}.rg_si{width:32px;flex:none;display:flex;justify-content:center;cursor:pointer}.rg_si .rg_ic{width:24px;height:24px;stroke:#ff6600}
 .rg_bars{flex:1;display:flex;align-items:flex-end;gap:2px;height:46px}.rg_bar{flex:1 1 0;min-width:0;background:#ff6600;border-radius:2px 2px 0 0;cursor:pointer}
 .rg_ax{display:flex;justify-content:space-between;margin-left:38px;font-size:.78em;color:#5a5048}
 .rg_pop{position:fixed;z-index:50;background:#1b1b1b;color:#fff;border-radius:10px;padding:10px 12px;font-size:.9em;line-height:1.35;box-shadow:0 6px 20px rgba(0,0,0,.25);pointer-events:none}
+
+.rg_badge img{position:absolute;inset:0;width:100%;height:100%;background:#fff;pointer-events:none}
+.rg_badge img{object-fit:contain}
