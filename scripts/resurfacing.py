@@ -88,6 +88,37 @@ def month_list(first, last):
     return out
 
 
+def iter_subjects():
+    """Yield (kind, name, months, counts, totals) for each eligible, old-enough subject, trimmed to its first month."""
+    months, totals = load_totals()
+    idx = {m: i for i, m in enumerate(months)}
+    def one(kind, name, by_month):
+        counts = [0] * len(months)
+        for m, c in by_month.items():
+            if m in idx:
+                counts[idx[m]] += c
+        if not eligible(counts):
+            return None
+        first = next(i for i, c in enumerate(counts) if c)
+        if len(months) - first < 36:
+            return None
+        return (kind, name, months[first:], counts[first:], totals[first:])
+    for f in sorted(glob.glob(str(ROOT / 'data/atlas/terms-*.json'))):
+        for term, by_month in json.load(open(f))['terms'].items():
+            r = one('term', term, by_month)
+            if r:
+                yield r
+    dom = {}
+    for f in sorted(glob.glob(str(ROOT / 'data/atlas/tops-*.json'))):
+        for m, v in json.load(open(f))['months'].items():
+            for d, c in v.get('top_domains', []):
+                dom.setdefault(d, {})[m] = c
+    for d, by_month in dom.items():
+        r = one('domain', d, by_month)
+        if r:
+            yield r
+
+
 def run():
     months, totals = load_totals()
     idx = {m: i for i, m in enumerate(months)}
