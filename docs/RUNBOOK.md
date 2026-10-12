@@ -14,7 +14,9 @@ Who this is for: someone new who has to run the scheduled jobs, deploy the site 
 ### Daily update
 
 Run by hand: `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-1m-explorer`.
-Steps in order: unit tests, add new items and keep the rolling window, refresh the geeks numbers, data checks, commit `data/`, stage the site, log verdicts, Honor scorecard, open "needs upgrade" issues (at most 5 a day), UI check at 390px, load-time check, deploy. Any failed step before the deploy leaves the last good site live.
+Steps in order: start from the newest main, unit tests, check saved weeks against their hashes, add new items and keep the rolling window, refresh the geeks numbers, refresh film-card monthly shares, find and publish today's story, draft and publish weekly findings, data checks, commit `data/`, stage the site (this also builds the share pages), log verdicts, Honor scorecard, open "needs upgrade" issues (at most 5 a day), UI check at 390px, load-time check, deploy. Any failed step before the deploy leaves the last good site live.
+
+Timing: the cron says 02:23 UTC but GitHub often starts it 15 to 35 minutes late. Check `gh run list -R agamrafaeli-instinct/hn-1m-explorer -L 3` before pushing or starting a run. All runs of the daily and weekly jobs share one queue (concurrency group `hn-daily-pages`), so a second run waits for the first.
 Local test: `python -m unittest discover -s tests`.
 
 ### 300+ points digest
@@ -25,7 +27,7 @@ It must produce `alerts/digest.md` and `alerts/new.md`. State is kept in `alerts
 ### Weekly snapshot
 
 Run by hand: `gh workflow run weekly-snapshot.yml -R agamrafaeli-instinct/hn-1m-explorer`, or `python scripts/weekly_snapshot.py` locally (`--week 2026-W31` for one week).
-It saves every complete week that is not saved yet, writes `data/compare/`, and refuses to change any saved week. It then starts the daily workflow to publish.
+Steps in order: tests, check saved weeks against their hashes, save complete weeks not yet saved, compare weeks (`data/compare/`), build the Atlas aggregates and Lens files, draft and publish weekly findings, export CSV and JSON, record hashes of new weeks, refuse to change any saved week, commit, then start the daily workflow to publish. Output: one new `data/weekly/<week>.json` per complete week, plus its hash in `data/weekly/hashes.json`.
 
 ## Recovery
 
@@ -33,12 +35,16 @@ It saves every complete week that is not saved yet, writes `data/compare/`, and 
 - **A step is flaky (a UI or load check).** Re-run once. If it fails twice, treat it as real.
 - **A missed week.** Run the weekly workflow by hand. It saves every complete week that is missing. If a week was never saved when it happened, use `python scripts/weekly_snapshot.py --backfill` and read its note: a backfill file says it was built later.
 - **A missed digest.** Run `watch-350.yml` by hand. The digest looks at the whole recent window, so nothing is lost.
+- **The saved-week check failed.** The message names the week. Restore it from git history (`git checkout <commit> -- data/weekly/<week>.json`). See [INTEGRITY.md](INTEGRITY.md).
+- **A UI check fails after a new week or card appears.** Read which check failed. A hard-coded count is a test bug: fix the test, not the data.
 - **A saved week looks wrong.** Never edit it. Fix the script, add a test and use `--replace-backfill` only for backfill files with an older schema.
 - **A failed deploy.** The previous Pages version stays live. Re-run the failed run from the Actions page. If it fails again, see rollback below.
 
 ## Deploy and rollback
 
-The site goes live only through `daily-hn.yml`. A push to `main` that only changes docs or tests needs no deploy.
+The site goes live only through `daily-hn.yml`. A push to `main` that only changes docs or tests needs no deploy. A push that changes `hypotheses/` starts the workflow by itself, so do not start it by hand for that push.
+
+Never push or start a run while a daily or weekly run is in progress: the bot commits to `data/` at the end of the run and the push can collide.
 
 Deploy: push to `main`, then `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-1m-explorer`, and wait for a green run. Check the live page afterwards.
 
