@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-12T13:21:08.156292+00:00",
+  "generated_at": "2026-10-12T13:33:58.870445+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-1812032fcec25bf62f6c1404.csv",
+      "rows": 173,
+      "bytes": 63857,
+      "sha256": "1812032fcec25bf62f6c1404f06626fadc08fc717894652a76c77d02b614ec20",
+      "min_id": 50056066,
+      "max_id": 50056238,
+      "min_time": 1791811227,
+      "max_time": 1791812003
+    },
     {
       "path": "data/posts-inc-84348a45b5667f593546b842.csv",
       "rows": 133,
@@ -1692,13 +1702,13 @@
       "sha256": "a08ac8b80b54352593d37444023f020d611640d2b0d198e004143809e23e71c1"
     },
     {
-      "path": "data/posts-inc-97041699973d6fb570a8f521.csv",
-      "rows": 5808,
-      "bytes": 2037245,
-      "sha256": "97041699973d6fb570a8f5216ebf7cf15f510ed4895ab8f1ed697885adbdcff6",
-      "min_id": 49056066,
+      "path": "data/posts-inc-c0e7aa6cdb9b348142dc0877.csv",
+      "rows": 5635,
+      "bytes": 1963789,
+      "sha256": "c0e7aa6cdb9b348142dc0877e5b59ea7fb5f57281339442fd1dea9292a35b0f3",
+      "min_id": 49056239,
       "max_id": 49061873,
-      "min_time": 1785055983,
+      "min_time": 1785057951,
       "max_time": 1785096025
     }
   ],
@@ -1724,12 +1734,12 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 345850932,
+  "total_csv_bytes": 345841333,
   "daily_update": {
-    "last_scanned_id": 50056065,
-    "previous_scanned_id": 50055932,
+    "last_scanned_id": 50056238,
+    "previous_scanned_id": 50056065,
     "unavailable_ids": [],
-    "new_rows": 133,
+    "new_rows": 173,
     "archived_stories": 13,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
