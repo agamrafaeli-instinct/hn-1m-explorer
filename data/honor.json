@@ -232,7 +232,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 8521.0,
+   "group_a_count": 8522.0,
    "id": "h313",
    "replaced_by": "h390",
    "score": 0.8,
@@ -1012,7 +1012,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611745.0,
+   "group_a_count": 2611746.0,
    "id": "h367",
    "replaced_by": "h418",
    "score": 0.8,
@@ -1046,7 +1046,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 8521.0,
+   "group_a_count": 8522.0,
    "id": "h369",
    "replaced_by": "h378",
    "score": 0.6,
@@ -1191,7 +1191,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 226279.0,
+   "group_a_count": 226280.0,
    "id": "h378",
    "score": 1.0,
    "title": "Language-model stories earn more points than the average story"
@@ -1383,7 +1383,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 226279.0,
+   "group_a_count": 226280.0,
    "id": "h390",
    "score": 1.0,
    "title": "LLM, RAG and fine-tuning stories vs agents stories on points"
@@ -1831,7 +1831,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611745.0,
+   "group_a_count": 2611746.0,
    "id": "h418",
    "score": 1.0,
    "title": "Show HN posts stories vs hands-on making stories on points"
