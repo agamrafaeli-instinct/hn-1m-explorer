@@ -1,5 +1,38 @@
 [
  {
+  "id": "50058528",
+  "title": "A Modern Web App in C",
+  "points": 337,
+  "comments": 149,
+  "author": "prophittcorey",
+  "hn": "https://news.ycombinator.com/item?id=50058528",
+  "url": "https://prophitt.me/writing/a-modern-web-app-in-c",
+  "created_at": "2026-10-12T16:13:10Z",
+  "reported_at": 1791845667
+ },
+ {
+  "id": "50057278",
+  "title": "Why aren't AI companies being charged for hacking?",
+  "points": 306,
+  "comments": 321,
+  "author": "ingve",
+  "hn": "https://news.ycombinator.com/item?id=50057278",
+  "url": "https://mortoray.com/why-arent-ai-companies-being-charged-for-hacking/",
+  "created_at": "2026-10-12T14:52:37Z",
+  "reported_at": 1791845667
+ },
+ {
+  "id": "50055304",
+  "title": "Hackers activate automatic defrosting in supermarket fridges across Europe",
+  "points": 354,
+  "comments": 576,
+  "author": "Zeekaas",
+  "hn": "https://news.ycombinator.com/item?id=50055304",
+  "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+  "created_at": "2026-10-12T12:16:42Z",
+  "reported_at": 1791845667
+ },
+ {
   "id": "50060694",
   "title": "Codex CLI installs a persistent, self-updating background daemon by default",
   "points": 310,

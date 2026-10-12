@@ -1,10 +1,12 @@
-HN digest 2026-10-12 (UTC): 17 new stories at 300+ points
+HN digest 2026-10-12 (UTC): 20 new stories at 300+ points
 - 424 pts, 209 comments: Muse Wonder https://news.ycombinator.com/item?id=50059115
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
 - 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
+- 354 pts, 576 comments: Hackers activate automatic defrosting in supermarket fridges across Europe https://news.ycombinator.com/item?id=50055304
 - 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
 - 346 pts, 147 comments: Total Annihilation, rebuilt for modern computers https://news.ycombinator.com/item?id=50045984
 - 338 pts, 513 comments: The gap in shared understanding of LLM capability is widening https://news.ycombinator.com/item?id=50047422
+- 337 pts, 149 comments: A Modern Web App in C https://news.ycombinator.com/item?id=50058528
 - 337 pts, 168 comments: NYC's "Click to Cancel" rule is now in effect https://news.ycombinator.com/item?id=50045946
 - 323 pts, 179 comments: GLM-Legal https://news.ycombinator.com/item?id=50058507
 - 322 pts, 277 comments: IRCv3 https://news.ycombinator.com/item?id=50041540
@@ -14,5 +16,6 @@ HN digest 2026-10-12 (UTC): 17 new stories at 300+ points
 - 310 pts, 185 comments: Codex CLI installs a persistent, self-updating background daemon by default https://news.ycombinator.com/item?id=50060694
 - 310 pts, 366 comments: Terence Tao: Math 2.0 [pdf] https://news.ycombinator.com/item?id=50043026
 - 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055
+- 306 pts, 321 comments: Why aren't AI companies being charged for hacking? https://news.ycombinator.com/item?id=50057278
 - 300 pts, 61 comments: Cartographers of North Korea (2019) https://news.ycombinator.com/item?id=50047091
 - 300 pts, 47 comments: 'Wallace and Gromit,' 90% Alone https://news.ycombinator.com/item?id=50020533
