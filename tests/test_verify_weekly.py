@@ -37,8 +37,7 @@ class WorkflowsRunTheCheck(unittest.TestCase):
     def test_daily_and_weekly_jobs_verify_saved_weeks(self):
         import pathlib
         root = pathlib.Path(__file__).resolve().parents[1] / '.github/workflows'
-        self.assertIn('scripts/verify_weekly.py
-', (root / 'daily-hn.yml').read_text())
+        self.assertIn('scripts/verify_weekly.py\n', (root / 'daily-hn.yml').read_text())
         self.assertIn('scripts/verify_weekly.py', (root / 'weekly-snapshot.yml').read_text())
 
 
