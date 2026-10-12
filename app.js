@@ -52,7 +52,7 @@ async function load(nChunks) {
   for (const f of files) {
     const path = f.path || f.file || f.name; const st = { m: null };
     const resp = await fetch(/^(data|sample)\//.test(path) ? path : base + path);
-    if (!resp.ok) throw new Error('Failed ' + path);
+    if (!resp.ok) throw new Error('no file at ' + path);
     await parseChunk(await resp.text(), st);
     k++; $('barfill').style.width = (100 * k / files.length) + '%';
     $('status').textContent = `Loaded ${D.n.toLocaleString()}${total ? ' / ' + total.toLocaleString() : ''} posts (${k}/${files.length} files)`;
@@ -148,7 +148,7 @@ $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('minscore').value = 0; page = 0; refresh(); };
-$('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Error: ' + e.message; }); };
+$('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Could not load (' + e.message + '). Try again.'; }); };
 
 // Link into the explorer: #/explore?week=2026-W40&q=postgres. Bad values are ignored. (#189)
 function isoWeekRange(w) {

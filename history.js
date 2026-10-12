@@ -44,7 +44,7 @@
         out.appendChild(el('p', 'wn', 'Top stories by score. Archive scores were saved when the story was fetched, so they are low for 2023 and 2026.'));
         var ul = el('ul', 'lens_top'); x.top_stories.slice(0, 10).forEach(function (s) { var li = el('li'), a = el('a', null, s[1]); a.href = 'https://news.ycombinator.com/item?id=' + s[0]; a.rel = 'noopener'; li.appendChild(a); li.appendChild(el('span', 'wn', s[2] + ' points')); ul.appendChild(li); });
         out.appendChild(ul);
-      }).catch(function () { out.textContent = 'Could not load this month.'; });
+      }).catch(function () { out.textContent = 'Could not load this month. Try again.'; });
     }
     i.onchange = show; show();
   }
@@ -71,6 +71,6 @@
       });
       termBlock(root); monthBlock(root); rowBlock(root);
       root.appendChild(el('p', 'wn wfoot', 'From the archive in data/archive and the daily counts in data/history. ' + M.note));
-    }).catch(function () { root.textContent = 'Could not load the history files.'; });
+    }).catch(function () { root.textContent = 'Could not load the history files. Try again.'; });
   };
 })();
