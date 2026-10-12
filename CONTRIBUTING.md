@@ -135,11 +135,12 @@ Each failure prints the card, the rule and a fix. Common ones:
 | The data file does not exist | Fix the file name in `check.source`. |
 | A card must say in advance what would prove it wrong | Add a rule with `"verdict": "refuted"`. |
 | The last verdict rule must be the fallback | Add a last rule with `"else": true`. |
+| A card PR may only add one file | Remove other files from the PR and name the card `hNNN-short-name.json`. |
 | The card could not be computed from the data | Check `check.path` and `check.field` against the data file. |
 
 ## After you open the PR
 
-A check runs on the PR. It fails if the card is malformed, has no refuting rule, points at data that does not exist, or touches other files. A maintainer reviews, then merges.
+A check runs on the PR. When it fails, the check's Summary page lists each card with the problem and what to change, in plain words. It fails if the card is malformed, has no refuting rule, points at data that does not exist, or touches other files. A maintainer reviews, then merges.
 
 After a merge to `main`, the card is published as a finding on the next deploy. The verdict is computed from the data, not typed by anyone. Failed hypotheses are shown too; that is the point.
 

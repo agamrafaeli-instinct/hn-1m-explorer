@@ -37,4 +37,17 @@ function explain(e, name) {
   const [rule, fix] = FIX[e.kind];
   return `FAIL ${name}\n  Rule: ${rule}${e.detail ? ' (' + e.detail + ')' : ''}\n  Fix: ${fix}`;
 }
-module.exports = { validate, explain, CardError, FIX };
+// Markdown for the PR check summary: one line per card, failures first with their fix.
+function summary(results) {
+  const fails = results.filter(r => r.error), oks = results.filter(r => !r.error);
+  let t = '## Card check\n\n';
+  if (!results.length) return t + 'No cards were found to check.\n';
+  if (!fails.length) return t + 'All ' + oks.length + ' cards passed.\n';
+  t += fails.length + ' of ' + results.length + ' cards need a change.\n\n';
+  for (const f of fails) {
+    const e = f.error, [rule, fix] = e instanceof CardError ? FIX[e.kind] : ['The check hit a problem it could not explain.', 'Open an issue and paste this line: ' + e.message];
+    t += '### ' + f.name + '.json\n- **Problem:** ' + rule + (e.detail ? ' (' + e.detail + ')' : '') + '\n- **What to change:** ' + fix + '\n\n';
+  }
+  return t;
+}
+module.exports = { validate, explain, summary, CardError, FIX };

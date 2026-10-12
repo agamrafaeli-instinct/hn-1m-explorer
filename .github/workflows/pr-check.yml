@@ -19,7 +19,11 @@ jobs:
         run: |
           base=origin/${{ github.base_ref }}
           bad=$(git diff --name-only $base...HEAD | grep -Ev '^hypotheses/h[0-9]{3}-[a-z0-9-]+\.json$' || true)
-          if [ -n "$bad" ]; then echo "Hypothesis PRs may only add files under hypotheses/hNNN-name.json. Found:"; echo "$bad"; exit 1; fi
+          if [ -n "$bad" ]; then
+            echo "A card PR may only add one file named hypotheses/hNNN-short-name.json (lowercase letters, digits and dashes). These files do not fit:"; echo "$bad"
+            { echo "## Card check"; echo; echo "- **Problem:** this PR changes files other than a card file, or a card file name does not look like hNNN-short-name.json."; echo "- **What to change:** remove these files from the PR, or rename the card:"; echo; echo '```'; echo "$bad"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
       - name: Validate and evaluate cards
         run: node tests/hypotheses.test.js
       - name: Card rule messages and the worked example

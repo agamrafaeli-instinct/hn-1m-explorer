@@ -17,6 +17,11 @@ for (const [kind, mut, name, ids, load, ev] of cases) {
   assert(/Rule: /.test(t) && /Fix: /.test(t) && t.includes('h200-x.json'), 'message for ' + kind);
 }
 assert.strictEqual(run(() => { }), null);
+// The PR summary lists every failure kind with its fix, and says so when all pass.
+const sm = R.summary(cases.map(([k, m, n, i, l, v]) => ({ name: 'h200-x', error: run(m, n, i && new Set(k === 'duplicate' ? ['h200'] : []), l, v) })).concat([{ name: 'h200-x', error: new R.CardError('parse', 'bad') }]));
+for (const k of Object.keys(R.FIX)) assert(sm.includes(R.FIX[k][0]) && sm.includes(R.FIX[k][1]), 'summary has ' + k);
+assert(/All 2 cards passed/.test(R.summary([{ name: 'a' }, { name: 'b' }])));
+assert(/need a change/.test(R.summary([{ name: 'a', error: new Error('boom') }])));
 console.log('ok', cases.length, 'failure kinds explained');
 // The worked example in CONTRIBUTING.md must pass the real rules and compute.
 const fs = require('fs'), path = require('path'), E = require('../hyp-eval.js');
