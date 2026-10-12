@@ -107,3 +107,6 @@ When a run fails (the issue already names the failing step, the last 30 log line
 
 ## Copy lint (#246)
 `scripts/copy_lint.py` runs in prepush. It fails on an em dash, the two banned archive-size phrases and the banned filler words, all listed in docs/VOICE.md, but only in lines you added since origin/main (and new files). The repo name and URLs are exempt. `--all` lists hits across every checked-in text file without failing.
+
+## Screen snapshots (#247)
+`.github/workflows/screen-snapshots.yml` takes 390 px screenshots of home, compare, a fixed week, a card, Explorer and Rings on the live site every night (21:47 UTC). Baselines live in `docs/snapshots`; the first run saves them. A screen with more than 0.5% of pixels changed is listed in one issue labelled `screens-changed` (before, after and diff images are in the run artifact) and the new image becomes the baseline, so a change is reported once. Report only, never a failure. Baselines must come from CI because fonts render differently on other machines. Local capture: `node scripts/snapshots.mjs --out /tmp/snap`; compare with `python3 scripts/snapshots_compare.py base new out`.

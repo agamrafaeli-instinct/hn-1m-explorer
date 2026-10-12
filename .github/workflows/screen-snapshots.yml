@@ -1,0 +1,64 @@
+name: Screen snapshots
+# Nightly 390 px screenshots of home, compare, week, card, Explorer and Rings on the live site (#247). Report only, never a failure.
+# The first run saves the baseline in docs/snapshots. After that a screen that changed is reported once in one issue labelled
+# screens-changed (before, after and diff images are in the run artifact), and the new image becomes the baseline.
+on:
+  schedule:
+    - cron: '47 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+env:
+  GH_TOKEN: ${{ github.token }}
+  REPO: ${{ github.repository }}
+concurrency:
+  group: screen-snapshots
+  cancel-in-progress: false
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install pillow
+      - name: Take the screenshots on the live site
+        run: node scripts/snapshots.mjs --site "https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" --out new
+      - name: Compare with the saved ones
+        id: cmp
+        run: |
+          mkdir -p docs/snapshots
+          python3 scripts/snapshots_compare.py docs/snapshots new report | tee cmp.txt
+          mkdir -p artifact/before artifact/after artifact/diff
+          cp docs/snapshots/*.png artifact/before/ 2>/dev/null || true
+          cp new/*.png artifact/after/; cp report/*.png artifact/diff/ 2>/dev/null || true
+          echo "count=$(jq '.changed|length' report/report.json)" >> "$GITHUB_OUTPUT"
+          echo "first=$([ -z "$(ls docs/snapshots/*.png 2>/dev/null)" ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        id: art
+        if: steps.cmp.outputs.count != '0'
+        with:
+          name: screen-snapshots
+          path: artifact
+      - name: Report in one issue (not on the first run)
+        if: steps.cmp.outputs.count != '0' && steps.cmp.outputs.first == 'no'
+        run: |
+          url="${{ steps.art.outputs.artifact-url }}"; [ -n "$url" ] || url="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
+          { echo "Nightly screenshots at 390 px: $(jq '.changed|length' report/report.json) screen(s) changed since the last night. Report only; it never blocks a deploy."; echo
+            jq -r '.changed[]|"- **\(.name)**: \(.percent)% of pixels (\(.reason))"' report/report.json; echo
+            echo "Before, after and diff images: $url"; } > body.md
+          gh label create screens-changed --color 1D76DB --description 'Nightly screenshot changes' 2>/dev/null || true
+          num=$(gh issue list --repo "$REPO" --label screens-changed --state open --json number -q '.[0].number // empty')
+          if [ -n "$num" ]; then gh issue comment "$num" --repo "$REPO" --body-file body.md
+          else gh issue create --repo "$REPO" --label screens-changed --title "Screens changed since the last night" --body-file body.md; fi
+      - name: Save the new images as the baseline
+        if: steps.cmp.outputs.count != '0'
+        run: |
+          cp new/*.png docs/snapshots/
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/snapshots
+          git commit -m 'Update screen snapshot baseline'
+          for i in 1 2 3; do git pull --rebase -q origin main && git push origin HEAD:main && break; sleep 5; done
