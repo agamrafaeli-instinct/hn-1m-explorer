@@ -1,6 +1,7 @@
 HN digest 2026-10-12 (UTC): 19 new stories at 300+ points
 - 450 pts, 162 comments: Bot traffic from Yandex https://news.ycombinator.com/item?id=50041619
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
+- 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
 - 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
 - 346 pts, 147 comments: Total Annihilation, rebuilt for modern computers https://news.ycombinator.com/item?id=50045984
 - 345 pts, 429 comments: 3rd Yandex Cloud Data Center Was Hit https://news.ycombinator.com/item?id=50040547
@@ -9,7 +10,6 @@ HN digest 2026-10-12 (UTC): 19 new stories at 300+ points
 - 337 pts, 168 comments: NYC's "Click to Cancel" rule is now in effect https://news.ycombinator.com/item?id=50045946
 - 322 pts, 277 comments: IRCv3 https://news.ycombinator.com/item?id=50041540
 - 321 pts, 182 comments: Passkeys are a trap https://news.ycombinator.com/item?id=50048312
-- 320 pts, 72 comments: Build your own decision model https://news.ycombinator.com/item?id=50037949
 - 318 pts, 142 comments: I'm sorry, but you still have to think https://news.ycombinator.com/item?id=50043689
 - 316 pts, 154 comments: Nitter: Update Oct 10th seeking funding and legal help https://news.ycombinator.com/item?id=50041682
 - 314 pts, 167 comments: I paid people to try and follow my README https://news.ycombinator.com/item?id=50042219
