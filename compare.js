@@ -6,6 +6,7 @@
   function S(t, a) { var e = document.createElementNS('http://www.w3.org/2000/svg', t); for (var k in a) e.setAttribute(k, a[k]); return e; }
   var pct = function (v) { return (v < 0.1 ? v.toFixed(3) : v < 1 ? v.toFixed(2) : v.toFixed(1)) + '%'; };
   var COL = ['#ff6600', '#1b1b1b', '#3b7ea1', '#8a6bbf', '#2e8b57', '#b5651d'];
+  var zoomOn = false;
   function state() {
     var q = (location.hash.split('?')[1] || ''), o = {};
     q.split('&').forEach(function (p) { var i = p.indexOf('='); if (i > 0) o[p.slice(0, i)] = decodeURIComponent(p.slice(i + 1)); });
@@ -22,7 +23,8 @@
     return ['Reversal', 'Emergence', 'Peak decay', 'Composition shift', 'Steady'].filter(function (p) { return by[p]; }).map(function (p) { return by[p].id; }).slice(0, 5);
   }
   function short(l) { return l.split(/, | and /)[0]; }
-  function go(ids) { location.hash = '#/compare?topics=' + ids.join(','); }
+  function yrs() { var m = /[?&]years=([^&]*)/.exec(location.hash); return m ? '&years=' + m[1] : ''; }
+  function go(ids) { location.hash = '#/compare?topics=' + ids.join(',') + yrs(); }
   function topicId() { var m = location.hash.match(/^#\/t\/([^?\/]+)/); return m && D.byId[m[1]] ? m[1] : null; }
   function smooth(s) { return s.map(function (_, i) { var a = s.slice(Math.max(0, i - 5), i + 1); return a.reduce(function (x, y) { return x + y; }, 0) / a.length * 100; }); }
   function draw() {
@@ -31,20 +33,32 @@
     var home = /^#?\/?(\?.*)?$/.test(location.hash);
     var tid = topicId();
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
-    root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, 2006 to ' + D.months[D.months.length - 1].slice(0, 4) + '. Title matching only. The shaded band is the latest 12 months. The vertical scale is square-root, so small topics stay visible.'));
+    var first = +D.months[0].slice(0, 4), lastY = +D.months[D.months.length - 1].slice(0, 4), lo = 0, hi = D.months.length - 1, rlabel = '2006 to ' + lastY, zbox = el('div');
+    if (window.YearZoom && (zoomOn || /[?&]years=/.test(location.hash))) {
+      var r = YearZoom.fromHash(location.hash, first, lastY), ix = YearZoom.pick(D.months, r);
+      if (ix.length > 1) { lo = ix[0]; hi = ix[ix.length - 1]; }
+      rlabel = r.all ? '2006 to ' + lastY : YearZoom.label(r, first, lastY);
+      var Zc = YearZoom.mount(zbox, { min: first, max: lastY }); Zc.on(function () { draw(); }, true);
+    } else {
+      var zb = el('button', 'cmp_chip', 'Zoom to years'); zb.type = 'button';
+      zb.onclick = function () { zb.disabled = true; var sc = document.createElement('script'); sc.src = 'yearzoom.js'; sc.onload = function () { zoomOn = true; draw(); }; document.head.appendChild(sc); };
+      zbox.appendChild(zb);
+    }
+    root.appendChild(el('p', 'cmp_s', 'By month, 6-month average, ' + rlabel + '. Title matching only. ' + (hi === D.months.length - 1 ? 'The shaded band is the latest 12 months. ' : '') + 'The vertical scale is square-root, so small topics stay visible.'));
+    root.appendChild(zbox);
     if (home && window.TodayLine) { var tl = el('div', 'today_host'); root.appendChild(tl); window.TodayLine(tl); }
     if (tid) { var t0 = D.byId[tid]; var bd = el('span', 'cmp_badge', t0.pattern + (t0.ratio ? ' \u00b7 ' + (t0.ratio >= 10 ? t0.ratio.toFixed(0) : t0.ratio.toFixed(1)) + 'x the earlier share' : '')); root.appendChild(bd); }
     var box = el('div', 'cmp_box'), row = el('div', 'cmp_row'); root.appendChild(box); root.appendChild(row);
     var W = box.clientWidth || 360, H = box.clientHeight || 360, padL = 34, padR = 112, padT = 14, padB = 22;
-    var ser = tops.map(function (t) { return smooth(t.series); }), n = D.months.length;
+    var ser = tops.map(function (t) { return smooth(t.series).slice(lo, hi + 1); }), n = hi - lo + 1, MO = D.months.slice(lo, hi + 1);
     var max = Math.max.apply(null, ser.map(function (s) { return Math.max.apply(null, s); })) * 1.08 || 1;
     var X = function (i) { return padL + (W - padL - padR) * i / (n - 1); }, Y = function (v) { return padT + (H - padT - padB) * (1 - Math.sqrt(Math.max(v, 0) / max)); };
     var svg = S('svg', { viewBox: '0 0 ' + W + ' ' + H, width: W, height: H, role: 'img', 'aria-label': 'Line chart of title share by month for ' + tops.map(function (t) { return t.label; }).join(', ') });
-    svg.appendChild(S('rect', { x: X(n - 12), y: padT, width: X(n - 1) - X(n - 12), height: H - padT - padB, fill: '#f1e6d3' }));
+    if (hi === D.months.length - 1 && n > 12) svg.appendChild(S('rect', { x: X(n - 12), y: padT, width: X(n - 1) - X(n - 12), height: H - padT - padB, fill: '#f1e6d3' }));
     var ticks = [0].concat([0.1, 0.5, 1, 2, 5, 10].filter(function (v) { return v < max * 0.98; })); ticks = ticks.filter(function (v, i) { return i === 0 || Math.abs(Y(v) - Y(ticks[i - 1])) > 22; });
     ticks.forEach(function (v) { svg.appendChild(S('line', { x1: padL, x2: W - padR, y1: Y(v), y2: Y(v), stroke: '#efe6d6' })); });
     ticks.forEach(function (v) { var g = S('text', { x: padL - 4, y: Y(v) + 4, 'text-anchor': 'end', class: 'cmp_ax' }); g.textContent = v + '%'; svg.appendChild(g); });
-    for (var y = 2010; y <= 2025; y += 5) { var i = D.months.indexOf(y + '-01'); if (i < 0) continue; var tx = S('text', { x: X(i), y: H - 6, 'text-anchor': 'middle', class: 'cmp_ax' }); tx.textContent = y; svg.appendChild(tx); }
+    var span = (hi - lo) / 12, ystep = span > 12 ? 5 : span > 6 ? 2 : 1; for (var y = 2006; y <= lastY; y++) { if (y % ystep && ystep > 1) continue; var i = MO.indexOf(y + '-01'); if (i < 0) continue; var tx = S('text', { x: X(i), y: H - 6, 'text-anchor': 'middle', class: 'cmp_ax' }); tx.textContent = y; svg.appendChild(tx); }
     var ends = [];
     ser.forEach(function (s, k) {
       var d = s.map(function (v, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(v).toFixed(1); }).join('');

@@ -52,7 +52,7 @@
     function fromSelects() { var x = +a.value, z = +b.value; if (x > z) { if (this === a) z = x; else x = z; } set({ from: x, to: z, all: x === min && z === max }); }
     a.onchange = b.onchange = fromSelects;
     draw();
-    return { get: function () { return cur; }, on: function (f) { listeners.push(f); f(cur); }, label: function () { return label(cur, min, max); } };
+    return { get: function () { return cur; }, on: function (f, quiet) { listeners.push(f); if (!quiet) f(cur); }, label: function () { return label(cur, min, max); } };
   }
   var COLOR = '#b84700';
   function S(t, a) { var e = document.createElementNS('http://www.w3.org/2000/svg', t); for (var k in a) e.setAttribute(k, a[k]); return e; }
