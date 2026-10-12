@@ -1,6 +1,7 @@
-HN digest 2026-10-12 (UTC): 19 new stories at 300+ points
+HN digest 2026-10-12 (UTC): 20 new stories at 300+ points
 - 450 pts, 162 comments: Bot traffic from Yandex https://news.ycombinator.com/item?id=50041619
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
+- 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
 - 346 pts, 147 comments: Total Annihilation, rebuilt for modern computers https://news.ycombinator.com/item?id=50045984
 - 345 pts, 429 comments: 3rd Yandex Cloud Data Center Was Hit https://news.ycombinator.com/item?id=50040547
 - 344 pts, 131 comments: LineageOS 24.0 https://news.ycombinator.com/item?id=50040276

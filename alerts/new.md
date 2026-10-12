@@ -1,4 +1,5 @@
-HN new 300+ stories, last 12h, updated 2026-10-12 07:06 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-12 08:58 UTC. Forward only ids not sent before.
+50048642 | 352 pts, 166 comments | Fingerprints are the new cookies | https://news.ycombinator.com/item?id=50048642
 50048638 | 388 pts, 108 comments | Google is illegaly cutting forest to build data centers | https://news.ycombinator.com/item?id=50048638
 50047055 | 307 pts, 46 comments | So, You’d Like To Sell Your Print Issues Of The Onion? | https://news.ycombinator.com/item?id=50047055
 50020533 | 300 pts, 47 comments | 'Wallace and Gromit,' 90% Alone | https://news.ycombinator.com/item?id=50020533
