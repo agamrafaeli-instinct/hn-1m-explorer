@@ -17,7 +17,7 @@ How to read the evidence. The site has no visit analytics (GitHub Pages gives no
 | A8 | Week screens (#/w/<audience>/<week>), 3 audiences, stepper | 5 | Maybe | A weekly news-style readout. It answers "what changed this week", which is the front page kind of question. It could stay as "latest" or go. |
 | A9 | Audience pages (#/a/engineers, vcs, geeks) | 7 | Maybe | Split the site by reader type. The pitch has one community, not three audiences. |
 | A10 | Hypothesis list (#/hypotheses) and single cards (#/c/hNNN) | 2 and 4 | Maybe | 69 cards. Each card is a guess and a check, close to "one question". The list is a catalogue. See group B. |
-| A11 | Lens pages (#/lens, 333 domain files) | 0 | Leftover | No link from the pages to them except share and deep links; 1.4 MB of data. Per-domain views. |
+| A11 | Lens pages (#/l/<id>, 333 domain and term files, 1.4 MB) | linked only from flagged rows on the week screens | Maybe | Per-domain and per-term views. They live or die with the week screens (A8) and the tracked list. |
 | A12 | Submit a hypothesis (#/submit) | 1 | Maybe | Invites outside cards. Not part of the narrative; it is a contribution path. |
 
 ## B. Cards (69 files in hypotheses/, by group)
