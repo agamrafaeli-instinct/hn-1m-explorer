@@ -18,7 +18,7 @@ Rules: unknown values are ignored and the explorer opens unfiltered. Values are 
 
 ## What loads
 
-The explorer already loads the newest-1M archive in range reads. A week link does not load more. It filters the rows already loaded by the week's start and end dates, taken from `data/weekly/index.json` (about 2 KB). The week files themselves (about 55 KB raw, 12 KB gzipped, plus the compare file at about 8 KB raw, 3 KB gzipped) are not needed to open the explorer. They are only read if the page shows the week's totals above the list.
+The explorer already loads the newest slice of the archive in range reads. A week link does not load more. It filters the rows already loaded by the week's start and end dates, taken from `data/weekly/index.json` (about 2 KB). The week files themselves (about 55 KB raw, 12 KB gzipped, plus the compare file at about 8 KB raw, 3 KB gzipped) are not needed to open the explorer. They are only read if the page shows the week's totals above the list.
 
 ## Limits
 

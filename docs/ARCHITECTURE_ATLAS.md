@@ -6,7 +6,7 @@ Labels used below: **measured** (checked on 2026-10-09), **source** (a cited pag
 
 ## 1. What the Explorer does today
 
-Measured from app.js and index.html. It loads data/manifest.json, then the CSV chunks, into typed arrays in the browser (up to the 1,000,000 rows held). It filters the whole array on every keystroke by:
+Measured from app.js and index.html. It loads data/manifest.json, then the CSV chunks, into typed arrays in the browser (the newest rows only, a working set, not the archive). It filters the whole array on every keystroke by:
 - title words (all words must appear),
 - author (substring), domain (substring), type, minimum score, a from date and a to date,
 then draws charts (per day, domains, words, authors) and a 25 row paginated list. It has no server and no index; everything is a scan of arrays in memory. The data folder is 335 MB on Pages now (measured, `du`).

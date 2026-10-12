@@ -1,6 +1,6 @@
 # New definitions for the 19 Engineers cards
 
-Spec for review. No ratio or verdict was computed for any card here. Term counts on the newest-1M archive were looked at only to draw samples for the false-match check. No card file was added or edited. Old cards h012 to h030 stay as they are, and their verdicts are not carried over. Issue #57, epic #40.
+Spec for review. No ratio or verdict was computed for any card here. Term counts on the newest slice of the archive were looked at only to draw samples for the false-match check. No card file was added or edited. Old cards h012 to h030 stay as they are, and their verdicts are not carried over. Issue #57, epic #40.
 
 ## Rules shared by all 19 cards
 - **Population.** Live stories only (not dead, not deleted). Comments are used only where a card says so.
@@ -14,7 +14,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
   - Points premium: supported (strong) at 1.30 or more, supported (weak) at 1.10 or more, refuted at 0.90 or less, otherwise inconclusive.
 - **Confidence labels** are the declared thresholds, not statistical intervals. No card claims significance, cause or preregistration. The thresholds were written before the first run of these cards, but after earlier cards on similar topics had been seen, so the cards are exploratory.
 - **Matches are not adoption.** A title that names a tool shows what people wrote about, not what engineers use.
-- **Sample check.** For each term list, 20 live-story titles were drawn at random (fixed seed) from the newest-1M archive (Jul 23 to Oct 9 2026) and read by hand. The count of titles that did not match the intended meaning is on each card. Titles from the earlier windows were not checked; the data agent should repeat the 20-title check on the earlier window before the first run and record the result in the card.
+- **Sample check.** For each term list, 20 live-story titles were drawn at random (fixed seed) from the newest slice of the archive (Jul 23 to Oct 9 2026) and read by hand. The count of titles that did not match the intended meaning is on each card. Titles from the earlier windows were not checked; the data agent should repeat the 20-title check on the earlier window before the first run and record the result in the card.
 
 ## h150: Is TypeScript taking over from JavaScript in story titles?
 - **Replaces:** h012. The old verdict is not carried over.
@@ -32,7 +32,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
   - A title that names both counts on both sides.
   - Naming a language in a title is not using it.
   - Old card h012 used the ratio TS per JS story and matched title plus text; this card uses title only.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h151: Are AI agents replacing chatbots in story titles?
 - **Replaces:** h013. The old verdict is not carried over.
@@ -50,7 +50,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
   - The earlier window sits right after ChatGPT launched, so the early base is small. The minimum count rule stops tiny bases from producing a result.
   - A bare "agent" is not matched, to keep out user agents and secret agents; only the phrases listed are.
   - Old card h013 counted agent(s) per chatbot story and matched the word alone.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h152: Is SQL gaining on NoSQL in story titles?
 - **Replaces:** h014. The old verdict is not carried over.
@@ -67,7 +67,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - Old card h014 put MySQL on the NoSQL side. That was wrong, and MySQL is on neither side here.
   - Product names are a proxy for the database families, and news about a company (for example a chief executive change) counts as a match.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h153: Are microservices and serverless fading from story titles?
 - **Replaces:** h015. The old verdict is not carried over.
@@ -82,7 +82,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Minimum count:** each window needs at least 150 matching stories (30 for the points cards, over the whole window). Fewer: inconclusive, "too few matches".
 - **Caveats:**
   - Counts titles, not systems built.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h154: Is React losing share of story titles?
 - **Replaces:** h016. The old verdict is not carried over.
@@ -98,7 +98,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - "React" alone is not matched, because it is also a verb. Only the framework phrases listed are, so the share is a floor.
   - The earlier version of this question was tested on a window where the share rose (see the old card h016); this card is a new test on a new window and does not repeat that verdict.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h155: Is the newer front-end stack growing in story titles?
 - **Replaces:** h017. The old verdict is not carried over.
@@ -114,7 +114,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - Astro is left out because the word is also a company and a name. Svelte, Vue, Next.js, htmx, Tailwind and Nuxt are in.
   - Some of these did not exist in the earlier window; the minimum count rule still applies.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h156: Do Docker, Kubernetes and Terraform keep their share of story titles?
 - **Replaces:** h018. The old verdict is not carried over.
@@ -129,7 +129,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Minimum count:** each window needs at least 150 matching stories (30 for the points cards, over the whole window). Fewer: inconclusive, "too few matches".
 - **Caveats:**
   - "Keep" means at least 90 percent of the earlier share. A share that grows counts as keeping it.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h157: Are Java, PHP, Ruby and Rails fading from story titles?
 - **Replaces:** h019. The old verdict is not carried over.
@@ -145,7 +145,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - Plain JavaScript was in the old card h019 and is out here, because it is a different language.
   - Rails is matched only when capitalized, to keep out the verb ("rails against"). "Java" also matches the island, the coffee and the Minecraft edition (1 of 20 sampled titles).
-- **Sample check:** 20 titles drawn from the newest-1M archive; 1 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 1 of 20 did not match the intended meaning.
 
 ## h158: Do AI coding tool stories earn more points than other stories?
 - **Replaces:** h020. The old verdict is not carried over.
@@ -153,7 +153,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Question:** Do AI coding tool stories earn more points than other stories?
 - **Terms:** `\bCursor\b(?!-based|\s+(pagination|position|of|is|in)\b)|\bclaude code\b|\bcopilot\b|\bMCP\b|\bdevin\b|\bcodex\b|\bwindsurf\b` (case-sensitive)
 - **Matching:** whole words, title only, live stories; a story matching more than one term counts once.
-- **Window and source:** Short-run. Source: this repo's newest-1M archive, complete UTC weeks (10 weeks, Jul 27 to Oct 4 2026 at the time of writing). Weeks have equal weight.
+- **Window and source:** Short-run. Source: this repo's newest slice of the archive, complete UTC weeks (10 weeks, Jul 27 to Oct 4 2026 at the time of writing). Weeks have equal weight.
 - **Metric:** Points per live story for matching stories divided by points per live story for all other stories, per week, mean of the 10 weekly ratios.
 - **Thresholds (set before any run):** Supported (strong) at ratio 1.30 or more. Supported (weak) at 1.10 or more. Refuted at 0.90 or less. Anything else, inconclusive.
 - **Control:** Built in: the comparison group is all other live stories in the same week.
@@ -162,7 +162,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
   - Scores are snapshots taken when the data was collected. The newest days are immature.
   - Means are sensitive to a few hits. The top-1-percent-trimmed ratio is shown beside the result and does not change the verdict.
   - Cursor is matched only when capitalized and not as a database cursor. "Copilot" matches any product with that name.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h159: Do SQLite and DuckDB stories earn more points than other stories?
 - **Replaces:** h021. The old verdict is not carried over.
@@ -170,7 +170,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Question:** Do SQLite and DuckDB stories earn more points than other stories?
 - **Terms:** `\bsqlite\b|\bduckdb\b` (case-insensitive)
 - **Matching:** whole words, title only, live stories; a story matching more than one term counts once.
-- **Window and source:** Short-run. Source: this repo's newest-1M archive, complete UTC weeks (10 weeks, Jul 27 to Oct 4 2026 at the time of writing). Weeks have equal weight.
+- **Window and source:** Short-run. Source: this repo's newest slice of the archive, complete UTC weeks (10 weeks, Jul 27 to Oct 4 2026 at the time of writing). Weeks have equal weight.
 - **Metric:** Same as h158 with the SQLite and DuckDB terms.
 - **Thresholds (set before any run):** Supported (strong) at ratio 1.30 or more. Supported (weak) at 1.10 or more. Refuted at 0.90 or less. Anything else, inconclusive.
 - **Control:** Built in.
@@ -178,7 +178,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - Same snapshot and hit-sensitivity limits as h158.
   - About 20 to 40 matching stories a week; with fewer than 30 in total the card is inconclusive.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h160: Are editor and terminal tools showing up more in story titles?
 - **Replaces:** h022. The old verdict is not carried over.
@@ -194,7 +194,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - Git and Linux are out. They appear in too many unrelated stories to say anything about tools.
   - Old card h022 included them; this card asks a narrower question and does not carry its verdict over.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h161: Are Rust, Zig and C++ gaining share of story titles?
 - **Replaces:** h023. The old verdict is not carried over.
@@ -210,7 +210,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - "Rust belt" is excluded. "llama.cpp" is excluded from the C++ match.
   - A story naming two languages counts once.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h162: Are code review and technical debt coming up more in story titles?
 - **Replaces:** h024. The old verdict is not carried over.
@@ -225,7 +225,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Minimum count:** each window needs at least 150 matching stories (30 for the points cards, over the whole window). Fewer: inconclusive, "too few matches".
 - **Caveats:**
   - Old card h024 added a reason (AI writes more code). This card only asks whether the share rose and makes no claim about why.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h163: Are LLM building blocks (RAG, fine-tuning, embeddings) growing in story titles?
 - **Replaces:** h025. The old verdict is not carried over.
@@ -241,7 +241,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - "RAG" is matched in capitals only. "Embedding" as a verb is not matched; "embeddings" and "embedding model" are.
   - The earlier window is before most of these terms were common; the minimum count rule applies.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h164: Is Rust mentioned more in comments, not only in titles?
 - **Replaces:** h026. The old verdict is not carried over.
@@ -274,7 +274,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - "Go" is matched only in the phrases listed (golang, "in Go", "written in Go", "Go language", Go 1.10 to 1.29). That misses many Go stories, so the share is a floor and only its change counts.
   - Both shares are small in the earlier window; the minimum count rule applies to each.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h166: Is Kubernetes fading from story titles?
 - **Replaces:** h028. The old verdict is not carried over.
@@ -289,7 +289,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Minimum count:** each window needs at least 150 matching stories (30 for the points cards, over the whole window). Fewer: inconclusive, "too few matches".
 - **Caveats:**
   - Overlaps card h156 (Kubernetes is one of its three terms). They ask different questions and can both be shown.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 0 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 0 of 20 did not match the intended meaning.
 
 ## h167: Is Vue growing in story titles?
 - **Replaces:** h029. The old verdict is not carried over.
@@ -305,7 +305,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Caveats:**
   - Bare "Vue" is not matched, because it is also a French word and other products. Only the forms listed are. Counts are small, so the minimum count rule matters.
   - Only 8 titles matched in the newest 10 weeks, so the short archive cannot test this card.
-- **Sample check:** only 8 titles matched in the newest-1M archive; all 8 were read and 0 did not match the intended meaning.
+- **Sample check:** only 8 titles matched in the newest slice of the archive; all 8 were read and 0 did not match the intended meaning.
 
 ## h168: Is Java fading from story titles?
 - **Replaces:** h030. The old verdict is not carried over.
@@ -320,7 +320,7 @@ Spec for review. No ratio or verdict was computed for any card here. Term counts
 - **Minimum count:** each window needs at least 150 matching stories (30 for the points cards, over the whole window). Fewer: inconclusive, "too few matches".
 - **Caveats:**
   - Matches the word Java, so it also matches the coffee, the island and the Minecraft edition.
-- **Sample check:** 20 titles drawn from the newest-1M archive; 1 of 20 did not match the intended meaning.
+- **Sample check:** 20 titles drawn from the newest slice of the archive; 1 of 20 did not match the intended meaning.
 
 ## New card IDs
 
