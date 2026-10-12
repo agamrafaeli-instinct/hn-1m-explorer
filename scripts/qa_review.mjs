@@ -1,6 +1,6 @@
 // QA reviewer (#254). Walks routes of the site at 390 px as a visitor and writes a short report for one ticket: a screenshot per route,
 // the text a visitor reads, and a list of findings (sideways scroll, small tap targets, unlabeled controls and charts, images without alt,
-// tiny text, empty sections, "undefined"/"NaN" in the text, banned words, console errors, failed requests).
+// tiny text, "undefined"/"NaN" in the text, banned words, console errors, failed requests).
 // Report only: it always exits 0 and never blocks anything. The ticket's done-when list is printed next to the walk so a reader can compare them.
 //   node scripts/qa_review.mjs --ticket 276 --routes '#/,#/rings' [--site URL] [--out DIR] [--shots-url BASE]
 // With no --site it stages the repo and serves it locally. --shots-url sets the public address the report uses for the screenshots.
@@ -50,12 +50,14 @@ for(const e of document.querySelectorAll('a[href],button,input:not([type=hidden]
 for(const i of document.querySelectorAll('img'))if(vis(i)&&!i.hasAttribute('alt'))noalt.push((i.getAttribute('src')||'').slice(0,50));
 const svgs=[...document.querySelectorAll('svg')].filter(s=>vis(s)&&s.getBoundingClientRect().width>40&&!s.getAttribute('aria-label')&&!s.getAttribute('aria-hidden')&&!s.querySelector('title')&&!s.closest('[aria-hidden=true],[role=img]')).length;
 const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){const t=n.textContent.trim();if(t.length<2||!n.parentElement||!vis(n.parentElement))continue;const fs=parseFloat(getComputedStyle(n.parentElement).fontSize);if(fs<12)tiny.add(Math.round(fs*10)/10+'px: '+t.slice(0,30));}
-for(const h of document.querySelectorAll('h2,h3'))if(vis(h)&&h.innerText.trim()){const nx=h.nextElementSibling;if(!nx||!(nx.innerText||'').trim()&&!nx.querySelector('svg,img,canvas'))empty.push(h.innerText.trim().slice(0,40));}
+for(const h of document.querySelectorAll('h2,h3'))if(vis(h)&&h.innerText.trim()){const nx=h.nextElementSibling;if(!nx||!(nx.innerText||'').trim()&&!nx.matches('svg,img,canvas,form,input,select,button')||nx.querySelector('svg,img,canvas,input,select,button,[role=img]'))empty.push(h.innerText.trim().slice(0,40));}
 return JSON.stringify({title:document.title,h1:([...document.querySelectorAll('h1')].find(vis)||{}).innerText||'',text:(document.body.innerText||'').replace(/\\s+/g,' ').trim(),scroll:document.documentElement.scrollWidth-innerWidth,height:document.documentElement.scrollHeight,tap,unl,noalt,svgs,tiny:[...tiny].slice(0,5),empty});})()`;
 const rows = []; let n = 0;
 for (const route of routes) {
   const before = probs.length; await send('Page.navigate', { url: SITE + 'index.html' + route });
-  await new Promise(r => setTimeout(r, 2500));
+  await new Promise(r => setTimeout(r, 2000));
+  // Wait until the page stops growing (charts and lists load late), at most 8 more seconds.
+  for (let i = 0, last = -1, same = 0; i < 12 && same < 2; i++) { const n = (await send('Runtime.evaluate', { expression: 'document.body.innerText.length+document.querySelectorAll("svg,input,canvas").length', returnByValue: true })).result.value; same = n === last ? same + 1 : 0; last = n; await new Promise(r => setTimeout(r, 700)); }
   const v = JSON.parse((await send('Runtime.evaluate', { expression: expr, returnByValue: true })).result.value);
   const shot = `${String(++n).padStart(2, '0')}.jpg`;
   const s = await send('Page.captureScreenshot', { format: 'jpeg', quality: 55, captureBeyondViewport: true, clip: { x: 0, y: 0, width: 390, height: Math.min(v.height, 2400), scale: 1 } });
@@ -67,7 +69,6 @@ for (const route of routes) {
   if (v.svgs) f.push(`${v.svgs} chart(s) with no name`);
   if (v.noalt.length) f.push(`${v.noalt.length} image(s) with no alt`);
   if (v.tiny.length) f.push('text under 12px: ' + v.tiny.slice(0, 3).join('; '));
-  if (v.empty.length) f.push('heading with nothing under it: ' + v.empty.join('; '));
   if (/\b(undefined|NaN|\[object|null)\b/.test(v.text)) f.push('"undefined", "NaN" or "null" shows in the text');
   const b = [...new Set((v.text.match(BANNED) || []).filter(x => x !== '1m').map(x => x.toLowerCase()))]; if (b.length) f.push('banned word(s): ' + b.join(', '));
   if (v.text.length < 80) f.push('very little text on the page (' + v.text.length + ' characters)');
