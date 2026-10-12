@@ -29,6 +29,11 @@ on:
       - '.github/workflows/daily-hn.yml'
       - '!source.json'
   workflow_dispatch:
+    inputs:
+      skip_unchanged:
+        description: 'Skip checks whose inputs are unchanged (default: full run, skip nothing)'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -57,6 +62,10 @@ jobs:
           skip=false
           if [ "${{ github.event_name }}" = "push" ] && python3 scripts/prepush_digest.py --check; then skip=true; fi
           echo "skip=$skip" >> "$GITHUB_OUTPUT"
+          # Full run (#252): every manual run and the Sunday scheduled run skip nothing. Other runs skip a check whose inputs are unchanged (scripts/build_graph.py).
+          full=false
+          if { [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.skip_unchanged }}" != "true" ]; } || { [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = 7 ]; }; then full=true; fi
+          echo "full=$full" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -74,14 +83,20 @@ jobs:
       - name: Refresh curious-geeks numbers
         run: python scripts/geeks.py
       - name: Refresh film-card monthly shares
-        # Skipped when the hash of everything these scripts read matches the last run (#243). Output files are the same either way.
+        # Skipped when the hash of everything these scripts read matches the last run (#243). A full run does not skip: if the hash said unchanged but an output differs, the run fails (stale skip).
+        env:
+          FULL: ${{ steps.pp.outputs.full }}
         run: |
-          if python scripts/inputs_hash.py --check; then exit 0; fi
+          same=false; if python scripts/inputs_hash.py --check; then same=true; fi
+          if [ "$same" = true ] && [ "$FULL" != true ]; then exit 0; fi
           pip install -r requirements-ci.txt
           python scripts/film.py shares
           python scripts/build_topic_series.py
           python scripts/rings_data.py
           python scripts/saga_data.py
+          if [ "$same" = true ]; then
+            git diff --quiet -- data/film_shares.json data/topic_series.json data/rings.json data/saga.json || { echo 'STALE SKIP: inputs hash unchanged but the outputs changed'; exit 1; }
+          fi
           python scripts/inputs_hash.py --write
       - name: Find and publish today's story
         run: |
@@ -150,18 +165,37 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/honor_issues.py | tee -a "$GITHUB_STEP_SUMMARY"
       - name: UI check at 390px
+        # Skipped after a matching prepush (push runs), or when the site files are unchanged since the last good check and this is not a full run (#252).
         if: steps.pp.outputs.skip != 'true'
+        env:
+          FULL: ${{ steps.pp.outputs.full }}
         run: |
           set -o pipefail
+          if [ "$FULL" != true ] && python3 scripts/build_graph.py check ui; then exit 0; fi
           node tests/ui.test.mjs --serve _site | tee ui.txt
           { echo '### UI check (390px)'; echo '```'; cat ui.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           rm ui.txt
+          python3 scripts/build_graph.py record ui
       - name: Check load time and size against budgets
+        # Always runs on push and full runs. A daily run (or a manual run with skip_unchanged) skips it when the site files and budgets are unchanged since the last good check (#252).
+        env:
+          FULL: ${{ steps.pp.outputs.full }}
+          EVENT: ${{ github.event_name }}
         run: |
           set -o pipefail
+          if [ "$EVENT" != push ] && [ "$FULL" != true ] && python3 scripts/build_graph.py check budgets; then exit 0; fi
           node scripts/perf.mjs --serve _site --runs 3 --tolerance 1.25 --trend perf_trend.csv | tee perf.txt
           { echo '### Load budgets (slow 4G, 390px). Size and request counts fail the run. Time only warns.'; echo '```'; cat perf.txt; echo '```'; echo 'Trend rows (date,source,page,ms,requests,kb):'; echo '```'; cat perf_trend.csv; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           rm perf.txt perf_trend.csv
+          python3 scripts/build_graph.py record budgets
+      - name: Save the build state
+        run: |
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/build_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save build state'
+            for i in 1 2 3; do git pull --rebase -q origin main && git push origin HEAD:main && break; sleep 5; done
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
