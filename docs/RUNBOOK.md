@@ -137,3 +137,4 @@ Steps retry on their own (`scripts/retry.sh`). `scripts/contract.py` checks the 
 
 ## Monthly quarantine drill (#340)
 `.github/workflows/quarantine-drill.yml` runs `scripts/quarantine_drill.sh` on the 3rd of each month and by hand. It breaks data/manifest.json inside the runner's own checkout, expects scripts/contract.py to catch it and scripts/quarantine.sh (dry run) to restore the tree, then checks the contract passes again. It never pushes and never opens a data-quarantine issue. Only a failed drill opens one issue labelled `drill-failed` (later failures comment on it). Run it locally only in a fresh worktree: `git worktree add /tmp/dw HEAD && cd /tmp/dw && bash scripts/quarantine_drill.sh`.
+The walk also taps the first in-page link and the first button on each route (#344) and says what happened. A link that changes nothing, or any console error or 404 after a tap, is a finding; a button that changes nothing is only noted.

@@ -71,8 +71,23 @@ for (const route of routes) {
   if (/\b(undefined|NaN|\[object|null)\b/.test(v.text)) f.push('"undefined", "NaN" or "null" shows in the text');
   const b = [...new Set((v.text.match(BANNED) || []).filter(x => x !== '1m').map(x => x.toLowerCase()))]; if (b.length) f.push('banned word(s): ' + b.join(', '));
   if (v.text.length < 80) f.push('very little text on the page (' + v.text.length + ' characters)');
-  for (const p of probs.slice(before)) f.push(p);
-  rows.push({ route, shot, ...v, findings: f });
+  // First taps: the first in-page link and the first button outside the tab bar. A link that changes nothing is a finding; a button that changes nothing is only noted.
+  const taps = [];
+  for (const kind of ['link', 'button']) {
+    const sel = kind === 'link' ? "a[href^='#/']:not(#tabs a)" : "button:not([disabled]):not(#tabs button)";
+    await send('Page.navigate', { url: SITE + 'index.html' + route }); await new Promise(r => setTimeout(r, 2000));
+    const pb = probs.length;
+    const t = JSON.parse((await send('Runtime.evaluate', { returnByValue: true, expression: `(()=>{const vis=e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};const e=[...document.querySelectorAll(${JSON.stringify(sel)})].find(vis);if(!e)return JSON.stringify({none:true});const name=((e.innerText||e.textContent||e.getAttribute('aria-label')||'').replace(/\\s+/g,' ').trim()||'(no text)').slice(0,30),h0=location.hash,n0=document.body.innerText.length;e.click();return JSON.stringify({name,h0,n0,href:e.getAttribute('href')})})()` })).result.value);
+    if (t.none) { taps.push(`no visible ${kind} to tap`); continue; }
+    await new Promise(r => setTimeout(r, 1500));
+    const a = JSON.parse((await send('Runtime.evaluate', { returnByValue: true, expression: 'JSON.stringify({h:location.hash,n:document.body.innerText.length})' })).result.value);
+    const moved = a.h !== t.h0, changed = moved || Math.abs(a.n - t.n0) > 20, errs = probs.slice(pb);
+    taps.push(`first ${kind} "${t.name}": ${moved ? 'went to ' + a.h : changed ? 'page text changed' : 'nothing visible changed'}${errs.length ? '; ' + errs.join(' | ') : ''}`);
+    if (kind === 'link' && !changed) f.push(`first link "${t.name}" (${t.href}) changed nothing when tapped`);
+    for (const e of errs) f.push('after tapping the first ' + kind + ': ' + e);
+  }
+  for (const p of probs.slice(before)) if (!f.includes(p) && !f.some(x => x.endsWith(p))) f.push(p);
+  rows.push({ route, shot, ...v, findings: f, taps });
 }
 ws.close(); ch.kill(); server?.close();
 const L = [`## QA walk${ticket ? ' for #' + ticket : ''} (390 px, report only)`, '', `Site: ${SITE.startsWith('http://127') ? 'staged from the repo' : SITE}. ${rows.length} route(s). This walk lists what a script can see. Whether the copy reads well and a chart is clear is for the person reading the screenshots below.`, ''];
@@ -86,6 +101,7 @@ if (common.length) L.push('**On every page walked**', '', ...common.map(x => '- 
 for (const r of rows) {
   L.push(`### \`${r.route}\` ${r.h1 ? '- ' + r.h1.slice(0, 70) : ''}`);
   L.push(r.findings.length ? r.findings.map(x => '- ' + x).join('\n') : '- nothing flagged');
+  L.push('', '_Taps:_ ' + r.taps.join('; '));
   L.push('', shotsUrl ? `![${r.route}](${shotsUrl}/${r.shot})` : `(screenshot: ${r.shot})`, '', '<details><summary>Text a visitor reads</summary>', '', r.text.slice(0, 1200) + (r.text.length > 1200 ? ' ...' : ''), '', '</details>', '');
 }
 fs.writeFileSync(path.join(out, 'report.md'), L.join('\n')); fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(rows, null, 1));
