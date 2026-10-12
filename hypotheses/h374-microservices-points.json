@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "id": "h374",
+  "title": "Microservices and serverless stories now score below the average story",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Stories that name microservices or serverless get fewer points than the average story in the latest 12 months.",
+  "expect": "If true, points per microservices/serverless story should be at most 0.8x the points of the average story in the same latest 12 months (0.95x counts as weak, 1.05x or higher refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "points_vs_month_mean",
+    "unit": "x",
+    "field": "dist_p",
+    "count_field": "dist_s",
+    "avg_points": "pts_total",
+    "avg_count": "total",
+    "per_label": "points per story against the same-month average",
+    "group_a": {
+      "label": "Microservices and serverless stories ({from} to {to})",
+      "indices": {
+        "last": 12
+      }
+    },
+    "group_b": {
+      "label": "Average story of the same months ({from} to {to})",
+      "indices": {
+        "last": 12
+      }
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.8
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.95
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.05
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Thresholds written before this card was run. h303 is left unchanged.",
+  "caveats": [
+    "Points are the score each story had when the archive fetched it, so the newest stories may still be gaining points.",
+    "Title words only: stories about microservices or serverless that never name them are missed.",
+    "Few stories match in 12 months, so one popular story can move the ratio."
+  ]
+}
