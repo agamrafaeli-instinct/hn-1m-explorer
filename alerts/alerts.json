@@ -1,5 +1,49 @@
 [
  {
+  "id": "50045984",
+  "title": "Total Annihilation, rebuilt for modern computers",
+  "points": 346,
+  "comments": 147,
+  "author": "jttnr",
+  "hn": "https://news.ycombinator.com/item?id=50045984",
+  "url": "https://nanolathe.gg",
+  "created_at": "2026-10-11T18:04:47Z",
+  "reported_at": 1791767012
+ },
+ {
+  "id": "50045946",
+  "title": "NYC's \"Click to Cancel\" rule is now in effect",
+  "points": 337,
+  "comments": 168,
+  "author": "gregsadetsky",
+  "hn": "https://news.ycombinator.com/item?id=50045946",
+  "url": "https://www.nyc.gov/main/click-to-cancel",
+  "created_at": "2026-10-11T18:01:16Z",
+  "reported_at": 1791767012
+ },
+ {
+  "id": "50043689",
+  "title": "I'm sorry, but you still have to think",
+  "points": 318,
+  "comments": 142,
+  "author": "drogus",
+  "hn": "https://news.ycombinator.com/item?id=50043689",
+  "url": "https://itsallaboutthebit.com/i-am-sorry-but-you-still-have-to-think/",
+  "created_at": "2026-10-11T14:29:07Z",
+  "reported_at": 1791767012
+ },
+ {
+  "id": "50043026",
+  "title": "Terence Tao: Math 2.0 [pdf]",
+  "points": 310,
+  "comments": 366,
+  "author": "Anon84",
+  "hn": "https://news.ycombinator.com/item?id=50043026",
+  "url": "https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf",
+  "created_at": "2026-10-11T13:16:45Z",
+  "reported_at": 1791767012
+ },
+ {
   "id": "50041540",
   "title": "IRCv3",
   "points": 322,
