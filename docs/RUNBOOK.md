@@ -84,3 +84,7 @@ Steps, from a clean clone:
 5. Push to main. A change under hypotheses/ deploys by itself. Any other site change needs one run of "Daily Hacker News update and Pages" (Actions tab, Run workflow). Docs and tests need no deploy.
 
 When a run fails: open the run in the Actions tab, find the step with the red mark, and read its log. The failure issue on the board links to the run. `gh run view <id> --log-failed` shows the same log. The last good site stays live while a run fails. Fix the cause, push, and run it again once.
+
+## Roadmap and board
+
+`python3 scripts/check_roadmap.py` lists open epics that ROADMAP.md does not name, and the other way round. It only warns, and prepush runs it. `--write` rewrites the "Open epics on the board" list in ROADMAP.md from the board. Run it when an epic opens or closes, and commit the change.
