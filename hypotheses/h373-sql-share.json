@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "h373",
+  "title": "Postgres, SQLite and DuckDB take a bigger slice of all HN stories",
+  "author": "film-cards",
+  "audience": "engineers",
+  "hypothesis": "Postgres, SQLite and DuckDB appear in a larger share of all story titles in the latest 12 months than they did before.",
+  "expect": "If true, the share of all stories whose title names Postgres, SQLite or DuckDB should be at least 1.4x higher in the latest 12 months than in all earlier stories since 2006 (pooled) (1.1x is weak, 0.9x or lower refutes it).",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "sql_s",
+    "per_label": "Postgres, SQLite and DuckDB stories per story",
+    "display_pct": false,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "sql_s",
+      "per": "total"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "sql_s",
+      "per": "total"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.4
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.1
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.9
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Thresholds are the ones used on h302, written before this card was run. h302 is left unchanged.",
+  "caveats": [
+    "Title words only: stories about these databases that never name them in the title are missed.",
+    "The share is of all live stories, so a change in what else gets posted moves it too.",
+    "The latest 12 months stop at the last full month in the film file, not today."
+  ]
+}
