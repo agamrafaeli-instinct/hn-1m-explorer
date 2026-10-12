@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "h395",
+ "title": "Data centers and grid stories vs GPU and chip hardware stories on points",
+ "author": "film-cards",
+ "audience": "deep-tech investors",
+ "hypothesis": "A story about data centers and grid gets more points than a story about GPU and chip hardware.",
+ "expect": "If true, points per story for data centers and grid stories should be at least 1.5x the value for GPU and chip hardware stories, over all stories from 2006 to 2026 (1.1x is weak, 0.9x or lower refutes it).",
+ "check": {
+  "source": "data/film_shares.json",
+  "path": "monthly",
+  "label_field": "month",
+  "stat": "pooled_share_ratio",
+  "unit": "x",
+  "field": "vcdc_p",
+  "per_label": "points per story, data centers and grid against GPU and chip hardware",
+  "display_pct": false,
+  "group_a": {
+   "label": "Data centers and grid stories ({from} to {to})",
+   "indices": "all",
+   "field": "vcdc_p",
+   "per": "vcdc_s"
+  },
+  "group_b": {
+   "label": "GPU and chip hardware stories ({from} to {to})",
+   "indices": "all",
+   "field": "vcgpu_p",
+   "per": "vcgpu_s"
+  }
+ },
+ "verdicts": [
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.5
+   },
+   "verdict": "supported",
+   "confidence": "strong"
+  },
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.1
+   },
+   "verdict": "supported",
+   "confidence": "weak"
+  },
+  {
+   "when": {
+    "op": "<=",
+    "value": 0.9
+   },
+   "verdict": "refuted",
+   "confidence": "strong"
+  },
+  {
+   "else": true,
+   "verdict": "inconclusive",
+   "confidence": "inconclusive"
+  }
+ ],
+ "thresholds_note": "Thresholds are the ones used on h370, set before this card was run and not tuned to its result. h319 is left unchanged.",
+ "caveats": [
+  "Points are the score each story had when the archive fetched it, so 2025 and 2026 stories may still be gaining points.",
+  "A title that names a theme is not proof the story is about it, and one story can sit in both groups.",
+  "Both groups are title words only, so stories that never name the theme are missed.",
+  "h319 asked a different question; this card compares two groups head to head."
+ ]
+}

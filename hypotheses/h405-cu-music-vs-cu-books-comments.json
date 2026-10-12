@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "h405",
+ "title": "Music stories vs books and reading stories on comments",
+ "author": "film-cards",
+ "audience": "curious readers",
+ "hypothesis": "A story about music gets more comments than a story about books and reading.",
+ "expect": "If true, comments per story for music stories should be at least 1.5x the value for books and reading stories, over all stories from 2006 to 2026 (1.1x is weak, 0.9x or lower refutes it).",
+ "check": {
+  "source": "data/film_shares.json",
+  "path": "monthly",
+  "label_field": "month",
+  "stat": "pooled_share_ratio",
+  "unit": "x",
+  "field": "cu_music_c",
+  "per_label": "comments per story, music against books and reading",
+  "display_pct": false,
+  "group_a": {
+   "label": "Music stories ({from} to {to})",
+   "indices": "all",
+   "field": "cu_music_c",
+   "per": "cu_music_s"
+  },
+  "group_b": {
+   "label": "Books and reading stories ({from} to {to})",
+   "indices": "all",
+   "field": "cu_books_c",
+   "per": "cu_books_s"
+  }
+ },
+ "verdicts": [
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.5
+   },
+   "verdict": "supported",
+   "confidence": "strong"
+  },
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.1
+   },
+   "verdict": "supported",
+   "confidence": "weak"
+  },
+  {
+   "when": {
+    "op": "<=",
+    "value": 0.9
+   },
+   "verdict": "refuted",
+   "confidence": "strong"
+  },
+  {
+   "else": true,
+   "verdict": "inconclusive",
+   "confidence": "inconclusive"
+  }
+ ],
+ "thresholds_note": "Thresholds are the ones used on h370, set before this card was run and not tuned to its result. h342 is left unchanged.",
+ "caveats": [
+  "Points are the score each story had when the archive fetched it, so 2025 and 2026 stories may still be gaining points.",
+  "A title that names a theme is not proof the story is about it, and one story can sit in both groups.",
+  "Both groups are title words only, so stories that never name the theme are missed.",
+  "h342 asked a different question; this card compares two groups head to head."
+ ]
+}

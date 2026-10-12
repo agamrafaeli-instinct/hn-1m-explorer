@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "id": "h408",
+ "title": "Visual art stories vs music stories on points",
+ "author": "film-cards",
+ "audience": "curious readers",
+ "hypothesis": "A story about visual art gets more points than a story about music.",
+ "expect": "If true, points per story for visual art stories should be at least 1.5x the value for music stories, over all stories from 2006 to 2026 (1.1x is weak, 0.9x or lower refutes it).",
+ "check": {
+  "source": "data/film_shares.json",
+  "path": "monthly",
+  "label_field": "month",
+  "stat": "pooled_share_ratio",
+  "unit": "x",
+  "field": "cu_art_p",
+  "per_label": "points per story, visual art against music",
+  "display_pct": false,
+  "group_a": {
+   "label": "Visual art stories ({from} to {to})",
+   "indices": "all",
+   "field": "cu_art_p",
+   "per": "cu_art_s"
+  },
+  "group_b": {
+   "label": "Music stories ({from} to {to})",
+   "indices": "all",
+   "field": "cu_music_p",
+   "per": "cu_music_s"
+  }
+ },
+ "verdicts": [
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.5
+   },
+   "verdict": "supported",
+   "confidence": "strong"
+  },
+  {
+   "when": {
+    "op": ">=",
+    "value": 1.1
+   },
+   "verdict": "supported",
+   "confidence": "weak"
+  },
+  {
+   "when": {
+    "op": "<=",
+    "value": 0.9
+   },
+   "verdict": "refuted",
+   "confidence": "strong"
+  },
+  {
+   "else": true,
+   "verdict": "inconclusive",
+   "confidence": "inconclusive"
+  }
+ ],
+ "thresholds_note": "Thresholds are the ones used on h370, set before this card was run and not tuned to its result. h349 is left unchanged.",
+ "caveats": [
+  "Points are the score each story had when the archive fetched it, so 2025 and 2026 stories may still be gaining points.",
+  "A title that names a theme is not proof the story is about it, and one story can sit in both groups.",
+  "Both groups are title words only, so stories that never name the theme are missed.",
+  "h349 asked a different question; this card compares two groups head to head."
+ ]
+}
