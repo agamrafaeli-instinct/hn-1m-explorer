@@ -18,7 +18,7 @@
     let lastX = -99;
     [...new Set(th)].sort((a, b) => a - b).forEach(t => {
       s.appendChild(sv('line', { x1: X(t), x2: X(t), y1: 26, y2: 46, class: 'g-tick' }));
-      if (X(t) - lastX < 34) return; lastX = X(t);
+      if (X(t) - lastX < 40) return; lastX = X(t);
       s.appendChild(sv('text', { x: X(t), y: 62, 'text-anchor': 'middle', class: 'g-lab' }, (t >= 10 ? t.toFixed(1) : t.toFixed(2)) + unit));
     });
     s.appendChild(sv('circle', { cx: X(r.value), cy: 36, r: 9, class: 'g-dot' }));
