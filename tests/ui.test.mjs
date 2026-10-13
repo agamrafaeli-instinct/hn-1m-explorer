@@ -60,6 +60,7 @@ async function check(name, route, ready, extra) {
   await new Promise(r => setTimeout(r, 300));
   const ov = await ev('document.documentElement.scrollWidth-innerWidth'); if (ov > 0) why += (why ? '; ' : '') + `sideways overflow ${ov}px`;
   const small = await ev(`(()=>{const o=[];for(const e of document.querySelectorAll('button,select,input:not([type=hidden]):not([type=checkbox]):not([type=radio])')){const r=e.getBoundingClientRect();if(r.width>0&&r.height>0&&r.height<43.5)o.push((e.id||e.textContent.trim().slice(0,20)||e.tagName)+' '+Math.round(r.height)+'px')}return o.slice(0,4).join(', ')})()`); if (small) why += (why ? '; ' : '') + 'tap target under 44px: ' + small;
+  const cut = await ev(`(()=>{const o=[],c=document.createElement('canvas').getContext('2d');for(const e of document.querySelectorAll('input[placeholder]')){const r=e.getBoundingClientRect();if(!(r.width>0&&r.height>0)||!e.placeholder)continue;const cs=getComputedStyle(e);c.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;const w=c.measureText(e.placeholder).width,box=r.width-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-2;if(w>box+1)o.push(e.placeholder.slice(0,24)+' '+Math.round(w)+'>'+Math.round(box)+'px')}return o.slice(0,3).join(', ')})()`); if (cut) why += (why ? '; ' : '') + 'placeholder cut off: ' + cut;
   const errs = problems.slice(before); if (errs.length) why += (why ? '; ' : '') + errs.join(' | ');
   results.push({ name, ok: !why, why }); console.log((why ? 'FAIL ' : 'ok   ') + name.padEnd(22) + (Date.now() - t0) + ' ms' + (why ? '  ' + why : ''));
 }
