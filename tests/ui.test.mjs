@@ -59,6 +59,7 @@ async function check(name, route, ready, extra) {
   else if (extra) { try { why = (await extra()) || ''; } catch (e) { why = 'error: ' + e.message; } }
   await new Promise(r => setTimeout(r, 300));
   const ov = await ev('document.documentElement.scrollWidth-innerWidth'); if (ov > 0) why += (why ? '; ' : '') + `sideways overflow ${ov}px`;
+  const small = await ev(`(()=>{const o=[];for(const e of document.querySelectorAll('button,select,input:not([type=hidden]):not([type=checkbox]):not([type=radio])')){const r=e.getBoundingClientRect();if(r.width>0&&r.height>0&&r.height<43.5)o.push((e.id||e.textContent.trim().slice(0,20)||e.tagName)+' '+Math.round(r.height)+'px')}return o.slice(0,4).join(', ')})()`); if (small) why += (why ? '; ' : '') + 'tap target under 44px: ' + small;
   const errs = problems.slice(before); if (errs.length) why += (why ? '; ' : '') + errs.join(' | ');
   results.push({ name, ok: !why, why }); console.log((why ? 'FAIL ' : 'ok   ') + name.padEnd(22) + (Date.now() - t0) + ' ms' + (why ? '  ' + why : ''));
 }
