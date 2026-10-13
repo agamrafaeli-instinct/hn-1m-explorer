@@ -1,0 +1,44 @@
+name: QA nightly
+# Nightly QA walk of six screens at 390 px on the live site (#358). Report only: it opens or updates one issue labelled
+# qa-walk, closes it when a night is clean, and is a separate workflow so it can never block a deploy.
+on:
+  schedule:
+    - cron: '43 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+env:
+  GH_TOKEN: ${{ github.token }}
+  REPO: ${{ github.repository }}
+concurrency:
+  group: qa-nightly
+  cancel-in-progress: false
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Walk the screens on the live site
+        run: |
+          node scripts/qa_review.mjs --routes '#/,#/explore,#/w/engineers,#/l/github.com,#/rings,#/compare' --site "https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" --out qa_out || true
+      - name: Open, update or close the one issue
+        run: |
+          url="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
+          count=$(grep -o 'Findings: [0-9]*' qa_out/report.md | head -1 | grep -o '[0-9]*' || echo 0)
+          { echo "Nightly QA walk of six screens at 390 px. Run: $url"; echo; grep -v -e '^_Taps' -e '^(screenshot' qa_out/report.md | head -80; } > body.md
+          gh label create qa-walk --color 5319E7 --description 'Nightly QA walk findings' 2>/dev/null || true
+          num=$(gh issue list --repo "$REPO" --label qa-walk --state open --json number -q '.[0].number // empty')
+          if [ "${count:-0}" = 0 ]; then
+            if [ -n "$num" ]; then gh issue close "$num" --repo "$REPO" --comment "Nightly QA walk found 0 findings. Closing. $url"; fi
+          elif [ -n "$num" ]; then
+            gh issue edit "$num" --repo "$REPO" --body-file body.md
+          else
+            gh issue create --repo "$REPO" --label qa-walk --title "QA walk: $count finding(s) on the live site" --body-file body.md
+          fi
