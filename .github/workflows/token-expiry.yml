@@ -1,0 +1,27 @@
+name: Token expiry reminder
+# The personal token behind the PREVIEW_TOKEN secret (and the pushes made by hand) expires on 2026-11-08 (#369).
+# From 14 days before, this opens one issue naming what to replace. Edit EXPIRES below when the token is renewed.
+on:
+  schedule:
+    - cron: '17 3 * * 1'
+  workflow_dispatch:
+permissions:
+  issues: write
+env:
+  EXPIRES: '2026-11-08'
+  WARN_DAYS: '14'
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open the reminder issue when expiry is near
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          left=$(( ( $(date -d "$EXPIRES" +%s) - $(date +%s) ) / 86400 ))
+          echo "days left: $left"
+          [ "$left" -le "$WARN_DAYS" ] || exit 0
+          title="Replace the Actions token before $EXPIRES"
+          n=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number --jq 'length')
+          [ "$n" = 0 ] || { echo "reminder already open"; exit 0; }
+          gh issue create -R "$GITHUB_REPOSITORY" --title "$title" --body "The personal access token expires on $EXPIRES ($left days left). When it ends, branch previews and any push made with it stop. Steps (docs/RUNBOOK.md, Branch preview): create a new token with project, repo and workflow scopes, then run \`gh secret set PREVIEW_TOKEN -R $GITHUB_REPOSITORY\`, then change EXPIRES in .github/workflows/token-expiry.yml."

@@ -127,6 +127,7 @@ Each ticket with a visible done-when list gets `tests/acceptance/<n>.mjs` (see t
 Push a branch that is not `main` and `.github/workflows/preview.yml` stages the site, publishes it to the public repo `agamrafaeli-instinct/hn-1m-explorer-preview` (Pages: https://agamrafaeli-instinct.github.io/hn-1m-explorer-preview/), waits until `preview.txt` there names the commit, then runs every acceptance file against that URL. The result is in the run summary. The live site is never touched.
 - Only one preview exists at a time (the site is about 637 MB and Pages holds 1 GB), so a newer branch push replaces the older preview. `preview.txt` on the preview site shows which branch and commit it holds.
 - The workflow writes to the preview repo with the Actions secret `PREVIEW_TOKEN`. It is a personal token that expires on 2026-11-08; replace the secret before then (`gh secret set PREVIEW_TOKEN -R agamrafaeli-instinct/hn-1m-explorer`).
+- `.github/workflows/token-expiry.yml` opens an issue 14 days before the date in its EXPIRES line. When you renew the token, change that date too.
 - Pushes to `main` are not previewed; they deploy through daily-hn.yml.
 - A first run takes about 6 minutes (Pages build).
 
