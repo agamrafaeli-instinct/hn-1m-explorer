@@ -40,13 +40,18 @@ function parseChunk(text, state) {
 const vend = {};
 function vendor(src) { return vend[src] || (vend[src] = new Promise((ok, no) => { const e = document.createElement('script'); e.src = src; e.onload = ok; e.onerror = no; document.head.appendChild(e); })); }
 window.ExploreVendor = () => Promise.all([vendor('vendor/papaparse.min.js'), vendor('vendor/chart.umd.js')]);
+let loadedFiles = 0, busy = false;
 async function load(nChunks) {
+  busy = true; try { await load1(nChunks); } finally { busy = false; loadedFiles = loadedFiles || 0; refresh(); }
+}
+async function load1(nChunks) {
   await window.ExploreVendor();
   let base = 'data/', sample = false, r0 = await fetch('data/manifest.json', { cache: 'no-cache' });
   if (!r0.ok) { base = 'sample/'; sample = true; r0 = await fetch('sample/manifest.json'); document.body.classList.add('sample'); $('banner').hidden = false; }
   const mf = await r0.json();
   let files = (mf.chunks || mf.files || []).map(f => typeof f === 'string' ? { path: f } : f);
   if (nChunks && nChunks < files.length) files = files.slice(0, nChunks);
+  loadedFiles = files.length;
   const total = files.reduce((a, f) => a + (f.rows || 0), 0);
   let k = 0;
   for (const f of files) {
@@ -156,6 +161,24 @@ function noMatch() {
   const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Reset the filters'; b.onclick = () => $('reset').click(); el.appendChild(b);
   el.hidden = false;
 }
+function moreNote() {
+  const el = $('moreslice'); if (!el) return;
+  const best = $('loadn').querySelector('option[selected]'), n = best ? +best.value : 0;
+  if (busy || !n || !loadedFiles || loadedFiles >= n || !D.n) { el.hidden = true; return; }
+  let lo = Infinity, hi = 0; for (let i = 0; i < D.n; i++) { const t = D.time[i]; if (t > 0) { if (t < lo) lo = t; if (t > hi) hi = t; } }
+  const d = t => new Date(t * 1000).toISOString().slice(0, 10), sz = (best.textContent.split(', ~')[1] || '').trim();
+  $('moreslice_t').textContent = `Searching only the newest ${D.n.toLocaleString()} posts${hi ? ' (' + d(lo) + (d(lo) === d(hi) ? '' : ' to ' + d(hi)) + ')' : ''}. The archive is much bigger.`;
+  $('moreslice_btn').textContent = 'Search more' + (sz ? ' (about ' + sz + ')' : '');
+  el.hidden = false;
+}
+$('moreslice_btn').onclick = async () => {
+  const best = $('loadn').querySelector('option[selected]'); if (!best) return;
+  $('moreslice_btn').disabled = true;
+  for (const k of Object.keys(D)) if (Array.isArray(D[k])) D[k].length = 0; D.n = 0;
+  $('loadn').value = best.value; $('bar').style.display = 'block'; $('barfill').parentNode.style.display = '';
+  try { await load(+best.value); } catch (e) { $('status').textContent = 'Could not load (' + e.message + '). Try again.'; }
+  $('moreslice_btn').disabled = false;
+};
 function chips() {
   const box = $('fchips'); if (!box) return;
   const L = [['q', 'Word'], ['by', 'Author'], ['domain', 'Domain'], ['from', 'From'], ['to', 'To'], ['type', 'Type']].filter(([id]) => $(id).value).map(([id, n]) => [n + ': ' + $(id).value, () => { $(id).value = ''; }]);
@@ -178,7 +201,7 @@ function ptShare() {
   const pc = all ? 100 * m / all : 0, t = pc >= 10 ? pc.toFixed(0) : pc >= 1 ? pc.toFixed(1) : pc.toFixed(2);
   el.textContent = `These hold ${m.toLocaleString()} points, ${t}% of the ${all.toLocaleString()} points in the ${D.n.toLocaleString()} posts loaded.`; el.hidden = false;
 }
-function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); chips(); drawCharts(); drawList(); }
+function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); chips(); moreNote(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
