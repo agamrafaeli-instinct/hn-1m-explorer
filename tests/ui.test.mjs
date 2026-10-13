@@ -134,8 +134,11 @@ await check('full history', '#/explore', q1('#loadbtn'), async () => {
   return '';
 });
 await check('explorer', '#/explore', q1('#loadbtn'), async () => {
-  await ev("(()=>{const s=document.getElementById('loadn');if(s&&s.options.length)s.selectedIndex=0;document.getElementById('loadbtn').click()})()");
+  // Clear the word the 'full history' check typed, and keep the default slice. The newest 3 files can hold no match for a word on a quiet day, which made this check depend on the day's data.
+  await ev("(()=>{const q=document.getElementById('q');if(q)q.value='';const r=document.getElementById('reset');if(r)r.click();const l=document.getElementById('loadn');if(l&&l.options.length){l.selectedIndex=l.options.length-1;l.dispatchEvent(new Event('change',{bubbles:true}))}document.getElementById('loadbtn').click()})()");
   if (!await wait("/\\d.*matching/.test(document.getElementById('count').textContent)", 60000)) return 'explorer never showed a match count';
+  // The count reads "0 matching" until the posts have loaded, so wait for the load to finish before taking the baseline.
+  if (!await wait("/[1-9][\\d,]* posts loaded/.test((document.getElementById('status')||{}).textContent||'')", 60000)) return 'explorer never finished loading posts';
   // The list loads in parts: wait until the count stops moving before reading the baseline.
   const cnt = () => ev("+document.getElementById('count').textContent.replace(/[^0-9]/g,'')");
   const settle = async () => { let n = await cnt(), same = 0; for (let i = 0; i < 90 && same < 3; i++) { await new Promise(r => setTimeout(r, 1000)); const x = await cnt(); if (x === n) same++; else { same = 0; n = x; } } return n; };
