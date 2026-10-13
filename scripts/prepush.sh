@@ -26,5 +26,6 @@ if [ -n "$failed" ]; then
 fi
 # Perf budgets and the phone sweep run in CI only (#250): a 2 GB machine gives noisy load times.
 # All checks above passed (set -e): record the digest of these exact files. CI always runs the UI check on live data and the perf budgets. Commit .prepush_ok with the change.
+rm -rf /tmp/site_pp /tmp/site_ui  # the staged copies are about 640 MB each; leaving them filled the disk
 echo "prepush took ${SECONDS}s"
 python3 scripts/prepush_digest.py --write

@@ -104,7 +104,7 @@
   };
   window.CompareInit = function () {
     loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
-    loading.then(draw).catch(function () { document.getElementById('cmp').textContent = 'The comparison data could not be loaded. Try again.'; loading = null; });
+    loading.then(function () { draw(); var e = document.getElementById('cmp_src'); if (e && D.months.length) e.textContent = 'Source: titles of every story, ' + D.months[0] + ' to ' + D.months[D.months.length - 1] + '. Each line is the monthly share of stories whose title matches the topic words. Archive scores are not used.'; }).catch(function () { document.getElementById('cmp').textContent = 'The comparison data could not be loaded. Try again.'; loading = null; });
   };
   addEventListener('resize', function () { if (D && document.getElementById('v_compare') && !document.getElementById('v_compare').hidden) draw(); });
 })();
