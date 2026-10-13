@@ -9,6 +9,11 @@
   };
   const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens', 'rings', 'saga', 'phoenix'];
   const tabOf = { topics: 'home', today: 'home', lens: '', rings: 'home', phoenix: 'home', saga: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  document.addEventListener('click', (e) => {
+    const j = e.target.closest && e.target.closest('a[data-jump]'); if (!j) return;
+    const t = document.getElementById(j.dataset.jump); if (!t) return;
+    e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   document.addEventListener('click', async (e) => {
     const b = e.target.closest && e.target.closest('button[data-share]'); if (!b) return;
     const url = new URL('share/p/' + b.dataset.share + '.html', location.href.split('#')[0]).href, title = (TITLES[b.dataset.share] || [''])[0] + ' (Hacker News)';

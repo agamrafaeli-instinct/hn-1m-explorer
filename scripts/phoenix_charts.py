@@ -2,7 +2,7 @@
 """Draw the three comeback lines on #/phoenix as inline SVG (#366). Run it after the data changes; it rewrites the block
 between the PHOENIX_CHARTS markers in index.html. Every number comes from data/atlas (term counts by month, months.json
 for stories held) and data/resurfacing/groups.json (quiet spell start and return month)."""
-import json, pathlib, re, html
+import urllib.parse, json, pathlib, re, html
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PICK = ['trump', 'bing', 'cuba']
 W, H, PL, PR, PT, PB = 360, 130, 6, 6, 8, 20
@@ -24,7 +24,7 @@ def chart(term, ms, ret):
     a, b = idx[ret['start']], idx[ret['return']]
     pts = ' '.join('%.1f,%.1f' % (x(i), y(v)) for i, v in enumerate(s))
     label = '%s: stories with the word per 10,000, by month. Quiet from %s, back in %s. Highest month %.1f.' % (term, ret['start'], ret['return'], top)
-    out = ['<figure class="ph_fig"><figcaption><b>%s</b>: quiet from %s, back in %s</figcaption>' % (html.escape(term), ret['start'], ret['return'])]
+    out = ['<figure class="ph_fig"><figcaption><b>%s</b>: quiet from %s, back in %s. <a class="ph_find" href="#/explore?q=%s">Search this word</a></figcaption>' % (html.escape(term), ret['start'], ret['return'], urllib.parse.quote(term, safe=''))]
     out.append('<svg viewBox="0 0 %d %d" role="img" aria-label="%s">' % (W, H, html.escape(label, quote=True)))
     out.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="#e9e2d6"/>' % (x(a), PT, x(b) - x(a), H - PT - PB))
     out.append('<polyline points="%s" fill="none" stroke="#1a1814" stroke-width="1.2"/>' % pts)

@@ -286,3 +286,5 @@ select{min-height:44px}
 .sgx_tbl{width:100%;border-collapse:collapse;font-size:.9rem;margin:10px 0}.sgx_tbl caption{text-align:left;font-weight:700;padding:0 0 4px}.sgx_tbl th,.sgx_tbl td{text-align:left;padding:4px 6px;border-bottom:1px solid #e9e2d6}.sgx_tbl td:nth-child(n+2),.sgx_tbl th:nth-child(n+2){text-align:right}
 .sgx_tbl td a{display:inline-block;min-height:44px;line-height:44px}
 .sgx_tbl td a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.ph_find,.ph_jump{color:inherit;text-decoration:underline;text-underline-offset:3px}.ph_find{display:inline-block;min-height:44px;line-height:44px}
+#ph_sharp{scroll-margin-top:12px}
