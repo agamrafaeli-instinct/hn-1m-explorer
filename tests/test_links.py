@@ -1,6 +1,6 @@
 import pathlib, re, unittest, urllib.parse
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-EXPLORE_KEYS = {'q', 'by', 'domain', 'from', 'to', 'type', 'min', 'week', 'sort'}
+EXPLORE_KEYS = {'q', 'by', 'domain', 'from', 'to', 'type', 'min', 'week', 'sort', 'whole'}
 
 class InPageLinks(unittest.TestCase):
     def known_routes(self):

@@ -75,13 +75,15 @@ function filter() {
   const f = $('from').value ? Date.parse($('from').value) / 1000 : -Infinity;
   const t = $('to').value ? Date.parse($('to').value) / 1000 + 86400 : Infinity;
   const ty = $('type').value, ms = +$('minscore').value || 0, out = [];
+  // Whole word: the word must stand between characters that are not letters or digits.
+  const wres = $('whole').checked ? words.map(w => new RegExp('(^|[^a-z0-9])' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9])')) : null;
   for (let i = 0; i < D.n; i++) {
     if (D.score[i] < ms) continue;
     const tm = D.time[i]; if (tm < f || tm >= t) continue;
     if (ty && D.type[i] !== ty) continue;
     if (by && !D.by[i].toLowerCase().includes(by)) continue;
     if (dom && !D.domain[i].toLowerCase().includes(dom)) continue;
-    if (words.length) { const ti = D.title[i].toLowerCase(); let ok = true; for (const w of words) if (!ti.includes(w)) { ok = false; break; } if (!ok) continue; }
+    if (words.length) { const ti = D.title[i].toLowerCase(); let ok = true; if (wres) { for (const re of wres) if (!re.test(ti)) { ok = false; break; } } else for (const w of words) if (!ti.includes(w)) { ok = false; break; } if (!ok) continue; }
     out.push(i);
   }
   return Uint32Array.from(out);
@@ -156,10 +158,12 @@ function noMatch() {
 function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
+$('whole').addEventListener('change', deb);
 // Keep the filters in the address, so Back from a story card brings them back. replaceState does not add history entries.
-const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
+const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); if ($('whole').checked) u.set('whole', '1'); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', keepFilters));
 $('sort').addEventListener('change', keepFilters);
+$('whole').addEventListener('change', keepFilters);
 $('reset').addEventListener('click', () => setTimeout(keepFilters, 0));
 $('copyfilters').onclick = async () => {
   const b = $('copyfilters'), url = location.href; let ok = false;
@@ -172,7 +176,7 @@ $('copyfilters').onclick = async () => {
 $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
-$('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('minscore').value = 0; page = 0; refresh(); };
+$('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('whole').checked = false; $('minscore').value = 0; page = 0; refresh(); };
 $('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Could not load (' + e.message + '). Try again.'; }); };
 
 // Link into the explorer: #/explore?week=2026-W40&q=postgres. Bad values are ignored. (#189)
@@ -185,11 +189,12 @@ window.ExploreLink = () => {
   const qs = new URLSearchParams((location.hash.split('?')[1] || '')), q = (qs.get('q') || '').slice(0, 80), wk = isoWeekRange(qs.get('week'));
   const more = {}; ['by', 'domain', 'type'].forEach(k => { const v = (qs.get(k) || '').slice(0, 80); if (v) more[k] = v; });
   ['from', 'to'].forEach(k => { const v = qs.get(k) || ''; if (/^\d{4}-\d{2}-\d{2}$/.test(v)) more[k] = v; });
+  if (qs.get('whole') === '1') more.whole = 1;
   const so = qs.get('sort'); if (['score', 'comments', 'new', 'old'].includes(so)) more.sort = so;
   const mn = Math.floor(+qs.get('min')); if (mn > 0 && mn < 1e6) more.minscore = mn;
   if (!q && !wk && !Object.keys(more).length) return;
   if (q) $('q').value = q;
-  Object.keys(more).forEach(k => { $(k).value = more[k]; });
+  Object.keys(more).forEach(k => { if (k === 'whole') $('whole').checked = true; else $(k).value = more[k]; });
   if (wk) { $('from').value = wk[0]; $('to').value = wk[1]; }
   if ($('app').hidden) { const sel = $('loadn'); if (sel.options.length) sel.selectedIndex = 0; $('loadbtn').click(); } else { page = 0; refresh(); }
 };
