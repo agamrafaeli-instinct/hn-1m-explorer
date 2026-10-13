@@ -317,7 +317,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1653.0,
+   "group_a_count": 1654.0,
    "id": "h319",
    "replaced_by": "h395",
    "score": 0.8,
@@ -334,7 +334,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 70372.0,
+   "group_a_count": 70449.0,
    "id": "h320",
    "replaced_by": "h396",
    "score": 0.8,
@@ -516,7 +516,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 11260.0,
+   "group_a_count": 11261.0,
    "id": "h331",
    "score": 1.0,
    "title": "The six deep-tech themes together: share of stories, all-time base"
@@ -532,7 +532,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1467371.0,
+   "group_a_count": 1467448.0,
    "id": "h332",
    "replaced_by": "h402",
    "score": 0.8,
@@ -664,7 +664,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 13026.0,
+   "group_a_count": 13027.0,
    "id": "h346",
    "replaced_by": "h406",
    "score": 0.8,
@@ -1463,7 +1463,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 70372.0,
+   "group_a_count": 70449.0,
    "id": "h395",
    "score": 1.0,
    "title": "Data centers and grid stories vs GPU and chip hardware stories on points"
@@ -1479,7 +1479,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 70372.0,
+   "group_a_count": 70449.0,
    "id": "h396",
    "score": 1.0,
    "title": "Data centers and grid stories vs aerospace stories on points"
@@ -1575,7 +1575,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1467371.0,
+   "group_a_count": 1467448.0,
    "id": "h402",
    "score": 1.0,
    "title": "All six deep-tech themes stories vs Cursor, Claude Code, MCP, Copilot and Devin stories on points"
@@ -1639,7 +1639,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 13026.0,
+   "group_a_count": 13027.0,
    "id": "h406",
    "score": 1.0,
    "title": "Education and learning stories vs hands-on making stories on hits"
