@@ -1,5 +1,27 @@
 [
  {
+  "id": "50069499",
+  "title": "11 year old unsoundness bugs found in Rust borrow checker",
+  "points": 425,
+  "comments": 224,
+  "author": "formerly_proven",
+  "hn": "https://news.ycombinator.com/item?id=50069499",
+  "url": "https://github.com/rust-lang/rust/issues/164250",
+  "created_at": "2026-10-13T10:27:00Z",
+  "reported_at": 1791903554
+ },
+ {
+  "id": "50052251",
+  "title": "Show HN: PS2 games statically recompiled to WebAssembly",
+  "points": 302,
+  "comments": 156,
+  "author": "deadxwarrior",
+  "hn": "https://news.ycombinator.com/item?id=50052251",
+  "url": "https://github.com/snuri00/ps2-web-recomp",
+  "created_at": "2026-10-12T06:46:53Z",
+  "reported_at": 1791903554
+ },
+ {
   "id": "50059204",
   "title": "Thinking will become a hobby",
   "points": 308,
