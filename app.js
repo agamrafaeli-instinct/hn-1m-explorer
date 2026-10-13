@@ -156,6 +156,14 @@ function noMatch() {
   const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Reset the filters'; b.onclick = () => $('reset').click(); el.appendChild(b);
   el.hidden = false;
 }
+function chips() {
+  const box = $('fchips'); if (!box) return;
+  const L = [['q', 'Word'], ['by', 'Author'], ['domain', 'Domain'], ['from', 'From'], ['to', 'To'], ['type', 'Type']].filter(([id]) => $(id).value).map(([id, n]) => [n + ': ' + $(id).value, () => { $(id).value = ''; }]);
+  if (+$('minscore').value > 0) L.push(['Min score: ' + $('minscore').value, () => { $('minscore').value = 0; }]);
+  if ($('whole').checked) L.push(['Whole word', () => { $('whole').checked = false; }]);
+  box.replaceChildren(...L.map(([t, f]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'fchip'; b.textContent = t + ' \u00d7'; b.setAttribute('aria-label', 'Clear filter ' + t); b.onclick = () => { f(); page = 0; keepFilters(); refresh(); }; return b; }));
+  box.hidden = !L.length;
+}
 function dateRange() {
   const el = $('daterange'); if (!el) return;
   let lo = Infinity, hi = 0; for (const i of idx) { const t = D.time[i]; if (t > 0) { if (t < lo) lo = t; if (t > hi) hi = t; } }
@@ -170,7 +178,7 @@ function ptShare() {
   const pc = all ? 100 * m / all : 0, t = pc >= 10 ? pc.toFixed(0) : pc >= 1 ? pc.toFixed(1) : pc.toFixed(2);
   el.textContent = `These hold ${m.toLocaleString()} points, ${t}% of the ${all.toLocaleString()} points in the ${D.n.toLocaleString()} posts loaded.`; el.hidden = false;
 }
-function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); drawCharts(); drawList(); }
+function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); chips(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
