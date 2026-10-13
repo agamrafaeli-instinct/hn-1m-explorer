@@ -1,4 +1,4 @@
-HN digest 2026-10-13 (UTC): 20 new stories at 300+ points
+HN digest 2026-10-13 (UTC): 22 new stories at 300+ points
 - 571 pts, 444 comments: Gemini 4 Argon https://news.ycombinator.com/item?id=50073879
 - 425 pts, 224 comments: 11 year old unsoundness bugs found in Rust borrow checker https://news.ycombinator.com/item?id=50069499
 - 424 pts, 209 comments: Muse Wonder https://news.ycombinator.com/item?id=50059115
@@ -6,6 +6,7 @@ HN digest 2026-10-13 (UTC): 20 new stories at 300+ points
 - 368 pts, 176 comments: CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades https://news.ycombinator.com/item?id=50069329
 - 357 pts, 281 comments: AI is a tool and using it well takes skill https://news.ycombinator.com/item?id=50063427
 - 354 pts, 576 comments: Hackers activate automatic defrosting in supermarket fridges across Europe https://news.ycombinator.com/item?id=50055304
+- 347 pts, 329 comments: Redesigning source control at Anthropic https://news.ycombinator.com/item?id=50073633
 - 337 pts, 149 comments: A Modern Web App in C https://news.ycombinator.com/item?id=50058528
 - 336 pts, 155 comments: Mozilla Introduces Firefox Enterprise https://news.ycombinator.com/item?id=50070302
 - 329 pts, 79 comments: We turned EmbeddingGemma 2 into a speech-to-text model https://news.ycombinator.com/item?id=50069971
@@ -17,5 +18,6 @@ HN digest 2026-10-13 (UTC): 20 new stories at 300+ points
 - 306 pts, 321 comments: Why aren't AI companies being charged for hacking? https://news.ycombinator.com/item?id=50057278
 - 305 pts, 74 comments: The baffling intelligence of a single cell (2024) https://news.ycombinator.com/item?id=50041866
 - 302 pts, 156 comments: Show HN: PS2 games statically recompiled to WebAssembly https://news.ycombinator.com/item?id=50052251
+- 301 pts, 174 comments: Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X https://news.ycombinator.com/item?id=50063365
 - 301 pts, 76 comments: Hittite royal archive found in Turkey https://news.ycombinator.com/item?id=50067414
 - 300 pts, 82 comments: Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver https://news.ycombinator.com/item?id=50055593

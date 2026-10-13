@@ -1,4 +1,6 @@
-HN new 300+ stories, last 12h, updated 2026-10-13 19:08 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-13 21:07 UTC. Forward only ids not sent before.
+50073633 | 347 pts, 329 comments | Redesigning source control at Anthropic | https://news.ycombinator.com/item?id=50073633
+50063365 | 301 pts, 174 comments | Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X | https://news.ycombinator.com/item?id=50063365
 50073879 | 571 pts, 444 comments | Gemini 4 Argon | https://news.ycombinator.com/item?id=50073879
 50069971 | 329 pts, 79 comments | We turned EmbeddingGemma 2 into a speech-to-text model | https://news.ycombinator.com/item?id=50069971
 50067414 | 301 pts, 76 comments | Hittite royal archive found in Turkey | https://news.ycombinator.com/item?id=50067414
