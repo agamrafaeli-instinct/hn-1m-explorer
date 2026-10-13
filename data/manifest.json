@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-13T22:52:39.462330+00:00",
+  "generated_at": "2026-10-13T23:03:17.294967+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-3226a13a4bea9a03d7e49327.csv",
+      "rows": 107,
+      "bytes": 37450,
+      "sha256": "3226a13a4bea9a03d7e49327d9718afcbb55dfb4e102df01df6c9f369e2890b8",
+      "min_id": 50080067,
+      "max_id": 50080173,
+      "min_time": 1791931929,
+      "max_time": 1791932549
+    },
     {
       "path": "data/posts-inc-49906f7cf76052cb34d05492.csv",
       "rows": 107,
@@ -2462,13 +2472,13 @@
       "sha256": "907f1e75fae99fbe4efc576394d756b8932719389e5400279993d15383ad1fdc"
     },
     {
-      "path": "data/posts-inc-d03cd49d23251f5edb25c9d5.csv",
-      "rows": 5947,
-      "bytes": 1982605,
-      "sha256": "d03cd49d23251f5edb25c9d5afe122617293ed842e76240eaa1b4333bdd69d71",
-      "min_id": 49080067,
+      "path": "data/posts-inc-ec175c2fb47f82f95f7f825c.csv",
+      "rows": 5840,
+      "bytes": 1948710,
+      "sha256": "ec175c2fb47f82f95f7f825cca6b8243fcf85c197302d9eb07ae9c5f51d2082b",
+      "min_id": 49080174,
       "max_id": 49086013,
-      "min_time": 1785219482,
+      "min_time": 1785220574,
       "max_time": 1785254881
     }
   ],
@@ -2494,13 +2504,13 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 345321894,
+  "total_csv_bytes": 345325449,
   "daily_update": {
-    "last_scanned_id": 50080066,
-    "previous_scanned_id": 50079959,
+    "last_scanned_id": 50080173,
+    "previous_scanned_id": 50080066,
     "unavailable_ids": [],
     "new_rows": 107,
-    "archived_stories": 10,
+    "archived_stories": 17,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
