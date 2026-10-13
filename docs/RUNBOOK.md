@@ -123,6 +123,13 @@ When a run fails (the issue already names the failing step, the last 30 log line
 ## Acceptance checks per ticket (#251)
 Each ticket with a visible done-when list gets `tests/acceptance/<n>.mjs` (see the header of `scripts/acceptance.mjs` for the helper calls). `node scripts/acceptance.mjs 265` stages the repo, serves it locally and runs the checks at 390 px; `--site URL` runs them against a deployed site; `--all` runs every file. Before closing a ticket that has a file, run it green and quote the result in the closing comment. A branch push (not main) runs all of them in `.github/workflows/acceptance.yml` without touching the live site. Pilot files: 256, 265, 266.
 
+### Branch preview (#251)
+Push a branch that is not `main` and `.github/workflows/preview.yml` stages the site, publishes it to the public repo `agamrafaeli-instinct/hn-1m-explorer-preview` (Pages: https://agamrafaeli-instinct.github.io/hn-1m-explorer-preview/), waits until `preview.txt` there names the commit, then runs every acceptance file against that URL. The result is in the run summary. The live site is never touched.
+- Only one preview exists at a time (the site is about 637 MB and Pages holds 1 GB), so a newer branch push replaces the older preview. `preview.txt` on the preview site shows which branch and commit it holds.
+- The workflow writes to the preview repo with the Actions secret `PREVIEW_TOKEN`. It is a personal token that expires on 2026-11-08; replace the secret before then (`gh secret set PREVIEW_TOKEN -R agamrafaeli-instinct/hn-1m-explorer`).
+- Pushes to `main` are not previewed; they deploy through daily-hn.yml.
+- A first run takes about 6 minutes (Pages build).
+
 ## Incremental daily run (#252)
 `scripts/build_graph.py` saves a hash per check in `data/build_state.json`. The daily run skips the UI check and the perf budgets when the published site files (root html, js, css and json, cards, stories, vendor, assets, the staging scripts) and the check's own script are unchanged since the last good run, and skips the film, topic, rings and saga steps when `scripts/inputs_hash.py` matches. A full run skips nothing: every manual dispatch (unless `skip_unchanged` is ticked) and the Sunday scheduled run. A push always runs the budgets. In a full run, if the film hash said "unchanged" but an output differs, the run fails with `STALE SKIP`. Live data under data/ is not an input to the UI and budget skips; the data checks run every day and the Sunday full run covers growth. `python3 scripts/build_graph.py show` prints each check's state; delete `data/build_state.json` to force one full run.
 
