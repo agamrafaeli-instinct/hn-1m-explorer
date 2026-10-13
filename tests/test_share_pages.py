@@ -22,7 +22,10 @@ class SharePages(unittest.TestCase):
 
     def test_route_pages_match_router_titles(self):
         router = (ROOT / 'router.js').read_text()
-        for r in ('home', 'phoenix', 'rings', 'hypotheses', 'topics', 'compare'):
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        import build_share_pages as bsp
+        self.assertGreaterEqual(len(bsp.ROUTES), 6)
+        for r in bsp.ROUTES:
             m = re.search(r"^\s+" + r + r": \['([^']+)', '([^']+)'\]", router, re.M)
             self.assertTrue(m, r + ' has no TITLES entry in router.js')
             t = (self.out / 'share/p' / (r + '.html')).read_text()
