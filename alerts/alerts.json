@@ -1,5 +1,38 @@
 [
  {
+  "id": "50071017",
+  "title": "Apple HomeView",
+  "points": 398,
+  "comments": 512,
+  "author": "etothet",
+  "hn": "https://news.ycombinator.com/item?id=50071017",
+  "url": "https://www.apple.com/apple-homeview/",
+  "created_at": "2026-10-13T13:02:12Z",
+  "reported_at": 1791910633
+ },
+ {
+  "id": "50070302",
+  "title": "Mozilla Introduces Firefox Enterprise",
+  "points": 336,
+  "comments": 155,
+  "author": "recvonline",
+  "hn": "https://news.ycombinator.com/item?id=50070302",
+  "url": "https://www.firefox.com/en-US/enterprise/",
+  "created_at": "2026-10-13T12:00:42Z",
+  "reported_at": 1791910633
+ },
+ {
+  "id": "50069329",
+  "title": "CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades",
+  "points": 368,
+  "comments": 176,
+  "author": "helsinkiandrew",
+  "hn": "https://news.ycombinator.com/item?id=50069329",
+  "url": "https://www.bloomberg.com/news/features/2026-10-13/cftc-staff-told-to-retract-analysis-of-suspicious-oil-trades-on-iran",
+  "created_at": "2026-10-13T10:08:00Z",
+  "reported_at": 1791910633
+ },
+ {
   "id": "50069499",
   "title": "11 year old unsoundness bugs found in Rust borrow checker",
   "points": 425,
