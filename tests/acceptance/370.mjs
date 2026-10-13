@@ -8,5 +8,7 @@ export default async (t) => {
   await t.open('#/phoenix');
   await t.click('#v_phoenix .pg_share');
   await t.wait(300);
-  t.equal(await t.text('#v_phoenix .pg_share'), 'Link copied', 'the button says the link was copied');
+  const label = await t.text('#v_phoenix .pg_share');
+  if (label === 'Copy the link below') t.ok(await t.js("(document.querySelector('#v_phoenix input.share_link')||{}).value.includes('share/p/phoenix.html')"), 'copy was blocked, so the link shows in a field to select');
+  else t.equal(label, 'Link copied', 'the button says the link was copied');
 };
