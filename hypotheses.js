@@ -126,7 +126,7 @@
     return box;
   }
   // Context only (#130): the monthly title share for the card's topic, loaded when asked. The verdict never reads from it.
-  // Topics whose matcher is exactly one whole word (a test compares this list with data/topic_series.json). Word groups get no link.
+  // Topics whose matcher is exactly one whole word (a test compares this list with the topic data). Word groups get no link.
   const ONE_WORD = ['rust', 'typescript', 'python', 'java'];
   let TS;
   function contextBlock(card) {
