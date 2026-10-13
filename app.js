@@ -145,6 +145,10 @@ function lensCalc() {
 function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
+// Keep the filters in the address, so Back from a story card brings them back. replaceState does not add history entries.
+const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
+['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', keepFilters));
+$('reset').addEventListener('click', () => setTimeout(keepFilters, 0));
 $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
@@ -159,8 +163,12 @@ function isoWeekRange(w) {
 }
 window.ExploreLink = () => {
   const qs = new URLSearchParams((location.hash.split('?')[1] || '')), q = (qs.get('q') || '').slice(0, 80), wk = isoWeekRange(qs.get('week'));
-  if (!q && !wk) return;
+  const more = {}; ['by', 'domain', 'type'].forEach(k => { const v = (qs.get(k) || '').slice(0, 80); if (v) more[k] = v; });
+  ['from', 'to'].forEach(k => { const v = qs.get(k) || ''; if (/^\d{4}-\d{2}-\d{2}$/.test(v)) more[k] = v; });
+  const mn = Math.floor(+qs.get('min')); if (mn > 0 && mn < 1e6) more.minscore = mn;
+  if (!q && !wk && !Object.keys(more).length) return;
   if (q) $('q').value = q;
+  Object.keys(more).forEach(k => { $(k).value = more[k]; });
   if (wk) { $('from').value = wk[0]; $('to').value = wk[1]; }
   if ($('app').hidden) { const sel = $('loadn'); if (sel.options.length) sel.selectedIndex = 0; $('loadbtn').click(); } else { page = 0; refresh(); }
 };
