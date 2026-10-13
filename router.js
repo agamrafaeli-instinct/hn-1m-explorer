@@ -70,6 +70,7 @@
     submit: ['Submit a hypothesis', 'Propose a hypothesis for the full Hacker News archive to test.'],
     story: ['Where the attention lives', 'How points are spread across every Hacker News story since 2006.'],
     lesson: ['How to read trends', 'Why a fall from a peak is not a return to the past.'],
+    compare: ['Compare topics', 'Pick from 52 topics and compare their share of Hacker News story titles, 2006-10 to 2026-07.'],
     topics: ['Topics', '52 topics, one chart each, across every Hacker News story since 2006.'],
     hypotheses: ['Hypotheses, tested', '115 cards, each a guess checked against the Hacker News archive. Wrong guesses stay on the page.']
   };
@@ -85,7 +86,7 @@
     let v = 'saga';
     if (p[0] === 'a' && AUD[p[1]]) { location.replace('#/hypotheses'); return; } else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'phoenix') v = 'phoenix'; else if (p[0] === 'hypotheses') v = 'hyp';
     if (v !== 'week') { document.title = BASE_TITLE; if (META) META.content = BASE_DESC; }
-    const tk = v === 'hyp' ? 'hypotheses' : v; if (TITLES[tk]) window.SetPageMeta(TITLES[tk][0], TITLES[tk][1]);
+    const tk = v === 'hyp' ? 'hypotheses' : v; if (v === 'compare' && !/^#\/compare/.test(location.hash)) { /* topic pages keep their own title */ } else if (TITLES[tk]) window.SetPageMeta(TITLES[tk][0], TITLES[tk][1]);
     views.forEach(n => $('v_' + n).hidden = n !== v);
     document.querySelectorAll('#tabs a').forEach(a => a.classList.toggle('on', a.dataset.t === tabOf[v]));
     if (v === 'hyp') HypCards.initList();

@@ -22,7 +22,7 @@ class SharePages(unittest.TestCase):
 
     def test_route_pages_match_router_titles(self):
         router = (ROOT / 'router.js').read_text()
-        for r in ('home', 'phoenix', 'rings', 'hypotheses', 'topics'):
+        for r in ('home', 'phoenix', 'rings', 'hypotheses', 'topics', 'compare'):
             m = re.search(r"^\s+" + r + r": \['([^']+)', '([^']+)'\]", router, re.M)
             self.assertTrue(m, r + ' has no TITLES entry in router.js')
             t = (self.out / 'share/p' / (r + '.html')).read_text()
@@ -67,6 +67,9 @@ class ShareNumbersMatchData(unittest.TestCase):
         self.assertIn('%d cards' % len(glob.glob(str(ROOT / 'hypotheses/h*.json'))), b.ROUTES['hypotheses'][1])
         ts = json.loads((ROOT / 'data/topic_series.json').read_text())['topics']
         self.assertIn('%d topics' % len(ts), b.ROUTES['topics'][1])
+        dd = json.loads((ROOT / 'data/topic_series.json').read_text())
+        self.assertIn('%d topics' % len(ts), b.ROUTES['compare'][1])
+        self.assertIn(dd['months'][0] + ' to ' + dd['months'][-1], b.ROUTES['compare'][1])
 
 
 if __name__ == '__main__': unittest.main()
