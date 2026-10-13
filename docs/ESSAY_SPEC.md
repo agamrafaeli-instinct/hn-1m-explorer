@@ -1,6 +1,6 @@
 # Home essay spec
 
-Epic Saga #258. Spec for #259. Status: written to match what is built and what is planned. The owner reviews it, and beats that interpret data wait for his text (#262, #263, #264). Voice rules: docs/VOICE.md. Pitch: docs/NARRATIVE.md. Rows 1, 2, 3 (component) and 6 are live.
+Epic Saga #258. Spec for #259. Status: written to match what is built and what is planned. The owner waived review of this spec on 2026-10-13. He also left the beat text (#262, #263, #264) to the site agent's judgement; each beat still follows docs/VOICE.md and shows its numbers and caveats. Voice rules: docs/VOICE.md. Pitch: docs/NARRATIVE.md. Rows 1, 2, 3 (component) and 6 are live.
 
 ## Beats, in order
 | # | Beat | Section id | Data behind each number | Status |
