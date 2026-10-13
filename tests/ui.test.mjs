@@ -156,6 +156,9 @@ await check('explorer bad link', '#/explore', q1('#loadbtn'), async () => {
   const v = await ev("JSON.stringify([document.getElementById('q').value,document.getElementById('from').value,document.getElementById('to').value])");
   return v === JSON.stringify(['', '', '']) ? '' : 'a bad link changed the filters: ' + v;
 });
+// Every main screen that shows numbers says where they come from (#362).
+for (const [name, route, ready] of [['compare', '#/compare', "document.querySelector('#cmp svg')"], ['lens', '#/l/github.com', q1('#lens_body .lens_h')], ['rings', '#/rings', q1('.rg_note')], ['explore', '#/explore', q1('#hist_body .wfoot')], ['week', '#/w/engineers', q1('#w_body .wsec')]])
+  await check('source line ' + name, route, ready, async () => { await wait("/Source:/.test(document.body.innerText)", 8000); return (await ev("/Source:/.test(document.body.innerText)")) ? '' : 'no "Source:" line on this screen'; });
 ws.close(); ch.kill(); server?.close();
 try { fs.rmSync(prof, { recursive: true, force: true }); if (tmp) fs.rmSync(tmp, { recursive: true, force: true }); } catch { }
 const bad = results.filter(r => !r.ok).length;
