@@ -198,7 +198,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 4814.0,
+   "group_a_count": 4815.0,
    "id": "h311",
    "replaced_by": "h388",
    "score": 0.8,
@@ -1351,7 +1351,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 782859.0,
+   "group_a_count": 782860.0,
    "id": "h388",
    "score": 1.0,
    "title": "Rust, Zig and C++ stories vs Go stories on points"
