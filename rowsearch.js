@@ -62,7 +62,7 @@
   window.RowSearch = function (root) {
     var f = el('form', 'rs_f'), out = el('div', 'rs_out'), st = el('p', 'wsh'), more = el('button', 'cta alt2', 'Search older years');
     function inp(ph, lab, type) { var i = el('input'); i.type = type || 'search'; i.placeholder = ph; i.setAttribute('aria-label', lab); i.autocomplete = 'off'; return i; }
-    var qw = inp('Title words (space = AND)', 'Title words'), dm = inp('Domain, e.g. github.com', 'Domain'), sc = inp('Min score', 'Minimum score', 'number'), fr = inp('', 'From date', 'date'), to = inp('', 'To date', 'date');
+    var qw = inp('Title words', 'Title words'), dm = inp('Domain', 'Domain'), sc = inp('Min score', 'Minimum score', 'number'), fr = inp('', 'From date', 'date'), to = inp('', 'To date', 'date');
     sc.min = 0;
     var r1 = el('div', 'hist_f'), r2 = el('div', 'rs_dates'), go = el('button', 'cta', 'Search all years');
     r1.appendChild(qw); r1.appendChild(dm); r2.appendChild(el('label', null, 'From')); r2.lastChild.appendChild(fr); r2.appendChild(el('label', null, 'To')); r2.lastChild.appendChild(to); r2.appendChild(sc); r2.appendChild(go);

@@ -28,7 +28,7 @@
   }
   function load(src, ok) { if (window.YearZoom) return ok(); var sc = document.createElement('script'); sc.src = src; sc.onload = ok; document.head.appendChild(sc); }
   function rowBlock(root) {
-    var box = el('div'); root.appendChild(el('h3', 'fk', 'Find stories, all years')); root.appendChild(el('p', 'wsh', 'Title words, domain, score and dates, over every year of stories. The search engine loads only when you search.'));
+    var box = el('div'); root.appendChild(el('h3', 'fk', 'Find stories, all years')); root.appendChild(el('p', 'wsh', 'Title words (a space means AND), domain, score and dates, over every year of stories. The search engine loads only when you search.'));
     root.appendChild(box);
     var sc = document.createElement('script'); sc.src = 'rowsearch.js'; sc.onload = function () { window.RowSearch(box); }; document.head.appendChild(sc);
   }
