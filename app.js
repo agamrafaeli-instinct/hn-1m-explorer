@@ -144,12 +144,22 @@ function lensCalc() {
     rows.map(r => `<div class="br" style="margin:4px 0"><div class="nm" title="${esc(r[0])}">${esc(r[0])}</div><div class="tr"><div class="fl" style="width:${(70 * r[1] / mx).toFixed(1)}%"></div><span class="vl">${r[1].toLocaleString()} · ${P(tot ? r[1] / tot : 0)}</span></div></div>`).join('');
 }
 ['lens_k', 'lens_m'].forEach(id => $(id).addEventListener('input', () => lensCalc()));
-function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; drawCharts(); drawList(); }
+function noMatch() {
+  const el = $('nomatch'); if (!el) return;
+  if (idx.length) { el.hidden = true; return; }
+  const set = [['q', 'Word'], ['by', 'Author'], ['domain', 'Domain'], ['from', 'From'], ['to', 'To'], ['type', 'Type']].filter(([id]) => $(id).value).map(([id, n]) => n + ' "' + $(id).value + '"');
+  if (+$('minscore').value > 0) set.push('Minimum score ' + $('minscore').value);
+  el.textContent = set.length ? 'No posts match: ' + set.join(', ') + '. Loosen one of these, or ' : 'No posts in the loaded slice. ';
+  const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Reset the filters'; b.onclick = () => $('reset').click(); el.appendChild(b);
+  el.hidden = false;
+}
+function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 // Keep the filters in the address, so Back from a story card brings them back. replaceState does not add history entries.
-const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
+const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', keepFilters));
+$('sort').addEventListener('change', keepFilters);
 $('reset').addEventListener('click', () => setTimeout(keepFilters, 0));
 $('copyfilters').onclick = async () => {
   const b = $('copyfilters'), url = location.href; let ok = false;
@@ -175,6 +185,7 @@ window.ExploreLink = () => {
   const qs = new URLSearchParams((location.hash.split('?')[1] || '')), q = (qs.get('q') || '').slice(0, 80), wk = isoWeekRange(qs.get('week'));
   const more = {}; ['by', 'domain', 'type'].forEach(k => { const v = (qs.get(k) || '').slice(0, 80); if (v) more[k] = v; });
   ['from', 'to'].forEach(k => { const v = qs.get(k) || ''; if (/^\d{4}-\d{2}-\d{2}$/.test(v)) more[k] = v; });
+  const so = qs.get('sort'); if (['score', 'comments', 'new', 'old'].includes(so)) more.sort = so;
   const mn = Math.floor(+qs.get('min')); if (mn > 0 && mn < 1e6) more.minscore = mn;
   if (!q && !wk && !Object.keys(more).length) return;
   if (q) $('q').value = q;
