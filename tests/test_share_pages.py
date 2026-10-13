@@ -22,13 +22,13 @@ class SharePages(unittest.TestCase):
 
     def test_route_pages_match_router_titles(self):
         router = (ROOT / 'router.js').read_text()
-        for r in ('phoenix', 'rings'):
+        for r in ('home', 'phoenix', 'rings'):
             m = re.search(r"^\s+" + r + r": \['([^']+)', '([^']+)'\]", router, re.M)
             self.assertTrue(m, r + ' has no TITLES entry in router.js')
             t = (self.out / 'share/p' / (r + '.html')).read_text()
             self.assertIn('<title>' + html.escape(m.group(1), quote=True) + ' (Hacker News)</title>', t)
             self.assertIn('content="' + html.escape(m.group(2), quote=True) + '"', t)
-            self.assertIn('url=../../#/' + r + '"', t)
+            self.assertIn('url=../../#/' + ('' if r == 'home' else r) + '"', t)
 
     def test_week_pages_match_saved_weeks(self):
         idx = json.loads((ROOT / 'data/weekly/index.json').read_text())['weeks']
@@ -58,6 +58,8 @@ class ShareNumbersMatchData(unittest.TestCase):
         held = sum(1 for x in g if x['shape'] == 'sharp')
         d = b.ROUTES['phoenix'][1]
         self.assertIn('%d times' % len(g), d); self.assertIn('Only %d held' % held, d)
+        n = json.loads((ROOT / 'data/atlas/concentration.json').read_text())['entities']['domain']['count']
+        self.assertIn(format(n, ','), b.ROUTES['home'][1])
         r = json.loads((ROOT / 'data/rings.json').read_text())
         d = b.ROUTES['rings'][1]
         self.assertIn('%d themes' % len(r['themes']), d); self.assertIn('%d years' % len(r['years']), d)

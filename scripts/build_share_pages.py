@@ -63,6 +63,7 @@ def week_audience_pages(site):
 
 # Story pages that have a route of their own. Titles and descriptions match TITLES in router.js (a test checks it).
 ROUTES = {
+    'home': ('Hacker News, counted', 'Every Hacker News story since 2006, asked one question at a time. 543,583 sites, and the top 1% hold about two thirds of the points.'),
     'phoenix': ('Quiet, then back', '285 times a word or site on Hacker News went quiet for a year or more and came back. Only 13 held.'),
     'rings': ('What HN rewarded, year by year', '12 themes, top sites and story types for each of 21 years of Hacker News.'),
 }
@@ -70,7 +71,7 @@ ROUTES = {
 def route_pages(site):
     out = pathlib.Path(site) / 'share' / 'p'; out.mkdir(parents=True, exist_ok=True)
     for r, (t, d) in ROUTES.items():
-        (out / (r + '.html')).write_text(page(t + ' (Hacker News)', d, '../../#/' + r))
+        (out / (r + '.html')).write_text(page(t + ' (Hacker News)', d, '../../#/' + ('' if r == 'home' else r)))
     return len(ROUTES)
 
 if __name__ == '__main__':
