@@ -135,14 +135,20 @@
     return box;
   }
   function sec(h, node) { var s = el('section', 'rg_sec'); s.appendChild(el('h3', null, h)); s.appendChild(node); return s; }
-  function mount(box) {
+  function yearLinks(d) {
+    var p = el('p', 'rg_note rg_find rg_years'); p.appendChild(document.createTextNode('Search the stories of one year, top score first: '));
+    d.years.forEach(function (y) { var a = el('a', null, String(y)); a.href = '#/explore?from=' + y + '-01-01&to=' + y + '-12-31&sort=score'; p.appendChild(a); });
+    return p;
+  }
+  function mount(box, withYears) {
     box.replaceChildren(el('p', 'rg_note', 'Loading the years...'));
     return load().then(function (d) {
       box.replaceChildren(el('p', 'rg_note', 'Tap or hover on anything for the number.'), sec('Themes', (function () { var h = heat(d), w = el('div'); w.appendChild(questions(d, h)); w.appendChild(h); return w; })()), sec('Top domains, and their share of all stories', domains(d)), sec('Story types', types(d)),
         el('p', 'rg_note rg_fine', 'Source: titles and domains of every story since 2006. Darker is a bigger share than that theme\'s own average year. Domain counts use each month\'s top 20 sites, and the bar and percent on the right are those sites\' share of all stories that year (orange) against all other stories (grey). Points are not used here, because the archive holds low points for 2023 and 2026.'));
+      if (withYears) box.appendChild(yearLinks(d));
       wire(box);
     }).catch(function (e) { box.replaceChildren(el('p', 'rg_note', 'Could not load the yearly data: ' + e.message)); });
   }
   window.Rings = { mount: mount, tipEl: tipEl, wire: wire, strip: strip, pct: pct };
-  window.RingsInit = function () { if (window.SetPageMeta) window.SetPageMeta('What HN rewarded, year by year', 'Themes, domains and story types of every year of Hacker News since 2006, from the full archive.'); var b = document.getElementById('rings_body'); if (b) mount(b); };
+  window.RingsInit = function () { if (window.SetPageMeta) window.SetPageMeta('What HN rewarded, year by year', 'Themes, domains and story types of every year of Hacker News since 2006, from the full archive.'); var b = document.getElementById('rings_body'); if (b) mount(b, true); };
 })();

@@ -303,3 +303,5 @@ label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:
 .ctx-find{display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
 
 .fchips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.fchip{width:auto;min-height:44px;padding:0 14px;border:1.5px solid var(--ac);border-radius:99px;background:#fff;color:var(--act);font:700 14px Inter;cursor:pointer;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.rg_years a{margin-right:4px}
