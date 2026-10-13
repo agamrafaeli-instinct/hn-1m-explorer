@@ -109,9 +109,10 @@ function drawCharts() {
   mkChart('c_score', { type: 'bar', data: { labels: ['0', '1-9', '10-99', '100-999', '1k-9k', '10k+', '', ''].slice(0, 6), datasets: [{ data: [sb[0], sb[1], sb[2], sb[3], sb[4], sb[5] + sb[6] + sb[7]], backgroundColor: AC }] } });
   mkChart('c_hour', { type: 'bar', data: { labels: hours.map((_, h) => h), datasets: [{ data: hours, backgroundColor: AC }] }, options: { scales: { x: { ticks: { maxTicksLimit: 12 } } } } });
   const td = topN(D.domain, 12), ta = topN(D.by, 12);
-  const hb = { indexAxis: 'y' };
-  mkChart('c_dom', { type: 'bar', data: { labels: td.map(x => x[0]), datasets: [{ data: td.map(x => x[1]), backgroundColor: AC }] }, options: hb });
-  mkChart('c_auth', { type: 'bar', data: { labels: ta.map(x => x[0]), datasets: [{ data: ta.map(x => x[1]), backgroundColor: AC }] }, options: hb });
+  const pick = field => (ev, els, ch) => { if (!els.length) return; const v = ch.data.labels[els[0].index]; $(field).value = v; page = 0; keepFilters(); refresh(); };
+  const hb = f => ({ indexAxis: 'y', onClick: pick(f), onHover: (ev, els) => { ev.native.target.style.cursor = els.length ? 'pointer' : 'default'; } });
+  mkChart('c_dom', { type: 'bar', data: { labels: td.map(x => x[0]), datasets: [{ data: td.map(x => x[1]), backgroundColor: AC }] }, options: hb('domain') });
+  mkChart('c_auth', { type: 'bar', data: { labels: ta.map(x => x[0]), datasets: [{ data: ta.map(x => x[1]), backgroundColor: AC }] }, options: hb('by') });
 }
 function sorted() {
   const s = $('sort').value, a = Array.from(idx);
