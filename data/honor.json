@@ -1851,6 +1851,24 @@
    "id": "h419",
    "score": 1.0,
    "title": "Business-software words stories vs Show HN posts stories on points"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": false,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "insightful"
+   ],
+   "group_a_count": 737.0,
+   "id": "h420",
+   "score": 0.8,
+   "title": "SQLite and DuckDB: a bigger share than before"
   }
  ],
  "schema": 1,
