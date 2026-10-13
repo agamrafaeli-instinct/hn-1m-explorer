@@ -7,8 +7,8 @@
     vcs: { name: 'Deep-tech VCs', tag: 'deep-tech investors', note: 'How to read these: the theme cards (H319 onward) compare the latest 12 months with every earlier story since 2006, matched on title only. A falling share is not proof that adoption fell. Four older cards (H112, H113, H114, H119) stay frozen because they need comments or source domains, which the archive does not hold.' },
     geeks: { name: 'Curious geeks', tag: 'curious readers', note: 'Read this first: these cards are exploratory. The odd-and-fun word lists and thresholds were set while looking at earlier summaries, so they are not blind tests. Scores are a snapshot of a short window. Cards H135-H149 use a fixed snapshot window and do not refresh daily. Refuted cards stay on the page.' }
   };
-  const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens', 'rings', 'saga'];
-  const tabOf = { topics: 'home', today: 'home', lens: '', rings: 'home', saga: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens', 'rings', 'saga', 'phoenix'];
+  const tabOf = { topics: 'home', today: 'home', lens: '', rings: 'home', phoenix: 'home', saga: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
     $('aud_kicker').textContent = 'Hypothesis card';
@@ -45,6 +45,7 @@
   const BASE_TITLE = document.title, META = document.querySelector('meta[name="description"]'), BASE_DESC = META ? META.content : '';
   window.SetPageMeta = (t, d) => { document.title = t + ' | ' + BASE_TITLE; if (META) META.content = d; };
   const TITLES = {
+    phoenix: ['Quiet, then back', 'Words and sites on Hacker News that went quiet for a year or more and then came back.'],
     how: ['Method', 'Where the data comes from and how every number on this site is computed.'],
     explore: ['Explorer', 'Search every Hacker News story since 2006 and see where points and attention sit.'],
     submit: ['Submit a hypothesis', 'Propose a hypothesis for the full Hacker News archive to test.'],
@@ -63,7 +64,7 @@
   function route() {
     const p = (location.hash || '#/').replace(/^#\/?/, '').split('?')[0].split('/');
     let v = 'saga';
-    if (p[0] === 'a' && AUD[p[1]]) { location.replace('#/hypotheses'); return; } else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'hypotheses') v = 'hyp';
+    if (p[0] === 'a' && AUD[p[1]]) { location.replace('#/hypotheses'); return; } else if (p[0] === 'c' && /^h\d+$/.test(p[1] || '')) v = 'aud'; else if (p[0] === 'w' && AUD[p[1]]) v = 'week'; else if (p[0] === 's' && /^\d{4}-\d{2}-\d{2}$/.test(p[1] || '')) v = 'today'; else if (p[0] === 'l' && p[1]) v = 'lens'; else if (p[0] === 'hypotheses') v = 'hyp'; else if (['story', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics'].includes(p[0])) v = p[0]; else if (p[0] === 't') v = 'compare'; else if (p[0] === 'rings') v = 'rings'; else if (p[0] === 'phoenix') v = 'phoenix'; else if (p[0] === 'hypotheses') v = 'hyp';
     if (v !== 'week') { document.title = BASE_TITLE; if (META) META.content = BASE_DESC; }
     if (TITLES[v]) window.SetPageMeta(TITLES[v][0], TITLES[v][1]);
     views.forEach(n => $('v_' + n).hidden = n !== v);
