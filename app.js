@@ -165,6 +165,15 @@ const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; cons
 $('sort').addEventListener('change', keepFilters);
 $('whole').addEventListener('change', keepFilters);
 $('reset').addEventListener('click', () => setTimeout(keepFilters, 0));
+$('csv').onclick = () => {
+  const CAP = 50000, a = sorted(), n = Math.min(a.length, CAP);
+  const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+  const L = ['id,date,score,comments,author,domain,title'];
+  for (let k = 0; k < n; k++) { const i = a[k]; L.push([D.id[i], D.time[i] ? new Date(D.time[i] * 1000).toISOString().slice(0, 10) : '', D.score[i], D.comments[i], q(D.by[i]), q(D.domain[i]), q(D.title[i])].join(',')); }
+  const u = URL.createObjectURL(new Blob(['\ufeff' + L.join('\r\n') + '\r\n'], { type: 'text/csv' })), x = document.createElement('a');
+  x.href = u; x.download = 'hn-matches.csv'; document.body.appendChild(x); x.click(); x.remove(); setTimeout(() => URL.revokeObjectURL(u), 1000);
+  $('csvnote').textContent = a.length > CAP ? `Saved the first ${CAP.toLocaleString()} of ${a.length.toLocaleString()} matches. Narrow the filters to get the rest.` : `Saved ${n.toLocaleString()} match${n === 1 ? '' : 'es'}.`;
+};
 $('copyfilters').onclick = async () => {
   const b = $('copyfilters'), url = location.href; let ok = false;
   try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
