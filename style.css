@@ -265,6 +265,7 @@ select{min-height:44px}
 .sg_hook h1{font-size:2.1em;line-height:1.12;margin:.2em 0 .4em}.sg_k{margin:0;color:#b84700;font-weight:600;font-size:.85em}.sg_s{font-size:1.1em;margin:0 0 1.2em}
 .sg_more{align-self:flex-start;color:#b84700;font-weight:600;text-decoration:none;padding:10px 0}.sg_more:after{content:" \2193"}
 .sg_beat h2{margin:0 0 12px}
+.sg_p{font-size:1.05em;line-height:1.45;margin:0 0 14px}
 .sg_hook{min-height:calc(100svh - 220px)}.sg_beat:last-child{padding-bottom:96px}
 
 .sg_row{margin-bottom:18px}.sg_cap{margin:0 0 6px}.sg_bars{align-items:flex-end}.rg_bar.sg_low{background:transparent;border:1.5px dashed #ff6600;box-sizing:border-box}

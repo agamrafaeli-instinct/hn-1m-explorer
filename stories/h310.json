@@ -5,7 +5,7 @@
  "question": "Does the data back this claim: \"Engineers are returning to their tools\"?",
  "why": "It checks whether this topic takes a different share of all HN stories now than it did across the earlier years.",
  "opening": "In {label_a}, the share was {a}. In {label_b}, it was {b}.",
- "takeaway": "Yes. The ratio is {ratio}x. It refutes the claim at {refute_at}x or less.",
+ "takeaway": "The ratio is {ratio}x. The card set its line before the check: {refute_at}x or less would count against the claim. This is on the other side of that line.",
  "boundary": "The thresholds were copied from earlier cards, so this test is exploratory.",
  "explore": []
 }
