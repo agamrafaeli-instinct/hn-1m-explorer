@@ -185,7 +185,7 @@ function chips() {
   if (+$('minscore').value > 0) L.push(['Min score: ' + $('minscore').value, () => { $('minscore').value = 0; }]);
   if ($('whole').checked) L.push(['Whole word', () => { $('whole').checked = false; }]);
   box.replaceChildren(...L.map(([t, f]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'fchip'; b.textContent = t + ' \u00d7'; b.setAttribute('aria-label', 'Clear filter ' + t); b.onclick = () => { f(); page = 0; keepFilters(); refresh(); }; return b; }));
-  box.hidden = !L.length;
+  box.hidden = !L.length; $('reset').hidden = !L.length;
 }
 function dateRange() {
   const el = $('daterange'); if (!el) return;
