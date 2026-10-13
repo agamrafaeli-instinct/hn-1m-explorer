@@ -58,7 +58,9 @@ async function load(nChunks) {
     $('status').textContent = `Loaded ${D.n.toLocaleString()}${total ? ' / ' + total.toLocaleString() : ''} posts (${k}/${files.length} files)`;
     if (k === 1 || k % 3 === 0 || k === files.length) { buildTypes(); refresh(); await new Promise(r => setTimeout(r)); }
   }
-  $('status').textContent = `${D.n.toLocaleString()} posts loaded`;
+  { let lo = Infinity, hi = 0; for (let i = 0; i < D.n; i++) { const t = D.time[i]; if (t > 0) { if (t < lo) lo = t; if (t > hi) hi = t; } }
+    const dd = t => new Date(t * 1000).toISOString().slice(0, 10);
+    $('status').textContent = `${D.n.toLocaleString()} posts loaded` + (hi ? `, from ${dd(lo)} to ${dd(hi)}` : ''); }
   $('load_src').textContent = `Source: ${D.n.toLocaleString()} posts from ${files.length} data file${files.length === 1 ? '' : 's'}${sample ? ' (the small sample, not the full archive)' : ''}, listed in ${base}manifest.json${mf.generated_at ? ', built ' + mf.generated_at.slice(0, 10) : ''}.`;
   $('barfill').parentNode.style.display = 'none';
 }
@@ -149,6 +151,14 @@ let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; 
 const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', keepFilters));
 $('reset').addEventListener('click', () => setTimeout(keepFilters, 0));
+$('copyfilters').onclick = async () => {
+  const b = $('copyfilters'), url = location.href; let ok = false;
+  try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
+  if (ok) { b.textContent = 'Link copied'; setTimeout(() => { b.textContent = 'Copy link'; }, 2000); return; }
+  let f = b.parentNode.querySelector('input.share_link');
+  if (!f) { f = document.createElement('input'); f.className = 'share_link'; f.readOnly = true; f.setAttribute('aria-label', 'Link to copy'); f.style.cssText = 'display:block;width:100%;box-sizing:border-box;margin:8px 0;padding:10px;font-size:16px'; b.after(f); }
+  f.value = url; f.focus(); f.select(); b.textContent = 'Copy the link below'; setTimeout(() => { b.textContent = 'Copy link'; }, 4000);
+};
 $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
