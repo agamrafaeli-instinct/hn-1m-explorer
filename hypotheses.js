@@ -126,10 +126,13 @@
     return box;
   }
   // Context only (#130): the monthly title share for the card's topic, loaded when asked. The verdict never reads from it.
+  // Topics whose matcher is exactly one whole word (a test compares this list with data/topic_series.json). Word groups get no link.
+  const ONE_WORD = ['rust', 'typescript', 'python', 'java'];
   let TS;
   function contextBlock(card) {
     const key = String(card.check.field || '').replace(/_[sph]$/, ''), box = el('div', 'ctx');
     const b = el('button', 'ctx-btn', 'Show the monthly line, 2006 to now'); b.type = 'button'; box.appendChild(b);
+    let fl = null; if (ONE_WORD.includes(key)) { const f = fl = el('a', 'ctx-find', 'Search the stories for \u201c' + key + '\u201d'); f.href = '#/explore?q=' + key + '&whole=1'; box.appendChild(f); }
     b.addEventListener('click', async () => {
       b.disabled = true; b.textContent = 'Loading...';
       try {
@@ -143,7 +146,7 @@
         s.appendChild(sv('text', { x: pl, y: H - 3, class: 'g-lab' }, TS.months[0].slice(0, 4)));
         s.appendChild(sv('text', { x: W - pl, y: H - 3, 'text-anchor': 'end', class: 'g-lab' }, TS.months[n - 1].slice(0, 4)));
         s.appendChild(sv('text', { x: pl, y: pt + 8, class: 'g-lab' }, 'peak ' + (mx * 100).toFixed(2) + '%'));
-        box.replaceChildren(s, el('p', 'ctx-note', 'Context only: monthly share of story titles for ' + t.label + ', 6-month average, 2006 to ' + TS.months[n - 1].slice(0, 4) + '. The shaded band is the latest 12 months. The verdict above reads only from the card\'s own windows.'));
+        box.replaceChildren(s, el('p', 'ctx-note', 'Context only: monthly share of story titles for ' + t.label + ', 6-month average, 2006 to ' + TS.months[n - 1].slice(0, 4) + '. The shaded band is the latest 12 months. The verdict above reads only from the card\'s own windows.'), ...(fl ? [fl] : []));
       } catch (e) { b.disabled = false; b.textContent = 'Could not load. Try again'; }
     });
     return box;
@@ -228,6 +231,7 @@
     { const qb = qualityBlock(r.quality); if (qb) d.appendChild(qb); }
     d.appendChild(el('p', 'src', 'Check: ' + k.source + ' \u203a ' + k.path + '.' + k.field + (card.author ? ' \u00b7 by ' + card.author : '')));
     a.appendChild(d); a.classList.add('compact');
+    { const key = String(k.field || '').replace(/_[sph]$/, ''); if (ONE_WORD.includes(key)) { const f = el('a', 'ctx-find', 'Search the stories for \u201c' + key + '\u201d'); f.href = '#/explore?q=' + key + '&whole=1'; a.appendChild(f); } }
     return a;
   }
   const get = u => fetch(u).then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });

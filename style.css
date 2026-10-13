@@ -299,3 +299,5 @@ label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:
 #v_phoenix td a{display:inline-block;min-width:44px;text-align:center}
 .ph_jump{display:inline-block;min-height:44px;line-height:44px}
 .rg_find a{min-width:44px;text-align:center}
+
+.ctx-find{display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
