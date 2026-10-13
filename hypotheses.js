@@ -185,7 +185,7 @@
     const la = split ? (k.legend_a || 'Matching stories') : (r.label_a || k.group_a.label), lb = split ? (k.legend_b || 'Everything else') : (r.label_b || k.group_b.label);
     const per = k.per_label || (k.path.endsWith('hour') ? 'per hour' : k.normalize ? 'per day' : 'average');
     const a = el('article', 'hyp narr');
-    const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id + (card.audience ? ' \u00b7 for ' + card.audience : '')));
+    const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id));
     const key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
     const sh = el('button', 'share-btn', 'Share'); sh.type = 'button'; sh.dataset.url = new URL('share/c/' + card.id + '.html', location.href.split('#')[0]).href;
     sh.setAttribute('aria-label', 'Share this card');
