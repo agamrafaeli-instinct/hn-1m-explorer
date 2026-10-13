@@ -1,0 +1,43 @@
+id,type,by,time,title,url,domain,score,descendants,text,dead,deleted
+50067863,comment,jasomill,1791875198,,,,,,"Because the wealthy don&#x27;t necessarily aspire to be evil overlords pointlessly hoarding resources at the apex of a dystopian society, or to be the first ones up against the wall when the revolution comes?",0,0
+50067862,comment,estetlinus,1791875194,,,,,,Right-clicking bouncy icons?,0,0
+50067861,comment,vrganj,1791875178,,,,,,Every crisis is an opportunity. Maybe we could build something where we don&#x27;t have ridiculous power and wealth concentration at the expense of the public - to the point where the world&#x27;s richest man literally took over the US government to cut aid to the world&#x27;s poorest.,0,0
+50067860,comment,bee_rider,1791875164,,,,,,Maybe you mean open weights?<p>If it was truly open source (training data and code available) you could just inspect it I guess.,0,0
+50067859,comment,Gys,1791875147,,,,,,"Too big to fail, by intention",0,0
+50067858,comment,ketzu,1791875125,,,,,,"Primed by discussions of Americans on corporal punishment of children, I expected much much worse.",0,0
+50067857,comment,ITAltitudes,1791875118,,,,,,Interesting collection of AI security incidents. Curious how you verify the accuracy before adding them to the dataset.,0,0
+50067856,comment,cube00,1791875115,,,,,,&gt; Process forking isn&#x27;t nearly as expensive as it was; modern kernels optimize it heavily.<p>When I start to dig into how complex async is to debug I&#x27;m really starting to come back around to regular forking.,0,0
+50067855,comment,ag8,1791875109,,,,,,"Yeah. Also, we think that in certain scenarios, it&#x27;s possible for &quot;cryptographic patterns&quot; to arise in model weights via normal training, especially if models are trained against things such as honesty probes.",0,0
+50067854,comment,starkshift,1791875101,,,,,,It depends on the knowledge domain. I would argue that much of human knowledge is individual to the person acquired by interacting with their environment,0,0
+50067853,comment,basketwill,1791875094,,,,,,[flagged],1,0
+50067852,comment,sirl1on,1791875093,,,,,,Just use Claude to summarize. Ez pz,0,0
+50067851,comment,generic92034,1791875075,,,,,,“Markets can remain irrational longer than you can remain solvent.&quot;,0,0
+50067850,comment,simianwords,1791875069,,,,,,"False. They are based on future revenues that companies can capture. If the companies can’t capture the value and there’s no moat, then the public stands to gain from it.<p>Why is this controversial?",0,0
+50067849,comment,,1791875067,,,,,,,0,1
+50067848,story,user-user-101,1791875066,,,,1,,,1,0
+50067847,comment,pjmlp,1791875042,,,,,,"Great article, and the demo has quite a few goodies into it, and props to a fellow &quot;Speccy and Amiga&quot; fan.<p>A warm time travel back to 1980&#x27;s, high school and coding partings at friend&#x27;s houses.",0,0
+50067846,comment,yorwba,1791875042,,,,,,"The complex FFT is a generalization of the n-bit integer multiplication algorithm, not the other way around. No complex-number operations are required for the integer case.",0,0
+50067845,comment,watwut,1791875041,,,,,,That is weird claim considering did not reward &quot;highly intelligent&quot; or &quot;knowing stuff&quot; on itself. Super smart people great at whatever jobs they picked have roughly normal salaries.<p>Researchers specifically were never highly paid. And positions were competitive - there were way more people willing and able to do those positions then positions themselves. Same goes for art btw.,0,0
+50067844,comment,tjpnz,1791875039,,,,,,Wouldn&#x27;t be so bad if shitty companies were allowed to fail.,0,0
+50067843,comment,meowface,1791875036,,,,,,Let&#x27;s check in in 50 years and see which of us was right.,0,0
+50067842,comment,zelcon,1791875031,,,,,,Cash because no AI bubble means the market is cooked for a decade or so,0,0
+50067841,comment,arcanemachiner,1791875025,,,,,,Sounds like prime breeding ground for a future Stuxnet-type situation.,0,0
+50067840,comment,x______________,1791875018,,,,,,"&gt; It may be a dumb reason to do it, but recently I&#x27;ve started to focus on my health a bit more because of news like this<p>A healthy mind and body leads an organism to want&#x2F;be able to survive and thrive. Glad to hear you&#x27;re there now.<p>&gt; I&#x27;d be pissed if we as humanity solved aging and I die just before that<p>No, you wouldn&#x27;t :)",0,0
+50067839,comment,simianwords,1791875007,,,,,,Why do you discount the immense gains due to AI that the public can use cheaply?<p>There has to be a name for this fallacy.,0,0
+50067838,story,verdverm,1791875003,Building Pro-Worker Artificial Intelligence,https://www.nber.org/papers/w34854,nber.org,1,0,,0,0
+50067837,comment,feverzsj,1791875003,,,,,,"&gt; Starting in August 2027, they will be allowed to &#x27;hold a student, keep them in place, or take them to another room&#x27; if the student disrupts the class.<p>Far from what I imagined as &#x27;physical force&#x27;.",0,0
+50067836,comment,psychoslave,1791874993,,,,,,"The fridge only need to push data to the board then, there is no reason the board can send commands, and even less commands that can ruin the ware.",0,0
+50067835,comment,somenameforme,1791874985,,,,,,"There were 280,000 civs in Kherson. It&#x27;s now in the 60,000 range. That&#x27;s a lot, a whole lot, any way you look at it, and all well within the range of drones. The drone interception rate was around 80%, excluding jet powered drones for which it is dramatically lower. For that matter Kherson is within Russian artillery range. They could easily inflict civilian casualties in the thousands in very brief order if they wanted to.",0,0
+50067834,comment,tehnoslow,1791874971,,,,,,"I don&#x27;t think that&#x27;s the best idea for starting a business. Demand is too low, and the required investment is too high.",0,0
+50067833,comment,Cthulhu_,1791874967,,,,,,"Just latching on to this comment to add that it&#x27;s probably a good thing (all things considered) this happened when it did - it&#x27;s only one chain, so overall food supplies aren&#x27;t impacted, and it happened during a relatively normal time period instead of during another crisis. The more hacks happen during peace time, the better prepared we&#x27;ll be for not-peace time.",0,0
+50067832,story,aanthonymax,1791874961,Show HN: Bifrost – High-performance AI gateway,https://github.com/maximhq/bifrost,github.com,1,0,,0,0
+50067831,comment,rasz,1791874956,,,,,,early 205 GTI has pretty much same performance as entry level BYD Atto 1,0,0
+50067830,story,gscott,1791874928,"Getty Images plans bankruptcy filing, to go private",https://www.reuters.com/business/getty-images-go-private-after-restructuring-deal-2026-10-12/,reuters.com,1,0,,0,0
+50067829,comment,bigbugbag,1791874921,,,,,,nope. alpha means it is unusable as is and in early stage of development.,0,0
+50067828,comment,ozlikethewizard,1791874920,,,,,,"D list celeb got shat on in public and the gallery took a load of real life shit. The only chronically online stance is thinking the general populace is positive about AI.<p><a href=""https:&#x2F;&#x2F;metro.co.uk&#x2F;2026&#x2F;05&#x2F;13&#x2F;very-sad-eastenders-jake-wood-issues-public-apology-art-28355061&#x2F;"" rel=""nofollow"">https:&#x2F;&#x2F;metro.co.uk&#x2F;2026&#x2F;05&#x2F;13&#x2F;very-sad-eastenders-jake-wood...</a><p>I work in IT at a place where the vast majority of activity is not IT related but we have a huge number of systems. I regularly interact with a wide range of disciplines. It is in education sector so it may be somewhat skewed, but I see very little positivity about AI from anyone but us developers. It gets used loads, but even those using it to speed up documents, reports, comms etc are generally negative about it.",0,0
+50067827,comment,boxed,1791874907,,,,,,&gt; I understand for iOS you want apps to be consistent uniform touch targets.<p>The touch targets can still be sane though. The click targets for the dock aren&#x27;t the shape of the icons anyway.,0,0
+50067826,comment,mietek,1791874899,,,,,,Great writing. Maybe you should write more about your experiences. I would gladly read more.,0,0
+50067825,comment,,1791874897,,,,,,,0,1
+50067824,comment,generic92034,1791874889,,,,,,"Then you somehow still need to get rid of the working man, though...",0,0
+50067823,comment,vrganj,1791874880,,,,,,"How? I would like to! And don&#x27;t say shorting because, well inevitable doesn&#x27;t mean imminent.",0,0
+50067822,story,theanonymousone,1791874879,F3d: Fast and Minimalist 3D Viewer,https://github.com/f3d-app/f3d,github.com,1,0,,0,0
