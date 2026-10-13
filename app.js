@@ -156,6 +156,13 @@ function noMatch() {
   const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Reset the filters'; b.onclick = () => $('reset').click(); el.appendChild(b);
   el.hidden = false;
 }
+function dateRange() {
+  const el = $('daterange'); if (!el) return;
+  let lo = Infinity, hi = 0; for (const i of idx) { const t = D.time[i]; if (t > 0) { if (t < lo) lo = t; if (t > hi) hi = t; } }
+  if (!hi) { el.hidden = true; return; }
+  const d = t => new Date(t * 1000).toISOString().slice(0, 10);
+  el.textContent = `Matches run from ${d(lo)} to ${d(hi)}, among the posts loaded.`; el.hidden = false;
+}
 function ptShare() {
   const el = $('ptshare'); if (!el) return;
   if (!idx.length) { el.hidden = true; return; }
@@ -163,7 +170,7 @@ function ptShare() {
   const pc = all ? 100 * m / all : 0, t = pc >= 10 ? pc.toFixed(0) : pc >= 1 ? pc.toFixed(1) : pc.toFixed(2);
   el.textContent = `These hold ${m.toLocaleString()} points, ${t}% of the ${all.toLocaleString()} points in the ${D.n.toLocaleString()} posts loaded.`; el.hidden = false;
 }
-function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); drawCharts(); drawList(); }
+function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
