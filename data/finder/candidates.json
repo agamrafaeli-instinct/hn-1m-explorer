@@ -5,8 +5,8 @@
    "label": "React",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.8520806052354076,
-    "latest_vs_prior": 0.5976963844584668
+    "latest_vs_before": 0.8520781724918202,
+    "latest_vs_prior": 0.5976946779977897
    },
    "term": "react",
    "windows": {
@@ -20,9 +20,9 @@
     "latest": {
      "from": "2025-08",
      "n": 809,
-     "share": 0.002309752351150879,
+     "share": 0.002309745756663003,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -38,8 +38,8 @@
    "label": "Rust",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.2013097751200426,
-    "latest_vs_prior": 2.4936134659083184
+    "latest_vs_before": 1.2013063453052646,
+    "latest_vs_prior": 2.493606346485424
    },
    "term": "rust",
    "windows": {
@@ -53,9 +53,9 @@
     "latest": {
      "from": "2025-08",
      "n": 3477,
-     "share": 0.009927081489433382,
+     "share": 0.009927053146992906,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -71,8 +71,8 @@
    "label": "TypeScript",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.056693286305969,
-    "latest_vs_prior": 1.6963637656483626
+    "latest_vs_before": 1.0566902693803395,
+    "latest_vs_prior": 1.6963589224233817
    },
    "term": "typescript",
    "windows": {
@@ -86,9 +86,9 @@
     "latest": {
      "from": "2025-08",
      "n": 636,
-     "share": 0.0018158250869369087,
+     "share": 0.0018158199026423606,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -104,17 +104,17 @@
    "label": "ChatGPT and GPT models",
    "note": "verdict is down against the peak year and up against all earlier months",
    "ratios": {
-    "latest_vs_peak": 0.30414608352218514,
-    "latest_vs_prior": 2.396568481008395
+    "latest_vs_peak": 0.3041452151660346,
+    "latest_vs_prior": 2.396561638655021
    },
    "term": "gpt",
    "windows": {
     "latest": {
      "from": "2025-08",
      "n": 3285,
-     "share": 0.009378907878282617,
+     "share": 0.009378881100912192,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "peak": {
      "from": "2023-01",
@@ -138,8 +138,8 @@
    "label": "ChatGPT and GPT models",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.1572467979405525,
-    "latest_vs_prior": 2.396568481008395
+    "latest_vs_before": 1.1572434939283387,
+    "latest_vs_prior": 2.396561638655021
    },
    "term": "gpt",
    "windows": {
@@ -153,9 +153,9 @@
     "latest": {
      "from": "2025-08",
      "n": 3285,
-     "share": 0.009378907878282617,
+     "share": 0.009378881100912192,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -171,17 +171,17 @@
    "label": "Postgres, SQLite and DuckDB",
    "note": "verdict is down against the peak year and up against all earlier months",
    "ratios": {
-    "latest_vs_peak": 0.7963156191702755,
-    "latest_vs_prior": 2.009430899285118
+    "latest_vs_peak": 0.796313345639222,
+    "latest_vs_prior": 2.009425162233829
    },
    "term": "sql",
    "windows": {
     "latest": {
      "from": "2025-08",
      "n": 2009,
-     "share": 0.0057358374208431595,
+     "share": 0.005735821044667457,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "peak": {
      "from": "2024-01",
@@ -205,8 +205,8 @@
    "label": "Postgres, SQLite and DuckDB",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.9474188295437466,
-    "latest_vs_prior": 2.009430899285118
+    "latest_vs_before": 0.9474161246035472,
+    "latest_vs_prior": 2.009425162233829
    },
    "term": "sql",
    "windows": {
@@ -220,9 +220,9 @@
     "latest": {
      "from": "2025-08",
      "n": 2009,
-     "share": 0.0057358374208431595,
+     "share": 0.005735821044667457,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -238,17 +238,17 @@
    "label": "Next.js, Svelte, Vue, htmx and Tailwind",
    "note": "verdict is down against the peak year and up against all earlier months",
    "ratios": {
-    "latest_vs_peak": 0.6506324876546096,
-    "latest_vs_prior": 1.3614300182822494
+    "latest_vs_peak": 0.6506306300580366,
+    "latest_vs_prior": 1.361426131314131
    },
    "term": "newfe",
    "windows": {
     "latest": {
      "from": "2025-08",
      "n": 650,
-     "share": 0.001855796079416652,
+     "share": 0.0018557907810024124,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "peak": {
      "from": "2024-01",
@@ -272,8 +272,8 @@
    "label": "Next.js, Svelte, Vue, htmx and Tailwind",
    "note": "verdict is up against all earlier months and down against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.7322470036576302,
-    "latest_vs_prior": 1.3614300182822494
+    "latest_vs_before": 0.7322449130464935,
+    "latest_vs_prior": 1.361426131314131
    },
    "term": "newfe",
    "windows": {
@@ -287,9 +287,9 @@
     "latest": {
      "from": "2025-08",
      "n": 650,
-     "share": 0.001855796079416652,
+     "share": 0.0018557907810024124,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -305,8 +305,8 @@
    "label": "Docker, Kubernetes and Terraform",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.9442424883660983,
-    "latest_vs_prior": 0.7455133218582917
+    "latest_vs_before": 0.9442397924945521,
+    "latest_vs_prior": 0.7455111933709843
    },
    "term": "infra",
    "windows": {
@@ -320,9 +320,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1275,
-     "share": 0.003640215386548048,
+     "share": 0.0036402049935047322,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -338,8 +338,8 @@
    "label": "SQLite and DuckDB",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.010925654390311,
-    "latest_vs_prior": 3.209228195898108
+    "latest_vs_before": 1.0109227681341422,
+    "latest_vs_prior": 3.209219033350262
    },
    "term": "localdb",
    "windows": {
@@ -353,9 +353,9 @@
     "latest": {
      "from": "2025-08",
      "n": 737,
-     "share": 0.002104187246969342,
+     "share": 0.0021041812393827355,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -371,8 +371,8 @@
    "label": "Git, Linux, Neovim, Nix and VS Code",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.1106894150346762,
-    "latest_vs_prior": 1.352449454065178
+    "latest_vs_before": 1.1106862439467118,
+    "latest_vs_prior": 1.352445592737134
    },
    "term": "tinker",
    "windows": {
@@ -386,9 +386,9 @@
     "latest": {
      "from": "2025-08",
      "n": 5005,
-     "share": 0.01428962981150822,
+     "share": 0.014289589013718577,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -404,8 +404,8 @@
    "label": "Rust, Zig and C++",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.1569142009584226,
-    "latest_vs_prior": 1.9809840521132458
+    "latest_vs_before": 1.1569108978957938,
+    "latest_vs_prior": 1.98097839627949
    },
    "term": "syslang",
    "windows": {
@@ -419,9 +419,9 @@
     "latest": {
      "from": "2025-08",
      "n": 4814,
-     "share": 0.013744311271248866,
+     "share": 0.013744272030377867,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -437,8 +437,8 @@
    "label": "LLM, RAG and fine-tuning",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.199426563561471,
-    "latest_vs_prior": 8.261688271082543
+    "latest_vs_before": 1.1994231391233798,
+    "latest_vs_prior": 8.26166468344419
    },
    "term": "llm",
    "windows": {
@@ -452,9 +452,9 @@
     "latest": {
      "from": "2025-08",
      "n": 8522,
-     "share": 0.024330914136598013,
+     "share": 0.02433084467031163,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -470,8 +470,8 @@
    "label": "Go",
    "note": "verdict is flat against all earlier months and down against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.7653628839774159,
-    "latest_vs_prior": 0.8063012859828603
+    "latest_vs_before": 0.7653606988183632,
+    "latest_vs_prior": 0.8062989839421014
    },
    "term": "go",
    "windows": {
@@ -485,9 +485,9 @@
     "latest": {
      "from": "2025-08",
      "n": 545,
-     "share": 0.0015560136358185774,
+     "share": 0.0015560091933020227,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -503,8 +503,8 @@
    "label": "Kubernetes",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.8875010011368148,
-    "latest_vs_prior": 0.7714018036195308
+    "latest_vs_before": 0.8874984672657747,
+    "latest_vs_prior": 0.7713996012189837
    },
    "term": "kubernetes",
    "windows": {
@@ -518,9 +518,9 @@
     "latest": {
      "from": "2025-08",
      "n": 618,
-     "share": 0.0017644338108915244,
+     "share": 0.0017644287733222937,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -536,8 +536,8 @@
    "label": "Vue",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.0659672954224908,
-    "latest_vs_prior": 0.34926986544858923
+    "latest_vs_before": 1.0659642520189836,
+    "latest_vs_prior": 0.34926886826121023
    },
    "term": "vue",
    "windows": {
@@ -551,9 +551,9 @@
     "latest": {
      "from": "2025-08",
      "n": 71,
-     "share": 0.00020271003329012658,
+     "share": 0.00020270945454026353,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -569,8 +569,8 @@
    "label": "Java",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.8781778411875427,
-    "latest_vs_prior": 0.471356224120769
+    "latest_vs_before": 0.8781753339347093,
+    "latest_vs_prior": 0.4713548783691763
    },
    "term": "java",
    "windows": {
@@ -584,9 +584,9 @@
     "latest": {
      "from": "2025-08",
      "n": 536,
-     "share": 0.0015303179977958852,
+     "share": 0.0015303136286419893,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -602,8 +602,8 @@
    "label": "GPU and chip hardware",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.0426834549996793,
-    "latest_vs_prior": 2.6308685267627046
+    "latest_vs_before": 1.0426804780729972,
+    "latest_vs_prior": 2.6308610154679997
    },
    "term": "vcgpu",
    "windows": {
@@ -617,9 +617,9 @@
     "latest": {
      "from": "2025-08",
      "n": 3278,
-     "share": 0.009358922382042747,
+     "share": 0.009358895661732166,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -635,8 +635,8 @@
    "label": "solar energy",
    "note": "verdict is flat against all earlier months and down against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.744717838680383,
-    "latest_vs_prior": 0.8148899934250144
+    "latest_vs_before": 0.7447157124642301,
+    "latest_vs_prior": 0.8148876668629572
    },
    "term": "vcsol",
    "windows": {
@@ -650,9 +650,9 @@
     "latest": {
      "from": "2025-08",
      "n": 193,
-     "share": 0.0005510286820421751,
+     "share": 0.0005510271088207164,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -668,8 +668,8 @@
    "label": "animals",
    "note": "verdict is flat against all earlier months and down against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.7126645834660792,
-    "latest_vs_prior": 0.8835240751757631
+    "latest_vs_before": 0.7126625487639809,
+    "latest_vs_prior": 0.8835215526590964
    },
    "term": "cu_animals",
    "windows": {
@@ -683,9 +683,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1544,
-     "share": 0.004408229456337401,
+     "share": 0.004408216870565731,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -701,8 +701,8 @@
    "label": "education and learning",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.8440948668035795,
-    "latest_vs_prior": 0.6300506161283731
+    "latest_vs_before": 0.8440924568597763,
+    "latest_vs_prior": 0.6300488172943347
    },
    "term": "cu_education",
    "windows": {
@@ -716,9 +716,9 @@
     "latest": {
      "from": "2025-08",
      "n": 4233,
-     "share": 0.012085515083339519,
+     "share": 0.012085480578435712,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -734,8 +734,8 @@
    "label": "hands-on making",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.8170572153201302,
-    "latest_vs_prior": 0.7483334994795707
+    "latest_vs_before": 0.8170548825705182,
+    "latest_vs_prior": 0.7483313629404792
    },
    "term": "cu_diy",
    "windows": {
@@ -749,9 +749,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1410,
-     "share": 0.00402564995688843,
+     "share": 0.004025638463405233,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -767,8 +767,8 @@
    "label": "question headlines",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.8417280754007684,
-    "latest_vs_prior": 0.6873887399520135
+    "latest_vs_before": 0.8417256722143032,
+    "latest_vs_prior": 0.6873867774140342
    },
    "term": "cu_questions",
    "windows": {
@@ -782,9 +782,9 @@
     "latest": {
      "from": "2025-08",
      "n": 23389,
-     "share": 0.06677725307919395,
+     "share": 0.0667770624259468,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -800,8 +800,8 @@
    "label": "retro computing",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.0031059050065778,
-    "latest_vs_prior": 1.4524393977356107
+    "latest_vs_before": 1.0031030410762842,
+    "latest_vs_prior": 1.4524352509300043
    },
    "term": "gk_retro",
    "windows": {
@@ -815,9 +815,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1397,
-     "share": 0.003988534035300096,
+     "share": 0.003988522647785185,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -833,17 +833,17 @@
    "label": "puzzles and games of skill",
    "note": "verdict is down against the peak year and up against all earlier months",
    "ratios": {
-    "latest_vs_peak": 0.659118103285188,
-    "latest_vs_prior": 1.351122325195112
+    "latest_vs_peak": 0.65911622146165,
+    "latest_vs_prior": 1.3511184676561043
    },
    "term": "gk_puzzle",
    "windows": {
     "latest": {
      "from": "2025-08",
      "n": 1166,
-     "share": 0.0033290126593843324,
+     "share": 0.0033290031548443275,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "peak": {
      "from": "2022-01",
@@ -867,8 +867,8 @@
    "label": "puzzles and games of skill",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 0.9213623917439764,
-    "latest_vs_prior": 1.351122325195112
+    "latest_vs_before": 0.9213597611965417,
+    "latest_vs_prior": 1.3511184676561043
    },
    "term": "gk_puzzle",
    "windows": {
@@ -882,9 +882,9 @@
     "latest": {
      "from": "2025-08",
      "n": 1166,
-     "share": 0.0033290126593843324,
+     "share": 0.0033290031548443275,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -900,8 +900,8 @@
    "label": "business-software words",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.099287525693661,
-    "latest_vs_prior": 1.2887349664478158
+    "latest_vs_before": 1.0992843871588058,
+    "latest_vs_prior": 1.2887312870286314
    },
    "term": "gk_boring",
    "windows": {
@@ -915,9 +915,9 @@
     "latest": {
      "from": "2025-08",
      "n": 2355,
-     "share": 0.0067236919492711005,
+     "share": 0.006723672752708741,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
@@ -933,8 +933,8 @@
    "label": "all six deep-tech themes",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
    "ratios": {
-    "latest_vs_before": 1.0082343600501382,
-    "latest_vs_prior": 1.4453448107536138
+    "latest_vs_before": 1.0082314814777837,
+    "latest_vs_prior": 1.4453406842034981
    },
    "term": "vcall",
    "windows": {
@@ -948,9 +948,9 @@
     "latest": {
      "from": "2025-08",
      "n": 11260,
-     "share": 0.03214809823727923,
+     "share": 0.03214800645244179,
      "to": "2026-07",
-     "total": 350254
+     "total": 350255
     },
     "prior": {
      "from": "2006-10",
