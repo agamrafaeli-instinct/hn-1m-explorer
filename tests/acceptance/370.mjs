@@ -1,0 +1,12 @@
+// #370 Share button on the Phoenix and Rings pages.
+export default async (t) => {
+  for (const r of ['phoenix', 'rings']) {
+    await t.open('#/' + r);
+    t.equal(await t.count('#v_' + r + ' button[data-share="' + r + '"]'), 1, r + ' has one share button');
+    t.ok(await t.js("document.querySelector('#v_" + r + " .pg_share').getBoundingClientRect().height >= 44"), r + ' share button is at least 44px tall');
+  }
+  await t.open('#/phoenix');
+  await t.click('#v_phoenix .pg_share');
+  await t.wait(300);
+  t.equal(await t.text('#v_phoenix .pg_share'), 'Link copied', 'the button says the link was copied');
+};

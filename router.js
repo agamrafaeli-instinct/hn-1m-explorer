@@ -9,6 +9,13 @@
   };
   const views = ['aud', 'week', 'story', 'hyp', 'explore', 'submit', 'how', 'lesson', 'compare', 'topics', 'today', 'lens', 'rings', 'saga', 'phoenix'];
   const tabOf = { topics: 'home', today: 'home', lens: '', rings: 'home', phoenix: 'home', saga: 'home', compare: 'home', lesson: 'how', aud: '', week: '', story: '', hyp: '', explore: 'explore', submit: 'submit', how: 'how' };
+  document.addEventListener('click', async (e) => {
+    const b = e.target.closest && e.target.closest('button[data-share]'); if (!b) return;
+    const url = new URL('share/p/' + b.dataset.share + '.html', location.href.split('#')[0]).href, title = (TITLES[b.dataset.share] || [''])[0] + ' (Hacker News)';
+    try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(url); } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e2) { } t.remove(); }
+    b.textContent = 'Link copied'; setTimeout(() => { b.textContent = 'Share'; }, 2000);
+  });
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
     $('aud_kicker').textContent = 'Hypothesis card';
