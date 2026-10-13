@@ -226,6 +226,14 @@
     <li><b>Download.</b> Every saved week, as <a href="data/exports/weekly.csv">CSV</a> or <a href="data/exports/weekly.json">JSON</a>. <a href="https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/docs/EXPORTS.md">What each column means</a>.</li>
     <li><b>Daily checks.</b> Each daily update is checked before it is saved: row counts and file hashes against the manifest, no repeated ids, no unknown item types, and a few wide ranges, such as the share of stories that are dead or deleted. A second check compares the new data with the last saved day: the window keeps its size, the scan never moves back and the archive only grows. If a check breaks, that day is not saved, the site stays on the last good data and one issue is opened. <a href="https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/docs/DATA_CHECKS.md">The checks and their limits</a>.</li>
     <li><b>Caveats.</b> About 89% of items are comments, which have no points, so point and comment lenses use stories only. The archive holds low points for 2023 and 2026, so charts that use points flag or skip those years. Times are UTC.</li>
+    <li id="how_limits"><b>What the numbers cannot tell you.</b>
+      <ul>
+        <li>A theme counts a story only if its title names it. A story about the theme with a different word is missed (data/rings.json).</li>
+        <li>The first year starts in October 2006 and the latest year is partial, so those two years are not full-year totals (data/rings.json).</li>
+        <li>Site counts use only stories with a link, and points are as saved when each story was fetched (data/atlas/concentration.json).</li>
+        <li>The year-by-year site charts use each month's top 20 sites only, so a site outside a month's top 20 is not counted that month (data/rings.json).</li>
+        <li>The 285 quiet-then-back cases depend on the rules we set first: a different cut-off would give a different count (docs/RESURFACING_SPEC.md).</li>
+      </ul></li>
   </ul>
   <p><a class="btn" href="#/lesson">How to read trends</a> <a class="btn" href="#/story">Read the full story</a> <a class="btn alt2" href="#/explore">Open the explorer</a></p>
 </section>
