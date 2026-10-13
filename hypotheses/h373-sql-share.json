@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "h373",
   "title": "Postgres, SQLite and DuckDB take a bigger slice of all HN stories",
+  "question": "Do Postgres, SQLite and DuckDB appear in a larger share of story titles in the latest 12 months than before?",
   "author": "film-cards",
   "audience": "engineers",
   "hypothesis": "Postgres, SQLite and DuckDB appear in a larger share of all story titles in the latest 12 months than they did before.",

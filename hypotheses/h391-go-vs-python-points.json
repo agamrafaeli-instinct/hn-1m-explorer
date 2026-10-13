@@ -3,6 +3,7 @@
  "id": "h391",
  "replaces": "h315",
  "title": "Go stories vs Python stories on points",
+ "question": "Does a story about Go get more points than a story about Python?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Go gets more points than a story about Python.",

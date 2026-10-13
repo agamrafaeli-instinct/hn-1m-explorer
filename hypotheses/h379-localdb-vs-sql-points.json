@@ -3,6 +3,7 @@
  "id": "h379",
  "replaces": "h309",
  "title": "SQLite and DuckDB stories earn more points than other SQL stories",
+ "question": "Does a story about SQLite or DuckDB get more points than a story about SQL databases in general?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about SQLite or DuckDB gets more points than a story about SQL databases in general.",

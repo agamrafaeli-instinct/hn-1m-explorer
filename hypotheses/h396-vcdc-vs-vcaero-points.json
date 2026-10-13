@@ -3,6 +3,7 @@
  "id": "h396",
  "replaces": "h320",
  "title": "Data centers and grid stories vs aerospace stories on points",
+ "question": "Does a story about data centers and grid get more points than a story about aerospace?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about data centers and grid gets more points than a story about aerospace.",

@@ -3,6 +3,7 @@
  "id": "h390",
  "replaces": "h313",
  "title": "LLM, RAG and fine-tuning stories vs agents stories on points",
+ "question": "Does a story about LLM, RAG and fine-tuning get more points than a story about agents?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about LLM, RAG and fine-tuning gets more points than a story about agents.",

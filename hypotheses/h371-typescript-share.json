@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "h371",
   "title": "TypeScript takes a bigger slice of all HN stories",
+  "question": "Does TypeScript show up in a larger share of story titles in the latest 12 months than before?",
   "author": "film-cards",
   "audience": "engineers",
   "hypothesis": "TypeScript shows up in a larger share of all story titles in the latest 12 months than it did before.",

@@ -3,6 +3,7 @@
  "id": "h378",
  "replaces": "h369",
  "title": "Language-model stories earn more points than the average story",
+ "question": "Does a story about large language models, RAG or fine-tuning get more points than the average story of the same months?",
  "author": "film-cards",
  "audience": "curious readers",
  "hypothesis": "A story about large language models, RAG or fine-tuning gets more points than the average story of the same months.",

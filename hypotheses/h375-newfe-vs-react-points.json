@@ -2,6 +2,7 @@
  "schema": 1,
  "id": "h375",
  "title": "Next.js, Svelte, Vue, htmx and Tailwind stories beat React stories on points",
+ "question": "Does a story about Next.js, Svelte, Vue, htmx or Tailwind get more points than a story about React?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Next.js, Svelte, Vue, htmx or Tailwind gets more points than a story about React.",

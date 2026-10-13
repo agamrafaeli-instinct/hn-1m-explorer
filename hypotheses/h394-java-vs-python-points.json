@@ -3,6 +3,7 @@
  "id": "h394",
  "replaces": "h318",
  "title": "Java stories vs Python stories on points",
+ "question": "Does a story about Java get more points than a story about Python?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Java gets more points than a story about Python.",

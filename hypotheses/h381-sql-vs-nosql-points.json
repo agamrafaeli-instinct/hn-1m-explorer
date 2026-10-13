@@ -3,6 +3,7 @@
  "id": "h381",
  "replaces": "h302",
  "title": "Postgres, SQLite and DuckDB stories vs MongoDB and MySQL stories on points",
+ "question": "Does a story about Postgres, SQLite and DuckDB get more points than a story about MongoDB and MySQL?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Postgres, SQLite and DuckDB gets more points than a story about MongoDB and MySQL.",

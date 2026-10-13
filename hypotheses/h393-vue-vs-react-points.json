@@ -3,6 +3,7 @@
  "id": "h393",
  "replaces": "h317",
  "title": "Vue stories vs React stories on points",
+ "question": "Does a story about Vue get more points than a story about React?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Vue gets more points than a story about React.",

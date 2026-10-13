@@ -3,6 +3,7 @@
  "id": "h386",
  "replaces": "h308",
  "title": "Cursor, Claude Code, MCP, Copilot and Devin stories vs LLM, RAG and fine-tuning stories on points",
+ "question": "Does a story about Cursor, Claude Code, MCP, Copilot and Devin get more points than a story about LLM, RAG and fine-tuning?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Cursor, Claude Code, MCP, Copilot and Devin gets more points than a story about LLM, RAG and fine-tuning.",

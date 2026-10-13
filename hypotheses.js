@@ -198,7 +198,7 @@
     top.appendChild(sh); a.appendChild(top);
     if (r.story) { storyBody(a, card, r, la, lb); return a; }
     // 1. the guess
-    a.appendChild(el('h3', '', card.title));
+    a.appendChild(el('h3', '', card.question || card.title));
     if (r.storyReview) a.appendChild(el('p', 'hnote diff', 'This story needs review after the latest refresh.'));
     step(a, 'The guess', el('p', 'hyp-q', card.hypothesis));
     // 2. why it might be true (only when the card author wrote it)

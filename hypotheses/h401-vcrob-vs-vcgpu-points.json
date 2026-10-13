@@ -3,6 +3,7 @@
  "id": "h401",
  "replaces": "h330",
  "title": "Physical robotics stories vs GPU and chip hardware stories on points",
+ "question": "Does a story about physical robotics get more points than a story about GPU and chip hardware?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about physical robotics gets more points than a story about GPU and chip hardware.",

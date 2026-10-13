@@ -3,6 +3,7 @@
  "id": "h387",
  "replaces": "h310",
  "title": "Git, Linux, Neovim, Nix and VS Code stories vs code review and technical debt stories on points",
+ "question": "Does a story about Git, Linux, Neovim, Nix and VS Code get more points than a story about code review and technical debt?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Git, Linux, Neovim, Nix and VS Code gets more points than a story about code review and technical debt.",

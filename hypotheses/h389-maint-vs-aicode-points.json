@@ -3,6 +3,7 @@
  "id": "h389",
  "replaces": "h312",
  "title": "Code review and technical debt stories vs Cursor, Claude Code, MCP, Copilot and Devin stories on points",
+ "question": "Does a story about code review and technical debt get more points than a story about Cursor, Claude Code, MCP, Copilot and Devin?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about code review and technical debt gets more points than a story about Cursor, Claude Code, MCP, Copilot and Devin.",

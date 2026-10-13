@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "h370",
   "title": "SQLite and DuckDB stories beat MongoDB and MySQL stories on points",
+  "question": "Does a story about SQLite or DuckDB get more points than a story about MongoDB or MySQL?",
   "author": "film-cards",
   "audience": "engineers",
   "hypothesis": "A story about SQLite or DuckDB gets more points than a story about MongoDB or MySQL.",

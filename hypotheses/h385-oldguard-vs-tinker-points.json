@@ -3,6 +3,7 @@
  "id": "h385",
  "replaces": "h307",
  "title": "Java, PHP, Ruby, Rails and JavaScript stories vs Git, Linux, Neovim, Nix and VS Code stories on points",
+ "question": "Does a story about Java, PHP, Ruby, Rails and JavaScript get more points than a story about Git, Linux, Neovim, Nix and VS Code?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Java, PHP, Ruby, Rails and JavaScript gets more points than a story about Git, Linux, Neovim, Nix and VS Code.",

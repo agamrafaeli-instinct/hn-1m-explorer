@@ -3,6 +3,7 @@
  "id": "h400",
  "replaces": "h328",
  "title": "Solar energy stories vs data centers and grid stories on points",
+ "question": "Does a story about solar energy get more points than a story about data centers and grid?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about solar energy gets more points than a story about data centers and grid.",

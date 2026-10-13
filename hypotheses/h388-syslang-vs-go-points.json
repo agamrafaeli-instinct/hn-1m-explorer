@@ -3,6 +3,7 @@
  "id": "h388",
  "replaces": "h311",
  "title": "Rust, Zig and C++ stories vs Go stories on points",
+ "question": "Does a story about Rust, Zig and C++ get more points than a story about Go?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Rust, Zig and C++ gets more points than a story about Go.",

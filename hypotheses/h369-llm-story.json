@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "h369",
   "title": "LLM, RAG and fine-tuning: a bigger share than before",
+  "question": "Are LLM, RAG and fine-tuning titles a bigger share of stories in the latest 12 months than before?",
   "author": "story-finder",
   "audience": "curious readers",
   "hypothesis": "LLM, RAG and fine-tuning titles are a bigger share of stories in the latest 12 months than before.",

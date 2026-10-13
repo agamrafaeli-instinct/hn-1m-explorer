@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "h374",
   "title": "Microservices and serverless stories now score below the average story",
+  "question": "Do stories that name microservices or serverless get fewer points than the average story in the latest 12 months?",
   "author": "film-cards",
   "audience": "engineers",
   "hypothesis": "Stories that name microservices or serverless get fewer points than the average story in the latest 12 months.",

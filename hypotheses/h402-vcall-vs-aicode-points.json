@@ -3,6 +3,7 @@
  "id": "h402",
  "replaces": "h332",
  "title": "All six deep-tech themes stories vs Cursor, Claude Code, MCP, Copilot and Devin stories on points",
+ "question": "Does a story about all six deep-tech themes get more points than a story about Cursor, Claude Code, MCP, Copilot and Devin?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about all six deep-tech themes gets more points than a story about Cursor, Claude Code, MCP, Copilot and Devin.",

@@ -3,6 +3,7 @@
  "id": "h395",
  "replaces": "h319",
  "title": "Data centers and grid stories vs GPU and chip hardware stories on points",
+ "question": "Does a story about data centers and grid get more points than a story about GPU and chip hardware?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about data centers and grid gets more points than a story about GPU and chip hardware.",

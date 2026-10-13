@@ -3,6 +3,7 @@
  "id": "h376",
  "replaces": "h304",
  "title": "React stories are a smaller part of JavaScript stories than before",
+ "question": "Are React stories a smaller part of JavaScript stories than before?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "React is losing ground inside the JavaScript conversation: for every JavaScript story, fewer stories name React now than before.",

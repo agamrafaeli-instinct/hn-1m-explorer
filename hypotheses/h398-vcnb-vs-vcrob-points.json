@@ -3,6 +3,7 @@
  "id": "h398",
  "replaces": "h324",
  "title": "Neural biology stories vs physical robotics stories on points",
+ "question": "Does a story about neural biology get more points than a story about physical robotics?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about neural biology gets more points than a story about physical robotics.",

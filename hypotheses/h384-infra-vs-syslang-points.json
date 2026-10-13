@@ -3,6 +3,7 @@
  "id": "h384",
  "replaces": "h306",
  "title": "Docker, Kubernetes and Terraform stories vs Rust, Zig and C++ stories on points",
+ "question": "Does a story about Docker, Kubernetes and Terraform get more points than a story about Rust, Zig and C++?",
  "author": "film-cards",
  "audience": "engineers",
  "hypothesis": "A story about Docker, Kubernetes and Terraform gets more points than a story about Rust, Zig and C++.",

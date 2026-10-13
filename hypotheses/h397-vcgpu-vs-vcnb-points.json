@@ -3,6 +3,7 @@
  "id": "h397",
  "replaces": "h322",
  "title": "GPU and chip hardware stories vs neural biology stories on points",
+ "question": "Does a story about GPU and chip hardware get more points than a story about neural biology?",
  "author": "film-cards",
  "audience": "deep-tech investors",
  "hypothesis": "A story about GPU and chip hardware gets more points than a story about neural biology.",

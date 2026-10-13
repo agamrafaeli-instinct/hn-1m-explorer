@@ -2,6 +2,7 @@
   "schema": 1,
   "id": "h372",
   "title": "Agents take a bigger slice of all HN stories",
+  "question": "Does the word agent or agents appear in a larger share of story titles in the latest 12 months than before?",
   "author": "film-cards",
   "audience": "engineers",
   "hypothesis": "The word agent or agents appears in a larger share of all story titles in the latest 12 months than it did before.",
