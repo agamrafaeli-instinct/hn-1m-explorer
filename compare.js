@@ -79,6 +79,16 @@
     }
     if (tid) { var t0 = D.byId[tid], b = el('button', 'cmp_chip cmp_det', 'Details'); b.onclick = function () { sheet(t0); }; row.insertBefore(b, row.firstChild);
        }
+    findLinks(root, tops);
+  }
+  // Search links for topics that are one plain word. Word groups have no link: the Explorer searches one word at a time.
+  function findLinks(root, tops) {
+    var slot = document.getElementById('cmp_find'); if (slot) { slot.replaceChildren(); slot.hidden = true; }
+    var fl = tops.map(function (t) { var m = /^\\b([a-z0-9]+)\\b$/.exec(t.matcher); return m ? { label: short(t.label), w: m[1] } : null; }).filter(Boolean);
+    if (!fl.length || !slot) return;
+    var p = slot; p.hidden = false; p.appendChild(document.createTextNode('Search the stories for '));
+    fl.forEach(function (f, i) { var a = el('a', '', f.label); a.href = '#/explore?q=' + f.w + '&whole=1'; p.appendChild(a); if (i < fl.length - 1) p.appendChild(document.createTextNode(', ')); });
+    if (fl.length < tops.length) p.appendChild(document.createTextNode('. Topics that are word groups have no link.'));
   }
   function sheet(t) {
     var d = document.createElement('dialog'); d.className = 'cmp_sheet';

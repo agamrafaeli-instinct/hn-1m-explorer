@@ -292,3 +292,4 @@ select{min-height:44px}
 .rg_find a:last-of-type{margin-right:0}
 .whole{display:flex;align-items:center;gap:8px;min-height:44px;font-size:15px}.whole input{width:22px;min-height:22px;height:22px}
 label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:auto}label.whole input{flex:none}
+.cmp_find{margin:12px 0}.cmp_find a{display:inline-block;min-height:44px;line-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
