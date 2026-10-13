@@ -62,8 +62,8 @@
   const BASE_TITLE = document.title, META = document.querySelector('meta[name="description"]'), BASE_DESC = META ? META.content : '';
   window.SetPageMeta = (t, d) => { document.title = t + ' | ' + BASE_TITLE; if (META) META.content = d; };
   const TITLES = {
-    rings: ['What HN rewarded, year by year', 'Themes, domains and story types for each year of Hacker News, 2006 to now.'],
-    phoenix: ['Quiet, then back', 'Words and sites on Hacker News that went quiet for a year or more and then came back.'],
+    rings: ['What HN rewarded, year by year', '12 themes, top sites and story types for each of 21 years of Hacker News.'],
+    phoenix: ['Quiet, then back', '285 times a word or site on Hacker News went quiet for a year or more and came back. Only 13 held.'],
     how: ['Method', 'Where the data comes from and how every number on this site is computed.'],
     explore: ['Explorer', 'Search every Hacker News story since 2006 and see where points and attention sit.'],
     submit: ['Submit a hypothesis', 'Propose a hypothesis for the full Hacker News archive to test.'],

@@ -49,4 +49,18 @@ class ShareButtons(unittest.TestCase):
         self.assertNotIn("'#/c/' + card.id", (ROOT / 'hypotheses.js').read_text().split("share-btn'")[1].split('addEventListener')[0])
         self.assertIn("'share/w/' + a + '/' + week + '.html'", (ROOT / 'weekly.js').read_text())
 
+class ShareNumbersMatchData(unittest.TestCase):
+    def test_route_descriptions_use_numbers_from_the_data(self):
+        import json, sys
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        import build_share_pages as b
+        g = json.loads((ROOT / 'data/resurfacing/groups.json').read_text())['returns_list']
+        held = sum(1 for x in g if x['shape'] == 'sharp')
+        d = b.ROUTES['phoenix'][1]
+        self.assertIn('%d times' % len(g), d); self.assertIn('Only %d held' % held, d)
+        r = json.loads((ROOT / 'data/rings.json').read_text())
+        d = b.ROUTES['rings'][1]
+        self.assertIn('%d themes' % len(r['themes']), d); self.assertIn('%d years' % len(r['years']), d)
+
+
 if __name__ == '__main__': unittest.main()
