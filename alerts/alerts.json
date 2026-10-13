@@ -1,5 +1,27 @@
 [
  {
+  "id": "50060269",
+  "title": "'AI' Is Not a Tool by Rich Hickey",
+  "points": 301,
+  "comments": 175,
+  "author": "svieira",
+  "hn": "https://news.ycombinator.com/item?id=50060269",
+  "url": "https://www.linkedin.com/pulse/ai-tool-rich-hickey-kjl8e",
+  "created_at": "2026-10-12T18:00:25Z",
+  "reported_at": 1791932593
+ },
+ {
+  "id": "50054092",
+  "title": "Ledger confirms spy chip implant behind wallet crypto thefts",
+  "points": 330,
+  "comments": 279,
+  "author": "thm",
+  "hn": "https://news.ycombinator.com/item?id=50054092",
+  "url": "https://www.bleepingcomputer.com/news/security/ledger-confirms-hardware-wallet-spy-implant-behind-crypto-thefts/",
+  "created_at": "2026-10-12T10:09:37Z",
+  "reported_at": 1791932593
+ },
+ {
   "id": "50073633",
   "title": "Redesigning source control at Anthropic",
   "points": 347,
