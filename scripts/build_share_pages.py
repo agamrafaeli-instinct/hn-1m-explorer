@@ -65,6 +65,8 @@ def week_audience_pages(site):
 ROUTES = {
     'home': ('Hacker News, counted', 'Every Hacker News story since 2006, asked one question at a time. 543,583 sites, and the top 1% hold about two thirds of the points.'),
     'phoenix': ('Quiet, then back', '285 times a word or site on Hacker News went quiet for a year or more and came back. Only 13 held.'),
+    'hypotheses': ('Hypotheses, tested', '115 cards, each a guess checked against the Hacker News archive. Wrong guesses stay on the page.'),
+    'topics': ('Topics', '52 topics, one chart each, across every Hacker News story since 2006.'),
     'rings': ('What HN rewarded, year by year', '12 themes, top sites and story types for each of 21 years of Hacker News.'),
 }
 
