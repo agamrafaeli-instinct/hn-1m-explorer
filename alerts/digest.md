@@ -3,7 +3,6 @@ HN digest 2026-10-13 (UTC): 14 new stories at 300+ points
 - 357 pts, 281 comments: AI is a tool and using it well takes skill https://news.ycombinator.com/item?id=50063427
 - 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
 - 354 pts, 576 comments: Hackers activate automatic defrosting in supermarket fridges across Europe https://news.ycombinator.com/item?id=50055304
-- 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
 - 337 pts, 149 comments: A Modern Web App in C https://news.ycombinator.com/item?id=50058528
 - 323 pts, 179 comments: GLM-Legal https://news.ycombinator.com/item?id=50058507
 - 319 pts, 344 comments: QGIS bans AI assisted contributions https://news.ycombinator.com/item?id=50054751
@@ -11,5 +10,6 @@ HN digest 2026-10-13 (UTC): 14 new stories at 300+ points
 - 310 pts, 185 comments: Codex CLI installs a persistent, self-updating background daemon by default https://news.ycombinator.com/item?id=50060694
 - 307 pts, 267 comments: AI coding agents generate more code, but not more software https://news.ycombinator.com/item?id=50059523
 - 306 pts, 321 comments: Why aren't AI companies being charged for hacking? https://news.ycombinator.com/item?id=50057278
+- 305 pts, 74 comments: The baffling intelligence of a single cell (2024) https://news.ycombinator.com/item?id=50041866
 - 300 pts, 82 comments: Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver https://news.ycombinator.com/item?id=50055593
 - 300 pts, 61 comments: Cartographers of North Korea (2019) https://news.ycombinator.com/item?id=50047091
