@@ -1,0 +1,64 @@
+{
+ "aliases": [
+  {
+   "count": 2877,
+   "text": "sqlite"
+  },
+  {
+   "count": 779,
+   "text": "duckdb"
+  }
+ ],
+ "exclusions": [],
+ "label": "SQLite and DuckDB",
+ "matches": 3656,
+ "near_misses_total": 154,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\b(sqlite|duckdb)\\b",
+ "sample_matches": [
+  "Show HN: Farchive \u2013 SQLite-backed history-preserving compressed archive",
+  "\"The Duck and the DataFrame: A Data Engineer's Journey with DuckDB\" PyCon AU2025 [video]",
+  "SQLite 3.39.2",
+  "Bloom Filters and SQLite",
+  "PyCanopy: A spatial query layer for Polars, competitive with DuckDB, SedonaDB",
+  "SQLite is not a toy database (2021)",
+  "Why DuckDB is my first choice for data processing",
+  "Lazy GeoParquet Reading in SedonaDB, DuckDB, GeoPandas, and GDAL",
+  "The Tiny Stack (Astro, SQLite, Litestream)",
+  "BCHS stack \u2013 BSD, C, httpd, SQLite",
+  "Publish and Subscribe to Kafka from SQLite",
+  "Show HN: MongoDB Protocol for SQLite",
+  "Show HN: Performance comparison of Swift SQLite libraries",
+  "Write a simple Amazon price scraper with Node, scrape-it and SQLite",
+  "SQLite Release 3.50.0",
+  "Rails 8: 15,000 requests/second with SQLite on $220/month EPYC 48-core Hetzner",
+  "SQLite vs Core Data?",
+  "The Architecture of SQLite",
+  "Show HN: sqlite-memory-vfs - Open a SQLite db in Python without hitting disk",
+  "Redesigning DuckDB's Sort, Again (2025)"
+ ],
+ "sample_near_misses": [
+  "iPhone Development: On the fate of SQLitePersistentObjects\u2026",
+  "CG/SQL \u2013 SQL dialect compiler to C for sqlite3 mimicking stored procedures",
+  "StorIO \u2013 RxJava-Enabled (Android) SQLiteDatabase API",
+  "Database Performance, LVM Snapshots, golang and sqlite3",
+  "Understanding SQLITE_BUSY",
+  "Compiling and running sqlite3-rsync from a branch",
+  "mvSQLite\u2019s storage layer: Transacting on multi-version data",
+  "ReQL(-Like) Interpreter for SQLite3",
+  "The sqlite3 test suite",
+  "SQLite3 bindings for React Native",
+  "Multi-threaded Access to an SQLite3 Database",
+  "Sqlite3 Window Function Remote Code Execution Vulnerability",
+  "A Query Acceleration Path for Analytics in SQLite3 (2022) [pdf]",
+  "Extending Sqlite3 using Nim macros",
+  "SQLite3 Fiddle",
+  "Bookshelf.js - a Javascript ORM for Node.js for PostgreSQL, MySQL, and SQLite3",
+  "Sqlite3 AndAsar Speed Up Publii 4x",
+  "Sqlightning: SQLite3 ported to use LMDB instead of its original Btree code",
+  "Show HN: A standard library for mattn/go-sqlite3",
+  "Sqlite3\u200a\u2013\u200aBug or hidden feature?"
+ ],
+ "schema": 1,
+ "term": "localdb"
+}

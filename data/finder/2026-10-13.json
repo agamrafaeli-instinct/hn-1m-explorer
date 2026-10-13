@@ -1,0 +1,79 @@
+{
+ "card_id": "h420",
+ "caveat": "Title matching only. Archive scores for 2025-26 are low for all stories, so only ratios are used.",
+ "date": "2026-10-13",
+ "dictionary": "data/finder/dictionaries/localdb.json",
+ "generator": "cross_window",
+ "label": "SQLite and DuckDB",
+ "minimum_matches_checked": true,
+ "note": "verdict is up against all earlier months and flat against the 12 months before",
+ "ratios": {
+  "latest_vs_before": 1.0109343132577036,
+  "latest_vs_prior": 3.209255683855566
+ },
+ "rule": {
+  "refute": 0.8,
+  "set_on": "2026-10-13",
+  "strong": 1.5,
+  "weak": 1.25
+ },
+ "schema": 1,
+ "source": "data/finder/candidates.json",
+ "story": {
+  "headline": "SQLite and DuckDB: the answer depends on which earlier window you pick",
+  "limit": "Title matching only: the word list will miss and mis-match some stories. Archive scores for 2025-26 are low for all stories, so only shares of titles are used.",
+  "opening": "SQLite and DuckDB matched 0.21% of story titles in the latest window (737 of 350,251 stories).",
+  "rows": [
+   {
+    "from": "2025-08",
+    "label": "Latest 12 months",
+    "n": 737,
+    "share": 0.0021042052699349893,
+    "to": "2026-07",
+    "total": 350251
+   },
+   {
+    "from": "2006-10",
+    "label": "All earlier months",
+    "n": 2874,
+    "share": 0.0006556676928299521,
+    "to": "2025-07",
+    "total": 4383318
+   },
+   {
+    "from": "2024-08",
+    "label": "The 12 months before",
+    "n": 602,
+    "share": 0.0020814460863973,
+    "to": "2025-07",
+    "total": 289222
+   }
+  ],
+  "takeaway": "Against all earlier months the share is 3.2x. Against the 12 months just before it is 1.0x.",
+  "tracked": "Tracked on the Tests page as h420. Supported at 1.25x or more against all earlier months, refuted at 0.8x or less, set on 2026-10-13 before this text was written. The term was picked because of its numbers, so this tests it on the current data and is not a prediction."
+ },
+ "term": "localdb",
+ "windows": {
+  "before": {
+   "from": "2024-08",
+   "n": 602,
+   "share": 0.0020814460863973,
+   "to": "2025-07",
+   "total": 289222
+  },
+  "latest": {
+   "from": "2025-08",
+   "n": 737,
+   "share": 0.0021042052699349893,
+   "to": "2026-07",
+   "total": 350251
+  },
+  "prior": {
+   "from": "2006-10",
+   "n": 2874,
+   "share": 0.0006556676928299521,
+   "to": "2025-07",
+   "total": 4383318
+  }
+ }
+}

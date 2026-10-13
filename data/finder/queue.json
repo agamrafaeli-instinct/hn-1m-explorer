@@ -1,53 +1,14 @@
 {
- "date": "2026-10-12",
+ "date": "2026-10-13",
  "rank_rule": "score = effect x sturdiness; effect is the largest |ln ratio|; sturdiness is the share of ratios pointing the same way; ties break on term name",
  "ranked": [
-  {
-   "effect": 1.1902,
-   "generator": "reversal",
-   "has_dictionary": true,
-   "label": "ChatGPT and GPT models",
-   "note": "verdict is down against the peak year and up against all earlier months",
-   "rank": 1,
-   "ratios": {
-    "latest_vs_peak": 0.3041486886203878,
-    "latest_vs_prior": 2.396589008302944
-   },
-   "score": 0.5951,
-   "sturdiness": 0.5,
-   "term": "gpt",
-   "windows": {
-    "latest": {
-     "from": "2025-08",
-     "n": 3285,
-     "share": 0.009378988211311317,
-     "to": "2026-07",
-     "total": 350251
-    },
-    "peak": {
-     "from": "2023-01",
-     "n": 9829,
-     "share": 0.03083685237590277,
-     "to": "2023-12",
-     "total": 318742,
-     "year": "2023"
-    },
-    "prior": {
-     "from": "2006-10",
-     "n": 17154,
-     "share": 0.003913473765763743,
-     "to": "2025-07",
-     "total": 4383318
-    }
-   }
-  },
   {
    "effect": 1.166,
    "generator": "cross_window",
    "has_dictionary": false,
    "label": "SQLite and DuckDB",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 2,
+   "rank": 1,
    "ratios": {
     "latest_vs_before": 1.0109343132577036,
     "latest_vs_prior": 3.209255683855566
@@ -85,7 +46,7 @@
    "has_dictionary": false,
    "label": "Vue",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 3,
+   "rank": 2,
    "ratios": {
     "latest_vs_before": 1.065976425737283,
     "latest_vs_prior": 0.3492728570448912
@@ -123,7 +84,7 @@
    "has_dictionary": false,
    "label": "GPU and chip hardware",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 4,
+   "rank": 3,
    "ratios": {
     "latest_vs_before": 1.042692385881718,
     "latest_vs_prior": 2.630891060904164
@@ -161,7 +122,7 @@
    "has_dictionary": false,
    "label": "Rust",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 5,
+   "rank": 4,
    "ratios": {
     "latest_vs_before": 1.2013200646818865,
     "latest_vs_prior": 2.493634824420922
@@ -199,7 +160,7 @@
    "has_dictionary": false,
    "label": "Java",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 6,
+   "rank": 5,
    "ratios": {
     "latest_vs_before": 0.8781853630319446,
     "latest_vs_prior": 0.4713602614216543
@@ -237,7 +198,7 @@
    "has_dictionary": false,
    "label": "Postgres, SQLite and DuckDB",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 7,
+   "rank": 6,
    "ratios": {
     "latest_vs_before": 0.9474269444570191,
     "latest_vs_prior": 2.0094481106355433
@@ -275,7 +236,7 @@
    "has_dictionary": false,
    "label": "Rust, Zig and C++",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 8,
+   "rank": 7,
    "ratios": {
     "latest_vs_before": 1.1569241102594747,
     "latest_vs_prior": 1.9810010198082884
@@ -313,7 +274,7 @@
    "has_dictionary": true,
    "label": "TypeScript",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 9,
+   "rank": 8,
    "ratios": {
     "latest_vs_before": 1.0567023371862203,
     "latest_vs_prior": 1.6963782954892392
@@ -351,7 +312,7 @@
    "has_dictionary": false,
    "label": "React",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 10,
+   "rank": 9,
    "ratios": {
     "latest_vs_before": 0.8520879035495187,
     "latest_vs_prior": 0.5977015038989634
@@ -389,7 +350,7 @@
    "has_dictionary": false,
    "label": "education and learning",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 11,
+   "rank": 10,
    "ratios": {
     "latest_vs_before": 0.8441020967175565,
     "latest_vs_prior": 0.6300560126921185
@@ -427,7 +388,7 @@
    "has_dictionary": false,
    "label": "Next.js, Svelte, Vue, htmx and Tailwind",
    "note": "verdict is down against the peak year and up against all earlier months",
-   "rank": 12,
+   "rank": 11,
    "ratios": {
     "latest_vs_peak": 0.6506380605079718,
     "latest_vs_prior": 1.3614416793197763
@@ -466,7 +427,7 @@
    "has_dictionary": false,
    "label": "puzzles and games of skill",
    "note": "verdict is down against the peak year and up against all earlier months",
-   "rank": 13,
+   "rank": 12,
    "ratios": {
     "latest_vs_peak": 0.6591237488202752,
     "latest_vs_prior": 1.3511338979442995
@@ -505,7 +466,7 @@
    "has_dictionary": false,
    "label": "question headlines",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 14,
+   "rank": 13,
    "ratios": {
     "latest_vs_before": 0.8417352850425003,
     "latest_vs_prior": 0.6873946276331904
@@ -543,7 +504,7 @@
    "has_dictionary": false,
    "label": "retro computing",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 15,
+   "rank": 14,
    "ratios": {
     "latest_vs_before": 1.0031144968955805,
     "latest_vs_prior": 1.4524518382945049
@@ -581,7 +542,7 @@
    "has_dictionary": false,
    "label": "all six deep-tech themes",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 16,
+   "rank": 15,
    "ratios": {
     "latest_vs_before": 1.0082429958658252,
     "latest_vs_prior": 1.4453571905453413
@@ -619,7 +580,7 @@
    "has_dictionary": false,
    "label": "animals",
    "note": "verdict is flat against all earlier months and down against the 12 months before",
-   "rank": 17,
+   "rank": 16,
    "ratios": {
     "latest_vs_before": 0.7126706876420856,
     "latest_vs_prior": 0.8835316428121883
@@ -657,7 +618,7 @@
    "has_dictionary": false,
    "label": "Git, Linux, Neovim, Nix and VS Code",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 18,
+   "rank": 17,
    "ratios": {
     "latest_vs_before": 1.110698928407215,
     "latest_vs_prior": 1.3524610381816036
@@ -695,7 +656,7 @@
    "has_dictionary": false,
    "label": "solar energy",
    "note": "verdict is flat against all earlier months and down against the 12 months before",
-   "rank": 19,
+   "rank": 18,
    "ratios": {
     "latest_vs_before": 0.7447242174016887,
     "latest_vs_prior": 0.8148969731908975
@@ -733,7 +694,7 @@
    "has_dictionary": false,
    "label": "Docker, Kubernetes and Terraform",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 20,
+   "rank": 19,
    "ratios": {
     "latest_vs_before": 0.9442505760731,
     "latest_vs_prior": 0.7455197073931383
@@ -771,7 +732,7 @@
    "has_dictionary": false,
    "label": "hands-on making",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 21,
+   "rank": 20,
    "ratios": {
     "latest_vs_before": 0.8170642136488885,
     "latest_vs_prior": 0.7483399091700453
@@ -809,7 +770,7 @@
    "has_dictionary": false,
    "label": "Go",
    "note": "verdict is flat against all earlier months and down against the 12 months before",
-   "rank": 22,
+   "rank": 21,
    "ratios": {
     "latest_vs_before": 0.7653694395294399,
     "latest_vs_prior": 0.8063081921840074
@@ -847,7 +808,7 @@
    "has_dictionary": false,
    "label": "Kubernetes",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
-   "rank": 23,
+   "rank": 22,
    "ratios": {
     "latest_vs_before": 0.8875086028367483,
     "latest_vs_prior": 0.7714084108966288
@@ -885,7 +846,7 @@
    "has_dictionary": false,
    "label": "business-software words",
    "note": "verdict is up against all earlier months and flat against the 12 months before",
-   "rank": 24,
+   "rank": 23,
    "ratios": {
     "latest_vs_before": 1.0992969414057563,
     "latest_vs_prior": 1.2887460048314303
@@ -925,8 +886,13 @@
    "term": "llm"
   },
   {
+   "generator": "reversal",
+   "reason": "shown in the last 90 days",
+   "term": "gpt"
+  },
+  {
    "generator": "cross_window",
-   "reason": "a stronger generator already covers this term",
+   "reason": "shown in the last 90 days",
    "term": "gpt"
   },
   {
