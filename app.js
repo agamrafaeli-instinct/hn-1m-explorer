@@ -59,6 +59,7 @@ async function load(nChunks) {
     if (k === 1 || k % 3 === 0 || k === files.length) { buildTypes(); refresh(); await new Promise(r => setTimeout(r)); }
   }
   $('status').textContent = `${D.n.toLocaleString()} posts loaded`;
+  $('load_src').textContent = `Source: ${D.n.toLocaleString()} posts from ${files.length} data file${files.length === 1 ? '' : 's'}${sample ? ' (the small sample, not the full archive)' : ''}, listed in ${base}manifest.json${mf.generated_at ? ', built ' + mf.generated_at.slice(0, 10) : ''}.`;
   $('barfill').parentNode.style.display = 'none';
 }
 function buildTypes() {

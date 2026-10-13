@@ -70,7 +70,7 @@
         });
       });
       termBlock(root); monthBlock(root); rowBlock(root);
-      root.appendChild(el('p', 'wn wfoot', 'From the archive in data/archive and the daily counts in data/history. ' + M.note));
+      root.appendChild(el('p', 'wn wfoot', 'Source: the archive in data/archive and the daily counts in data/history, ' + (ys.length ? M.months.filter(function (m) { return m.stories || m.comments; })[0].month + ' to ' + M.months.filter(function (m) { return m.stories || m.comments; }).slice(-1)[0].month + '. ' : '') + M.note));
     }).catch(function () { root.textContent = 'Could not load the history files. Try again.'; });
   };
 })();
