@@ -7,11 +7,11 @@ HN digest 2026-10-13 (UTC): 16 new stories at 300+ points
 - 338 pts, 513 comments: The gap in shared understanding of LLM capability is widening https://news.ycombinator.com/item?id=50047422
 - 337 pts, 149 comments: A Modern Web App in C https://news.ycombinator.com/item?id=50058528
 - 323 pts, 179 comments: GLM-Legal https://news.ycombinator.com/item?id=50058507
-- 321 pts, 182 comments: Passkeys are a trap https://news.ycombinator.com/item?id=50048312
 - 319 pts, 344 comments: QGIS bans AI assisted contributions https://news.ycombinator.com/item?id=50054751
 - 310 pts, 185 comments: Codex CLI installs a persistent, self-updating background daemon by default https://news.ycombinator.com/item?id=50060694
 - 307 pts, 267 comments: AI coding agents generate more code, but not more software https://news.ycombinator.com/item?id=50059523
 - 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055
 - 306 pts, 321 comments: Why aren't AI companies being charged for hacking? https://news.ycombinator.com/item?id=50057278
+- 300 pts, 82 comments: Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver https://news.ycombinator.com/item?id=50055593
 - 300 pts, 61 comments: Cartographers of North Korea (2019) https://news.ycombinator.com/item?id=50047091
 - 300 pts, 47 comments: 'Wallace and Gromit,' 90% Alone https://news.ycombinator.com/item?id=50020533
