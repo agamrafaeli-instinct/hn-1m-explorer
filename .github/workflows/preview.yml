@@ -1,0 +1,50 @@
+name: Branch preview
+# Publishes a branch (not main) to the preview repo and runs the acceptance checks against that URL (#251).
+# One preview at a time: the site is too big for Pages to hold two copies. The live site is never touched.
+on:
+  push:
+    branches-ignore: [main, qa-reports]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: branch-preview
+  cancel-in-progress: true
+env:
+  PREVIEW_REPO: agamrafaeli-instinct/hn-1m-explorer-preview
+  PREVIEW_URL: https://agamrafaeli-instinct.github.io/hn-1m-explorer-preview/
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage the site
+        run: |
+          python3 scripts/stage_site.py --output /tmp/site
+          printf '%s %s\n' "${GITHUB_REF_NAME}" "${GITHUB_SHA}" > /tmp/site/preview.txt
+          touch /tmp/site/.nojekyll
+      - name: Publish to the preview repo
+        env:
+          TOKEN: ${{ secrets.PREVIEW_TOKEN }}
+        run: |
+          cd /tmp/site
+          git init -q -b main
+          git add -A
+          git -c user.name=hn-preview -c user.email=preview@users.noreply.github.com commit -qm "Preview of ${GITHUB_REF_NAME} ${GITHUB_SHA}"
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${PREVIEW_REPO}.git" HEAD:main
+      - name: Wait for the preview to go live
+        run: |
+          for i in $(seq 1 60); do
+            if curl -fsS "${PREVIEW_URL}preview.txt?x=$i" | grep -q "${GITHUB_SHA}"; then echo "preview is live"; exit 0; fi
+            sleep 15
+          done
+          echo "preview did not appear in 15 minutes"; exit 1
+      - name: Acceptance checks against the preview
+        run: |
+          set -o pipefail
+          node scripts/acceptance.mjs --all --site "${PREVIEW_URL}" | tee acc.txt
+          { echo "### Preview of ${GITHUB_REF_NAME}"; echo "${PREVIEW_URL}"; echo '```'; cat acc.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
