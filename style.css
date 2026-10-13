@@ -284,3 +284,5 @@ select{min-height:44px}
 .ph_fig{margin:12px 0}.ph_fig figcaption{margin:0 0 4px}.ph_fig svg{width:100%;height:auto;display:block}
 .pg_share{min-height:44px;padding:0 16px;margin:0 0 10px;border:1.5px solid var(--ac);border-radius:99px;background:#fff;color:var(--act);font:700 14px Inter;cursor:pointer}
 .sgx_tbl{width:100%;border-collapse:collapse;font-size:.9rem;margin:10px 0}.sgx_tbl caption{text-align:left;font-weight:700;padding:0 0 4px}.sgx_tbl th,.sgx_tbl td{text-align:left;padding:4px 6px;border-bottom:1px solid #e9e2d6}.sgx_tbl td:nth-child(n+2),.sgx_tbl th:nth-child(n+2){text-align:right}
+.sgx_tbl td a{display:inline-block;min-height:44px;line-height:44px}
+.sgx_tbl td a{color:inherit;text-decoration:underline;text-underline-offset:3px}
