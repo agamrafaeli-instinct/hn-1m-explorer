@@ -281,3 +281,4 @@ select{min-height:44px}
 
 .sg_beat h3{margin:18px 0 8px;font-size:1.05rem}.sg_ul{margin:0;padding-left:20px;line-height:1.5}.sg_ul li{margin:0 0 8px}
 .sgx_bars{margin:12px 0}.sgx_bar{display:grid;grid-template-columns:112px 1fr 40px;align-items:center;gap:8px;margin:6px 0;font-size:.9rem}.sgx_bar i{display:block;height:16px;background:var(--accent,#ff6600);border-radius:3px}.sgx_bar b{text-align:right}.sg_cav{font-size:.85rem;color:#6b6258;margin:0 0 8px}
+.ph_fig{margin:12px 0}.ph_fig figcaption{margin:0 0 4px}.ph_fig svg{width:100%;height:auto;display:block}
