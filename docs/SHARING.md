@@ -20,6 +20,7 @@ Small share pages, one file each, built at deploy. Each has its own title, descr
 | --- | --- | --- |
 | Card | `share/c/<card>.html` (69 cards) | `#/c/<card>` |
 | Week | `share/w/<audience>/<week>.html` for each saved week in `data/findings/` | `#/w/<audience>/<week>` |
+| Story page | `share/p/<route>.html` for `phoenix` and `rings` | `#/<route>` |
 | Current week | `share/w/<audience>/current.html` | the newest saved week for that audience |
 
 Titles and summaries come from the card file (`hypotheses/*.json` title) and the saved week file (`data/findings/<week>.json`, the published headline). A share page never holds a number that is not in those files.

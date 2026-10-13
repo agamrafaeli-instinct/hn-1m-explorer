@@ -39,7 +39,7 @@ def stage(root,destination):
             for f in ('bundle.json','tally.json'): (hd/f).unlink(missing_ok=True)
     if hd.is_dir():
         sys.path.insert(0,str(root/'scripts')); import build_share_pages
-        print('share pages:',build_share_pages.card_pages(destination)+build_share_pages.week_audience_pages(destination))
+        print('share pages:',build_share_pages.card_pages(destination)+build_share_pages.week_audience_pages(destination)+build_share_pages.route_pages(destination))
     print('Published bytes:',size,'; assets:',', '.join(sorted(names)))
     return size
 

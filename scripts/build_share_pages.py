@@ -61,7 +61,19 @@ def week_audience_pages(site):
         (d / 'current.html').write_text(page(t, desc, '../../../#/w/' + a + '/' + last['week'])); n += 1
     return n
 
+# Story pages that have a route of their own. Titles and descriptions match TITLES in router.js (a test checks it).
+ROUTES = {
+    'phoenix': ('Quiet, then back', 'Words and sites on Hacker News that went quiet for a year or more and then came back.'),
+    'rings': ('What HN rewarded, year by year', 'Themes, domains and story types for each year of Hacker News, 2006 to now.'),
+}
+
+def route_pages(site):
+    out = pathlib.Path(site) / 'share' / 'p'; out.mkdir(parents=True, exist_ok=True)
+    for r, (t, d) in ROUTES.items():
+        (out / (r + '.html')).write_text(page(t + ' (Hacker News)', d, '../../#/' + r))
+    return len(ROUTES)
+
 if __name__ == '__main__':
     import sys
     site = sys.argv[1] if len(sys.argv) > 1 else '_site'
-    print('share pages:', card_pages(site) + week_audience_pages(site))
+    print('share pages:', card_pages(site) + week_audience_pages(site) + route_pages(site))

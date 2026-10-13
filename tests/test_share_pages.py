@@ -20,6 +20,16 @@ class SharePages(unittest.TestCase):
             self.assertIn('property="og:title"', t)
             self.assertIn('url=../../#/c/' + c['id'] + '"', t)
 
+    def test_route_pages_match_router_titles(self):
+        router = (ROOT / 'router.js').read_text()
+        for r in ('phoenix', 'rings'):
+            m = re.search(r"^\s+" + r + r": \['([^']+)', '([^']+)'\]", router, re.M)
+            self.assertTrue(m, r + ' has no TITLES entry in router.js')
+            t = (self.out / 'share/p' / (r + '.html')).read_text()
+            self.assertIn('<title>' + html.escape(m.group(1), quote=True) + ' (Hacker News)</title>', t)
+            self.assertIn('content="' + html.escape(m.group(2), quote=True) + '"', t)
+            self.assertIn('url=../../#/' + r + '"', t)
+
     def test_week_pages_match_saved_weeks(self):
         idx = json.loads((ROOT / 'data/weekly/index.json').read_text())['weeks']
         for a in ('engineers', 'vcs', 'geeks'):
