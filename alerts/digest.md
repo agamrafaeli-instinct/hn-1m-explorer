@@ -1,4 +1,4 @@
-HN digest 2026-10-13 (UTC): 14 new stories at 300+ points
+HN digest 2026-10-13 (UTC): 15 new stories at 300+ points
 - 424 pts, 209 comments: Muse Wonder https://news.ycombinator.com/item?id=50059115
 - 357 pts, 281 comments: AI is a tool and using it well takes skill https://news.ycombinator.com/item?id=50063427
 - 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
@@ -8,6 +8,7 @@ HN digest 2026-10-13 (UTC): 14 new stories at 300+ points
 - 319 pts, 344 comments: QGIS bans AI assisted contributions https://news.ycombinator.com/item?id=50054751
 - 313 pts, 348 comments: Citroen revives the 2CV for an electric age https://news.ycombinator.com/item?id=50055220
 - 310 pts, 185 comments: Codex CLI installs a persistent, self-updating background daemon by default https://news.ycombinator.com/item?id=50060694
+- 308 pts, 421 comments: Thinking will become a hobby https://news.ycombinator.com/item?id=50059204
 - 307 pts, 267 comments: AI coding agents generate more code, but not more software https://news.ycombinator.com/item?id=50059523
 - 306 pts, 321 comments: Why aren't AI companies being charged for hacking? https://news.ycombinator.com/item?id=50057278
 - 305 pts, 74 comments: The baffling intelligence of a single cell (2024) https://news.ycombinator.com/item?id=50041866
