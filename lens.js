@@ -44,6 +44,7 @@
       e.top_stories.forEach(function (s) { var li = el('li'), a = el('a', null, s.title); a.href = 'https://news.ycombinator.com/item?id=' + s.id; a.rel = 'noopener'; li.appendChild(a); li.appendChild(el('span', 'wn', s.week + ' \u00b7 ' + s.points.toLocaleString() + ' points \u00b7 ' + s.comments.toLocaleString() + ' comments')); tl.appendChild(li); });
       root.appendChild(tl);
     }
+    if (e.weeks.length) root.appendChild(el('p', 'src rg_fine', 'Source: the saved weekly snapshots of Hacker News, ' + e.weeks[0].week + ' to ' + e.weeks[e.weeks.length - 1].week + ' (' + e.weeks.length + ' weeks).'));
     var c = 'Hacker News talking, not a measure of what is true. Under ' + FLOOR + ' a week is too small to count, so it shows as seen or none' + (e.kind === 'domain' ? ', and a site missing from a week had under 3 stories' : '') + '. Counts use stories only. ' + (e.kind === 'name' ? 'A match is a word list match on titles and text and does not say who is talking or why. ' : '') + 'Only the ' + seen + ' saved weeks are shown.' + (e.weeks.some(function (r) { return r.backfill; }) ? ' * Rebuilt from the archive after the week ended.' : '');
     root.appendChild(el('p', 'wn wfoot', c));
   }
