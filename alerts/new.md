@@ -1,4 +1,5 @@
-HN new 300+ stories, last 12h, updated 2026-10-12 22:54 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-13 01:04 UTC. Forward only ids not sent before.
+50059523 | 307 pts, 267 comments | AI coding agents generate more code, but not more software | https://news.ycombinator.com/item?id=50059523
 50058528 | 337 pts, 149 comments | A Modern Web App in C | https://news.ycombinator.com/item?id=50058528
 50057278 | 306 pts, 321 comments | Why aren't AI companies being charged for hacking? | https://news.ycombinator.com/item?id=50057278
 50055304 | 354 pts, 576 comments | Hackers activate automatic defrosting in supermarket fridges across Europe | https://news.ycombinator.com/item?id=50055304
