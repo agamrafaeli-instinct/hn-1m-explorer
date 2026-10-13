@@ -99,6 +99,7 @@
     var x = el('button', 'cmp_chip', 'Close'); x.onclick = function () { d.close(); d.remove(); }; d.appendChild(x); document.body.appendChild(d); d.showModal();
   }
   window.HowInit = function () {
+    fetch('data/manifest.json').then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (m) { var e = document.getElementById('how_built'); if (!e || !m.generated_at || !m.total_rows) return; e.textContent = 'The Explorer reads ' + m.total_rows.toLocaleString('en-US') + ' posts, built ' + m.generated_at.slice(0, 10) + ' (UTC). Source: data/manifest.json.'; e.hidden = false; }).catch(function () { });
     loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
     loading.then(function () { var e = document.getElementById('how_start'); if (e && D.months.length) e.textContent = D.months[0].slice(0, 4); });
   };

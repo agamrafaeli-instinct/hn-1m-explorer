@@ -218,6 +218,7 @@
 <section class="doc">
   <h2>Method</h2>
   <p class="lede">Every number on this site is computed from public Hacker News data, in your browser.</p>
+  <p class="src" id="how_built" hidden></p>
   <ul>
     <li><b>Data.</b> Every Hacker News story since <span id="how_start">2006</span>, from a public archive: titles, links, points and comment counts, plus daily counts of stories, comments, jobs and polls. Comment text and author names are held only for the newest items, which a daily job pulls from the public HN API. Exact counts and dates are in data/archive/manifest.json and data/manifest.json.</li>
     <li><b>Centers of gravity.</b> For each lens (author, domain, words, hour, weekday, month, points, comments, type) we measure how concentrated points are, for example what share the top 1% of stories hold.</li>
