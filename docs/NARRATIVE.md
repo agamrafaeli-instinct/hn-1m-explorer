@@ -16,3 +16,10 @@ Source of truth for how the site, its docs and its tickets talk about the projec
 ## Careful with the wording
 - Decision (2026-10-12): the pitch says "points", not "votes". The archive holds points per story as collected, not each vote, and scores for 2025-26 are low, so those years use ratios (see docs/INTEGRITY.md and the Method page).
 - Say "full archive" or "every story since 2006", never "1M" (only the repo name keeps it).
+
+## What the data has shown so far (added 2026-10-13, from the shipped essay)
+These are results, not decisions. The pitch above is the owner's wording and is unchanged; the essay on the home page reports what the numbers say.
+- Year by year (#/rings, essay beat 3): in six general-interest themes (space, games, privacy, health, history, science) 2010 and 2025 look almost the same. In six technology themes they do not: React peaked in 2017, Rust and LLMs are highest in 2026. So the pitch line "the taste doesn't change" holds for the general themes and not for the technology ones. Source: data/rings.json, docs/RINGS_FINDING.md.
+- Concentration (essay beat 4): the top 1% of the 543,583 sites hold about two thirds of all points. Source: data/atlas/concentration.json.
+- Quiet, then back (#/phoenix, essay beat 4): 285 returns, median quiet spell 37 months, no anniversary pattern, 261 of 285 fell quiet again within a year. Source: data/resurfacing/groups.json, docs/RESURFACING_SPEC.md.
+- The essay's closing answer (beat 5) lists what the archive cannot settle: no comments, titles only, points versus timing, partial years, no cause tested.
