@@ -29,7 +29,7 @@ def chart(term, ms, ret):
     out.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="#e9e2d6"/>' % (x(a), PT, x(b) - x(a), H - PT - PB))
     out.append('<polyline points="%s" fill="none" stroke="#1a1814" stroke-width="1.2"/>' % pts)
     out.append('<line x1="%.1f" x2="%.1f" y1="%d" y2="%d" stroke="#ff6600" stroke-width="2"/>' % (x(b), x(b), PT, H - PB))
-    out.append('<text x="%d" y="%d" font-size="10" fill="#6b6258">2006</text><text x="%d" y="%d" font-size="10" fill="#6b6258" text-anchor="end">2026</text>' % (PL, H - 6, W - PR, H - 6))
+    out.append('<text x="%d" y="%d" font-size="13" fill="#6b6258">2006</text><text x="%d" y="%d" font-size="13" fill="#6b6258" text-anchor="end">2026</text>' % (PL, H - 6, W - PR, H - 6))
     out.append('</svg><p class="sg_cav">Grey is the quiet spell, orange is the return month. Highest month: %.1f stories per 10,000.</p></figure>' % top)
     return ''.join(out)
 
