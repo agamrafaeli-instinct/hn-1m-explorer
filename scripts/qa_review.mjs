@@ -51,7 +51,7 @@ for(const i of document.querySelectorAll('img'))if(vis(i)&&!i.hasAttribute('alt'
 const svgs=[...document.querySelectorAll('svg')].filter(s=>vis(s)&&s.getBoundingClientRect().width>40&&!s.getAttribute('aria-label')&&!s.getAttribute('aria-hidden')&&!s.querySelector('title')&&!s.closest('[aria-hidden=true],[role=img]')).length;
 const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){const t=n.textContent.trim();if(t.length<2||!n.parentElement||!vis(n.parentElement))continue;const fs=parseFloat(getComputedStyle(n.parentElement).fontSize);if(fs<12)tiny.add(Math.round(fs*10)/10+'px: '+t.slice(0,30));}
 for(const h of document.querySelectorAll('h2,h3'))if(vis(h)&&h.innerText.trim()){const nx=h.nextElementSibling;if(!nx||!(nx.innerText||'').trim()&&!nx.matches('svg,img,canvas,form,input,select,button')||nx.querySelector('svg,img,canvas,input,select,button,[role=img]'))empty.push(h.innerText.trim().slice(0,40));}
-return JSON.stringify({title:document.title,h1:([...document.querySelectorAll('h1')].find(vis)||{}).innerText||'',text:(document.body.innerText||'').replace(/\\s+/g,' ').trim(),scroll:document.documentElement.scrollWidth-innerWidth,height:document.documentElement.scrollHeight,tap,unl,noalt,svgs,tiny:[...tiny].slice(0,5),empty});})()`;
+return JSON.stringify({title:document.title,h1:([...document.querySelectorAll('h1')].find(vis)||{}).innerText||'',text:(document.body.innerText||'').replace(/\\s+/g,' ').trim(),copy:(()=>{const c=document.body.cloneNode(true);c.querySelectorAll('#results,.lens_top,a[href^="http"],script,style').forEach(e=>e.remove());return (c.innerText||c.textContent||'').replace(/\\s+/g,' ').trim()})(),scroll:document.documentElement.scrollWidth-innerWidth,height:document.documentElement.scrollHeight,tap,unl,noalt,svgs,tiny:[...tiny].slice(0,5),empty});})()`;
 const rows = []; let n = 0;
 for (const route of routes) {
   const before = probs.length; await send('Page.navigate', { url: SITE + 'index.html' + route });
@@ -70,7 +70,7 @@ for (const route of routes) {
   if (v.noalt.length) f.push(`${v.noalt.length} image(s) with no alt`);
   if (v.tiny.length) f.push('text under 12px: ' + v.tiny.slice(0, 3).join('; '));
   if (/\b(undefined|NaN|\[object|null)\b/.test(v.text)) f.push('"undefined", "NaN" or "null" shows in the text');
-  const b = [...new Set((v.text.match(BANNED) || []).filter(x => x !== '1m').map(x => x.toLowerCase()))]; if (b.length) f.push('banned word(s): ' + b.join(', '));
+  const b = [...new Set(((v.copy||v.text).match(BANNED) || []).filter(x => x !== '1m').map(x => x.toLowerCase()))]; if (b.length) f.push('banned word(s): ' + b.join(', '));
   if (v.text.length < 80) f.push('very little text on the page (' + v.text.length + ' characters)');
   // First taps: the first in-page link and the first button outside the tab bar. A link that changes nothing is a finding; a button that changes nothing is only noted.
   const taps = [];
