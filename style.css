@@ -296,3 +296,6 @@ label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:
 
 .tp_q{display:block;width:100%;box-sizing:border-box;min-height:44px;margin:8px 0;padding:0 12px;font:16px Inter;border:1.5px solid #cdbd9f;border-radius:10px;background:#fff}
 .tp_row[hidden]{display:none}
+#v_phoenix td a{display:inline-block;min-width:44px;text-align:center}
+.ph_jump{display:inline-block;min-height:44px;line-height:44px}
+.rg_find a{min-width:44px;text-align:center}
