@@ -16,3 +16,13 @@ class EssayTables(unittest.TestCase):
         got = re.findall(r'<tr><td>(?:<a [^>]*>)?([^<]*)(?:</a>)?</td><td>[^<]*</td><td>[^<]*</td><td>(\d+)</td></tr>', rows)
         self.assertEqual(got, [(x['subject'], str(x['burial'])) for x in sorted(sharp, key=lambda x: x['subject'])])
         self.assertEqual(len(sharp), 13)
+
+
+class RingsThemeLinks(unittest.TestCase):
+    def test_linked_themes_are_the_one_word_themes_in_the_data(self):
+        h = (ROOT / 'index.html').read_text()
+        linked = re.search(r'rg_find">(.*?)</p>', h, re.S).group(1)
+        words = re.findall(r'href="#/explore\?q=([a-z]+)"', linked)
+        themes = json.loads((ROOT / 'data/rings.json').read_text())['themes']
+        one = [t['label'].lower() for t in themes if t['terms'] == t['label']]
+        self.assertEqual(words, one)

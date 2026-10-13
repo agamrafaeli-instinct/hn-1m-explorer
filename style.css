@@ -288,3 +288,5 @@ select{min-height:44px}
 .sgx_tbl td a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .ph_find,.ph_jump{color:inherit;text-decoration:underline;text-underline-offset:3px}.ph_find{display:inline-block;min-height:44px;line-height:44px}
 #ph_sharp{scroll-margin-top:12px}
+.rg_find a{display:inline-block;min-height:44px;line-height:44px;margin-right:12px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.rg_find a:last-of-type{margin-right:0}
