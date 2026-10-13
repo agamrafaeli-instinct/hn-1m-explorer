@@ -1862,13 +1862,28 @@
     "relevant": true,
     "sharp": true
    },
-   "failing": [
-    "insightful"
-   ],
+   "failing": [],
    "group_a_count": 737.0,
    "id": "h420",
+   "replaced_by": "h421",
    "score": 0.8,
    "title": "SQLite and DuckDB: a bigger share than before"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 737.0,
+   "id": "h421",
+   "score": 1.0,
+   "title": "SQLite and DuckDB: a bigger share in the latest year"
   }
  ],
  "schema": 1,

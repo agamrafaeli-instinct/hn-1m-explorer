@@ -57,3 +57,4 @@ Wording rule: each question restates the card's own hypothesis as a yes/no quest
 | h417 | Does a story about puzzles and games of skill get more points than a story about music? |
 | h418 | Does a story about Show HN posts get more points than a story about hands-on making? |
 | h419 | Does a story about business-software words get more points than a story about Show HN posts? |
+| h421 | Are SQLite and DuckDB a bigger share of Hacker News stories than before? |
