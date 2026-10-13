@@ -293,3 +293,6 @@ select{min-height:44px}
 .whole{display:flex;align-items:center;gap:8px;min-height:44px;font-size:15px}.whole input{width:22px;min-height:22px;height:22px}
 label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:auto}label.whole input{flex:none}
 .cmp_find{margin:12px 0}.cmp_find a{display:inline-block;min-height:44px;line-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+.tp_q{display:block;width:100%;box-sizing:border-box;min-height:44px;margin:8px 0;padding:0 12px;font:16px Inter;border:1.5px solid #cdbd9f;border-radius:10px;background:#fff}
+.tp_row[hidden]{display:none}

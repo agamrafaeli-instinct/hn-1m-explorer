@@ -110,6 +110,9 @@
         var s = t.series.slice(-120), mx = Math.max.apply(null, s) || 1, svg = S('svg', { viewBox: '0 0 80 20', width: 80, height: 20, 'aria-hidden': 'true', focusable: 'false' });
         svg.appendChild(S('path', { d: s.map(function (v, i) { return (i ? 'L' : 'M') + (i * 80 / 119).toFixed(1) + ' ' + (19 - 18 * v / mx).toFixed(1); }).join(''), fill: 'none', stroke: '#ff6600', 'stroke-width': 1.5 }));
         a.appendChild(svg); box.appendChild(a); });
+      var q = document.getElementById('tp_q'), none = document.getElementById('tp_none');
+      var filt = function () { var v = q.value.trim().toLowerCase(), n = 0; [].forEach.call(box.children, function (r) { var ok = !v || r.querySelector('b').textContent.toLowerCase().indexOf(v) >= 0; r.hidden = !ok; if (ok) n++; }); none.hidden = n > 0; };
+      q.oninput = filt; filt();
     });
   };
   window.CompareInit = function () {
