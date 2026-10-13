@@ -1,13 +1,14 @@
-HN digest 2026-10-13 (UTC): 16 new stories at 300+ points
+HN digest 2026-10-13 (UTC): 17 new stories at 300+ points
 - 424 pts, 209 comments: Muse Wonder https://news.ycombinator.com/item?id=50059115
 - 388 pts, 108 comments: Google is illegaly cutting forest to build data centers https://news.ycombinator.com/item?id=50048638
+- 357 pts, 281 comments: AI is a tool and using it well takes skill https://news.ycombinator.com/item?id=50063427
 - 356 pts, 108 comments: Deloitte falsified documents to evade tax on Abramovich's wealth https://news.ycombinator.com/item?id=50054207
 - 354 pts, 576 comments: Hackers activate automatic defrosting in supermarket fridges across Europe https://news.ycombinator.com/item?id=50055304
 - 352 pts, 166 comments: Fingerprints are the new cookies https://news.ycombinator.com/item?id=50048642
-- 338 pts, 513 comments: The gap in shared understanding of LLM capability is widening https://news.ycombinator.com/item?id=50047422
 - 337 pts, 149 comments: A Modern Web App in C https://news.ycombinator.com/item?id=50058528
 - 323 pts, 179 comments: GLM-Legal https://news.ycombinator.com/item?id=50058507
 - 319 pts, 344 comments: QGIS bans AI assisted contributions https://news.ycombinator.com/item?id=50054751
+- 313 pts, 348 comments: Citroen revives the 2CV for an electric age https://news.ycombinator.com/item?id=50055220
 - 310 pts, 185 comments: Codex CLI installs a persistent, self-updating background daemon by default https://news.ycombinator.com/item?id=50060694
 - 307 pts, 267 comments: AI coding agents generate more code, but not more software https://news.ycombinator.com/item?id=50059523
 - 307 pts, 46 comments: So, You’d Like To Sell Your Print Issues Of The Onion? https://news.ycombinator.com/item?id=50047055

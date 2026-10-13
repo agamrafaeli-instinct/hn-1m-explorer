@@ -1,5 +1,27 @@
 [
  {
+  "id": "50063427",
+  "title": "AI is a tool and using it well takes skill",
+  "points": 357,
+  "comments": 281,
+  "author": "layer8",
+  "hn": "https://news.ycombinator.com/item?id=50063427",
+  "url": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+  "created_at": "2026-10-12T21:40:18Z",
+  "reported_at": 1791875169
+ },
+ {
+  "id": "50055220",
+  "title": "Citroen revives the 2CV for an electric age",
+  "points": 313,
+  "comments": 348,
+  "author": "scrlk",
+  "hn": "https://news.ycombinator.com/item?id=50055220",
+  "url": "https://www.bbc.com/news/articles/c620r33plgppo",
+  "created_at": "2026-10-12T12:09:09Z",
+  "reported_at": 1791875169
+ },
+ {
   "id": "50055593",
   "title": "Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver",
   "points": 300,
