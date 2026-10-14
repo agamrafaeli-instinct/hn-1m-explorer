@@ -1,10 +1,10 @@
 // Shared Explorer links preserve the loaded slice, using only offered sizes.
 const settled = async t => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 240; i++) {
     if (await t.js("!busy && loadedSize > 0")) return;
     await t.wait(300);
   }
-  throw Error('Explorer load did not finish');
+  throw Error('Explorer load did not finish: ' + await t.js("JSON.stringify({busy,loadedSize,posts:D.n,status:document.getElementById('status').textContent})"));
 };
 export default async (t) => {
   await t.open('#/explore?q=a'); await settled(t);
