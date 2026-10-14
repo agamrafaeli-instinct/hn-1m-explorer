@@ -358,3 +358,7 @@ body[data-view=compare]{overflow:auto;padding-bottom:58px}
 .baseline_period{font-size:14px;line-height:1.5}
 .baseline_period b,.baseline_period span{display:block}
 .baseline_ratio{font-size:14px;line-height:1.5}
+
+.sg_map{margin-top:14px;width:100%;font-size:14px}
+.sg_map p{margin:0 0 4px;color:var(--mut)}
+.sg_map a{display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px;padding:4px 0;line-height:1.35}
