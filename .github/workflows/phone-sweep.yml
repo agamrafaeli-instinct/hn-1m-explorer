@@ -42,3 +42,17 @@ jobs:
           else
             gh issue create --repo "$REPO" --label phone-sweep --title "Phone sweep: $count screen-widths with a finding" --body-file body.md
           fi
+      - name: Tap target check on the live site (#430)
+        run: |
+          node scripts/acceptance.mjs 419 --site "https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/" > tap.txt 2>&1 && rc=0 || rc=$?
+          cat tap.txt
+          gh label create tap-targets --color 0E8A16 --description 'Nightly link or button under 44px' 2>/dev/null || true
+          num=$(gh issue list --repo "$REPO" --label tap-targets --state open --json number -q '.[0].number // empty')
+          url="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
+          if [ "$rc" = 0 ]; then
+            if [ -n "$num" ]; then gh issue close "$num" --repo "$REPO" --comment "Tap target check passes. Closing. $url"; fi
+          else
+            { echo "Nightly check (acceptance 419) found links or buttons under 44 px. Each line names the element, its tag and class, and its size. Run: $url"; echo; echo '```'; grep -E 'FAIL|acceptance:' tap.txt | cut -c1-1500; echo '```'; } > tap.md
+            if [ -n "$num" ]; then gh issue edit "$num" --repo "$REPO" --body-file tap.md
+            else gh issue create --repo "$REPO" --label tap-targets --title "Tap targets: a link or button is under 44 px" --body-file tap.md; fi
+          fi

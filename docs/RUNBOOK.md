@@ -107,6 +107,8 @@ When a run fails (the issue already names the failing step, the last 30 log line
 ## Nightly phone sweep (#245)
 `.github/workflows/phone-sweep.yml` runs `scripts/phone_sweep.mjs` against the live site every night (21:17 UTC) and can be started by hand. `scripts/phone_sweep_report.py` builds the issue text. One open issue labelled `phone-sweep` is edited each night; if a night has 0 findings the issue is closed and none is opened. It is a separate workflow, so it never blocks a deploy.
 
+The same workflow then runs acceptance 419 (every link and button on 8 routes is at least 44 px tall) on the live site. A failure opens or updates one issue labelled `tap-targets` that lists each element with its tag, class and size; a passing night closes it.
+
 ## Copy lint (#246)
 `scripts/copy_lint.py` runs in prepush. It fails on an em dash, the two banned archive-size phrases and the banned filler words, all listed in docs/VOICE.md, but only in lines you added since origin/main (and new files). The repo name and URLs are exempt. `--all` lists hits across every checked-in text file without failing.
 
