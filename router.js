@@ -17,10 +17,11 @@
   document.addEventListener('click', async (e) => {
     const b = e.target.closest && e.target.closest('button[data-share]'); if (!b) return;
     let url = new URL('share/p/' + b.dataset.share + '.html', location.href.split('#')[0]).href;
-    if (b.dataset.share === 'compare') {
+    if (b.dataset.share === 'compare' || b.dataset.share === 'topics') {
       const current = new URLSearchParams(location.hash.split('?')[1] || ''), chosen = new URLSearchParams();
-      ['topics', 'years'].forEach(k => { const v = current.get(k); if (v) chosen.set(k, v); });
-      if (chosen.toString()) url = location.href.split('#')[0] + '#/compare?' + chosen.toString();
+      const keys = b.dataset.share === 'compare' ? ['topics', 'years'] : ['q', 'sort'];
+      keys.forEach(k => { const v = current.get(k); if (v) chosen.set(k, v); });
+      if (chosen.toString()) url = location.href.split('#')[0] + '#/' + b.dataset.share + '?' + chosen.toString();
     }
     const title = (TITLES[b.dataset.share] || [''])[0] + ' (Hacker News)';
     try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
