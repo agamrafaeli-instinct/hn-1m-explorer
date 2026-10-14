@@ -1,0 +1,21 @@
+const capture = "Object.defineProperty(navigator,'share',{value:async x=>{window.share444=x},configurable:true})";
+export default async (t) => {
+  await t.open('#/compare?topics=rust,python&years=2020-2024');
+  await t.wait(1800); await t.js(capture); await t.click('#cmp_share');
+  const url = await t.js('window.share444.url');
+  t.ok(url.includes('#/compare?'), 'filtered comparison shares direct URL');
+  t.equal(await t.js("new URLSearchParams(window.share444.url.split('?')[1]).get('topics')"), 'rust,python', 'selected topics preserved');
+  t.equal(await t.js("new URLSearchParams(window.share444.url.split('?')[1]).get('years')"), '2020-2024', 'selected years preserved');
+  const labels = await t.js("[...document.querySelectorAll('.cmp_lb')].map(e=>e.getAttribute('aria-label')).join('|')");
+  await t.open(url.slice(url.indexOf('#'))); await t.wait(1800);
+  t.equal(await t.js("[...document.querySelectorAll('.cmp_lb')].map(e=>e.getAttribute('aria-label')).join('|')"), labels, 'shared link restores chart');
+  t.ok(await t.js("document.querySelector('#cmp .cmp_s').textContent.includes('2020') && document.querySelector('#cmp .cmp_s').textContent.includes('2024')"), 'shared link restores range');
+  await t.js("Object.defineProperty(navigator,'share',{value:undefined,configurable:true});Object.defineProperty(navigator,'clipboard',{value:{writeText:async x=>{window.copy444=x}},configurable:true})");
+  await t.click('#cmp_share');
+  t.equal(await t.js('window.copy444'), url, 'clipboard fallback has same URL');
+  await t.js("window.copy444=null;Object.defineProperty(navigator,'share',{value:async()=>{throw {name:'AbortError'}},configurable:true})");
+  await t.click('#cmp_share');
+  t.equal(await t.js('window.copy444'), null, 'cancelled native share does not copy');
+  await t.open('#/compare'); await t.wait(1200); await t.js(capture); await t.click('#cmp_share');
+  t.ok(await t.js("window.share444.url.endsWith('/share/p/compare.html')"), 'default comparison keeps share page');
+};
