@@ -138,6 +138,7 @@
       try {
         TS = TS || await fetch('data/topic_series.json').then(r => r.json());
         const t = TS.topics.find(x => x.id === key); if (!t) { box.remove(); return; }
+        const evidence = el('a', 'ctx-find ctx-evidence', 'See the matching rule and monthly counts for ' + t.label); evidence.href = '#/t/' + encodeURIComponent(t.id);
         const W = 320, H = 110, pl = 4, pt = 8, pb = 16, n = t.series.length, sm = t.series.map((_, i) => { const x = t.series.slice(Math.max(0, i - 5), i + 1); return x.reduce((u, w) => u + w, 0) / x.length; }), mx = Math.max.apply(null, sm) || 1;
         const X = i => pl + (W - 2 * pl) * i / (n - 1), Y = v => pt + (H - pt - pb) * (1 - v / mx);
         const s = sv('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Monthly share of story titles for ' + t.label + ', ' + TS.months[0] + ' to ' + TS.months[n - 1] + ', 6-month average. Peak ' + (mx * 100).toFixed(2) + '%.' });
@@ -146,7 +147,7 @@
         s.appendChild(sv('text', { x: pl, y: H - 3, class: 'g-lab' }, TS.months[0].slice(0, 4)));
         s.appendChild(sv('text', { x: W - pl, y: H - 3, 'text-anchor': 'end', class: 'g-lab' }, TS.months[n - 1].slice(0, 4)));
         s.appendChild(sv('text', { x: pl, y: pt + 8, class: 'g-lab' }, 'peak ' + (mx * 100).toFixed(2) + '%'));
-        box.replaceChildren(s, el('p', 'ctx-note', 'Context only: monthly share of story titles for ' + t.label + ', 6-month average, 2006 to ' + TS.months[n - 1].slice(0, 4) + '. The shaded band is the latest 12 months. The verdict above reads only from the card\'s own windows.'), ...(fl ? [fl] : []));
+        box.replaceChildren(s, el('p', 'ctx-note', 'Context only: monthly share of story titles for ' + t.label + ', 6-month average, 2006 to ' + TS.months[n - 1].slice(0, 4) + '. The shaded band is the latest 12 months. The verdict above reads only from the card\'s own windows.'), ...(fl ? [fl] : []), evidence);
       } catch (e) { b.disabled = false; b.textContent = 'Could not load. Try again'; }
     });
     return box;
