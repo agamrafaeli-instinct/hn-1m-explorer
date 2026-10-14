@@ -36,7 +36,7 @@
   function smooth(s) { return s.map(function (_, i) { var a = s.slice(Math.max(0, i - 5), i + 1); return a.reduce(function (x, y) { return x + y; }, 0) / a.length * 100; }); }
   function draw() {
     var st = state(), root = document.getElementById('cmp'); root.replaceChildren();
-    var baselineSlot = document.getElementById('cmp_baseline'); baselineSlot.hidden = true; baselineSlot.replaceChildren();
+    var baselineSlot = document.getElementById('cmp_baseline'); baselineSlot.hidden = true; baselineSlot.replaceChildren(); document.getElementById('cmp_evidence_links').hidden = true;
     var requested = location.hash.match(/^#\/t\/([^?\/]+)/);
     if (requested && !D.byId[requested[1]]) {
       if (window.SetPageMeta) window.SetPageMeta('Topic not found', 'This topic is not in the current topic list.');
@@ -130,6 +130,8 @@
       root.appendChild(download); root.appendChild(source);
     }
     if (tid) baseline(tid);
+    var links = document.getElementById('cmp_evidence_links'); links.replaceChildren(); links.hidden = !!tid;
+    if (!tid) { links.appendChild(el('p', 'src rg_fine', 'Matching rules and monthly counts for the selected topics:')); tops.forEach(function(t){var a=el('a','cmp_dict',t.label);a.href='#/t/'+encodeURIComponent(t.id);links.appendChild(a);}); }
     findLinks(root, tops);
   }
   var periodLoad = null;
