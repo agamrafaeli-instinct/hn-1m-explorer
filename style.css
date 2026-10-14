@@ -340,3 +340,10 @@ body[data-view=compare]:has(#cmp.cmp_topic){overflow:auto;padding-bottom:58px}
 .cmpwrap:has(#cmp.cmp_topic){height:auto}
 #cmp.cmp_topic{flex:none}
 #cmp.cmp_topic .cmp_box{flex:none;height:300px;min-height:300px}
+
+/* Evidence notes use normal page flow, including multi-topic comparisons. */
+body[data-view=compare]{overflow:auto;padding-bottom:58px}
+#v_compare .cmpwrap{height:auto}
+#cmp{flex:none}
+#cmp .cmp_box{flex:none;height:300px;min-height:300px}
+.cmp_meaning a{display:inline-block;min-height:44px;line-height:44px;min-width:44px;color:inherit;text-decoration:underline;margin-right:12px}
