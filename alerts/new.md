@@ -1,4 +1,7 @@
-HN new 300+ stories, last 12h, updated 2026-10-14 01:15 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-14 03:05 UTC. Forward only ids not sent before.
+50077020 | 315 pts, 92 comments | Show HN: Guitoro, a virtual guitar you strum with your keyboard | https://news.ycombinator.com/item?id=50077020
+50071310 | 305 pts, 566 comments | New Apple TV 4K | https://news.ycombinator.com/item?id=50071310
+50068036 | 300 pts, 270 comments | Character.ai has initiated voluntary Chapter 11 bankruptcy | https://news.ycombinator.com/item?id=50068036
 50078141 | 394 pts, 348 comments | OpenAI engineer arrested in bugging of executive conference room | https://news.ycombinator.com/item?id=50078141
 50072913 | 334 pts, 146 comments | Thunderbird for iOS | https://news.ycombinator.com/item?id=50072913
 50060269 | 301 pts, 175 comments | 'AI' Is Not a Tool by Rich Hickey | https://news.ycombinator.com/item?id=50060269
@@ -11,5 +14,3 @@ HN new 300+ stories, last 12h, updated 2026-10-14 01:15 UTC. Forward only ids no
 50071017 | 398 pts, 512 comments | Apple HomeView | https://news.ycombinator.com/item?id=50071017
 50070302 | 336 pts, 155 comments | Mozilla Introduces Firefox Enterprise | https://news.ycombinator.com/item?id=50070302
 50069329 | 368 pts, 176 comments | CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades | https://news.ycombinator.com/item?id=50069329
-50069499 | 425 pts, 224 comments | 11 year old unsoundness bugs found in Rust borrow checker | https://news.ycombinator.com/item?id=50069499
-50052251 | 302 pts, 156 comments | Show HN: PS2 games statically recompiled to WebAssembly | https://news.ycombinator.com/item?id=50052251
