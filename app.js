@@ -223,10 +223,10 @@ $('csv').onclick = () => {
 $('copyfilters').onclick = async () => {
   const b = $('copyfilters'), url = location.href; let ok = false;
   try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
-  if (ok) { b.textContent = 'Link copied'; setTimeout(() => { b.textContent = 'Copy link'; }, 2000); return; }
+  if (ok) { b.textContent = 'Link copied'; setTimeout(() => { b.textContent = 'Copy link to these filters'; }, 2000); return; }
   let f = b.parentNode.querySelector('input.share_link');
   if (!f) { f = document.createElement('input'); f.className = 'share_link'; f.readOnly = true; f.setAttribute('aria-label', 'Link to copy'); f.style.cssText = 'display:block;width:100%;box-sizing:border-box;margin:8px 0;padding:10px;font-size:16px'; b.after(f); }
-  f.value = url; f.focus(); f.select(); b.textContent = 'Copy the link below'; setTimeout(() => { b.textContent = 'Copy link'; }, 4000);
+  f.value = url; f.focus(); f.select(); b.textContent = 'Copy the link below'; setTimeout(() => { b.textContent = 'Copy link to these filters'; }, 4000);
 };
 $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };

@@ -307,3 +307,5 @@ label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:
 .rg_years a{margin-right:4px}
 
 #reset[hidden]{display:none}
+
+.sg_how a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
