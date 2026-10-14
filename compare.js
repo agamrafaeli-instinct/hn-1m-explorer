@@ -29,6 +29,15 @@
   function smooth(s) { return s.map(function (_, i) { var a = s.slice(Math.max(0, i - 5), i + 1); return a.reduce(function (x, y) { return x + y; }, 0) / a.length * 100; }); }
   function draw() {
     var st = state(), root = document.getElementById('cmp'); root.replaceChildren();
+    var requested = location.hash.match(/^#\/t\/([^?\/]+)/);
+    if (requested && !D.byId[requested[1]]) {
+      root.appendChild(el('h2', 'cmp_t', 'Topic not found'));
+      root.appendChild(el('p', 'cmp_s', 'This topic is not in the current topic list.'));
+      var back = el('a', 'cmp_chip', 'Browse topics'); back.href = '#/topics'; root.appendChild(back);
+      document.getElementById('cmp_find').hidden = true;
+      document.getElementById('cmp_share').hidden = true;
+      return;
+    }
     var tops = st.topics.map(function (id) { return D.byId[id]; });
     var home = /^#?\/?(\?.*)?$/.test(location.hash);
     var tid = topicId();
