@@ -331,3 +331,6 @@ a.xlink{display:inline-flex;align-items:center;min-height:44px}
 /* Selectable share fallback when browser copy is blocked (#441). */
 .share_link{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box;margin:8px 0;padding:10px;font-size:16px}
 .hyp-top:has(.share_link){flex-wrap:wrap}
+
+/* The only topic is a label, not a remove action (#446). */
+span.cmp_chip{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}

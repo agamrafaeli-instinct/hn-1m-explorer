@@ -79,7 +79,13 @@
       while (t.getComputedTextLength() > room && cut > 1) { cut--; t.textContent = name.slice(0, cut).trimEnd() + '\u2026' + suffix; }
       var hint = S('title', {}); hint.textContent = full; t.appendChild(hint);
     });
-    tops.forEach(function (t, k) { var b = el('button', 'cmp_chip', short(t.label) + ' \u00d7'); b.style.borderColor = COL[k]; b.onclick = function () { go(st.topics.filter(function (x) { return x !== t.id; })); }; row.appendChild(b); });
+    tops.forEach(function (t, k) {
+      var removable = st.topics.length > 1, b = el(removable ? 'button' : 'span', 'cmp_chip', short(t.label) + (removable ? ' \u00d7' : ''));
+      b.style.borderColor = COL[k];
+      if (removable) { b.type = 'button'; b.setAttribute('aria-label', 'Remove ' + t.label); b.onclick = function () { go(st.topics.filter(function (x) { return x !== t.id; })); }; }
+      else b.setAttribute('aria-label', 'Selected topic: ' + t.label);
+      row.appendChild(b);
+    });
     if (st.topics.length < 6) {
       var sel = el('select', 'cmp_add'); sel.appendChild(el('option', '', '+ topic')); sel.firstChild.value = '';
       D.topics.filter(function (t) { return st.topics.indexOf(t.id) < 0; }).sort(function (a, b) { return a.label < b.label ? -1 : 1; }).forEach(function (t) { var o = el('option', '', t.label); o.value = t.id; sel.appendChild(o); });
