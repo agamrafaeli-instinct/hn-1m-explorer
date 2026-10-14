@@ -45,6 +45,7 @@
     if (tid && window.SetPageMeta) window.SetPageMeta(D.byId[tid].label, 'Share of Hacker News story titles matching ' + D.byId[tid].label + ', by month. Title matching only.');
     var sb = document.getElementById('cmp_share'); if (sb) sb.hidden = home || !!tid;
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
+    if (tid) { var browse = el('a', 'cmp_chip cmp_browse', 'Browse topics'); browse.href = '#/topics'; root.appendChild(browse); }
     var first = +D.months[0].slice(0, 4), lastY = +D.months[D.months.length - 1].slice(0, 4), lo = 0, hi = D.months.length - 1, rlabel = '2006 to ' + lastY, zbox = el('div');
     if (window.YearZoom && (zoomOn || /[?&]years=/.test(location.hash))) {
       var r = YearZoom.fromHash(location.hash, first, lastY), ix = YearZoom.pick(D.months, r);
