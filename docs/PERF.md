@@ -20,3 +20,9 @@ The preset manual Load is over the 10-second target by a wide margin. The page b
 Proposed fix: preset the smallest slice for manual Load, keep all larger choices, and keep Search more as an explicit step. Filter links without a size already start with the smallest slice. A separate check should measure the load through completion, so a fast shell cannot hide a slow data load.
 
 No site behavior changed for this measurement ticket.
+
+## Repeat after the small preset (#454)
+
+After deploy 7de0d19, the same cold-cache profile measured the new manual default at **2.854 seconds after the Load click**. The page was ready before the tap in 1.770 seconds. It loaded 3 files and 665 posts; CSV transfer was 86,481 bytes, and all completed responses totaled 493,992 bytes across 34 requests. Zero horizontal overflow.
+
+This is one repeat run, not a median. The daily snapshot changed since the first measurement (332 posts then, 665 now), so the counts and bytes are not a fixed-size controlled comparison. The slow preset choice was replaced with the existing smallest slice; larger choices and Search more remain available. Raw result: `docs/perf/2026-10-14-default-after-454.json`.
