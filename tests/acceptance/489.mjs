@@ -1,0 +1,1 @@
+export default async(t)=>{await t.open('#/saga?beat=sg_shelf');await t.click('#sg_questions summary');await t.wait(500);t.ok(await t.js("document.querySelectorAll('#sg_question_list a').length>50"),'existing questions listed');t.ok(await t.js("document.querySelector('#sg_question_list a').hash.startsWith('#/c/h')"),'existing card destination');};

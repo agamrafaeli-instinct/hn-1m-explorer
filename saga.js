@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   // Saga beat 2 (#261): how many stories and how many points per story, each year, from data/saga.json (scripts/saga_data.py).
-  var D = null, shelfReady = Promise.resolve(), countsReady = null;
+  var D = null, shelfReady = Promise.resolve(), countsReady = null, finderReady = Promise.resolve();
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
   function needRings() {
     if (window.Rings) return Promise.resolve();
@@ -16,18 +16,18 @@
     });
     row.appendChild(box); return row;
   }
-  var returnBeat = null;
+  var returnBeat = null, returnRoute = null;
   document.addEventListener('click', function(e){
     var a=e.target.closest&&e.target.closest('a[href^="#/"]');
     if(!a||document.body.dataset.view!=='saga'||a.getAttribute('href').startsWith('#/saga'))return;
     var beat=a.closest('.sg_beat');if(!beat)return;
-    returnBeat=['sg_shelf','sg2','sg3','sg4','sg5','sg9'].includes(beat.id)?beat.id:null;
+    returnRoute=location.hash;returnBeat=['sg_shelf','sg2','sg3','sg4','sg5','sg9'].includes(beat.id)?beat.id:null;
   });
   function returnLink(){
     document.querySelectorAll('.sg_return').forEach(function(a){a.remove();});
     if(!returnBeat||document.body.dataset.view==='saga')return;
     var view=document.getElementById('v_'+document.body.dataset.view);if(!view)return;
-    var a=el('a','back sg_return','Return to the Home section');a.href='#/saga?beat='+returnBeat;
+    var a=el('a','back sg_return','Return to the Home section');a.href=returnBeat==='sg_shelf'&&returnRoute.includes('storyq=')?returnRoute:'#/saga?beat='+returnBeat;
     a.style.cssText='display:flex;align-items:center;min-height:44px;padding:8px 18px;text-decoration:underline';view.prepend(a);
   }
   addEventListener('hashchange',function(){setTimeout(returnLink,0);});
@@ -64,9 +64,10 @@
       shelf.appendChild(el('p','src rg_fine','Existing stories, with their sources and limits on each page.'));
       shelfReady = fetch('stories/h319.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(card){pick.replaceChildren(choice('#/c/'+card.id,card.question,'Title matching across the full archive, with its counts and caveats.'));}).catch(function(){pick.replaceChildren();});
     }
+    if(!window.QuestionFinderInit){finderReady=new Promise(function(ok){var qs=document.createElement('script');qs.src='question-finder.js';qs.onload=function(){Promise.resolve(window.QuestionFinderInit()).then(ok);};qs.onerror=ok;document.head.appendChild(qs);});}else finderReady=Promise.resolve(window.QuestionFinderInit());
     var sequence=['sg_shelf','sg2','sg3','sg4','sg5','sg9'];
     sequence.forEach(function(id,i){var section=document.getElementById(id);if(section.querySelector('.sg_steps'))return;var nav=el('nav','sg_steps');nav.setAttribute('aria-label','Continue the Home story');[i-1,i+1].forEach(function(n){if(n<0||n>=sequence.length)return;var target=document.getElementById(sequence[n]);var heading=target.querySelector('h2');if(!heading)return;var a=el('a','', (n<i?'Previous: ':'Next: ')+heading.textContent);a.href='#/saga?beat='+sequence[n];a.style.cssText='display:flex;align-items:center;min-height:44px;padding:8px 0;color:inherit;text-decoration:underline';nav.appendChild(a);});section.appendChild(nav);});
-    var box = document.getElementById('sg_count'); if (!box) return Promise.resolve(); if (box.dataset.on) return Promise.all([shelfReady,countsReady]).then(land); box.dataset.on = '1';
+    var box = document.getElementById('sg_count'); if (!box) return Promise.resolve(); if (box.dataset.on) return Promise.all([shelfReady,countsReady,finderReady]).then(land); box.dataset.on = '1';
     countsReady = Promise.all([fetch('data/saga.json').then(function (r) { if (!r.ok) throw new Error('saga.json ' + r.status); return r.json(); }), needRings()]).then(function (a) {
       D = a[0]; var y = D.years, n = y.length - 1, low = D.low_score_years, f = function (v) { return v.toLocaleString('en-US'); };
       box.replaceChildren(
@@ -77,6 +78,6 @@
       window.Rings.wire(box);
       var rb = document.getElementById('sg_rings'); if (rb && !rb.dataset.on) { rb.dataset.on = '1'; window.Rings.mount(rb); }
     }).catch(function (e) { box.replaceChildren(el('p','src rg_fine','Could not load the counts. Try again.'));var retry=el('button','pg_share','Retry counts');retry.type='button';retry.addEventListener('click',function(){delete box.dataset.on;countsReady=null;window.SagaInit();});box.appendChild(retry); });
-    return Promise.all([shelfReady,countsReady]).then(land);
+    return Promise.all([shelfReady,countsReady,finderReady]).then(land);
   };
 })();

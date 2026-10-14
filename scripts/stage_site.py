@@ -40,6 +40,8 @@ def stage(root,destination):
     if hd.is_dir():
         sys.path.insert(0,str(root/'scripts')); import build_share_pages
         print('share pages:',build_share_pages.card_pages(destination)+build_share_pages.week_audience_pages(destination)+build_share_pages.route_pages(destination)+build_share_pages.beat_pages(destination))
+    if (destination/'stories/index.json').is_file():
+        sys.path.insert(0,str(root/'scripts'));import build_question_index;build_question_index.build(destination)
     print('Published bytes:',size,'; assets:',', '.join(sorted(names)))
     return size
 

@@ -1,0 +1,1 @@
+export default async(t)=>{await t.open('#/');t.ok(await t.js("Promise.all([fetch('stories/index.json').then(r=>r.json()),fetch('stories/questions.json').then(r=>r.json())]).then(([i,q])=>i.ids.length===q.questions.length&&q.questions.every(x=>Object.keys(x).join(',')==='id,question'))"),'published metadata index');};
