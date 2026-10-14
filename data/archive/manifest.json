@@ -424,11 +424,11 @@
   },
   {
    "name": "stories-2026.parquet",
-   "rows": 242596,
+   "rows": 242604,
    "first_id": 46449679,
    "last_id": 49395213,
-   "sha256": "2eecd8f5f578103b12557b390f2ac5f92f7fbcf77b558483160c0496010dae40",
-   "bytes": 13248354,
+   "sha256": "ea2d4c6d4eac8f05c505d4f3036a3aeec7d1e68072ec4eee531a1aafa7abdf1f",
+   "bytes": 13248581,
    "kind": "stories",
    "year": 2026,
    "columns": [
