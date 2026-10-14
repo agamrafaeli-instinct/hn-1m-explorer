@@ -104,7 +104,8 @@
     var w = D.windows, f = function (x) { return pct(x.share * 100) + ' (' + x.n.toLocaleString('en-US') + ' of ' + x.total.toLocaleString('en-US') + ' stories)'; };
     d.appendChild(el('h3', '', t.label));
     [['Latest 12 months, ' + w.latest[0] + ' to ' + w.latest[1], f(t.latest)], ['All earlier stories, ' + w.prior[0] + ' to ' + w.prior[1], f(t.prior)], ['Peak year', t.peak.year + ' at ' + pct(t.peak.share * 100)], ['Pattern', t.pattern], ['Word list (matches story titles, case-insensitive)', t.matcher]].forEach(function (r) { d.appendChild(el('b', '', r[0])); d.appendChild(el('p', '', r[1])); });
-    var x = el('button', 'cmp_chip', 'Close'); x.onclick = function () { d.close(); d.remove(); }; d.appendChild(x); document.body.appendChild(d); d.showModal();
+    var trigger = document.activeElement; d.addEventListener('close', function () { d.remove(); if (trigger && trigger.isConnected) trigger.focus(); }, { once: true });
+    var x = el('button', 'cmp_chip', 'Close'); x.onclick = function () { d.close(); }; d.appendChild(x); document.body.appendChild(d); d.showModal();
   }
   window.HowInit = function () {
     fetch('data/manifest.json').then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (m) { var e = document.getElementById('how_built'); if (!e || !m.generated_at || !m.total_rows) return; e.textContent = 'The Explorer reads ' + m.total_rows.toLocaleString('en-US') + ' posts, built ' + m.generated_at.slice(0, 10) + ' (UTC). Source: data/manifest.json.'; e.hidden = false; }).catch(function () { });
