@@ -1,5 +1,16 @@
 [
  {
+  "id": "50072994",
+  "title": "The United Kingdom generates less electricity per person than in the 1970s",
+  "points": 302,
+  "comments": 451,
+  "author": "karakoram",
+  "hn": "https://news.ycombinator.com/item?id=50072994",
+  "url": "https://ourworldindata.org/data-insights/electricity-generation-per-person-in-the-united-kingdom-has-fallen-by-a-third-from-its-early-2000s-peak",
+  "created_at": "2026-10-13T15:12:57Z",
+  "reported_at": 1791969063
+ },
+ {
   "id": "50073221",
   "title": "I posted to HN, and then my website was flooded with AI bot traffic",
   "points": 317,
