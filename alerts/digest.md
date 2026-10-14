@@ -4,6 +4,7 @@ HN digest 2026-10-14 (UTC): 21 new stories at 300+ points
 - 398 pts, 512 comments: Apple HomeView https://news.ycombinator.com/item?id=50071017
 - 394 pts, 348 comments: OpenAI engineer arrested in bugging of executive conference room https://news.ycombinator.com/item?id=50078141
 - 368 pts, 176 comments: CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades https://news.ycombinator.com/item?id=50069329
+- 348 pts, 161 comments: AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs https://news.ycombinator.com/item?id=50083130
 - 347 pts, 329 comments: Redesigning source control at Anthropic https://news.ycombinator.com/item?id=50073633
 - 336 pts, 155 comments: Mozilla Introduces Firefox Enterprise https://news.ycombinator.com/item?id=50070302
 - 334 pts, 146 comments: Thunderbird for iOS https://news.ycombinator.com/item?id=50072913
@@ -13,7 +14,6 @@ HN digest 2026-10-14 (UTC): 21 new stories at 300+ points
 - 315 pts, 92 comments: Show HN: Guitoro, a virtual guitar you strum with your keyboard https://news.ycombinator.com/item?id=50077020
 - 308 pts, 421 comments: Thinking will become a hobby https://news.ycombinator.com/item?id=50059204
 - 305 pts, 566 comments: New Apple TV 4K https://news.ycombinator.com/item?id=50071310
-- 305 pts, 74 comments: The baffling intelligence of a single cell (2024) https://news.ycombinator.com/item?id=50041866
 - 302 pts, 451 comments: The United Kingdom generates less electricity per person than in the 1970s https://news.ycombinator.com/item?id=50072994
 - 302 pts, 156 comments: Show HN: PS2 games statically recompiled to WebAssembly https://news.ycombinator.com/item?id=50052251
 - 301 pts, 175 comments: 'AI' Is Not a Tool by Rich Hickey https://news.ycombinator.com/item?id=50060269
