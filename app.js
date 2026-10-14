@@ -164,7 +164,7 @@ function noMatch() {
 }
 function moreNote() {
   const el = $('moreslice'); if (!el) return;
-  const best = $('loadn').querySelector('option[selected]'), n = best ? +best.value : 0;
+  const best = $('loadn').querySelector('option[data-more]'), n = best ? +best.value : 0;
   if (busy || !n || !loadedFiles || loadedFiles >= n || !D.n) { el.hidden = true; return; }
   let lo = Infinity, hi = 0; for (let i = 0; i < D.n; i++) { const t = D.time[i]; if (t > 0) { if (t < lo) lo = t; if (t > hi) hi = t; } }
   const d = t => new Date(t * 1000).toISOString().slice(0, 10), sz = (best.textContent.split(', ~')[1] || '').trim();
@@ -173,7 +173,7 @@ function moreNote() {
   el.hidden = false;
 }
 $('moreslice_btn').onclick = async () => {
-  const best = $('loadn').querySelector('option[selected]'); if (!best) return;
+  const best = $('loadn').querySelector('option[data-more]'); if (!best) return;
   $('moreslice_btn').disabled = true;
   for (const k of Object.keys(D)) if (Array.isArray(D[k])) D[k].length = 0; D.n = 0;
   $('loadn').value = best.value; $('bar').style.display = 'block'; $('barfill').parentNode.style.display = '';
@@ -272,6 +272,6 @@ window.ExploreInit = (() => { let d; return () => d || (d = (async () => {
     let best = 0, cb = 0; ch.forEach((c, i) => { cb += c.bytes || 0; if (cb <= 25 * 1048576) best = i + 1; });
     const marks = new Set([Math.min(3, ch.length), Math.min(10, ch.length), best || Math.min(3, ch.length), ch.length]);
     ch.forEach((c, i) => { rows += c.rows || 0; by += c.bytes || 0; if (marks.has(i + 1)) opts.push([i + 1, rows, by]); });
-    sel.innerHTML = opts.map(([n, r2, b], i) => `<option value="${n}"${n === (best || opts[0][0]) ? ' selected' : ''}>${i === opts.length - 1 ? 'Everything' : 'Newest ' + n + ' files'}: ${r2 ? r2.toLocaleString() + ' items' : n + ' files'}${b ? ', ~' + (b < 1048576 ? Math.max(1, Math.round(b / 1024)) + ' KB' : Math.round(b / 1048576) + ' MB') : ''}</option>`).join('');
+    sel.innerHTML = opts.map(([n, r2, b], i) => `<option value="${n}"${i === 0 ? ' selected' : ''}${n === (best || opts[0][0]) ? ' data-more' : ''}>${i === opts.length - 1 ? 'Everything' : 'Newest ' + n + ' files'}: ${r2 ? r2.toLocaleString() + ' items' : n + ' files'}${b ? ', ~' + (b < 1048576 ? Math.max(1, Math.round(b / 1024)) + ' KB' : Math.round(b / 1048576) + ' MB') : ''}</option>`).join('');
   } catch (e) { }
 })()); })();
