@@ -319,3 +319,4 @@ a.xlink{display:inline-flex;align-items:center;min-height:44px}
 /* #427 clear button inside the Word field */
 .qwrap{position:relative;display:block}.qwrap input{padding-right:48px}.qwrap input::-webkit-search-cancel-button{display:none}
 #qclear{position:absolute;right:0;top:0;width:44px;min-width:44px;height:44px;min-height:44px;padding:0;border:0;background:transparent;font-size:24px;line-height:1;color:var(--mut);cursor:pointer}
+.pts p a,.xlink a,#v_how li a,#v_how p a{min-width:44px}
