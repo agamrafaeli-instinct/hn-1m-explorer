@@ -108,7 +108,7 @@
     loading.then(function () {
       var box = document.getElementById('topics_list'); box.replaceChildren();
       D.topics.slice().sort(function (a, b) { return a.label < b.label ? -1 : 1; }).forEach(function (t) {
-        var a = el('a', 'tp_row'); a.href = '#/t/' + t.id; a.appendChild(el('b', '', t.label)); a.appendChild(el('span', 'tp_pat', t.pattern));
+        var a = el('a', 'tp_row'); a.href = '#/t/' + t.id; a.appendChild(el('b', '', t.label)); a.appendChild(el('span', 'tp_pat', t.pattern)); if (t.ratio) a.appendChild(el('span', 'tp_ratio', (t.ratio >= 10 ? t.ratio.toFixed(0) : t.ratio.toFixed(1)) + 'x the earlier share'));
         var s = t.series.slice(-120), mx = Math.max.apply(null, s) || 1, svg = S('svg', { viewBox: '0 0 80 20', width: 80, height: 20, 'aria-hidden': 'true', focusable: 'false' });
         svg.appendChild(S('path', { d: s.map(function (v, i) { return (i ? 'L' : 'M') + (i * 80 / 119).toFixed(1) + ' ' + (19 - 18 * v / mx).toFixed(1); }).join(''), fill: 'none', stroke: '#ff6600', 'stroke-width': 1.5 }));
         a.appendChild(svg); box.appendChild(a); });
