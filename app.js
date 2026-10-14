@@ -202,7 +202,7 @@ function ptShare() {
   el.textContent = `These hold ${m.toLocaleString()} points, ${t}% of the ${all.toLocaleString()} points in the ${D.n.toLocaleString()} posts loaded.`; el.hidden = false;
 }
 function qSync() { $('qclear').hidden = !$('q').value; }
-function refresh() { qSync(); idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); chips(); moreNote(); drawCharts(); drawList(); }
+function refresh() { qSync(); idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; $('rcount').textContent = idx.length === 1 ? '1 post matches these filters.' : `${idx.length.toLocaleString()} posts match these filters.`; noMatch(); ptShare(); dateRange(); chips(); moreNote(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
