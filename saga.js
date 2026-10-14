@@ -17,6 +17,9 @@
     row.appendChild(box); return row;
   }
   window.SagaInit = function () {
+    var map=document.getElementById('sg_map');
+    if(map&&!map.dataset.on){map.dataset.on='1';map.appendChild(el('p','','Or start with a question:'));[['sg2','Every story, counted'],['sg3','Year by year'],['sg4','Two things only the full archive shows'],['sg5','The answer, and what it cannot settle'],['sg9','Start anywhere']].forEach(function(x){var a=el('a','',x[1]);a.href='#'+x[0];a.dataset.jump=x[0];map.appendChild(a);});}
+
     var fm = document.getElementById('sg_find');
     if (fm && !fm.dataset.on) { fm.dataset.on = '1'; fm.addEventListener('submit', function (e) { e.preventDefault(); var q = document.getElementById('sg_q').value.trim().slice(0, 80); location.hash = '#/explore' + (q ? '?q=' + encodeURIComponent(q) : ''); }); }
     var shelf = document.getElementById('sg_shelf');
