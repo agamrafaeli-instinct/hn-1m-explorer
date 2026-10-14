@@ -20,3 +20,15 @@ const csv=B.csv(liveFilm,liveTopics,'rust'), lines=csv.trim().split('\r\n');asse
 for(let i=0;i<liveFilm.monthly.length;i++){const row=liveFilm.monthly[i],cols=lines[i+1].split(',');assert.equal(cols[1],row.month);assert.equal(+cols[2],row.rust_s);assert.equal(+cols[3],row.total);assert.ok(Math.abs(+cols[4]-row.rust_s/row.total)<1e-12);}
 const special={terms:{'a,b':{pattern:'p'}},monthly:[{month:'2023-01',total:0,'a,b_s':0},{month:'2025-01',total:10,'a,b_s':2}]};const st={topics:[{id:'a,b',matcher:'p'}],windows:topic.windows};assert.ok(B.csv(special,st,'a,b').includes('"a,b",2023-01,0,0,\r\n'));
 console.log('ok topic evidence CSV: exact row counts, shares, quoting and zero totals');
+// Every dictionary's CSV must remain a direct view of source counts (#466).
+for (const topic of liveTopics.topics) {
+  const lines = B.csv(liveFilm, liveTopics, topic.id).trim().split('\r\n').slice(1);
+  const rows = liveFilm.monthly.slice().sort((a,b)=>a.month.localeCompare(b.month));
+  assert.equal(lines.length,rows.length);
+  lines.forEach((line,i)=>{
+    const [id,month,n,total,share]=line.split(',');const row=rows[i];
+    assert.equal(id,topic.id);assert.equal(month,row.month);assert.equal(+n,row[topic.id+'_s']);assert.equal(+total,row.total);
+    assert.equal(share,row.total>0?String(row[topic.id+'_s']/row.total):'');
+  });
+}
+console.log('ok every source topic CSV row: IDs, counts, totals and shares');
