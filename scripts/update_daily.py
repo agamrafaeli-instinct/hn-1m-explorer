@@ -13,7 +13,7 @@ DBCOLS = 'id,type,author,time,title,url,domain,score,comments,text,dead,deleted'
 def fetch(path):
     for attempt in range(6):
         try:
-            req = urllib.request.Request(API + '/' + path + '.json', headers={'User-Agent': 'hn-1m-explorer-daily/1.0'})
+            req = urllib.request.Request(API + '/' + path + '.json', headers={'User-Agent': 'hn-explorer-daily/1.0'})
             with urllib.request.urlopen(req, timeout=35) as r:
                 return json.load(r)
         except Exception:

@@ -6,7 +6,7 @@
     vcs: { name: 'Deep-tech VCs', title: 'Money and names', intro: 'Which deep tech themes, names and deal words moved this week.' },
     geeks: { name: 'Curious geeks', title: 'Beyond AI', intro: 'What people talked about this week that is not AI.' }
   };
-  const SPEC = 'https://github.com/agamrafaeli-instinct/hn-1m-explorer/blob/main/docs/WEEKLY_SPEC.md';
+  const SPEC = 'https://github.com/agamrafaeli-instinct/hn-explorer/blob/main/docs/WEEKLY_SPEC.md';
   const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const root = () => document.getElementById('w_body');
     function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }

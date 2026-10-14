@@ -6377,7 +6377,7 @@
   "manifest_generated_at": "2026-10-08T19:15:06.911767+00:00",
   "manifest_rows": 1000000,
   "plan_sha256": "e0f4c08cca079cf40a8a30bf529e76d348c7a9b03ed024b762eb9beb140f418d",
-  "source_repository": "https://github.com/agamrafaeli-instinct/hn-1m-explorer",
+  "source_repository": "https://github.com/agamrafaeli-instinct/hn-explorer",
   "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed"
  }
 }

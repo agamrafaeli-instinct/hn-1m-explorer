@@ -10,7 +10,7 @@ BIG_COUNT = re.compile(r'\b\d{1,3}(,\d{3}){2,}\b')
 
 def clean(t):
     t = re.sub(r'https?://\S+', ' ', t)
-    t = re.sub(r'agamrafaeli-instinct/hn-1m-explorer|hn-1m-explorer', ' ', t)
+    t = re.sub(r'agamrafaeli-instinct/hn-explorer|hn-explorer', ' ', t)
     return t
 
 def find_bad(text):
@@ -31,6 +31,6 @@ class VoiceCopy(unittest.TestCase):
     def test_test_fails_on_planted_bad_strings(self):
         for s in ('Readers cast votes', 'Explore 1M items', 'A robust tool', 'Fast \u2014 simple', 'Unlock the archive'):
             self.assertTrue(find_bad(s), s)
-        self.assertEqual(find_bad('Readers vote it up. See hn-1m-explorer on https://x/1M'), [])
+        self.assertEqual(find_bad('Readers vote it up. See hn-explorer on https://x/1M'), [])
 
 if __name__ == '__main__': unittest.main()

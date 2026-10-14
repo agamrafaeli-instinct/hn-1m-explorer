@@ -22,7 +22,7 @@ if (!SITE) {
 }
 SITE = SITE.replace(/\/?$/, '/');
 let crit = '';
-if (ticket) { try { const body = execFileSync('gh', ['issue', 'view', ticket, '-R', 'agamrafaeli-instinct/hn-1m-explorer', '--json', 'title,body', '-q', '.title + "\\n" + .body'], { encoding: 'utf8' });
+if (ticket) { try { const body = execFileSync('gh', ['issue', 'view', ticket, '-R', 'agamrafaeli-instinct/hn-explorer', '--json', 'title,body', '-q', '.title + "\\n" + .body'], { encoding: 'utf8' });
   crit = body.split('\n').filter((l, i) => i === 0 || /^- \[[ x]\]/.test(l)).join('\n'); } catch { crit = '(ticket text not readable here)'; } }
 const port = 9500 + Math.floor(Math.random() * 200);
 const ch = spawn('google-chrome', ['--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--remote-debugging-port=' + port, '--user-data-dir=' + fs.mkdtempSync(path.join(os.tmpdir(), 'qac-')), 'about:blank'], { stdio: 'ignore' });

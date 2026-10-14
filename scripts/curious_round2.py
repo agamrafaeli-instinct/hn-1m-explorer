@@ -61,7 +61,7 @@ def build(root):
     if len(seen) != manifest['total_rows']: raise ValueError('Manifest row count mismatch')
     out = aggregate(rows, (lo, hi), plan['tests'])
     out['provenance'] = dict(manifest_generated_at=manifest['generated_at'], manifest_rows=len(seen), plan_sha256=hashlib.sha256(rawplan).hexdigest(),
-                             source_repository='https://github.com/agamrafaeli-instinct/hn-1m-explorer', score_policy=manifest.get('daily_update', {}).get('score_policy', 'snapshot at collection'))
+                             source_repository='https://github.com/agamrafaeli-instinct/hn-explorer', score_policy=manifest.get('daily_update', {}).get('score_policy', 'snapshot at collection'))
     (root / 'data/curious_round2.json').write_text(json.dumps(out, indent=1) + '\n')
     print(out['window'])
 

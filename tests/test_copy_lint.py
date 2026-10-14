@@ -8,7 +8,7 @@ class Lint(unittest.TestCase):
                   'Readers cast votes', 'We simply count', 'a comprehensive view', 'in order to see'):
             self.assertTrue(c.hits(s), s)
     def test_repo_name_and_urls_keep_1m(self):
-        self.assertEqual(c.hits('See agamrafaeli-instinct/hn-1m-explorer and https://x.io/hn-1M'), [])
+        self.assertEqual(c.hits('See agamrafaeli-instinct/hn-explorer and https://x.io/hn-1M'), [])
     def test_plain_copy_passes(self): self.assertEqual(c.hits('Readers vote it up. Points are low in 2023.'), [])
     def test_skips_tests_data_and_voice_doc(self):
         for p in ('tests/x.py', 'data/a.md', 'docs/VOICE.md', 'scripts/copy_lint.py'): self.assertFalse(c.wanted(p), p)

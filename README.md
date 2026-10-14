@@ -1,6 +1,6 @@
 # Hacker News Explorer
 
-<!-- last-closed -->Last closed task: [#158](https://github.com/agamrafaeli-instinct/hn-1m-explorer/issues/158) Film cards: Geeks (15 cards replace the rolling cards), Oct 10, 9:07 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
+<!-- last-closed -->Last closed task: [#158](https://github.com/agamrafaeli-instinct/hn-explorer/issues/158) Film cards: Geeks (15 cards replace the rolling cards), Oct 10, 9:07 PM (UTC+7). Live board: https://agamrafaeli-instinct.github.io/grandstand/<!-- /last-closed -->
 
 **HN swears it's about everything. We counted.**
 
@@ -10,7 +10,7 @@ That's what this site does. Each story takes one question you can't answer from 
 
 Explore **every HN story since 2006**, browse **80 hypothesis cards**, or catch up on what changed this week. Built for your phone. Runs in your browser. No account required.
 
-**[Explore the site →](https://agamrafaeli-instinct.github.io/hn-1m-explorer/)** · [This week](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/w/engineers) · [Tested hypotheses](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/hypotheses) · [Bring a hypothesis](CONTRIBUTING.md)
+**[Explore the site →](https://agamrafaeli-instinct.github.io/hn-explorer/)** · [This week](https://agamrafaeli-instinct.github.io/hn-explorer/#/w/engineers) · [Tested hypotheses](https://agamrafaeli-instinct.github.io/hn-explorer/#/hypotheses) · [Bring a hypothesis](CONTRIBUTING.md)
 
 ## Start with a question
 
@@ -18,10 +18,10 @@ Pick something you have an opinion about. Read the prediction, inspect the check
 
 | Your hunch | Open the test |
 | --- | --- |
-| “Everyone moved from chatbots to agents.” | [Did the conversation actually shift?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h301/engineers) |
-| “People are tired of React.” | [Is React losing its share of the conversation?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h304/engineers) |
-| “HN loves weird stuff.” | [Does the advantage survive removing the biggest hits?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h121/geeks) |
-| “Deep-tech buzz comes from the same few websites.” | [How much attention comes from outside the top five domains?](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/c/h114/vcs) |
+| “Everyone moved from chatbots to agents.” | [Did the conversation actually shift?](https://agamrafaeli-instinct.github.io/hn-explorer/#/c/h301/engineers) |
+| “People are tired of React.” | [Is React losing its share of the conversation?](https://agamrafaeli-instinct.github.io/hn-explorer/#/c/h304/engineers) |
+| “HN loves weird stuff.” | [Does the advantage survive removing the biggest hits?](https://agamrafaeli-instinct.github.io/hn-explorer/#/c/h121/geeks) |
+| “Deep-tech buzz comes from the same few websites.” | [How much attention comes from outside the top five domains?](https://agamrafaeli-instinct.github.io/hn-explorer/#/c/h114/vcs) |
 
 **Wrong guesses stay on the page.** That is part of the attraction.
 
@@ -31,21 +31,21 @@ Pick something you have an opinion about. Read the prediction, inspect the check
 
 Weekly views compare saved weeks, highlight what rose, fell, or appeared, and link back to the stories.
 
-- **[Engineers](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/w/engineers):** languages, tools, infrastructure, and what people are building with.
-- **[Deep-tech investors](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/w/vcs):** themes, names, and deal language attracting discussion.
-- **[Curious readers](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/w/geeks):** science, oddities, and the world beyond AI.
+- **[Engineers](https://agamrafaeli-instinct.github.io/hn-explorer/#/w/engineers):** languages, tools, infrastructure, and what people are building with.
+- **[Deep-tech investors](https://agamrafaeli-instinct.github.io/hn-explorer/#/w/vcs):** themes, names, and deal language attracting discussion.
+- **[Curious readers](https://agamrafaeli-instinct.github.io/hn-explorer/#/w/geeks):** science, oddities, and the world beyond AI.
 
 Move backward through the saved weeks to see whether a change lasts.
 
 ### 2. Follow the attention
 
-The [visual story](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/story) explores how attention concentrates across stories, authors, domains, title words, and time.
+The [visual story](https://agamrafaeli-instinct.github.io/hn-explorer/#/story) explores how attention concentrates across stories, authors, domains, title words, and time.
 
 Scroll through concentration curves, an attention clock, weekday heatmaps, and the highest-scoring posts. See what changes when you count submissions, points, or comments.
 
 ### 3. Ask your own questions
 
-The [Explorer](https://agamrafaeli-instinct.github.io/hn-1m-explorer/#/explore) lets you choose how much data to load, search titles, and filter by author, domain, date, item type, and minimum score.
+The [Explorer](https://agamrafaeli-instinct.github.io/hn-explorer/#/explore) lets you choose how much data to load, search titles, and filter by author, domain, date, item type, and minimum score.
 
 Charts and rankings follow your filters. Switch the lens from authors to domains to time of day. Sort the results by score, discussion, or recency, then open the original HN thread.
 
@@ -86,8 +86,8 @@ For exact fields and reproduction details, see the [data schema](DATA_SCHEMA.md)
 Use **Python 3.12+** and **Node.js 22+**, matching the project's CI setup. No npm install or frontend bundler is required.
 
 ```sh
-git clone --depth 1 https://github.com/agamrafaeli-instinct/hn-1m-explorer.git
-cd hn-1m-explorer
+git clone --depth 1 https://github.com/agamrafaeli-instinct/hn-explorer.git
+cd hn-explorer
 
 python3 scripts/stage_site.py --output _site
 python3 -m http.server 8000 --directory _site

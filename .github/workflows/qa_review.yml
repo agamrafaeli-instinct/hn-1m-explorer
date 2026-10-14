@@ -35,7 +35,7 @@ jobs:
           set +e
           dir="$TICKET/run-$GITHUB_RUN_ID"
           base="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/qa-reports/$dir"
-          node scripts/qa_review.mjs --ticket "$TICKET" --routes "$ROUTES" --site "${SITE:-https://agamrafaeli-instinct.github.io/hn-1m-explorer/}" --out qa_out --shots-url "$base"
+          node scripts/qa_review.mjs --ticket "$TICKET" --routes "$ROUTES" --site "${SITE:-https://agamrafaeli-instinct.github.io/hn-explorer/}" --out qa_out --shots-url "$base"
           # keep the screenshots on the qa-reports branch
           git config user.name "qa-review"; git config user.email "qa-review@users.noreply.github.com"
           git fetch -q origin qa-reports:qa-reports 2>/dev/null && git worktree add -q /tmp/qa qa-reports || { git worktree add -q --detach /tmp/qa; (cd /tmp/qa && git checkout -q --orphan qa-reports && git rm -rqf . ); }

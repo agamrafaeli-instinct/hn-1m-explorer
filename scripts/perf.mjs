@@ -29,7 +29,7 @@ if (arg('serve', false)) {
   });
   await new Promise(ok => SERVER.listen(0, '127.0.0.1', ok)); SERVE_URL = `http://127.0.0.1:${SERVER.address().port}/`;
 }
-const SITE = String(SERVE_URL || arg('site', 'https://agamrafaeli-instinct.github.io/hn-1m-explorer/')).replace(/\/?$/, '/');
+const SITE = String(SERVE_URL || arg('site', 'https://agamrafaeli-instinct.github.io/hn-explorer/')).replace(/\/?$/, '/');
 const WIDTH = +arg('width', 390), RUNS = +arg('runs', 3), ONLY = arg('only', '') ? String(arg('only')).split(',') : null;
 const BFILE = String(arg('budgets', 'data/budgets.json'));
 // name, hash route, a selector that exists only when the content is really there, and optional text it must contain

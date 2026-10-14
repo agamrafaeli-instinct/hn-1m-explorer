@@ -7,7 +7,7 @@
 Needs the gh CLI with access to the repo. Without it, the check says so and exits 0."""
 import json, pathlib, re, subprocess, sys
 
-REPO = 'agamrafaeli-instinct/hn-1m-explorer'
+REPO = 'agamrafaeli-instinct/hn-explorer'
 RM = pathlib.Path(__file__).resolve().parent.parent / 'ROADMAP.md'
 A, B = '<!-- epics:start -->', '<!-- epics:end -->'
 PAT = re.compile(r'^\[Epic\]\s*-\s*(.+?)\s*-\s*(.+)$')

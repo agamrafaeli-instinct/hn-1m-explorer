@@ -1,4 +1,4 @@
-# Term definitions: what the hn-1m-explorer repo actually contains
+# Term definitions: what the hn-explorer repo actually contains
 
 Short answer: the provider's own regex or script for the 70-term set (terms70) is NOT in the repo. Only the daily output files and a few plain-language semantics notes came in. Exact patterns for cpp, nextjs, vscode, fine_tuning and go are not recorded anywhere in the repo or in its git history (searched files and `git log -S`).
 

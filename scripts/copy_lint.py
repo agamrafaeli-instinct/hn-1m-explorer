@@ -15,7 +15,7 @@ BANNED = [r'\bvotes\b', r'\b1M\b', r'the last million', r'\u2014', r'&mdash;', r
 
 def clean(t):
     t = re.sub(r'https?://\S+', ' ', t)
-    return re.sub(r'agamrafaeli-instinct/hn-1m-explorer|hn-1m-explorer', ' ', t)
+    return re.sub(r'agamrafaeli-instinct/hn-explorer|hn-explorer', ' ', t)
 
 
 def hits(line):

@@ -134,6 +134,6 @@
     "as_of_repo": "a15bc21fe0995d32e9bd9702b6944fcae3e3121a",
     "metric": "Matched title share among titled live HN stories. UTC month boundaries. Submission-weighted, not URL-deduplicated.",
     "caveat": "Screening measures, not complete semantic classification. Audits sampled candidates; recall not certified. Do not infer adoption, importance, influence or sentiment. YC includes portfolio labels; basic income includes targeted experiments.",
-    "source": "https://github.com/agamrafaeli-instinct/hn-1m-explorer"
+    "source": "https://github.com/agamrafaeli-instinct/hn-explorer"
   }
 }

@@ -16,20 +16,20 @@ Who this is for: someone new who has to run the scheduled jobs, deploy the site 
 
 ### Daily update
 
-Run by hand: `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-1m-explorer`.
+Run by hand: `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-explorer`.
 Steps in order: start from the newest main, unit tests, check saved weeks against their hashes, add new items and keep the rolling window, refresh the geeks numbers, refresh film-card monthly shares, find and publish today's story, draft and publish weekly findings, data checks, commit `data/`, stage the site (this also builds the share pages), log verdicts, Honor scorecard, open "needs upgrade" issues (at most 5 a day), UI check at 390px, load-time check, deploy. Any failed step before the deploy leaves the last good site live.
 
-Timing: the cron says 02:23 UTC but GitHub often starts it 15 to 35 minutes late. Check `gh run list -R agamrafaeli-instinct/hn-1m-explorer -L 3` before pushing or starting a run. All runs of the daily and weekly jobs share one queue (concurrency group `hn-daily-pages`), so a second run waits for the first.
+Timing: the cron says 02:23 UTC but GitHub often starts it 15 to 35 minutes late. Check `gh run list -R agamrafaeli-instinct/hn-explorer -L 3` before pushing or starting a run. All runs of the daily and weekly jobs share one queue (concurrency group `hn-daily-pages`), so a second run waits for the first.
 Local test: `python -m unittest discover -s tests`.
 
 ### 300+ points digest
 
-Run by hand: `gh workflow run watch-350.yml -R agamrafaeli-instinct/hn-1m-explorer`, or `python scripts/watch_points.py` locally.
+Run by hand: `gh workflow run watch-350.yml -R agamrafaeli-instinct/hn-explorer`, or `python scripts/watch_points.py` locally.
 It must produce `alerts/digest.md` and `alerts/new.md`. State is kept in `alerts/seen.json`, so a story is only reported once.
 
 ### Weekly snapshot
 
-Run by hand: `gh workflow run weekly-snapshot.yml -R agamrafaeli-instinct/hn-1m-explorer`, or `python scripts/weekly_snapshot.py` locally (`--week 2026-W31` for one week).
+Run by hand: `gh workflow run weekly-snapshot.yml -R agamrafaeli-instinct/hn-explorer`, or `python scripts/weekly_snapshot.py` locally (`--week 2026-W31` for one week).
 Steps in order: tests, check saved weeks against their hashes, save complete weeks not yet saved, compare weeks (`data/compare/`), build the Atlas aggregates and Lens files, draft and publish weekly findings, export CSV and JSON, record hashes of new weeks, refuse to change any saved week, commit, then start the daily workflow to publish. Output: one new `data/weekly/<week>.json` per complete week, plus its hash in `data/weekly/hashes.json`.
 
 ## Recovery
@@ -45,7 +45,7 @@ Steps in order: tests, check saved weeks against their hashes, save complete wee
 
 ## Deploy and rollback
 
-The site goes live only through `daily-hn.yml`. A push to `main` starts it by itself when it changes the published site: root `.html .js .mjs .css .json .svg .png .jpg .ico .webp` files (not `source.json`), `data/`, `hypotheses/`, `stories/`, `vendor/`, `assets/`, `demo/`, `sample/`, `scripts/stage_site.py`, `scripts/build_share_pages.py`, `scripts/build_hyp_bundle.js` or the workflow itself. A push that only changes docs, tests or other scripts starts nothing. Do not also start it by hand for a push that already started it: the second run only repeats the first. Use `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-1m-explorer` only to re-run without a change.
+The site goes live only through `daily-hn.yml`. A push to `main` starts it by itself when it changes the published site: root `.html .js .mjs .css .json .svg .png .jpg .ico .webp` files (not `source.json`), `data/`, `hypotheses/`, `stories/`, `vendor/`, `assets/`, `demo/`, `sample/`, `scripts/stage_site.py`, `scripts/build_share_pages.py`, `scripts/build_hyp_bundle.js` or the workflow itself. A push that only changes docs, tests or other scripts starts nothing. Do not also start it by hand for a push that already started it: the second run only repeats the first. Use `gh workflow run daily-hn.yml -R agamrafaeli-instinct/hn-explorer` only to re-run without a change.
 
 Never push or start a run while a daily or weekly run is in progress: the bot commits to `data/` at the end of the run and the push can collide.
 
@@ -77,7 +77,7 @@ Run `node scripts/perf.mjs --serve /tmp/site_pp --runs 3 --tolerance 1.25` (CI d
 ## First day
 
 Where things are:
-- Code and data: https://github.com/agamrafaeli-instinct/hn-1m-explorer. The site is https://agamrafaeli-instinct.github.io/hn-1m-explorer/.
+- Code and data: https://github.com/agamrafaeli-instinct/hn-explorer. The site is https://agamrafaeli-instinct.github.io/hn-explorer/.
 - Board: https://github.com/users/agamrafaeli-instinct/projects/1. The way work moves is in docs/FLYWHEEL.md.
 - Scheduled jobs and how to recover each one are in "Jobs" and "Recovery" above.
 
@@ -128,7 +128,7 @@ Each ticket with a visible done-when list gets `tests/acceptance/<n>.mjs` (see t
 ### Branch preview (#251)
 Push a branch that is not `main` and `.github/workflows/preview.yml` stages the site, publishes it to the public repo `agamrafaeli-instinct/hn-1m-explorer-preview` (Pages: https://agamrafaeli-instinct.github.io/hn-1m-explorer-preview/), waits until `preview.txt` there names the commit, then runs every acceptance file against that URL. The result is in the run summary. The live site is never touched.
 - Only one preview exists at a time (the site is about 637 MB and Pages holds 1 GB), so a newer branch push replaces the older preview. `preview.txt` on the preview site shows which branch and commit it holds.
-- The workflow writes to the preview repo with the Actions secret `PREVIEW_TOKEN`. It is a personal token that expires on 2026-11-08; replace the secret before then (`gh secret set PREVIEW_TOKEN -R agamrafaeli-instinct/hn-1m-explorer`).
+- The workflow writes to the preview repo with the Actions secret `PREVIEW_TOKEN`. It is a personal token that expires on 2026-11-08; replace the secret before then (`gh secret set PREVIEW_TOKEN -R agamrafaeli-instinct/hn-explorer`).
 - `.github/workflows/token-expiry.yml` opens an issue 14 days before the date in its EXPIRES line. When you renew the token, change that date too.
 - Pushes to `main` are not previewed; they deploy through daily-hn.yml.
 - A first run takes about 6 minutes (Pages build).
@@ -151,3 +151,7 @@ The walk also taps the first in-page link and the first button on each route (#3
 
 ## Tap targets (#353)
 The UI check (tests/ui.test.mjs) fails any screen where a visible button, select or text field is under 44 px tall at 390 px. Fix it in style.css (line for `input,select,button`). Links inside a sentence are not checked.
+
+## Repository rename (2026-10-14)
+
+The repository is `hn-explorer`. Its Pages site is https://agamrafaeli-instinct.github.io/hn-explorer/. Old GitHub repository links redirect, but old Pages URLs do not. Previously shared site links need the new base path. The separate preview repository and its Pages URL are unchanged. Source and share routes use relative paths; share destinations resolve against the current site URL.

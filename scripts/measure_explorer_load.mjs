@@ -4,7 +4,7 @@ import {spawn} from 'node:child_process';import fs from 'node:fs';import http fr
 const arg=(key,fallback)=>{const i=process.argv.indexOf('--'+key);return i<0?fallback:process.argv[i+1]};
 const mode=process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : 'default';
 const port=9471,prof='/tmp/perf397-'+Date.now(),limit=Number(arg('timeout-seconds',135));
-let server=null,site=arg('site','https://agamrafaeli-instinct.github.io/hn-1m-explorer/');
+let server=null,site=arg('site','https://agamrafaeli-instinct.github.io/hn-explorer/');
 if(arg('serve',null)){
  const dir=path.resolve(arg('serve',null));
  server=http.createServer((q,r)=>{let f=path.resolve(dir,'.'+decodeURIComponent(q.url.split('?')[0]));if(!f.startsWith(dir+path.sep)){r.writeHead(403);return r.end()};if(fs.existsSync(f)&&fs.statSync(f).isDirectory())f=path.join(f,'index.html');if(!fs.existsSync(f)){r.writeHead(404);return r.end()};const types={'.html':'text/html','.js':'application/javascript','.json':'application/json','.css':'text/css','.csv':'text/csv'};r.writeHead(200,{'content-type':types[path.extname(f)]||'application/octet-stream','content-encoding':'gzip'});r.end(zlib.gzipSync(fs.readFileSync(f)))});
