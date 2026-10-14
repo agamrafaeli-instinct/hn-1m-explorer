@@ -31,6 +31,7 @@
     var st = state(), root = document.getElementById('cmp'); root.replaceChildren();
     var requested = location.hash.match(/^#\/t\/([^?\/]+)/);
     if (requested && !D.byId[requested[1]]) {
+      if (window.SetPageMeta) window.SetPageMeta('Topic not found', 'This topic is not in the current topic list.');
       root.appendChild(el('h2', 'cmp_t', 'Topic not found'));
       root.appendChild(el('p', 'cmp_s', 'This topic is not in the current topic list.'));
       var back = el('a', 'cmp_chip', 'Browse topics'); back.href = '#/topics'; root.appendChild(back);
@@ -41,6 +42,7 @@
     var tops = st.topics.map(function (id) { return D.byId[id]; });
     var home = /^#?\/?(\?.*)?$/.test(location.hash);
     var tid = topicId();
+    if (tid && window.SetPageMeta) window.SetPageMeta(D.byId[tid].label, 'Share of Hacker News story titles matching ' + D.byId[tid].label + ', by month. Title matching only.');
     var sb = document.getElementById('cmp_share'); if (sb) sb.hidden = home || !!tid;
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
     var first = +D.months[0].slice(0, 4), lastY = +D.months[D.months.length - 1].slice(0, 4), lo = 0, hi = D.months.length - 1, rlabel = '2006 to ' + lastY, zbox = el('div');
