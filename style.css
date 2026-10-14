@@ -349,3 +349,12 @@ body[data-view=compare]{overflow:auto;padding-bottom:58px}
 .cmp_meaning a{display:inline-block;min-height:44px;line-height:44px;min-width:44px;color:inherit;text-decoration:underline;margin-right:12px}
 
 .cmp_dict{display:block;min-height:44px;line-height:44px;color:inherit;text-decoration:underline;overflow-wrap:anywhere}
+
+#cmp_baseline{margin:16px 0}
+#cmp_baseline h3{font-size:18px;margin:0 0 8px}
+.baseline_controls{display:flex;flex-wrap:wrap;gap:12px}
+.baseline_controls label{display:flex;flex-direction:column;gap:6px;font-size:13px;flex:1;min-width:130px}
+.baseline_controls select{width:100%;min-height:44px}
+.baseline_period{font-size:14px;line-height:1.5}
+.baseline_period b,.baseline_period span{display:block}
+.baseline_ratio{font-size:14px;line-height:1.5}

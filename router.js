@@ -23,7 +23,8 @@
       keys.forEach(k => { const v = current.get(k); if (v) chosen.set(k, v); });
       if (chosen.toString()) url = location.href.split('#')[0] + '#/' + b.dataset.share + '?' + chosen.toString();
     }
-    const title = (TITLES[b.dataset.share] || [''])[0] + ' (Hacker News)';
+    if (b.dataset.share === 'topic') url = location.href;
+    const title = b.dataset.share === 'topic' ? document.title : (TITLES[b.dataset.share] || [''])[0] + ' (Hacker News)';
     try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
     let ok = false;
     try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
