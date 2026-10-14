@@ -6,6 +6,13 @@
   function S(t, a) { var e = document.createElementNS('http://www.w3.org/2000/svg', t); for (var k in a) e.setAttribute(k, a[k]); return e; }
   var pct = function (v) { return (v < 0.1 ? v.toFixed(3) : v < 1 ? v.toFixed(2) : v.toFixed(1)) + '%'; };
   var COL = ['#ff6600', '#1b1b1b', '#3b7ea1', '#8a6bbf', '#2e8b57', '#b5651d'];
+  var evidenceLoad = null;
+  function evidence() {
+    return evidenceLoad || (evidenceLoad = Promise.all([
+      fetch('data/film_shares.json').then(function (r) { if (!r.ok) throw new Error('Source data could not be loaded'); return r.json(); }),
+      window.TopicBaseline ? Promise.resolve() : new Promise(function (ok, no) { var sc = document.createElement('script'); sc.src = 'topic-baseline.js'; sc.onload = ok; sc.onerror = no; document.head.appendChild(sc); })
+    ]).then(function (a) { return a[0]; }).catch(function (err) { evidenceLoad = null; throw err; }));
+  }
   var zoomOn = false;
   function state() {
     var q = (location.hash.split('?')[1] || ''), o = {};
@@ -41,7 +48,7 @@
     }
     var tops = st.topics.map(function (id) { return D.byId[id]; });
     var home = /^#?\/?(\?.*)?$/.test(location.hash);
-    var tid = topicId();
+    var tid = topicId(); root.classList.toggle('cmp_topic', !!tid);
     if (tid && window.SetPageMeta) window.SetPageMeta(D.byId[tid].label, 'Share of Hacker News story titles matching ' + D.byId[tid].label + ', by month. Title matching only.');
     var sb = document.getElementById('cmp_share'); if (sb) sb.hidden = home || !!tid;
     root.appendChild(el('h2', 'cmp_t', home ? 'How has conversation shifted on HN over time?' : tid ? D.byId[tid].label : 'Share of Hacker News story titles'));
@@ -106,6 +113,21 @@
     }
     if (tid) { var t0 = D.byId[tid], b = el('button', 'cmp_chip cmp_det', 'Details'); b.onclick = function () { sheet(t0); }; row.insertBefore(b, row.firstChild);
        }
+    if (tid) {
+      var source = el('p', 'src rg_fine cmp_evidence');
+      source.textContent = 'Topic ID: ' + tid + '. Exact rule shown above, matched on titles ignoring case. Topic chart coverage: ' + D.months[0] + ' to ' + D.months[D.months.length - 1] + '. CSV source: data/film_shares.json; its coverage is checked when downloading.';
+      var download = el('button', 'cmp_chip', 'Download monthly counts'); download.type = 'button'; download.id = 'cmp_csv';
+      download.onclick = async function () {
+        download.disabled = true;
+        try {
+          var film = await evidence(), text = TopicBaseline.csv(film, D, tid), rows = film.monthly.slice().sort(function (a, b) { return a.month.localeCompare(b.month); });
+          source.textContent = 'Topic ID: ' + tid + '. Exact rule shown above, matched on titles ignoring case. CSV source: data/film_shares.json, ' + rows[0].month + ' to ' + rows[rows.length - 1].month + '. Counts can overlap other topics.';
+          var url = URL.createObjectURL(new Blob([text], { type: 'text/csv;charset=utf-8' })), a = el('a'); a.href = url; a.download = tid + '-monthly-counts.csv'; a.click(); setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        } catch (err) { source.textContent = 'Download unavailable: ' + err.message + '. No data was substituted.'; }
+        finally { download.disabled = false; }
+      };
+      root.appendChild(download); root.appendChild(source);
+    }
     findLinks(root, tops);
   }
   // Search links for topics that are one plain word. Word groups have no link: the Explorer searches one word at a time.

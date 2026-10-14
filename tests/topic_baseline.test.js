@@ -16,3 +16,7 @@ assert.throws(()=>B.compare(film,topic,'missing'),/Unknown topic/);
 const liveFilm=JSON.parse(fs.readFileSync('data/film_shares.json')), liveTopics=JSON.parse(fs.readFileSync('data/topic_series.json'));
 for(const t of liveTopics.topics){const got=B.compare(liveFilm,liveTopics,t.id);for(const [a,b] of [[got.latest,t.latest],[got.baseline,t.prior]]){assert.equal(a.n,b.n,t.id+' matches');assert.equal(a.total,b.total,t.id+' totals');assert.ok(Math.abs(a.share-b.share)<1e-12,t.id+' shares');}assert.ok(got.eligibleYears.every(y=>y<+liveTopics.windows.latest[0].slice(0,4)));}
 console.log('ok topic baselines: pooled counts, error states and all-topic source agreement');
+const csv=B.csv(liveFilm,liveTopics,'rust'), lines=csv.trim().split('\r\n');assert.equal(lines.length,liveFilm.monthly.length+1);
+for(let i=0;i<liveFilm.monthly.length;i++){const row=liveFilm.monthly[i],cols=lines[i+1].split(',');assert.equal(cols[1],row.month);assert.equal(+cols[2],row.rust_s);assert.equal(+cols[3],row.total);assert.ok(Math.abs(+cols[4]-row.rust_s/row.total)<1e-12);}
+const special={terms:{'a,b':{pattern:'p'}},monthly:[{month:'2023-01',total:0,'a,b_s':0},{month:'2025-01',total:10,'a,b_s':2}]};const st={topics:[{id:'a,b',matcher:'p'}],windows:topic.windows};assert.ok(B.csv(special,st,'a,b').includes('"a,b",2023-01,0,0,\r\n'));
+console.log('ok topic evidence CSV: exact row counts, shares, quoting and zero totals');

@@ -334,3 +334,9 @@ a.xlink{display:inline-flex;align-items:center;min-height:44px}
 
 /* The only topic is a label, not a remove action (#446). */
 span.cmp_chip{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
+
+/* Topic evidence extends the page; keep its chart clear of later controls. */
+body[data-view=compare]:has(#cmp.cmp_topic){overflow:auto;padding-bottom:58px}
+.cmpwrap:has(#cmp.cmp_topic){height:auto}
+#cmp.cmp_topic{flex:none}
+#cmp.cmp_topic .cmp_box{flex:none;height:300px;min-height:300px}

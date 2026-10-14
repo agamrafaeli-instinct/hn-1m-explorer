@@ -25,6 +25,15 @@
     var years = Array.from(new Set(rows.filter(function (r) { return Number(r.month.slice(0, 4)) < Number(first.slice(0, 4)); }).map(function (r) { return Number(r.month.slice(0, 4)); }))).sort(function (a, b) { return a - b; });
     return { id: id, latest: latest, baseline: baseline, ratio: ratio, eligibleYears: years };
   }
-  var api = { compare: compare };
+  function csv(film, topics, id) {
+    compare(film, topics, id);
+    function quote(v) { var s = String(v); return /[\",\r\n]/.test(s) ? '\"' + s.replace(/\"/g, '\"\"') + '\"' : s; }
+    var lines = ['topic_id,month,matched_titles,all_story_titles,share'];
+    film.monthly.slice().sort(function (a, b) { return a.month.localeCompare(b.month); }).forEach(function (r) {
+      lines.push([id, r.month, r[id + '_s'], r.total, r.total > 0 ? r[id + '_s'] / r.total : ''].map(quote).join(','));
+    });
+    return lines.join('\r\n') + '\r\n';
+  }
+  var api = { compare: compare, csv: csv };
   if (typeof module !== 'undefined') module.exports = api; else root.TopicBaseline = api;
 })(typeof window !== 'undefined' ? window : globalThis);
