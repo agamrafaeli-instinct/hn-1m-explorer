@@ -309,3 +309,9 @@ label.whole{flex-direction:row;justify-content:flex-start;text-align:left;width:
 #reset[hidden]{display:none}
 
 .sg_how a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+/* #419 tap targets: links in the result list, source notes and the Method page are 44px tall */
+#list a.t{display:inline-block;min-height:44px;box-sizing:border-box;padding:11px 0;line-height:22px}
+#list .m a{display:inline-flex;align-items:center;min-height:44px}
+.src a,#v_how li a,#v_how p a{display:inline-flex;align-items:center;min-height:44px}
+a.xlink{display:inline-flex;align-items:center;min-height:44px}
+.pts p a,.xlink a{display:inline-block;min-height:44px;line-height:44px;box-sizing:border-box}
