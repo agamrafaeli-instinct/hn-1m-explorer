@@ -26,3 +26,9 @@ No site behavior changed for this measurement ticket.
 After deploy 7de0d19, the same cold-cache profile measured the new manual default at **2.854 seconds after the Load click**. The page was ready before the tap in 1.770 seconds. It loaded 3 files and 665 posts; CSV transfer was 86,481 bytes, and all completed responses totaled 493,992 bytes across 34 requests. Zero horizontal overflow.
 
 This is one repeat run, not a median. The daily snapshot changed since the first measurement (332 posts then, 665 now), so the counts and bytes are not a fixed-size controlled comparison. The slow preset choice was replaced with the existing smallest slice; larger choices and Search more remain available. Raw result: `docs/perf/2026-10-14-default-after-454.json`.
+
+## Ongoing data-load report (#455)
+
+The daily build now measures the staged site's manual default through CSV completion, separately from the unchanged page-shell budgets. It saves JSON and the log as the `explorer-data-load` run artifact for 14 days. A timeout is reported as `complete: false` with files, posts and status; slow timing warns but does not block deployment. The JSON includes the named network/CPU profile and separate shell time, click-to-loaded time and CSV transfer bytes.
+
+Local staged-site check on 2026-10-14: 1.769 seconds to the load options, 2.958 seconds after the tap, 3 files, 665 posts, 84,759 CSV transfer bytes. A forced zero-second load timeout reported `complete: false`, files 0 and posts 0, rather than passing. These are one-run harness checks, not new performance medians.

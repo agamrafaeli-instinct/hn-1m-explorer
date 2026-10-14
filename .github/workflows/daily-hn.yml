@@ -217,6 +217,19 @@ jobs:
           { echo '### Load budgets (slow 4G, 390px). Size and request counts fail the run. Time only warns.'; echo '```'; cat perf.txt; echo '```'; echo 'Trend rows (date,source,page,ms,requests,kb):'; echo '```'; cat perf_trend.csv; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           rm perf.txt perf_trend.csv
           python3 scripts/build_graph.py record budgets
+      - name: Measure actual Explorer data load
+        # Separate from shell budgets: slow timing or timeout is reported, not a deploy gate.
+        continue-on-error: true
+        run: |
+          mkdir -p perf-artifacts
+          node scripts/measure_explorer_load.mjs default --serve _site --out perf-artifacts/explorer-load.json > perf-artifacts/explorer-load.log 2>&1
+          { echo '### Explorer data loading (cold slow 4G, 4x CPU, 390px)'; echo 'One run. Timing is not a deploy gate. complete=false means the data load did not finish.'; echo '```json'; cat perf-artifacts/explorer-load.json; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: explorer-data-load
+          path: perf-artifacts/
+          retention-days: 14
       - name: Save the build state
         run: |
           git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
