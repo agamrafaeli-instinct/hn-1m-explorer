@@ -1,0 +1,36 @@
+{
+  "mode": "small",
+  "ready_ms": 1908,
+  "load_ms": 2420,
+  "complete": true,
+  "options": [
+    {
+      "value": "3",
+      "text": "Newest 3 files: 332 items, ~109 KB",
+      "selected": false
+    },
+    {
+      "value": "10",
+      "text": "Newest 10 files: 952 items, ~290 KB",
+      "selected": false
+    },
+    {
+      "value": "231",
+      "text": "Newest 231 files: 77,072 items, ~25 MB",
+      "selected": true
+    },
+    {
+      "value": "271",
+      "text": "Everything: 1,000,000 items, ~329 MB",
+      "selected": false
+    }
+  ],
+  "bytes": 454287,
+  "reqs": 34,
+  "csvBytes": 47204,
+  "csvReqs": 3,
+  "status": "332 posts loaded, from 2026-10-14 to 2026-10-14",
+  "files": 3,
+  "posts": 332,
+  "overflow": 0
+}
