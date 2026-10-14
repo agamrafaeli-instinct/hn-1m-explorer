@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-14 15:08 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-14 17:10 UTC. Forward only ids not sent before.
 50084757 | 351 pts, 327 comments | Amazon pushes up prices across the Internet | https://news.ycombinator.com/item?id=50084757
 50084240 | 414 pts, 154 comments | Iosevka is an open-source, sans-serif and slab-serif, monospace font | https://news.ycombinator.com/item?id=50084240
 50083130 | 348 pts, 161 comments | AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs | https://news.ycombinator.com/item?id=50083130

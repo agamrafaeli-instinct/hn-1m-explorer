@@ -1,6 +1,5 @@
-HN digest 2026-10-14 (UTC): 22 new stories at 300+ points
+HN digest 2026-10-14 (UTC): 20 new stories at 300+ points
 - 571 pts, 444 comments: Gemini 4 Argon https://news.ycombinator.com/item?id=50073879
-- 425 pts, 224 comments: 11 year old unsoundness bugs found in Rust borrow checker https://news.ycombinator.com/item?id=50069499
 - 414 pts, 154 comments: Iosevka is an open-source, sans-serif and slab-serif, monospace font https://news.ycombinator.com/item?id=50084240
 - 398 pts, 512 comments: Apple HomeView https://news.ycombinator.com/item?id=50071017
 - 394 pts, 348 comments: OpenAI engineer arrested in bugging of executive conference room https://news.ycombinator.com/item?id=50078141
@@ -16,7 +15,6 @@ HN digest 2026-10-14 (UTC): 22 new stories at 300+ points
 - 315 pts, 92 comments: Show HN: Guitoro, a virtual guitar you strum with your keyboard https://news.ycombinator.com/item?id=50077020
 - 305 pts, 566 comments: New Apple TV 4K https://news.ycombinator.com/item?id=50071310
 - 302 pts, 451 comments: The United Kingdom generates less electricity per person than in the 1970s https://news.ycombinator.com/item?id=50072994
-- 302 pts, 156 comments: Show HN: PS2 games statically recompiled to WebAssembly https://news.ycombinator.com/item?id=50052251
 - 301 pts, 175 comments: 'AI' Is Not a Tool by Rich Hickey https://news.ycombinator.com/item?id=50060269
 - 301 pts, 174 comments: Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X https://news.ycombinator.com/item?id=50063365
 - 301 pts, 76 comments: Hittite royal archive found in Turkey https://news.ycombinator.com/item?id=50067414
