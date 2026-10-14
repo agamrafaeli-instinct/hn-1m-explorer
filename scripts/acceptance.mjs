@@ -9,7 +9,7 @@ import {spawn, execFileSync} from 'node:child_process';
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path'; import os from 'node:os'; import {pathToFileURL, fileURLToPath} from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const arg = k => { const i = process.argv.indexOf('--' + k); return i < 0 ? null : process.argv[i + 1]; };
-const all = process.argv.includes('--all'), nums = process.argv.slice(2).filter(a => /^\d+$/.test(a));
+const all = process.argv.includes('--all'), nums = process.argv.slice(2).filter((a,i,all) => /^\d+$/.test(a) && !(all[i-1]||'').startsWith('--'));
 const dir0 = path.join(root, 'tests/acceptance');
 const files = all ? fs.readdirSync(dir0).filter(f => /^\d+\.mjs$/.test(f)).sort() : nums.map(n => n + '.mjs');
 if (!files.length) { console.error('usage: acceptance.mjs <ticket number>... | --all  [--site URL]'); process.exit(2); }
@@ -30,7 +30,7 @@ if (!tabs) { console.error('chrome debug port never opened'); process.exit(2); }
 const ws = new WebSocket(tabs.find(t => t.type === 'page').webSocketDebuggerUrl); await new Promise(r => ws.onopen = r);
 let id = 0; const pend = {}; ws.onmessage = e => { const m = JSON.parse(e.data); if (m.id && pend[m.id]) { pend[m.id](m.result); delete pend[m.id]; } };
 const send = (method, params = {}) => new Promise(r => { const i = ++id; pend[i] = r; ws.send(JSON.stringify({ id: i, method, params })); });
-await send('Page.enable'); await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+await send('Page.enable'); await send('Emulation.setDeviceMetricsOverride', { width: Number(arg('width', 390)), height: 844, deviceScaleFactor: 1, mobile: true });
 const wait = ms => new Promise(r => setTimeout(r, ms));
 const js = async expr => { const r = await send('Runtime.evaluate', { expression: expr, returnByValue: true, awaitPromise: true }); return r.exceptionDetails ? undefined : r.result.value; };
 let pass = 0, fail = 0, cur = '';
