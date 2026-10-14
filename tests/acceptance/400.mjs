@@ -8,5 +8,5 @@ export default async (t) => {
     t.ok(await t.js("document.querySelector('#" + v + " .pg_share').getBoundingClientRect().height >= 44"), r + ' share button is 44px tall');
     t.ok(await t.js("fetch('share/p/" + r + ".html').then(x=>x.ok?x.text():'').then(x=>x.includes('url=../../#/" + r + "\"'))"), r + ' share page exists');
   }
-  t.ok(await t.js("fetch('share/p/hypotheses.html').then(x=>x.text()).then(x=>/\\d+ cards/.test(x))"), 'the hypotheses page states a card count');
+  
 };

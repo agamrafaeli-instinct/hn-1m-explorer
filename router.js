@@ -70,9 +70,9 @@
     submit: ['Submit a hypothesis', 'Propose a hypothesis for the full Hacker News archive to test.'],
     story: ['Where the attention lives', 'How points are spread across every Hacker News story since 2006.'],
     lesson: ['How to read trends', 'Why a fall from a peak is not a return to the past.'],
-    compare: ['Compare topics', 'Pick from 52 topics and compare their share of Hacker News story titles, 2006-10 to 2026-07.'],
+    compare: ['Compare topics', 'Pick from 52 topics and compare their share of Hacker News story titles over time.'],
     topics: ['Topics', '52 topics, one chart each, across every Hacker News story since 2006.'],
-    hypotheses: ['Hypotheses, tested', '115 cards, each a guess checked against the Hacker News archive. Wrong guesses stay on the page.']
+    hypotheses: ['Hypotheses, tested', 'Every card on this site, each checked against the full Hacker News archive. Wrong guesses stay on the page.']
   };
   let cur;
   function sagaBar() {

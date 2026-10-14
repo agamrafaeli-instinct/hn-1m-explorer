@@ -66,13 +66,11 @@ class ShareNumbersMatchData(unittest.TestCase):
         r = json.loads((ROOT / 'data/rings.json').read_text())
         d = b.ROUTES['rings'][1]
         self.assertIn('%d themes' % len(r['themes']), d); self.assertIn('%d years' % len(r['years']), d)
-        import glob
-        self.assertIn('%d cards' % len(glob.glob(str(ROOT / 'hypotheses/h*.json'))), b.ROUTES['hypotheses'][1])
+        # The card count changes with each daily run, so the hypotheses description carries no number.
+        self.assertNotRegex(b.ROUTES['hypotheses'][1], r'[0-9]')
         ts = json.loads((ROOT / 'data/topic_series.json').read_text())['topics']
         self.assertIn('%d topics' % len(ts), b.ROUTES['topics'][1])
-        dd = json.loads((ROOT / 'data/topic_series.json').read_text())
         self.assertIn('%d topics' % len(ts), b.ROUTES['compare'][1])
-        self.assertIn(dd['months'][0] + ' to ' + dd['months'][-1], b.ROUTES['compare'][1])
 
 
 if __name__ == '__main__': unittest.main()
