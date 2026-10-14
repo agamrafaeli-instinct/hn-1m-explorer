@@ -1884,6 +1884,25 @@
    "id": "h421",
    "score": 1.0,
    "title": "SQLite and DuckDB: a bigger share in the latest year"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": false,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "insightful",
+    "novel"
+   ],
+   "group_a_count": 71.0,
+   "id": "h422",
+   "score": 0.6,
+   "title": "Vue: a bigger share than before"
   }
  ],
  "schema": 1,
