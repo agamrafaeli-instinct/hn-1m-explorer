@@ -190,13 +190,13 @@
     const a = el('article', 'hyp narr');
     const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id));
     const key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
-    const sh = el('button', 'share-btn', 'Share'); sh.type = 'button'; sh.dataset.url = new URL('share/c/' + card.id + '.html', location.href.split('#')[0]).href;
-    sh.setAttribute('aria-label', 'Share this card');
+    const sh = el('button', 'share-btn', 'Share this card'); sh.type = 'button'; sh.dataset.url = new URL('share/c/' + card.id + '.html', location.href.split('#')[0]).href;
+    sh.setAttribute('aria-label', 'Share card ' + card.id + ': ' + (card.question || card.title));
     sh.addEventListener('click', async () => {
       const url = sh.dataset.url;
       try { if (navigator.share) { await navigator.share({ title: card.title, text: card.title + ' (Hacker News, tested)', url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
       try { await navigator.clipboard.writeText(url); } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e2) { } t.remove(); }
-      sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share'; }, 2000);
+      sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this card'; }, 2000);
     });
     top.appendChild(sh); a.appendChild(top);
     if (r.story) { storyBody(a, card, r, la, lb); return a; }

@@ -102,7 +102,7 @@
     return s;
   }
   function shareBtn(a, week) {
-    const sh = el('button', 'share-btn', 'Share this week'); sh.type = 'button'; sh.setAttribute('aria-label', 'Share this week');
+    const sh = el('button', 'share-btn', 'Share this week'); sh.type = 'button'; sh.setAttribute('aria-label', 'Share ' + A[a].name + ': week ' + week);
     const url = new URL('share/w/' + a + '/' + week + '.html', location.href.split('#')[0]).href, title = A[a].name + ': week ' + week + ' (Hacker News)';
     sh.addEventListener('click', async () => {
       try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }

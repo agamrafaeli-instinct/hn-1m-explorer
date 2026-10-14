@@ -20,11 +20,11 @@
     try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
     let ok = false;
     try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
-    if (ok) { b.textContent = 'Link copied'; setTimeout(() => { b.textContent = 'Share'; }, 2000); return; }
+    if (ok) { b.textContent = 'Link copied'; setTimeout(() => { b.textContent = 'Share this page'; }, 2000); return; }
     // Copy was blocked: show the link in a field the visitor can select and copy by hand.
     let f = b.parentNode.querySelector('input.share_link');
     if (!f) { f = document.createElement('input'); f.className = 'share_link'; f.readOnly = true; f.setAttribute('aria-label', 'Link to copy'); f.style.cssText = 'display:block;width:100%;box-sizing:border-box;margin:8px 0;padding:10px;font-size:16px'; b.after(f); }
-    f.value = url; f.focus(); f.select(); b.textContent = 'Copy the link below'; setTimeout(() => { b.textContent = 'Share'; }, 4000);
+    f.value = url; f.focus(); f.select(); b.textContent = 'Copy the link below'; setTimeout(() => { b.textContent = 'Share this page'; }, 4000);
   });
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
