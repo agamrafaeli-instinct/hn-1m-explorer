@@ -165,10 +165,12 @@
     { const cx = contextBlock(card); if (cx) step(a, 'Context', cx); }
     const bd = step(a, 'Keep in mind', el('p', 'boundary', st.boundary));
     if (st.explore && st.explore.length) {
-      const p = el('p', 'xlink'), key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
-      st.explore.forEach((id, i) => { if (i) p.appendChild(document.createTextNode(', ')); const l = el('a', '', id.toUpperCase()); l.href = '#/c/' + id + '/' + key; p.appendChild(l); });
+      const p = el('div', 'xlink'), key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
+      st.explore.forEach((id, i) => { const l = el('a', '', id.toUpperCase()); l.href = '#/c/' + id + '/' + key;l.dataset.relatedQuestion=id;l.style.cssText='display:flex;align-items:center;min-height:44px;padding:8px 0;line-height:1.45;font-weight:500';p.appendChild(l); });
       step(a, 'Explore further', p);
+      if(window.RelatedQuestions)window.RelatedQuestions(p);else{const script=document.createElement('script');script.src='related-questions.js';script.onload=()=>window.RelatedQuestions(p);document.head.appendChild(script);}
     }
+    const find=el('a','ctx-find','Find another published question');find.href='#/saga?beat=sg_shelf&storyq=';a.appendChild(find);
     a.appendChild(detailsBlock(card, r));
     a.classList.add('compact');
   }

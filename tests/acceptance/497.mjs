@@ -1,0 +1,1 @@
+export default async(t)=>{await t.open('#/c/h319');await t.click('a.ctx-find[href*=sg_shelf]');await t.wait(500);t.ok(await t.js("document.getElementById('sg_questions').open&&document.querySelectorAll('#sg_question_list a').length>50"),'story links finder');};

@@ -1,0 +1,1 @@
+export default async(t)=>{await t.open('#/c/h319');await t.wait(400);t.ok(await t.js("[...document.querySelectorAll('[data-related-question]')].every(a=>a.getBoundingClientRect().height>=44)&&document.documentElement.scrollWidth<=innerWidth+1"),'related links phone fit');t.ok(await t.js("!!document.querySelector('details.more-d')"),'caveats kept');};

@@ -7,9 +7,10 @@ window.SharePage = async function(b) {
       keys.forEach(k => { const v = current.get(k); if (v) chosen.set(k, v); });
       if (chosen.toString()) url = location.href.split('#')[0] + '#/' + b.dataset.share + '?' + chosen.toString();
     }
+    if (b.dataset.share === 'finder') url = location.href.split('#')[0] + '#/saga?beat=sg_shelf&storyq=' + encodeURIComponent(document.getElementById('sg_storyq').value.slice(0,120));
     if (b.dataset.share === 'topic') url = location.href;
     if (b.dataset.share === 'beat') url = window.SagaShare(b);
-    const title = b.dataset.share === 'beat' ? b.dataset.title : b.dataset.share === 'topic' ? document.title : (window.PageTitles[b.dataset.share] || [''])[0] + ' (Hacker News)';
+    const title = b.dataset.share === 'finder' ? 'Published Hacker News questions' : b.dataset.share === 'beat' ? b.dataset.title : b.dataset.share === 'topic' ? document.title : (window.PageTitles[b.dataset.share] || [''])[0] + ' (Hacker News)';
     try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
     const original = b.textContent; let ok = false;
     try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
