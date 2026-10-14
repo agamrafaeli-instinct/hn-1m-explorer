@@ -1,0 +1,1 @@
+export default async(t)=>{await t.open('#/');t.ok(await t.js("document.getElementById('sg_storyq').getAttribute('aria-label')==='Search published questions'"),'closed finder explicit search name');await t.click('#sg_questions summary');t.ok(await t.js("document.getElementById('sg_storyq').labels[0].textContent==='Search published questions'"),'visible label stays');};
