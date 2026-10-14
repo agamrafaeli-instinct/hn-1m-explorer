@@ -201,7 +201,8 @@ function ptShare() {
   const pc = all ? 100 * m / all : 0, t = pc >= 10 ? pc.toFixed(0) : pc >= 1 ? pc.toFixed(1) : pc.toFixed(2);
   el.textContent = `These hold ${m.toLocaleString()} points, ${t}% of the ${all.toLocaleString()} points in the ${D.n.toLocaleString()} posts loaded.`; el.hidden = false;
 }
-function refresh() { idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); chips(); moreNote(); drawCharts(); drawList(); }
+function qSync() { $('qclear').hidden = !$('q').value; }
+function refresh() { qSync(); idx = filter(); lensCalc(); $('count').textContent = `${idx.length.toLocaleString()} matching`; noMatch(); ptShare(); dateRange(); chips(); moreNote(); drawCharts(); drawList(); }
 let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; refresh(); }, 250); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
@@ -231,6 +232,8 @@ $('copyfilters').onclick = async () => {
 $('sort').onchange = () => { page = 0; drawList(); };
 $('prev').onclick = () => { page--; drawList(); scrollTo(0, $('results').offsetTop - 60); };
 $('next').onclick = () => { page++; drawList(); scrollTo(0, $('results').offsetTop - 60); };
+$('q').addEventListener('input', qSync);
+$('qclear').onclick = () => { $('q').value = ''; qSync(); page = 0; refresh(); keepFilters(); $('q').focus(); };
 $('reset').onclick = () => { ['q', 'by', 'domain', 'from', 'to', 'type'].forEach(id => $(id).value = ''); $('whole').checked = false; $('minscore').value = 0; page = 0; refresh(); };
 $('loadbtn').onclick = () => { $('loadbtn').disabled = true; $('loadn').disabled = true; $('app').hidden = false; $('bar').style.display = 'block'; load(+$('loadn').value).catch(e => { $('status').textContent = 'Could not load (' + e.message + '). Try again.'; }); };
 
