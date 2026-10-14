@@ -10,6 +10,7 @@ HN digest 2026-10-14 (UTC): 22 new stories at 300+ points
 - 334 pts, 146 comments: Thunderbird for iOS https://news.ycombinator.com/item?id=50072913
 - 330 pts, 279 comments: Ledger confirms spy chip implant behind wallet crypto thefts https://news.ycombinator.com/item?id=50054092
 - 329 pts, 79 comments: We turned EmbeddingGemma 2 into a speech-to-text model https://news.ycombinator.com/item?id=50069971
+- 317 pts, 170 comments: I posted to HN, and then my website was flooded with AI bot traffic https://news.ycombinator.com/item?id=50073221
 - 315 pts, 92 comments: Show HN: Guitoro, a virtual guitar you strum with your keyboard https://news.ycombinator.com/item?id=50077020
 - 313 pts, 348 comments: Citroen revives the 2CV for an electric age https://news.ycombinator.com/item?id=50055220
 - 308 pts, 421 comments: Thinking will become a hobby https://news.ycombinator.com/item?id=50059204
@@ -20,4 +21,3 @@ HN digest 2026-10-14 (UTC): 22 new stories at 300+ points
 - 301 pts, 174 comments: Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X https://news.ycombinator.com/item?id=50063365
 - 301 pts, 76 comments: Hittite royal archive found in Turkey https://news.ycombinator.com/item?id=50067414
 - 300 pts, 270 comments: Character.ai has initiated voluntary Chapter 11 bankruptcy https://news.ycombinator.com/item?id=50068036
-- 300 pts, 82 comments: Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver https://news.ycombinator.com/item?id=50055593
