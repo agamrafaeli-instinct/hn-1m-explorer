@@ -33,6 +33,16 @@ class SharePages(unittest.TestCase):
             self.assertIn('content="' + html.escape(m.group(2), quote=True) + '"', t)
             self.assertIn('url=../../#/' + ('' if r == 'home' else r) + '"', t)
 
+    def test_home_beats_match_existing_copy(self):
+        import build_share_pages as bsp
+        parser = bsp.BeatCopy(); parser.feed((ROOT / 'index.html').read_text())
+        self.assertEqual(set(parser.copy), {'sg2','sg3','sg4','sg5'})
+        for beat, copy in parser.copy.items():
+            t = (self.out / 'share/p' / ('home-' + beat + '.html')).read_text()
+            self.assertIn(html.escape(copy['title'].strip(), quote=True), t)
+            self.assertIn(html.escape(copy.get('desc', copy['title']).strip(), quote=True), t)
+            self.assertIn('../../#/saga?beat=' + beat, t)
+
     def test_week_pages_match_saved_weeks(self):
         idx = json.loads((ROOT / 'data/weekly/index.json').read_text())['weeks']
         for a in ('engineers', 'vcs', 'geeks'):

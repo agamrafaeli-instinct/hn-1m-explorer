@@ -37,3 +37,7 @@ A script, `scripts/build_share_pages.py`, runs in the deploy before the site is 
 
 - Previews for a new week appear after that deploy.
 - An image is left out until a plain one exists; text previews are enough for chat apps.
+
+## Home sections (#476, #477)
+
+Named Home routes use `#/saga?beat=sg2` through `sg5`. Map links preserve the section. The section share controls use `share/p/home-sg2.html` through `home-sg5.html`, built from the existing section headings and caveats in index.html. These pages redirect to the same named section. The general Home preview remains.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build static share pages so a pasted link previews with the right title (docs/SHARING.md)."""
 import html, json, pathlib
+from html.parser import HTMLParser
 
 SITE = 'Hacker News posts, explored'
 SKIP = {'index.json', 'bundle.json', 'tally.json'}
@@ -77,7 +78,29 @@ def route_pages(site):
         (out / (r + '.html')).write_text(page(t + ' (Hacker News)', d, '../../#/' + ('' if r == 'home' else r)))
     return len(ROUTES)
 
+class BeatCopy(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.beat = None; self.field = None; self.copy = {}
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == 'section': self.beat = a.get('id') if a.get('id') in ('sg2','sg3','sg4','sg5') else None
+        if self.beat and (tag == 'h2' or (tag == 'p' and 'sg_cav' in a.get('class',''))):
+            self.field = 'title' if tag == 'h2' else 'desc'; self.copy.setdefault(self.beat, {}).setdefault(self.field, '')
+    def handle_data(self, data):
+        if self.beat and self.field: self.copy[self.beat][self.field] += data
+    def handle_endtag(self, tag):
+        if tag in ('h2','p'): self.field = None
+        if tag == 'section': self.beat = None
+
+def beat_pages(site):
+    site = pathlib.Path(site); parser = BeatCopy(); parser.feed((site / 'index.html').read_text())
+    out = site / 'share' / 'p'; out.mkdir(parents=True, exist_ok=True)
+    for beat, c in parser.copy.items():
+        title = c['title'].strip(); desc = c.get('desc', title).strip()
+        (out / ('home-' + beat + '.html')).write_text(page(title + ' (Hacker News)', desc, '../../#/saga?beat=' + beat))
+    return len(parser.copy)
+
 if __name__ == '__main__':
     import sys
     site = sys.argv[1] if len(sys.argv) > 1 else '_site'
-    print('share pages:', card_pages(site) + week_audience_pages(site) + route_pages(site))
+    print('share pages:', card_pages(site) + week_audience_pages(site) + route_pages(site) + beat_pages(site))
