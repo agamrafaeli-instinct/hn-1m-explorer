@@ -120,13 +120,15 @@
         var s = t.series.slice(-120), mx = Math.max.apply(null, s) || 1, svg = S('svg', { viewBox: '0 0 80 20', width: 80, height: 20, 'aria-hidden': 'true', focusable: 'false' });
         svg.appendChild(S('path', { d: s.map(function (v, i) { return (i ? 'L' : 'M') + (i * 80 / 119).toFixed(1) + ' ' + (19 - 18 * v / mx).toFixed(1); }).join(''), fill: 'none', stroke: '#ff6600', 'stroke-width': 1.5 }));
         a.appendChild(svg); box.appendChild(a); });
-      var so = document.getElementById('tp_sort'), rowOf = {}; [].forEach.call(box.children, function (r, i) { rowOf[r.getAttribute('href').slice(4)] = r; });
+      var rowOf = {}; [].forEach.call(box.children, function (r, i) { rowOf[r.getAttribute('href').slice(4)] = r; });
       var ord = function (v) { var L = D.topics.slice(); if (v === 'rise' || v === 'fall') L.sort(function (a, b) { var x = a.ratio || 0, y = b.ratio || 0; if (!x || !y) return !x && !y ? (a.label < b.label ? -1 : 1) : (!x ? 1 : -1); return v === 'rise' ? y - x : x - y; }); else L.sort(function (a, b) { return a.label < b.label ? -1 : 1; }); return L; };
-      var sortTo = function (v, keep) { ord(v).forEach(function (t) { box.appendChild(rowOf[t.id]); }); if (!keep) { var h = location.hash.split('?')[0] + (v === 'az' ? '' : '?sort=' + v); history.replaceState(null, '', location.pathname + location.search + h); } };
-      if (so) { var m = (location.hash.split('?')[1] || '').match(/sort=(rise|fall)/); so.value = m ? m[1] : 'az'; sortTo(so.value, true); so.onchange = function () { sortTo(so.value); }; }
-      var q = document.getElementById('tp_q'), none = document.getElementById('tp_none');
+      var so = document.getElementById('tp_sort'), q = document.getElementById('tp_q'), none = document.getElementById('tp_none');
+      var params = new URLSearchParams(location.hash.split('?')[1] || '');
+      so.value = /^(rise|fall)$/.test(params.get('sort')) ? params.get('sort') : 'az'; q.value = (params.get('q') || '').slice(0, 80);
+      var save = function () { var u = new URLSearchParams(); if (so.value !== 'az') u.set('sort', so.value); if (q.value) u.set('q', q.value); var t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/topics' + (t ? '?' + t : '')); };
+      var sortTo = function () { ord(so.value).forEach(function (t) { box.appendChild(rowOf[t.id]); }); };
       var filt = function () { var v = q.value.trim().toLowerCase(), n = 0; [].forEach.call(box.children, function (r) { var ok = !v || r.querySelector('b').textContent.toLowerCase().indexOf(v) >= 0; r.hidden = !ok; if (ok) n++; }); none.hidden = n > 0; };
-      q.oninput = filt; filt();
+      so.onchange = function () { sortTo(); save(); }; q.oninput = function () { filt(); save(); }; sortTo(); filt();
     });
   };
   window.CompareInit = function () {
