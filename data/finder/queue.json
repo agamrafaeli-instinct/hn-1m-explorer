@@ -5,7 +5,7 @@
   {
    "effect": 1.0519,
    "generator": "cross_window",
-   "has_dictionary": false,
+   "has_dictionary": true,
    "label": "Vue",
    "note": "verdict is down against all earlier months and flat against the 12 months before",
    "rank": 1,
