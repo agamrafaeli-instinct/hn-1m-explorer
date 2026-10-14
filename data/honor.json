@@ -1895,14 +1895,28 @@
     "relevant": true,
     "sharp": true
    },
-   "failing": [
-    "insightful",
-    "novel"
-   ],
+   "failing": [],
    "group_a_count": 71.0,
    "id": "h422",
+   "replaced_by": "h423",
    "score": 0.6,
    "title": "Vue: a bigger share than before"
+  },
+  {
+   "audience": "engineers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 71.0,
+   "id": "h423",
+   "score": 1.0,
+   "title": "Vue relative to React: has the title-count ratio risen?"
   }
  ],
  "schema": 1,

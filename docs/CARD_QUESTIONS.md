@@ -58,3 +58,4 @@ Wording rule: each question restates the card's own hypothesis as a yes/no quest
 | h418 | Does a story about Show HN posts get more points than a story about hands-on making? |
 | h419 | Does a story about business-software words get more points than a story about Show HN posts? |
 | h421 | Are SQLite and DuckDB a bigger share of Hacker News stories than before? |
+| h423 | Has the Vue-to-React title-count ratio risen in the latest year? |

@@ -1,0 +1,11 @@
+{
+ "schema": 1,
+ "id": "h423",
+ "for_verdict": "refuted",
+ "question": "Has the Vue-to-React title-count ratio risen in the latest year?",
+ "why": "Comparing Vue with all stories can mix a framework shift with a broader change in programming coverage. React title matches provide a named frontend comparison, although the groups overlap.",
+ "opening": "In {label_a}, there were {a} Vue title matches per React title match. In {label_b}, there were {b}.",
+ "takeaway": "No. The ratio is {ratio}x. It refutes the claim at {refute_at}x or less.",
+ "boundary": "A title can name both Vue and React, so these are overlapping match counts, not exclusive groups or a share of frontend projects. Title mentions do not measure framework usage. Changes in wording or React coverage can move this ratio without a change in Vue usage. The comparison and thresholds were selected after inspecting the topic summaries, so this is exploratory, not a held-out prediction.",
+ "explore": []
+}

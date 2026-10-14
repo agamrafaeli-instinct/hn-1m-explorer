@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "id": "h423",
+  "title": "Vue relative to React: has the title-count ratio risen?",
+  "author": "story-finder",
+  "audience": "engineers",
+  "hypothesis": "The ratio of Vue-matching title counts to React-matching title counts is at least 1.25 times its earlier level.",
+  "expect": "Divide Vue title matches by React title matches in the latest 12 months, then divide by the same pooled ratio across all earlier months. 1.25x or more supports, 1.5x or more is strong, and 0.8x or less refutes. Between is inconclusive. These are title-match counts, not distinct framework users.",
+  "check": {
+    "source": "data/film_shares.json",
+    "path": "monthly",
+    "label_field": "month",
+    "stat": "pooled_share_ratio",
+    "unit": "x",
+    "field": "vue_s",
+    "per_label": "Vue title matches per React title match",
+    "display_pct": false,
+    "group_a": {
+      "label": "Latest 12 months ({from} to {to})",
+      "indices": {
+        "last": 12
+      },
+      "field": "vue_s",
+      "per": "react_s"
+    },
+    "group_b": {
+      "label": "All earlier stories ({from} to {to})",
+      "indices": {
+        "before_last": 12
+      },
+      "field": "vue_s",
+      "per": "react_s"
+    }
+  },
+  "verdicts": [
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.5
+      },
+      "verdict": "supported",
+      "confidence": "strong"
+    },
+    {
+      "when": {
+        "op": ">=",
+        "value": 1.25
+      },
+      "verdict": "supported",
+      "confidence": "weak"
+    },
+    {
+      "when": {
+        "op": "<=",
+        "value": 0.8
+      },
+      "verdict": "refuted",
+      "confidence": "strong"
+    },
+    {
+      "else": true,
+      "verdict": "inconclusive",
+      "confidence": "inconclusive"
+    }
+  ],
+  "thresholds_note": "Exploratory comparison selected after looking at topic summaries. Thresholds retain the 1.5x strong-support, 1.25x support and 0.8x refute rules from h422. This new card uses React title matches as its denominator; h422 stays unchanged.",
+  "replaces": "h422",
+  "question": "Has the Vue-to-React title-count ratio risen in the latest year?",
+  "caveats": [
+    "A title can name both Vue and React, so these are overlapping match counts, not exclusive groups or a share of frontend projects.",
+    "Title mentions do not measure framework usage. Changes in wording or React coverage can move this ratio without a change in Vue usage.",
+    "The comparison and thresholds were selected after inspecting the topic summaries, so this is exploratory, not a held-out prediction."
+  ]
+}
