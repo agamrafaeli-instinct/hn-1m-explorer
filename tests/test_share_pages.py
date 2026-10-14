@@ -16,7 +16,10 @@ class SharePages(unittest.TestCase):
     def test_title_and_target_match_card(self):
         for c in self.cards():
             t = (self.out / 'share/c' / (c['id'] + '.html')).read_text()
-            self.assertIn('<title>' + html.escape(c['title'], quote=True), t)
+            story = ROOT / 'stories' / (c['id'] + '.json')
+            title = json.loads(story.read_text())['question'] if story.is_file() else c['title']
+            self.assertIn('<title>' + html.escape(title, quote=True), t)
+            self.assertIn('content="' + html.escape(c.get('hypothesis') or c['title'], quote=True) + '"', t)
             self.assertIn('property="og:title"', t)
             self.assertIn('url=../../#/c/' + c['id'] + '"', t)
 

@@ -194,10 +194,11 @@
     const top = el('div', 'hyp-top'); top.appendChild(el('p', 'hyp-id', card.id));
     const key = { engineers: 'engineers', 'deep-tech investors': 'vcs', 'curious readers': 'geeks' }[card.audience] || 'all';
     const sh = el('button', 'share-btn', 'Share this card'); sh.type = 'button'; sh.dataset.url = new URL('share/c/' + card.id + '.html', location.href.split('#')[0]).href;
-    sh.setAttribute('aria-label', 'Share card ' + card.id + ': ' + (card.question || card.title));
+    const shareTitle=r.story?r.story.story.question:(card.question||card.title);
+    sh.setAttribute('aria-label', 'Share card ' + card.id + ': ' + shareTitle);
     sh.addEventListener('click', async () => {
       const url = sh.dataset.url;
-      try { if (navigator.share) { await navigator.share({ title: card.title, text: card.title + ' (Hacker News, tested)', url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+      try { if (navigator.share) { await navigator.share({ title: shareTitle, text: shareTitle + ' (Hacker News, tested)', url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
       let copied = false;
       try { await navigator.clipboard.writeText(url); copied = true; } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { copied = document.execCommand('copy'); } catch (e2) { } t.remove(); }
       if (copied) { sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this card'; }, 2000); return; }

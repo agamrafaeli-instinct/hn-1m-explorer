@@ -27,7 +27,10 @@ def card_pages(site):
         c = json.loads(f.read_text())
         if not (isinstance(c, dict) and c.get('id') and c.get('title')): continue
         desc = c.get('hypothesis') or c['title']
-        (out / (c['id'] + '.html')).write_text(page(c['title'] + ' (Hacker News, tested)', desc, '../../#/c/' + c['id']))
+        story_file = site / 'stories' / (c['id'] + '.json')
+        title = json.loads(story_file.read_text()).get('question') if story_file.is_file() else None
+        title = title or c['title']
+        (out / (c['id'] + '.html')).write_text(page(title + ' (Hacker News, tested)', desc, '../../#/c/' + c['id']))
         n += 1
     return n
 

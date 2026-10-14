@@ -1,0 +1,1 @@
+export default async(t)=>{await t.open('#/c/h319');t.ok(await t.js("Promise.all([fetch('stories/h319.json').then(r=>r.json()),fetch('share/c/h319.html').then(r=>r.text())]).then(([s,h])=>new DOMParser().parseFromString(h,'text/html').title===s.question+' (Hacker News, tested)'&&h.includes('../../#/c/h319'))"),'preview exact question and route');};
