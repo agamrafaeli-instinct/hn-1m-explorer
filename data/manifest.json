@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T07:33:54.665900+00:00",
+  "generated_at": "2026-10-14T08:37:08.407324+00:00",
   "total_rows": 1000000,
   "columns": [
     {
@@ -91,6 +91,16 @@
     ]
   },
   "chunks": [
+    {
+      "path": "data/posts-inc-b8c969de3740c331dec166ee.csv",
+      "rows": 534,
+      "bytes": 171315,
+      "sha256": "b8c969de3740c331dec166eebf7b5ade9086c629ef4188a5aabd3ca14a36f8a5",
+      "min_id": 50083789,
+      "max_id": 50084322,
+      "min_time": 1791963211,
+      "max_time": 1791966998
+    },
     {
       "path": "data/posts-inc-b91663b91a2d8503476c577b.csv",
       "rows": 246,
@@ -2632,13 +2642,13 @@
       "sha256": "907f1e75fae99fbe4efc576394d756b8932719389e5400279993d15383ad1fdc"
     },
     {
-      "path": "data/posts-inc-ce9f99e64fa81d4edc8b30ab.csv",
-      "rows": 2225,
-      "bytes": 746430,
-      "sha256": "ce9f99e64fa81d4edc8b30ab6099b2b4290f33e3131e42f41453c5d9a83aba12",
-      "min_id": 49083789,
+      "path": "data/posts-inc-ae0af8ed9a2c309a97dd3e88.csv",
+      "rows": 1691,
+      "bytes": 569595,
+      "sha256": "ae0af8ed9a2c309a97dd3e88aa548b25e3ba3d956643d1c010f2480596420f2d",
+      "min_id": 49084323,
       "max_id": 49086013,
-      "min_time": 1785246245,
+      "min_time": 1785248466,
       "max_time": 1785254881
     }
   ],
@@ -2664,13 +2674,13 @@
     "daily_update_api": "https://hacker-news.firebaseio.com/v0",
     "selection_after_daily_update": "latest retained items by time DESC, id DESC; all item types; unavailable IDs retried"
   },
-  "total_csv_bytes": 345263262,
+  "total_csv_bytes": 345257742,
   "daily_update": {
-    "last_scanned_id": 50083788,
-    "previous_scanned_id": 50083542,
+    "last_scanned_id": 50084322,
+    "previous_scanned_id": 50083788,
     "unavailable_ids": [],
-    "new_rows": 246,
-    "archived_stories": 30,
+    "new_rows": 534,
+    "archived_stories": 77,
     "retention_rows": 1000000,
     "mode": "daily additions since last successful scan; catch-up included",
     "score_policy": "snapshot at first retrieval; older scores/comments are not refreshed",
