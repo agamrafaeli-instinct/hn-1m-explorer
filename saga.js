@@ -19,6 +19,16 @@
   window.SagaInit = function () {
     var fm = document.getElementById('sg_find');
     if (fm && !fm.dataset.on) { fm.dataset.on = '1'; fm.addEventListener('submit', function (e) { e.preventDefault(); var q = document.getElementById('sg_q').value.trim().slice(0, 80); location.hash = '#/explore' + (q ? '?q=' + encodeURIComponent(q) : ''); }); }
+    var shelf = document.getElementById('sg_shelf');
+    if (shelf && !shelf.dataset.on) {
+      shelf.dataset.on = '1'; var title=el('h2','','Pick a story');title.id='sg_shelf_title';shelf.appendChild(title);
+      function choice(href,title,desc){var a=el('a','deep');a.href=href;a.appendChild(el('b','',title));a.appendChild(el('span','',desc));return a;}
+      shelf.appendChild(choice('#/rings','What HN rewarded, year by year','Compare themes, sites and story types across years.'));
+      shelf.appendChild(choice('#/phoenix','Quiet, then back','Words and sites that went quiet and returned.'));
+      var pick=el('div');pick.id='sg_card_pick';shelf.appendChild(pick);
+      shelf.appendChild(el('p','src rg_fine','Existing stories, with their sources and limits on each page.'));
+      fetch('stories/h319.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(card){pick.replaceChildren(choice('#/c/'+card.id,card.question,'Title matching across the full archive, with its counts and caveats.'));}).catch(function(){pick.replaceChildren();});
+    }
     var box = document.getElementById('sg_count'); if (!box || box.dataset.on) return; box.dataset.on = '1';
     Promise.all([fetch('data/saga.json').then(function (r) { if (!r.ok) throw new Error('saga.json ' + r.status); return r.json(); }), needRings()]).then(function (a) {
       D = a[0]; var y = D.years, n = y.length - 1, low = D.low_score_years, f = function (v) { return v.toLocaleString('en-US'); };
