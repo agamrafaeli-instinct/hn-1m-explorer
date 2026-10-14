@@ -15,10 +15,11 @@
     e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
   let shareLoad;
+  window.PreparePageShare=()=>shareLoad=shareLoad||new Promise((ok,no)=>{const s=document.createElement('script');s.src='page-share.js';s.onload=ok;s.onerror=()=>{shareLoad=null;no(new Error('Sharing could not load'));};document.head.appendChild(s);});
   document.addEventListener('click',async e=>{
     const b=e.target.closest&&e.target.closest('button[data-share]');if(!b)return;
-    shareLoad=shareLoad||new Promise((ok,no)=>{const s=document.createElement('script');s.src='page-share.js';s.onload=ok;s.onerror=no;document.head.appendChild(s);});
-    await shareLoad;window.SharePage(b);
+    if(window.SharePage){window.SharePage(b);return;}
+    try{await window.PreparePageShare();window.SharePage(b);}catch(err){b.textContent='Retry sharing';}
   });
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {

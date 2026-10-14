@@ -1,0 +1,3 @@
+export default async(t)=>{
+ await t.open('#/');await t.js("window.fetch486=window.fetch;window.fetch=(u,...a)=>u==='data/saga.json'?Promise.reject(new Error('offline')):window.fetch486(u,...a);delete document.getElementById('sg_count').dataset.on;SagaInit()");await t.wait(400);t.ok(await t.js("document.querySelector('#sg_count button').textContent==='Retry counts'"),'failed counts have retry');await t.js('window.fetch=window.fetch486');await t.click('#sg_count button');await t.wait(700);t.ok(await t.js("!!document.querySelector('#sg_count .sg_bars')&&!document.querySelector('#sg_count button')"),'retry recovers counts');
+};
