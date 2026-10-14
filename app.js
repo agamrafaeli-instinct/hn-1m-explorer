@@ -40,7 +40,7 @@ function parseChunk(text, state) {
 const vend = {};
 function vendor(src) { return vend[src] || (vend[src] = new Promise((ok, no) => { const e = document.createElement('script'); e.src = src; e.onload = ok; e.onerror = no; document.head.appendChild(e); })); }
 window.ExploreVendor = () => Promise.all([vendor('vendor/papaparse.min.js'), vendor('vendor/chart.umd.js')]);
-let loadedFiles = 0, busy = false;
+let loadedFiles = 0, loadedSize = 0, busy = false;
 async function load(nChunks) {
   busy = true; try { await load1(nChunks); } finally { busy = false; loadedFiles = loadedFiles || 0; refresh(); }
 }
@@ -67,6 +67,7 @@ async function load1(nChunks) {
     const dd = t => new Date(t * 1000).toISOString().slice(0, 10);
     $('status').textContent = `${D.n.toLocaleString()} posts loaded` + (hi ? `, from ${dd(lo)} to ${dd(hi)}` : ''); }
   $('load_src').textContent = `Source: ${D.n.toLocaleString()} posts from ${files.length} data file${files.length === 1 ? '' : 's'}${sample ? ' (the small sample, not the full archive)' : ''}, listed in ${base}manifest.json${mf.generated_at ? ', built ' + mf.generated_at.slice(0, 10) : ''}.`;
+  loadedSize = files.length; keepFilters();
   $('barfill').parentNode.style.display = 'none';
 }
 function buildTypes() {
@@ -207,7 +208,7 @@ let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; 
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
 // Keep the filters in the address, so Back from a story card brings them back. replaceState does not add history entries.
-const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); if ($('whole').checked) u.set('whole', '1'); const t = u.toString(); try { if (t) sessionStorage.setItem('hn_filters', t); else sessionStorage.removeItem('hn_filters'); } catch (e) { } history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
+const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); if ($('whole').checked) u.set('whole', '1'); if (loadedSize) u.set('size', loadedSize); const t = u.toString(); try { if (t) sessionStorage.setItem('hn_filters', t); else sessionStorage.removeItem('hn_filters'); } catch (e) { } history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', keepFilters));
 $('sort').addEventListener('change', keepFilters);
 $('whole').addEventListener('change', keepFilters);
@@ -252,11 +253,17 @@ window.ExploreLink = () => {
   if (qs.get('whole') === '1') more.whole = 1;
   const so = qs.get('sort'); if (['score', 'comments', 'new', 'old'].includes(so)) more.sort = so;
   const mn = Math.floor(+qs.get('min')); if (mn > 0 && mn < 1e6) more.minscore = mn;
-  if (!q && !wk && !Object.keys(more).length) return;
+  const size = qs.get('size'), allowed = Array.from($('loadn').options).map(o => o.value), chosen = allowed.includes(size) ? size : null;
+  if (!q && !wk && !Object.keys(more).length && !chosen) return;
   if (q) $('q').value = q;
   Object.keys(more).forEach(k => { if (k === 'whole') $('whole').checked = true; else $(k).value = more[k]; });
   if (wk) { $('from').value = wk[0]; $('to').value = wk[1]; }
-  if ($('app').hidden) { const sel = $('loadn'); if (sel.options.length) sel.selectedIndex = 0; $('loadbtn').click(); } else { page = 0; refresh(); }
+  if ($('app').hidden) { const sel = $('loadn'); if (chosen) sel.value = chosen; else if (sel.options.length) sel.selectedIndex = 0; $('loadbtn').click(); }
+  else if (chosen && +chosen !== loadedSize && !busy) {
+    for (const k of Object.keys(D)) if (Array.isArray(D[k])) D[k].length = 0; D.n = 0;
+    $('loadn').value = chosen; page = 0; $('bar').style.display = 'block'; $('barfill').parentNode.style.display = '';
+    load(+chosen).catch(e => { $('status').textContent = 'Could not load (' + e.message + '). Try again.'; });
+  } else { page = 0; refresh(); }
 };
 window.ExploreInit = (() => { let d; return () => d || (d = (async () => {
   try {
