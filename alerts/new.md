@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-14 03:05 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-14 05:07 UTC. Forward only ids not sent before.
 50077020 | 315 pts, 92 comments | Show HN: Guitoro, a virtual guitar you strum with your keyboard | https://news.ycombinator.com/item?id=50077020
 50071310 | 305 pts, 566 comments | New Apple TV 4K | https://news.ycombinator.com/item?id=50071310
 50068036 | 300 pts, 270 comments | Character.ai has initiated voluntary Chapter 11 bankruptcy | https://news.ycombinator.com/item?id=50068036
@@ -11,6 +11,3 @@ HN new 300+ stories, last 12h, updated 2026-10-14 03:05 UTC. Forward only ids no
 50073879 | 571 pts, 444 comments | Gemini 4 Argon | https://news.ycombinator.com/item?id=50073879
 50069971 | 329 pts, 79 comments | We turned EmbeddingGemma 2 into a speech-to-text model | https://news.ycombinator.com/item?id=50069971
 50067414 | 301 pts, 76 comments | Hittite royal archive found in Turkey | https://news.ycombinator.com/item?id=50067414
-50071017 | 398 pts, 512 comments | Apple HomeView | https://news.ycombinator.com/item?id=50071017
-50070302 | 336 pts, 155 comments | Mozilla Introduces Firefox Enterprise | https://news.ycombinator.com/item?id=50070302
-50069329 | 368 pts, 176 comments | CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades | https://news.ycombinator.com/item?id=50069329
