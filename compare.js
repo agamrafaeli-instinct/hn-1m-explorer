@@ -106,7 +106,7 @@
   window.TopicsInit = function () {
     loading = loading || fetch('data/topic_series.json').then(function (r) { return r.json(); }).then(function (d) { d.byId = {}; d.topics.forEach(function (t) { d.byId[t.id] = t; }); D = d; });
     loading.then(function () {
-      var box = document.getElementById('topics_list'); box.replaceChildren();
+      var box = document.getElementById('topics_list'); box.replaceChildren(); var tn = document.getElementById('tp_note'); if (tn && D.windows) tn.textContent = 'The x figure compares a topic\u2019s share of story titles in the latest 12 months (' + D.windows.latest[0] + ' to ' + D.windows.latest[1] + ') with its share in all earlier months (' + D.windows.prior[0] + ' to ' + D.windows.prior[1] + ').';
       D.topics.slice().sort(function (a, b) { return a.label < b.label ? -1 : 1; }).forEach(function (t) {
         var a = el('a', 'tp_row'); a.href = '#/t/' + t.id; a.appendChild(el('b', '', t.label)); a.appendChild(el('span', 'tp_pat', t.pattern)); if (t.ratio) a.appendChild(el('span', 'tp_ratio', (t.ratio >= 10 ? t.ratio.toFixed(0) : t.ratio.toFixed(1)) + 'x the earlier share'));
         var s = t.series.slice(-120), mx = Math.max.apply(null, s) || 1, svg = S('svg', { viewBox: '0 0 80 20', width: 80, height: 20, 'aria-hidden': 'true', focusable: 'false' });
