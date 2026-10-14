@@ -1,0 +1,68 @@
+{
+ "aliases": [
+  {
+   "count": 1408,
+   "text": "vue"
+  },
+  {
+   "count": 911,
+   "text": "vue.js"
+  },
+  {
+   "count": 297,
+   "text": "vuejs"
+  }
+ ],
+ "exclusions": [],
+ "label": "Vue",
+ "matches": 2616,
+ "near_misses_total": 297,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\bvue(\\.?js)?\\b",
+ "sample_matches": [
+  "Building an Animated Slider with JavaScript, CSS, and Vue",
+  "Show HN: Building a Library Management App with Vue, Firebase and Scaffoldhub",
+  "Is Petite-Vue Dead?",
+  "Show HN: Caster \u2013 Screencasts Manager in Elixir, Phoenix and Vue",
+  "Show HN: Reactive Proxy State \u2013 Vue-style reactivity without Vue",
+  "Create an Engaging Native Mobile App with Vue and NativeScript",
+  "Webpack Aliases in VueJS",
+  "Bento-starter v1.0.0 is out (#PWA, boilerplate, vue.js, firebase,)",
+  "Make HTTP Requests to Remote Web Services in a NativeScript-Vue App",
+  "Vue.js debugging in Chrome and VS Code",
+  "Used vue.js with laravel and my site is not SEO friendly anymore",
+  "Building TwilioQuest with Twilio Sync, Django and Vue.js",
+  "Vuex for the Clueless\u200a\u2013\u200aThe Missing Primer on Vue\u2019s Application Data Store",
+  "How car2go chose between vueJS, reactJS and Angular",
+  "Dynamic Forms with Django and Vue.js",
+  "Building a time tracking SaaS using Django and Vue \u2013 Part 1",
+  "Vuex-Loading \u2013 Manage Multiple Loaders in Vue Application",
+  "Building a Chrome extension using Vue.js",
+  "Show HN: The Most Progressive ESLint Config for React/Vue/TypeScript Projects",
+  "VueJS in Doom Emacs, Working"
+ ],
+ "sample_near_misses": [
+  "WTF Is Vuex? A Beginner's Guide to Vuex 4",
+  "22,000 Lines of Human Code. One Bug. VueCode Found It",
+  "Twitter acquiring Substack competitor Revue",
+  "Vuex Mixins: A Proposal",
+  "Logitech Revue Teardown",
+  "Allow to customize your scrollbars in Vuepress",
+  "VueMD \u2013 A fast Vue3 Markdown renderer component (math, code, SSR-friendly)",
+  "Show HN: Prvue \u2013 Self-managed preview environments for back end apps",
+  "Microsoft Expanding By 1 Million SF in Bellevue",
+  "Should You Use Composition API as a Replacement for Vuex?",
+  "Vuescroll- a virtual scrollbar based on vuejs2.x",
+  "Building fast MPA with Rails 7 and Vuetify 3",
+  "Gauging interest for video distribution platform \u2013 Vuelr",
+  "VUEX Mastery Bangla",
+  "Kimberly-Clark to acquire Kenvue (Tylenol maker) in $48.7B deal",
+  "Decouple Vuex modules with the Mediator pattern",
+  "CeBIT 2010 Prevue: Sparks, Smouldering",
+  "\u00a1Linguakit Ha Vuelto",
+  "Show HN: A push to load list made by vuescroll",
+  "Vuelidate's Email Validator"
+ ],
+ "schema": 1,
+ "term": "vue"
+}
