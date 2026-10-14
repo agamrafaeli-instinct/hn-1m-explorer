@@ -249,7 +249,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 545.0,
+   "group_a_count": 546.0,
    "id": "h315",
    "replaced_by": "h391",
    "score": 0.8,
@@ -1012,7 +1012,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611750.0,
+   "group_a_count": 2611751.0,
    "id": "h367",
    "replaced_by": "h418",
    "score": 0.8,
@@ -1399,7 +1399,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 136941.0,
+   "group_a_count": 136942.0,
    "id": "h391",
    "score": 1.0,
    "title": "Go stories vs Python stories on points"
@@ -1831,7 +1831,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611750.0,
+   "group_a_count": 2611751.0,
    "id": "h418",
    "score": 1.0,
    "title": "Show HN posts stories vs hands-on making stories on points"
