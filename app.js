@@ -130,7 +130,7 @@ function drawList() {
   $('list').innerHTML = a.slice(page * PAGE, page * PAGE + PAGE).map(i => {
     const hn = 'https://news.ycombinator.com/item?id=' + D.id[i], link = D.url[i] || hn;
     const d = D.time[i] ? new Date(D.time[i] * 1000).toISOString().slice(0, 10) : '';
-    return `<li><a class="t" href="${esc(link)}" target="_blank" rel="noopener">${esc(D.title[i] || '(untitled)')}</a>${D.domain[i] ? ' <span class="m">(' + esc(D.domain[i]) + ')</span>' : ''}<div class="m">${D.score[i]} pts · by ${esc(D.by[i])} · ${d} · <a href="${hn}" target="_blank" rel="noopener">${D.comments[i]} comments</a></div></li>`;
+    return `<li><a class="t" href="${esc(link)}" target="_blank" rel="noopener">${esc(D.title[i] || '(untitled)')}</a>${D.domain[i] ? ' <span class="m">(' + esc(D.domain[i]) + ')</span>' : ''}<div class="m">${D.score[i]} pts · by ${esc(D.by[i])} · ${d} · <a href="${hn}" target="_blank" rel="noopener">${D.comments[i]} ${D.comments[i] === 1 ? "comment" : "comments"}</a></div></li>`;
   }).join('');
   $('page').textContent = `${page + 1} / ${pages}`; $('prev').disabled = page === 0; $('next').disabled = page >= pages - 1;
 }
