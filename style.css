@@ -327,3 +327,7 @@ a.xlink{display:inline-flex;align-items:center;min-height:44px}
 .cmp_words b,.cmp_words span,.cmp_words small{display:block}
 .cmp_matcher{overflow-wrap:anywhere;font-family:monospace;margin:5px 0}
 .cmp_words small{font-size:12px}
+
+/* Selectable share fallback when browser copy is blocked (#441). */
+.share_link{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box;margin:8px 0;padding:10px;font-size:16px}
+.hyp-top:has(.share_link){flex-wrap:wrap}

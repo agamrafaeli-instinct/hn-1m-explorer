@@ -195,8 +195,13 @@
     sh.addEventListener('click', async () => {
       const url = sh.dataset.url;
       try { if (navigator.share) { await navigator.share({ title: card.title, text: card.title + ' (Hacker News, tested)', url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
-      try { await navigator.clipboard.writeText(url); } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e2) { } t.remove(); }
-      sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this card'; }, 2000);
+      let copied = false;
+      try { await navigator.clipboard.writeText(url); copied = true; } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { copied = document.execCommand('copy'); } catch (e2) { } t.remove(); }
+      if (copied) { sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this card'; }, 2000); return; }
+      let field = sh.parentNode.querySelector('input.share_link');
+      if (!field) { field = document.createElement('input'); field.className = 'share_link'; field.readOnly = true; field.setAttribute('aria-label', 'Card link to copy'); sh.after(field); }
+      field.value = url; field.focus(); field.select(); sh.textContent = 'Copy the link below';
+      setTimeout(() => { sh.textContent = 'Share this card'; }, 4000);
     });
     top.appendChild(sh); a.appendChild(top);
     if (r.story) { storyBody(a, card, r, la, lb); return a; }

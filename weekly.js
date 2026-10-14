@@ -106,8 +106,13 @@
     const url = new URL('share/w/' + a + '/' + week + '.html', location.href.split('#')[0]).href, title = A[a].name + ': week ' + week + ' (Hacker News)';
     sh.addEventListener('click', async () => {
       try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
-      try { await navigator.clipboard.writeText(url); } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e2) { } t.remove(); }
-      sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this week'; }, 2000);
+      let copied = false;
+      try { await navigator.clipboard.writeText(url); copied = true; } catch (e) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { copied = document.execCommand('copy'); } catch (e2) { } t.remove(); }
+      if (copied) { sh.textContent = 'Link copied'; setTimeout(() => { sh.textContent = 'Share this week'; }, 2000); return; }
+      let field = sh.parentNode.querySelector('input.share_link');
+      if (!field) { field = document.createElement('input'); field.className = 'share_link'; field.readOnly = true; field.setAttribute('aria-label', 'Week link to copy'); sh.after(field); }
+      field.value = url; field.focus(); field.select(); sh.textContent = 'Copy the link below';
+      setTimeout(() => { sh.textContent = 'Share this week'; }, 4000);
     });
     return sh;
   }
