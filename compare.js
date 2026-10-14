@@ -120,7 +120,7 @@
     var d = document.createElement('dialog'); d.className = 'cmp_sheet';
     var w = D.windows, f = function (x) { return pct(x.share * 100) + ' (' + x.n.toLocaleString('en-US') + ' of ' + x.total.toLocaleString('en-US') + ' stories)'; };
     var heading = el('h3', '', t.label); heading.id = 'cmp_dialog_title'; d.setAttribute('aria-labelledby', heading.id); d.appendChild(heading);
-    [['Latest 12 months, ' + w.latest[0] + ' to ' + w.latest[1], f(t.latest)], ['All earlier stories, ' + w.prior[0] + ' to ' + w.prior[1], f(t.prior)], ['Peak year', t.peak.year + ' at ' + pct(t.peak.share * 100)], ['Pattern', t.pattern], ['Word list (matches story titles, case-insensitive)', t.matcher]].forEach(function (r) { d.appendChild(el('b', '', r[0])); d.appendChild(el('p', '', r[1])); });
+    [['Latest 12 months, ' + w.latest[0] + ' to ' + w.latest[1], f(t.latest)], ['All earlier stories, ' + w.prior[0] + ' to ' + w.prior[1], f(t.prior)], ['Peak year', t.peak.year + ' at ' + pct(t.peak.share * 100)], ['Pattern', t.pattern], ['Word list (matches story titles, case-insensitive)', t.matcher]].forEach(function (r) { d.appendChild(el('b', '', r[0])); d.appendChild(el('p', r[0].indexOf('Word list') === 0 ? 'cmp_matcher' : '', r[1])); });
     var trigger = document.activeElement; d.addEventListener('close', function () { d.remove(); if (trigger && trigger.isConnected) trigger.focus(); }, { once: true });
     var x = el('button', 'cmp_chip', 'Close'); x.onclick = function () { d.close(); }; d.appendChild(x); document.body.appendChild(d); d.showModal();
   }
