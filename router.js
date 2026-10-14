@@ -14,26 +14,11 @@
     const t = document.getElementById(j.dataset.jump); if (!t) return;
     e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-  document.addEventListener('click', async (e) => {
-    const b = e.target.closest && e.target.closest('button[data-share]'); if (!b) return;
-    let url = new URL('share/p/' + b.dataset.share + '.html', location.href.split('#')[0]).href;
-    if (b.dataset.share === 'compare' || b.dataset.share === 'topics') {
-      const current = new URLSearchParams(location.hash.split('?')[1] || ''), chosen = new URLSearchParams();
-      const keys = b.dataset.share === 'compare' ? ['topics', 'years'] : ['q', 'sort'];
-      keys.forEach(k => { const v = current.get(k); if (v) chosen.set(k, v); });
-      if (chosen.toString()) url = location.href.split('#')[0] + '#/' + b.dataset.share + '?' + chosen.toString();
-    }
-    if (b.dataset.share === 'topic') url = location.href;
-    if (b.dataset.share === 'beat') url = window.SagaShare(b);
-    const title = b.dataset.share === 'beat' ? b.dataset.title : b.dataset.share === 'topic' ? document.title : (TITLES[b.dataset.share] || [''])[0] + ' (Hacker News)';
-    try { if (navigator.share) { await navigator.share({ title, text: title, url }); return; } } catch (err) { if (err && err.name === 'AbortError') return; }
-    const original = b.textContent; let ok = false;
-    try { await navigator.clipboard.writeText(url); ok = true; } catch (err) { const t = document.createElement('textarea'); t.value = url; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { ok = document.execCommand('copy'); } catch (e2) { } t.remove(); }
-    if (ok) { b.textContent = 'Link copied'; setTimeout(() => { b.textContent = original; }, 2000); return; }
-    // Copy was blocked: show the link in a field the visitor can select and copy by hand.
-    let f = b.parentNode.querySelector('input.share_link');
-    if (!f) { f = document.createElement('input'); f.className = 'share_link'; f.readOnly = true; f.setAttribute('aria-label', 'Link to copy'); f.style.cssText = 'display:block;width:100%;box-sizing:border-box;margin:8px 0;padding:10px;font-size:16px'; b.after(f); }
-    f.value = url; f.focus(); f.select(); b.textContent = 'Copy the link below'; setTimeout(() => { b.textContent = original; }, 4000);
+  let shareLoad;
+  document.addEventListener('click',async e=>{
+    const b=e.target.closest&&e.target.closest('button[data-share]');if(!b)return;
+    shareLoad=shareLoad||new Promise((ok,no)=>{const s=document.createElement('script');s.src='page-share.js';s.onload=ok;s.onerror=no;document.head.appendChild(s);});
+    await shareLoad;window.SharePage(b);
   });
   function skel() { const d = document.createElement('div'); d.className = 'skel'; d.setAttribute('aria-label', 'Loading'); $('aud_card').replaceChildren(d); }
   async function single(id, key) {
@@ -83,6 +68,7 @@
     topics: ['Topics', '52 topics, one chart each, across every Hacker News story since 2006.'],
     hypotheses: ['Hypotheses, tested', 'Every card on this site, each checked against the full Hacker News archive. Wrong guesses stay on the page.']
   };
+  window.PageTitles=TITLES;
   let cur;
   function sagaBar() {
     const b = $('saga_bar'); if (b.dataset.on) return; b.dataset.on = '1';
@@ -110,7 +96,7 @@
     }
     if (v === 'today') window.TodayInit && window.TodayInit(p[1]);
     if (v === 'topics') window.TopicsInit && window.TopicsInit();
-    if (v === 'lesson') window.LessonInit && window.LessonInit();
+    if(v==='lesson'){const go=()=>window.LessonInit();if(window.LessonInit)go();else{const s=document.createElement('script');s.src='lesson.js';s.onload=go;document.head.appendChild(s);}}
     if (v === 'story' || v === 'explore') window.StoryInit && window.StoryInit();
     if (v === 'explore') { const hg = () => window.HistInit(); if (window.HistInit) hg(); else { const sc = document.createElement('script'); sc.src = 'history.js'; sc.onload = hg; document.head.appendChild(sc); } window.ExploreInit && window.ExploreInit().then(() => window.ExploreLink && window.ExploreLink()); window.ExploreVendor && window.ExploreVendor(); }
     if (v === 'week') loadWeek(p[1], p[2]);
