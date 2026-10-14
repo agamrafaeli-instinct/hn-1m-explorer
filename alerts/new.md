@@ -1,4 +1,6 @@
-HN new 300+ stories, last 12h, updated 2026-10-13 23:03 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-14 01:15 UTC. Forward only ids not sent before.
+50078141 | 394 pts, 348 comments | OpenAI engineer arrested in bugging of executive conference room | https://news.ycombinator.com/item?id=50078141
+50072913 | 334 pts, 146 comments | Thunderbird for iOS | https://news.ycombinator.com/item?id=50072913
 50060269 | 301 pts, 175 comments | 'AI' Is Not a Tool by Rich Hickey | https://news.ycombinator.com/item?id=50060269
 50054092 | 330 pts, 279 comments | Ledger confirms spy chip implant behind wallet crypto thefts | https://news.ycombinator.com/item?id=50054092
 50073633 | 347 pts, 329 comments | Redesigning source control at Anthropic | https://news.ycombinator.com/item?id=50073633
@@ -11,4 +13,3 @@ HN new 300+ stories, last 12h, updated 2026-10-13 23:03 UTC. Forward only ids no
 50069329 | 368 pts, 176 comments | CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades | https://news.ycombinator.com/item?id=50069329
 50069499 | 425 pts, 224 comments | 11 year old unsoundness bugs found in Rust borrow checker | https://news.ycombinator.com/item?id=50069499
 50052251 | 302 pts, 156 comments | Show HN: PS2 games statically recompiled to WebAssembly | https://news.ycombinator.com/item?id=50052251
-50059204 | 308 pts, 421 comments | Thinking will become a hobby | https://news.ycombinator.com/item?id=50059204
