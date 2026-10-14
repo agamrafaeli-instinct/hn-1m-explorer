@@ -206,7 +206,7 @@ let tm; const deb = () => { clearTimeout(tm); tm = setTimeout(() => { page = 0; 
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', deb));
 $('whole').addEventListener('change', deb);
 // Keep the filters in the address, so Back from a story card brings them back. replaceState does not add history entries.
-const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); if ($('whole').checked) u.set('whole', '1'); const t = u.toString(); history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
+const keepFilters = () => { if (!/^#\/explore/.test(location.hash)) return; const u = new URLSearchParams(); [['q', 'q'], ['by', 'by'], ['domain', 'domain'], ['from', 'from'], ['to', 'to'], ['type', 'type'], ['min', 'minscore']].forEach(([k, id]) => { const v = $(id).value; if (v && v !== '0') u.set(k, v); }); if ($('sort').value !== 'score') u.set('sort', $('sort').value); if ($('whole').checked) u.set('whole', '1'); const t = u.toString(); try { if (t) sessionStorage.setItem('hn_filters', t); else sessionStorage.removeItem('hn_filters'); } catch (e) { } history.replaceState(null, '', location.pathname + location.search + '#/explore' + (t ? '?' + t : '')); };
 ['q', 'by', 'domain', 'from', 'to', 'type', 'minscore'].forEach(id => $(id).addEventListener('input', keepFilters));
 $('sort').addEventListener('change', keepFilters);
 $('whole').addEventListener('change', keepFilters);
@@ -241,7 +241,8 @@ function isoWeekRange(w) {
   const f = t => new Date(t).toISOString().slice(0, 10); return [f(mon), f(mon + 6 * 864e5)];
 }
 window.ExploreLink = () => {
-  const qs = new URLSearchParams((location.hash.split('?')[1] || '')), q = (qs.get('q') || '').slice(0, 80), wk = isoWeekRange(qs.get('week'));
+  let hq = location.hash.split('?')[1] || ''; if (!hq) { try { hq = sessionStorage.getItem('hn_filters') || ''; } catch (e) { } }
+  const qs = new URLSearchParams(hq), q = (qs.get('q') || '').slice(0, 80), wk = isoWeekRange(qs.get('week'));
   const more = {}; ['by', 'domain', 'type'].forEach(k => { const v = (qs.get(k) || '').slice(0, 80); if (v) more[k] = v; });
   ['from', 'to'].forEach(k => { const v = qs.get(k) || ''; if (/^\d{4}-\d{2}-\d{2}$/.test(v)) more[k] = v; });
   if (qs.get('whole') === '1') more.whole = 1;
