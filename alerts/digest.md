@@ -1,9 +1,11 @@
-HN digest 2026-10-14 (UTC): 21 new stories at 300+ points
+HN digest 2026-10-14 (UTC): 22 new stories at 300+ points
 - 571 pts, 444 comments: Gemini 4 Argon https://news.ycombinator.com/item?id=50073879
 - 425 pts, 224 comments: 11 year old unsoundness bugs found in Rust borrow checker https://news.ycombinator.com/item?id=50069499
+- 414 pts, 154 comments: Iosevka is an open-source, sans-serif and slab-serif, monospace font https://news.ycombinator.com/item?id=50084240
 - 398 pts, 512 comments: Apple HomeView https://news.ycombinator.com/item?id=50071017
 - 394 pts, 348 comments: OpenAI engineer arrested in bugging of executive conference room https://news.ycombinator.com/item?id=50078141
 - 368 pts, 176 comments: CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades https://news.ycombinator.com/item?id=50069329
+- 351 pts, 327 comments: Amazon pushes up prices across the Internet https://news.ycombinator.com/item?id=50084757
 - 348 pts, 161 comments: AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs https://news.ycombinator.com/item?id=50083130
 - 347 pts, 329 comments: Redesigning source control at Anthropic https://news.ycombinator.com/item?id=50073633
 - 336 pts, 155 comments: Mozilla Introduces Firefox Enterprise https://news.ycombinator.com/item?id=50070302
@@ -12,7 +14,6 @@ HN digest 2026-10-14 (UTC): 21 new stories at 300+ points
 - 329 pts, 79 comments: We turned EmbeddingGemma 2 into a speech-to-text model https://news.ycombinator.com/item?id=50069971
 - 317 pts, 170 comments: I posted to HN, and then my website was flooded with AI bot traffic https://news.ycombinator.com/item?id=50073221
 - 315 pts, 92 comments: Show HN: Guitoro, a virtual guitar you strum with your keyboard https://news.ycombinator.com/item?id=50077020
-- 308 pts, 421 comments: Thinking will become a hobby https://news.ycombinator.com/item?id=50059204
 - 305 pts, 566 comments: New Apple TV 4K https://news.ycombinator.com/item?id=50071310
 - 302 pts, 451 comments: The United Kingdom generates less electricity per person than in the 1970s https://news.ycombinator.com/item?id=50072994
 - 302 pts, 156 comments: Show HN: PS2 games statically recompiled to WebAssembly https://news.ycombinator.com/item?id=50052251

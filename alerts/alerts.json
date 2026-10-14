@@ -1,5 +1,27 @@
 [
  {
+  "id": "50084757",
+  "title": "Amazon pushes up prices across the Internet",
+  "points": 351,
+  "comments": 327,
+  "author": "sighborg",
+  "hn": "https://news.ycombinator.com/item?id=50084757",
+  "url": "https://www.not-ship.com/how-amazon-pushes-up-prices-all-across-the-internet/",
+  "created_at": "2026-10-14T09:28:17Z",
+  "reported_at": 1791990530
+ },
+ {
+  "id": "50084240",
+  "title": "Iosevka is an open-source, sans-serif and slab-serif, monospace font",
+  "points": 414,
+  "comments": 154,
+  "author": "otobrglez",
+  "hn": "https://news.ycombinator.com/item?id=50084240",
+  "url": "https://typeof.net/Iosevka/",
+  "created_at": "2026-10-14T08:27:59Z",
+  "reported_at": 1791990530
+ },
+ {
   "id": "50083130",
   "title": "AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs",
   "points": 348,
