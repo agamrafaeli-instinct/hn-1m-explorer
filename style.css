@@ -347,3 +347,5 @@ body[data-view=compare]{overflow:auto;padding-bottom:58px}
 #cmp{flex:none}
 #cmp .cmp_box{flex:none;height:300px;min-height:300px}
 .cmp_meaning a{display:inline-block;min-height:44px;line-height:44px;min-width:44px;color:inherit;text-decoration:underline;margin-right:12px}
+
+.cmp_dict{display:block;min-height:44px;line-height:44px;color:inherit;text-decoration:underline;overflow-wrap:anywhere}
