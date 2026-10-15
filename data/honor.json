@@ -780,7 +780,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 3879558.0,
+   "group_a_count": 3879560.0,
    "id": "h353",
    "replaced_by": "h410",
    "score": 0.8,
@@ -1703,7 +1703,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 3879558.0,
+   "group_a_count": 3879560.0,
    "id": "h410",
    "score": 1.0,
    "title": "Question headlines stories vs Show HN posts stories on comments"
@@ -1917,6 +1917,25 @@
    "id": "h423",
    "score": 1.0,
    "title": "Vue relative to React: has the title-count ratio risen?"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": false,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "insightful",
+    "novel"
+   ],
+   "group_a_count": 3278.0,
+   "id": "h424",
+   "score": 0.6,
+   "title": "GPU and chip hardware: a bigger share than before"
   }
  ],
  "schema": 1,
