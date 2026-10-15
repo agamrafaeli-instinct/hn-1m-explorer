@@ -1,11 +1,9 @@
-HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
+HN digest 2026-10-15 (UTC): 17 new stories at 300+ points
 - 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
 - 420 pts, 167 comments: AI agents aren't 'going rogue.' Frontier labs are skipping security basics https://news.ycombinator.com/item?id=50091788
-- 414 pts, 154 comments: Iosevka is an open-source, sans-serif and slab-serif, monospace font https://news.ycombinator.com/item?id=50084240
 - 395 pts, 308 comments: Do dentists know what they're doing? https://news.ycombinator.com/item?id=50050553
 - 362 pts, 147 comments: OpenCode 2.0 https://news.ycombinator.com/item?id=50094994
 - 356 pts, 450 comments: Suicide rates highest ever among middle-aged men https://news.ycombinator.com/item?id=50093180
-- 351 pts, 327 comments: Amazon pushes up prices across the Internet https://news.ycombinator.com/item?id=50084757
 - 341 pts, 51 comments: Tiny Little Office https://news.ycombinator.com/item?id=50096142
 - 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
 - 324 pts, 143 comments: Israeli firm's digital ads enabling installation of 'zero-click' spyware https://news.ycombinator.com/item?id=50103000
