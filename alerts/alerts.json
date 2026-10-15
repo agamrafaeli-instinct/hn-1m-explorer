@@ -1,5 +1,27 @@
 [
  {
+  "id": "50096142",
+  "title": "Tiny Little Office",
+  "points": 341,
+  "comments": 51,
+  "author": "donohoe",
+  "hn": "https://news.ycombinator.com/item?id=50096142",
+  "url": "https://tinylittleoffice.com/",
+  "created_at": "2026-10-14T22:10:08Z",
+  "reported_at": 1792048832
+ },
+ {
+  "id": "50083028",
+  "title": "Why is every rationalist blog post way too long?",
+  "points": 317,
+  "comments": 249,
+  "author": "epestr",
+  "hn": "https://news.ycombinator.com/item?id=50083028",
+  "url": "https://alexwennerberg.com/blog/2026-10-13-long.html",
+  "created_at": "2026-10-14T06:02:16Z",
+  "reported_at": 1792048832
+ },
+ {
   "id": "50094694",
   "title": "Anthropic's Scion is heavily inspired by Mononoke",
   "points": 316,

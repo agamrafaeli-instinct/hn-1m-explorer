@@ -1,4 +1,4 @@
-HN digest 2026-10-15 (UTC): 18 new stories at 300+ points
+HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
 - 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
 - 420 pts, 167 comments: AI agents aren't 'going rogue.' Frontier labs are skipping security basics https://news.ycombinator.com/item?id=50091788
 - 414 pts, 154 comments: Iosevka is an open-source, sans-serif and slab-serif, monospace font https://news.ycombinator.com/item?id=50084240
@@ -7,7 +7,9 @@ HN digest 2026-10-15 (UTC): 18 new stories at 300+ points
 - 356 pts, 450 comments: Suicide rates highest ever among middle-aged men https://news.ycombinator.com/item?id=50093180
 - 351 pts, 327 comments: Amazon pushes up prices across the Internet https://news.ycombinator.com/item?id=50084757
 - 348 pts, 161 comments: AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs https://news.ycombinator.com/item?id=50083130
+- 341 pts, 51 comments: Tiny Little Office https://news.ycombinator.com/item?id=50096142
 - 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
+- 317 pts, 249 comments: Why is every rationalist blog post way too long? https://news.ycombinator.com/item?id=50083028
 - 317 pts, 230 comments: Banks are now trying to offload the AI data center debt they just underwrote https://news.ycombinator.com/item?id=50092664
 - 317 pts, 170 comments: I posted to HN, and then my website was flooded with AI bot traffic https://news.ycombinator.com/item?id=50073221
 - 316 pts, 123 comments: Anthropic's Scion is heavily inspired by Mononoke https://news.ycombinator.com/item?id=50094694

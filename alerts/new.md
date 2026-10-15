@@ -1,4 +1,6 @@
-HN new 300+ stories, last 12h, updated 2026-10-15 05:06 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-15 07:20 UTC. Forward only ids not sent before.
+50096142 | 341 pts, 51 comments | Tiny Little Office | https://news.ycombinator.com/item?id=50096142
+50083028 | 317 pts, 249 comments | Why is every rationalist blog post way too long? | https://news.ycombinator.com/item?id=50083028
 50094694 | 316 pts, 123 comments | Anthropic's Scion is heavily inspired by Mononoke | https://news.ycombinator.com/item?id=50094694
 50093180 | 356 pts, 450 comments | Suicide rates highest ever among middle-aged men | https://news.ycombinator.com/item?id=50093180
 50089921 | 301 pts, 303 comments | Americans' social activity has steeply declined in the past 30 years | https://news.ycombinator.com/item?id=50089921
@@ -9,6 +11,3 @@ HN new 300+ stories, last 12h, updated 2026-10-15 05:06 UTC. Forward only ids no
 50093568 | 547 pts, 151 comments | Things to know when you get cancer – 2026 Edition | https://news.ycombinator.com/item?id=50093568
 50090349 | 330 pts, 87 comments | Google is silently linking your phone number across all signed-in accounts | https://news.ycombinator.com/item?id=50090349
 50079865 | 301 pts, 149 comments | Recreational Programming | https://news.ycombinator.com/item?id=50079865
-50091788 | 420 pts, 167 comments | AI agents aren't 'going rogue.' Frontier labs are skipping security basics | https://news.ycombinator.com/item?id=50091788
-50090246 | 310 pts, 138 comments | ICE Planning $100M 'Nightmare' Domestic Spy Program | https://news.ycombinator.com/item?id=50090246
-50088935 | 306 pts, 460 comments | Passkeys are not a trap | https://news.ycombinator.com/item?id=50088935
