@@ -1,4 +1,4 @@
-HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
+HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
 - 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
 - 420 pts, 167 comments: AI agents aren't 'going rogue.' Frontier labs are skipping security basics https://news.ycombinator.com/item?id=50091788
 - 414 pts, 154 comments: Iosevka is an open-source, sans-serif and slab-serif, monospace font https://news.ycombinator.com/item?id=50084240
@@ -11,7 +11,6 @@ HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
 - 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
 - 317 pts, 249 comments: Why is every rationalist blog post way too long? https://news.ycombinator.com/item?id=50083028
 - 317 pts, 230 comments: Banks are now trying to offload the AI data center debt they just underwrote https://news.ycombinator.com/item?id=50092664
-- 317 pts, 170 comments: I posted to HN, and then my website was flooded with AI bot traffic https://news.ycombinator.com/item?id=50073221
 - 316 pts, 123 comments: Anthropic's Scion is heavily inspired by Mononoke https://news.ycombinator.com/item?id=50094694
 - 310 pts, 138 comments: ICE Planning $100M 'Nightmare' Domestic Spy Program https://news.ycombinator.com/item?id=50090246
 - 306 pts, 460 comments: Passkeys are not a trap https://news.ycombinator.com/item?id=50088935
