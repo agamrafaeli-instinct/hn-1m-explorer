@@ -14,7 +14,7 @@ HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
 - 316 pts, 123 comments: Anthropic's Scion is heavily inspired by Mononoke https://news.ycombinator.com/item?id=50094694
 - 310 pts, 138 comments: ICE Planning $100M 'Nightmare' Domestic Spy Program https://news.ycombinator.com/item?id=50090246
 - 306 pts, 460 comments: Passkeys are not a trap https://news.ycombinator.com/item?id=50088935
+- 302 pts, 94 comments: We’re releasing Jev 1.14.0 along with experimental features for dreamers https://news.ycombinator.com/item?id=50095353
 - 302 pts, 206 comments: Fire at Starlink site in Bulgaria after suspected sabotage in Poland https://news.ycombinator.com/item?id=50092730
-- 302 pts, 451 comments: The United Kingdom generates less electricity per person than in the 1970s https://news.ycombinator.com/item?id=50072994
 - 301 pts, 303 comments: Americans' social activity has steeply declined in the past 30 years https://news.ycombinator.com/item?id=50089921
 - 301 pts, 149 comments: Recreational Programming https://news.ycombinator.com/item?id=50079865
