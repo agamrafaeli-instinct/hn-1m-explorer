@@ -1,4 +1,7 @@
-HN new 300+ stories, last 12h, updated 2026-10-15 03:06 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-15 05:06 UTC. Forward only ids not sent before.
+50094694 | 316 pts, 123 comments | Anthropic's Scion is heavily inspired by Mononoke | https://news.ycombinator.com/item?id=50094694
+50093180 | 356 pts, 450 comments | Suicide rates highest ever among middle-aged men | https://news.ycombinator.com/item?id=50093180
+50089921 | 301 pts, 303 comments | Americans' social activity has steeply declined in the past 30 years | https://news.ycombinator.com/item?id=50089921
 50094994 | 362 pts, 147 comments | OpenCode 2.0 | https://news.ycombinator.com/item?id=50094994
 50092730 | 302 pts, 206 comments | Fire at Starlink site in Bulgaria after suspected sabotage in Poland | https://news.ycombinator.com/item?id=50092730
 50092664 | 317 pts, 230 comments | Banks are now trying to offload the AI data center debt they just underwrote | https://news.ycombinator.com/item?id=50092664
@@ -9,5 +12,3 @@ HN new 300+ stories, last 12h, updated 2026-10-15 03:06 UTC. Forward only ids no
 50091788 | 420 pts, 167 comments | AI agents aren't 'going rogue.' Frontier labs are skipping security basics | https://news.ycombinator.com/item?id=50091788
 50090246 | 310 pts, 138 comments | ICE Planning $100M 'Nightmare' Domestic Spy Program | https://news.ycombinator.com/item?id=50090246
 50088935 | 306 pts, 460 comments | Passkeys are not a trap | https://news.ycombinator.com/item?id=50088935
-50084757 | 351 pts, 327 comments | Amazon pushes up prices across the Internet | https://news.ycombinator.com/item?id=50084757
-50084240 | 414 pts, 154 comments | Iosevka is an open-source, sans-serif and slab-serif, monospace font | https://news.ycombinator.com/item?id=50084240
