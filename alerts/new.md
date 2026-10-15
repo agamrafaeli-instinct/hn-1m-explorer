@@ -1,4 +1,5 @@
-HN new 300+ stories, last 12h, updated 2026-10-14 23:02 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-15 01:13 UTC. Forward only ids not sent before.
+50050553 | 395 pts, 308 comments | Do dentists know what they're doing? | https://news.ycombinator.com/item?id=50050553
 50093568 | 547 pts, 151 comments | Things to know when you get cancer – 2026 Edition | https://news.ycombinator.com/item?id=50093568
 50090349 | 330 pts, 87 comments | Google is silently linking your phone number across all signed-in accounts | https://news.ycombinator.com/item?id=50090349
 50079865 | 301 pts, 149 comments | Recreational Programming | https://news.ycombinator.com/item?id=50079865

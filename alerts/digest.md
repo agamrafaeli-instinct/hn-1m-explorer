@@ -1,13 +1,13 @@
-HN digest 2026-10-14 (UTC): 18 new stories at 300+ points
+HN digest 2026-10-15 (UTC): 17 new stories at 300+ points
 - 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
 - 420 pts, 167 comments: AI agents aren't 'going rogue.' Frontier labs are skipping security basics https://news.ycombinator.com/item?id=50091788
 - 414 pts, 154 comments: Iosevka is an open-source, sans-serif and slab-serif, monospace font https://news.ycombinator.com/item?id=50084240
+- 395 pts, 308 comments: Do dentists know what they're doing? https://news.ycombinator.com/item?id=50050553
 - 394 pts, 348 comments: OpenAI engineer arrested in bugging of executive conference room https://news.ycombinator.com/item?id=50078141
 - 351 pts, 327 comments: Amazon pushes up prices across the Internet https://news.ycombinator.com/item?id=50084757
 - 348 pts, 161 comments: AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs https://news.ycombinator.com/item?id=50083130
 - 334 pts, 146 comments: Thunderbird for iOS https://news.ycombinator.com/item?id=50072913
 - 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
-- 330 pts, 279 comments: Ledger confirms spy chip implant behind wallet crypto thefts https://news.ycombinator.com/item?id=50054092
 - 317 pts, 170 comments: I posted to HN, and then my website was flooded with AI bot traffic https://news.ycombinator.com/item?id=50073221
 - 315 pts, 92 comments: Show HN: Guitoro, a virtual guitar you strum with your keyboard https://news.ycombinator.com/item?id=50077020
 - 310 pts, 138 comments: ICE Planning $100M 'Nightmare' Domestic Spy Program https://news.ycombinator.com/item?id=50090246
@@ -15,5 +15,4 @@ HN digest 2026-10-14 (UTC): 18 new stories at 300+ points
 - 305 pts, 566 comments: New Apple TV 4K https://news.ycombinator.com/item?id=50071310
 - 302 pts, 451 comments: The United Kingdom generates less electricity per person than in the 1970s https://news.ycombinator.com/item?id=50072994
 - 301 pts, 149 comments: Recreational Programming https://news.ycombinator.com/item?id=50079865
-- 301 pts, 175 comments: 'AI' Is Not a Tool by Rich Hickey https://news.ycombinator.com/item?id=50060269
 - 300 pts, 270 comments: Character.ai has initiated voluntary Chapter 11 bankruptcy https://news.ycombinator.com/item?id=50068036
