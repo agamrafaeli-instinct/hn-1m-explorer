@@ -1,5 +1,27 @@
 [
  {
+  "id": "50103338",
+  "title": "Wayland desktop for Linux with skeuomorphic design",
+  "points": 359,
+  "comments": 143,
+  "author": "FinalDestiny",
+  "hn": "https://news.ycombinator.com/item?id=50103338",
+  "url": "https://github.com/fyzugx/DEsk",
+  "created_at": "2026-10-15T13:23:44Z",
+  "reported_at": 1792091631
+ },
+ {
+  "id": "50070625",
+  "title": "Wanted to download an ISO, ended up writing a kernel exploit",
+  "points": 305,
+  "comments": 152,
+  "author": "0xdeafbeef",
+  "hn": "https://news.ycombinator.com/item?id=50070625",
+  "url": "https://blog.dfb.sh/blog/eap770-root-for-two-zeros/",
+  "created_at": "2026-10-13T12:30:08Z",
+  "reported_at": 1792091631
+ },
+ {
   "id": "50103000",
   "title": "Israeli firm's digital ads enabling installation of 'zero-click' spyware",
   "points": 324,

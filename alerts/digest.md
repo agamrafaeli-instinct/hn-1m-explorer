@@ -1,8 +1,9 @@
-HN digest 2026-10-15 (UTC): 17 new stories at 300+ points
+HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
 - 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
 - 420 pts, 167 comments: AI agents aren't 'going rogue.' Frontier labs are skipping security basics https://news.ycombinator.com/item?id=50091788
 - 395 pts, 308 comments: Do dentists know what they're doing? https://news.ycombinator.com/item?id=50050553
 - 362 pts, 147 comments: OpenCode 2.0 https://news.ycombinator.com/item?id=50094994
+- 359 pts, 143 comments: Wayland desktop for Linux with skeuomorphic design https://news.ycombinator.com/item?id=50103338
 - 356 pts, 450 comments: Suicide rates highest ever among middle-aged men https://news.ycombinator.com/item?id=50093180
 - 341 pts, 51 comments: Tiny Little Office https://news.ycombinator.com/item?id=50096142
 - 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
@@ -12,6 +13,7 @@ HN digest 2026-10-15 (UTC): 17 new stories at 300+ points
 - 316 pts, 123 comments: Anthropic's Scion is heavily inspired by Mononoke https://news.ycombinator.com/item?id=50094694
 - 310 pts, 138 comments: ICE Planning $100M 'Nightmare' Domestic Spy Program https://news.ycombinator.com/item?id=50090246
 - 306 pts, 460 comments: Passkeys are not a trap https://news.ycombinator.com/item?id=50088935
+- 305 pts, 152 comments: Wanted to download an ISO, ended up writing a kernel exploit https://news.ycombinator.com/item?id=50070625
 - 302 pts, 94 comments: We’re releasing Jev 1.14.0 along with experimental features for dreamers https://news.ycombinator.com/item?id=50095353
 - 302 pts, 206 comments: Fire at Starlink site in Bulgaria after suspected sabotage in Poland https://news.ycombinator.com/item?id=50092730
 - 301 pts, 303 comments: Americans' social activity has steeply declined in the past 30 years https://news.ycombinator.com/item?id=50089921
