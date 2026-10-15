@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-15 11:09 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-15 13:20 UTC. Forward only ids not sent before.
 50095353 | 302 pts, 94 comments | We’re releasing Jev 1.14.0 along with experimental features for dreamers | https://news.ycombinator.com/item?id=50095353
 50096142 | 341 pts, 51 comments | Tiny Little Office | https://news.ycombinator.com/item?id=50096142
 50083028 | 317 pts, 249 comments | Why is every rationalist blog post way too long? | https://news.ycombinator.com/item?id=50083028
@@ -8,4 +8,3 @@ HN new 300+ stories, last 12h, updated 2026-10-15 11:09 UTC. Forward only ids no
 50094994 | 362 pts, 147 comments | OpenCode 2.0 | https://news.ycombinator.com/item?id=50094994
 50092730 | 302 pts, 206 comments | Fire at Starlink site in Bulgaria after suspected sabotage in Poland | https://news.ycombinator.com/item?id=50092730
 50092664 | 317 pts, 230 comments | Banks are now trying to offload the AI data center debt they just underwrote | https://news.ycombinator.com/item?id=50092664
-50050553 | 395 pts, 308 comments | Do dentists know what they're doing? | https://news.ycombinator.com/item?id=50050553
