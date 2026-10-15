@@ -1,0 +1,86 @@
+{
+ "aliases": [
+  {
+   "count": 7865,
+   "text": "nvidia"
+  },
+  {
+   "count": 5403,
+   "text": "gpu"
+  },
+  {
+   "count": 1722,
+   "text": "gpus"
+  },
+  {
+   "count": 1222,
+   "text": "tsmc"
+  },
+  {
+   "count": 1111,
+   "text": "semiconductor"
+  },
+  {
+   "count": 777,
+   "text": "cuda"
+  },
+  {
+   "count": 334,
+   "text": "asml"
+  },
+  {
+   "count": 304,
+   "text": "semiconductors"
+  },
+  {
+   "count": 227,
+   "text": "tpu"
+  },
+  {
+   "count": 97,
+   "text": "tpus"
+  }
+ ],
+ "exclusions": [],
+ "label": "GPU and chip hardware",
+ "matches": 19062,
+ "near_misses_total": 10,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\b(gpus?|nvidia|cuda|tpus?|semiconductors?|tsmc|asml)\\b",
+ "sample_matches": [
+  "Morgan Stanley\u2019s Failure to Comprehend New GPU Tech Results in Nvidia Downgrade",
+  "US startup Substrate announces chipmaking tool that it says will rival ASML",
+  "AI Datacenters Were Built for GPUs. What Happens When You Remove the GPUs?",
+  "Getting Started with CUDA for Python Programmers [video]",
+  "High-End Chipmakers to Fare Far Better During Semiconductor Crisis",
+  "TPU V3",
+  "[Nvidia] NemoClaw \u2013 Enterprise AI Agents, Redefined",
+  "Single-GPU-Passthrough",
+  "Intel's Gaudi AI chips are far behind Nvidia and AMD, won't even hit $500M goal",
+  "Intel's Haswell will have on-package 64MB of  GPU memory",
+  "GTC March 2024 Keynote with Nvidia CEO Jensen Huang [video]",
+  "Ask HN: Introductory resources on microarchitecture of GPUs?",
+  "TSMC founder says unnamed customers want 10 new fabs to build AI chips",
+  "Nvidia on NixOS WSL \u2013 Ollama up 24/7 on your gaming PC",
+  "Hurricane Helene Will Send Shockwaves Through the Semiconductor Industry",
+  "Cursor Is Anthropic's Largest Customer (and Maxing Out Their GPUs)",
+  "Real Time Pixel Art Remasterization on GPUs with CUDA",
+  "Jacket Demo - CPU vs GPU runtimes on Matlab code",
+  "The Worst CPU and GPU Purchases of 2019",
+  "Researchers Use Nvidia\u2019s GPUs to Simulate Qubits"
+ ],
+ "sample_near_misses": [
+  "Nvidias recent face generation deep neural network (keep refreshing)",
+  "Court rejects NVIDIAs attempt to seal email chain with Annas Archive [pdf]",
+  "Nvidias engineer comments on the vram issue of the gtx 970",
+  "CVE 2025-23266 (NVIDIAScape) \u2013 An update",
+  "Nvidias restrictive NDA for journalists",
+  "Reading the Signs: Nvidian Wins Kaggle AI Contest for Sign Language Recognition",
+  "NVIDIAScape: VNode prevents this container breakout without the need for VMs",
+  "CVE 2025-23266 (NVIDIAScape) \u2013 A Detailed writeup",
+  "OpenNvidia may be the AI generation's WinTel",
+  "Ask HN: What Is Envidia?"
+ ],
+ "schema": 1,
+ "term": "vcgpu"
+}
