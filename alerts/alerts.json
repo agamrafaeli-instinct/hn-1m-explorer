@@ -1,5 +1,16 @@
 [
  {
+  "id": "50103000",
+  "title": "Israeli firm's digital ads enabling installation of 'zero-click' spyware",
+  "points": 324,
+  "comments": 143,
+  "author": "chunkyslink",
+  "hn": "https://news.ycombinator.com/item?id=50103000",
+  "url": "https://www.theguardian.com/technology/2026/oct/15/israeli-firm-digital-ads-enabling-installation-of-zero-click-spyware-researchers-say",
+  "created_at": "2026-10-15T12:58:32Z",
+  "reported_at": 1792077146
+ },
+ {
   "id": "50095353",
   "title": "We\u2019re releasing Jev 1.14.0 along with experimental features for dreamers",
   "points": 302,

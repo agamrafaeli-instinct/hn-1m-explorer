@@ -6,9 +6,9 @@ HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
 - 362 pts, 147 comments: OpenCode 2.0 https://news.ycombinator.com/item?id=50094994
 - 356 pts, 450 comments: Suicide rates highest ever among middle-aged men https://news.ycombinator.com/item?id=50093180
 - 351 pts, 327 comments: Amazon pushes up prices across the Internet https://news.ycombinator.com/item?id=50084757
-- 348 pts, 161 comments: AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs https://news.ycombinator.com/item?id=50083130
 - 341 pts, 51 comments: Tiny Little Office https://news.ycombinator.com/item?id=50096142
 - 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
+- 324 pts, 143 comments: Israeli firm's digital ads enabling installation of 'zero-click' spyware https://news.ycombinator.com/item?id=50103000
 - 317 pts, 249 comments: Why is every rationalist blog post way too long? https://news.ycombinator.com/item?id=50083028
 - 317 pts, 230 comments: Banks are now trying to offload the AI data center debt they just underwrote https://news.ycombinator.com/item?id=50092664
 - 316 pts, 123 comments: Anthropic's Scion is heavily inspired by Mononoke https://news.ycombinator.com/item?id=50094694
