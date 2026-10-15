@@ -1,7 +1,8 @@
-HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
+HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
 - 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
-- 420 pts, 167 comments: AI agents aren't 'going rogue.' Frontier labs are skipping security basics https://news.ycombinator.com/item?id=50091788
+- 440 pts, 268 comments: Muse Spark Open https://news.ycombinator.com/item?id=50107379
 - 395 pts, 308 comments: Do dentists know what they're doing? https://news.ycombinator.com/item?id=50050553
+- 363 pts, 118 comments: Neural networks are clean https://news.ycombinator.com/item?id=50105647
 - 362 pts, 147 comments: OpenCode 2.0 https://news.ycombinator.com/item?id=50094994
 - 359 pts, 143 comments: Wayland desktop for Linux with skeuomorphic design https://news.ycombinator.com/item?id=50103338
 - 356 pts, 450 comments: Suicide rates highest ever among middle-aged men https://news.ycombinator.com/item?id=50093180
@@ -11,8 +12,8 @@ HN digest 2026-10-15 (UTC): 19 new stories at 300+ points
 - 317 pts, 249 comments: Why is every rationalist blog post way too long? https://news.ycombinator.com/item?id=50083028
 - 317 pts, 230 comments: Banks are now trying to offload the AI data center debt they just underwrote https://news.ycombinator.com/item?id=50092664
 - 316 pts, 123 comments: Anthropic's Scion is heavily inspired by Mononoke https://news.ycombinator.com/item?id=50094694
-- 310 pts, 138 comments: ICE Planning $100M 'Nightmare' Domestic Spy Program https://news.ycombinator.com/item?id=50090246
-- 306 pts, 460 comments: Passkeys are not a trap https://news.ycombinator.com/item?id=50088935
+- 310 pts, 502 comments: I know why the mathematicians weep https://news.ycombinator.com/item?id=50103630
+- 309 pts, 459 comments: AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware https://news.ycombinator.com/item?id=50101813
 - 305 pts, 152 comments: Wanted to download an ISO, ended up writing a kernel exploit https://news.ycombinator.com/item?id=50070625
 - 302 pts, 94 comments: We’re releasing Jev 1.14.0 along with experimental features for dreamers https://news.ycombinator.com/item?id=50095353
 - 302 pts, 206 comments: Fire at Starlink site in Bulgaria after suspected sabotage in Poland https://news.ycombinator.com/item?id=50092730

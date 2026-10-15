@@ -1,5 +1,49 @@
 [
  {
+  "id": "50107379",
+  "title": "Muse Spark Open",
+  "points": 440,
+  "comments": 268,
+  "author": "bigwheels",
+  "hn": "https://news.ycombinator.com/item?id=50107379",
+  "url": "https://research.meta.ai/blog/muse-spark-open",
+  "created_at": "2026-10-15T17:47:39Z",
+  "reported_at": 1792098500
+ },
+ {
+  "id": "50105647",
+  "title": "Neural networks are clean",
+  "points": 363,
+  "comments": 118,
+  "author": "themgt",
+  "hn": "https://news.ycombinator.com/item?id=50105647",
+  "url": "https://already-clean.goodfire.com/",
+  "created_at": "2026-10-15T16:04:01Z",
+  "reported_at": 1792098500
+ },
+ {
+  "id": "50103630",
+  "title": "I know why the mathematicians weep",
+  "points": 310,
+  "comments": 502,
+  "author": "RickJWagner",
+  "hn": "https://news.ycombinator.com/item?id=50103630",
+  "url": "https://www.derekthompson.org/p/i-know-why-the-mathematicians-weep",
+  "created_at": "2026-10-15T13:44:32Z",
+  "reported_at": 1792098500
+ },
+ {
+  "id": "50101813",
+  "title": "AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware",
+  "points": 309,
+  "comments": 459,
+  "author": "jcomp",
+  "hn": "https://news.ycombinator.com/item?id=50101813",
+  "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/",
+  "created_at": "2026-10-15T10:43:36Z",
+  "reported_at": 1792098500
+ },
+ {
   "id": "50103338",
   "title": "Wayland desktop for Linux with skeuomorphic design",
   "points": 359,
