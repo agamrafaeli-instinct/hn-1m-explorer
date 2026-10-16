@@ -1,7 +1,7 @@
-HN digest 2026-10-16 (UTC): 18 new stories at 300+ points
+HN digest 2026-10-16 (UTC): 17 new stories at 300+ points
 - 440 pts, 268 comments: Muse Spark Open https://news.ycombinator.com/item?id=50107379
+- 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 363 pts, 118 comments: Neural networks are clean https://news.ycombinator.com/item?id=50105647
-- 359 pts, 143 comments: Wayland desktop for Linux with skeuomorphic design https://news.ycombinator.com/item?id=50103338
 - 331 pts, 156 comments: Jev meets the Trolley Problem https://news.ycombinator.com/item?id=50106023
 - 320 pts, 114 comments: Meta’s new commercial terms will allow the scraping of news sites: experts https://news.ycombinator.com/item?id=50111852
 - 315 pts, 369 comments: Tesla Roadster https://news.ycombinator.com/item?id=50112657
@@ -9,7 +9,6 @@ HN digest 2026-10-16 (UTC): 18 new stories at 300+ points
 - 310 pts, 502 comments: I know why the mathematicians weep https://news.ycombinator.com/item?id=50103630
 - 309 pts, 459 comments: AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware https://news.ycombinator.com/item?id=50101813
 - 308 pts, 200 comments: New Withings Users Must Pay $99/Year for Apple Health Syncing https://news.ycombinator.com/item?id=50109375
-- 305 pts, 152 comments: Wanted to download an ISO, ended up writing a kernel exploit https://news.ycombinator.com/item?id=50070625
 - 304 pts, 143 comments: Celebrating 70 Years of Fortran https://news.ycombinator.com/item?id=50104726
 - 304 pts, 97 comments: Krea 3 – An image model built for editing at scale https://news.ycombinator.com/item?id=50105648
 - 304 pts, 199 comments: What I Self-Host https://news.ycombinator.com/item?id=50109715
