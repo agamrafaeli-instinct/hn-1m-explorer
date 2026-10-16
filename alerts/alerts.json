@@ -1,5 +1,27 @@
 [
  {
+  "id": "50109715",
+  "title": "What I Self-Host",
+  "points": 304,
+  "comments": 199,
+  "author": "BrunoBernardino",
+  "hn": "https://news.ycombinator.com/item?id=50109715",
+  "url": "https://viceconsole.fyi/blog/2026/10/10/what-i-self-host/",
+  "created_at": "2026-10-15T20:23:25Z",
+  "reported_at": 1792119988
+ },
+ {
+  "id": "50106023",
+  "title": "Jev meets the Trolley Problem",
+  "points": 331,
+  "comments": 156,
+  "author": "zlandes86",
+  "hn": "https://news.ycombinator.com/item?id=50106023",
+  "url": "https://zachlandes.com/trolley-problem/",
+  "created_at": "2026-10-15T16:24:52Z",
+  "reported_at": 1792119988
+ },
+ {
   "id": "50107379",
   "title": "Muse Spark Open",
   "points": 440,
