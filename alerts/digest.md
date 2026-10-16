@@ -1,5 +1,4 @@
-HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
-- 547 pts, 151 comments: Things to know when you get cancer – 2026 Edition https://news.ycombinator.com/item?id=50093568
+HN digest 2026-10-16 (UTC): 17 new stories at 300+ points
 - 440 pts, 268 comments: Muse Spark Open https://news.ycombinator.com/item?id=50107379
 - 395 pts, 308 comments: Do dentists know what they're doing? https://news.ycombinator.com/item?id=50050553
 - 363 pts, 118 comments: Neural networks are clean https://news.ycombinator.com/item?id=50105647
@@ -7,7 +6,6 @@ HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
 - 359 pts, 143 comments: Wayland desktop for Linux with skeuomorphic design https://news.ycombinator.com/item?id=50103338
 - 356 pts, 450 comments: Suicide rates highest ever among middle-aged men https://news.ycombinator.com/item?id=50093180
 - 341 pts, 51 comments: Tiny Little Office https://news.ycombinator.com/item?id=50096142
-- 330 pts, 87 comments: Google is silently linking your phone number across all signed-in accounts https://news.ycombinator.com/item?id=50090349
 - 324 pts, 143 comments: Israeli firm's digital ads enabling installation of 'zero-click' spyware https://news.ycombinator.com/item?id=50103000
 - 317 pts, 249 comments: Why is every rationalist blog post way too long? https://news.ycombinator.com/item?id=50083028
 - 317 pts, 230 comments: Banks are now trying to offload the AI data center debt they just underwrote https://news.ycombinator.com/item?id=50092664
@@ -18,4 +16,3 @@ HN digest 2026-10-15 (UTC): 20 new stories at 300+ points
 - 302 pts, 94 comments: We’re releasing Jev 1.14.0 along with experimental features for dreamers https://news.ycombinator.com/item?id=50095353
 - 302 pts, 206 comments: Fire at Starlink site in Bulgaria after suspected sabotage in Poland https://news.ycombinator.com/item?id=50092730
 - 301 pts, 303 comments: Americans' social activity has steeply declined in the past 30 years https://news.ycombinator.com/item?id=50089921
-- 301 pts, 149 comments: Recreational Programming https://news.ycombinator.com/item?id=50079865
