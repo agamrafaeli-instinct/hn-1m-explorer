@@ -1,5 +1,38 @@
 [
  {
+  "id": "50102923",
+  "title": "Libreboot 26.10 \"Ominous Olive\" released with UEFI, Chromebook support",
+  "points": 301,
+  "comments": 183,
+  "author": "iamnothere",
+  "hn": "https://news.ycombinator.com/item?id=50102923",
+  "url": "https://libreboot.org/news/libreboot2610.html",
+  "created_at": "2026-10-15T12:52:16Z",
+  "reported_at": 1792163300
+ },
+ {
+  "id": "50102247",
+  "title": "Show HN: Unfenced \u2013 Land for sale that borders public land",
+  "points": 303,
+  "comments": 195,
+  "author": "otherwatersflow",
+  "hn": "https://news.ycombinator.com/item?id=50102247",
+  "url": "https://unfenced.land/",
+  "created_at": "2026-10-15T11:38:57Z",
+  "reported_at": 1792163300
+ },
+ {
+  "id": "50090369",
+  "title": "Better HTTP/1 connection reuse in Go 1.27",
+  "points": 300,
+  "comments": 47,
+  "author": "allddd",
+  "hn": "https://news.ycombinator.com/item?id=50090369",
+  "url": "https://go.dev/blog/http-connection-reuse",
+  "created_at": "2026-10-14T16:29:33Z",
+  "reported_at": 1792163300
+ },
+ {
   "id": "50111852",
   "title": "Meta\u2019s new commercial terms will allow the scraping of news sites: experts",
   "points": 320,

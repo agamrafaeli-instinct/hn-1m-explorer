@@ -1,4 +1,4 @@
-HN digest 2026-10-16 (UTC): 15 new stories at 300+ points
+HN digest 2026-10-16 (UTC): 18 new stories at 300+ points
 - 440 pts, 268 comments: Muse Spark Open https://news.ycombinator.com/item?id=50107379
 - 363 pts, 118 comments: Neural networks are clean https://news.ycombinator.com/item?id=50105647
 - 359 pts, 143 comments: Wayland desktop for Linux with skeuomorphic design https://news.ycombinator.com/item?id=50103338
@@ -13,4 +13,7 @@ HN digest 2026-10-16 (UTC): 15 new stories at 300+ points
 - 305 pts, 152 comments: Wanted to download an ISO, ended up writing a kernel exploit https://news.ycombinator.com/item?id=50070625
 - 304 pts, 97 comments: Krea 3 – An image model built for editing at scale https://news.ycombinator.com/item?id=50105648
 - 304 pts, 199 comments: What I Self-Host https://news.ycombinator.com/item?id=50109715
+- 303 pts, 195 comments: Show HN: Unfenced – Land for sale that borders public land https://news.ycombinator.com/item?id=50102247
 - 302 pts, 303 comments: Steam Client is now faster than Epic's new vibe coded launcher https://news.ycombinator.com/item?id=50105635
+- 301 pts, 183 comments: Libreboot 26.10 "Ominous Olive" released with UEFI, Chromebook support https://news.ycombinator.com/item?id=50102923
+- 300 pts, 47 comments: Better HTTP/1 connection reuse in Go 1.27 https://news.ycombinator.com/item?id=50090369
