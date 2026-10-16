@@ -3,7 +3,6 @@ HN digest 2026-10-16 (UTC): 18 new stories at 300+ points
 - 363 pts, 118 comments: Neural networks are clean https://news.ycombinator.com/item?id=50105647
 - 359 pts, 143 comments: Wayland desktop for Linux with skeuomorphic design https://news.ycombinator.com/item?id=50103338
 - 331 pts, 156 comments: Jev meets the Trolley Problem https://news.ycombinator.com/item?id=50106023
-- 324 pts, 143 comments: Israeli firm's digital ads enabling installation of 'zero-click' spyware https://news.ycombinator.com/item?id=50103000
 - 320 pts, 114 comments: Meta’s new commercial terms will allow the scraping of news sites: experts https://news.ycombinator.com/item?id=50111852
 - 315 pts, 369 comments: Tesla Roadster https://news.ycombinator.com/item?id=50112657
 - 312 pts, 142 comments: Someone on Torrent Sites Kept Fucking with My Sonarr https://news.ycombinator.com/item?id=50108872
@@ -11,6 +10,7 @@ HN digest 2026-10-16 (UTC): 18 new stories at 300+ points
 - 309 pts, 459 comments: AdFection: Targeted ads turned into a pipeline for zero-click mercenary spyware https://news.ycombinator.com/item?id=50101813
 - 308 pts, 200 comments: New Withings Users Must Pay $99/Year for Apple Health Syncing https://news.ycombinator.com/item?id=50109375
 - 305 pts, 152 comments: Wanted to download an ISO, ended up writing a kernel exploit https://news.ycombinator.com/item?id=50070625
+- 304 pts, 143 comments: Celebrating 70 Years of Fortran https://news.ycombinator.com/item?id=50104726
 - 304 pts, 97 comments: Krea 3 – An image model built for editing at scale https://news.ycombinator.com/item?id=50105648
 - 304 pts, 199 comments: What I Self-Host https://news.ycombinator.com/item?id=50109715
 - 303 pts, 195 comments: Show HN: Unfenced – Land for sale that borders public land https://news.ycombinator.com/item?id=50102247

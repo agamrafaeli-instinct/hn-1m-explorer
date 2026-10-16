@@ -1,5 +1,16 @@
 [
  {
+  "id": "50104726",
+  "title": "Celebrating 70 Years of Fortran",
+  "points": 304,
+  "comments": 143,
+  "author": "rbanffy",
+  "hn": "https://news.ycombinator.com/item?id=50104726",
+  "url": "https://fortran-lang.org/news/2026/09-15-Fortran-birthday/",
+  "created_at": "2026-10-15T15:03:17Z",
+  "reported_at": 1792170500
+ },
+ {
   "id": "50102923",
   "title": "Libreboot 26.10 \"Ominous Olive\" released with UEFI, Chromebook support",
   "points": 301,
