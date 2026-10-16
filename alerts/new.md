@@ -1,4 +1,5 @@
-HN new 300+ stories, last 12h, updated 2026-10-16 21:06 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-16 23:02 UTC. Forward only ids not sent before.
+50121179 | 350 pts, 301 comments | 90% of US working hours are spent on tasks not covered well by AI benchmarks | https://news.ycombinator.com/item?id=50121179
 50122800 | 376 pts, 152 comments | Claude reveals ECDSA curve origins | https://news.ycombinator.com/item?id=50122800
 50104726 | 304 pts, 143 comments | Celebrating 70 Years of Fortran | https://news.ycombinator.com/item?id=50104726
 50102923 | 301 pts, 183 comments | Libreboot 26.10 "Ominous Olive" released with UEFI, Chromebook support | https://news.ycombinator.com/item?id=50102923
@@ -6,4 +7,3 @@ HN new 300+ stories, last 12h, updated 2026-10-16 21:06 UTC. Forward only ids no
 50090369 | 300 pts, 47 comments | Better HTTP/1 connection reuse in Go 1.27 | https://news.ycombinator.com/item?id=50090369
 50111852 | 320 pts, 114 comments | Meta’s new commercial terms will allow the scraping of news sites: experts | https://news.ycombinator.com/item?id=50111852
 50109375 | 308 pts, 200 comments | New Withings Users Must Pay $99/Year for Apple Health Syncing | https://news.ycombinator.com/item?id=50109375
-50105648 | 304 pts, 97 comments | Krea 3 – An image model built for editing at scale | https://news.ycombinator.com/item?id=50105648
