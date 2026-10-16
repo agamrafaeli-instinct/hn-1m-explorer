@@ -28,7 +28,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 15499.0,
+   "group_a_count": 15500.0,
    "id": "h301",
    "replaced_by": "h380",
    "score": 0.8,
@@ -1012,7 +1012,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611795.0,
+   "group_a_count": 2611797.0,
    "id": "h367",
    "replaced_by": "h418",
    "score": 0.8,
@@ -1095,7 +1095,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 15499.0,
+   "group_a_count": 15500.0,
    "id": "h372",
    "score": 1.0,
    "title": "Agents take a bigger slice of all HN stories"
@@ -1223,7 +1223,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 161248.0,
+   "group_a_count": 161250.0,
    "id": "h380",
    "score": 1.0,
    "title": "Agents stories vs ChatGPT and GPT models stories on points"
@@ -1831,7 +1831,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611795.0,
+   "group_a_count": 2611797.0,
    "id": "h418",
    "score": 1.0,
    "title": "Show HN posts stories vs hands-on making stories on points"
