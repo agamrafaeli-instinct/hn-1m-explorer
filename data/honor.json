@@ -28,7 +28,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 15498.0,
+   "group_a_count": 15499.0,
    "id": "h301",
    "replaced_by": "h380",
    "score": 0.8,
@@ -1012,7 +1012,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611751.0,
+   "group_a_count": 2611795.0,
    "id": "h367",
    "replaced_by": "h418",
    "score": 0.8,
@@ -1095,7 +1095,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 15498.0,
+   "group_a_count": 15499.0,
    "id": "h372",
    "score": 1.0,
    "title": "Agents take a bigger slice of all HN stories"
@@ -1223,7 +1223,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 161217.0,
+   "group_a_count": 161248.0,
    "id": "h380",
    "score": 1.0,
    "title": "Agents stories vs ChatGPT and GPT models stories on points"
@@ -1831,7 +1831,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611751.0,
+   "group_a_count": 2611795.0,
    "id": "h418",
    "score": 1.0,
    "title": "Show HN posts stories vs hands-on making stories on points"
@@ -1936,6 +1936,22 @@
    "id": "h424",
    "score": 0.6,
    "title": "GPU and chip hardware: a bigger share than before"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": true,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [],
+   "group_a_count": 3477.0,
+   "id": "h425",
+   "score": 1.0,
+   "title": "Rust: a bigger share than before"
   }
  ],
  "schema": 1,
