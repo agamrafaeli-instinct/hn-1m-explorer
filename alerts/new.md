@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-16 17:08 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-16 19:09 UTC. Forward only ids not sent before.
 50104726 | 304 pts, 143 comments | Celebrating 70 Years of Fortran | https://news.ycombinator.com/item?id=50104726
 50102923 | 301 pts, 183 comments | Libreboot 26.10 "Ominous Olive" released with UEFI, Chromebook support | https://news.ycombinator.com/item?id=50102923
 50102247 | 303 pts, 195 comments | Show HN: Unfenced – Land for sale that borders public land | https://news.ycombinator.com/item?id=50102247
