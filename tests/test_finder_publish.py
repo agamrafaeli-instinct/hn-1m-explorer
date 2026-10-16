@@ -33,6 +33,53 @@ class Publish(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             setup(d); e = self.run_main(d); self.assertIn(e['card_id'], e['story']['tracked']); self.assertIn('not a prediction', e['story']['tracked'])
             self.assertEqual(e['story']['rows'][0]['from'], '2025-08')
+    def test_new_card_has_explicit_limits(self):
+        with tempfile.TemporaryDirectory() as d:
+            setup(d); e = self.run_main(d)
+            with open(os.path.join(d, 'hypotheses', e['card_id'] + '-llm-story.json')) as src:
+                c = json.load(src)
+            self.assertTrue(any('Title matching' in x for x in c['caveats']))
+            self.assertTrue(any('not a prediction' in x for x in c['caveats']))
+            import honor_scorecard
+            cards = {c['id']: c}
+            criteria, _ = honor_scorecard.score_card(c, cards, [], set(), False, {}, d)
+            self.assertTrue(criteria['insightful'])
+    def test_reuse_preserves_published_bytes_and_original_date(self):
+        with tempfile.TemporaryDirectory() as d:
+            setup(d); original = self.run_main(d)
+            card_path = os.path.join(d, 'hypotheses', original['card_id'] + '-llm-story.json')
+            dated_path = os.path.join(d, 'data/finder/2026-10-11.json')
+            before = {p: open(p, 'rb').read() for p in (card_path, dated_path)}
+            json.dump(E, open(os.path.join(d, 'data/finder/2027-02-11.json'), 'w'))
+            reused = self.run_main(d, '2027-02-11')
+            self.assertEqual(reused['card_id'], original['card_id'])
+            self.assertEqual(reused['rule']['set_on'], '2026-10-11')
+            self.assertTrue(reused['rule']['reused'])
+            self.assertIn('Reuses the existing rule set on 2026-10-11.', reused['story']['tracked'])
+            self.assertNotIn('before this text', reused['story']['tracked'])
+            self.assertEqual(len(os.listdir(os.path.join(d, 'hypotheses'))), 1)
+            for p, data in before.items(): self.assertEqual(open(p, 'rb').read(), data)
+            self.assertEqual(reused, self.run_main(d, '2027-02-11'))
+    def test_different_rules_do_not_reuse_the_same_comparison(self):
+        with tempfile.TemporaryDirectory() as d:
+            setup(d); original = self.run_main(d)
+            card_path = os.path.join(d, 'hypotheses', original['card_id'] + '-llm-story.json')
+            c = json.load(open(card_path)); c['verdicts'][1]['when']['value'] = 0.8
+            json.dump(c, open(card_path, 'w'))
+            before = open(card_path, 'rb').read()
+            json.dump(E, open(os.path.join(d, 'data/finder/2027-02-11.json'), 'w'))
+            different = self.run_main(d, '2027-02-11')
+            self.assertNotEqual(different['card_id'], original['card_id'])
+            self.assertNotIn('reused', different['rule'])
+            self.assertEqual(open(card_path, 'rb').read(), before)
+    def test_missing_rule_date_is_not_invented(self):
+        with tempfile.TemporaryDirectory() as d:
+            setup(d); original = self.run_main(d)
+            card_path = os.path.join(d, 'hypotheses', original['card_id'] + '-llm-story.json')
+            c = json.load(open(card_path)); c['thresholds_note'] = 'Exploratory.'
+            json.dump(c, open(card_path, 'w'))
+            json.dump(E, open(os.path.join(d, 'data/finder/2027-02-11.json'), 'w'))
+            self.assertNotEqual(self.run_main(d, '2027-02-11')['card_id'], original['card_id'])
     def test_no_pick_hides_home_line(self):
         with tempfile.TemporaryDirectory() as d:
             os.makedirs(os.path.join(d, 'data/finder')); lp = os.path.join(d, 'data/finder/latest.json'); open(lp, 'w').write('{}')

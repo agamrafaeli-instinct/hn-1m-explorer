@@ -31,5 +31,11 @@ One story a day, picked and published by the daily run (Decision 2026-10-11: no 
 - The scoreboard card exists, reads data/film_shares.json and has the rule written on the publish date.
 - A rerun on the same date keeps the pick (tests/test_finder_select.py, tests/test_finder_publish.py).
 
+## Reusing a published test
+
+The publisher reuses a story-finder card only when its full comparison and verdict rules match exactly and its original rule date is recorded. The dated story keeps that original date and says that the test is reused. A comparison with different thresholds is a different test. Published cards and dated stories are never rewritten. Genuinely new cards carry title-matching, exploratory-selection and interpretation caveats.
+
+This prevents future duplicate tests. It does not repair quality flags on cards already published, and a distinct rule can still be flagged by the quality check for using an older comparison.
+
 ## Limits
 The term was picked because its numbers stood out, so the scoreboard card tests it on the current data and is not a prediction. Spike uses the latest month, not 4 weeks, because the film data is monthly. The anomaly generator (domains, title patterns, score distribution) is not built.

@@ -5,7 +5,7 @@ Run after finder_select.py (it wrote data/finder/<date>.json) and, for the pick,
 Adds the story block (headline, rows, takeaway, limit) built from the evidence numbers only, writes data/finder/latest.json (one line for the
 home page) and appends the pick to data/finder/shown.json. A rerun on the same date changes nothing. With no pick, latest.json is removed so the home entry hides.
 """
-import glob, json, os, re, sys, datetime as dt
+import glob, json, os, re, sys, tempfile, datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
@@ -40,17 +40,43 @@ def next_card_id(root):
     return 'h%d' % (max(ids + [368]) + 1)
 
 def make_card(e, today, root=None):
-    """A card for the scoreboard (#182). The rule is the standard film-card rule on the latest 12 months against all earlier months,
+    """Reuse an unchanged test or create a card (#505). The rule uses the latest 12 months against all earlier months,
     with fixed thresholds written here, not tuned to the result. The term was picked because of its numbers, so the card tests the term on the
     current data. It is not a prediction."""
     import film
-    root = root or ROOT; film.ROOT = root; cid = next_card_id(root); L = e['label']
+    root = root or ROOT; cid = next_card_id(root); L = e['label']
     slug = re.sub(r'[^a-z0-9]+', '-', e['term'].lower()).strip('-') + '-story'
     expect = ('Share of stories in the latest 12 months divided by the pooled share of all earlier stories since 2006: %gx or more supports (%gx or more is strong); %gx or less refutes. Between is inconclusive. Title matching only.' % (WEAK, STRONG, REFUTE))
-    p = film.make_card(cid, slug, e['term'], '%s: a bigger share than before' % L, '%s titles are a bigger share of stories in the latest 12 months than before.' % L, expect, STRONG, WEAK, REFUTE, 'curious readers', author='story-finder')
-    c = json.load(open(p))
+    previous_root = film.ROOT
+    # Build a candidate outside the published archive; reuse must not write a card.
+    with tempfile.TemporaryDirectory() as staging:
+        os.makedirs(os.path.join(staging, 'hypotheses'))
+        film.ROOT = staging
+        try:
+            p = film.make_card(cid, slug, e['term'], '%s: a bigger share than before' % L, '%s titles are a bigger share of stories in the latest 12 months than before.' % L, expect, STRONG, WEAK, REFUTE, 'curious readers', author='story-finder')
+            with open(p) as src:
+                c = json.load(src)
+        finally:
+            film.ROOT = previous_root
+    for existing_path in sorted(glob.glob(os.path.join(root, 'hypotheses', 'h*-*.json'))):
+        with open(existing_path) as src:
+            existing = json.load(src)
+        if (existing.get('author') != 'story-finder' or existing.get('check') != c['check']
+                or existing.get('verdicts') != c['verdicts']):
+            continue
+        date = re.match(r'^Set on (\d{4}-\d{2}-\d{2}) by the story finder,', existing.get('thresholds_note', ''))
+        if not date:
+            continue  # Do not invent a rule date for an older experiment.
+        return existing['id'], {'strong': STRONG, 'weak': WEAK, 'refute': REFUTE, 'set_on': date[1], 'reused': True}
     c['thresholds_note'] = 'Set on %s by the story finder, before the story text was written. These are the standard film-card thresholds, not tuned to this result. The term was picked because its numbers stood out, so this card tests it on the current data and is not a prediction.' % today
-    json.dump(c, open(p, 'w'), indent=2); open(p, 'a').write('\n')
+    c['caveats'] = [
+        'Title matching only: the word list will miss and mis-match some stories.',
+        'The term was picked because its numbers stood out. This is an exploratory check on the current data, not a prediction.',
+        'HN attention does not measure adoption, technical validation or investment return.'
+    ]
+    p = os.path.join(root, 'hypotheses', '%s-%s.json' % (cid, slug))
+    with open(p, 'w') as dst:
+        json.dump(c, dst, indent=2); dst.write('\n')
     return cid, {'strong': STRONG, 'weak': WEAK, 'refute': REFUTE, 'set_on': today}
 
 def main(today):
@@ -61,7 +87,8 @@ def main(today):
     e = json.load(open(p))
     if 'story' not in e:
         e['card_id'], e['rule'] = make_card(e, today); e['story'] = story(e); e['date'] = today
-        e['story']['tracked'] = 'Tracked on the Tests page as %s. Supported at %gx or more against all earlier months, refuted at %gx or less, set on %s before this text was written. The term was picked because of its numbers, so this tests it on the current data and is not a prediction.' % (e['card_id'], WEAK, REFUTE, today)
+        timing = ('Reuses the existing rule set on %s.' % e['rule']['set_on'] if e['rule'].get('reused') else 'Rule set on %s before this text was written.' % e['rule']['set_on'])
+        e['story']['tracked'] = 'Tracked as %s. Supported at %gx or more against all earlier months, refuted at %gx or less. %s The term was picked because of its numbers, so this tests it on the current data and is not a prediction.' % (e['card_id'], e['rule']['weak'], e['rule']['refute'], timing)
         dp = 'data/finder/dictionaries/%s.json' % e['term']; e['dictionary'] = dp if os.path.exists(os.path.join(ROOT, dp)) else None
         json.dump(e, open(p, 'w'), indent=1, sort_keys=True)
     json.dump({'date': today, 'term': e['term'], 'headline': e['story']['headline']}, open(lp, 'w'), indent=1, sort_keys=True)
