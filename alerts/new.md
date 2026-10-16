@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-16 11:07 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-16 13:19 UTC. Forward only ids not sent before.
 50111852 | 320 pts, 114 comments | Meta’s new commercial terms will allow the scraping of news sites: experts | https://news.ycombinator.com/item?id=50111852
 50109375 | 308 pts, 200 comments | New Withings Users Must Pay $99/Year for Apple Health Syncing | https://news.ycombinator.com/item?id=50109375
 50105648 | 304 pts, 97 comments | Krea 3 – An image model built for editing at scale | https://news.ycombinator.com/item?id=50105648
