@@ -1,5 +1,27 @@
 [
  {
+  "id": "50112657",
+  "title": "Tesla Roadster",
+  "points": 315,
+  "comments": 369,
+  "author": "shekhar101",
+  "hn": "https://news.ycombinator.com/item?id=50112657",
+  "url": "https://www.tesla.com/roadster",
+  "created_at": "2026-10-16T01:32:45Z",
+  "reported_at": 1792127282
+ },
+ {
+  "id": "50105635",
+  "title": "Steam Client is now faster than Epic's new vibe coded launcher",
+  "points": 302,
+  "comments": 303,
+  "author": "starkparker",
+  "hn": "https://news.ycombinator.com/item?id=50105635",
+  "url": "https://respawnfirst.com/steam-client-is-now-faster-than-epics-new-vibe-coded-launcher/",
+  "created_at": "2026-10-15T16:03:19Z",
+  "reported_at": 1792127282
+ },
+ {
   "id": "50109715",
   "title": "What I Self-Host",
   "points": 304,
