@@ -1,10 +1,10 @@
 HN digest 2026-10-17 (UTC): 13 new stories at 300+ points
 - 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 350 pts, 301 comments: 90% of US working hours are spent on tasks not covered well by AI benchmarks https://news.ycombinator.com/item?id=50121179
-- 320 pts, 114 comments: Meta’s new commercial terms will allow the scraping of news sites: experts https://news.ycombinator.com/item?id=50111852
 - 317 pts, 295 comments: How the Claude Code team does code review https://news.ycombinator.com/item?id=50122951
 - 314 pts, 74 comments: You could have invented transformers from memory https://news.ycombinator.com/item?id=50122878
-- 308 pts, 200 comments: New Withings Users Must Pay $99/Year for Apple Health Syncing https://news.ycombinator.com/item?id=50109375
+- 307 pts, 76 comments: Llama.cpp on a jailbroken PS5: run any GGUF model natively on the console https://news.ycombinator.com/item?id=50122431
+- 306 pts, 118 comments: DeepSeek: DeepSeek v4.1 Flash 1017 https://news.ycombinator.com/item?id=50129121
 - 304 pts, 409 comments: Waymo in Toronto https://news.ycombinator.com/item?id=50118981
 - 304 pts, 143 comments: Celebrating 70 Years of Fortran https://news.ycombinator.com/item?id=50104726
 - 303 pts, 195 comments: Show HN: Unfenced – Land for sale that borders public land https://news.ycombinator.com/item?id=50102247
