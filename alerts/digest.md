@@ -1,4 +1,4 @@
-HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
+HN digest 2026-10-17 (UTC): 15 new stories at 300+ points
 - 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 350 pts, 301 comments: 90% of US working hours are spent on tasks not covered well by AI benchmarks https://news.ycombinator.com/item?id=50121179
 - 331 pts, 156 comments: Jev meets the Trolley Problem https://news.ycombinator.com/item?id=50106023
@@ -12,4 +12,5 @@ HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
 - 303 pts, 195 comments: Show HN: Unfenced – Land for sale that borders public land https://news.ycombinator.com/item?id=50102247
 - 302 pts, 303 comments: Steam Client is now faster than Epic's new vibe coded launcher https://news.ycombinator.com/item?id=50105635
 - 301 pts, 183 comments: Libreboot 26.10 "Ominous Olive" released with UEFI, Chromebook support https://news.ycombinator.com/item?id=50102923
+- 300 pts, 191 comments: I love software rendering https://news.ycombinator.com/item?id=50117746
 - 300 pts, 47 comments: Better HTTP/1 connection reuse in Go 1.27 https://news.ycombinator.com/item?id=50090369
