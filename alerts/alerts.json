@@ -1,5 +1,16 @@
 [
  {
+  "id": "50122878",
+  "title": "You could have invented transformers from memory",
+  "points": 314,
+  "comments": 74,
+  "author": "speckx",
+  "hn": "https://news.ycombinator.com/item?id=50122878",
+  "url": "https://alexwang.ai/posts/associative-memory/",
+  "created_at": "2026-10-16T19:01:17Z",
+  "reported_at": 1792234830
+ },
+ {
   "id": "50122951",
   "title": "How the Claude Code team does code review",
   "points": 317,
