@@ -1,5 +1,27 @@
 [
  {
+  "id": "50122951",
+  "title": "How the Claude Code team does code review",
+  "points": 317,
+  "comments": 295,
+  "author": "pretext",
+  "hn": "https://news.ycombinator.com/item?id=50122951",
+  "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+  "created_at": "2026-10-16T19:04:47Z",
+  "reported_at": 1792221270
+ },
+ {
+  "id": "50118320",
+  "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+  "points": 302,
+  "comments": 151,
+  "author": "antipaul",
+  "hn": "https://news.ycombinator.com/item?id=50118320",
+  "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+  "created_at": "2026-10-16T13:43:48Z",
+  "reported_at": 1792221270
+ },
+ {
   "id": "50118981",
   "title": "Waymo in Toronto",
   "points": 304,
