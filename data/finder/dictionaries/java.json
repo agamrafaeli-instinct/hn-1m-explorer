@@ -1,0 +1,60 @@
+{
+ "aliases": [
+  {
+   "count": 14794,
+   "text": "java"
+  }
+ ],
+ "exclusions": [],
+ "label": "Java",
+ "matches": 14794,
+ "near_misses_total": 5000,
+ "note": "Title matching only. The samples are chosen by hash order, not by hand. Read them before trusting the term.",
+ "pattern": "\\bjava\\b",
+ "sample_matches": [
+  "Show HN: Pronto \u2013 Java, Proto, Mongo Connector",
+  "Comparing I/O in C with Java",
+  "Sun \u2019never would have invested [...] in Java' without copyright protection",
+  "Show HN: Stratum - a pure JVM columnar SQL engine using the Java Vector API",
+  "Show HN: Dokimos \u2013 LLM evaluation framework for Java",
+  "ADTs (Algebraic Data Types) in Java",
+  "AskHN: Should us youngins be taking a Java class as a first programming class?",
+  "Java and Android Heap Dump Analyzer",
+  "Value-pool based caching for Java applications",
+  "Java Bullshifier",
+  "The expense of a Javascript line of code compared to a Java one",
+  "olives4j-sql : lightweight java library focus on using sql in java more useful",
+  "ForPlay: a cross-platform game library compiling to HTML5, Flash, Android & Java",
+  "Is Memory Mapped File This Fast in Java?",
+  "GraalVM 20.1, OpenJ9 0.20, OpenJDK Java Benchmarks",
+  "Kotlin vs. Java: Will Kotlin Replace Java?",
+  "Statistics about Java memory leaks \u2013 size and frequency",
+  "Ask HN: Why tf do I have to install Java freaking 8 to run Android SDK?",
+  "Dropwizard 0.8.0: Java framework for ops-friendly, high-performance web services",
+  "Top Fastest Programming Languages: Rust, C++, Swift, Java, and 90 more compared"
+ ],
+ "sample_near_misses": [
+  "Its Friday: Digg Attack - A JavaScript Game",
+  "AFeature - Interactive JavaScript console for mobile HTML5 applications",
+  "Google Analytics JavaScript is Broken",
+  "Fancycat.rb: blip.tv's smart JavaScript concatenator",
+  "Justin Meyer - JavaScriptMVC : jQuery Enterprise",
+  "Paperjs: scriptographer ported to javascript",
+  "Waterbear - a visual language for Javacript",
+  "URL-encode nested javascript objects (node/browser)",
+  "The Truth about JavaScript",
+  "Conditional JavaScript",
+  "What every JavaScript programmer should know?",
+  "Google Criticizes JavaScript Benchmarks, Modifies Sunspider",
+  "Javascript Arrays or Lists?",
+  "Javascript API for WebGL (hardware accelerated 3D in the browser)",
+  "Four HTML5 and JavaScript frameworks to jump start your app development",
+  "EBook: JavaScript Performance Rocks",
+  "Another javascript obsfucation lib",
+  "A PNG decoder in JavaScript for the HTML5 canvas element",
+  "Accessing the Accelerometer and Gyroscope in JavaScript",
+  "Which JavaScript Unit Testing Frameworks do you use?"
+ ],
+ "schema": 1,
+ "term": "java"
+}
