@@ -1,6 +1,7 @@
 HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
 - 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 350 pts, 301 comments: 90% of US working hours are spent on tasks not covered well by AI benchmarks https://news.ycombinator.com/item?id=50121179
+- 333 pts, 184 comments: Solar surpasses nuclear power globally for first time https://news.ycombinator.com/item?id=50131256
 - 318 pts, 188 comments: Butlerian Jihad https://news.ycombinator.com/item?id=50127274
 - 318 pts, 100 comments: Ultramarine 1 Flash https://news.ycombinator.com/item?id=50106747
 - 317 pts, 295 comments: How the Claude Code team does code review https://news.ycombinator.com/item?id=50122951
@@ -10,6 +11,5 @@ HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
 - 306 pts, 118 comments: DeepSeek: DeepSeek v4.1 Flash 1017 https://news.ycombinator.com/item?id=50129121
 - 304 pts, 195 comments: JPEG XL vs. AVIF for web use-cases https://news.ycombinator.com/item?id=50120224
 - 304 pts, 409 comments: Waymo in Toronto https://news.ycombinator.com/item?id=50118981
-- 304 pts, 143 comments: Celebrating 70 Years of Fortran https://news.ycombinator.com/item?id=50104726
 - 302 pts, 151 comments: Apple ML Research: Muse Spark Open with MLX on Mac Studio https://news.ycombinator.com/item?id=50118320
 - 300 pts, 191 comments: I love software rendering https://news.ycombinator.com/item?id=50117746
