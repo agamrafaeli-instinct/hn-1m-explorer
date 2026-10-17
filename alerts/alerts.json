@@ -1,5 +1,38 @@
 [
  {
+  "id": "50129045",
+  "title": "DeepSeek-v4.1-Flash-1017",
+  "points": 307,
+  "comments": 120,
+  "author": "theykk",
+  "hn": "https://news.ycombinator.com/item?id=50129045",
+  "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "created_at": "2026-10-17T08:21:25Z",
+  "reported_at": 1792249172
+ },
+ {
+  "id": "50127274",
+  "title": "Butlerian Jihad",
+  "points": 318,
+  "comments": 188,
+  "author": "wetwater",
+  "hn": "https://news.ycombinator.com/item?id=50127274",
+  "url": "https://dune.fandom.com/wiki/Butlerian_Jihad",
+  "created_at": "2026-10-17T02:21:08Z",
+  "reported_at": 1792249172
+ },
+ {
+  "id": "50106747",
+  "title": "Ultramarine 1\u00a0Flash",
+  "points": 318,
+  "comments": 100,
+  "author": "i_rush_carriers",
+  "hn": "https://news.ycombinator.com/item?id=50106747",
+  "url": "https://www.paperinstruments.com/ultramarine",
+  "created_at": "2026-10-15T17:06:01Z",
+  "reported_at": 1792249172
+ },
+ {
   "id": "50129121",
   "title": "DeepSeek: DeepSeek v4.1 Flash 1017",
   "points": 306,
