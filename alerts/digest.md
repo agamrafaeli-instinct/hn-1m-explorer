@@ -1,14 +1,13 @@
-HN digest 2026-10-17 (UTC): 15 new stories at 300+ points
+HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
 - 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 350 pts, 301 comments: 90% of US working hours are spent on tasks not covered well by AI benchmarks https://news.ycombinator.com/item?id=50121179
-- 331 pts, 156 comments: Jev meets the Trolley Problem https://news.ycombinator.com/item?id=50106023
 - 320 pts, 114 comments: Meta’s new commercial terms will allow the scraping of news sites: experts https://news.ycombinator.com/item?id=50111852
 - 315 pts, 369 comments: Tesla Roadster https://news.ycombinator.com/item?id=50112657
 - 312 pts, 142 comments: Someone on Torrent Sites Kept Fucking with My Sonarr https://news.ycombinator.com/item?id=50108872
 - 308 pts, 200 comments: New Withings Users Must Pay $99/Year for Apple Health Syncing https://news.ycombinator.com/item?id=50109375
+- 304 pts, 409 comments: Waymo in Toronto https://news.ycombinator.com/item?id=50118981
 - 304 pts, 143 comments: Celebrating 70 Years of Fortran https://news.ycombinator.com/item?id=50104726
 - 304 pts, 97 comments: Krea 3 – An image model built for editing at scale https://news.ycombinator.com/item?id=50105648
-- 304 pts, 199 comments: What I Self-Host https://news.ycombinator.com/item?id=50109715
 - 303 pts, 195 comments: Show HN: Unfenced – Land for sale that borders public land https://news.ycombinator.com/item?id=50102247
 - 302 pts, 303 comments: Steam Client is now faster than Epic's new vibe coded launcher https://news.ycombinator.com/item?id=50105635
 - 301 pts, 183 comments: Libreboot 26.10 "Ominous Olive" released with UEFI, Chromebook support https://news.ycombinator.com/item?id=50102923

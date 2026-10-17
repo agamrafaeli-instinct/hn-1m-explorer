@@ -1,5 +1,16 @@
 [
  {
+  "id": "50118981",
+  "title": "Waymo in Toronto",
+  "points": 304,
+  "comments": 409,
+  "author": "ChrisArchitect",
+  "hn": "https://news.ycombinator.com/item?id=50118981",
+  "url": "https://waymo.com/blog/2026/10/waymo-in-toronto/",
+  "created_at": "2026-10-16T14:44:17Z",
+  "reported_at": 1792213419
+ },
+ {
   "id": "50117746",
   "title": "I love software rendering",
   "points": 300,
