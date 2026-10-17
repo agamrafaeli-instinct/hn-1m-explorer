@@ -28,7 +28,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 15500.0,
+   "group_a_count": 15501.0,
    "id": "h301",
    "replaced_by": "h380",
    "score": 0.8,
@@ -351,7 +351,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 3278.0,
+   "group_a_count": 3280.0,
    "id": "h321",
    "score": 1.0,
    "title": "GPU and chip hardware: share of stories, all-time base"
@@ -367,7 +367,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 320209.0,
+   "group_a_count": 320227.0,
    "id": "h322",
    "replaced_by": "h397",
    "score": 0.8,
@@ -516,7 +516,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 11261.0,
+   "group_a_count": 11263.0,
    "id": "h331",
    "score": 1.0,
    "title": "The six deep-tech themes together: share of stories, all-time base"
@@ -532,7 +532,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1467448.0,
+   "group_a_count": 1467466.0,
    "id": "h332",
    "replaced_by": "h402",
    "score": 0.8,
@@ -697,7 +697,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1102680.0,
+   "group_a_count": 1102681.0,
    "id": "h348",
    "replaced_by": "h407",
    "score": 0.8,
@@ -714,7 +714,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 439209.0,
+   "group_a_count": 439217.0,
    "id": "h349",
    "replaced_by": "h408",
    "score": 0.8,
@@ -780,7 +780,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 3879560.0,
+   "group_a_count": 3879563.0,
    "id": "h353",
    "replaced_by": "h410",
    "score": 0.8,
@@ -1012,7 +1012,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611797.0,
+   "group_a_count": 2611807.0,
    "id": "h367",
    "replaced_by": "h418",
    "score": 0.8,
@@ -1095,7 +1095,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 15500.0,
+   "group_a_count": 15501.0,
    "id": "h372",
    "score": 1.0,
    "title": "Agents take a bigger slice of all HN stories"
@@ -1223,7 +1223,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 161250.0,
+   "group_a_count": 161255.0,
    "id": "h380",
    "score": 1.0,
    "title": "Agents stories vs ChatGPT and GPT models stories on points"
@@ -1495,7 +1495,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 320209.0,
+   "group_a_count": 320227.0,
    "id": "h397",
    "score": 1.0,
    "title": "GPU and chip hardware stories vs neural biology stories on points"
@@ -1575,7 +1575,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1467448.0,
+   "group_a_count": 1467466.0,
    "id": "h402",
    "score": 1.0,
    "title": "All six deep-tech themes stories vs Cursor, Claude Code, MCP, Copilot and Devin stories on points"
@@ -1655,7 +1655,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 1102680.0,
+   "group_a_count": 1102681.0,
    "id": "h407",
    "score": 1.0,
    "title": "Books and reading stories vs visual art stories on points"
@@ -1671,7 +1671,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 439209.0,
+   "group_a_count": 439217.0,
    "id": "h408",
    "score": 1.0,
    "title": "Visual art stories vs music stories on points"
@@ -1703,7 +1703,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 3879560.0,
+   "group_a_count": 3879563.0,
    "id": "h410",
    "score": 1.0,
    "title": "Question headlines stories vs Show HN posts stories on comments"
@@ -1831,7 +1831,7 @@
     "sharp": true
    },
    "failing": [],
-   "group_a_count": 2611797.0,
+   "group_a_count": 2611807.0,
    "id": "h418",
    "score": 1.0,
    "title": "Show HN posts stories vs hands-on making stories on points"
@@ -1932,7 +1932,7 @@
     "insightful",
     "novel"
    ],
-   "group_a_count": 3278.0,
+   "group_a_count": 3280.0,
    "id": "h424",
    "score": 0.6,
    "title": "GPU and chip hardware: a bigger share than before"
@@ -1952,6 +1952,24 @@
    "id": "h425",
    "score": 1.0,
    "title": "Rust: a bigger share than before"
+  },
+  {
+   "audience": "curious readers",
+   "criteria": {
+    "fresh": null,
+    "insightful": true,
+    "interesting": true,
+    "novel": false,
+    "relevant": true,
+    "sharp": true
+   },
+   "failing": [
+    "novel"
+   ],
+   "group_a_count": 536.0,
+   "id": "h426",
+   "score": 0.8,
+   "title": "Java: a bigger share than before"
   }
  ],
  "schema": 1,
