@@ -1,4 +1,4 @@
-HN digest 2026-10-16 (UTC): 14 new stories at 300+ points
+HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
 - 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 350 pts, 301 comments: 90% of US working hours are spent on tasks not covered well by AI benchmarks https://news.ycombinator.com/item?id=50121179
 - 331 pts, 156 comments: Jev meets the Trolley Problem https://news.ycombinator.com/item?id=50106023
