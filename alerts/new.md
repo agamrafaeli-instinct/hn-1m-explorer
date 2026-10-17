@@ -1,4 +1,4 @@
-HN new 300+ stories, last 12h, updated 2026-10-17 07:14 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-17 09:02 UTC. Forward only ids not sent before.
 50122951 | 317 pts, 295 comments | How the Claude Code team does code review | https://news.ycombinator.com/item?id=50122951
 50118320 | 302 pts, 151 comments | Apple ML Research: Muse Spark Open with MLX on Mac Studio | https://news.ycombinator.com/item?id=50118320
 50118981 | 304 pts, 409 comments | Waymo in Toronto | https://news.ycombinator.com/item?id=50118981
