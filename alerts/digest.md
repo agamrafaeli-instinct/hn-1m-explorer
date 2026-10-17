@@ -1,4 +1,4 @@
-HN digest 2026-10-17 (UTC): 16 new stories at 300+ points
+HN digest 2026-10-17 (UTC): 14 new stories at 300+ points
 - 376 pts, 152 comments: Claude reveals ECDSA curve origins https://news.ycombinator.com/item?id=50122800
 - 350 pts, 301 comments: 90% of US working hours are spent on tasks not covered well by AI benchmarks https://news.ycombinator.com/item?id=50121179
 - 318 pts, 188 comments: Butlerian Jihad https://news.ycombinator.com/item?id=50127274
@@ -8,10 +8,8 @@ HN digest 2026-10-17 (UTC): 16 new stories at 300+ points
 - 307 pts, 120 comments: DeepSeek-v4.1-Flash-1017 https://news.ycombinator.com/item?id=50129045
 - 307 pts, 76 comments: Llama.cpp on a jailbroken PS5: run any GGUF model natively on the console https://news.ycombinator.com/item?id=50122431
 - 306 pts, 118 comments: DeepSeek: DeepSeek v4.1 Flash 1017 https://news.ycombinator.com/item?id=50129121
+- 304 pts, 195 comments: JPEG XL vs. AVIF for web use-cases https://news.ycombinator.com/item?id=50120224
 - 304 pts, 409 comments: Waymo in Toronto https://news.ycombinator.com/item?id=50118981
 - 304 pts, 143 comments: Celebrating 70 Years of Fortran https://news.ycombinator.com/item?id=50104726
-- 303 pts, 195 comments: Show HN: Unfenced – Land for sale that borders public land https://news.ycombinator.com/item?id=50102247
 - 302 pts, 151 comments: Apple ML Research: Muse Spark Open with MLX on Mac Studio https://news.ycombinator.com/item?id=50118320
-- 301 pts, 183 comments: Libreboot 26.10 "Ominous Olive" released with UEFI, Chromebook support https://news.ycombinator.com/item?id=50102923
 - 300 pts, 191 comments: I love software rendering https://news.ycombinator.com/item?id=50117746
-- 300 pts, 47 comments: Better HTTP/1 connection reuse in Go 1.27 https://news.ycombinator.com/item?id=50090369

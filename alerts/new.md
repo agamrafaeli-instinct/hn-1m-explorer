@@ -1,4 +1,5 @@
-HN new 300+ stories, last 12h, updated 2026-10-17 14:59 UTC. Forward only ids not sent before.
+HN new 300+ stories, last 12h, updated 2026-10-17 17:00 UTC. Forward only ids not sent before.
+50120224 | 304 pts, 195 comments | JPEG XL vs. AVIF for web use-cases | https://news.ycombinator.com/item?id=50120224
 50129045 | 307 pts, 120 comments | DeepSeek-v4.1-Flash-1017 | https://news.ycombinator.com/item?id=50129045
 50127274 | 318 pts, 188 comments | Butlerian Jihad | https://news.ycombinator.com/item?id=50127274
 50106747 | 318 pts, 100 comments | Ultramarine 1 Flash | https://news.ycombinator.com/item?id=50106747
@@ -8,4 +9,3 @@ HN new 300+ stories, last 12h, updated 2026-10-17 14:59 UTC. Forward only ids no
 50122951 | 317 pts, 295 comments | How the Claude Code team does code review | https://news.ycombinator.com/item?id=50122951
 50118320 | 302 pts, 151 comments | Apple ML Research: Muse Spark Open with MLX on Mac Studio | https://news.ycombinator.com/item?id=50118320
 50118981 | 304 pts, 409 comments | Waymo in Toronto | https://news.ycombinator.com/item?id=50118981
-50117746 | 300 pts, 191 comments | I love software rendering | https://news.ycombinator.com/item?id=50117746
